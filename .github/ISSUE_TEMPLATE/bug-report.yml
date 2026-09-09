@@ -1,0 +1,40 @@
+name: 代码缺陷 / Bug report
+description: 报告脚本、路由、校验器或安装过程中的可复现错误。
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题说明 / Problem
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤 / Reproduction steps
+      description: 提供最小命令、输入结构和完整错误文本，移除令牌与敏感数据。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为 / Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: 操作系统、提交版本、R/Python 与相关包版本。
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 检查 / Checks
+      options:
+        - label: 我已搜索现有 Issues 和 Discussions。
+          required: true
+        - label: 我已移除访问令牌、敏感数据和受限材料。
+          required: true

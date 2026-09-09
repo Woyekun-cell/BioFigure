@@ -10,7 +10,7 @@
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
 
-[中文手册](docs/HANDBOOK.zh-CN.md) · [English handbook](docs/HANDBOOK.en.md) · [设计来源](docs/DESIGN-SOURCES.md) · [示例代码](biofigure/examples/gallery)
+[中文手册](docs/HANDBOOK.zh-CN.md) · [English handbook](docs/HANDBOOK.en.md) · [设计来源](docs/DESIGN-SOURCES.md) · [示例代码](biofigure/examples/gallery) · [Community](https://github.com/Woyekun-cell/BioFigure/discussions)
 
 </div>
 
@@ -110,3 +110,8 @@ Passing tests confirms the defined structural, code, and rule checks. Before sub
 
 BioFigure 自有代码、文档与模拟图库采用 [MIT License](LICENSE)。外部软件包、论文、网页和链接资源遵循各自许可证；来源与设计依据见 [DESIGN-SOURCES.md](docs/DESIGN-SOURCES.md) 和 [NOTICE.md](NOTICE.md)。期刊名称仅用于描述设计目标，不表示期刊认可。<br>
 BioFigure-owned code, documentation, and simulated gallery assets are released under the [MIT License](LICENSE). External packages, papers, websites, and linked resources retain their own licenses; provenance and design references are recorded in [DESIGN-SOURCES.md](docs/DESIGN-SOURCES.md) and [NOTICE.md](NOTICE.md). Journal names describe design targets and do not imply endorsement.
+
+## 社区 / Community
+
+欢迎在 [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions) 分享绘图需求、参考案例、审美建议和使用经验。可复现的成图问题、功能需求与代码缺陷请使用 [Issues](https://github.com/Woyekun-cell/BioFigure/issues/new/choose)。提交前请阅读 [贡献指南](CONTRIBUTING.md)；请勿上传未公开数据、患者信息或受限材料。<br>
+Use [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions) for figure ideas, references, design feedback, and experience reports. Submit reproducible rendering problems, feature requests, and code defects through [Issues](https://github.com/Woyekun-cell/BioFigure/issues/new/choose). Read the [contribution guide](CONTRIBUTING.md) first, and never upload unpublished data, patient information, or restricted material.

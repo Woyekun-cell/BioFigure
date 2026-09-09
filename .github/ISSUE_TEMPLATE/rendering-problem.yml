@@ -1,0 +1,51 @@
+name: 成图质量问题 / Figure-quality problem
+description: 报告重叠、裁切、字体、图例、颜色、比例或导出问题。
+title: "[Figure QA] "
+labels: ["figure-quality"]
+body:
+  - type: markdown
+    attributes:
+      value: 请使用去敏截图和最小模拟数据。不要公开真实患者或未发表数据。
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际成图问题 / Observed artifact problem
+      description: 说明重叠、裁切、乱码、字体替换、背景、比例或导出异常发生在哪里。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果 / Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现 / Minimal reproduction
+      description: 提供命令、最小代码、模拟数据生成方式和随机种子。
+    validations:
+      required: true
+  - type: input
+    id: size
+    attributes:
+      label: 输出尺寸与格式 / Output size and format
+      placeholder: 例如 89 × 70 mm, 300 dpi PNG + SVG
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: 操作系统、R/Python、绘图包版本、字体名称与解析路径。
+    validations:
+      required: true
+  - type: checkboxes
+    id: inspection
+    attributes:
+      label: 提交前检查 / Pre-submission checks
+      options:
+        - label: 我已实际打开输出图，并确认问题存在于成图中。
+          required: true
+        - label: 我已移除敏感数据和无权公开的材料。
+          required: true

@@ -1,0 +1,57 @@
+name: 图型或功能建议 / Figure or feature request
+description: 建议新的图型、领域规则、Pattern、Renderer 或质控能力。
+title: "[Request] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: 请勿上传未公开数据、患者信息或受限材料。参考图必须提供公开来源。
+  - type: dropdown
+    id: domain
+    attributes:
+      label: 生物领域 / Biological domain
+      options:
+        - Bulk transcriptomics or metabolomics
+        - Multi-omics
+        - Single-cell or spatial
+        - Chromatin or epigenomics
+        - Genome or comparative genomics
+        - Imaging or assay
+        - Machine learning
+        - Mechanism or graphical abstract
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 科学问题与图的用途 / Scientific question and figure role
+      description: 说明要支持的结论、QC、比较、结构、验证或预测任务。
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: 数据结构 / Data topology
+      description: 描述行、列、生物实体、实验单位、重复、配对和统计单位；可使用模拟数据。
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: 公开参考来源 / Public reference
+      description: 论文、项目或网页链接，并注明希望借鉴的具体视觉原则。
+  - type: dropdown
+    id: backend
+    attributes:
+      label: 后端 / Backend
+      options: [R, Python, Either]
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准 / Acceptance criteria
+      description: 写明尺寸、格式、字体、图例、颜色、统计标注和可编辑性要求。
+    validations:
+      required: true
