@@ -1,0 +1,24 @@
+pattern_id: MAT-EXPR-001
+version: "1.0"
+domain: [matrix, bulk, metabolomics]
+scientific_task: [expression-pattern]
+message_type: clustered-pattern
+data_contract: {required: [feature, sample, value], optional: [annotation, module], assumptions: [scale_declared]}
+applicable_when: {data_profile: {matrix.n_rows: 5-200, matrix.n_columns: 4-80}, message: shared_expression_pattern}
+not_recommended_when: [dense_signal_matrix,scale_unknown]
+visual_hierarchy: {primary: matrix_pattern, secondary: sample_groups, tertiary: selected_row_labels}
+geometry: {primary: square_cell_heatmap, secondary: annotation_strips}
+encoding: {x: sample, y: feature, fill: transformed_value, edge: thin_white_or_black}
+layout: {aspect_ratio: data_driven, density_strategy: preserve_square_cells, whitespace_strategy: labels_and_legend_reserved}
+annotation_strategy: [sample_group_strip, module_strip_if_declared]
+legend_strategy: {compact: true, place: outside_matrix}
+color_semantics: {continuous: parameterized_by_data_semantics, optional_diverging: navy_warmwhite_brickred, center: declared_zero_or_reference, na: explicit_neutral, colorblind_check: required}
+optional_components: [dendrogram, side-bar, module-strip]
+avoid: [silent_row_scaling,rectangular_cells,unexplained_clustering,fixed_palette_without_user_or_data_reason,labels_inside_matrix]
+scientific_risks: [scale_confusion,missing_as_zero,order_changed_without_record]
+renderer_options: [ComplexHeatmap, ggplot2, matplotlib]
+references: [source-index://complexheatmap, source-index://nature-layout, atlas://ATLAS-TJ-ARCHR-F3, atlas://ATLAS-TJ-HCL-F2]
+provenance: {created_from: [source-index://complexheatmap], reviewed_by: null, reviewed_at: null}
+confidence: high
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

@@ -1,0 +1,6 @@
+interface:
+  display_name: "BioFigure 生物科研绘图"
+  short_description: "代码构建生物科研单图与组图，兼顾领域规则、个人风格、色觉友好和可复现检查"
+  default_prompt: "使用 $biofigure，根据我的数据与研究目的设计并绘制科研图，先读个人风格与执行约束，按匹配参考设计，核对每层字体与文字清单，比较实际成图，交付可复现代码和可编辑图件。"
+policy:
+  allow_implicit_invocation: true

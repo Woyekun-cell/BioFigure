@@ -1,0 +1,24 @@
+pattern_id: GEN-SYNTENY-001
+version: "1.0"
+domain: [comparative-genomics, genome-coordinates]
+scientific_task: [synteny-and-genome-track]
+message_type: coordinate-relationship
+data_contract: {required: [sequence_lengths, features, links, assembly], optional: [coverage, sv], assumptions: [bp_or_kb_declared]}
+applicable_when: {data_profile: {n_chromosomes: 2-60}, relationship_evidence: explicit, message: coordinate_conservation}
+not_recommended_when: [links_without_relation_type, coordinate_overflow, unknown_contig]
+visual_hierarchy: {primary: coordinate_and_links, secondary: focal_features, tertiary: coverage_track}
+geometry: {primary: linear_or_circular_genome_tracks, secondary: relationship_ribbons}
+encoding: {x: true_coordinate, y: sequence_row, color: relation_type, line: strand_or_link}
+layout: {aspect_ratio: task_dependent, density_strategy: explicit_link_filter_with_counts, whitespace_strategy: labels_and_external_legend_reserved}
+annotation_strategy: [assembly_and_annotation_version, coordinate_units, stable_ids]
+legend_strategy: {compact: true, place: outside_tracks}
+color_semantics: {background_links: gray, focal_links: brick_red, conserved_features: navy}
+optional_components: [coverage-track, sv-layer, scale-bar]
+avoid: [arbitrary_stretching, hidden_links, filtered_links_without_count_report, layout_as_rearrangement_proof]
+scientific_risks: [wrong_coordinate_system, many_to_many_join, unknown_sequence_length]
+renderer_options: [circlize, gggenomes, pyGenomeTracks, pyGenomeViz]
+references: [source-index://gff3, source-index://circlize, source-index://ucsc-bed, source-index://pygenometracks, atlas://ATLAS-TJ-FISH-F2]
+provenance: {created_from: [source-index://gggenomes, source-index://circlize], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: real_mcscanx_run, visual: actual_png_checked, benchmark: local_real_data}
+status: approved

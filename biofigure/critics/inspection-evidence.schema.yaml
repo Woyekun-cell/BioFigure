@@ -1,0 +1,16 @@
+schema_version: "1.1"
+kind: actual-inspection-evidence
+required: [artifact, artifact_sha256, artifact_opened, inspected_at, inspector, viewer_record, image_metrics, detected, visual_evidence, issues, critic_reviews]
+artifact_sha256: sha256_of_exact_rendered_artifact
+detected_required: [clipping, overlap, missing_glyph, legend_overlap, non_white_background, font_fallback, unrequested_text]
+visual_evidence_required: [hierarchy, whitespace, legend, title_discipline]
+visual_observation_contract: each entry is a mapping with a concrete observation recorded after opening the artifact
+viewer_record_contract: {method: [direct-open, contact-sheet-open], opened_artifact_sha256: exact_sha256}
+issues_contract: every issue declares issue, severity, evidence, and proposed_fix; hard or major prevents PASS
+notes: Machine checks reject missing, blank, near-blank, mismatched, or stale artifacts. Human or agent visual observations remain mandatory for hierarchy and composition.
+trust_boundary: viewer_record is an accountable attestation, not cryptographic proof of human perception; machine gates independently check blankness, corners, dimensions, and artifact identity.
+
+critic_reviews_contract: mapping keyed by each critic in critics_run; each entry needs status PASS/REVISE/FAIL and concrete evidence; missing entries are NOT_ASSESSED and block release
+
+reference_quality_dimensions: [hierarchy, geometry, palette, typography, marks, annotation]
+reference_quality_contract: critic_reviews.reference-quality requires dimensions; each dimension includes status and concrete evidence; any REVISE/FAIL blocks its PASS

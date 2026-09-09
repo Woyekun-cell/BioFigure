@@ -1,0 +1,24 @@
+pattern_id: GEN-STRUCT-001
+version: "1.0"
+domain: [comparative-genomics, phylogenomics]
+scientific_task: [gene-structure-and-phylogeny]
+message_type: coordinate-and-tree
+data_contract: {required: [assembly, annotation_version, tree, feature_coordinates], optional: [domains, support], assumptions: [coordinate_system_declared]}
+applicable_when: {data_profile: {n_features: 1-30, n_groups: 3-50}, message: structure_plus_relationship}
+not_recommended_when: [tree_support_missing, mixed_coordinate_systems]
+visual_hierarchy: {primary: topology_and_structure, secondary: domains_and_labels, tertiary: support_values}
+geometry: {primary: tree_plus_gene_track, secondary: domain_strip}
+encoding: {x: genomic_or_protein_coordinate, y: shared_taxon_order, line: branch_or_relation, shape: strand}
+layout: {aspect_ratio: "1.6", density_strategy: one_row_per_taxon, whitespace_strategy: longest_label_reserved}
+annotation_strategy: [unique_internal_ids, support_if_available, assembly_note]
+legend_strategy: {compact: true, place: outside_tracks}
+color_semantics: {background_relation: gray, focal_family: navy_or_brick, strand: arrow}
+optional_components: [domain-strip, support-labels, scale-bar]
+avoid: [time_axis_without_lengths, layout_as_rearrangement_evidence, duplicate_labels]
+scientific_risks: [wrong_assembly, mixed_nt_aa_scale, unsupported_orthology]
+renderer_options: [ggtree, gggenomes, matplotlib]
+references: [source-index://gff3, source-index://gggenomes]
+provenance: {created_from: [source-index://gggenomes], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

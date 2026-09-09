@@ -1,0 +1,128 @@
+schema_version: "1.0"
+source:
+  corpus: atlas/scidraw-derived-corpus.json
+  role: optional_design_evidence
+  precedence: scientific_contract_and_official_guidance
+  coverage: {cases: 157, visuals: 159, code_files: 650}
+transfer_policy:
+  adopt: reusable visual grammar after semantic validation
+  conditional: use only when data topology and final-size legibility justify it
+  reject: known failure mode; never inherit merely because it appears in a case
+grammars:
+  - grammar_id: matrix-annotation
+    applies_to: [expression-heatmap, correlation, oncoprint, multiomics-matrix]
+    visual_role: align a dominant matrix with narrow categorical or quantitative tracks
+    evidence_case_ids: [SCICASE-017, SCICASE-018, SCICASE-020, SCICASE-054]
+    evidence_visual_ids: [SCIVIS-017, SCIVIS-018, SCIVIS-020, SCIVIS-054]
+    code_signals: [ComplexHeatmap, pheatmap, geom_tile]
+    adopt: [square cells when dimensions permit, thin annotation bands, external compact legends, shared row and column ordering, perceptually ordered multistep scales]
+    conditional: [cell borders only when visible at final size, labels only for a readable subset]
+    reject: [wide classification bars, decorative gradients, labels in every dense cell, legend over matrix]
+  - grammar_id: distribution-layering
+    applies_to: [group-distribution, assay-comparison]
+    visual_role: show raw observations together with summary and distribution shape
+    evidence_case_ids: [SCICASE-007, SCICASE-008, SCICASE-116, SCICASE-118]
+    evidence_visual_ids: [SCIVIS-007, SCIVIS-008, SCIVIS-118, SCIVIS-120]
+    code_signals: [geom_violin, geom_boxplot, geom_point]
+    adopt: [raw points, restrained summary layer, consistent dodge, visible uncertainty]
+    conditional: [half violin or raincloud when sample size supports density, significance only for prespecified contrasts]
+    reject: [bar-only summaries for continuous data, opaque overplotting, dense significance brackets, gradient panel background]
+  - grammar_id: ordination-marginals
+    applies_to: [PCA, PCoA, NMDS, UMAP]
+    visual_role: keep the embedding primary and use marginals for interpretable group separation
+    evidence_case_ids: [SCICASE-062, SCICASE-063, SCICASE-064, SCICASE-066]
+    evidence_visual_ids: [SCIVIS-062, SCIVIS-063, SCIVIS-064, SCIVIS-066]
+    code_signals: [patchwork, ComplexHeatmap, Seurat]
+    adopt: [square main coordinates, aligned marginal summaries, direct labels when sparse, stated variance or stress where applicable]
+    conditional: [ellipses only with defined meaning, multiple metadata strips only when each answers the question]
+    reject: [repeated legends, unscaled axes that distort geometry, unexplained hulls, marginal plots larger than embedding]
+  - grammar_id: tree-aligned-tracks
+    applies_to: [phylogeny, gene-family, domain-architecture, synteny]
+    visual_role: preserve tip order across tree, heatmap, domain and quantitative tracks
+    evidence_case_ids: [SCICASE-067, SCICASE-068, SCICASE-069, SCICASE-070]
+    evidence_visual_ids: [SCIVIS-067, SCIVIS-068, SCIVIS-069, SCIVIS-070]
+    code_signals: [ggtree, ggtreeExtra, ggnewscale]
+    adopt: [shared tip order, narrow aligned tracks, explicit scale, restrained clade emphasis]
+    conditional: [circular trees only for many tips and sufficient radius, branch support labels only above a declared threshold]
+    reject: [decorative rings, unreadable radial tip labels, independent track sorting, unsupported evolutionary claims]
+  - grammar_id: circular-relations
+    applies_to: [synteny, chromosomal-links, cell-communication, pathway-links]
+    visual_role: encode genuine many-to-many or cyclic relationships
+    evidence_case_ids: [SCICASE-039, SCICASE-040, SCICASE-154]
+    evidence_visual_ids: [SCIVIS-039, SCIVIS-040, SCIVIS-156]
+    code_signals: [circlize, chordDiagram]
+    adopt: [ordered sectors, narrow ideograms, low-alpha links, relationship-driven color, external legend]
+    conditional: [edge bundling or filtering with disclosed thresholds, labels only for priority sectors]
+    reject: [circular bars for ordinary comparison, rainbow sectors, opaque link hairballs, labels tangentially unreadable]
+  - grammar_id: model-diagnostics
+    applies_to: [regression, classification, machine-learning, calibration]
+    visual_role: present performance, calibration, residuals and uncertainty as separate evidence
+    evidence_case_ids: [SCICASE-012, SCICASE-025, SCICASE-157]
+    evidence_visual_ids: [SCIVIS-012, SCIVIS-025, SCIVIS-159]
+    code_signals: [lm, residual, roc_curve, calibration_curve]
+    adopt: [held-out metrics, identity or null references, uncertainty, separate calibration and discrimination]
+    conditional: [marginal residual summaries, feature importance with stability evidence]
+    reject: [training-only performance, smoothed curves without uncertainty, decorative gauges, causal labels for predictive association]
+  - grammar_id: multipanel-evidence-chain
+    applies_to: [paper-main-figure, multiomics, mechanism-validation]
+    visual_role: order panels by claim, evidence and validation with one visual anchor
+    evidence_case_ids: [SCICASE-045, SCICASE-051, SCICASE-052, SCICASE-053]
+    evidence_visual_ids: [SCIVIS-045, SCIVIS-051, SCIVIS-052, SCIVIS-053]
+    code_signals: [patchwork, cowplot, grid]
+    adopt: [one hero panel, aligned edges, shared semantics, outside legends, compact panel letters]
+    conditional: [shared axes and legends only when scales truly match, inset only for local detail]
+    reject: [equal weight for every panel, title-heavy cards, duplicated legends, arbitrary collage, panel letters over data]
+  - grammar_id: correlation-composite
+    applies_to: [correlation, association, fitted-relationship]
+    visual_role: combine effect direction, uncertainty and selected marginal evidence
+    evidence_case_ids: [SCICASE-014, SCICASE-017, SCICASE-018, SCICASE-025]
+    evidence_visual_ids: [SCIVIS-014, SCIVIS-017, SCIVIS-018, SCIVIS-025]
+    code_signals: [corrplot, ComplexHeatmap, GGally]
+    adopt: [ordered variables, symmetric scale, effect and significance separated, redundant triangle removed when useful]
+    conditional: [upper and lower triangles for distinct validated groups, fitted line only with compatible model]
+    reject: [significance stars replacing effect size, rainbow diverging scale, unreadable full labels]
+  - grammar_id: volcano-ranked-evidence
+    applies_to: [differential-expression, differential-accessibility, differential-metabolites]
+    visual_role: show effect and evidence while limiting labels to decision-relevant features
+    evidence_case_ids: [SCICASE-045, SCICASE-048, SCICASE-050]
+    evidence_visual_ids: [SCIVIS-045, SCIVIS-048, SCIVIS-050]
+    code_signals: [geom_point, ggrepel]
+    adopt: [neutral majority, explicit thresholds, restrained direct labels, consistent comparison facets]
+    conditional: [enrichment companion panel after identifiers and background are validated]
+    reject: [label clouds, arbitrary curved axes, color encoding both direction and unrelated category]
+  - grammar_id: alluvial-flow
+    applies_to: [state-transition, composition-flow, lineage-flow]
+    visual_role: preserve category identity across ordered stages
+    evidence_case_ids: [SCICASE-035, SCICASE-036, SCICASE-037]
+    evidence_visual_ids: [SCIVIS-035, SCIVIS-036, SCIVIS-037]
+    code_signals: [networkD3, geom_alluvium]
+    adopt: [fixed stage order, conserved totals when claimed, low-alpha flows, direct stage labels]
+    conditional: [interactive output only as supplement, aggregation with declared rule]
+    reject: [crossing explosion, gradient as decoration, width implying quantity when not proportional]
+  - grammar_id: bubble-matrix
+    applies_to: [single-cell-markers, enrichment, association-matrix]
+    visual_role: encode two quantitative variables on an ordered rectangular grid
+    evidence_case_ids: [SCICASE-054, SCICASE-055, SCICASE-129]
+    evidence_visual_ids: [SCIVIS-054, SCIVIS-055, SCIVIS-131]
+    code_signals: [geom_point, ggpubr]
+    adopt: [thin dark bubble outline, ordered axes, separated size and color legends, bounded size range]
+    conditional: [facet gaps for real biological groups, zero values shown explicitly when meaningful]
+    reject: [area differences too small to read, legend inside grid, unlabeled transformed scale]
+  - grammar_id: temporal-uncertainty
+    applies_to: [time-course, dose-response, longitudinal]
+    visual_role: show trajectory and uncertainty without hiding repeated observations
+    evidence_case_ids: [SCICASE-135]
+    evidence_visual_ids: [SCIVIS-137]
+    code_signals: [geom_line, geom_ribbon, errorbar]
+    adopt: [ordered time, raw or subject traces when feasible, interval definition, restrained group colors]
+    conditional: [smoothing only with method and uncertainty, facets for incompatible scales]
+    reject: [connected group means without uncertainty, categorical spacing for unequal time, dual axes]
+  - grammar_id: geographic-sampling
+    applies_to: [sampling-map, biogeography, epidemiology]
+    visual_role: show sampling location and magnitude on a truthful geographic base
+    evidence_case_ids: [SCICASE-088, SCICASE-089, SCICASE-091]
+    evidence_visual_ids: [SCIVIS-089, SCIVIS-090, SCIVIS-092]
+    code_signals: [sf, rnaturalearth, ggspatial]
+    adopt: [light basemap, visible sampling points, scale or projection statement, inset only for geographic context]
+    conditional: [pie glyphs only for few sites and readable composition, jitter with disclosure]
+    reject: [black decorative background, overlapping pies, area distortion presented as abundance]

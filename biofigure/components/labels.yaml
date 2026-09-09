@@ -1,0 +1,4 @@
+components:
+  direct-labels: {purpose: stable_identity, inputs: [label_rule, reserved_bbox], hard_constraints: [selection_rule_recorded, rendered_bbox_checked], compatible: [DIFF-VOLCANO-001, ORD-PCA-001, SC-UMAP-001, GEN-STRUCT-001]}
+  selected-labels: {purpose: focus_without_overannotation, inputs: [feature, selection_rule, max_labels], hard_constraints: [unlabelled_count_reported, rendered_bbox_checked], compatible: [DIFF-VOLCANO-001, DIFF-RANK-001, MAT-EXPR-DENSE-001]}
+  rare-last: {purpose: preserve_rare_groups, inputs: [group, abundance], hard_constraints: [draw_order_recorded], compatible: [SC-UMAP-001, SC-DOT-001]}

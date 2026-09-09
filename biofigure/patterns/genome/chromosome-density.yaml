@@ -1,0 +1,24 @@
+pattern_id: GEN-CHR-DENS-001
+version: "1.0"
+domain: [comparative-genomics, genome-coordinates]
+scientific_task: [chromosome-gene-density]
+message_type: coordinate-density
+data_contract: {required: [assembly, annotation_version, sequence_lengths, gene_coordinates], optional: [unplaced_scaffolds, window_size], assumptions: [gff3_1_based_closed, chromosome_identity_declared]}
+applicable_when: {data_profile: {n_chromosomes: 5-60}, coordinates: explicit, message: chromosome_scale_annotation_density}
+not_recommended_when: [unknown_sequence_lengths, synteny_claim_without_links, mixed_assemblies]
+visual_hierarchy: {primary: chromosome_length_and_order, secondary: gene_density, tertiary: assembly_metadata}
+geometry: {primary: horizontal_segmented_chromosome_tracks, secondary: external_continuous_legend}
+encoding: {x: true_coordinate, y: chromosome_order, fill: declared_gene_feature_count_per_megabase, outline: white_bin_separator}
+layout: {aspect_ratio: "1", density_strategy: fixed_bp_windows, whitespace_strategy: longest_label_and_legend_reserved}
+annotation_strategy: [assembly_and_annotation_version_in_manifest, coordinate_units_on_axis, excluded_sequence_count_reported]
+legend_strategy: {compact: true, place: outside_tracks, shared_scale_for_related_exports: true}
+color_semantics: {low_density: near_white, high_density: sequential_navy, missing: explicit_gray}
+optional_components: [centromere-marks-if-sourced, repeat-density, gc-content]
+avoid: [equal_length_chromosome_cartoon, unknown_contigs_silently_dropped, unscaled_last_window, rainbow_palette, circular_layout_without_need]
+scientific_risks: [coordinate_system_error, gene_feature_definition_mismatch, unplaced_sequence_exclusion, incomparable_annotation_versions]
+renderer_options: [ggplot2, gggenomes]
+references: [source-index://gff3, source-index://gggenomes]
+provenance: {created_from: [source-index://gff3, source-index://gggenomes], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: real_refseq_gff3_run, visual: actual_png_checked, benchmark: local_real_data}
+status: approved

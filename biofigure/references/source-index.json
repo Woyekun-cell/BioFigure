@@ -1,0 +1,736 @@
+{
+  "schema_version": 1,
+  "scope": "文献/文档与案例检索入口；不是全部跑通的图库。读取只表示核对相关部分，不表示通读全部手册。",
+  "entries": [
+    {
+      "id": "nature-guide",
+      "source_type": "规范",
+      "tags": [
+        "all"
+      ],
+      "url": "https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/",
+      "lesson": "字体、可编辑性、可读性；按具体期刊核对",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "nature-layout",
+      "source_type": "规范",
+      "tags": [
+        "layout"
+      ],
+      "url": "https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/",
+      "lesson": "版面与导出，避免伪造统一发表尺寸",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "complexheatmap",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "heatmap",
+        "annotations",
+        "R"
+      ],
+      "url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/",
+      "lesson": "矩阵注释、分片、物理尺寸、共享顺序",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "oncoprint",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "mutation",
+        "heatmap",
+        "R"
+      ],
+      "url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html",
+      "lesson": "事件编码、频率与样本注释对齐",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "deseq2",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "bulk",
+        "RNA"
+      ],
+      "url": "https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html",
+      "lesson": "数据尺度、对比、变换与统计边界",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "mofa",
+      "source_type": "作者论文案例与代码入口",
+      "tags": [
+        "multiomics",
+        "RNA",
+        "ATAC"
+      ],
+      "url": "https://biofam.github.io/MOFA2/tutorials.html",
+      "lesson": "真实多组学案例；作者注明对应MOFA/MOFA+论文图，未在本项目复现",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "mofa-code",
+      "source_type": "作者代码入口",
+      "tags": [
+        "multiomics",
+        "R"
+      ],
+      "url": "https://github.com/bioFAM/MOFA2_tutorials/tree/master/R_tutorials",
+      "lesson": "论文应用与Rmd索引，需选定文件和版本后复现",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "multiassay",
+      "source_type": "领域数据结构",
+      "tags": [
+        "multiomics",
+        "sample-map"
+      ],
+      "url": "https://bioconductor.org/packages/MultiAssayExperiment/",
+      "lesson": "跨组学样本映射与缺失；本轮包页未复核，前序已查代码介绍",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "mixomics",
+      "source_type": "作者方法入口",
+      "tags": [
+        "multiomics",
+        "supervised"
+      ],
+      "url": "https://mixomics.org/",
+      "lesson": "监督整合与预测边界；按具体方法找图与代码",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "deeptools",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "ATAC",
+        "ChIP",
+        "HiC"
+      ],
+      "url": "https://deeptools.readthedocs.io/en/develop/content/tools/plotHeatmap.html",
+      "lesson": "矩阵分箱、排序、信号尺度与导出",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "chipseeker",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "ChIP",
+        "peaks"
+      ],
+      "url": "https://bioconductor.org/packages/release/bioc/vignettes/ChIPseeker/inst/doc/ChIPseeker.html",
+      "lesson": "权重、链方向、参考区域、过滤",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "pygenometracks",
+      "source_type": "作者代码入口",
+      "tags": [
+        "genome",
+        "tracks",
+        "HiC",
+        "Python"
+      ],
+      "url": "https://github.com/deeptools/pyGenomeTracks",
+      "lesson": "多轨道、坐标、HiC与示例配置；未运行",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "gggenomes",
+      "source_type": "作者真实数据示例",
+      "tags": [
+        "genomics",
+        "synteny",
+        "R"
+      ],
+      "url": "https://thackl.github.io/gggenomes/",
+      "lesson": "六病毒基因组组合实例；不是本项目论文复现",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "gggenomes-flip",
+      "source_type": "作者API与源代码入口",
+      "tags": [
+        "genomics",
+        "orientation"
+      ],
+      "url": "https://thackl.github.io/gggenomes/reference/flip.html",
+      "lesson": "flip/sync方向变换与布局启发式",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "pygenomeviz",
+      "source_type": "作者文档与示例",
+      "tags": [
+        "genomics",
+        "Python"
+      ],
+      "url": "https://moshi4.github.io/pyGenomeViz/",
+      "lesson": "基因组与相似性链接可视化；未运行",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "gff3",
+      "source_type": "格式规范",
+      "tags": [
+        "genomics",
+        "coordinates"
+      ],
+      "url": "https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md",
+      "lesson": "坐标、ID、Parent与链方向",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "ucsc-bed",
+      "source_type": "格式规范",
+      "tags": [
+        "genomics",
+        "coordinates"
+      ],
+      "url": "https://genome.ucsc.edu/FAQ/FAQformat.html#format1",
+      "lesson": "BED坐标与字段语义",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "signac",
+      "source_type": "作者文档与教程入口",
+      "tags": [
+        "scATAC",
+        "multiome"
+      ],
+      "url": "https://stuartlab.org/signac/",
+      "lesson": "细胞群覆盖、motif、peak-to-gene；不等于验证全部分析",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "scanpy",
+      "source_type": "作者教程入口",
+      "tags": [
+        "scRNA",
+        "Python"
+      ],
+      "url": "https://scanpy.readthedocs.io/en/latest/tutorials/plotting/advanced.html",
+      "lesson": "前序读取高级绘图；本轮相关API页访问失败，调用时重核",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "ggalluvial",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "composition",
+        "flow",
+        "R"
+      ],
+      "url": "https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html",
+      "lesson": "比例连带与真实转移分开",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "circlize",
+      "source_type": "作者书与代码示例",
+      "tags": [
+        "circos",
+        "genomics",
+        "network"
+      ],
+      "url": "https://jokergoo.github.io/circlize_book/book/",
+      "lesson": "环形坐标与多轨道",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "patchwork",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "layout",
+        "R"
+      ],
+      "url": "https://patchwork.data-imaginist.com/articles/guides/layout.html",
+      "lesson": "组图布局与绘图区对齐",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "matplotlib-fonts",
+      "source_type": "作者文档与代码示例",
+      "tags": [
+        "export",
+        "Python"
+      ],
+      "url": "https://matplotlib.org/stable/users/explain/text/fonts.html",
+      "lesson": "SVG文字与路径、字体嵌入、替代",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "colorspace",
+      "source_type": "作者方法与代码示例",
+      "tags": [
+        "color",
+        "CVD",
+        "R"
+      ],
+      "url": "https://colorspace.r-forge.r-project.org/articles/color_vision_deficiency.html",
+      "lesson": "Machado模型、严重程度、线性RGB与灰度",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "colorspacious",
+      "source_type": "作者方法与代码示例",
+      "tags": [
+        "color",
+        "CVD",
+        "Python"
+      ],
+      "url": "https://colorspacious.readthedocs.io/en/latest/tutorial.html",
+      "lesson": "sRGB/CAM02-UCS转换与CVD模拟方向",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "small-sample",
+      "source_type": "方法论文",
+      "tags": [
+        "statistics",
+        "distribution"
+      ],
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128",
+      "lesson": "小样本展示原始分布",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "nature-skill",
+      "source_type": "现有Skill研究",
+      "tags": [
+        "skill"
+      ],
+      "url": "https://github.com/Yuan1z0825/nature-skills",
+      "lesson": "本地nature-figure已读；借鉴分层与QA，不继承冲突的全局后端锁",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "kdense-skill",
+      "source_type": "现有Skill研究",
+      "tags": [
+        "skill"
+      ],
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "lesson": "前序已读scientific-visualization；代码绘图与生成式示意图区分",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "academic-figure",
+      "source_type": "现有Skill研究",
+      "tags": [
+        "skill",
+        "reference"
+      ],
+      "url": "https://github.com/SciToolsmith/academic-figure",
+      "lesson": "前序调研案例适配思路；不能把目录数量当可运行案例数",
+      "consulted_date": "2026-08-31",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "nature-reporting",
+      "source_type": "期刊报告规范",
+      "tags": ["all", "statistics", "reproducibility"],
+      "url": "https://www.nature.com/nature/editorial-policies/reporting-standards",
+      "lesson": "统计、n、数据与代码可用性必须在图注/方法/报告中可追溯",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "source linked; no text or code redistributed",
+      "code_ref": null
+    },
+    {
+      "id": "nature-integrity",
+      "source_type": "期刊图像规范",
+      "tags": ["all", "image-integrity"],
+      "url": "https://www.nature.com/nature-portfolio/editorial-policies/image-integrity",
+      "lesson": "全图一致处理、原始图像留存、拼接/裁切/伪彩色与软件必须披露",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "source linked; no text or code redistributed",
+      "code_ref": null
+    },
+    {
+      "id": "clusterprofiler",
+      "source_type": "Bioconductor作者文档",
+      "tags": ["enrichment", "R"],
+      "url": "https://bioconductor.org/packages/release/bioc/manuals/clusterProfiler/man/clusterProfiler.pdf",
+      "lesson": "dotplot、cnetplot、emapplot、GSEA与网络图的输出语义需分开",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "deeptools-profile",
+      "source_type": "作者文档",
+      "tags": ["ATAC", "ChIP", "tracks"],
+      "url": "https://deeptools.readthedocs.io/en/develop/content/tools/plotProfile.html",
+      "lesson": "computeMatrix、plotHeatmap与plotProfile共享底层矩阵但含义不同",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "scanpy-core",
+      "source_type": "作者官方教程",
+      "tags": ["scRNA", "Python"],
+      "url": "https://scanpy.readthedocs.io/en/latest/tutorials/plotting/core.html",
+      "lesson": "单细胞dotplot、violin、heatmap、tracks与embedding各自编码不同统计量",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "seurat-visualization",
+      "source_type": "作者官方API",
+      "tags": ["scRNA", "R"],
+      "url": "https://satijalab.org/seurat/reference/featureplot",
+      "lesson": "FeaturePlot的assay/layer、色阶、排序、分面和大细胞数栅格化要显式记录",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "signac-regionplot",
+      "source_type": "作者官方API",
+      "tags": ["scATAC", "tracks"],
+      "url": "https://stuartlab.org/signac/reference/regionplot",
+      "lesson": "区域图的细胞分组、深度归一化与平滑参数影响可视语义",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "mofa-downstream",
+      "source_type": "作者教程与代码",
+      "tags": ["multiomics", "latent-factor"],
+      "url": "https://github.com/bioFAM/MOFA2/blob/master/vignettes/downstream_analysis.Rmd",
+      "lesson": "factor score、各模态解释方差和feature weights须分开呈现，因子方向不等于机制",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "ggtree",
+      "source_type": "Bioconductor作者文档",
+      "tags": ["phylogeny", "R"],
+      "url": "https://bioconductor.posit.co/packages/3.22/bioc/html/ggtree.html",
+      "lesson": "树对象、tip/node注释、分支比例尺和关联数据应分层绘制",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "upstream code not redistributed; verify license before copying",
+      "code_ref": null
+    },
+    {
+      "id": "squair-pseudoreplication",
+      "source_type": "同行评议方法论文",
+      "tags": ["single-cell", "statistics"],
+      "url": "https://www.nature.com/articles/s41467-021-25960-2",
+      "lesson": "单细胞差异分析需避免将细胞数当生物重复，样本层推断优先",
+      "consulted_date": "2026-09-01",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "source linked; no text or code redistributed",
+      "code_ref": null
+    },
+    {
+      "id": "nature-research-figure-guide-current",
+      "source_type": "期刊官方规范",
+      "tags": ["all", "layout", "accessibility", "export"],
+      "url": "https://research-figure-guide.nature.com/",
+      "lesson": "生产规范约束尺寸、字体、线宽、可访问性和可编辑性；不把期刊名当配色模板",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "elsevier-artwork-accessibility",
+      "source_type": "出版商官方规范",
+      "tags": ["all", "accessibility", "image-integrity"],
+      "url": "https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions",
+      "lesson": "使用色盲安全色、足够对比并保持图像处理完整性",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "science-editors-author-guide",
+      "source_type": "期刊编辑官方指南",
+      "tags": ["all", "figure-story", "caption"],
+      "url": "https://promo.aaas.org/images/Publishing/Journals/2019/Authors%20Guide%20Brochure_Final.pdf",
+      "lesson": "先组织核心图，使方法与数据形成可追踪的论证链；图注描述而不替代结果分析",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "ggsci-journal-inspired-palettes",
+      "source_type": "R包作者文档",
+      "tags": ["palette", "categorical", "journal-inspired"],
+      "url": "https://nanx.me/ggsci/articles/ggsci.html",
+      "lesson": "NPG、AAAS、Lancet、NEJM、JAMA色板为期刊图形启发，不是期刊官方标准",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": true,
+      "license_status": "hex values recorded with source attribution; package code not redistributed",
+      "code_ref": "ggsci 5.2.0"
+    },
+    {
+      "id": "colorbrewer-scheme-semantics",
+      "source_type": "作者官方工具",
+      "tags": ["palette", "categorical", "sequential", "diverging"],
+      "url": "https://colorbrewer2.org/learnmore/schemes.html",
+      "lesson": "定性、顺序、发散色板分别对应类别、有序数值和具有关键中心的数值",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": true,
+      "license_status": "linked and attributed",
+      "code_ref": "RColorBrewer"
+    },
+    {
+      "id": "paul-tol-colour-schemes",
+      "source_type": "作者官方说明",
+      "tags": ["palette", "categorical", "color-vision"],
+      "url": "https://sronpersonalpages.nl/~pault/",
+      "lesson": "Bright与Muted方案强调色觉缺陷可辨性，并规定类别顺序和使用边界",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked and attributed",
+      "code_ref": null
+    },
+    {
+      "id": "crameri-scientific-colour-maps",
+      "source_type": "作者官方说明与版本化色图",
+      "tags": ["palette", "continuous", "perceptual-uniformity", "color-vision"],
+      "url": "https://www.fabiocrameri.ch/colourmaps/",
+      "lesson": "连续色图应保持感知均匀、顺序明确并面向色觉缺陷读者；避免rainbow",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": true,
+      "license_status": "linked and attributed; Scientific Colour Maps 8.0.1",
+      "code_ref": "scico 1.5.0"
+    },
+    {
+      "id": "okabe-ito-color-universal-design",
+      "source_type": "作者配色指南",
+      "tags": ["palette", "categorical", "color-vision"],
+      "url": "https://jfly.uni-koeln.de/color/",
+      "lesson": "定性配色结合色相、明度和非颜色通道，不能只靠红绿差异",
+      "consulted_date": "2026-09-02",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked and attributed",
+      "code_ref": null
+    },
+    {
+      "id": "nature-research-figure-guide-2026",
+      "source_type": "Nature官方图稿指南",
+      "tags": ["all", "export", "font", "accessibility"],
+      "url": "https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/",
+      "lesson": "要求可编辑文字和矢量对象、Arial或Helvetica、可访问配色及独立比例尺对象",
+      "consulted_date": "2026-09-03",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "nature-image-integrity-2026",
+      "source_type": "Nature Portfolio官方政策",
+      "tags": ["imaging", "microscopy", "blot", "integrity"],
+      "url": "https://www.nature.com/nature-portfolio/editorial-policies/image-integrity",
+      "lesson": "保留原始图像和元数据；全图及对照一致处理；拼接、伪彩和非线性调整须披露",
+      "consulted_date": "2026-09-03",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "tripod-plus-ai-2024",
+      "source_type": "预测模型报告规范",
+      "tags": ["machine-learning", "prediction", "validation"],
+      "url": "https://www.tripod-statement.org/scope/",
+      "lesson": "预测模型开发、验证和更新需透明报告研究背景、数据、模型与评估",
+      "consulted_date": "2026-09-03",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "nature-methods-image-checklists-2024",
+      "source_type": "同行评议图像报告清单",
+      "tags": ["imaging", "scale-bar", "annotation", "raw-data"],
+      "url": "https://www.nature.com/articles/s41592-023-01987-9",
+      "lesson": "比例尺与注释应可编辑且不遮挡图像；原始图和发表图均应可追溯",
+      "consulted_date": "2026-09-03",
+      "status": "documentation_reviewed",
+      "upstream_case_run": false,
+      "license_status": "linked-only",
+      "code_ref": null
+    },
+    {
+      "id": "scidraw-gallery-2026",
+      "source_type": "第三方案例导航站",
+      "tags": ["visual-reference", "R", "Python", "optional-evidence"],
+      "url": "https://scidraw.msttnote.cn/",
+      "lesson": "可用于发现图型和抽象视觉语法；不能替代原论文、官方规范、科学契约或许可核对",
+      "consulted_date": "2026-09-04",
+      "status": "visual_inventory_reviewed_159_assets",
+      "upstream_case_run": false,
+      "license_status": "linked-only; redistribution not assumed",
+      "code_ref": "atlas/scidraw-derived-corpus.json"
+    },
+    {
+      "id": "scidraw-user-archive-2026",
+      "source_type": "用户提供的本地代码归档",
+      "tags": ["code-derived-features", "provenance", "non-executed"],
+      "url": "https://scidraw.msttnote.cn/",
+      "lesson": "650个文件仅做静态特征提取；不执行、不嵌入原代码，状态和不确定匹配必须保留",
+      "consulted_date": "2026-09-04",
+      "status": "static_inventory_complete",
+      "upstream_case_run": false,
+      "license_status": "unknown; abstract grammar only",
+      "code_ref": "scripts/build_scidraw_atlas.py"
+    }
+  ]
+}

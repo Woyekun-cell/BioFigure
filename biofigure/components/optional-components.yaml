@@ -1,0 +1,41 @@
+components:
+  adjusted-p-value: {purpose: multiplicity_aware_result, inputs: [adjusted_p_value, method], hard_constraints: [method_declared], compatible: [DIST-BOX-001, DIST-BAR-RAW-001]}
+  background-note: {purpose: enrichment_universe, inputs: [background_definition], hard_constraints: [background_declared], compatible: [ENR-DOT-001]}
+  centromere-marks-if-sourced: {purpose: sourced_landmark, inputs: [centromere_coordinates], hard_constraints: [source_recorded], compatible: [GEN-CHR-DENS-001]}
+  cluster-divider: {purpose: group_readability, inputs: [cluster_boundaries], hard_constraints: [does_not_imply_test], compatible: [SC-DOT-001]}
+  clustering-tree: {purpose: clustering_structure, inputs: [distance, linkage], hard_constraints: [method_recorded], compatible: [MAT-CORR-001, CHR-HEAT-001]}
+  column-dendrogram: {purpose: sample_clustering, inputs: [distance, linkage], hard_constraints: [method_recorded], compatible: [MAT-EXPR-DENSE-001]}
+  condition-strip: {purpose: compact_condition_identity, inputs: [condition], hard_constraints: [thin_and_legend_keyed], compatible: [SC-DOT-001]}
+  confidence-band: {purpose: uncertainty, inputs: [estimate, interval], hard_constraints: [interval_method_recorded], compatible: [CHR-PROFILE-001]}
+  confidence-ellipse: {purpose: descriptive_group_spread, inputs: [coordinates, group], hard_constraints: [not_presented_as_significance], compatible: [ORD-PCA-001]}
+  confidence-interval: {purpose: uncertainty, inputs: [estimate, interval], hard_constraints: [same_scale_as_estimate], compatible: [MO-FACTOR-001]}
+  coverage-track: {purpose: supporting_signal, inputs: [coordinates, coverage], hard_constraints: [assembly_recorded], compatible: [GEN-SYNTENY-001]}
+  dendrogram: {purpose: clustered_order, inputs: [distance, linkage], hard_constraints: [method_recorded], compatible: [MAT-EXPR-001]}
+  density-layer: {purpose: dense_embedding_readability, inputs: [coordinates], hard_constraints: [points_remain_interpretable], compatible: [SC-UMAP-001]}
+  domain-strip: {purpose: protein_domain_identity, inputs: [domain, coordinates], hard_constraints: [database_and_version_recorded], compatible: [GEN-STRUCT-001]}
+  effect-labels: {purpose: selected_effect_identity, inputs: [feature, effect], hard_constraints: [selection_rule_recorded], compatible: [DIFF-RANK-001]}
+  feature-weights: {purpose: factor_driver_identity, inputs: [feature, weight], hard_constraints: [sign_and_scale_preserved], compatible: [MO-FACTOR-001]}
+  gc-content: {purpose: sequence_composition, inputs: [window, gc_fraction], hard_constraints: [window_declared], compatible: [GEN-CHR-DENS-001]}
+  gene-count-label: {purpose: set_size_context, inputs: [gene_count], hard_constraints: [count_definition_recorded], compatible: [ENR-DOT-001]}
+  gene-model: {purpose: genomic_context, inputs: [exon, intron, strand], hard_constraints: [assembly_recorded], compatible: [CHR-PROFILE-001]}
+  hero-emphasis: {purpose: evidence_hierarchy, inputs: [primary_panel], hard_constraints: [one_primary_message], compatible: [MULTI-EVIDENCE-001]}
+  interval: {purpose: uncertainty, inputs: [estimate, lower, upper], hard_constraints: [interval_method_recorded], compatible: [DIST-BOX-001, DIST-BAR-RAW-001]}
+  local-square-cell-detail: {purpose: inspectable_matrix_detail, inputs: [submatrix], hard_constraints: [square_cells], compatible: [MAT-EXPR-DENSE-001]}
+  module-split: {purpose: module_boundaries, inputs: [module], hard_constraints: [module_rule_recorded], compatible: [MAT-EXPR-DENSE-001]}
+  module-strip: {purpose: gene_module_identity, inputs: [module], hard_constraints: [thin_and_legend_keyed], compatible: [MAT-EXPR-001]}
+  paired-lines: {purpose: paired_design, inputs: [paired_id], hard_constraints: [true_pairing_only], compatible: [DIST-BOX-001]}
+  panel-letter-at-assembly: {purpose: manuscript_panel_identity, inputs: [panel_order], hard_constraints: [added_only_after_single_panel_qc], compatible: [MULTI-EVIDENCE-001]}
+  peak-class-bar: {purpose: region_class_identity, inputs: [peak_class], hard_constraints: [thin_and_legend_keyed], compatible: [CHR-HEAT-001]}
+  postfilter-companion-panel: {purpose: qc_before_after_context, inputs: [prefilter, postfilter], hard_constraints: [same_metric_scale], compatible: [SC-QC-001]}
+  reference-line: {purpose: null_reference, inputs: [null_value], hard_constraints: [scale_appropriate], compatible: [DIFF-RANK-001]}
+  repeat-density: {purpose: repeat_landscape, inputs: [window, repeat_fraction], hard_constraints: [annotation_source_recorded], compatible: [GEN-CHR-DENS-001]}
+  row-annotation: {purpose: region_group_identity, inputs: [region_group], hard_constraints: [same_order_as_matrix], compatible: [CHR-HEAT-001]}
+  sample-level-summary: {purpose: biological_replication_context, inputs: [sample_id, summary], hard_constraints: [cells_not_substituted_for_samples], compatible: [SC-QC-001]}
+  scale-bar: {purpose: coordinate_scale, inputs: [unit, span], hard_constraints: [true_coordinate_scale], compatible: [GEN-STRUCT-001, GEN-SYNTENY-001]}
+  side-bar: {purpose: row_group_identity, inputs: [group], hard_constraints: [thin_and_legend_keyed], compatible: [MAT-EXPR-001]}
+  significance-marks: {purpose: tested_association, inputs: [adjusted_p_value], hard_constraints: [multiplicity_method_recorded], compatible: [MAT-CORR-001]}
+  summit-marker: {purpose: peak_landmark, inputs: [summit], hard_constraints: [summit_method_recorded], compatible: [CHR-PROFILE-001]}
+  support-labels: {purpose: tree_support, inputs: [support_value], hard_constraints: [support_method_recorded], compatible: [GEN-STRUCT-001]}
+  sv-layer: {purpose: structural_variant_relation, inputs: [sv_type, endpoints], hard_constraints: [coordinate_system_recorded], compatible: [GEN-SYNTENY-001]}
+  variance-axis-label: {purpose: pca_axis_information, inputs: [variance_explained], hard_constraints: [derived_from_same_pca], compatible: [ORD-PCA-001]}
+  variance-explained: {purpose: factor_importance, inputs: [factor, variance_explained], hard_constraints: [calculation_recorded], compatible: [MO-FACTOR-001]}

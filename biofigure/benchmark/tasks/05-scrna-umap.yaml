@@ -1,0 +1,7 @@
+task_id: scrna-umap
+scientific_message: label cell populations on a fixed embedding
+input_fixture: synthetic:seed-20260901
+expected_ontology: embedding
+eligible_patterns: [SC-UMAP-001]
+required_critics: [scientific, visual, publication]
+hard_failures: [recomputed_for_separation, cell_as_replicate, rare_group_hidden]

@@ -1,0 +1,32 @@
+schema_version: "1.0"
+kind: pattern-card
+required:
+  - pattern_id
+  - version
+  - domain
+  - scientific_task
+  - message_type
+  - data_contract
+  - applicable_when
+  - not_recommended_when
+  - visual_hierarchy
+  - geometry
+  - encoding
+  - layout
+  - annotation_strategy
+  - legend_strategy
+  - color_semantics
+  - optional_components
+  - avoid
+  - scientific_risks
+  - renderer_options
+  - references
+  - provenance
+  - confidence
+  - validation
+  - status
+status_enum: [candidate, approved, rejected, deprecated]
+confidence_enum: [low, medium, high]
+notes: Pattern cards describe design logic, never a fixed plotting script.
+field_types: {pattern_id: string, version: string, domain: "list[string]", renderer_options: "list[string]", references: "list[string]", provenance: mapping, validation: mapping}
+cross_references: {references: [source-index.json, atlas/top-journal-corpus.yaml], renderer_options: renderer-registry.yaml, paths: patterns/index.yaml}

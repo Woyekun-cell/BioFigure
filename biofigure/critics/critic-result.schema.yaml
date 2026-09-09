@@ -1,0 +1,15 @@
+schema_version: "1.1"
+kind: critic-result
+required: [status, hard_failures, major_issues, minor_issues, scores, inspection, revision_history, next_action]
+status_enum: [PASS, REVISE, FAIL]
+issue_fields: [issue, evidence, proposed_fix]
+notes: Structural output for the critic loop; visual inspection remains evidence-scoped.
+inspection_contract:
+  required_status: evidence_valid
+  evidence_schema: inspection-evidence.schema.yaml
+  artifact_binding: exact_sha256
+  machine_hard_rejects: [artifact_missing, blank_or_near_blank_artifact, artifact_sha256_mismatch]
+  declared_visual_check_is_not_sufficient: true
+score_contract: only critics in critics_run receive a result and explicit evidence basis; no synthetic numeric score is emitted; PASS requires no hard or major issue
+
+critic_result_enum: [PASS, REVISE, FAIL, NOT_ASSESSED]

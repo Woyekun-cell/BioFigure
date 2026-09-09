@@ -1,0 +1,4 @@
+components:
+  outside-legend: {purpose: protect_data_area, inputs: [semantic_dictionary, reserved_bbox], hard_constraints: [no_overlap_with_data, one_color_one_semantic, rendered_bbox_checked], compatible: [all]}
+  shared-legend: {purpose: cross_panel_consistency, inputs: [same_variable_and_limits], hard_constraints: [shared_semantics_only], compatible: [MULTI-EVIDENCE-001]}
+  direct-key: {purpose: reduce_legend_search, inputs: [stable_labels], hard_constraints: [labels_not_colliding, redundant_legend_removed], compatible: [ORD-PCA-001, SC-UMAP-001, GEN-SYNTENY-001]}

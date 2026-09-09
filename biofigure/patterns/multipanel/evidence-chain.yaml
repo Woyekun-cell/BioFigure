@@ -1,0 +1,24 @@
+pattern_id: MULTI-EVIDENCE-001
+version: "1.0"
+domain: [multipanel]
+scientific_task: [integrated-evidence]
+message_type: evidence-chain
+data_contract: {required: [panel_questions, shared_semantics, source_files], optional: [hero_panel], assumptions: [each_panel_qa_complete]}
+applicable_when: {data_profile: {n_panels: 2-8}, message: one_conclusion_multiple_evidence}
+not_recommended_when: [mechanical_result_dump, unreadable_panel_density]
+visual_hierarchy: {primary: hero_panel, secondary: supporting_panels, tertiary: robustness_panel}
+geometry: {primary: independent_panels, secondary: aligned_grid}
+encoding: {x: panel_specific, y: panel_specific, color: shared_condition_dictionary, label: panel_letter_only_at_assembly}
+layout: {aspect_ratio: journal_target, density_strategy: single_panel_first, whitespace_strategy: evidence_rhythm}
+annotation_strategy: [one_question_per_panel, shared_orders_and_units]
+legend_strategy: {compact: true, place: shared_blank_space_or_direct}
+color_semantics: {shared_conditions_only, panel_specific_quantities_separate}
+optional_components: [hero-emphasis, shared-legend, panel-letter-at-assembly]
+avoid: [titles_filling_empty_space, mismatched_scales, squeezed_labels]
+scientific_risks: [panel_semantics_drift, pooled_replicates, causal_overstatement]
+renderer_options: [patchwork, cowplot, matplotlib_gridspec]
+references: [source-index://patchwork, source-index://nature-layout]
+provenance: {created_from: [source-index://patchwork], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

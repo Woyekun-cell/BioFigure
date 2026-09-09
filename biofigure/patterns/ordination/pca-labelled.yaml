@@ -1,0 +1,24 @@
+pattern_id: ORD-PCA-001
+version: "2.0"
+domain: [ordination, bulk, metabolomics, multi-omics]
+scientific_task: [sample-structure]
+message_type: variance-structured-sample-separation
+data_contract: {required: [pc1, pc2, sample_id, group, variance_explained], optional: [batch, confidence_group], assumptions: [same_preprocessing_for_all_samples, variance_from_same_pca]}
+applicable_when: {data_profile: {n_observations: 4-5000, n_groups: 1-30}, message: sample_structure_with_explained_variance}
+not_recommended_when: [variance_explained_missing, coordinates_modified_for_appearance, cell_level_inference_claim]
+visual_hierarchy: {primary: sample_structure, secondary: group_identity, tertiary: sample_labels_or_ellipse}
+geometry: {primary: scatter, secondary: optional_confidence_ellipse}
+encoding: {x: PC1_with_variance_percent, y: PC2_with_variance_percent, color: group, shape: batch_only_if_needed}
+layout: {aspect_ratio: "1", density_strategy: alpha_and_draw_order, whitespace_strategy: external_legend_reserve}
+annotation_strategy: [variance_on_axis_labels, selected_sample_labels_only, biological_n_in_caption]
+legend_strategy: {compact: true, place: outside_plot_or_direct}
+color_semantics: {groups: semantic_dictionary, uncertainty: low_chroma_tint}
+optional_components: [confidence-ellipse, variance-axis-label, direct-labels]
+avoid: [umap_language, inferential_ellipse_claim, legend_inside_dense_data, decorative_title]
+scientific_risks: [batch_as_biology, exploration_as_significance, variance_label_mismatch]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://nature-guide]
+provenance: {created_from: [source-index://nature-guide], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: actual_artifact_required}
+status: candidate

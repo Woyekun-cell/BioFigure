@@ -1,0 +1,4 @@
+components:
+  coordinate-track: {purpose: genomic_position, inputs: [assembly, contig, start, end, unit], hard_constraints: [coordinate_system_declared], compatible: [GEN-STRUCT-001, GEN-CHR-DENS-001, GEN-SYNTENY-001]}
+  relation-ribbon: {purpose: explicit_relationship, inputs: [relation_id, endpoint_a, endpoint_b, relation_type], hard_constraints: [relation_evidence_recorded], compatible: [GEN-SYNTENY-001]}
+  strand-arrow: {purpose: orientation, inputs: [strand], hard_constraints: [coordinate_not_flipped_for_conclusion], compatible: [GEN-STRUCT-001, GEN-SYNTENY-001]}

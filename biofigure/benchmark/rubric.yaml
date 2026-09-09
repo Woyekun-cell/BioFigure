@@ -1,0 +1,12 @@
+schema_version: "1.0"
+dimensions:
+  scientific_correctness: {weight: 25, hard_gate: true}
+  pattern_selection: {weight: 12, hard_gate: false}
+  hierarchy: {weight: 12, hard_gate: false}
+  annotation: {weight: 10, hard_gate: false}
+  composition: {weight: 10, hard_gate: true}
+  density: {weight: 8, hard_gate: false}
+  ai_like_tendency: {weight: 8, direction: lower_is_better}
+  publication_readability: {weight: 8, hard_gate: true}
+  reproducibility: {weight: 7, hard_gate: false}
+  scientific_regression: {weight: 0, hard_gate: true, values: [true, false]}

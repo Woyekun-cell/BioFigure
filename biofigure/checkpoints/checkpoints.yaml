@@ -1,0 +1,32 @@
+schema_version: "1.0"
+kind: biofigure-checkpoint-protocol
+status_enum: [PASS, REVISE, STOP, NOT_RUN]
+sequence_rule: a checkpoint may PASS only when every earlier checkpoint PASSed
+checkpoints:
+  - id: CP0
+    phase: scientific-intent
+    gate_type: conditional_user_stop
+    required_evidence: [scientific_question, figure_task, claim_boundary, unresolved_critical_fields]
+    stop_conditions: [unresolved_critical_scientific_semantics, conflicting_user_requirements, irreversible_interpretive_choice]
+    do_not_stop_for: [cosmetic_preference_only, reversible_layout_choice, renderer_default]
+    fail_action: ask_one_concise_question_then_STOP
+  - id: CP1
+    phase: scientific-contract
+    gate_type: automatic_hard_gate
+    required_evidence: [sample_mapping_checked, replicate_unit, scale_and_transform, statistics_contract, coordinate_contract]
+    fail_action: repair_contract_or_STOP_before_design
+  - id: CP2
+    phase: design-lock
+    gate_type: automatic_hard_gate
+    required_evidence: [selected_pattern, design_spec_validation, renderer_available, layout_slots_reserved]
+    fail_action: revise_spec_before_code
+  - id: CP3
+    phase: rendered-figure-inspection
+    gate_type: automatic_hard_gate
+    required_evidence: [artifact, artifact_sha256, artifact_opened, viewer_method, target_size_checked, detected]
+    fail_action: object_level_fix_and_rerender
+  - id: CP4
+    phase: release
+    gate_type: automatic_hard_gate
+    required_evidence: [critic_status, qa_status, deliverables, simulation_disclosed]
+    fail_action: withhold_PASS_and_return_diagnosis

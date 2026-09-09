@@ -1,0 +1,176 @@
+schema_version: "1.0"
+selection_rule: match data semantics first; palette name never overrides scientific meaning
+runtime_policy: read_only; user colors override library; run actual-figure CVD diagnostics before publication
+sources:
+  ggsci: {url: "https://nanx.me/ggsci/articles/ggsci.html", scope: "journal-inspired, not official journal standards", version: "5.2.0"}
+  colorbrewer: {url: "https://colorbrewer2.org/learnmore/schemes.html", scope: "qualitative, sequential and diverging semantics"}
+  okabe_ito: {url: "https://jfly.uni-koeln.de/color/", scope: "color universal design qualitative palette"}
+  paul_tol: {url: "https://sronpersonalpages.nl/~pault/", scope: "colour-blind-safe qualitative schemes"}
+  scientific_colour_maps: {url: "https://www.fabiocrameri.ch/colourmaps/", scope: "perceptually uniform scientific maps", version: "8.0.1"}
+  viridis: {url: "https://sjmgarnier.github.io/viridis/", scope: "perceptually uniform sequential maps"}
+
+palettes:
+  - id: okabe-ito-8
+    label: Okabe-Ito
+    kind: categorical
+    max_categories: 8
+    cvd_status: source_claimed_safe
+    source: okabe_ito
+    colors: ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000"]
+    recommended_for: [lines, points, compact categorical comparisons]
+  - id: tol-bright-7
+    label: Tol Bright
+    kind: categorical
+    max_categories: 7
+    cvd_status: source_claimed_safe
+    source: paul_tol
+    colors: ["#4477AA", "#EE6677", "#228833", "#CCBB44", "#66CCEE", "#AA3377", "#BBBBBB"]
+    recommended_for: [lines, points, high-contrast groups]
+  - id: tol-muted-9
+    label: Tol Muted
+    kind: categorical
+    max_categories: 9
+    cvd_status: source_claimed_safe
+    source: paul_tol
+    colors: ["#CC6677", "#332288", "#DDCC77", "#117733", "#88CCEE", "#882255", "#44AA99", "#999933", "#AA4499"]
+    recommended_for: [filled marks, multi-group omics]
+  - id: npg-inspired-10
+    label: NPG-inspired
+    kind: categorical
+    max_categories: 10
+    cvd_status: diagnostic_required
+    source: ggsci
+    colors: ["#E64B35", "#4DBBD5", "#00A087", "#3C5488", "#F39B7F", "#8491B4", "#91D1C2", "#DC0000", "#7E6148", "#B09C85"]
+    recommended_for: [general categorical figures]
+  - id: aaas-inspired-10
+    label: AAAS-inspired
+    kind: categorical
+    max_categories: 10
+    cvd_status: diagnostic_required
+    source: ggsci
+    colors: ["#3B4992", "#EE0000", "#008B45", "#631879", "#008280", "#BB0021", "#5F559B", "#A20056", "#808180", "#1B1919"]
+    recommended_for: [high-contrast lines and points]
+  - id: lancet-inspired-9
+    label: Lancet-inspired
+    kind: categorical
+    max_categories: 9
+    cvd_status: diagnostic_required
+    source: ggsci
+    colors: ["#00468B", "#ED0000", "#42B540", "#0099B4", "#925E9F", "#FDAF91", "#AD002A", "#ADB6B6", "#1B1919"]
+    recommended_for: [clinical and treatment groups]
+  - id: nejm-inspired-8
+    label: NEJM-inspired
+    kind: categorical
+    max_categories: 8
+    cvd_status: diagnostic_required
+    source: ggsci
+    colors: ["#BC3C29", "#0072B5", "#E18727", "#20854E", "#7876B1", "#6F99AD", "#FFDC91", "#EE4C97"]
+    recommended_for: [clinical and treatment groups]
+  - id: jama-inspired-7
+    label: JAMA-inspired
+    kind: categorical
+    max_categories: 7
+    cvd_status: diagnostic_required
+    source: ggsci
+    colors: ["#374E55", "#DF8F44", "#00A1D5", "#B24745", "#79AF97", "#6A6599", "#80796B"]
+    recommended_for: [restrained categorical figures]
+  - id: brewer-dark2-8
+    label: Brewer Dark2
+    kind: categorical
+    max_categories: 8
+    cvd_status: diagnostic_required
+    source: colorbrewer
+    colors: ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D", "#666666"]
+    recommended_for: [points, lines, compact legends]
+  - id: biofigure-navy-coral-6
+    label: BioFigure Navy-Coral
+    kind: categorical
+    max_categories: 6
+    cvd_status: diagnostic_required
+    source: biofigure_custom
+    colors: ["#24425F", "#6688A3", "#A8BBC6", "#E7B3A3", "#D57C6A", "#9E3D3D"]
+    recommended_for: [ordered treatments, stress-response figures]
+  - id: biofigure-morandi-8
+    label: BioFigure Morandi
+    kind: categorical
+    max_categories: 8
+    cvd_status: diagnostic_required
+    source: biofigure_custom
+    colors: ["#647C8A", "#91A3A8", "#A7B8A2", "#C5B49D", "#B99C98", "#9C8FA6", "#C2A4B3", "#7F8C83"]
+    recommended_for: [large filled areas, restrained annotations]
+  - id: biofigure-macaron-8
+    label: BioFigure Macaron
+    kind: categorical
+    max_categories: 8
+    cvd_status: diagnostic_required
+    source: biofigure_custom
+    colors: ["#72A8C1", "#91C9B5", "#F1C75B", "#E89A72", "#D97C8B", "#A998C8", "#7FB3A5", "#C7A36A"]
+    recommended_for: [filled bars, annotation tracks]
+  - id: biofigure-marine-stress-6
+    label: Marine Stress
+    kind: categorical
+    max_categories: 6
+    cvd_status: diagnostic_required
+    source: biofigure_custom
+    colors: ["#244C66", "#4B8096", "#88B7BE", "#E1C07A", "#D88462", "#9D3B43"]
+    recommended_for: [aquatic stress gradients, ordered treatments]
+  - id: viridis-10
+    label: Viridis
+    kind: sequential
+    cvd_status: source_claimed_safe
+    source: viridis
+    colors: ["#440154", "#482878", "#3E4A89", "#31688E", "#26828E", "#1F9E89", "#35B779", "#6DCD59", "#B4DE2C", "#FDE725"]
+    recommended_for: [continuous abundance, density]
+  - id: cividis-10
+    label: Cividis
+    kind: sequential
+    cvd_status: source_claimed_safe
+    source: viridis
+    colors: ["#00204D", "#00336F", "#39486B", "#575C6D", "#707173", "#8A8779", "#A69D75", "#C4B56C", "#E4CF5B", "#FFEA46"]
+    recommended_for: [continuous values, print-conscious figures]
+  - id: batlow-10
+    label: Batlow
+    kind: sequential
+    cvd_status: source_claimed_safe
+    source: scientific_colour_maps
+    colors: ["#001959", "#0F3F60", "#1B5961", "#3B6C55", "#687A3D", "#9C892A", "#D29243", "#F8A17B", "#FDB6BB", "#F9CCF9"]
+    recommended_for: [continuous omics and spatial values]
+  - id: brewer-blues-9
+    label: Brewer Blues
+    kind: sequential
+    cvd_status: diagnostic_required
+    source: colorbrewer
+    colors: ["#F7FBFF", "#DEEBF7", "#C6DBEF", "#9ECAE1", "#6BAED6", "#4292C6", "#2171B5", "#08519C", "#08306B"]
+    recommended_for: [nonnegative continuous values]
+  - id: brewer-bugn-9
+    label: Brewer BuGn
+    kind: sequential
+    cvd_status: diagnostic_required
+    source: colorbrewer
+    colors: ["#F7FCFD", "#E5F5F9", "#CCECE6", "#99D8C9", "#66C2A4", "#41AE76", "#238B45", "#006D2C", "#00441B"]
+    recommended_for: [nonnegative continuous values]
+  - id: vik-11
+    label: Vik
+    kind: diverging
+    center_semantics: declared_zero_or_reference
+    cvd_status: source_claimed_safe
+    source: scientific_colour_maps
+    colors: ["#001260", "#01397A", "#116496", "#5596B7", "#A6C9D9", "#EBE5E0", "#E0B89F", "#CC875F", "#B75926", "#862206", "#590007"]
+    recommended_for: [signed effects, centered z-scores]
+  - id: brewer-rdbu-11
+    label: Brewer RdBu
+    kind: diverging
+    center_semantics: declared_zero_or_reference
+    cvd_status: diagnostic_required
+    source: colorbrewer
+    colors: ["#053061", "#2166AC", "#4393C3", "#92C5DE", "#D1E5F0", "#F7F7F7", "#FDDBC7", "#F4A582", "#D6604D", "#B2182B", "#67001F"]
+    recommended_for: [signed effects, correlations]
+  - id: biofigure-navy-white-red-9
+    label: BioFigure Navy-White-Red
+    kind: diverging
+    center_semantics: declared_zero_or_reference
+    cvd_status: diagnostic_required
+    source: biofigure_custom
+    colors: ["#132C47", "#285777", "#4D88A0", "#9CC1C9", "#F7F7F3", "#F3B5A9", "#E47767", "#B63D42", "#761E2A"]
+    recommended_for: [expression heatmaps, correlations]
+

@@ -1,0 +1,24 @@
+pattern_id: CHR-PROFILE-001
+version: "1.0"
+domain: [chromatin, atac, chip, cutandtag]
+scientific_task: [signal-profile, peak-profile]
+message_type: occupancy-profile
+data_contract: {required: [signal_track, peaks, sample_map, genome_build], optional: [gene_model, replicate], assumptions: [coordinate_build_declared]}
+applicable_when: {data_profile: {n_regions: 10-5000, n_samples: 2-30}, message: signal_over_regions}
+not_recommended_when: [missing_bigwig, mismatched_genome, pooled_replicates]
+visual_hierarchy: {primary: signal_shape, secondary: condition, tertiary: region_annotation}
+geometry: {primary: profile, secondary: genomic_track}
+encoding: {x: genomic_position, y: normalized_signal, color: condition, ribbon: uncertainty_if_declared}
+layout: {aspect_ratio: "1.6", density_strategy: fixed_region_order, whitespace_strategy: axis_and_track_gap}
+annotation_strategy: [build_and_region_id, replicate_rule, peak_boundary_if_declared]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {control: navy, stress: brick_red, auxiliary: neutral_gray}
+optional_components: [gene-model, summit-marker, confidence-band]
+avoid: [arbitrary_rescaling, pooled_replicates, unlabelled_normalization]
+scientific_risks: [wrong_build, depth_confounding, peak_calling_as_effect]
+renderer_options: [deepTools, ggplot2, matplotlib]
+references: [source-index://deeptools-profile, source-index://chipseeker]
+provenance: {created_from: [source-index://deeptools-profile], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

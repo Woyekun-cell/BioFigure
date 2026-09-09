@@ -1,0 +1,24 @@
+pattern_id: ENR-DOT-001
+version: "1.0"
+domain: [enrichment]
+scientific_task: [functional-enrichment]
+message_type: ranked-enrichment
+data_contract: {required: [term, ratio, count, p_or_q, background], optional: [gene_set], assumptions: [denominator_declared]}
+applicable_when: {data_profile: {n_features: 5-40}, message: ranked_functional_terms}
+not_recommended_when: [background_unknown, term_count_used_as_effect]
+visual_hierarchy: {primary: term_rank, secondary: enrichment_ratio, tertiary: adjusted_significance}
+geometry: {primary: outlined_bubble_plot, secondary: label_truncation, bubble_outline: thin_near_black}
+encoding: {x: gene_ratio_or_effect, y: ordered_term, size: count, fill: -log10_q, outline: fixed_near_black}
+layout: {aspect_ratio: "1.35", density_strategy: top_n_with_rule, whitespace_strategy: long_labels_reserved}
+annotation_strategy: [record_top_n_rule, retain_term_identity]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {significance: navy_to_warmwhite_to_brickred, size: count_only}
+optional_components: [outlined-bubble, background-note, gene-count-label]
+avoid: [borderless_filled_bubbles, heavy_outline, rainbow_palette, unreported_top_n, term_number_as_effect]
+scientific_risks: [background_mismatch, multi_mapping, ratio_denominator_error]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://clusterprofiler]
+provenance: {created_from: [source-index://clusterprofiler], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

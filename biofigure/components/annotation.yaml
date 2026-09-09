@@ -1,0 +1,4 @@
+components:
+  sample-group-strip: {purpose: condition_identity, inputs: [sample_id, group], hard_constraints: [same_order_as_matrix], compatible: [MAT-EXPR-001, MULTI-EVIDENCE-001]}
+  gene-module-strip: {purpose: module_identity, inputs: [gene, module], hard_constraints: [module_membership_traceable], compatible: [MAT-EXPR-001, SC-DOT-001]}
+  condition-header: {purpose: shared_condition_semantics, inputs: [condition_dictionary], hard_constraints: [one_color_one_meaning], compatible: [SC-DOT-001, MO-FACTOR-001]}

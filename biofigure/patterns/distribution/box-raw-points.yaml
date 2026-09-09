@@ -1,0 +1,24 @@
+pattern_id: DIST-BOX-001
+version: "1.0"
+domain: [distribution]
+scientific_task: [group-distribution]
+message_type: distribution-comparison
+data_contract: {required: [value, group, experimental_unit], optional: [paired_id, batch], assumptions: [biological_n_declared]}
+applicable_when: {data_profile: {n_groups: 2-8}, message: distribution_and_raw_observations}
+not_recommended_when: [pooled_cells_without_sample_summary, n_not_known]
+visual_hierarchy: {primary: raw_observations, secondary: distribution_summary, tertiary: interval_or_test}
+geometry: {primary: boxplot, secondary: jittered_points}
+encoding: {x: group, y: value, color: condition, shape: experimental_unit_if_needed}
+layout: {aspect_ratio: "1.1", density_strategy: raw_points_visible, whitespace_strategy: balanced}
+annotation_strategy: [sample_count, paired_lines_only_when_paired]
+legend_strategy: {compact: true, place: outside_or_direct}
+color_semantics: {control: navy, stress: brick_red, recovery: neutral_gray}
+optional_components: [paired-lines, interval, adjusted-p-value]
+avoid: [mean_only_bar,_hidden_replicates, rainbow_palette]
+scientific_risks: [technical_as_biological_n,pseudoreplication, pairedness_loss]
+renderer_options: [ggplot2, matplotlib, seaborn]
+references: [source-index://small-sample, source-index://nature-guide, atlas://ATLAS-TJ-SV-F1]
+provenance: {created_from: [source-index://small-sample], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

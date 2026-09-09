@@ -1,0 +1,10 @@
+components:
+  outlined-bubble:
+    purpose: separate_size_and_fill_without_losing_small_marks
+    inputs: [size_value, fill_value]
+    hard_constraints: [filled_circle, fixed_near_black_outline, thin_stroke_checked_at_final_size, zero_size_remains_absent]
+    compatible: [SC-DOT-001, ENR-DOT-001]
+    renderer_guidance:
+      ggplot2: {shape: 21, fill: mapped_value, colour: "#1A1A1A", stroke: 0.2-0.35}
+      matplotlib: {marker: o, facecolor: mapped_value, edgecolor: "#1A1A1A", linewidth: 0.3-0.5}
+      scanpy: custom_or_postprocessed_dotplot_required_for_outline

@@ -1,0 +1,24 @@
+pattern_id: DIFF-VOLCANO-001
+version: "1.0"
+domain: [differential]
+scientific_task: [differential-biology]
+message_type: effect-significance
+data_contract: {required: [feature, effect, p_or_q], optional: [label, group], assumptions: [effect_direction_declared]}
+applicable_when: {data_profile: {n_features: "100+"}, thresholds: explicit, message: effect_and_significance}
+not_recommended_when: [no_effect_measure, no_statistical_source]
+visual_hierarchy: {primary: effect_and_significance, secondary: selected_labels, tertiary: threshold_guides}
+geometry: {primary: scatter, secondary: threshold_lines}
+encoding: {x: effect, y: -log10_q_or_p, color: direction_or_status, label: selected_features}
+layout: {aspect_ratio: "1.15", density_strategy: transparent_background_points, whitespace_strategy: restrained}
+annotation_strategy: [label_predeclared_features, repel_without_changing_data]
+legend_strategy: {compact: true, place: outside_plot_if_needed}
+color_semantics: {up: brick_red, down: navy, neutral: gray, red_green_exclusive: false}
+optional_components: [threshold-layer, selected-labels]
+avoid: [rainbow_palette, label_every_point, decorative_title]
+scientific_risks: [zero_p_truncation, q_vs_p_confusion, label_selection_bias]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://deseq2, source-index://nature-guide]
+provenance: {created_from: [source-index://nature-guide], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

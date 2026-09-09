@@ -1,0 +1,4 @@
+components:
+  threshold-layer: {purpose: declared_cutoff, inputs: [threshold, scale], hard_constraints: [threshold_source_recorded], compatible: [DIFF-VOLCANO-001, ENR-DOT-001]}
+  interval-layer: {purpose: uncertainty, inputs: [estimate, interval], hard_constraints: [same_scale_as_effect], compatible: [DIFF-RANK-001, DIST-BOX-001, MO-FACTOR-001]}
+  model-note: {purpose: model_transparency, inputs: [model, covariates, n], hard_constraints: [no_causal_language_without_design], compatible: [MO-FACTOR-001, MAT-CORR-001]}

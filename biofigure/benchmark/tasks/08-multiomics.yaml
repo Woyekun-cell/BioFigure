@@ -1,0 +1,7 @@
+task_id: multiomics
+scientific_message: relate paired RNA and metabolite factors descriptively
+input_fixture: synthetic:seed-20260901
+expected_ontology: multi-omics
+eligible_patterns: [MO-FACTOR-001]
+required_critics: [scientific, visual, publication, anti-ai]
+hard_failures: [unpaired_correlation, factor_as_mechanism, missing_fdr]

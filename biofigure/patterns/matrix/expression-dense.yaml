@@ -1,0 +1,24 @@
+pattern_id: MAT-EXPR-DENSE-001
+version: "1.0"
+domain: [matrix, bulk, metabolomics, multi-omics]
+scientific_task: [expression-pattern, dense-expression-pattern]
+message_type: clustered-pattern
+data_contract: {required: [feature, sample, value, sample_annotation], optional: [module], assumptions: [scale_declared, full_row_count_recorded]}
+applicable_when: {data_profile: {matrix.n_rows: "201+", matrix.n_columns: "4-200"}, density: dense, message: shared_expression_pattern}
+not_recommended_when: [scale_unknown, sample_mismatch, full_row_count_unknown]
+visual_hierarchy: {primary: dense_matrix_pattern, secondary: sample_groups, tertiary: modules_and_selected_rows}
+geometry: {primary: rasterized_body, secondary: vector_annotation_strips}
+encoding: {x: sample, y: all_features, fill: transformed_value, split: declared_module_or_cluster}
+layout: {aspect_ratio: data_driven, density_strategy: dense_raster_overview, whitespace_strategy: fixed_annotation_and_legend_bboxes}
+annotation_strategy: [sample_group_strip, module_strip, sparse_row_labels_by_rule]
+legend_strategy: {compact: true, place: outside_matrix, duplicate_group_legend: false}
+color_semantics: {continuous: parameterized, center: declared_zero_or_reference, na: explicit_neutral, unique_semantics: true}
+optional_components: [column-dendrogram, module-split, local-square-cell-detail]
+avoid: [silent_row_scaling, per_cell_borders_at_final_size, all_row_labels, duplicate_legends, arbitrary_row_km]
+scientific_risks: [scale_confusion, missing_as_zero, order_changed_without_record, hidden_row_loss]
+renderer_options: [ComplexHeatmap, matplotlib]
+references: [source-index://complexheatmap, source-index://nature-layout]
+provenance: {created_from: [source-index://complexheatmap], reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01}
+confidence: high
+validation: {scientific: candidate, visual: representative_run, benchmark: pending}
+status: candidate

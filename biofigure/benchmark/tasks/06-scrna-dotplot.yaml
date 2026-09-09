@@ -1,0 +1,7 @@
+task_id: scrna-dotplot
+scientific_message: compare marker programs across cell types
+input_fixture: synthetic:seed-20260901
+expected_ontology: single-cell
+eligible_patterns: [SC-DOT-001]
+required_critics: [scientific, visual, publication, anti-ai]
+hard_failures: [pct_undefined, pooled_cells, absolute_scale_claim]

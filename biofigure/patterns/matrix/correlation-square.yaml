@@ -1,0 +1,24 @@
+pattern_id: MAT-CORR-001
+version: "1.0"
+domain: [matrix, multi-omics]
+scientific_task: [matrix-relationship]
+message_type: pairwise-association
+data_contract: {required: [variable_a, variable_b, association], optional: [n, p, q], assumptions: [method_and_pairing_declared]}
+applicable_when: {data_profile: {n_features: 4-60}, message: symmetric_relationship_structure}
+not_recommended_when: [unpaired_modalities, n_below_method_requirement]
+visual_hierarchy: {primary: association_pattern, secondary: variable_order, tertiary: q_or_n_annotation}
+geometry: {primary: square_cell_matrix, secondary: upper_triangle_or_cross_matrix, cell_contract: fixed_physical_side}
+encoding: {x: variable, y: variable, fill: association, label: optional_q_or_n}
+layout: {aspect_ratio: cell_count_driven, density_strategy: triangular_if_dense, whitespace_strategy: matrix_centered, cell_tolerance: "<=1%"}
+annotation_strategy: [common_order, missing_as_na]
+legend_strategy: {compact: true, place: outside_matrix}
+color_semantics: {negative: multi_step_navy_cyan, zero: white, positive: multi_step_coral_red, control_points: 5_or_more, user_palette_override: allowed}
+optional_components: [significance-marks, clustering-tree]
+avoid: [na_as_zero, causal_arrow, independent_color_scales]
+scientific_risks: [confounding, low_pairwise_n, pearson_nonlinearity]
+renderer_options: [ComplexHeatmap, ggplot2, matplotlib]
+references: [source-index://colorspace, atlas://ATLAS-TJ-HCL-F4, atlas://ATLAS-TJ-OMICVERSE-F6]
+provenance: {created_from: [source-index://multiassay], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

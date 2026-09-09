@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+maintenance/
+reproductions/
+00_全局控制台.md
+01_全局复利与踩坑日志.md
+docs/assets/gallery/sessionInfo-*.txt

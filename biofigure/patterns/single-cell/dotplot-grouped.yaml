@@ -1,0 +1,24 @@
+pattern_id: SC-DOT-001
+version: "1.0"
+domain: [single-cell]
+scientific_task: [marker-expression-across-cell-types]
+message_type: comparative-pattern
+data_contract: {required: [gene, cell_type, pct_expression, average_expression], optional: [condition, gene_module], assumptions: [assay_layer_declared]}
+applicable_when: {data_profile: {n_features: 5-50, n_groups: 3-20}, message: marker_programs}
+not_recommended_when: [hundreds_of_genes_without_grouping, absolute_comparison_after_row_scaling]
+visual_hierarchy: {primary: marker_specificity, secondary: expression_intensity, tertiary: module_or_condition}
+geometry: {primary: outlined_bubble_matrix, secondary: module_strip, bubble_outline: thin_near_black}
+encoding: {x: cell_type, y: gene, size: pct_expression, fill: average_expression, outline: fixed_near_black}
+layout: {aspect_ratio: data_driven, density_strategy: compact, whitespace_strategy: labels_first}
+annotation_strategy: [optional_gene_module_strip, optional_condition_header]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {expression: sequential, condition: semantic_dictionary, cell_count_not_color: true}
+optional_components: [outlined-bubble, gene-module-strip, condition-strip, cluster-divider]
+avoid: [borderless_filled_bubbles, oversized_dots, heavy_outline, rainbow_palette, repeated_legends, cell_as_biological_replicate]
+scientific_risks: [pct_threshold_undefined, mean_expression_scale_confusion, pooled_cells]
+renderer_options: [ggplot2, Seurat_plus_custom_ggplot, scanpy]
+references: [source-index://signac, source-index://scanpy]
+provenance: {created_from: [source-index://signac], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

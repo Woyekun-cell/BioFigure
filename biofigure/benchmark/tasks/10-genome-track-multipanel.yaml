@@ -1,0 +1,7 @@
+task_id: genome-track-multipanel
+scientific_message: combine coordinate-faithful track evidence into a figure
+input_fixture: synthetic:genome-track-seed-20260901
+expected_ontology: integrated-evidence
+eligible_patterns: [GEN-SYNTENY-001, MULTI-EVIDENCE-001]
+required_critics: [scientific, visual, publication, anti-ai]
+hard_failures: [coordinate_stretching, panel_semantics_drift, cropped_scale_bar]

@@ -1,0 +1,39 @@
+figure_task: marker-expression-across-cell-types
+scientific_message: selected markers define distinct cell populations
+data_contract_summary: {unit: cell, biological_unit: sample, assay_layer: normalized_data, sample_n: declared_in_metadata}
+biology_contract:
+  primary_domain: single-cell-spatial
+  entities: [gene, cell, cell_type, sample]
+  relationships: [marker_expression, cell_type_membership]
+  experimental_unit: biological_sample
+  statistical_unit: sample
+  replicate_unit: biological_sample
+  evidence_level: discovery
+  claim_boundary: descriptive_marker_specificity_not_independent_cell_replication
+role_contract: {primary_role: discovery, secondary_roles: [comparison]}
+backend_lock: {backend: R, lock_id: marker-dotplot-r-v1, locked: true, preview_export_qa_same_backend: true}
+deliverable_contract: {target: editable-vector, required_formats: [svg, pdf, png]}
+integrity_contract: {source_data_preserved: true, exclusions_declared: true, uncertainty_declared: true}
+candidate_patterns: [SC-DOT-001, MAT-EXPR-001]
+selected_pattern: SC-DOT-001
+selection_reason: moderate_gene_count_and_multiple_cell_types
+reference_evidence:
+  retrieval_query: {domain: single-cell, task: marker-expression-across-cell-types, pattern: SC-DOT-001}
+  selected_atlas_ids: [ATLAS-TJ-HCL-F2]
+  observed_principles: [orthogonal evidence types, repeated embedding limits, annotation strips attached to matrices]
+  transfer_decisions: [pair discovery and validation evidence, keep matrix annotations flush, gray context cells behind highlights]
+  rejected_elements: [very long tissue legend in narrow output, excessive categorical hues when direct grouping is possible, title repetition]
+  evidence_status: source-and-visual-reviewed
+visual_hierarchy: {primary: marker_specificity, secondary: expression_intensity, tertiary: condition_strip}
+encoding: {x: cell_type, y: gene, size: pct_expression, fill: average_expression, outline: fixed_near_black}
+annotation: {gene_module_strip: true, condition_header: optional}
+mark_component: {name: outlined-bubble, shape: 21, outline: "#1A1A1A", stroke: 0.28}
+legend: {place: outside_plot, shared: false}
+palette_semantics: {continuous_expression: sequential, condition: semantic_dictionary}
+renderer: {language: R, backend: ggplot2, packages: [ggplot2, ggrepel]}
+output_size: {width_mm: 170, height_mm: 120, formats: [pdf, svg, png]}
+layout_contract: {canvas: standalone, data_bbox: reserved, annotation_bbox: top_strip, legend_bbox: outside_right, label_reserve: longest_gene_and_celltype, collision_policy: fail_and_redraw, text_extent_method: final_size_device_metrics, preflight_collision_check: required_before_first_render, coordinate_policy: computed_from_reserved_bboxes_not_guessed_absolute_coordinates}
+font_contract: {family: Helvetica, resolved_font_file: runtime_systemfonts_or_backend_equivalent_path, fallback_policy: verified_Arial_only, warning_policy: fail, all_layers_inherit_policy: fail_if_any_layer_unverified, rendered_face_check: png_visual_plus_svg_pdf_metadata}
+background_contract: {canvas: "#FFFFFF", panel: "#FFFFFF", export: "#FFFFFF"}
+inspection_plan: {open_png: true, target_size_check: true, bbox_check: true, font_face_check: true}
+critic_targets: {scientific: required, visual: required, publication: required, anti_ai: required}

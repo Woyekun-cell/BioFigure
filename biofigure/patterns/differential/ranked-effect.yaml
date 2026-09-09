@@ -1,0 +1,24 @@
+pattern_id: DIFF-RANK-001
+version: "1.0"
+domain: [differential]
+scientific_task: [ranked-features]
+message_type: effect-ranking
+data_contract: {required: [feature, effect], optional: [interval, q], assumptions: [ranking_rule_declared]}
+applicable_when: {data_profile: {n_features: 5-40}, message: ordered_effects}
+not_recommended_when: [ranking_rule_missing, interval_not_comparable]
+visual_hierarchy: {primary: ordered_effect, secondary: uncertainty, tertiary: q_annotation}
+geometry: {primary: lollipop, secondary: interval}
+encoding: {x: effect, y: feature_order, color: sign, line: confidence_interval}
+layout: {aspect_ratio: "1.35", density_strategy: one_row_per_feature, whitespace_strategy: label_first}
+annotation_strategy: [direct_feature_labels]
+legend_strategy: {compact: true, place: direct_or_outside}
+color_semantics: {positive: brick_red, negative: navy, uncertainty: gray}
+optional_components: [effect-labels, reference-line]
+avoid: [unordered_bars, color_without_direction, crowded_labels]
+scientific_risks: [selection_after_seeing_plot, effect_scale_mixing]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://deseq2]
+provenance: {created_from: [source-index://nature-guide], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

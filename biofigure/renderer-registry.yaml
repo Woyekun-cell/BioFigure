@@ -1,0 +1,22 @@
+schema_version: "3.0"
+backend_policy: {lock_before_design_spec: true, preview_export_qa_same_backend: true, backend_change_invalidates_evidence: true, preferred_default: R}
+input_only_tools: [Fiji, QuPath, ImageJ, IGV, UCSC_Genome_Browser, deepTools]
+renderers:
+  ggplot2: {language: R, preference: primary_for_general_statistics, strengths: [scatter, distribution, annotation], limitations: [complex-genome-coordinates]}
+  ComplexHeatmap: {language: R, preference: primary_for_matrix, strengths: [matrix, annotations, physical-cell-sizing, dense-raster-body], limitations: [general-scatter]}
+  ggtree: {language: R, strengths: [tree, tree-annotation], limitations: [dense-track-layout]}
+  gggenomes: {language: R, strengths: [genome-tracks, synteny], limitations: [generic-statistics]}
+  circlize: {language: R, strengths: [circular-coordinates, links], limitations: [small-label-density]}
+  matplotlib: {language: Python, preference: compatibility_or_custom_layout, strengths: [custom-layout, vector-export], limitations: [domain-specific-annotations, silent-font-fallback]}
+  scanpy: {language: Python, preference: python_for_scanpy_native_objects, strengths: [single-cell, embedding, dotplot], limitations: [publication-layout-without-customization]}
+  pyGenomeTracks: {language: Python, strengths: [genomic-tracks, coordinates], limitations: [general-multivariate-layout]}
+  pyGenomeViz: {language: Python, strengths: [genome-similarity, links], limitations: [statistical-plots]}
+  seaborn: {language: Python, strengths: [distribution, matrix], limitations: [domain-specific-annotations]}
+  Seurat_plus_custom_ggplot: {language: R, strengths: [single-cell, custom-layout], limitations: [requires-Seurat-object]}
+  patchwork: {language: R, strengths: [panel-assembly, alignment], limitations: [not-a-statistical-layer]}
+  cowplot: {language: R, strengths: [panel-assembly, alignment], limitations: [not-a-domain-renderer]}
+  matplotlib_gridspec: {language: Python, strengths: [panel-assembly, alignment], limitations: [manual-semantic-checks]}
+  deepTools: {language: CLI, strengths: [ATAC-ChIP-profiles, signal-heatmap], limitations: [input_or_specialized_track_renderer_requires_final_backend_QA]}
+  grid: {language: R, strengths: [schematic, image-plate, custom-grob], limitations: [manual-semantics]}
+  magick: {language: R, strengths: [image-plate, channel-composition], limitations: [not-statistical-analysis]}
+  Pillow_matplotlib: {language: Python, strengths: [image-plate, channel-composition], limitations: [manual-layout]}

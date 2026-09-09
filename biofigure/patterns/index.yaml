@@ -1,0 +1,21 @@
+schema_version: "1.0"
+patterns:
+  - {pattern_id: DIFF-VOLCANO-001, path: differential/volcano-restrained.yaml, domain: differential, task: differential-biology, message_type: effect-significance, tags: [volcano, q-value, labels]}
+  - {pattern_id: DIFF-RANK-001, path: differential/ranked-effect.yaml, domain: differential, task: ranked-features, message_type: effect-ranking, tags: [ranking, lollipop, effect]}
+  - {pattern_id: DIST-BOX-001, path: distribution/box-raw-points.yaml, domain: distribution, task: group-distribution, message_type: distribution-comparison, tags: [boxplot, raw-points, replicate]}
+  - {pattern_id: DIST-BAR-RAW-001, path: distribution/bar-raw-points.yaml, domain: distribution, task: group-distribution, message_type: summary-with-replicates, tags: [bar, raw-points, SD, planned-contrast]}
+  - {pattern_id: MAT-EXPR-001, path: matrix/expression-annotated.yaml, domain: matrix, task: expression-pattern, message_type: clustered-pattern, tags: [heatmap, expression, annotation]}
+  - {pattern_id: MAT-EXPR-DENSE-001, path: matrix/expression-dense.yaml, domain: matrix, task: expression-pattern, message_type: clustered-pattern, tags: [heatmap, expression, dense, raster, annotation]}
+  - {pattern_id: MAT-CORR-001, path: matrix/correlation-square.yaml, domain: matrix, task: matrix-relationship, message_type: pairwise-association, tags: [heatmap, correlation, square]}
+  - {pattern_id: ORD-PCA-001, path: ordination/pca-labelled.yaml, domain: ordination, task: sample-structure, message_type: variance-structured-sample-separation, tags: [pca, ordination, variance]}
+  - {pattern_id: SC-UMAP-001, path: single-cell/umap-labelled.yaml, domain: single-cell, task: cell-embedding-structure, message_type: neighborhood-embedding-structure, tags: [umap, embedding, single-cell]}
+  - {pattern_id: SC-DOT-001, path: single-cell/dotplot-grouped.yaml, domain: single-cell, task: marker-expression-across-cell-types, message_type: comparative-pattern, tags: [dotplot, markers, cell-type]}
+  - {pattern_id: SC-QC-001, path: single-cell/qc-distribution.yaml, domain: single-cell, task: cell-quality-control, message_type: quality-distribution, tags: [single-cell, QC, violin, threshold]}
+  - {pattern_id: CHR-PROFILE-001, path: chromatin/signal-profile.yaml, domain: chromatin, task: signal-profile, message_type: occupancy-profile, tags: [ATAC, ChIP, bigWig, profile]}
+  - {pattern_id: CHR-HEAT-001, path: chromatin/signal-heatmap.yaml, domain: chromatin, task: signal-heatmap, message_type: region-by-sample-pattern, tags: [ATAC, ChIP, heatmap, deepTools]}
+  - {pattern_id: ENR-DOT-001, path: enrichment/dotplot-restrained.yaml, domain: enrichment, task: functional-enrichment, message_type: ranked-enrichment, tags: [enrichment, dotplot, gene-ratio]}
+  - {pattern_id: MO-FACTOR-001, path: multiomics/factor-association.yaml, domain: multi-omics, task: cross-omics-factor-association, message_type: paired-association, tags: [multiomics, factor, association]}
+  - {pattern_id: GEN-STRUCT-001, path: genome/gene-structure-phylogeny.yaml, domain: comparative-genomics, task: gene-structure-and-phylogeny, message_type: coordinate-and-tree, tags: [gene-structure, phylogeny, domains]}
+  - {pattern_id: GEN-CHR-DENS-001, path: genome/chromosome-density.yaml, domain: comparative-genomics, task: chromosome-gene-density, message_type: coordinate-density, tags: [chromosome, gene-density, assembly, track]}
+  - {pattern_id: GEN-SYNTENY-001, path: genome/synteny-track.yaml, domain: comparative-genomics, task: synteny-and-genome-track, message_type: coordinate-relationship, tags: [synteny, tracks, links]}
+  - {pattern_id: MULTI-EVIDENCE-001, path: multipanel/evidence-chain.yaml, domain: multipanel, task: integrated-evidence, message_type: evidence-chain, tags: [multipanel, hero, validation]}

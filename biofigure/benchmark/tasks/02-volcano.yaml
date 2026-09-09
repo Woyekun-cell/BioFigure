@@ -1,0 +1,7 @@
+task_id: volcano
+scientific_message: show effect and adjusted significance
+input_fixture: synthetic:seed-20260901
+expected_ontology: differential-biology
+eligible_patterns: [DIFF-VOLCANO-001]
+required_critics: [scientific, visual, publication, anti-ai]
+hard_failures: [p_q_confusion, unreported_zero_p_truncation]

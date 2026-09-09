@@ -1,0 +1,24 @@
+pattern_id: CHR-HEAT-001
+version: "1.0"
+domain: [chromatin, atac, chip, cutandtag, matrix]
+scientific_task: [signal-heatmap, peak-centered-signal]
+message_type: region-by-sample-pattern
+data_contract: {required: [signal_matrix, region_ids, sample_map, genome_build], optional: [annotation, clustering], assumptions: [normalization_and_order_declared]}
+applicable_when: {data_profile: {n_regions: 20-10000, n_samples: 2-60}, message: signal_pattern_and_grouping}
+not_recommended_when: [missing_region_ids, mismatched_genome, unsupervised_reordering_only]
+visual_hierarchy: {primary: region_signal_pattern, secondary: sample_group, tertiary: region_annotation}
+geometry: {primary: square_cell_heatmap, secondary: annotation_strip}
+encoding: {x: sample_or_condition, y: region_order, fill: normalized_signal, edge: thin_white_or_black}
+layout: {aspect_ratio: data_driven, density_strategy: preserve_square_cells, whitespace_strategy: annotation_and_legend_reserved}
+annotation_strategy: [region_id_or_class, sample_group_strip, fixed_order_rule]
+legend_strategy: {compact: true, place: outside_matrix}
+color_semantics: {signal: sequential_or_declared_diverging, missing: explicit_neutral, group: semantic_dictionary}
+optional_components: [row-annotation, peak-class-bar, clustering-tree]
+avoid: [silent_row_scaling, missing_as_zero, duplicated_group_legends]
+scientific_risks: [normalization_confusion, region_reordering, batch_signal]
+renderer_options: [deepTools, ComplexHeatmap, matplotlib]
+references: [source-index://deeptools, source-index://complexheatmap]
+provenance: {created_from: [source-index://deeptools], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

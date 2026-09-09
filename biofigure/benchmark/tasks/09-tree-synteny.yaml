@@ -1,0 +1,7 @@
+task_id: tree-synteny
+scientific_message: align gene structures with phylogenetic relationships
+input_fixture: synthetic:gene-structure-synteny-seed-20260901
+expected_ontology: comparative-genomics
+eligible_patterns: [GEN-STRUCT-001, GEN-SYNTENY-001]
+required_critics: [scientific, visual, publication]
+hard_failures: [mixed_coordinate_system, unsupported_relation, duplicate_tip_id]

@@ -1,0 +1,183 @@
+{
+  "skill": "biofigure",
+  "purpose": "Empirical figure and failure-case evaluation; rendered evidence required",
+  "data_policy": "Use synthetic data or openly available data only; delete generated test data after evaluation.",
+  "prompts": [
+    {
+      "id": "bulk_multiomics_heatmap",
+      "prompt": "为银鲳胁迫下 bulk RNA-seq 与代谢组的模拟数据绘制一张独立发表级热图。要求每个单元格物理上为正方形，单元格有细白描边，样本按处理和时间排序，显示清楚的样本注释；使用经典海军蓝—暖白—红色发散色阶；不添加无意义的大标题、图形编号或多余图例；输出可编辑 SVG/PDF 和 PNG，并报告变换、中心化、缺失值、样本单位和导出尺寸。",
+      "expected": [
+        "square heatmap cells",
+        "thin cell borders",
+        "standalone output",
+        "navy-white-red diverging palette",
+        "provenance and QA"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "single_cell_umap",
+      "prompt": "为四个银鲳单细胞群体生成一张独立 UMAP/散点图，使用模拟 Seurat/AnnData 风格数据。要求固定嵌入坐标后再绘图，控制点过绘，保留稀有群体，图例与绘图区分离；颜色使用海军蓝、砖红和中性灰的语义映射；不把细胞当作独立生物学重复，不添加无意义标题；输出 SVG/PDF/PNG 并做可读性和导出 QA。",
+      "expected": [
+        "fixed embedding",
+        "overplotting and rare-group handling",
+        "legend separation",
+        "biological replicate boundary",
+        "editable export"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "comparative_genomics_multiomics",
+      "prompt": "针对银鲳胁迫研究，设计并运行一组可拆分的比较基因组学与多组学关系图：一张基因结构/同源关系图，以及一张 RNA 因子分数—代谢物关系图。每个图必须单独生成，便于后续 Illustrator 手动拼版；用 R 或 Python 完成，明确坐标、统计边界、颜色语义、物种和基因组版本；不把相关性写成因果，不隐藏过滤或缺失值处理；输出 SVG/PDF/PNG 及机器 QA 报告。",
+      "expected": [
+        "separate standalone plots",
+        "comparative-genomics coordinate fidelity",
+        "multiomics statistical boundary",
+        "R/Python reproducibility",
+        "machine QA"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "chromatin_atac_chip",
+      "prompt": "使用公开 ENCODE K562 的 ATAC-seq 与 H3K27ac ChIP-seq peak 文件，分别绘制峰宽分布、信号分布、信号排名和染色体定位图，并给出一个并列比较面板。要求明确输入是已调用 peak 而非 FASTQ/BAM，不虚构生物学重复或差异峰；两种 assay 的颜色语义一致但可区分，图例外置，长染色体标签不能压住边框；输出可复现代码、PNG 和机器/实际视检 QA。",
+      "expected": [
+        "peak-only boundary",
+        "ATAC and ChIP panels",
+        "signal and width distributions",
+        "chromosome localization",
+        "visual QA"
+      ],
+      "data_source": "open_ENCODE_fixture"
+    },
+    {
+      "id": "typography_scale_fit",
+      "prompt": "绘制一个三面板基因组汇总柱状图：每个面板只有两个物种，但物种名、指标标题和柱顶数值较长。请让文字与面板尺寸联动，测量或显式预算文字包围盒、边距和标题条高度；避免标题大于数据区、柱顶标注贴边、长标签溢出或使用 clip=off 掩盖问题。输出 PNG、可复现代码和 QA，说明字号、换行/缩写、留白及最终检查结果。",
+      "expected": [
+        "text-to-panel sizing",
+        "bbox or margin budget",
+        "long-label handling",
+        "no clipping",
+        "actual PNG inspection"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "gff_sv_structure",
+      "prompt": "使用模拟 GFF3 与结构变异区间绘制基因结构和 SV 证据图。声明组装版本、坐标基准、链方向与过滤；不得把缺失记录补成事件。锁定 R 后完成预览、导出和 QA。",
+      "expected": [
+        "coordinate fidelity",
+        "strand-aware gene structure",
+        "SV filtering",
+        "genome critic"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "phylogeny_domains",
+      "prompt": "绘制系统树与蛋白结构域对齐图；树叶和结构域必须一一对应，报告枝长和支持度含义，禁止为缺失结构域补造注释。",
+      "expected": [
+        "tip-domain alignment",
+        "support semantics",
+        "ID mapping"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "microscopy_plate",
+      "prompt": "制作显微图像板和独立样本汇总定量；保留曝光记录、元数据比例尺、代表图规则和生物学重复边界，不把视野当独立重复。",
+      "expected": [
+        "scale-bar provenance",
+        "consistent processing",
+        "field hierarchy",
+        "imaging critic"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "ml_evaluation_suite",
+      "prompt": "对模拟生物分类器绘制 ROC、PR、校准、混淆矩阵和特征重要性；锁定测试集，声明阳性类、阈值、置信区间和数据泄漏检查，不把 SHAP 写成因果。",
+      "expected": [
+        "split integrity",
+        "ROC and PR",
+        "calibration",
+        "ML critic"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "mechanism_no_numbers",
+      "prompt": "用户只提供实体和假说关系时制作机制示意图。必须区分直接证据、文献支持和推断；不得补造倍数、P 值、浓度、时间趋势或已验证机制。",
+      "expected": [
+        "evidence-tier edges",
+        "no fabricated quantitative result",
+        "mechanism critic"
+      ],
+      "data_source": "user_semantics_only"
+    },
+    {
+      "id": "png_only_delivery",
+      "prompt": "生成一张单独的快速 PNG 预览；不要额外保留 SVG、PDF、TIFF 或模拟数据。仍需实际打开 PNG 并完成重叠、裁切、字体和白底检查。",
+      "expected": [
+        "PNG only",
+        "actual inspection",
+        "no extra export"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "spatial_transcriptomics",
+      "prompt": "绘制空间转录组组织图、spot 聚类与目标基因表达；保留组织坐标和图像变换记录，声明 spot 与样本层级，图例不得遮挡组织。",
+      "expected": [
+        "coordinate fidelity",
+        "sample-unit boundary",
+        "external legends"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "asymmetric_main_figure",
+      "prompt": "设计含显微图、定量图、热图和机制摘要的非对称论文主图。各 panel 先独立通过科学与视觉检查，再按证据链拼版；共享图例、标签和留白不得覆盖数据。",
+      "expected": [
+        "hero hierarchy",
+        "panel-level QA",
+        "shared legend budget",
+        "evidence chain"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "text_injection_first_render",
+      "prompt": "用R画有长组名和统计注释的单图，Arial字体；不要总标题、编号、脚注。从批准标签建文字清单，故意混入serif注释和Publication-ready标题时必须拒绝，修正后实际出图。",
+      "expected": [
+        "explicit layer font",
+        "unapproved text rejected",
+        "actual artifact inspection"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "reference_quality_transfer",
+      "prompt": "从用户SciDraw案例检索气泡热图；核对图片与标题是否对应，依据可见参考迁移密度、细描边、图例层次与留白。模拟20个基因4组，换配色但保持语义；与参考六项对照，只有机器通过不得称视觉通过。",
+      "expected": [
+        "reference actually viewed",
+        "candidate mismatch rejected",
+        "six design dimensions compared",
+        "black bubble outlines"
+      ],
+      "data_source": "synthetic"
+    },
+    {
+      "id": "complexheatmap_font_device",
+      "prompt": "用ComplexHeatmap绘制20行20列分组热图，字体Arial，正方格2.5mm。测试其内部临时PDF的字体测量，按文本宽度选择列名方向，不准静默替代Arial或吞警告。",
+      "expected": [
+        "exact font metrics",
+        "column-label pitch measured",
+        "square cells",
+        "no swallowed warnings"
+      ],
+      "data_source": "synthetic"
+    }
+  ]
+}

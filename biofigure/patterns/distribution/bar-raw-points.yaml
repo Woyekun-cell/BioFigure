@@ -1,0 +1,24 @@
+pattern_id: DIST-BAR-RAW-001
+version: "1.0"
+domain: [distribution]
+scientific_task: [group-distribution]
+message_type: summary-with-replicates
+data_contract: {required: [value, group, experimental_unit], optional: [gene, paired_id, batch], assumptions: [biological_n_declared, summary_statistic_declared]}
+applicable_when: {data_profile: {n_groups: 2-8}, message: user_requests_bar_or_mean_comparison_with_raw_replicates}
+not_recommended_when: [pooled_cells_without_sample_summary, n_not_known, distribution_shape_is_primary_claim]
+visual_hierarchy: {primary: raw_observations, secondary: mean_and_uncertainty, tertiary: planned_contrast}
+geometry: {primary: narrow_grouped_bars, secondary: outlined_jittered_points, uncertainty: error_bars}
+encoding: {x: biological_entity_or_group, y: value, fill: condition, outline: near_black}
+layout: {aspect_ratio: data_driven, density_strategy: preserve_point_visibility, whitespace_strategy: reserve_statistics_and_external_legend}
+annotation_strategy: [sample_count, exact_test_in_companion_table, compact_adjusted_significance_only]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {condition: semantic_dictionary, outline: near_black, background: pure_white}
+optional_components: [interval, adjusted-p-value]
+avoid: [mean_only_bar, hidden_replicates, capless_error_bars, significance_bracket_wall, decorative_title]
+scientific_risks: [technical_as_biological_n, wrong_error_definition, unplanned_multiple_testing, pairedness_loss]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://nature-guide, atlas://ATLAS-TJ-SV-F1]
+provenance: {created_from: [atlas://ATLAS-TJ-SV-F1, validated_six_gene_bar_contract], reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-04}
+confidence: medium
+validation: {scientific: contract-tested, visual: representative-run, benchmark: local-synthetic}
+status: candidate

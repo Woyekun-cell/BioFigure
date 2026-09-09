@@ -1,0 +1,5 @@
+schema_version: "1.0"
+kind: biofigure-checkpoint-ledger
+required: [schema_version, artifact_id, mode, checkpoints]
+checkpoint_required: [id, status, evidence, failures, next_action]
+notes: PASS is evidence-bound; REVISE or STOP blocks all later checkpoints.

@@ -1,0 +1,8 @@
+schema_version: "1.0"
+required: [primary_domain, primary_role, backend, deliverable]
+optional: [secondary_domains, secondary_roles, reference_sources]
+backend: [R, Python]
+deliverable: [quick-png, paper-composite, editable-vector, tiff-submission]
+reference_sources: [top_journal, scidraw]
+reference_sources_default: [top_journal]
+rule: exactly_one_backend_and_one_primary_domain_and_role

@@ -1,0 +1,7 @@
+task_id: pca
+scientific_message: describe sample-level structure
+input_fixture: synthetic:seed-20260901
+expected_ontology: sample-structure
+eligible_patterns: [ORD-PCA-001]
+required_critics: [scientific, visual]
+hard_failures: [embedding_as_significance, missing_variance_explained]

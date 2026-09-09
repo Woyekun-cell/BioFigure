@@ -1,0 +1,7 @@
+task_id: annotated-heatmap
+scientific_message: show shared expression pattern with sample groups
+input_fixture: synthetic:expression-matrix-seed-20260901
+expected_ontology: expression-pattern
+eligible_patterns: [MAT-EXPR-001]
+required_critics: [scientific, visual, publication, anti-ai]
+hard_failures: [rectangular_cells, silent_scaling, sample_mismatch, legend_overlap, font_warning, non_white_background, cropped_labels]

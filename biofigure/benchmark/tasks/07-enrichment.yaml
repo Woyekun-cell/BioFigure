@@ -1,0 +1,7 @@
+task_id: enrichment
+scientific_message: rank functional terms with declared background
+input_fixture: synthetic:seed-20260901
+expected_ontology: enrichment
+eligible_patterns: [ENR-DOT-001]
+required_critics: [scientific, visual, publication]
+hard_failures: [unknown_background, term_count_as_effect]

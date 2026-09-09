@@ -1,0 +1,13 @@
+schema_version: "3.0"
+kind: data-profile
+purpose: one canonical vocabulary shared by retrieval, Pattern Cards, and Figure Design Specs
+optional_integer_fields: [n_observations, n_features, n_groups, n_samples, n_conditions, n_modalities, n_panels, n_regions, n_chromosomes, n_labels, n_images, n_fields, n_channels, n_train, n_validation, n_test, n_classes, n_variants]
+nested:
+  matrix: [n_rows, n_columns]
+  single_cell: [n_cells, n_cell_types]
+  genomic: [n_regions, n_tracks, n_chromosomes]
+  imaging: [n_images, n_fields, n_channels]
+  machine_learning: [n_train, n_validation, n_test, n_classes, n_features]
+  labels: [n_labels, max_label_length]
+constraints: all supplied counts are non-negative integers; absent means unknown, never zero
+optional_semantics: [entity_type, coordinate_system, assembly_version, image_modality, model_task]

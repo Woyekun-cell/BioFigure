@@ -1,0 +1,65 @@
+version: "3.1.0"
+architecture: reference-guided-biological-figure-designer
+runtime_dependencies:
+  python: requirements.txt
+  note: R packages are selected by renderer and checked before rendering
+always_load:
+  - references/personal-style.md
+  - references/render-execution.md
+  - references/reference-quality.md
+  - static/core/contract.md
+  - static/core/stance.md
+  - references/checkpoints.md
+common_dynamic_load:
+  - references/biology-ontology.md
+  - references/first-render-contract.md
+  - references/layout.md
+  - references/export.md
+routing_axes:
+  domain:
+    selection: one_primary_plus_optional_secondary
+    values:
+      transcriptomics-metabolomics-multiomics: references/bulk-metabolomics.md
+      single-cell-spatial: references/single-cell-spatial.md
+      chromatin-epigenome: references/chromatin.md
+      genome-sequence-variation: references/genome-sequence.md
+      phylogeny-synteny-gene-family: references/genome-sequence.md
+      imaging-assay: references/imaging-assay.md
+      machine-learning: references/ml-figures.md
+      schematic-mechanism: references/schematic-mechanism.md
+      multipanel: references/chart-multipanel.md
+  role:
+    selection: one_primary_plus_optional_secondary
+    values: [QC, discovery, comparison, structure, mechanism, validation, prediction, robustness-model-evaluation]
+  backend:
+    selection: exactly_one_locked_before_design_spec
+    default: R
+    values: [R, Python]
+    change_policy: invalidate_preview_export_qa_and_rerender
+  deliverable:
+    selection: exactly_one
+    values:
+      quick-png: [png]
+      paper-composite: [pdf, svg, png]
+      editable-vector: [svg, pdf, png]
+      tiff-submission: [tiff, png]
+specialty_critics:
+  machine-learning: critics/ml.md
+  imaging-assay: critics/imaging.md
+  genome-sequence-variation: critics/genome.md
+  phylogeny-synteny-gene-family: critics/genome.md
+  schematic-mechanism: critics/mechanism.md
+reference_evidence_layers:
+  top_journal:
+    corpus: atlas/top-journal-corpus.yaml
+    retriever: scripts/retrieve_references.py
+    policy: primary_curated_reference_evidence
+  scidraw:
+    corpus: atlas/scidraw-derived-corpus.json
+    grammar: atlas/scidraw-visual-grammar.yaml
+    retriever: scripts/retrieve_scidraw.py
+    critic: critics/reference-transfer.md
+    load: [references/scidraw-learning.md]
+    policy: optional_retrieval_not_ground_truth
+    precedence: scientific_contract_and_official_guidance
+pipeline: [scientific_contract, visual_ontology, pattern_retrieval, figure_design_spec, renderer, actual_figure, visual_inspection, critics, revise_or_pass]

@@ -1,0 +1,50 @@
+schema_version: "3.0"
+kind: figure-design-spec
+required:
+  - figure_task
+  - scientific_message
+  - data_contract_summary
+  - biology_contract
+  - role_contract
+  - backend_lock
+  - deliverable_contract
+  - integrity_contract
+  - candidate_patterns
+  - selected_pattern
+  - selection_reason
+  - reference_evidence
+  - visual_hierarchy
+  - encoding
+  - annotation
+  - legend
+  - palette_semantics
+  - renderer
+  - output_size
+  - layout_contract
+  - font_contract
+  - design_target
+  - text_contract
+  - background_contract
+  - inspection_plan
+  - critic_targets
+notes: Internal pre-render contract; it does not replace scientific result tables.
+field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
+reference_evidence_required: [retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
+supplemental_reference_contract:
+  trigger: reference_evidence.supplemental_case_ids_is_nonempty
+  required: [supplemental_visual_ids, supplemental_transfer_decisions, supplemental_rejected_elements, supplemental_evidence_status, source_precedence]
+  evidence_status: optional-not-ground-truth
+  source_precedence: scientific-contract-over-supplemental
+output_size_constraints: {width_mm: positive_number, height_mm: positive_number, formats: [pdf, svg, png, tiff]}
+biology_contract_required: [primary_domain, entities, relationships, experimental_unit, statistical_unit, replicate_unit, evidence_level, claim_boundary]
+role_contract_required: [primary_role, secondary_roles]
+backend_lock_required: [backend, lock_id, locked, preview_export_qa_same_backend]
+deliverable_contract_required: [target, required_formats]
+integrity_contract_required: [source_data_preserved, exclusions_declared, uncertainty_declared]
+renderer_constraint: backend_must_exist_in_renderer-registry_and_selected_pattern_options
+layout_contract_required: [canvas, data_bbox, annotation_bbox, legend_bbox, label_reserve, collision_policy, text_extent_method, preflight_collision_check, coordinate_policy]
+font_contract_required: [family, resolved_font_file, fallback_policy, warning_policy, all_layers_inherit_policy, rendered_face_check]
+background_contract_required: [canvas, panel, export]
+inspection_plan_required: [open_png, target_size_check, bbox_check, font_face_check]
+
+text_contract_required: [allowed_text, allow_headings]

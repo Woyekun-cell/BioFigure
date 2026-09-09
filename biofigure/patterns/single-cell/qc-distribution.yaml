@@ -1,0 +1,24 @@
+pattern_id: SC-QC-001
+version: "1.0"
+domain: [single-cell]
+scientific_task: [cell-quality-control]
+message_type: quality-distribution
+data_contract: {required: [cell_id, metric, value, qc_status], optional: [sample_id, threshold], assumptions: [threshold_provenance]}
+applicable_when: {data_profile: {n_features: 1-4, n_observations: 50-200000}, message: prefilter-quality-and-threshold}
+not_recommended_when: [condition_comparison_without_sample_replicates, mixed_units_same_axis, postfilter_only_threshold_claim]
+visual_hierarchy: {primary: metric_distribution, secondary: threshold_and_qc_status, tertiary: sample_level_summary}
+geometry: {primary: violin_box_raw_points, secondary: threshold_line}
+encoding: {x: metric, y: value, fill: metric_family, color: qc_status, line: threshold}
+layout: {aspect_ratio: data_driven, density_strategy: alpha_and_order_control, whitespace_strategy: labels_first}
+annotation_strategy: [threshold_line, retained_removed_legend, n_cells_and_filter_rule_in_manifest]
+legend_strategy: {compact: true, place: outside_plot, duplicate_semantics: false}
+color_semantics: {retained: navy, removed: brick_red, metric_fill: muted_neutral, threshold: brick_red}
+optional_components: [sample-level-summary, postfilter-companion-panel]
+avoid: [filtering_before_threshold_plot, pooled_cells_as_replicates, unexplained_threshold, decorative_title, rainbow_palette]
+scientific_risks: [threshold_arbitrariness, double_filtering, cell_as_biological_replicate, outlier_clipping]
+renderer_options: [ggplot2, Seurat_plus_custom_ggplot, scanpy]
+references: [source-index://scanpy, source-index://seurat-visualization]
+provenance: {created_from: [source-index://scanpy, source-index://seurat-visualization], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

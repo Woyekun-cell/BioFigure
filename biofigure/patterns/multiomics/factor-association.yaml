@@ -1,0 +1,24 @@
+pattern_id: MO-FACTOR-001
+version: "1.0"
+domain: [multi-omics]
+scientific_task: [cross-omics-factor-association]
+message_type: paired-association
+data_contract: {required: [sample_map, factor_score, modality], optional: [covariates, q, variance_explained], assumptions: [paired_samples_declared]}
+applicable_when: {data_profile: {n_samples: 4-200, n_modalities: 2-4}, pairedness: required, message: shared_factor_structure}
+not_recommended_when: [unpaired_modalities, n_below_model_requirement]
+visual_hierarchy: {primary: paired_factor_relationship, secondary: sample_condition, tertiary: variance_or_q}
+geometry: {primary: scatter, secondary: factor_summary}
+encoding: {x: factor_score_modality_a, y: factor_score_modality_b, color: condition, line: fitted_model_only}
+layout: {aspect_ratio: "1.1", density_strategy: sample_points_visible, whitespace_strategy: restrained}
+annotation_strategy: [paired_n, model_and_covariates, no_causal_language]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {condition: semantic_dictionary, modality: panel_or_line_not_color}
+optional_components: [variance-explained, confidence-interval, feature-weights]
+avoid: [factor_as_mechanism, unpaired_correlation, pooled_modalities]
+scientific_risks: [factor_sign_flip, confounding, low_n, missing_modalities]
+renderer_options: [ggplot2, matplotlib]
+references: [source-index://mofa, source-index://mofa-code, atlas://ATLAS-TJ-OMICVERSE-F6, atlas://ATLAS-TJ-MEFISTO-F3]
+provenance: {created_from: [source-index://mofa], reviewed_by: null, reviewed_at: null}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: not_run}
+status: candidate

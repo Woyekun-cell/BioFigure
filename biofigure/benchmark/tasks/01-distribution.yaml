@@ -1,0 +1,7 @@
+task_id: distribution
+scientific_message: compare stress-group distributions with biological replicates
+input_fixture: synthetic:group-distribution-seed-20260901
+expected_ontology: distribution
+eligible_patterns: [DIST-BOX-001]
+required_critics: [scientific, visual, publication]
+hard_failures: [pooled_replicates, hidden_raw_points, wrong_unit]
