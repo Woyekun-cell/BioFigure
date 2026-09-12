@@ -4,18 +4,12 @@ args<-commandArgs(trailingOnly=TRUE);out<-if(length(args)) args[1] else 'results
 dir.create(file.path(out,'figures'),recursive=TRUE,showWarnings=FALSE);dir.create(file.path(out,'plot_data'),recursive=TRUE,showWarnings=FALSE)
 source('biofigure/scripts/figure_style.R');font<-bf_font('Arial');set.seed(3200)
 cols<-c(Control='#3B6FB6',Treatment='#D95F3D')
-save_pdf<-function(path,p,w,h){
- grDevices::quartz(file=path,type='pdf',width=w/25.4,height=h/25.4)
- on.exit(grDevices::dev.off(),add=TRUE)
- print(p)
-}
 emit<-function(id,p,data,allowed,w=100,h=75){
  boxes<-data.frame(id=c('data','labels','legend'),x=c(0,0,.78*w),y=c(0,.85*h,0),w=c(.78*w,.78*w,.22*w),h=c(.85*h,.15*h,.85*h))
  csv<-file.path(out,'plot_data',paste0(id,'.csv'));write.csv(data,csv,row.names=FALSE)
  spec<-file.path(out,'plot_data',paste0(id,'-design.yaml'));writeLines(c('schema_version: "1.0"',paste0('figure_id: ',id),'simulation: true','generation: natural-language-from-blank-script'),spec)
  png<-file.path(out,'figures',paste0(id,'.png'))
  bf_render_png(p,png,font,unique(as.character(allowed)),w,h,w,c(normalizePath('biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R'),normalizePath('biofigure/scripts/figure_style.R'),normalizePath(spec)),boxes,dpi=300)
- save_pdf(file.path(out,'figures',paste0(id,'.pdf')),p,w,h)
 }
 # Natural-language task 1: time-to-event curves with censor marks.
 n<-80;survdat<-data.frame(subject_id=sprintf('S%03d',1:n),group=rep(c('Control','Treatment'),each=n/2))

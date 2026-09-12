@@ -37,5 +37,5 @@
 **Files:** Create `benchmark/reproduction/*.yaml`, `scripts/run_reproduction_benchmark.py`; modify `benchmark/rubric.yaml`.
 
 - [x] 用6类自然语言任务建立无源码测试集。
-- [x] 从空白R脚本绘图，固定seed，输出PNG/PDF。
+- [x] 从空白R脚本绘图，固定seed，按用户最新要求只输出PNG。
 - [x] 实际查看渲染图，跑完整测试、Critic和Skill校验；失败不发布。

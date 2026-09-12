@@ -9,14 +9,14 @@ def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def audit_outputs(root,task_ids):
  errors=[];items=[]
  for task in task_ids:
-  png=root/'figures'/f'{task}.png';pdf=root/'figures'/f'{task}.pdf';csv=root/'plot_data'/f'{task}.csv';receipt=Path(str(png)+'.render.json')
-  missing=[str(p) for p in [png,pdf,csv,receipt] if not p.is_file()]
+  png=root/'figures'/f'{task}.png';csv=root/'plot_data'/f'{task}.csv';receipt=Path(str(png)+'.render.json')
+  missing=[str(p) for p in [png,csv,receipt] if not p.is_file()]
   if missing:errors.append({'task':task,'missing':missing});continue
   try:
    with Image.open(png) as im: width,height=im.size;im.verify()
    r=json.loads(receipt.read_text())
    if r.get('status')!='PASS' or r.get('artifact',{}).get('sha256')!=digest(png):raise ValueError('render receipt mismatch')
-   items.append({'task':task,'png_sha256':digest(png),'pdf_sha256':digest(pdf),'plot_data_sha256':digest(csv),'pixels':[width,height]})
+   items.append({'task':task,'png_sha256':digest(png),'plot_data_sha256':digest(csv),'pixels':[width,height]})
   except Exception as exc:errors.append({'task':task,'error':str(exc)})
  return {'status':'PASS' if not errors else 'FAIL','tasks_verified':len(items),'errors':errors,'items':items,
          'scope':'artifact integrity and render receipt; visual review recorded separately'}
