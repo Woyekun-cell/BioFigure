@@ -13,4 +13,8 @@ class RetrievalTests(unittest.TestCase):
   self.assertEqual(payload['generation_contract']['author_material_access'],'forbidden')
   self.assertEqual(payload['generation_contract']['technique_transfer'],'abstract-patterns-only')
   self.assertNotIn('source_code',str(payload))
+ def test_live_retrieval_returns_package_method(self):
+  payload=m.retrieve('生存曲线')
+  self.assertIn('package_method',payload['results'][0])
+  self.assertIn('ggsurvfit',payload['results'][0]['package_method']['core_packages'])
 if __name__=='__main__':unittest.main()

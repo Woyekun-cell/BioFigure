@@ -22,5 +22,11 @@ class ReproductionAtlasTests(unittest.TestCase):
  def test_title_taxonomy(self):
   self.assertIn('matrix',m.chart_tags('带注释的热图'))
   self.assertIn('time-to-event',m.chart_tags('生存曲线'))
+ def test_all_available_cases_have_package_first_methods(self):
+  doc=json.loads((ROOT/'atlas/reproduction-methods.json').read_text())
+  self.assertEqual(doc['coverage']['available_cases'],79)
+  self.assertEqual(doc['coverage']['missing_issues'],[30])
+  self.assertTrue(doc['policy']['specialized_package_first'])
+  self.assertTrue(all('core_packages' in x and 'key_functions' in x for x in doc['cases']))
 
 if __name__=='__main__':unittest.main()

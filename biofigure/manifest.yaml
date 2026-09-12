@@ -54,10 +54,12 @@ specialty_critics:
 reference_evidence_layers:
   reproduction:
     corpus: atlas/reproduction-derived-corpus.json
+    methods: atlas/reproduction-methods.json
     retriever: scripts/retrieve_reproduction.py
     load: [references/reproduction-learning.md]
     policy: required_derived_design_evidence
     source_material_access: forbidden_during_generation
+    package_policy: specialized_package_first_and_runtime_verified
   top_journal:
     corpus: atlas/top-journal-corpus.yaml
     retriever: scripts/retrieve_references.py

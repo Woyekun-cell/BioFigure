@@ -3,7 +3,7 @@
 from __future__ import annotations
 import argparse,hashlib,json,re
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];CORPUS=ROOT/'atlas/reproduction-derived-corpus.json'
+ROOT=Path(__file__).resolve().parents[1];CORPUS=ROOT/'atlas/reproduction-derived-corpus.json';METHODS=ROOT/'atlas/reproduction-methods.json'
 ALIASES={'热图':['matrix','Heatmap','ComplexHeatmap'],'生存':['time-to-event','survfit','ggsurvplot'],'环':['circular','circos'],'泳道':['clinical'],'富集':['enrichment'],'时间':['time-series']}
 def tokens(s): return list(dict.fromkeys(re.findall(r'[A-Za-z0-9_.+-]+|[\u4e00-\u9fff]{2,}',s.lower())))
 def score_case(case,query):
@@ -24,6 +24,10 @@ def rank_cases(cases,query,limit):
  return {'query':query,'results':results,'generation_contract':{'author_material_access':'forbidden','implementation':'new-script-from-user-data-and-derived-patterns','technique_transfer':'abstract-patterns-only','requires_render_and_visual_review':True}}
 def retrieve(query,limit=5):
  out=rank_cases(json.loads(CORPUS.read_text())['cases'],query,max(3,min(limit,5)))
+ methods={x['issue']:x for x in json.loads(METHODS.read_text())['cases']}
+ for item in out['results']:
+  issue=int(item['case_id'].split('-')[-1]);m=methods.get(issue,{})
+  item['package_method']={k:m.get(k) for k in ('core_packages','core_package_status','key_functions','runtime_status')}
  out['schema_version']=1;out['corpus']={'path':str(CORPUS.resolve()),'sha256':hashlib.sha256(CORPUS.read_bytes()).hexdigest()}
  return out
 if __name__=='__main__':
