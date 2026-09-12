@@ -67,6 +67,7 @@ reference_evidence_layers:
   scidraw:
     corpus: atlas/scidraw-derived-corpus.json
     grammar: atlas/scidraw-visual-grammar.yaml
+    source_compared_methods: atlas/scidraw-source-compared-methods.json
     retriever: scripts/retrieve_scidraw.py
     critic: critics/reference-transfer.md
     load: [references/scidraw-learning.md]
