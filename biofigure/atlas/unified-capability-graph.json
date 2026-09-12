@@ -12,7 +12,7 @@
     "r_parse_ok": 823,
     "r_parse_error": 14,
     "unique_packages": 172,
-    "installed_packages": 145,
+    "installed_packages": 148,
     "missing_packages": [
       "CellChat",
       "CytoTRACE2",
@@ -21,10 +21,8 @@
       "GseaVis",
       "SeuratExtend",
       "Tag",
-      "UpSetR",
       "VisCello",
       "aPEAR",
-      "fmsb",
       "funkyheatmap",
       "ggExtra",
       "ggalt",
@@ -38,12 +36,11 @@
       "plot3D",
       "plot3Drgl",
       "rnaturalearth",
-      "rnaturalearthdata",
       "scRNAtoolVis",
       "webshot"
     ],
     "namespaced_function_pairs": 102,
-    "existing_namespaced_functions": 93,
+    "existing_namespaced_functions": 100,
     "method_family_count": 23,
     "visual_evidence_pending": 0,
     "source_compared_cases": 8,
@@ -2187,8 +2184,8 @@
       "id": "package:UpSetR",
       "kind": "package",
       "label": "UpSetR",
-      "installed": false,
-      "version": ""
+      "installed": true,
+      "version": "1.4.1"
     },
     {
       "id": "package:VennDiagram",
@@ -2369,8 +2366,8 @@
       "id": "package:fmsb",
       "kind": "package",
       "label": "fmsb",
-      "installed": false,
-      "version": ""
+      "installed": true,
+      "version": "0.7.6"
     },
     {
       "id": "package:forcats",
@@ -3034,8 +3031,8 @@
       "id": "package:rnaturalearthdata",
       "kind": "package",
       "label": "rnaturalearthdata",
-      "installed": false,
-      "version": ""
+      "installed": true,
+      "version": "1.0.0"
     },
     {
       "id": "package:rstatix",
