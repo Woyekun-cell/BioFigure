@@ -3,23 +3,25 @@ name: biofigure
 description: 设计、绘制、精修或审查生物科研图；R优先，兼容Python，检查科学语义、字体、排版与实际成图。
 ---
 
-# BioFigure 3.1
+# BioFigure 3.2.0
 
-每次调用先读 `references/personal-style.md`、`references/render-execution.md`、`static/core/contract.md`；随后读 `manifest.yaml`，运行 `scripts/route_figure.py` 并读取返回的模块。不得把路由JSON当成已经读过模块。
+## 执行门禁
 
-质量目标是当前任务匹配的用户参考图。必读 `references/reference-quality.md`：先开参考图、写可实现的设计参数，成图后逐项对照；规范通过而视觉未达目标仍为REVISE。
+读过规范、代码运行、打开图片均不等于合规。每图按下列顺序执行；修图和短请求也适用。失败只交诊断或标记预览，不得称完成或PASS。
 
-## 首次代码必须实现
+1. 读取 `references/personal-style.md`、`references/render-execution.md`、`references/reference-quality.md`、`references/reproduction-learning.md`、`static/core/contract.md` 与 `manifest.yaml`；运行 `scripts/route_figure.py 请求.yaml`。
+2. 科学契约后运行 `scripts/retrieve_reproduction.py --query "任务+图型+数据结构" --output 检索.json`，只读3–5个派生案例。禁止查看或复制案例原代码；从空白脚本按用户数据自然编码。检索凭证必须进入CP2。
+3. 参考图实际查看、Design Spec、CP0–CP2先完成。读取 `references/enforced-execution.md`。ggplot最终PNG只用 `bf_render_png`；把 `scripts/figure_style.R` 复制进项目并随代码交付。
+4. 打开最终PNG，按实际使用尺寸审查，填写对象级inspection与Critic。每张PNG单独ledger。
+5. 运行 `python3 scripts/validate_checkpoints.py checkpoint-ledger.yaml --json`。仅退出码0且CP0–CP4全部PASS可交付；保存输出。渲染凭据仅证明技术预检，不能替代视觉质量。
 
-- 默认R、纯白画布、Arial或Helvetica真实文件、单图。字体必须覆盖坐标轴、geom_text/repel、图例、热图注释、树与统计文字；不能只设theme或用sans代替。
-- 先列图中允许出现的文本：轴/单位、刻度、基因/样本/组别、色标变量、预设统计标签。默认不写总标题、副标题、编号、脚注、口号、装饰解释。必要分组名与色标标题保留。
-- 先定mm尺寸，实测文字，分配数据/注释/图例槽位，再写绘图层。图例外置；气泡细黑边；可读离散热图单格正方，分类条≤3mm。颜色按语义选，不锁死某一套。
-- ggplot任务复用 `scripts/figure_style.R` 的字体、文字清单和导出检查；复杂图按 `references/render-execution.md` 显式设置每层。交付脚本附上所用函数，不能依赖用户机器上的Skill绝对路径。
+## 首版就实现
 
-## 执行与交付
+- 默认R、纯白、真实Arial/Helvetica文件；全部文字层显式字体，禁止sans回退。字体报错修设备或字体解析，不改成默认字体。
+- 编码前列允许文本。默认无总标题、副标题、编号、脚注；必要组名、变量与单位保留。用户明确要求额外文字时记录原文授权并加入清单。
+- 先定最终mm尺寸和字号、实测文字、分配数据/标签/图例槽位；离散热图单格正方，分类条≤3mm，图例外置；气泡细黑边。配色按语义与用户要求。
+- 先预检再导出同一对象。字体、文字、尺寸、源文件或Spec变化，旧凭据失效；不得仅修用户指出的一项后沿用旧验收。
 
-科学契约、Pattern/参考检索、Design Spec、锁定后端渲染、实际看图、Critics依次执行。CP0–CP4见 `references/checkpoints.md`。R/Python不混用绘制后端；读取产物和独立QA可用其他工具。
+门禁代码与阈值不由绘图任务自行删改。不得补写假凭据、从成图反向批准所有文字或降级Critic过检。未受托不重跑NGS。
 
-先验证Spec；运行并开图后才提供可复现代码。首轮预检减少布局错误，真实设备仍须验图；发现缺陷修正布局规则后重绘。无执行能力只能标“未验证代码”。
-
-Critic按 `critics/inspection-evidence.schema.yaml` 记录；缺专项证据为NOT_ASSESSED，不能代填PASS。只要PNG不生成多余交付格式。代码运行、检查点通过、视觉通过分别陈述，禁止据此保证“顶刊级”。严禁补造数据、统计或机制；未受托不重跑NGS分析。
+Skill不能强制平台调用工具；可核验门禁约束实际执行流程，人工/模型视觉观察仍是可信声明。科学正确、技术合规、参考质量与用户认可分别报告。

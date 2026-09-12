@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "backend": "R",
+  "renderer": "ggplot2",
+  "artifact": {
+    "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/survival.png",
+    "sha256": "11301e1f32c79a22092c1c232a8efebb463de333d168c9a922116609be2d6b8a"
+  },
+  "sources": [
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
+      "sha256": "9a0cb6e023c06b06ecd4627d2c3b38c8ae8430ca4d09b37bb0ddd46a87c5d574"
+    },
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/scripts/figure_style.R",
+      "sha256": "41f019c877d2f50db7d71c64642b2b9cbaa4eb7bebb06d7e93ec7b0512fd6617"
+    },
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/plot_data/survival-design.yaml",
+      "sha256": "96e2a4aaebf918c48b0036174153c66fc2bfcdee0d14838176b28b479013f218"
+    }
+  ],
+  "font": {
+    "path": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+    "family": "Arial"
+  },
+  "checks": {
+    "font": true,
+    "text_allowlist": true,
+    "layout": true,
+    "target_size": true
+  },
+  "target_min_text_pt": 7,
+  "min_text_pt": 6,
+  "text_size_authorization": {},
+  "target_width_mm": 100,
+  "device": {
+    "width_mm": 100,
+    "height_mm": 75,
+    "dpi": 300
+  },
+  "boxes": [
+    {
+      "id": "data",
+      "x": 0,
+      "y": 0,
+      "w": 78,
+      "h": 63.75
+    },
+    {
+      "id": "labels",
+      "x": 0,
+      "y": 63.75,
+      "w": 78,
+      "h": 11.25
+    },
+    {
+      "id": "legend",
+      "x": 78,
+      "y": 0,
+      "w": 22,
+      "h": 63.75
+    }
+  ],
+  "heading_authorization": {},
+  "scope": "technical preflight only; separate actual inspection and critics required"
+}

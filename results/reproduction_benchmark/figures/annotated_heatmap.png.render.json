@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "backend": "R",
+  "renderer": "ggplot2",
+  "artifact": {
+    "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/annotated_heatmap.png",
+    "sha256": "10c16ff858bea98232257174a89085b1eed110ad7d05c45d5a871e8e0cc67ddb"
+  },
+  "sources": [
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
+      "sha256": "9a0cb6e023c06b06ecd4627d2c3b38c8ae8430ca4d09b37bb0ddd46a87c5d574"
+    },
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/scripts/figure_style.R",
+      "sha256": "41f019c877d2f50db7d71c64642b2b9cbaa4eb7bebb06d7e93ec7b0512fd6617"
+    },
+    {
+      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/plot_data/annotated_heatmap-design.yaml",
+      "sha256": "be999efdf2cc76a2a22c4dfb2e0dd4f9664e47c2f0fbb3ef4d5355ba18fe29a3"
+    }
+  ],
+  "font": {
+    "path": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+    "family": "Arial"
+  },
+  "checks": {
+    "font": true,
+    "text_allowlist": true,
+    "layout": true,
+    "target_size": true
+  },
+  "target_min_text_pt": 6.5,
+  "min_text_pt": 6,
+  "text_size_authorization": {},
+  "target_width_mm": 100,
+  "device": {
+    "width_mm": 100,
+    "height_mm": 88,
+    "dpi": 300
+  },
+  "boxes": [
+    {
+      "id": "data",
+      "x": 0,
+      "y": 0,
+      "w": 78,
+      "h": 74.8
+    },
+    {
+      "id": "labels",
+      "x": 0,
+      "y": 74.8,
+      "w": 78,
+      "h": 13.2
+    },
+    {
+      "id": "legend",
+      "x": 78,
+      "y": 0,
+      "w": 22,
+      "h": 74.8
+    }
+  ],
+  "heading_authorization": {},
+  "scope": "technical preflight only; separate actual inspection and critics required"
+}

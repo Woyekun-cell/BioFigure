@@ -1,0 +1,7 @@
+"term","x","y","gene_count","fdr"
+"Lipid metabolism",0,1.5,34,0.001
+"Oxidative stress",1,2,26,0.004
+"Immune response",2,1.4,31,0.008
+"Cell cycle",0.3,0.3,20,0.015
+"DNA repair",1.4,0.5,18,0.028
+"Mitochondria",2.2,0.2,29,0.006

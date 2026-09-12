@@ -51,6 +51,14 @@ bf_prepare <- function(plot,font,allowed_text,allow_headings=FALSE,width_mm=90,h
   if(!allow_headings && any(vapply(c('title','subtitle','caption','tag'),function(k)
       !is.null(plot$labels[[k]]) && length(plot$labels[[k]])>0,logical(1)))) stop('unrequested title/subtitle/caption/tag')
   built<-withCallingHandlers(ggplot2::ggplot_build(plot),warning=function(w) stop(conditionMessage(w),call.=FALSE))
+  tile_layers <- which(vapply(plot$layers,function(l) inherits(l$geom,'GeomTile'),logical(1)))
+  if(length(tile_layers) && built$layout$panel_scales_x[[1]]$is_discrete() && built$layout$panel_scales_y[[1]]$is_discrete()) {
+    if(!isTRUE(all.equal(plot$coordinates$ratio,1))) stop('discrete heatmap requires coord_fixed(ratio=1)')
+    for(i in tile_layers) {
+      d<-built$data[[i]]
+      if(any(abs((d$xmax-d$xmin)-(d$ymax-d$ymin))>1e-6,na.rm=TRUE)) stop('discrete heatmap tiles are not square')
+    }
+  }
   for(d in built$data) if('label' %in% names(d) && nrow(d)>0) {
     if(!'family' %in% names(d) || any(is.na(d$family)|d$family!=font$family)) stop('text layer font must be explicit')
   }
@@ -108,4 +116,40 @@ bf_complexheatmap_font <- function(font) {
   if(grDevices::pdfFonts()[[font$family]]$family!=ps_name)
     stop('PDF measurement family differs from resolved PostScript font')
   invisible(font)
+}
+
+# One call prepares and exports the same object, then binds the result to its inputs.
+# Receipts are technical evidence; they do not certify aesthetics or actual viewing.
+bf_render_png <- function(plot,path,font,allowed_text,width_mm,height_mm,target_width_mm,
+                          source_files,boxes,allowed_pairs=character(),dpi=300,
+                          heading_authorization=NULL,min_text_pt=6,text_size_authorization=NULL) {
+  receipt_path<-paste0(path,'.render.json')
+  if(file.exists(receipt_path)) unlink(receipt_path)
+  stopifnot(length(source_files)>0,all(file.exists(source_files)),
+            is.finite(target_width_mm),target_width_mm>0,min_text_pt>=5,
+            all(c('data','labels','legend') %in% boxes$id))
+  if(!any(basename(source_files)=='figure_style.R') ||
+     !any(grepl('\\.[Rr]$',source_files) & basename(source_files)!='figure_style.R') ||
+     !any(grepl('\\.ya?ml$',source_files))) stop('bind plot.R, figure_style.R and design-spec.yaml in source_files')
+  if(min_text_pt<6 && (is.null(text_size_authorization)||!is.character(text_size_authorization)||
+      length(text_size_authorization)!=1||!nzchar(trimws(text_size_authorization)))) stop('text below 6 pt requires documented journal/user basis')
+  bf_check_boxes(boxes,width_mm,height_mm,allowed_pairs)
+  allow_headings<-!is.null(heading_authorization) && is.character(heading_authorization) &&
+    length(heading_authorization)==1 && nzchar(trimws(heading_authorization))
+  prepared<-bf_prepare(plot,font,allowed_text,allow_headings,width_mm,height_mm,dpi)
+  minimum<-min(prepared$sizes_pt)*target_width_mm/width_mm
+  if(!is.finite(minimum)||minimum<min_text_pt) stop('text too small at final target width; redesign canvas and cells')
+  bound<-function(p) list(path=normalizePath(p,mustWork=TRUE),sha256=digest::digest(file=p,algo='sha256'))
+  sources<-lapply(source_files,bound)
+  bf_export_png(prepared,path,width_mm,height_mm,dpi)
+  if(!identical(sources,lapply(source_files,bound))) stop('source changed during rendering')
+  receipt<-list(schema_version=1,status='PASS',backend='R',renderer='ggplot2',artifact=bound(path),sources=sources,
+    font=c(bound(font$path),list(family=font$family)),
+    checks=list(font=TRUE,text_allowlist=TRUE,layout=TRUE,target_size=TRUE),
+    target_min_text_pt=minimum,min_text_pt=min_text_pt,text_size_authorization=text_size_authorization,target_width_mm=target_width_mm,
+    device=list(width_mm=width_mm,height_mm=height_mm,dpi=dpi),
+    boxes=boxes,heading_authorization=heading_authorization,
+    scope='technical preflight only; separate actual inspection and critics required')
+  jsonlite::write_json(receipt,receipt_path,auto_unbox=TRUE,pretty=TRUE)
+  invisible(receipt)
 }

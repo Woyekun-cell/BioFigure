@@ -18,15 +18,15 @@ checkpoints:
   - id: CP2
     phase: design-lock
     gate_type: automatic_hard_gate
-    required_evidence: [selected_pattern, design_spec_validation, renderer_available, layout_slots_reserved]
+    required_evidence: [selected_pattern, design_spec, design_spec_validation, renderer_available, layout_slots_reserved, reproduction_retrieval_receipt]
     fail_action: revise_spec_before_code
   - id: CP3
     phase: rendered-figure-inspection
     gate_type: automatic_hard_gate
-    required_evidence: [artifact, artifact_sha256, artifact_opened, viewer_method, target_size_checked, detected]
+    required_evidence: [artifact, artifact_sha256, render_receipt, artifact_opened, viewer_method, target_size_checked, detected]
     fail_action: object_level_fix_and_rerender
   - id: CP4
     phase: release
     gate_type: automatic_hard_gate
-    required_evidence: [critic_status, qa_status, deliverables, simulation_disclosed]
+    required_evidence: [critic_status, qa_status, inspection_evidence, deliverables, simulation_disclosed]
     fail_action: withhold_PASS_and_return_diagnosis

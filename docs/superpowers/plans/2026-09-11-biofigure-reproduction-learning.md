@@ -20,22 +20,22 @@
 
 **Files:** Create `scripts/build_reproduction_atlas.py`, `tests/test_reproduction_atlas.py`, `atlas/reproduction-derived-corpus.json`.
 
-- [ ] 先写失败测试：必须有图型、优点、图层、配色、包、哈希，且无原代码。
-- [ ] 实现OCR文本、代码token、颜色与布局的保守抽取。
-- [ ] 构建79期语料并校验源哈希。
+- [x] 先写失败测试：必须有图型、优点、图层、配色、包、哈希，且无原代码。
+- [x] 实现OCR文本、代码token、颜色、布局与编码策略的保守抽取。
+- [x] 构建79期语料并校验源哈希。
 
 ### Task 2: 检索与门禁
 
 **Files:** Create `scripts/retrieve_reproduction.py`, `references/reproduction-learning.md`; modify `SKILL.md`, `manifest.yaml`, `scripts/validate_checkpoints.py`.
 
-- [ ] 先写检索3–5案例、检索凭证、禁止源码依赖的失败测试。
-- [ ] 实现任务/图型/数据结构/包加权检索。
-- [ ] 将检索凭证与新脚本哈希加入CP校验。
+- [x] 先写检索3–5案例、检索凭证、禁止源码依赖的失败测试。
+- [x] 实现任务/图型/数据结构/包/编码策略加权检索。
+- [x] 将检索凭证与新脚本哈希加入CP校验。
 
 ### Task 3: 自然生成回归评测
 
 **Files:** Create `benchmark/reproduction/*.yaml`, `scripts/run_reproduction_benchmark.py`; modify `benchmark/rubric.yaml`.
 
-- [ ] 用6类自然语言任务建立无源码测试集。
-- [ ] 从空白R脚本绘图，固定seed，输出PNG/PDF。
-- [ ] 实际查看渲染图，跑完整测试、Critic和Skill校验；失败不发布。
+- [x] 用6类自然语言任务建立无源码测试集。
+- [x] 从空白R脚本绘图，固定seed，输出PNG/PDF。
+- [x] 实际查看渲染图，跑完整测试、Critic和Skill校验；失败不发布。

@@ -1,0 +1,6510 @@
+{
+  "schema_version": "1.0",
+  "policy": {
+    "raw_code_embedded": false,
+    "source_images_embedded": false,
+    "execution_performed": false,
+    "license_status": "not_verified"
+  },
+  "coverage": {
+    "cases": 79,
+    "visuals": 89,
+    "code_files": 349
+  },
+  "cases": [
+    {
+      "case_id": "REPRO-001",
+      "issue": 1,
+      "title": "分面堆积柱状图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483762&idx=1&sn=9ad6d9ecf71ea12f55de50ab5ad3efe0&chksm=fe679b78c910126e7972beb517e2dff54f6bc67ad116a49f74892264864eb54b36b82e2f4acc&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 1,
+        "packages": [
+          "pacman"
+        ],
+        "primitives": [
+          "geom_bar",
+          "facet_grid"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples"
+        ],
+        "hex_colors": [
+          "#D3D1D2",
+          "#CC79A8",
+          "#7AC0EA",
+          "#0EA079",
+          "#68C49D",
+          "#EACEDF",
+          "#5AB4E5",
+          "#D99BBB",
+          "#98D1F0",
+          "#7F7F7F"
+        ],
+        "combined_sha256": "dfafd72e232cafca701b2f910ff2127219ab9838011ef98d435dd989e79183d9",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "9665cd014c7dab87c00da28fe1420462d1c34d2eb2b8409f04a011406f8f380f",
+          "width_px": 1037,
+          "height_px": 1467,
+          "aspect_ratio": 0.7069,
+          "dominant_nonwhite": [
+            "#000000",
+            "#838383",
+            "#D3D3D3",
+            "#2E2E2E",
+            "#D899B9",
+            "#9C9C9C",
+            "#97D0F0",
+            "#EBEBEB"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#838383",
+              "#D3D3D3",
+              "#2E2E2E",
+              "#D899B9",
+              "#9C9C9C"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_001/image_001.webp"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-002",
+      "issue": 2,
+      "title": "径向堆积柱状图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483770&idx=1&sn=8b284bca4da2552a07d0ed475ce5f5cf&chksm=fe679b70c91012669d382ceb65081ff10abf3c96d90fe03402b9228479c9dcb1238cdc1a1cf4&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 1,
+        "packages": [
+          "pacman"
+        ],
+        "primitives": [
+          "geom_bar",
+          "geom_segment",
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#8F888B",
+          "#9B8191",
+          "#E87482",
+          "#F7A899",
+          "#F9F299",
+          "#D99BBB",
+          "#D7E698",
+          "#5AB4E5"
+        ],
+        "combined_sha256": "19f5d887572dfffd26a13224cea3c98ae057163f3fc2e5ca4efa11aadef35ee5",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "259f893587e43944bb52da47cbf934462ee4f3d47e0577f8f0880b3a8d10d6aa",
+          "width_px": 1080,
+          "height_px": 1505,
+          "aspect_ratio": 0.7176,
+          "dominant_nonwhite": [
+            "#5AB4E5",
+            "#000000",
+            "#9DD7A4",
+            "#838383",
+            "#383838",
+            "#D899B8",
+            "#F4F4F4",
+            "#DCDCDC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#5AB4E5",
+              "#000000",
+              "#9DD7A4",
+              "#838383",
+              "#383838",
+              "#D899B8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_002/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-003",
+      "issue": 3,
+      "title": "分组比较小提琴图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483777&idx=1&sn=8769fe6ce2af6ade21261b038ec71454&chksm=fe679b8bc910129d2109ae43ba333f9ca236f8681b442f2f472ca82a49d051b3156f82f85943&scene=21#wechat_redirect",
+      "chart_tags": [
+        "distribution"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 1,
+        "packages": [
+          "pacman"
+        ],
+        "primitives": [
+          "geom_boxplot",
+          "geom_violin"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#1772b4",
+          "#de1c31"
+        ],
+        "combined_sha256": "3bca1c72c3573650a9d11ae3a3aeb5abfcd53bf7fb1be9dc2c9e401b2ba95b9e",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "3c818076dfcd9b2fc7c1fa8d7dd854760f03c408e0e7d273aeb538f3f73ac92f",
+          "width_px": 1037,
+          "height_px": 1451,
+          "aspect_ratio": 0.7147,
+          "dominant_nonwhite": [
+            "#000000",
+            "#818181",
+            "#CCCCCC",
+            "#E7E7E7",
+            "#B9B9B9",
+            "#F2FBF6",
+            "#FF8787",
+            "#BFEBD3"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#818181",
+              "#CCCCCC",
+              "#E7E7E7",
+              "#B9B9B9",
+              "#F2FBF6"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_003/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-004",
+      "issue": 4,
+      "title": "相关性热图附P值标记",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483784&idx=1&sn=decf2d73ef80acf815630df6ba5c770b&chksm=fe679b82c9101294f6ae1635777d34db81bcfaf8999e0fe56dd98ab573fe32c001a0d3415c79&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "association"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 1,
+        "packages": [
+          "pacman"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#1772b4",
+          "#de1c31"
+        ],
+        "combined_sha256": "d7b8a90dc013000f41a7df75829dbf87b97a6f1282a6799537ad851cdce031b1",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "a95097bcb929accc951f829560f084d7381a5a8748d2426b6a56e8f2254a7821",
+          "width_px": 1037,
+          "height_px": 1467,
+          "aspect_ratio": 0.7069,
+          "dominant_nonwhite": [
+            "#E5E5E5",
+            "#000000",
+            "#858585",
+            "#D1D1D1",
+            "#BABABA",
+            "#F5F5F5",
+            "#979797",
+            "#AAAAAA"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#E5E5E5",
+              "#000000",
+              "#858585",
+              "#D1D1D1",
+              "#BABABA",
+              "#F5F5F5"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_004/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-005",
+      "issue": 5,
+      "title": "差异基因火山图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483791&idx=1&sn=a938a9b741e47dba64af950e9f5038e2&chksm=fe679b85c91012938a29d7c988250665975d6cb887bfe628c6ec10b25eb4b931d9c55e052c48&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "dplyr",
+          "ggplot2",
+          "ggrepel"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_segment",
+          "geom_label"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#E6E7FC",
+          "#FFE5E6",
+          "#AD6D6F",
+          "#FAA500",
+          "#C4C4C4",
+          "#15F6F8",
+          "#8C85EC",
+          "#E18A89"
+        ],
+        "combined_sha256": "8f7659ca59a2509d095098599a2b71c0058a87d4f1160825e538ca46a031f549",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "fa1d7c9f9fe6d479b373ee3376f6a00edee7c9ab324461ef00b67049aa8152b0",
+          "width_px": 1080,
+          "height_px": 1505,
+          "aspect_ratio": 0.7176,
+          "dominant_nonwhite": [
+            "#E6E7FC",
+            "#FFE5E6",
+            "#000000",
+            "#262626",
+            "#A1A1A1",
+            "#DFC6C7",
+            "#808080",
+            "#909090"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#E6E7FC",
+              "#FFE5E6",
+              "#000000",
+              "#262626",
+              "#A1A1A1",
+              "#DFC6C7"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_005/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-006",
+      "issue": 6,
+      "title": "分组折线图+蜂群点图+柱状图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483799&idx=1&sn=2de1939cc2f43454563fbd9ae297a492&chksm=fe679b9dc910128b49bc9a907546de409dd2e89a903538594a0cc546e740c6c2e210101a26b9&scene=21#wechat_redirect",
+      "chart_tags": [
+        "time-series"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "ggbeeswarm",
+          "ggplot2",
+          "grid",
+          "openxlsx",
+          "reshape2"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "annotation-layering",
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [
+          "#4489C8",
+          "#ED7E7A",
+          "#008F91",
+          "#FFCD44"
+        ],
+        "combined_sha256": "bfe84a5fe9d321f00fc6d29d4018917eaa8bfa2137996ec84492a1ca17555fc5",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "e8923e4d1ffab999c72463267d9d762527efdf0b14f20d65f079dba36085aedd",
+          "width_px": 1080,
+          "height_px": 1508,
+          "aspect_ratio": 0.7162,
+          "dominant_nonwhite": [
+            "#E5E5E5",
+            "#ACACAC",
+            "#898989",
+            "#000000",
+            "#666666",
+            "#CECECE",
+            "#F5F5F5",
+            "#9C9C9C"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#E5E5E5",
+              "#ACACAC",
+              "#898989",
+              "#000000",
+              "#666666",
+              "#CECECE"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_006/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-007",
+      "issue": 7,
+      "title": "部分突出显示的饼图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483806&idx=1&sn=d73d93fbb25be6572bf33c7e58997678&chksm=fe679b94c91012824f08e3a5bfdc8251157addd8aadb992d29a13cdd7ea4fe5cdc50015d9a3c&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [
+        "group-comparison",
+        "proportion-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "dplyr",
+          "export",
+          "ggforce",
+          "ggplot2",
+          "ggpubr",
+          "ggrepel",
+          "patchwork"
+        ],
+        "primitives": [
+          "geom_tile",
+          "geom_text",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "plot-composition",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#040503",
+          "#891619",
+          "#AF353D",
+          "#CF5057",
+          "#EE2129",
+          "#E7604D",
+          "#F58667",
+          "#F7A387",
+          "#FBC4AE",
+          "#FDE2D6",
+          "#FDF1EA",
+          "#AAD9C0",
+          "#0073AE",
+          "#069BDA",
+          "#68B0E1",
+          "#B8CBE8"
+        ],
+        "combined_sha256": "9d2d43ab3ea706b82669901ea52ae543e834b39722581225d535de47410eae22",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "aff18f27682b73264a2901fbbf4090b6511fca36bafc7a459db068add48f4e9c",
+          "width_px": 1080,
+          "height_px": 1451,
+          "aspect_ratio": 0.7443,
+          "dominant_nonwhite": [
+            "#000000",
+            "#FDF1EA",
+            "#AAD9C0",
+            "#B8CBE8",
+            "#2B2B2B",
+            "#7D7D7D",
+            "#EE2129",
+            "#0073AE"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#FDF1EA",
+              "#AAD9C0",
+              "#B8CBE8",
+              "#2B2B2B",
+              "#7D7D7D"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison",
+            "proportion-display"
+          ],
+          "source_path": "results/figures/issue_007/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-008",
+      "issue": 8,
+      "title": "基因突变全景瀑布图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483816&idx=1&sn=73bb796a166fb501934ab4fab2aaf28a&chksm=fe679ba2c91012b48b09770a4d7cba58802e927604461c0f6384769c5b14edb11a2325e931df&scene=21#wechat_redirect",
+      "chart_tags": [
+        "genome"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 7,
+        "packages": [
+          "BiocManager",
+          "ComplexHeatmap",
+          "RColorBrewer",
+          "TCGAbiolinks",
+          "aplot",
+          "circlize",
+          "dplyr",
+          "export",
+          "ggplot2",
+          "ggplotify",
+          "ggpubr",
+          "reshape2",
+          "stringr"
+        ],
+        "primitives": [
+          "geom_bar",
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#E22127",
+          "#3880BB",
+          "#F57F23",
+          "#A4CEE4",
+          "#4D3D98",
+          "#99D092",
+          "#4DB049",
+          "#984E9F",
+          "#F68D5A",
+          "#B21E22",
+          "#377EB9",
+          "#F68C5A",
+          "#D63D4F"
+        ],
+        "combined_sha256": "f6c28fe6fed7fb1993351713c45d1d081e0d5f3c1042ca9018e9e05b8f7dc0ff",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "9d89e4b07c2c19de426f73ce1c1083b81e3cedc1f6b75c47c8ac0593610210a3",
+          "width_px": 1080,
+          "height_px": 1518,
+          "aspect_ratio": 0.7115,
+          "dominant_nonwhite": [
+            "#000000",
+            "#848484",
+            "#C0C0C0",
+            "#C00000",
+            "#3A3A3A",
+            "#008385",
+            "#F4F4F4",
+            "#AAD9C0"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#848484",
+              "#C0C0C0",
+              "#C00000",
+              "#3A3A3A",
+              "#008385"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_008/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-009",
+      "issue": 9,
+      "title": "桑基堆积柱状图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483822&idx=1&sn=d3ae3e2bc431471af414b7c18f7e72d3&chksm=fe679ba4c91012b268a8362e7327bdc25efb3cb37e9336016900988f173ea8cf9269c69ab65e&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition"
+      ],
+      "advantage_tags": [
+        "proportion-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "dplyr",
+          "ggalluvial",
+          "ggh4x",
+          "ggplot2",
+          "patchwork",
+          "reshape2"
+        ],
+        "primitives": [
+          "geom_col"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#01359C",
+          "#D8D7E0",
+          "#7ECFFB",
+          "#F5B0AB",
+          "#AB9FA3",
+          "#1C6DB6",
+          "#E0E0E0",
+          "#D45C53",
+          "#AD3B8D",
+          "#F2E749",
+          "#18D3C6",
+          "#BCB000",
+          "#1184E1",
+          "#95C800",
+          "#FFC9A3"
+        ],
+        "combined_sha256": "f8c7ec114b7c941405392ad2752e3197d805b8d651af13dfda9c40deb5eee010",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "dc81bc37f4cea7c1f0078de17b745a5764bd4a4bbf89d4a7b36b1501cb24432e",
+          "width_px": 1080,
+          "height_px": 1504,
+          "aspect_ratio": 0.7181,
+          "dominant_nonwhite": [
+            "#18D3C6",
+            "#000000",
+            "#838383",
+            "#383838",
+            "#9F9F9F",
+            "#727272",
+            "#F5B0AB",
+            "#01359C"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#18D3C6",
+              "#000000",
+              "#838383",
+              "#383838",
+              "#9F9F9F",
+              "#727272"
+            ]
+          },
+          "source_claim_tags": [
+            "proportion-display"
+          ],
+          "source_path": "results/figures/issue_009/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-010",
+      "issue": 10,
+      "title": "多组比较火山图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483833&idx=1&sn=df51d98a9e490ddffd40715e35b19466&chksm=fe679bb3c91012a515e2a767f250505699409e5d40c40a5b1faeaa1d11187d0723a2f0434192&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "dplyr",
+          "ggnewscale",
+          "ggplot2",
+          "ggrepel"
+        ],
+        "primitives": [
+          "geom_col",
+          "geom_tile",
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#F05F63",
+          "#2F3084",
+          "#76A5D9",
+          "#43A8A8",
+          "#3C75A9",
+          "#197638",
+          "#A54496",
+          "#F8A213",
+          "#DBA478",
+          "#969730",
+          "#000000"
+        ],
+        "combined_sha256": "479a44cb3e0fcbdd47da00eb55e7b380a28150fed02dad0f3d72bcd8c4cff985",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "fd0dd3df989d68a095e4b6c7885b26ecc8199916736963bb32a003d7e4d5b796",
+          "width_px": 1080,
+          "height_px": 1504,
+          "aspect_ratio": 0.7181,
+          "dominant_nonwhite": [
+            "#F4F4F4",
+            "#000000",
+            "#838383",
+            "#383838",
+            "#9F9F9F",
+            "#F5B0AB",
+            "#727272",
+            "#18D3C6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F4F4F4",
+              "#000000",
+              "#838383",
+              "#383838",
+              "#9F9F9F",
+              "#F5B0AB"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_010/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-011",
+      "issue": 11,
+      "title": "组织器官解剖图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483844&idx=1&sn=e3bacc049af8a0327a4747c2710fe7a6&chksm=fe679bcec91012d8588edc8657f5703e8656063738545a5a599587a124e116279990b1000fac&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "dplyr",
+          "gganatogram",
+          "ggplot2",
+          "ggpolypath",
+          "gridExtra",
+          "patchwork",
+          "viridis"
+        ],
+        "primitives": [
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "plot-composition"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "57202f0ef87299f9480f5fade3730b1d7e7dd33b4b93bc926dbd9c7c22e7a6fc",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "85f18c69f052447ffb895654d8ee9020a8e992a9953aeffd0905520d3ec5c57d",
+          "width_px": 1080,
+          "height_px": 1480,
+          "aspect_ratio": 0.7297,
+          "dominant_nonwhite": [
+            "#000000",
+            "#FCC7CD",
+            "#C19FBA",
+            "#B4CD6C",
+            "#6AACD6",
+            "#838383",
+            "#121212",
+            "#E2E2E2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#FCC7CD",
+              "#C19FBA",
+              "#B4CD6C",
+              "#6AACD6",
+              "#838383"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_011/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-012",
+      "issue": 12,
+      "title": "采样地图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483863&idx=1&sn=f9e1f4caca6fd8ee8f6663babd8f5da7&chksm=fe679bddc91012cbef9561ae7d56051671248e942a828ad177305074bb9726ef8deb050e47b5&scene=21#wechat_redirect",
+      "chart_tags": [
+        "map"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "dplyr",
+          "ggplot2",
+          "ggspatial",
+          "raster",
+          "sf",
+          "showtext",
+          "stars",
+          "tibble"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#E50F04",
+          "#2B799F",
+          "#753f93",
+          "#f5f6f1",
+          "#f7fbfe",
+          "#9fcbe2",
+          "#6badd7",
+          "#4292c7",
+          "#07519c",
+          "#08306c"
+        ],
+        "combined_sha256": "d72f31164c414c0c0f4be93e3ccba8219fc76ef6d9652aab834409c0772e3b2e",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "a76b7903d130dfb3e91fd866eba73a543fa29f60f8b70f4b685c3b41d2d9166f",
+          "width_px": 1080,
+          "height_px": 1583,
+          "aspect_ratio": 0.6822,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F5F6F1",
+            "#6E6E6E",
+            "#8A8A8A",
+            "#C5BFBF",
+            "#E5E5E1",
+            "#70A1C5",
+            "#D1D2CE"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F5F6F1",
+              "#6E6E6E",
+              "#8A8A8A",
+              "#C5BFBF",
+              "#E5E5E1"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_012/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-013",
+      "issue": 13,
+      "title": "气泡热图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483869&idx=1&sn=f35b5747cffd6ee98d7fcf0148dc4752&chksm=fe679bd7c91012c1846dfcb264ede176e6d9d689fb97afad07d1b71e0078dadb64e26acb4a6f&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "dplyr",
+          "ggplot2",
+          "patchwork"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_col",
+          "Heatmap",
+          "facet_grid",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "plot-composition"
+        ],
+        "hex_colors": [
+          "#0EA079",
+          "#069BDA",
+          "#CC79A8"
+        ],
+        "combined_sha256": "57e01a645fe6ca137b8128f48711ef5016d0e840dff88d16737a978262b64ccf",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "45e3c932ca574c9cdad534c7b3364b7e9fc097bab3d905bb9d4ade1e0a014e15",
+          "width_px": 1080,
+          "height_px": 1583,
+          "aspect_ratio": 0.6822,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F5B0AB",
+            "#8A8A8A",
+            "#6E6E6E",
+            "#01359C",
+            "#18D3C6",
+            "#F4F4F4",
+            "#E1E1E1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F5B0AB",
+              "#8A8A8A",
+              "#6E6E6E",
+              "#01359C",
+              "#18D3C6"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_013/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-014",
+      "issue": 14,
+      "title": "网络相关性热图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483879&idx=1&sn=097f6b52e54291285546e5983a164fe6&chksm=fe679bedc91012fb743448792acbd5cece7e526ed2431f9521e4ccbfb3bcb28575051ae8c972&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "network",
+        "association"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "proportion-display",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "RColorBrewer",
+          "devtools",
+          "ggnewscale",
+          "linkET",
+          "tidyverse",
+          "vegan"
+        ],
+        "primitives": [
+          "geom_point",
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "842d9647b3c636ee18fb0417c872d2fa018d1a0d84103891036afbf3ffb414f1",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "ca17c6847584950d12c479a7f6dfd31238d70a00c97e4cb4820688d3bf43ae6f",
+          "width_px": 1080,
+          "height_px": 1582,
+          "aspect_ratio": 0.6827,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F3F3F3",
+            "#707070",
+            "#D9D9D9",
+            "#212121",
+            "#BABABA",
+            "#A2A2A2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F3F3F3",
+              "#707070",
+              "#D9D9D9",
+              "#212121",
+              "#BABABA"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "proportion-display",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_014/image_002.png"
+        },
+        {
+          "sha256": "9627a6d7944a6c445f29fe0fcd336541e12b07dec4d9d1fb6ba0419f652b5434",
+          "width_px": 1080,
+          "height_px": 1575,
+          "aspect_ratio": 0.6857,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F3F3F3",
+            "#8A8A8A",
+            "#6C6C6C",
+            "#202020",
+            "#E2E2E2",
+            "#CACACA",
+            "#B2B2B2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F3F3F3",
+              "#8A8A8A",
+              "#6C6C6C",
+              "#202020",
+              "#E2E2E2"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_014/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-015",
+      "issue": 15,
+      "title": "组合热图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483886&idx=1&sn=d8569355a5f04c425ff01107a8c688bd&chksm=fe679be4c91012f26b8bf2dec56aae6507c474aa7883533f7d951da9dc00859e40ba73ca0af3&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "relationship-display",
+        "trajectory-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "ComplexHeatmap",
+          "circlize",
+          "dendsort",
+          "openxlsx",
+          "tidyverse",
+          "viridis"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#E65100",
+          "#5F9E5F",
+          "#A074B6"
+        ],
+        "combined_sha256": "6b1ad29c4590b11b3b950c6028b7636e1a5371d89d2a22e6f5bb10b4668e9906",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "bc570081291d11ed96001536ed416dbcebb0e5d0ae2b14b901a3136ee820cf27",
+          "width_px": 1080,
+          "height_px": 1505,
+          "aspect_ratio": 0.7176,
+          "dominant_nonwhite": [
+            "#F1F4F8",
+            "#000000",
+            "#A4A4A4",
+            "#8A8A8A",
+            "#E0E0E1",
+            "#CFCFCF",
+            "#B9B9B9"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F1F4F8",
+              "#000000",
+              "#A4A4A4",
+              "#8A8A8A",
+              "#E0E0E1",
+              "#CFCFCF"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "relationship-display",
+            "trajectory-display"
+          ],
+          "source_path": "results/figures/issue_015/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-016",
+      "issue": 16,
+      "title": "山脊图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483905&idx=1&sn=2f90185953ea54479603083c09ebae27&chksm=fe67980bc910111d49bc32be95887c5d714885e0d2c4047bfd9dcae1e003c0191033f1d25574&scene=21#wechat_redirect",
+      "chart_tags": [
+        "distribution"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "ggridges",
+          "patchwork",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_col",
+          "geom_density",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "plot-composition",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#F6EB5E",
+          "#CD8280",
+          "#F0F0F0",
+          "#54D0B4",
+          "#D2D1D1",
+          "#78C3ED",
+          "#E69F00",
+          "#CBDFF3",
+          "#3BFFB8",
+          "#ECAD67",
+          "#B3B2B2",
+          "#959595",
+          "#E98FBD",
+          "#2672B2",
+          "#509109",
+          "#ECE807"
+        ],
+        "combined_sha256": "4651374af53a21c869e7679a95bcb14e9b92c38990951ddea09efbe84165598a",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "368f0be133726d71df56bd219d8a3cd1cb48cb72453519c265f03c82f23cc68f",
+          "width_px": 1080,
+          "height_px": 1501,
+          "aspect_ratio": 0.7195,
+          "dominant_nonwhite": [
+            "#E8F1F8",
+            "#000000",
+            "#898989",
+            "#2A2A2A",
+            "#787878",
+            "#E1E1E1",
+            "#C6C6C6",
+            "#AAAAAA"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#E8F1F8",
+              "#000000",
+              "#898989",
+              "#2A2A2A",
+              "#787878",
+              "#E1E1E1"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_016/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-017",
+      "issue": 17,
+      "title": "箱线图/小提琴图/云雨图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483936&idx=1&sn=cf22ad37b9afc52a0af1f27daf8a4711&chksm=fe67982ac910113c9c9280b6ee5510942da0d65ca3f533233a9714a191c999ef7be7467c07df&scene=21#wechat_redirect",
+      "chart_tags": [
+        "distribution"
+      ],
+      "advantage_tags": [
+        "dense-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "gghalves",
+          "ggpubr",
+          "patchwork",
+          "rstatix",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_line",
+          "geom_boxplot",
+          "geom_violin",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "plot-composition"
+        ],
+        "hex_colors": [
+          "#889ECE",
+          "#F4E636",
+          "#29C4A1",
+          "#F3640E",
+          "#E2615E",
+          "#FEcfc8",
+          "#7dbee6"
+        ],
+        "combined_sha256": "ad36fba759b414805b4474bf4b4374cf7136b4d97707d23ef5f7b9590e67598e",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "97923632e3d574da0455665764afa2239554efd6ce2af286b229e2aaaf00a856",
+          "width_px": 1080,
+          "height_px": 1501,
+          "aspect_ratio": 0.7195,
+          "dominant_nonwhite": [
+            "#000000",
+            "#29C4A1",
+            "#2C2C2C",
+            "#5E5E5E",
+            "#889ECE",
+            "#FFDFD8",
+            "#787878",
+            "#444444"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#29C4A1",
+              "#2C2C2C",
+              "#5E5E5E",
+              "#889ECE",
+              "#FFDFD8"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison"
+          ],
+          "source_path": "results/figures/issue_017/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-018",
+      "issue": 18,
+      "title": "FC-FC散点图（变异火山图）",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483956&idx=1&sn=627480882a5c4423980fdefeea18e225&chksm=fe67983ec9101128156db4ddf6628d6d55c6fa1eedb4f0683e803c24ae5cb4271069663b2bf5&scene=21#wechat_redirect",
+      "chart_tags": [
+        "association"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "ggrepel",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#F80000",
+          "#0080BB",
+          "#00B137"
+        ],
+        "combined_sha256": "d64afc6191349c30bfdea1b2e4f622c381e6196f80794f5a6f38bc70be69226d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "53a589c6844addf3d132b308f189ac5997003488e19cdb8eea6d98a873dbf287",
+          "width_px": 1080,
+          "height_px": 1502,
+          "aspect_ratio": 0.719,
+          "dominant_nonwhite": [
+            "#F2F2F2",
+            "#000000",
+            "#F80000",
+            "#1A1A1A",
+            "#9F9F9F",
+            "#797979",
+            "#0AB13C",
+            "#D2D2D2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F2F2F2",
+              "#000000",
+              "#F80000",
+              "#1A1A1A",
+              "#9F9F9F",
+              "#797979"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_018/image_006.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-019",
+      "issue": 19,
+      "title": "桑基图",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483972&idx=1&sn=e9ce251cfcde46138d9a9ee39024d4de&chksm=fe67984ec910115853897229739affdbed025e14e747f6ef51762aa5db87af34d04112992797&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "devtools",
+          "ggsankey",
+          "tidyverse"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#944D55",
+          "#B5555A",
+          "#D05C5F",
+          "#E46665",
+          "#F57B70",
+          "#FC9780",
+          "#FCAD98",
+          "#FDC5B2",
+          "#FDD9CA",
+          "#FFECE5",
+          "#EAA475",
+          "#96D1E2",
+          "#4E74B4"
+        ],
+        "combined_sha256": "837fceafec361dd5be6432e98e8a7683d1dc5516a17d934c3327cb145dacdba9",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "67583c8d92113a558523a4f94b97932fa5a6cfd502f3f2ed7475333f60e2c790",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F3F3F3",
+            "#96D1E2",
+            "#18D3C6",
+            "#F5B0AB",
+            "#B5B5B5",
+            "#838383",
+            "#727272"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F3F3F3",
+              "#96D1E2",
+              "#18D3C6",
+              "#F5B0AB",
+              "#B5B5B5"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_019/image_005.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-020",
+      "issue": 20,
+      "title": "生存曲线",
+      "source_url": "http://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247483991&idx=1&sn=b2b769f50b8ef194bdba8404b9f062a9&chksm=fe67985dc910114be3d3c891fa5f64c77ae062e99ee528d471deddbc3d6e1598731a213719ec&scene=21#wechat_redirect",
+      "chart_tags": [
+        "time-to-event"
+      ],
+      "advantage_tags": [
+        "trend-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "ggpp",
+          "ggsurvfit",
+          "patchwork",
+          "survival"
+        ],
+        "primitives": [
+          "geom_segment",
+          "survfit"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering",
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [
+          "#E05133",
+          "#4877B9",
+          "#2D5662",
+          "#F7931D",
+          "#DCDDDF",
+          "#009FC3",
+          "#B30437"
+        ],
+        "combined_sha256": "e607cb460576db879238bbcdae870656f84a318980695797ff70cba71e666ab5",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "dabe95dc486cf0ee69111e130c3d3bb14ab399c2f1f9f87de3bd08edb019aacb",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#727272",
+            "#F5B0AB",
+            "#E4E4E4",
+            "#96D1E2",
+            "#18D3C6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#727272",
+              "#F5B0AB",
+              "#E4E4E4"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display"
+          ],
+          "source_path": "results/figures/issue_020/image_004.png"
+        },
+        {
+          "sha256": "eb7fc554abe6a32f0882550acccd931c321b3ab749202c9669dcaac6653044c6",
+          "width_px": 1080,
+          "height_px": 1502,
+          "aspect_ratio": 0.719,
+          "dominant_nonwhite": [
+            "#828282",
+            "#000000",
+            "#F5B0AB",
+            "#B3B3B3",
+            "#96D1E2",
+            "#F0F0F0",
+            "#18D3C6",
+            "#DBDBDB"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#828282",
+              "#000000",
+              "#F5B0AB",
+              "#B3B3B3",
+              "#96D1E2",
+              "#F0F0F0"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display"
+          ],
+          "source_path": "results/figures/issue_020/image_005.png"
+        },
+        {
+          "sha256": "5827d3c6a5f08c699a2493d22bf3f49e44b09664396908054116d9d0e7b8a7a4",
+          "width_px": 1080,
+          "height_px": 1502,
+          "aspect_ratio": 0.719,
+          "dominant_nonwhite": [
+            "#828282",
+            "#000000",
+            "#F5B0AB",
+            "#F3F3F3",
+            "#C7C7C7",
+            "#DCDCDC",
+            "#96D1E2",
+            "#18D3C6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#828282",
+              "#000000",
+              "#F5B0AB",
+              "#F3F3F3",
+              "#C7C7C7",
+              "#DCDCDC"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display"
+          ],
+          "source_path": "results/figures/issue_020/image_006.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-021",
+      "issue": 21,
+      "title": "棒棒糖和甜甜圈图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484011&idx=1&sn=e77fd1b6abd1486ea870e54f9b3efea8&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ggforce",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_tile",
+          "geom_segment",
+          "geom_text",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "plot-composition",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#642251",
+          "#AD3B8F",
+          "#116A36",
+          "#317EC1",
+          "#13576A",
+          "#62C08D",
+          "#46C1BB",
+          "#F0545D",
+          "#FCC9A2",
+          "#94C73D",
+          "#3A481E",
+          "#F0E94A",
+          "#BDB231",
+          "#EEE111",
+          "#706B2C",
+          "#808181"
+        ],
+        "combined_sha256": "d6f74b09e8d6c5d7bef439eeae6652285455d49efaf65d61a1248e3a89c8b032",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "0611ea2841289ee9aa8f7afc58738a927421345e868c78995adae2f0920d9ae1",
+          "width_px": 1080,
+          "height_px": 1513,
+          "aspect_ratio": 0.7138,
+          "dominant_nonwhite": [
+            "#86CEB8",
+            "#FEE140",
+            "#F1F4F8",
+            "#90C0F9",
+            "#000000",
+            "#1F1F1F",
+            "#676767",
+            "#323232"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#86CEB8",
+              "#FEE140",
+              "#F1F4F8",
+              "#90C0F9",
+              "#000000",
+              "#1F1F1F"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_021/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-022",
+      "issue": 22,
+      "title": "散点图附边缘分布注释",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484175&idx=1&sn=e4c694cb763517c1f64c8d902f713fac&scene=21#wechat_redirect",
+      "chart_tags": [
+        "association"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ggside",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#FDB35F",
+          "#FEFFB5",
+          "#B2DE69",
+          "#BDBBD7",
+          "#FDCDE6",
+          "#7BA4CC",
+          "#7BA4CA",
+          "#CD6453"
+        ],
+        "combined_sha256": "bddf8f1272b6545c98be0b2e205a0e78f1d7337777eaca9c3816c09ed6c1e7c9",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "ff301ad4027bb92d393e93a0b32018a05fbc18e7950aeda7a139fc0effbbba1b",
+          "width_px": 1080,
+          "height_px": 1513,
+          "aspect_ratio": 0.7138,
+          "dominant_nonwhite": [
+            "#F1F4F8",
+            "#7BA4CA",
+            "#000000",
+            "#1F1F1F",
+            "#676767",
+            "#323232",
+            "#575757",
+            "#E5E5E5"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F1F4F8",
+              "#7BA4CA",
+              "#000000",
+              "#1F1F1F",
+              "#676767",
+              "#323232"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_022/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-023",
+      "issue": 23,
+      "title": "基因集富集(GSEA)图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484204&idx=1&sn=247bec73d3138a038a6d39040d45d5d2&scene=21#wechat_redirect",
+      "chart_tags": [
+        "enrichment"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "BiocManager",
+          "GseaVis",
+          "devtools"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#009D73",
+          "#5BB3E4",
+          "#E59F24",
+          "#000000"
+        ],
+        "combined_sha256": "a1a1f91d77d308da7d07814a6fa61a742693aa1d54f108fda077431f1b2dc3d1",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "d6cd9e0a5c61a0c11145e5e82c67cea21431a9475656862205b38ab2d6b4613f",
+          "width_px": 1080,
+          "height_px": 1501,
+          "aspect_ratio": 0.7195,
+          "dominant_nonwhite": [
+            "#000000",
+            "#898989",
+            "#F1F1F1",
+            "#2A2A2A",
+            "#787878",
+            "#C2C2C2",
+            "#5BB3E4",
+            "#DDDDDD"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#898989",
+              "#F1F1F1",
+              "#2A2A2A",
+              "#787878",
+              "#C2C2C2"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_023/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-024",
+      "issue": 24,
+      "title": "经典相关性热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484250&idx=1&sn=c1e76fe637cf9b76d147cdd6bb8b0c81&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "association"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ComplexHeatmap",
+          "circlize",
+          "corrplot",
+          "readxl",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#F9A80A",
+          "#03018D",
+          "#FF0100",
+          "#7030A1",
+          "#FEC100",
+          "#757170",
+          "#00B151"
+        ],
+        "combined_sha256": "ea1f34d3d62409ab94dc3786643dcb524794a774f0fae9d1c48463ce2b5dfbd3",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "89881f4d1fe19f27a89229b36c3ca41cdfac51b74f46092aab0ea893a7506871",
+          "width_px": 1080,
+          "height_px": 1532,
+          "aspect_ratio": 0.705,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B3B3B3",
+            "#E7EEF0",
+            "#626262",
+            "#141414",
+            "#FFF0D9",
+            "#D6D6D6",
+            "#C5C5C5"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B3B3B3",
+              "#E7EEF0",
+              "#626262",
+              "#141414",
+              "#FFF0D9"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_024/image_002.png"
+        },
+        {
+          "sha256": "89881f4d1fe19f27a89229b36c3ca41cdfac51b74f46092aab0ea893a7506871",
+          "width_px": 1080,
+          "height_px": 1532,
+          "aspect_ratio": 0.705,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B3B3B3",
+            "#E7EEF0",
+            "#626262",
+            "#141414",
+            "#FFF0D9",
+            "#D6D6D6",
+            "#C5C5C5"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B3B3B3",
+              "#E7EEF0",
+              "#626262",
+              "#141414",
+              "#FFF0D9"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_024/image_006.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-025",
+      "issue": 25,
+      "title": "和弦图+UpSet图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484313&idx=1&sn=97270f82584a046992933814f31a1a81&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ComplexHeatmap",
+          "circlize",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap",
+          "circos"
+        ],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "a40eb5ea09f5bf0924ba0f5a0d4eea8f75cfb72dbdd21ec1b0959b56f0f2b303",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "7cf9e8065d1cc09446418ca87aeaa71525e3c33cd9c8d7b4579b01e88d073e19",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F2F2F2",
+            "#B5B5B5",
+            "#838383",
+            "#D7CDC2",
+            "#C2C8DA",
+            "#727272",
+            "#FFFFD8"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F2F2F2",
+              "#B5B5B5",
+              "#838383",
+              "#D7CDC2",
+              "#C2C8DA"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_025/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-026",
+      "issue": 26,
+      "title": "分面堆积柱状图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484443&idx=1&sn=dfc514891248e7f2fc5dbb8061e13fb9&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "patchwork",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_bar",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples"
+        ],
+        "hex_colors": [
+          "#F3BDA5",
+          "#B7E4C7",
+          "#D8B4E2",
+          "#1f77b4",
+          "#F9D68D",
+          "#FF847C",
+          "#E0E0E0",
+          "#7FBEEB",
+          "#B19CD9",
+          "#F89CAE",
+          "#5FC8D1",
+          "#FDFD96",
+          "#e377c2",
+          "#d62728",
+          "#AED9E0",
+          "#E3A6AE"
+        ],
+        "combined_sha256": "21d9e39093794eb175c48fbc621ce1c6b695b3fcf91844d42e83b22ffaeb69aa",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "020a582d6a5fbd351384970cb5445c603b9bf9e38e4d5f7e491aedb0bce49baf",
+          "width_px": 1080,
+          "height_px": 1492,
+          "aspect_ratio": 0.7239,
+          "dominant_nonwhite": [
+            "#000000",
+            "#ACACAC",
+            "#7F7F7F",
+            "#F5F5F5",
+            "#C5E9D2",
+            "#313131",
+            "#D8B4E2",
+            "#F5C9B6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#ACACAC",
+              "#7F7F7F",
+              "#F5F5F5",
+              "#C5E9D2",
+              "#313131"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_026/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-027",
+      "issue": 27,
+      "title": "带聚类树的气泡热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484468&idx=1&sn=4595191f11a107ff1ce678dff4a7014a&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "tree"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "circlize",
+          "dendextend",
+          "dplyr",
+          "ggplot2",
+          "patchwork",
+          "viridis"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_col",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "plot-composition"
+        ],
+        "hex_colors": [
+          "#efedf5",
+          "#bcbddc",
+          "#756bb1",
+          "#fcfbfd",
+          "#dadaeb",
+          "#9e9ac8",
+          "#807dba",
+          "#6a51a3",
+          "#4a1486",
+          "#9EDDCE",
+          "#E3CCE2",
+          "#F9C1AC",
+          "#FCD6A8",
+          "#FBF9D4",
+          "#B8D7EA",
+          "#F8BBB5"
+        ],
+        "combined_sha256": "8bb82941e84411c5daf182ee33deb2cb23030718ba077c6eb35cc5e4c219af9d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "556c9afd858233779b79ae7967abcb1b13d81303903f8bd191f105d577a727a8",
+          "width_px": 1080,
+          "height_px": 1563,
+          "aspect_ratio": 0.691,
+          "dominant_nonwhite": [
+            "#8B8B8B",
+            "#F2F2F2",
+            "#D1D1D1",
+            "#BFBFBF",
+            "#E2E2E2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8B8B8B",
+              "#F2F2F2",
+              "#D1D1D1",
+              "#BFBFBF",
+              "#E2E2E2"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_027/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-028",
+      "issue": 28,
+      "title": "泳道图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484500&idx=1&sn=a9a41ae60ef3c05cb90b74a575739515&scene=21#wechat_redirect",
+      "chart_tags": [
+        "clinical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "aplot",
+          "dplyr",
+          "ggplot2",
+          "readxl",
+          "reshape2"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_tile",
+          "geom_segment"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#9DD1DE",
+          "#68AF78",
+          "#006632",
+          "#FCD428",
+          "#75C8BB",
+          "#E57164",
+          "#61AAD1",
+          "#005CA2",
+          "#D6B97B",
+          "#A184BC"
+        ],
+        "combined_sha256": "da55948c2d7bccbe48fb80ad9818fbb4b939b50e538849d466b7ed2d3d74876c",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "4fdd41df8e702b4a74f60e21a213211bf912c1170a4aa956c9fd93eeee1f7b43",
+          "width_px": 1080,
+          "height_px": 1531,
+          "aspect_ratio": 0.7054,
+          "dominant_nonwhite": [
+            "#838383",
+            "#75C8BB",
+            "#005CA2",
+            "#F4F4F4",
+            "#F5B0AB",
+            "#242424",
+            "#DADADA",
+            "#C7C7C7"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#838383",
+              "#75C8BB",
+              "#005CA2",
+              "#F4F4F4",
+              "#F5B0AB",
+              "#242424"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_028/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-029",
+      "issue": 29,
+      "title": "Table1",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484554&idx=1&sn=dd296a81f35f9d55a8fadbbcc58353c4&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 12,
+        "packages": [
+          "flextable",
+          "table1"
+        ],
+        "primitives": [],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "a0b8189e4608bf2e51491c2e26b2fa335729a1451cab2fa0912a75dee156f6fa",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "efc777829c58e54384f624e68926a024210aebebdd5bc66a23d73375c41eb165",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#FEF9EC",
+            "#8A8A8A",
+            "#005CA2",
+            "#75C8BB",
+            "#F5B0AB",
+            "#797979",
+            "#E1E1E1",
+            "#FFFFA6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#FEF9EC",
+              "#8A8A8A",
+              "#005CA2",
+              "#75C8BB",
+              "#F5B0AB",
+              "#797979"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_029/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-031",
+      "issue": 31,
+      "title": "局部放大图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484595&idx=1&sn=7212214ee6c59eca5074c53a5e84b300&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 9,
+        "packages": [
+          "devtools",
+          "elementalist",
+          "ggessentials",
+          "ggfx",
+          "ggmagnify",
+          "ggplot2",
+          "remotes",
+          "sf",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_density",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "291cfa8033ddf33f973761e17846edc7a955bd638444f664c4329cbcb5a92c73",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "5a1904e6c835997f991edce105fa35c25468d6772ba571a00610b51c2f4aa259",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#D8B4E2",
+            "#000000",
+            "#CE5146",
+            "#8A8A8A",
+            "#CFCFCF",
+            "#FFF7E7",
+            "#737373",
+            "#A8A8A8"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#D8B4E2",
+              "#000000",
+              "#CE5146",
+              "#8A8A8A",
+              "#CFCFCF",
+              "#FFF7E7"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_031/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-032",
+      "issue": 32,
+      "title": "多分组火山图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484618&idx=1&sn=3d318dc440d7e7ea547e52b3ea54694c&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 9,
+        "packages": [
+          "Tag",
+          "ggplot2",
+          "ggrastr",
+          "ggrepel",
+          "maps",
+          "patchwork",
+          "sf",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_text",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#3ACF4A"
+        ],
+        "combined_sha256": "7e67ce14650c836c418b3ae661bbd08552b7914c5f019bd27067b9933378573d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "65e319e66d2edfbae958dd9eb25ff13df6627a33ed7cc30c4b5d758ad25c35a2",
+          "width_px": 1080,
+          "height_px": 1563,
+          "aspect_ratio": 0.691,
+          "dominant_nonwhite": [
+            "#8B8B8B",
+            "#F2F2F2",
+            "#DCDCDC",
+            "#B9B9B9",
+            "#C9C9C9",
+            "#9B9B9B"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8B8B8B",
+              "#F2F2F2",
+              "#DCDCDC",
+              "#B9B9B9",
+              "#C9C9C9",
+              "#9B9B9B"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_032/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-033",
+      "issue": 33,
+      "title": "风车图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484637&idx=1&sn=437e0ab9a061e5ad493f4c5e8f79f3a2&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "readxl",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_segment",
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#008F83",
+          "#F27267",
+          "#895280",
+          "#2D314F",
+          "#5E6870",
+          "#DD3233"
+        ],
+        "combined_sha256": "4a16f520e4dd89a428cc336a3b8726fdc20193bf345ab8dc928a60a931f0e32d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "1aa60185b789f37b4bf1b272060e59e6f216d2209f339496ea7af1aadf7ba076",
+          "width_px": 1080,
+          "height_px": 1513,
+          "aspect_ratio": 0.7138,
+          "dominant_nonwhite": [
+            "#008F83",
+            "#8A8A8A",
+            "#DD3233",
+            "#C1C1C1",
+            "#5E6870",
+            "#000000",
+            "#797979",
+            "#2D314F"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#008F83",
+              "#8A8A8A",
+              "#DD3233",
+              "#C1C1C1",
+              "#5E6870",
+              "#000000"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_033/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-034",
+      "issue": 34,
+      "title": "嵌套图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484680&idx=1&sn=1ba9c525a070f40ab1f5f96d78dbd90d&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "ggrastr",
+          "patchwork",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "inset_element",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "plot-composition"
+        ],
+        "hex_colors": [
+          "#4d3f72"
+        ],
+        "combined_sha256": "eeb262e4b094fc97b583eae8993366d6cee76fb70a773190dd4706c7c0b8118f",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "e2cdfa36e4941c563bd2afcb9b6bebd6b5a2f08a7cffa10323f537d31a245851",
+          "width_px": 1080,
+          "height_px": 1467,
+          "aspect_ratio": 0.7362,
+          "dominant_nonwhite": [
+            "#000000",
+            "#BABABA",
+            "#6D6D6D",
+            "#E9E9E9",
+            "#898989",
+            "#141414",
+            "#D5D5D5",
+            "#A9A9A9"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#BABABA",
+              "#6D6D6D",
+              "#E9E9E9",
+              "#898989",
+              "#141414"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_034/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-035",
+      "issue": 35,
+      "title": "分面散点图带基因标签",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484703&idx=1&sn=1ae49421feb728bd1445871ab0526fba&scene=21#wechat_redirect",
+      "chart_tags": [
+        "association"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "ggrastr",
+          "ggrepel",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_text",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#4d3f72"
+        ],
+        "combined_sha256": "ddd3715ac2baaf683102da41543c1101710d68b7fbed9544aa05f779224a8a8f",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "bd3b2488e60ff863898d785e6a35e9f9215cdc1a729e218fb092f718b57a1d63",
+          "width_px": 1080,
+          "height_px": 1499,
+          "aspect_ratio": 0.7205,
+          "dominant_nonwhite": [
+            "#000000",
+            "#898989",
+            "#D9D9D9",
+            "#6E6E6E",
+            "#F4F4F4",
+            "#101010",
+            "#BFBFBF",
+            "#A1A1A1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#898989",
+              "#D9D9D9",
+              "#6E6E6E",
+              "#F4F4F4",
+              "#101010"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_035/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-036",
+      "issue": 36,
+      "title": "亚组分析森林图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484740&idx=1&sn=118009d89acde1917b39867e326ea3f2&scene=21#wechat_redirect",
+      "chart_tags": [
+        "clinical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 6,
+        "packages": [
+          "devtools",
+          "forestploter",
+          "ggplot2",
+          "ggsurvfit",
+          "grid",
+          "jstable",
+          "survival",
+          "tidyverse"
+        ],
+        "primitives": [
+          "survfit"
+        ],
+        "coding_techniques": [
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "c4e7d5f93a51041722d6e27aec340232c7e29481ebcbda4389894fbb37c5a84f",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "d3df5d83a44c021a66f7f0fa46b55509942f3be61aaf169f8fb6920dda53a30d",
+          "width_px": 1080,
+          "height_px": 1532,
+          "aspect_ratio": 0.705,
+          "dominant_nonwhite": [
+            "#EFF3F2",
+            "#8B8B8B",
+            "#181818",
+            "#E2E2E2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#EFF3F2",
+              "#8B8B8B",
+              "#181818",
+              "#E2E2E2"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_036/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-037",
+      "issue": 37,
+      "title": "瀑布图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484753&idx=1&sn=2b640e4979a6fb0d1f51257c9c441341&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "group-comparison",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "showtext",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_col"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#9BD5E7",
+          "#C8E0B4",
+          "#FAB79B",
+          "#01539E"
+        ],
+        "combined_sha256": "a0991595e30bf105a46317ef4528d4cb5ad818a7a53578d635724769188438d8",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "5381e400f96d9788c6ef51b474103f2e608b5f200c7e5b6328ff290a40f525ff",
+          "width_px": 1080,
+          "height_px": 1505,
+          "aspect_ratio": 0.7176,
+          "dominant_nonwhite": [
+            "#838383",
+            "#000000",
+            "#DDDDDD",
+            "#121212",
+            "#EDEDED",
+            "#FAB79B",
+            "#9BD5E7",
+            "#BFD7AA"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#838383",
+              "#000000",
+              "#DDDDDD",
+              "#121212",
+              "#EDEDED",
+              "#FAB79B"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_037/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-038",
+      "issue": 38,
+      "title": "泳道图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484765&idx=1&sn=8b0ad13e852ee25874baf7328fa3e691&scene=21#wechat_redirect",
+      "chart_tags": [
+        "clinical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "readxl",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_col"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#B30437",
+          "#006F3C",
+          "#009FC3",
+          "#6CB43F",
+          "#E1A4A0",
+          "#9EADD4",
+          "#92BEA7"
+        ],
+        "combined_sha256": "a056289f0ef475b227315679785a254939003689084be35b4c769b6bdef532cd",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "00f4fb82d0dbb7d5be669f96406dfc4b98721cd5e55d3ac1dd0af1c82258adbe",
+          "width_px": 1080,
+          "height_px": 1500,
+          "aspect_ratio": 0.72,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#CDCDCD",
+            "#E1A4A0",
+            "#111111",
+            "#A5B3D7",
+            "#F1D4D2",
+            "#D5DBEC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#CDCDCD",
+              "#E1A4A0",
+              "#111111",
+              "#A5B3D7"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_038/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-039",
+      "issue": 39,
+      "title": "棒棒糖图+GO富集条形图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484795&idx=1&sn=608ac3e3f9db5cf5c434969794009e1b&scene=21#wechat_redirect",
+      "chart_tags": [
+        "enrichment"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "patchwork",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_bar",
+          "geom_segment",
+          "geom_text",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "plot-composition",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#D65656",
+          "#5FAB5F",
+          "#DDB370",
+          "#E1A99A",
+          "#CFE6A1",
+          "#72C3E3",
+          "#D43B63",
+          "#D796C3",
+          "#9B3683",
+          "#294B2E",
+          "#B49267",
+          "#E69F2F",
+          "#66A4B8",
+          "#5BC5BA",
+          "#EB2B1E",
+          "#805097"
+        ],
+        "combined_sha256": "48cb792479196edd41a1fdcb98e3a21bec6477dee1e98ea8c55a333ba5b6023e",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "071364e698c34e8c883468d9f1f858d1cbcc86af3eb2723708397a150313005e",
+          "width_px": 1080,
+          "height_px": 1499,
+          "aspect_ratio": 0.7205,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#EFEFEF",
+            "#C7C7C7",
+            "#D8D8D8",
+            "#A2A2A2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#EFEFEF",
+              "#C7C7C7",
+              "#D8D8D8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_039/image_003.png"
+        },
+        {
+          "sha256": "1185f15f8ad60d0f98ab4c24dd7d7d763b449c933c22737c6e7e34df50bb0aaf",
+          "width_px": 1080,
+          "height_px": 1499,
+          "aspect_ratio": 0.7205,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#EFEFEF",
+            "#DDDDDD",
+            "#C7C7C7",
+            "#989898"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#EFEFEF",
+              "#DDDDDD",
+              "#C7C7C7"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_039/image_004.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-040",
+      "issue": 40,
+      "title": "Whittaker生物群系图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484846&idx=1&sn=cc0a0c4ba5a651049f6feafe30c26fb1&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "cowplot",
+          "ggplot2",
+          "ggpubr",
+          "plotbiomes",
+          "remotes",
+          "tidyverse",
+          "viridis"
+        ],
+        "primitives": [
+          "geom_point"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "plot-composition"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "faf09adeb7f072027fbc7d435ba934f4cbd50ac399367d469d35efa9766e6a96",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "0cc1b56e6a5003a2622c77ae03f7a856298d24db3a15341e9f79de4f5270aec1",
+          "width_px": 1080,
+          "height_px": 1508,
+          "aspect_ratio": 0.7162,
+          "dominant_nonwhite": [
+            "#8EB686",
+            "#CBC674",
+            "#000000",
+            "#EBD99F",
+            "#C6D7AD",
+            "#8A8A8A",
+            "#E5AF96",
+            "#2C2C2C"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8EB686",
+              "#CBC674",
+              "#000000",
+              "#EBD99F",
+              "#C6D7AD",
+              "#8A8A8A"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_040/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-041",
+      "issue": 41,
+      "title": "逻辑回归模型+ROC曲线",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484860&idx=1&sn=d5b63ac4a5e190aeeaef3f7027782fde&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "binom",
+          "pROC",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_line"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#218380",
+          "#B5179E",
+          "#F88C1A",
+          "#EE2C39",
+          "#00B2EC",
+          "#3FB349"
+        ],
+        "combined_sha256": "28542f4ad13a12ce6feddbb7394d2261a64bee4df417e9002685756bafd2f4ab",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "39dbfb7f88ab073f072594d784176b43bb99a16c71150ed715c8d29909e399f7",
+          "width_px": 1080,
+          "height_px": 1499,
+          "aspect_ratio": 0.7205,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#717171",
+            "#A5A5A5",
+            "#E8E8E8",
+            "#CCCCCC",
+            "#949494"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#717171",
+              "#A5A5A5",
+              "#E8E8E8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_041/image_003.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-042",
+      "issue": 42,
+      "title": "各式各样的韦恩图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484949&idx=1&sn=01d77e604ebbb15b4a8e04c68882d6dc&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "RColorBrewer",
+          "VennDiagram",
+          "cowplot",
+          "eulerr",
+          "ggVennDiagram",
+          "ggplot2",
+          "ggvenn",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#80C8CF",
+          "#FBB9C0",
+          "#FEF392",
+          "#C92027",
+          "#91C73E",
+          "#00B4C8",
+          "#F16922",
+          "#8FC7A5",
+          "#FAA474",
+          "#9DAFD1",
+          "#E790C0",
+          "#006400",
+          "#8B4513",
+          "#00008B",
+          "#8B008B"
+        ],
+        "combined_sha256": "7e2c48c5df6552b3d46169b1324d120d21acb04101338f2d2310548b78416b6c",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "115fed5ee9bc646d32d0feb8428dd34469d91f102341913552fe2554ebdd08fd",
+          "width_px": 1080,
+          "height_px": 1491,
+          "aspect_ratio": 0.7243,
+          "dominant_nonwhite": [
+            "#000000",
+            "#BEAD97",
+            "#F1F4F8",
+            "#99D3D8",
+            "#CDCDCD",
+            "#1D1D1D",
+            "#C0E3E7",
+            "#FDDCDF"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#BEAD97",
+              "#F1F4F8",
+              "#99D3D8",
+              "#CDCDCD",
+              "#1D1D1D"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_042/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-043",
+      "issue": 43,
+      "title": "雷达图/蜘蛛图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484972&idx=1&sn=dfa146cdecc9a1158a40e4c282937429&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "dense-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "devtools",
+          "dplyr",
+          "ggplot2",
+          "ggradar",
+          "plotthis",
+          "scales",
+          "tibble"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#007A87",
+          "#B66065",
+          "#9083AA",
+          "#F5F5F4"
+        ],
+        "combined_sha256": "720c75915c51728f6d347bfc675e925926cd11f1f446099aea6cd96b6c0b3c5a",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "946b26f91fd862a60463ea08db5485bd3001b79244acd0a67c74d05a19bd8c2e",
+          "width_px": 1080,
+          "height_px": 1514,
+          "aspect_ratio": 0.7133,
+          "dominant_nonwhite": [
+            "#F1F4F8",
+            "#000000",
+            "#2D2D2D",
+            "#676767",
+            "#C0A7B7",
+            "#F4A3A4",
+            "#E2E5E8",
+            "#C6BFD2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F1F4F8",
+              "#000000",
+              "#2D2D2D",
+              "#676767",
+              "#C0A7B7",
+              "#F4A3A4"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison"
+          ],
+          "source_path": "results/figures/issue_043/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-044",
+      "issue": 44,
+      "title": "分组环状热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247484991&idx=1&sn=2e87b5286820f21168523386ac92245e&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "circular"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 7,
+        "packages": [
+          "matplotlib",
+          "matplotlib.pyplot",
+          "matplotlib_venn",
+          "numpy",
+          "pandas",
+          "pycirclize"
+        ],
+        "primitives": [
+          "Heatmap",
+          "circos"
+        ],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "84fccf247531687b18f99da00406fbdd1a577e8fcfff312cf6cd1e8587dd6131",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "4edec16a4dcf61a26b63096a03da62c24f4f21bdcc5c305426908d093afde1ab",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#CFCFCF",
+            "#2A73B2",
+            "#CE5146",
+            "#F3F3F3",
+            "#9BADC0",
+            "#BFBFBF"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#CFCFCF",
+              "#2A73B2",
+              "#CE5146",
+              "#F3F3F3"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_044/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-045",
+      "issue": 45,
+      "title": "单细胞之UMAP+细胞占比图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485003&idx=1&sn=679a7befad610953da3d05001535856f&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition",
+        "single-cell"
+      ],
+      "advantage_tags": [
+        "proportion-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "RColorBrewer",
+          "Seurat",
+          "SeuratExtend",
+          "forcats",
+          "patchwork",
+          "remotes",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_bar",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "plot-composition"
+        ],
+        "hex_colors": [
+          "#CF9FFF",
+          "#E7C7DC",
+          "#CAA7DD",
+          "#953553",
+          "#a15891",
+          "#9C58A1",
+          "#79127F",
+          "#BF40BF",
+          "#A8A2D2",
+          "#B6D0E2",
+          "#2874A6",
+          "#5599C8",
+          "#6495ED",
+          "#96C5D7",
+          "#B0DFE6",
+          "#4682B4"
+        ],
+        "combined_sha256": "6aa773bdf0fe08fb48e20db83b25b199fc1dd9226120cde718593bba963fc8ea",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "7a16f5f5bee59f930f433b1d616ad8061600802cd4cd9122f309fd516115b0d0",
+          "width_px": 1080,
+          "height_px": 1497,
+          "aspect_ratio": 0.7214,
+          "dominant_nonwhite": [
+            "#000000",
+            "#CECECE",
+            "#959595",
+            "#797979",
+            "#F1F4F8",
+            "#E4E4E4",
+            "#ADE0AD",
+            "#FEB6C1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#CECECE",
+              "#959595",
+              "#797979",
+              "#F1F4F8",
+              "#E4E4E4"
+            ]
+          },
+          "source_claim_tags": [
+            "proportion-display"
+          ],
+          "source_path": "results/figures/issue_045/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-046",
+      "issue": 46,
+      "title": "单细胞之marker基因表达热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485014&idx=1&sn=2b9f90113b146e192e38a66701aedd4a&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "single-cell"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ComplexHeatmap",
+          "Seurat",
+          "circlize",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#CF9FFF",
+          "#E7C7DC",
+          "#CAA7DD",
+          "#953553",
+          "#a15891",
+          "#9C58A1",
+          "#79127F",
+          "#BF40BF",
+          "#A8A2D2",
+          "#B6D0E2",
+          "#2874A6",
+          "#5599C8",
+          "#6495ED",
+          "#96C5D7",
+          "#B0DFE6",
+          "#4682B4"
+        ],
+        "combined_sha256": "84fd81a8f1c83ae362bcf52b9d224ca3f1914340c5cdb26e11f9a1210002edbc",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "3d9201af9c5a0cf585ed0415d4d7fcc82e3fd79e1b9fe786ae16cee562ad192b",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#F4ECFF",
+            "#797979",
+            "#DEDEDE",
+            "#BCBCBC",
+            "#A8A8A8"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#F4ECFF",
+              "#797979",
+              "#DEDEDE",
+              "#BCBCBC",
+              "#A8A8A8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_046/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-047",
+      "issue": 47,
+      "title": "细胞通讯网络图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485054&idx=1&sn=52386a2c99a53f3963086a4bd9b0e3f1&scene=21#wechat_redirect",
+      "chart_tags": [
+        "network"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "CellChat",
+          "NMF",
+          "Seurat",
+          "SeuratObject",
+          "devtools",
+          "future",
+          "ggalluvial",
+          "patchwork",
+          "remotes"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#FFD580",
+          "#FFBF00",
+          "#B0DFE6",
+          "#7DB954",
+          "#64864A",
+          "#8FCACA",
+          "#4682B4",
+          "#CAA7DD",
+          "#B6D0E2",
+          "#a15891",
+          "#FED7C3",
+          "#A8A2D2",
+          "#CF9FFF",
+          "#9C58A1",
+          "#2874A6",
+          "#96C5D7"
+        ],
+        "combined_sha256": "ebacbfdc0ac53d4cb2b47a206610a5dd47112b561257f70438083e31cbe4fe52",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "4b7a86200fd56b612cae31b3adb13db589bc966143d9e586b07ec5cd610abcc7",
+          "width_px": 1080,
+          "height_px": 1512,
+          "aspect_ratio": 0.7143,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#F1F4F8",
+            "#797979",
+            "#E5E5E5",
+            "#CCCCCC",
+            "#ACACAC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#F1F4F8",
+              "#797979",
+              "#E5E5E5",
+              "#CCCCCC"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_047/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-048",
+      "issue": 48,
+      "title": "聚类网络图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485072&idx=1&sn=7dba8dfa84222fad0152525a1f80f40c&scene=21#wechat_redirect",
+      "chart_tags": [
+        "network"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "RColorBrewer",
+          "dplyr",
+          "ggforce",
+          "ggraph",
+          "graphlayouts",
+          "igraph",
+          "reshape2"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#b00606"
+        ],
+        "combined_sha256": "f9ccce5372c59a2f10b2bb17e5a73a31ca5b3c5a562dc021d952f34502943328",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "5e1022ec92c97272fc012159dbf0bd0a9f57d1d4c66dc2e308d5bf996ae7f679",
+          "width_px": 1080,
+          "height_px": 1506,
+          "aspect_ratio": 0.7171,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F1F4F8",
+            "#8A8A8A",
+            "#CE5146",
+            "#2A73B2",
+            "#606060",
+            "#2D2D2D",
+            "#E2E2E2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F1F4F8",
+              "#8A8A8A",
+              "#CE5146",
+              "#2A73B2",
+              "#606060"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_048/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-049",
+      "issue": 49,
+      "title": "CytoTRACE细胞分化潜能图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485103&idx=1&sn=c72f5c06c38eec556c22a4d75cda7811&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "trajectory-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "CytoTRACE2",
+          "Seurat",
+          "SeuratExtend",
+          "devtools",
+          "readr",
+          "tibble"
+        ],
+        "primitives": [],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "5a99103850765d255a4410ad2528e810eceeac7ccbb21f3ab95b64d53fa48392",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "47af671aa25ff7050d04614c3e557a86ab59db49f4e6b5313ecbdf656609f66b",
+          "width_px": 1080,
+          "height_px": 1506,
+          "aspect_ratio": 0.7171,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#000000",
+            "#F1F4F8",
+            "#3784BB",
+            "#1B1B1B",
+            "#CE5146",
+            "#6698BC",
+            "#F3D4D1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#000000",
+              "#F1F4F8",
+              "#3784BB",
+              "#1B1B1B",
+              "#CE5146"
+            ]
+          },
+          "source_claim_tags": [
+            "trajectory-display"
+          ],
+          "source_path": "results/figures/issue_049/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-050",
+      "issue": 50,
+      "title": "单细胞RNA分析全流程",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485122&idx=1&sn=d0cfd8442b0081e43da24f09f203b267&scene=21#wechat_redirect",
+      "chart_tags": [
+        "single-cell"
+      ],
+      "advantage_tags": [
+        "proportion-display",
+        "trajectory-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 14,
+        "packages": [
+          "AUCell",
+          "ComplexHeatmap",
+          "DoubletFinder",
+          "GSEABase",
+          "RColorBrewer",
+          "Seurat",
+          "SeuratDisk",
+          "SeuratExtend",
+          "VisCello",
+          "cowplot",
+          "dplyr",
+          "forcats",
+          "ggplot2",
+          "ggrastr",
+          "ggunchull",
+          "gt",
+          "irlba",
+          "patchwork",
+          "readr",
+          "remotes",
+          "viridis"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette",
+          "coordinate-transformation"
+        ],
+        "hex_colors": [
+          "#f88379",
+          "#FFA750",
+          "#6495ED",
+          "#B8242D",
+          "#FFD580",
+          "#FFBF00",
+          "#B0DFE6",
+          "#7DB954",
+          "#64864A",
+          "#8FCACA",
+          "#4682B4",
+          "#CAA7DD",
+          "#B6D0E2",
+          "#a15891",
+          "#FED7C3",
+          "#A8A2D2"
+        ],
+        "combined_sha256": "50fd2ba7c71d12f8c77bdca9b0f4715ca315abdcb797fbd962a73464a49e3410",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "7a16f5f5bee59f930f433b1d616ad8061600802cd4cd9122f309fd516115b0d0",
+          "width_px": 1080,
+          "height_px": 1497,
+          "aspect_ratio": 0.7214,
+          "dominant_nonwhite": [
+            "#000000",
+            "#CECECE",
+            "#959595",
+            "#797979",
+            "#F1F4F8",
+            "#E4E4E4",
+            "#ADE0AD",
+            "#FEB6C1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#CECECE",
+              "#959595",
+              "#797979",
+              "#F1F4F8",
+              "#E4E4E4"
+            ]
+          },
+          "source_claim_tags": [
+            "proportion-display"
+          ],
+          "source_path": "results/figures/issue_050/image_005.png"
+        },
+        {
+          "sha256": "3d9201af9c5a0cf585ed0415d4d7fcc82e3fd79e1b9fe786ae16cee562ad192b",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#F4ECFF",
+            "#797979",
+            "#DEDEDE",
+            "#BCBCBC",
+            "#A8A8A8"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#F4ECFF",
+              "#797979",
+              "#DEDEDE",
+              "#BCBCBC",
+              "#A8A8A8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_050/image_006.png"
+        },
+        {
+          "sha256": "4b7a86200fd56b612cae31b3adb13db589bc966143d9e586b07ec5cd610abcc7",
+          "width_px": 1080,
+          "height_px": 1512,
+          "aspect_ratio": 0.7143,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#F1F4F8",
+            "#797979",
+            "#E5E5E5",
+            "#CCCCCC",
+            "#ACACAC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#F1F4F8",
+              "#797979",
+              "#E5E5E5",
+              "#CCCCCC"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_050/image_007.png"
+        },
+        {
+          "sha256": "47af671aa25ff7050d04614c3e557a86ab59db49f4e6b5313ecbdf656609f66b",
+          "width_px": 1080,
+          "height_px": 1506,
+          "aspect_ratio": 0.7171,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#000000",
+            "#F1F4F8",
+            "#3784BB",
+            "#1B1B1B",
+            "#CE5146",
+            "#6698BC",
+            "#F3D4D1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#000000",
+              "#F1F4F8",
+              "#3784BB",
+              "#1B1B1B",
+              "#CE5146"
+            ]
+          },
+          "source_claim_tags": [
+            "trajectory-display"
+          ],
+          "source_path": "results/figures/issue_050/image_008.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-051",
+      "issue": 51,
+      "title": "星云图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485145&idx=1&sn=832a924327b028895be88bcf96893444&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "dense-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ggplot2",
+          "ggpubr",
+          "viridis"
+        ],
+        "primitives": [
+          "geom_point",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "faceted-small-multiples",
+          "annotation-layering"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "e061b81db021a0e93d2aae7a2d5fb7f2929f23fe3c909102f41436386d5acc4f",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "3a04e8b86324a09b77092e0ad7dff6b1d94f6d6ec7ed6adefca1b7c66ae5cc3d",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#4D4D4D",
+            "#151515",
+            "#B5B5B5",
+            "#838383",
+            "#ECECEC",
+            "#343434",
+            "#CACACA"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#4D4D4D",
+              "#151515",
+              "#B5B5B5",
+              "#838383",
+              "#ECECEC"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison"
+          ],
+          "source_path": "results/figures/issue_051/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-052",
+      "issue": 52,
+      "title": "蜘蛛图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485153&idx=1&sn=d3b195a34a662690251d2afcf8f23b0f&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "patchwork",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_line"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#8fd2c4",
+          "#9bc1dd",
+          "#fdc583"
+        ],
+        "combined_sha256": "e5e7fb017656badcf597b0ca10e528f52f505a3eeb9afa6d2ed5b94997b6acf9",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "a54054b51b597dacf369fd428e5d828575256dd8f04806af7bc83074114386c0",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#727272",
+            "#DBDBDB",
+            "#F2F2F2",
+            "#A5A5A5",
+            "#FDC583"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#727272",
+              "#DBDBDB",
+              "#F2F2F2"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_052/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-053",
+      "issue": 53,
+      "title": "带注释的泳道图+瀑布图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485172&idx=1&sn=ff2d29d50669f0d7370dd95798290af8&scene=21#wechat_redirect",
+      "chart_tags": [
+        "clinical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 7,
+        "packages": [
+          "ggnewscale",
+          "ggrepel",
+          "patchwork",
+          "swimplot",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_bar",
+          "geom_tile",
+          "plot_layout"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "plot-composition",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#1D76BD",
+          "#8fd2c4",
+          "#9bc1dd",
+          "#fdc583",
+          "#EC2626",
+          "#000000",
+          "#F5EB16",
+          "#108241",
+          "#6AADD6",
+          "#203468",
+          "#B4D88A",
+          "#00675E",
+          "#F69173",
+          "#98361F"
+        ],
+        "combined_sha256": "4b788b0e83ff0f82b3b219ab1916bdfc46fd9bc245867ef79cea2bf19c4f8dd3",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "b6a2e260ad5dd12b88fb66707c45b15e94a99c5add626da4a76b02313e5a5af6",
+          "width_px": 1080,
+          "height_px": 1513,
+          "aspect_ratio": 0.7138,
+          "dominant_nonwhite": [
+            "#000000",
+            "#F1F4F8",
+            "#979797",
+            "#797979",
+            "#444444",
+            "#C1C1C1",
+            "#E3E3E3",
+            "#90ABC0"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#F1F4F8",
+              "#979797",
+              "#797979",
+              "#444444",
+              "#C1C1C1"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_053/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-054",
+      "issue": 54,
+      "title": "多变量比较和相关性分析矩阵图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485185&idx=1&sn=dd2ae5c96779904e9e305e0361eaa5af&scene=21#wechat_redirect",
+      "chart_tags": [
+        "association"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "GGally",
+          "ggsci"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#4489C8",
+          "#ED7E7A",
+          "#FFCD44"
+        ],
+        "combined_sha256": "89d785e6db290b91531c9698ca7e34b4b1fc0b771ed337f0a85678399ad8f548",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "8e60d38c5e2e890d90648307b501f9f59d89cce9799ce1eb1602fb38f9293dac",
+          "width_px": 1080,
+          "height_px": 1521,
+          "aspect_ratio": 0.7101,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#EDEDED",
+            "#C4C4C4",
+            "#A1A1A1",
+            "#000000",
+            "#DCDCDC",
+            "#00A087",
+            "#E64B35"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#EDEDED",
+              "#C4C4C4",
+              "#A1A1A1",
+              "#000000",
+              "#DCDCDC"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_054/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-055",
+      "issue": 55,
+      "title": "带有误差棒、坐标轴截断和科学计数法的堆积柱状图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485249&idx=1&sn=67d4ca6235b5ab6e3df603a030a4e7e0&scene=21#wechat_redirect",
+      "chart_tags": [
+        "composition"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "dplyr",
+          "ggbreak",
+          "ggplot2",
+          "readxl",
+          "scales"
+        ],
+        "primitives": [
+          "geom_bar"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [
+          "#EE322D",
+          "#F37F80",
+          "#F7F29F",
+          "#62BC45",
+          "#108643",
+          "#3875BC",
+          "#2054A7",
+          "#243370",
+          "#9F1C1F",
+          "#753E41"
+        ],
+        "combined_sha256": "ecd3089023732cd6ddabbd154be623da214a21dd53d58a1b0a54316e5df1a49d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "31eb5baac95fc3367d9ddd33957f8d1dcbb4b397d55171f95cd2bf56e4e84991",
+          "width_px": 1080,
+          "height_px": 1439,
+          "aspect_ratio": 0.7505,
+          "dominant_nonwhite": [
+            "#000000",
+            "#C6C6C6",
+            "#606060",
+            "#F1F1F1",
+            "#292929",
+            "#909090",
+            "#DADADA",
+            "#3875BC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#C6C6C6",
+              "#606060",
+              "#F1F1F1",
+              "#292929",
+              "#909090"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_055/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-056",
+      "issue": 56,
+      "title": "三维散点图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485261&idx=1&sn=d14654ce4ed5db15f25b5a3996a8b7f4&scene=21#wechat_redirect",
+      "chart_tags": [
+        "association"
+      ],
+      "advantage_tags": [
+        "group-comparison",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "plot3D",
+          "plot3Drgl"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#BD0200",
+          "#477AAB",
+          "#F19149",
+          "#AFC7E9",
+          "#1B9E77"
+        ],
+        "combined_sha256": "85f2ea39ae8fc14fb4bc77ef4dc6f1a06a7f45bf79c3fc7f11933063ef94fbb3",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "b5e21a61a7c3eff7091a34d0f5a8ac234c7a095ee07998f1ea6de70578495433",
+          "width_px": 1080,
+          "height_px": 1504,
+          "aspect_ratio": 0.7181,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#2A73B2",
+            "#C2C2C2",
+            "#797979",
+            "#F1F4F8",
+            "#CE5146",
+            "#E4E4E4"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#2A73B2",
+              "#C2C2C2",
+              "#797979",
+              "#F1F4F8"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_056/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-057",
+      "issue": 57,
+      "title": "多分组环状火山图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485290&idx=1&sn=333cfb9477cc844588e5900f4fe8c751&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 12,
+        "packages": [
+          "corrplot",
+          "devtools",
+          "readxl",
+          "scRNAtoolVis"
+        ],
+        "primitives": [
+          "geom_text"
+        ],
+        "coding_techniques": [
+          "explicit-palette",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#3F4587",
+          "#8562AA",
+          "#EC8561",
+          "#B97CB5",
+          "#D43046",
+          "#F0592B",
+          "#ED4A96",
+          "#593C97",
+          "#A54486",
+          "#FBDE13",
+          "#299FAE",
+          "#75CCE3",
+          "#0C6939",
+          "#0D9547"
+        ],
+        "combined_sha256": "df3cc41a70ecc1250ba67988812f703bba3c2e2dd1719a03c2f445a2cf7efd8c",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "ac1c84c5bcc44dcdc437a8860dfbe42442ef410bf0633459769caefddf870f45",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#ECECEC",
+            "#8A8A8A",
+            "#CE5146",
+            "#2A73B2",
+            "#797979",
+            "#D2DAE1",
+            "#BEBEBE",
+            "#ACACAC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#ECECEC",
+              "#8A8A8A",
+              "#CE5146",
+              "#2A73B2",
+              "#797979",
+              "#D2DAE1"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_057/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-058",
+      "issue": 58,
+      "title": "气泡网络地图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485301&idx=1&sn=fa6581bb694a3171efc3c24f41ab8b61&scene=21#wechat_redirect",
+      "chart_tags": [
+        "network",
+        "map"
+      ],
+      "advantage_tags": [
+        "relationship-display",
+        "spatial-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 6,
+        "packages": [
+          "datetime",
+          "json",
+          "matplotlib",
+          "matplotlib.colors",
+          "matplotlib.patches",
+          "matplotlib.pyplot",
+          "mpl_toolkits.basemap",
+          "numpy",
+          "pandas",
+          "seaborn",
+          "shapely.geometry"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#590059"
+        ],
+        "combined_sha256": "730169783c259b482333e8c293287c8db7dbfa5608f7958bcb391a183f42c75c",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "5b06ae761a573ea49be30b6c8b637137cf727bf7839e8ce1e6b3e81e5ed95618",
+          "width_px": 1080,
+          "height_px": 1514,
+          "aspect_ratio": 0.7133,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#DCDCDC",
+            "#000000",
+            "#121212",
+            "#F1F4F8",
+            "#CCCCCC",
+            "#B9B9B9",
+            "#A9A9A9"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#DCDCDC",
+              "#000000",
+              "#121212",
+              "#F1F4F8",
+              "#CCCCCC"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display",
+            "spatial-display"
+          ],
+          "source_path": "results/figures/issue_058/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-059",
+      "issue": 59,
+      "title": "基因聚类富集注释热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485311&idx=1&sn=c3cd5036aef774d712606d75c001a8e9&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "enrichment"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "ClusterGVis",
+          "ComplexHeatmap",
+          "Seurat",
+          "devtools",
+          "dplyr",
+          "ggsci",
+          "grid",
+          "org.Hs.eg.db",
+          "org.Mm.eg.db"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#C147E9",
+          "#FF7000",
+          "#54B435",
+          "#31C6D4",
+          "#D9CB50",
+          "#A555EC",
+          "#EEEEEE",
+          "#FF597B"
+        ],
+        "combined_sha256": "28f0d4014bae828a92c2f413ba20ce4173370a3bce5c0f9cc07949288e2665ae",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "1a6477d37e70be59bdbcc01752a9653ea11fc552db7fea72c6eaf5f0df15da54",
+          "width_px": 1080,
+          "height_px": 1519,
+          "aspect_ratio": 0.711,
+          "dominant_nonwhite": [
+            "#F2F2F2",
+            "#8A8A8A",
+            "#000000",
+            "#6F6F6F",
+            "#E2E2E2",
+            "#CFCFCF",
+            "#BCBCBC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#F2F2F2",
+              "#8A8A8A",
+              "#000000",
+              "#6F6F6F",
+              "#E2E2E2",
+              "#CFCFCF"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_059/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-060",
+      "issue": 60,
+      "title": "沃罗诺伊树图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485331&idx=1&sn=2e302a5ce375ede52ab4fe03173bff48&scene=21#wechat_redirect",
+      "chart_tags": [
+        "tree"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ComplexHeatmap",
+          "WeightedTreemaps",
+          "colorspace",
+          "dplyr",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#696867",
+          "#503F8F",
+          "#FF623F",
+          "#FF923F",
+          "#73C7A6"
+        ],
+        "combined_sha256": "171571268119219027ab0deb80783f52d34882d549118dd90904764378f6cc08",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "30f75c2e733f389a0b3a6b7a8f5a378eb52b304d02ce6878d33c896189018276",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#73C7A6",
+            "#FF923F",
+            "#8A8A8A",
+            "#FF623F",
+            "#503F8F",
+            "#797979",
+            "#FFFF00",
+            "#E1E0E4"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#73C7A6",
+              "#FF923F",
+              "#8A8A8A",
+              "#FF623F",
+              "#503F8F",
+              "#797979"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_060/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-061",
+      "issue": 61,
+      "title": "决策曲线分析图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485352&idx=1&sn=cfe7237ac2e33435924a3cc46226c2d8&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 8,
+        "packages": [
+          "broom",
+          "dcurves",
+          "gt",
+          "gtsummary",
+          "labelled",
+          "readr",
+          "tidyverse"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#E9C56D",
+          "#0B425E",
+          "#904550"
+        ],
+        "combined_sha256": "fb1b2664c2cadbbb7a46692483f9408cd10a3799ba05a988bbbbe8e0683fbf36",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "91ea679df66a43f81e4a3729f518123299551e1563826dd8f3ab40f98ecaab68",
+          "width_px": 1080,
+          "height_px": 1488,
+          "aspect_ratio": 0.7258,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B4B4B4",
+            "#828282",
+            "#DADADA",
+            "#FFF2CC",
+            "#EAEAEA",
+            "#C6C6C6",
+            "#8FD2C4"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B4B4B4",
+              "#828282",
+              "#DADADA",
+              "#FFF2CC",
+              "#EAEAEA"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_061/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-062",
+      "issue": 62,
+      "title": "带复杂注释的系统发育树",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485392&idx=1&sn=2726cb6481a49df6da0d583b51618623&scene=21#wechat_redirect",
+      "chart_tags": [
+        "tree"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "BiocManager",
+          "ComplexUpset",
+          "RColorBrewer",
+          "ggnewscale",
+          "ggtree",
+          "ggtreeExtra",
+          "patchwork",
+          "phytools",
+          "picante",
+          "reshape2",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_bar",
+          "geom_tile",
+          "ggtree"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#FFA500",
+          "#8bc24c",
+          "#FFD700",
+          "#2196F3",
+          "#8A4B08",
+          "#d9534f",
+          "#86519D",
+          "#EE4C97",
+          "#3B3B98",
+          "#2B5A41",
+          "#b4bb72",
+          "#b23256",
+          "#cfcecc",
+          "#61bfbe",
+          "#F0CEA0",
+          "#edaa53"
+        ],
+        "combined_sha256": "04a14c69784dc5c9d52b058d1366d72102a54e5c33d5d141e6ee213588931ed1",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "0c57146cf07b222208cd4f0bc7e385cd7e98166f7ab68736e07780f0f2b147e7",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#E6996C",
+            "#EBD99F",
+            "#5D5D5D",
+            "#9BD5E7",
+            "#73C7A6"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#E6996C",
+              "#EBD99F",
+              "#5D5D5D"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_062/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-063",
+      "issue": 63,
+      "title": "通路富集网络图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485404&idx=1&sn=84e5adb7cd4aab2730af15a27fbbc0ef&scene=21#wechat_redirect",
+      "chart_tags": [
+        "network",
+        "enrichment"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 5,
+        "packages": [
+          "DOSE",
+          "aPEAR",
+          "clusterProfiler",
+          "devtools",
+          "ggplot2",
+          "org.Hs.eg.db",
+          "viridis"
+        ],
+        "primitives": [],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "633d7815e26d3f4fb02254db841d148afdf9c6e687cfeec500d47725e9d89105",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "90cc97fa8ca0fe5c06865e42a115a834fcbdfbb5e67431cf4fb8caa18a7bf45e",
+          "width_px": 1080,
+          "height_px": 1494,
+          "aspect_ratio": 0.7229,
+          "dominant_nonwhite": [
+            "#000000",
+            "#848484",
+            "#242424",
+            "#F1F1F1",
+            "#CE5146",
+            "#5296B6",
+            "#95D097",
+            "#A4A4A4"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#848484",
+              "#242424",
+              "#F1F1F1",
+              "#CE5146",
+              "#5296B6"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_063/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-064",
+      "issue": 64,
+      "title": "差异甲基化（DMR）染色体分布图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485414&idx=1&sn=9c96ab0a382a3fe2609f68b1e2841520&scene=21#wechat_redirect",
+      "chart_tags": [
+        "genome"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "RColorBrewer",
+          "circlize",
+          "dplyr",
+          "ggalign",
+          "scales"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_density",
+          "circos"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#AAAAAA",
+          "#888888",
+          "#E41A1C",
+          "#377EB8"
+        ],
+        "combined_sha256": "dd040f2c9a456eef545250e7b6337e0d7788b4f7af339f508d4de21e9a83769b",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "c81770a150be994cb31f826611fab5c413d3b766da8714e034054fcf7042fde8",
+          "width_px": 1080,
+          "height_px": 1506,
+          "aspect_ratio": 0.7171,
+          "dominant_nonwhite": [
+            "#000000",
+            "#848484",
+            "#6C6C6C",
+            "#242424",
+            "#5296B6",
+            "#95D097",
+            "#CE5146",
+            "#ED6F56"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#848484",
+              "#6C6C6C",
+              "#242424",
+              "#5296B6",
+              "#95D097"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_064/image_001.png"
+        },
+        {
+          "sha256": "ea06c4007194e430ec6290b4af94c8d3d61ad3c939d04c3c0f54e3b8fc474996",
+          "width_px": 1080,
+          "height_px": 1494,
+          "aspect_ratio": 0.7229,
+          "dominant_nonwhite": [
+            "#000000",
+            "#848484",
+            "#303030",
+            "#5296B6",
+            "#CE5146",
+            "#95D097",
+            "#ED6F56",
+            "#BBBBBB"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#848484",
+              "#303030",
+              "#5296B6",
+              "#CE5146",
+              "#95D097"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_064/image_002.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-065",
+      "issue": 65,
+      "title": "三元相图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485438&idx=1&sn=69affde0962cce9925a011045a6fabe5&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "proportion-display",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "RColorBrewer",
+          "ggtern",
+          "readxl",
+          "rstatix",
+          "scales",
+          "tidyverse",
+          "viridis"
+        ],
+        "primitives": [
+          "geom_point"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#bf812d",
+          "#35978f"
+        ],
+        "combined_sha256": "3a5ca7da655be3eee272d6708536f3a1beb2729c50131471fd9ed45697be9b82",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "0baac1e9412aaff7174e0f581391b882d4d05c50747e6de23d29989a4b47c492",
+          "width_px": 1080,
+          "height_px": 1526,
+          "aspect_ratio": 0.7077,
+          "dominant_nonwhite": [
+            "#838383",
+            "#00008A",
+            "#414141",
+            "#35978F",
+            "#9D2B2D",
+            "#F1F4F8",
+            "#BF812D",
+            "#7AAD7A"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#838383",
+              "#00008A",
+              "#414141",
+              "#35978F",
+              "#9D2B2D",
+              "#F1F4F8"
+            ]
+          },
+          "source_claim_tags": [
+            "proportion-display",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_065/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-066",
+      "issue": 66,
+      "title": "时间序列折线图+流线图+拟合曲线图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485473&idx=1&sn=cf83e0895a0bcc355716bd88de5b46a5&scene=21#wechat_redirect",
+      "chart_tags": [
+        "time-series"
+      ],
+      "advantage_tags": [
+        "proportion-display",
+        "relationship-display",
+        "trend-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "corrplot",
+          "cowplot",
+          "ggh4x",
+          "ggpubr",
+          "ggstream",
+          "grid",
+          "patchwork",
+          "readxl",
+          "rstatix",
+          "scales",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_line",
+          "geom_density",
+          "geom_text",
+          "facet_wrap",
+          "facet_grid"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "coordinate-transformation",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#bf812d",
+          "#35978f"
+        ],
+        "combined_sha256": "3fb47bf77f698780c168909f40d8173643d9d1100f72492a695916b18809403e",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "55a514d543e7945c3fb31fa81e44e2d7fd8582c9cc52a96efbcf9eedbcb96f3b",
+          "width_px": 1080,
+          "height_px": 1482,
+          "aspect_ratio": 0.7287,
+          "dominant_nonwhite": [
+            "#000000",
+            "#4E695B",
+            "#59895F",
+            "#D4D4D4",
+            "#AFAFAF",
+            "#63A686",
+            "#7F7F7F",
+            "#F5F5F5"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#4E695B",
+              "#59895F",
+              "#D4D4D4",
+              "#AFAFAF",
+              "#63A686"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display",
+            "proportion-display",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_066/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-067",
+      "issue": 67,
+      "title": "彩虹热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485485&idx=1&sn=165f389c409ea833769a8985d024cb7a&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ComplexHeatmap",
+          "RColorBrewer",
+          "circlize",
+          "grid",
+          "paletteer",
+          "readxl",
+          "stats",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap",
+          "circos"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#35978f",
+          "#bf812d",
+          "#5aae61",
+          "#9970ab",
+          "#d6604d",
+          "#4393c3",
+          "#bdd7e7",
+          "#6baed6",
+          "#08519c"
+        ],
+        "combined_sha256": "793307c8fe32dd770f2f8b2c45f154c4480a926785bc45e1917b8525a7827f88",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "ac751054888ca4d464263f02e510acc39f37d5d5893829de7a822e6d30503ba5",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#AFAFAF",
+            "#808080",
+            "#6E6E6E",
+            "#5E5E5E",
+            "#BFE5A0",
+            "#EDEDED",
+            "#FFF5AE"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#AFAFAF",
+              "#808080",
+              "#6E6E6E",
+              "#5E5E5E",
+              "#BFE5A0"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_067/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-068",
+      "issue": 68,
+      "title": "临床特征热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485499&idx=1&sn=c1cf2f41f4cb49297512360d85226a5a&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "clinical"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "ComplexHeatmap",
+          "circlize",
+          "tidyverse"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#9BD3F4",
+          "#BBBDC0",
+          "#91C7BA",
+          "#CDB87D",
+          "#E8EAF5",
+          "#7AA8CE",
+          "#345C9F",
+          "#2F386E",
+          "#EAB874",
+          "#A6C7DB",
+          "#4B7BB1",
+          "#B3D291",
+          "#6CA956",
+          "#CA2E2E",
+          "#DE9493",
+          "#602A84"
+        ],
+        "combined_sha256": "d18e6423438fe9d05d0b4f7bcf867e26985a987a69831be893eaa5d96f81a86d",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "da8113effa80d000753e7d07d8175fbac121568048318c9c7ca5288701be8d62",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#AFAFAF",
+            "#808080",
+            "#F0F0F0",
+            "#6E6E6E",
+            "#5E5E5E",
+            "#D8D8D8",
+            "#BFBFBF"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#AFAFAF",
+              "#808080",
+              "#F0F0F0",
+              "#6E6E6E",
+              "#5E5E5E"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_068/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-069",
+      "issue": 69,
+      "title": "带有行和列注释的经典热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485543&idx=1&sn=dd79306805dc0cde52341ac55649a4b8&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix"
+      ],
+      "advantage_tags": [
+        "dense-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 7,
+        "packages": [
+          "ComplexHeatmap",
+          "RColorBrewer",
+          "circlize",
+          "grid",
+          "pheatmap",
+          "readxl",
+          "tidyHeatmap",
+          "tidyverse",
+          "viridis"
+        ],
+        "primitives": [
+          "Heatmap"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#0071B6",
+          "#F18F2F",
+          "#E4EEEF",
+          "#9BCDCE",
+          "#009B5C"
+        ],
+        "combined_sha256": "5b3fdb07b76081be2d66903e1c07d3b03294cb8c08e3740df47f656a571a368f",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "90bfb290fabfa816ea8d533aaa50a85af3550fa61727ff5717ba3024fb074913",
+          "width_px": 1080,
+          "height_px": 1495,
+          "aspect_ratio": 0.7224,
+          "dominant_nonwhite": [
+            "#000000",
+            "#AFAFAF",
+            "#808080",
+            "#DECB61",
+            "#5E5E5E",
+            "#F68D27",
+            "#FDE8D3",
+            "#FBD3AC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#AFAFAF",
+              "#808080",
+              "#DECB61",
+              "#5E5E5E",
+              "#F68D27"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison"
+          ],
+          "source_path": "results/figures/issue_069/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-070",
+      "issue": 70,
+      "title": "泳道图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485557&idx=1&sn=004ef3f8937ac142e07904e4c1c1a3d8&scene=21#wechat_redirect",
+      "chart_tags": [
+        "clinical"
+      ],
+      "advantage_tags": [
+        "trajectory-display",
+        "trend-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "cowplot",
+          "ggnewscale",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_segment"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "annotation-layering"
+        ],
+        "hex_colors": [
+          "#D7B1F2",
+          "#B8CED8",
+          "#BD5E4B",
+          "#1F78B4",
+          "#b2b2b2",
+          "#b5b4e0",
+          "#EFF3FF",
+          "#BDD7E7",
+          "#6BAED6",
+          "#3182BD",
+          "#08519C",
+          "#187FC3",
+          "#878787",
+          "#330287",
+          "#EC2B8B",
+          "#A7B2B4"
+        ],
+        "combined_sha256": "ce29ca749d3af241bfde03e0b8e6b125a97d7e47c4d60b5dc5c819b0965c7e42",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "190fca43917b8f75c09b2bcaa3bffa62500662194937f8084264f7f94ca3e2ae",
+          "width_px": 1080,
+          "height_px": 1538,
+          "aspect_ratio": 0.7022,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B2B2B2",
+            "#39379B",
+            "#CCCCCC",
+            "#F5B0AB",
+            "#6F6F6F",
+            "#8A8A8A",
+            "#A2A2A2"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B2B2B2",
+              "#39379B",
+              "#CCCCCC",
+              "#F5B0AB",
+              "#6F6F6F"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display",
+            "trajectory-display"
+          ],
+          "source_path": "results/figures/issue_070/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-071",
+      "issue": 71,
+      "title": "旭日图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485595&idx=1&sn=25b2c2d4b7b38334bd18eae2724d7354&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [
+        "hierarchy-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 6,
+        "packages": [
+          "d3r",
+          "htmltools",
+          "htmlwidgets",
+          "moonBook",
+          "sunburstR",
+          "tidyverse"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#FE0000",
+          "#0000FE",
+          "#FDB515",
+          "#FF6B6B",
+          "#5DACEE",
+          "#DCDCDC",
+          "#8C5F66",
+          "#CD919D",
+          "#E9B4C4",
+          "#FFF0F5"
+        ],
+        "combined_sha256": "db007a675446012524c11be514882cc4dc7680890934e3096d686d814a307353",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "039f73412b3bdb7784c5e32b82e17b7db06958994ad218ec450aa8cdb8ff52c7",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#5DACEE",
+            "#0000FE",
+            "#2A73B2",
+            "#FDB515",
+            "#000000",
+            "#CE5146",
+            "#FF6B6B"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#5DACEE",
+              "#0000FE",
+              "#2A73B2",
+              "#FDB515",
+              "#000000"
+            ]
+          },
+          "source_claim_tags": [
+            "hierarchy-display"
+          ],
+          "source_path": "results/figures/issue_071/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-072",
+      "issue": 72,
+      "title": "双层嵌套的饼图+甜甜圈图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485614&idx=1&sn=a21d164b57a921b154ec456962fa64d0&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 13,
+        "packages": [
+          "devtools",
+          "moonBook",
+          "tidyverse",
+          "webr"
+        ],
+        "primitives": [],
+        "coding_techniques": [],
+        "hex_colors": [],
+        "combined_sha256": "5a1615ace143f751979468c8cadd02deaca3b286ea8353ad7adaf1ed3f5289da",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "a330c529ed01539a2e4bbc8d4a01bac82a4762a5cc44fbe30442e30374c536dc",
+          "width_px": 1080,
+          "height_px": 1517,
+          "aspect_ratio": 0.7119,
+          "dominant_nonwhite": [
+            "#CC5443",
+            "#81B0FF",
+            "#33C860",
+            "#FFA092",
+            "#127494",
+            "#BACCFF",
+            "#676767",
+            "#F1F4F8"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#CC5443",
+              "#81B0FF",
+              "#33C860",
+              "#FFA092",
+              "#127494",
+              "#BACCFF"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_072/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-073",
+      "issue": 73,
+      "title": "花瓣图（环形柱状图）",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485625&idx=1&sn=df626d81a05809989291e11fa28f9db9&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 4,
+        "packages": [
+          "Hmisc",
+          "ggforce",
+          "ggsci",
+          "patchwork",
+          "readxl",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_col",
+          "geom_text",
+          "facet_grid"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "coordinate-transformation",
+          "annotation-layering",
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [
+          "#7EABD4",
+          "#9A8EA8",
+          "#ED897D",
+          "#D89D4A",
+          "#E7DC84",
+          "#6AC17F"
+        ],
+        "combined_sha256": "72570a88bbc3efe24aa607e250268248f11ab08b07f55790d36803f69994da58",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "f50667b96e2fbedf39b3a6075d82eb9c1dd8dfd33a842f246370decd4516df4e",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#000000",
+            "#B5B5B5",
+            "#838383",
+            "#5D5D5D",
+            "#F3F3F3",
+            "#6AC17F",
+            "#ED897D",
+            "#81B0DB"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#B5B5B5",
+              "#838383",
+              "#5D5D5D",
+              "#F3F3F3",
+              "#6AC17F"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_073/image_001.png"
+        },
+        {
+          "sha256": "259f893587e43944bb52da47cbf934462ee4f3d47e0577f8f0880b3a8d10d6aa",
+          "width_px": 1080,
+          "height_px": 1505,
+          "aspect_ratio": 0.7176,
+          "dominant_nonwhite": [
+            "#5AB4E5",
+            "#000000",
+            "#9DD7A4",
+            "#838383",
+            "#383838",
+            "#D899B8",
+            "#F4F4F4",
+            "#DCDCDC"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#5AB4E5",
+              "#000000",
+              "#9DD7A4",
+              "#838383",
+              "#383838",
+              "#D899B8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_073/image_006.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-074",
+      "issue": 74,
+      "title": "花瓣网络图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485642&idx=1&sn=43901e8c8e84a62dafdeb6366acc0810&scene=21#wechat_redirect",
+      "chart_tags": [
+        "network",
+        "circular"
+      ],
+      "advantage_tags": [
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "ggraph",
+          "ggsci",
+          "readxl",
+          "tidygraph",
+          "treemap"
+        ],
+        "primitives": [],
+        "coding_techniques": [
+          "layered-grammar"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "5299ce4e1bad31dd13c28a8493adc20d79038add8ce40267d5a88e4286bb3665",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "98abe1a8e9a5750d0f6dc1500e588ed20f498dfff0c769ebcaab32f3f67e0804",
+          "width_px": 1080,
+          "height_px": 1528,
+          "aspect_ratio": 0.7068,
+          "dominant_nonwhite": [
+            "#8A8A8A",
+            "#9DD9E8",
+            "#797979",
+            "#F19C90",
+            "#74CBBD",
+            "#FBF5FF",
+            "#C4D6DA",
+            "#FBE4E1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#8A8A8A",
+              "#9DD9E8",
+              "#797979",
+              "#F19C90",
+              "#74CBBD",
+              "#FBF5FF"
+            ]
+          },
+          "source_claim_tags": [
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_074/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-075",
+      "issue": 75,
+      "title": "散点饼图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485714&idx=1&sn=95667e3401b395533e8b75d19d3fa0c5&scene=21#wechat_redirect",
+      "chart_tags": [
+        "circular",
+        "association"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "proportion-display",
+        "relationship-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 6,
+        "packages": [
+          "Ecdat",
+          "gganimate",
+          "ggcats",
+          "ggdogs",
+          "ggplot2",
+          "ggprism",
+          "ggrepel",
+          "remotes",
+          "scatterpie",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_line",
+          "geom_text",
+          "geom_label"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "coordinate-transformation",
+          "annotation-layering",
+          "label-collision-control"
+        ],
+        "hex_colors": [
+          "#a7c0ed",
+          "#fda683"
+        ],
+        "combined_sha256": "10fc062b0bc0b97c3360de7779d6153a9c86effd1aca35152736eadd9c601551",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "a06f8f49fb70c0a275588542cd3f8659050409e6027e8f92fbe6ba066b7bc45a",
+          "width_px": 1080,
+          "height_px": 1501,
+          "aspect_ratio": 0.7195,
+          "dominant_nonwhite": [
+            "#000000",
+            "#A5A5A5",
+            "#444444",
+            "#F1F4F8",
+            "#A7C0ED",
+            "#8A8A8A",
+            "#797979",
+            "#D4D4D4"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#A5A5A5",
+              "#444444",
+              "#F1F4F8",
+              "#A7C0ED",
+              "#8A8A8A"
+            ]
+          },
+          "source_claim_tags": [
+            "dense-comparison",
+            "proportion-display",
+            "relationship-display"
+          ],
+          "source_path": "results/figures/issue_075/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-076",
+      "issue": 76,
+      "title": "云雨图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485738&idx=1&sn=1db3d61d3222cd37da5d24b1c70b9014&scene=21#wechat_redirect",
+      "chart_tags": [
+        "distribution"
+      ],
+      "advantage_tags": [
+        "trend-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 9,
+        "packages": [
+          "gghalves",
+          "ggplot2",
+          "ggpp",
+          "ggpubr",
+          "ggrain",
+          "readxl",
+          "scales",
+          "tidyr"
+        ],
+        "primitives": [
+          "geom_point",
+          "geom_boxplot",
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "coordinate-transformation",
+          "statistical-summary-layer"
+        ],
+        "hex_colors": [
+          "#3A3E96",
+          "#AD3D3E",
+          "#50A293",
+          "#E8B75E",
+          "#9BC2D4",
+          "#B11931"
+        ],
+        "combined_sha256": "f6cbcec90fd1d6842801ca6ee3d19ca7805baf535bbe9dee679fd4a744fbffb2",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "d13227b7549527668a55acada7b6f9ddce62992aa6b861979ce09fe202bfb6af",
+          "width_px": 1080,
+          "height_px": 1520,
+          "aspect_ratio": 0.7105,
+          "dominant_nonwhite": [
+            "#BCBCBC",
+            "#050505",
+            "#434343",
+            "#EEEEEE",
+            "#8A8A8A",
+            "#D0D0D0",
+            "#AFCEDD",
+            "#B13D53"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#BCBCBC",
+              "#050505",
+              "#434343",
+              "#EEEEEE",
+              "#8A8A8A",
+              "#D0D0D0"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display"
+          ],
+          "source_path": "results/figures/issue_076/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-077",
+      "issue": 77,
+      "title": "带有底部条码的山峦图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485762&idx=1&sn=573de8d5fef327d5ff0b3affd468eeaa&scene=21#wechat_redirect",
+      "chart_tags": [
+        "general-statistical"
+      ],
+      "advantage_tags": [
+        "dense-comparison",
+        "trend-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "ggridges",
+          "patchwork",
+          "readxl",
+          "tidyverse"
+        ],
+        "primitives": [
+          "geom_density"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#7AB8C4",
+          "#B08AA8",
+          "#8AA0C0",
+          "#98C0A0",
+          "#D0C090",
+          "#D09090"
+        ],
+        "combined_sha256": "caa6bb631c6821d809c25e46bd929b7cd95413e75a0978e1096f7ab808b93c2c",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "b1439fa07602da645a8226cd99b66bbb1d298826e380fa7d5ab8017a9ca982de",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#000000",
+            "#D9A6A6",
+            "#B5B5B5",
+            "#838383",
+            "#5D5D5D",
+            "#81B0DB",
+            "#DDDDDD",
+            "#94C6CF"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#D9A6A6",
+              "#B5B5B5",
+              "#838383",
+              "#5D5D5D",
+              "#81B0DB"
+            ]
+          },
+          "source_claim_tags": [
+            "trend-display",
+            "dense-comparison"
+          ],
+          "source_path": "results/figures/issue_077/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-078",
+      "issue": 78,
+      "title": "分组环状热图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485811&idx=1&sn=e2fc4870c113f7b91bc18742aba6fefd&scene=21#wechat_redirect",
+      "chart_tags": [
+        "matrix",
+        "circular"
+      ],
+      "advantage_tags": [
+        "group-comparison"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "ComplexHeatmap",
+          "circlize"
+        ],
+        "primitives": [
+          "Heatmap",
+          "circos"
+        ],
+        "coding_techniques": [
+          "explicit-palette"
+        ],
+        "hex_colors": [
+          "#B0D45D",
+          "#FC8D58",
+          "#76AFDA",
+          "#F06152"
+        ],
+        "combined_sha256": "3cc95cc2a3fc1eb2d7f2293241a3faf4a3cb173ae0cbecf448a5b4a907506e77",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "10d12b494b6d63d36ade86d0fd5cfd4d113738ce613cf9bbd00d14b2bb63fccd",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#000000",
+            "#8A8A8A",
+            "#CFCFCF",
+            "#2A73B2",
+            "#CE5146",
+            "#B2B2B2",
+            "#F1F4F8",
+            "#E1E1E1"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#8A8A8A",
+              "#CFCFCF",
+              "#2A73B2",
+              "#CE5146",
+              "#B2B2B2"
+            ]
+          },
+          "source_claim_tags": [
+            "group-comparison"
+          ],
+          "source_path": "results/figures/issue_078/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-079",
+      "issue": 79,
+      "title": "时间序列堆叠面积图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485827&idx=1&sn=9791561190c840ea1bd96b8914bbf140&scene=21#wechat_redirect",
+      "chart_tags": [
+        "time-series"
+      ],
+      "advantage_tags": [],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 3,
+        "packages": [
+          "RColorBrewer",
+          "ggstream",
+          "readr",
+          "tidyverse",
+          "viridis"
+        ],
+        "primitives": [
+          "facet_grid"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "explicit-palette",
+          "faceted-small-multiples",
+          "annotation-layering"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "8e0f5838b7f80621f8e6d7f9486efc66d5c4acb35c034fbce86abd2ecf72894a",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "53742a6e3c96522f0052c5fab5b42d1152e84be369006a84adb469260140d64d",
+          "width_px": 1080,
+          "height_px": 1496,
+          "aspect_ratio": 0.7219,
+          "dominant_nonwhite": [
+            "#FBC1BE",
+            "#000000",
+            "#D4EECD",
+            "#720074",
+            "#084081",
+            "#9FD9B8",
+            "#B5B5B5",
+            "#838383"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#FBC1BE",
+              "#000000",
+              "#D4EECD",
+              "#720074",
+              "#084081",
+              "#9FD9B8"
+            ]
+          },
+          "source_claim_tags": [],
+          "source_path": "results/figures/issue_079/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    },
+    {
+      "case_id": "REPRO-080",
+      "issue": 80,
+      "title": "传播/流向/扩散地图",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzU5NjE2ODU0OQ==&mid=2247485835&idx=1&sn=654a79ef77ae4712b749e8f2cd8a1844&scene=21#wechat_redirect",
+      "chart_tags": [
+        "map"
+      ],
+      "advantage_tags": [
+        "spatial-display"
+      ],
+      "layout_tags": [
+        "original-over-reproduction",
+        "annotated-explanation"
+      ],
+      "code_analysis": {
+        "file_count": 2,
+        "packages": [
+          "bangladesh",
+          "dplyr",
+          "readr",
+          "remotes",
+          "sf",
+          "tidyverse"
+        ],
+        "primitives": [
+          "facet_wrap"
+        ],
+        "coding_techniques": [
+          "layered-grammar",
+          "faceted-small-multiples"
+        ],
+        "hex_colors": [],
+        "combined_sha256": "215c4c8b199b5408f01a39d02ee8e5a34b2bf43e6528974e51a289666dbdfb76",
+        "raw_code_embedded": false
+      },
+      "visuals": [
+        {
+          "sha256": "8fbbb1373fe6318959fadef643ab8c62d90b5e5f77aadc52dcf9fe68acfce999",
+          "width_px": 1080,
+          "height_px": 1466,
+          "aspect_ratio": 0.7367,
+          "dominant_nonwhite": [
+            "#000000",
+            "#E5E5E5",
+            "#B2B2B2",
+            "#151515",
+            "#797979",
+            "#5E5E5E",
+            "#F5F5F5",
+            "#D3D3D3"
+          ],
+          "palette_roles": {
+            "background": "#FFFFFF",
+            "structure": "#333333",
+            "candidate_accents": [
+              "#000000",
+              "#E5E5E5",
+              "#B2B2B2",
+              "#151515",
+              "#797979",
+              "#5E5E5E"
+            ]
+          },
+          "source_claim_tags": [
+            "spatial-display"
+          ],
+          "source_path": "results/figures/issue_080/image_001.png"
+        }
+      ],
+      "pairing_status": "article-level-candidate-unverified"
+    }
+  ]
+}

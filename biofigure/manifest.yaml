@@ -1,12 +1,14 @@
-version: "3.1.0"
+version: "3.2.0"
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
   note: R packages are selected by renderer and checked before rendering
 always_load:
+  - references/enforced-execution.md
   - references/personal-style.md
   - references/render-execution.md
   - references/reference-quality.md
+  - references/reproduction-learning.md
   - static/core/contract.md
   - static/core/stance.md
   - references/checkpoints.md
@@ -50,6 +52,12 @@ specialty_critics:
   phylogeny-synteny-gene-family: critics/genome.md
   schematic-mechanism: critics/mechanism.md
 reference_evidence_layers:
+  reproduction:
+    corpus: atlas/reproduction-derived-corpus.json
+    retriever: scripts/retrieve_reproduction.py
+    load: [references/reproduction-learning.md]
+    policy: required_derived_design_evidence
+    source_material_access: forbidden_during_generation
   top_journal:
     corpus: atlas/top-journal-corpus.yaml
     retriever: scripts/retrieve_references.py

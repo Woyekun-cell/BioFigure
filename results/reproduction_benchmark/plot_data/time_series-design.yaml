@@ -1,0 +1,4 @@
+schema_version: "1.0"
+figure_id: time_series
+simulation: true
+generation: natural-language-from-blank-script
