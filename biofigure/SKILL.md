@@ -3,7 +3,7 @@ name: biofigure
 description: 设计、绘制、精修或审查生物科研图；R优先，兼容Python，检查科学语义、字体、排版与实际成图。
 ---
 
-# BioFigure 3.2.1
+# BioFigure 3.3.0
 
 ## 执行门禁
 

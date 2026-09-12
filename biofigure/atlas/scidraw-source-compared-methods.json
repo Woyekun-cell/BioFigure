@@ -5,20 +5,186 @@
     {
       "id": "SCIDRAW-RCS-001",
       "family": "restricted-cubic-spline",
-      "packages": ["rms", "survival", "ggplot2"],
-      "required_functions": ["datadist", "cph", "rcs", "Predict", "annotation_custom"],
-      "shared_keys": ["predictor-range", "hazard-ratio-reference"],
+      "packages": [
+        "rms",
+        "survival",
+        "ggplot2"
+      ],
+      "required_functions": [
+        "datadist",
+        "cph",
+        "rcs",
+        "Predict",
+        "annotation_custom"
+      ],
+      "shared_keys": [
+        "predictor-range",
+        "hazard-ratio-reference"
+      ],
       "runtime_status": "source-compared-png",
-      "guardrails": ["fit-survival-model-before-plot", "show-95ci", "show-hr-one-reference", "do-not-substitute-geom-smooth"]
+      "guardrails": [
+        "fit-survival-model-before-plot",
+        "show-95ci",
+        "show-hr-one-reference",
+        "do-not-substitute-geom-smooth"
+      ]
     },
     {
       "id": "SCIDRAW-RIDGE-BIPOLAR-001",
       "family": "ridge-bipolar-composite",
-      "packages": ["ggridges", "patchwork", "ggplot2"],
-      "required_functions": ["geom_density_ridges_gradient", "geom_col", "plot_layout"],
-      "shared_keys": ["category-factor-order"],
+      "packages": [
+        "ggridges",
+        "patchwork",
+        "ggplot2"
+      ],
+      "required_functions": [
+        "geom_density_ridges_gradient",
+        "geom_col",
+        "plot_layout"
+      ],
+      "shared_keys": [
+        "category-factor-order"
+      ],
       "runtime_status": "source-compared-png",
-      "guardrails": ["same-row-order-across-panels", "zero-centered-bipolar-axis", "continuous-fill-for-effect-direction"]
+      "guardrails": [
+        "same-row-order-across-panels",
+        "zero-centered-bipolar-axis",
+        "continuous-fill-for-effect-direction"
+      ]
+    },
+    {
+      "id": "SCIDRAW-PCOA-MARGINAL-001",
+      "family": "ordination-marginal",
+      "packages": [
+        "vegan",
+        "patchwork"
+      ],
+      "required_functions": [
+        "vegdist",
+        "cmdscale",
+        "stat_ellipse",
+        "plot_layout"
+      ],
+      "shared_keys": [
+        "sample-id",
+        "group-levels"
+      ],
+      "runtime_status": "source-compared-png-renderer-exception",
+      "guardrails": [
+        "distance-method-must-be-disclosed",
+        "marginals-share-main-axis-values",
+        "ellipse-is-not-confidence-proof",
+        "patchwork-output-needs-biofigure-receipt-support-before-final-pass"
+      ]
+    },
+    {
+      "id": "SCIDRAW-TERNARY-001",
+      "family": "ternary-composition",
+      "packages": [
+        "ggtern"
+      ],
+      "required_functions": [
+        "ggtern",
+        "geom_point",
+        "theme_rgbg"
+      ],
+      "shared_keys": [
+        "three-components-sum-to-one"
+      ],
+      "runtime_status": "source-compared-png",
+      "guardrails": [
+        "validate-compositional-closure",
+        "retain-ternary-axis-semantics"
+      ]
+    },
+    {
+      "id": "SCIDRAW-CORRPLOT-001",
+      "family": "correlation-matrix",
+      "packages": [
+        "corrplot"
+      ],
+      "required_functions": [
+        "cor",
+        "corrplot"
+      ],
+      "shared_keys": [
+        "same-variable-order-for-matrix-and-labels"
+      ],
+      "runtime_status": "source-compared-png",
+      "guardrails": [
+        "disclose-correlation-method",
+        "category-colors-encode-label-groups",
+        "reduce-density-before-shrinking-text"
+      ]
+    },
+    {
+      "id": "SCIDRAW-SWIMMER-001",
+      "family": "patient-swimmer",
+      "packages": [
+        "ggnewscale",
+        "ggplot2"
+      ],
+      "required_functions": [
+        "new_scale_color",
+        "new_scale_fill",
+        "geom_segment",
+        "geom_point"
+      ],
+      "shared_keys": [
+        "patient-order",
+        "time-origin"
+      ],
+      "runtime_status": "source-compared-png",
+      "guardrails": [
+        "events-and-treatment-share-time-axis",
+        "ongoing-status-uses-arrow",
+        "metadata-columns-align-by-patient"
+      ]
+    },
+    {
+      "id": "SCIDRAW-CHORD-TRACK-001",
+      "family": "chord-with-outer-track",
+      "packages": [
+        "circlize"
+      ],
+      "required_functions": [
+        "chordDiagram",
+        "circos.trackPlotRegion",
+        "circos.rect"
+      ],
+      "shared_keys": [
+        "sector-order",
+        "sector-colors"
+      ],
+      "runtime_status": "source-compared-png",
+      "guardrails": [
+        "clear-circos-state",
+        "outer-track-shares-sector-boundaries",
+        "limit-sectors-for-readable-labels"
+      ]
+    },
+    {
+      "id": "SCIDRAW-VOLCANO-GSEA-001",
+      "family": "volcano-gene-set-track",
+      "packages": [
+        "ggrepel",
+        "ggplot2"
+      ],
+      "required_functions": [
+        "geom_label_repel",
+        "geom_linerange",
+        "coord_cartesian"
+      ],
+      "shared_keys": [
+        "gene-id",
+        "effect-direction"
+      ],
+      "runtime_status": "source-compared-png",
+      "guardrails": [
+        "adjusted-p-values-only",
+        "gene-set-track-is-not-a-gsea-result-without-enrichment-analysis",
+        "do-not-clip-labels-with-scale-limits"
+      ]
     }
   ]
 }
