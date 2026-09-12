@@ -3330,7 +3330,7 @@
         "theme_bw",
         "theme_classic"
       ],
-      "runtime_status": "validated-png",
+      "runtime_status": "source-compared-png",
       "validated_pngs": [
         "issue076_raincloud.png"
       ]
