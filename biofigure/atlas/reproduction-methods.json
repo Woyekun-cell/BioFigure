@@ -3404,7 +3404,7 @@
         "runif",
         "unit"
       ],
-      "runtime_status": "validated-png",
+      "runtime_status": "source-compared-png",
       "validated_pngs": [
         "issue078_circular_heatmap.png"
       ]
