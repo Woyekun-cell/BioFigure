@@ -11197,7 +11197,7 @@
       "comparison_sha256": "e94bb9592bfd4091e59dcf4f3930ab56207b0c21de7679d7873499025e230686",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "主曲线、置信带、阈值线和嵌图结构接近；曲线形态与留白仍不同"
+      "review_note": "结构接近，待校准曲线形态和主图留白"
     },
     {
       "evidence_id": "scidraw-ridge-bipolar",
@@ -11211,7 +11211,7 @@
       "comparison_sha256": "8b1d3efe2167d5fb2131b7347177412e41e5c6836716e46358ea91d6f55fe1ea",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "双极条和山脊方向正确；布局比例、标签密度和分组结构不同"
+      "review_note": "方向正确，待补原图标签密度与拼版比例"
     },
     {
       "evidence_id": "01_pcoa_marginal",
@@ -11220,12 +11220,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/pcoa_02.png",
       "source_sha256": "860ec5cb58574af93f0ee9496570f9bc71f5ef582ca27fa0733794d8e6ec138d",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/01_pcoa_marginal.png",
-      "reproduction_sha256": "c6ce07429d672e9cd38e168fc8d140e1df1d52d9db6c18bd78e87ff627ca46fa",
+      "reproduction_sha256": "06337baba336c5387027b02a789bee14a583cacc5d521a114f1f85433292b5a0",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/01_pcoa_marginal.png",
-      "comparison_sha256": "347eeedeaadfd3385723ee5801110e3da90adfb6a640e5d14bb7d0eb4417717c",
+      "comparison_sha256": "464a0a80460abc204ce1e284b59d9444ab6855c7ed97cbc1cb7f2056587b9835",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "主图加边际分布已复现；组数、统计框、坐标比例和原始排布不同"
+      "review_note": "主图和边际分布存在，统计框及坐标比例待校准"
     },
     {
       "evidence_id": "02_ternary_cell_state",
@@ -11234,12 +11234,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/ternary_03.png",
       "source_sha256": "f8f09602b2090dc80258dac97d8cac6cda98403bbeb5b4db6d12bd1501bec0b3",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/02_ternary_cell_state.png",
-      "reproduction_sha256": "feeb60ad7bdc2014a4ef8501f98a5f5c6f17ecf1b160310ba0d08ef7459064ed",
+      "reproduction_sha256": "ea4dbe093d34fbbc2aa497470b375f207d8d213701784ec485720e651479ce95",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/02_ternary_cell_state.png",
-      "comparison_sha256": "076f41e686dc859cd4de050580a99facea8ebafa8505ac97b7119f41d6981e8f",
+      "comparison_sha256": "e062f9960d64b75784a5614fa0eefe4d6cf91e294b00998f7b4446e8a499de24",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "三元编码和形状区分已实现；原图为多时点面板且含内部网格"
+      "review_note": "已改三时点面板、三向网格及形状颜色双编码，轴文字层级仍待校准"
     },
     {
       "evidence_id": "03_correlation_heatmap",
@@ -11248,12 +11248,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/corr_03.png",
       "source_sha256": "b7186784519cfdc7a141ca47c674d749a8a954cd17db5b29e3da9564f7153191",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/03_correlation_heatmap.png",
-      "reproduction_sha256": "a8251f13363dfe759d09d86fbe09982f61835e24b40ff149878a88f56584a0c6",
+      "reproduction_sha256": "41f54aee3a5a38bbc179b59d6a7fa86f2431007eea9dd1e945d97df0dd803561",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/03_correlation_heatmap.png",
-      "comparison_sha256": "59793545bd16c7096bdd16ff0a57d7523e80b4b82ee3b19e2f9e257a9ed47a89",
+      "comparison_sha256": "bd755c32637db127811bc72df306dc8c44d6bc28bbc0f050adb8346c8a53b9bc",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "相关方向与方格编码可用；变量规模、三角布局和标签密度差异大"
+      "review_note": "已恢复28变量密集三角结构，变量语义与原图文字密度仍不同"
     },
     {
       "evidence_id": "04_patient_swimmer",
@@ -11262,12 +11262,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/swimmer_02.png",
       "source_sha256": "20ad47d4f825413b6fd000451f84afe874ce4c44d2b8e577a6eb8b8e218934eb",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/04_patient_swimmer.png",
-      "reproduction_sha256": "f00fe5d38a18460eacf1b870f23c2c6f29fc87ec101b8c9ed18d8097ef4de1b1",
+      "reproduction_sha256": "1c58ae721ab4fb6702ceb0962ae5a760f418c377c192c77920914ae2255999ae",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/04_patient_swimmer.png",
-      "comparison_sha256": "4f535ca90f501cf024daa740461d59df3b1ffe6a6d91dd0efd08c18b36848a45",
+      "comparison_sha256": "2c427da86d115b1d70d1e3de038542928aad19f66b004c2e7973187a30e46114",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "疗程条和事件标记存在；原图多轨注释及图例信息明显更多"
+      "review_note": "已扩展28患者和四列临床注释轨，图例结构与事件轨仍需细化"
     },
     {
       "evidence_id": "05_chord_outer_track",
@@ -11276,12 +11276,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/chord_02.png",
       "source_sha256": "78bb318c4bc3301715db2082e9d086c49644ab48beee8272bcdbaa86c329a0c5",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/05_chord_outer_track.png",
-      "reproduction_sha256": "d25181288f4669992120d807abc3693697b956274ae368309b3e60a2fdfe2d12",
+      "reproduction_sha256": "f424a4bd6d799af945380f1314afa456d6983bd5d8449ead51185e3ce4674446",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/05_chord_outer_track.png",
-      "comparison_sha256": "1cf5972b3088b2e58aa64dedff1e172b53eeb75e0e38a3312c5eda69f0cc29b2",
+      "comparison_sha256": "e62b52a42e9b30745d4e08c92650213faeecbb4cbb942c7ff9d14ae102787548",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "和弦与外环结构存在；扇区数量、外层标签和注释轨不足"
+      "review_note": "已扩为22扇区和外围定量轨，原图外圈细分标签仍未完整复现"
     },
     {
       "evidence_id": "06_volcano_gsea",
@@ -11290,12 +11290,12 @@
       "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/volcano_02.png",
       "source_sha256": "e67aed3263f0bdaaff2c61a6e3e4ee66ff5b4accc98591a8eb1365f785591ae7",
       "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/06_volcano_gsea.png",
-      "reproduction_sha256": "2c7a96fabc778f85b30f826e5e1067de69d95609ede08c41c1e59776cf5bfecb",
+      "reproduction_sha256": "b792d93d7d8ef4e4ead302db0c94aa8cb7b9f9115097bdb32334daa6b7e7d13f",
       "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/06_volcano_gsea.png",
-      "comparison_sha256": "5a954c5993b0b6498a9824f0624e577beb3015b51e0c2467e0ff2f1d4c8fd5a5",
+      "comparison_sha256": "64dbc8d5a6b934cb8a418b4c73ef1a2209b1b4c17b4cfd7aea610b6810e5fd6d",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
-      "review_note": "双侧背景、标签与底部轨道接近；顶部图例和轨道密度仍需优化"
+      "review_note": "总体语法接近，顶部图例和底部轨道密度待优化"
     }
   ]
 }
