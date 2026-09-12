@@ -22,6 +22,8 @@ class CardTests(unittest.TestCase):
   self.assertEqual(by_id['SCIDRAW-RCS-001']['runtime_status'],'source-compared-png')
   self.assertEqual(by_id['SCIDRAW-RIDGE-BIPOLAR-001']['runtime_status'],'source-compared-png')
   self.assertEqual(by_id['SCIDRAW-PCOA-MARGINAL-001']['runtime_status'],'source-compared-png-renderer-exception')
+  self.assertIn('encode-groups-with-shape-and-color',by_id['SCIDRAW-TERNARY-001']['guardrails'])
+  self.assertIn('legend-must-not-overlap-data-region',by_id['SCIDRAW-VOLCANO-GSEA-001']['guardrails'])
   entry=(root/'SKILL.md').read_text()
   self.assertIn('atlas/scidraw-source-compared-methods.json',entry)
   self.assertIn('命中`source-compared-png`案例时优先采用',entry)

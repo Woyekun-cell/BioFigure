@@ -94,7 +94,10 @@
       "runtime_status": "source-compared-png",
       "guardrails": [
         "validate-compositional-closure",
-        "retain-ternary-axis-semantics"
+        "retain-ternary-axis-semantics",
+        "avoid-opaque-grey-ternary-panel",
+        "encode-groups-with-shape-and-color",
+        "inspect-ternary-grid-after-background-change"
       ]
     },
     {
@@ -183,7 +186,10 @@
       "guardrails": [
         "adjusted-p-values-only",
         "gene-set-track-is-not-a-gsea-result-without-enrichment-analysis",
-        "do-not-clip-labels-with-scale-limits"
+        "do-not-clip-labels-with-scale-limits",
+        "legend-must-not-overlap-data-region",
+        "reserve-label-space-before-ggrepel",
+        "inspect-label-boxes-at-final-size"
       ]
     }
   ]

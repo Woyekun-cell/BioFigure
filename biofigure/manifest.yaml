@@ -1,4 +1,4 @@
-version: "3.3.0"
+version: "3.3.1"
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
