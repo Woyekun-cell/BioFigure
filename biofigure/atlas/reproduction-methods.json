@@ -1571,7 +1571,7 @@
         "unit",
         "view"
       ],
-      "runtime_status": "validated-png",
+      "runtime_status": "source-compared-png",
       "validated_pngs": [
         "issue036_forest.png"
       ]

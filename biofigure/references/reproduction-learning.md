@@ -26,3 +26,5 @@
 逐案查询`atlas/reproduction-methods.json`。若原代码用`ggsurvfit`、`ClusterGVis`、`ComplexHeatmap`、`circlize`、`ggraph`、`ggtreeExtra`等专用包，先核对本机版本并运行最小示例，再复现完整PNG。ggplot2只用于补充主题或局部图层，不能代替专用包负责的风险表、聚类对齐、圆形轨道、树外圈或网络布局。
 
 方法已解析不等于视觉已学会。`runtime_status=method-parsed-awaiting-png-reproduction`的案例只能作为待办；只有专用包实际运行、PNG打开比较并记录缺陷后，才改为`validated-png`。
+
+`validated-png`只表示实际渲染并目视检查。只有将来源复现图与新图并排检查，逐项确认信息层、排序、标度、颜色角色、标注密度和留白后，才可标记`source-compared-png`；不得用相同图型名称代替视觉对照。
