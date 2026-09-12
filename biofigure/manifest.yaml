@@ -1,4 +1,4 @@
-version: "3.3.1"
+version: "3.4.0"
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
@@ -52,6 +52,10 @@ specialty_critics:
   phylogeny-synteny-gene-family: critics/genome.md
   schematic-mechanism: critics/mechanism.md
 reference_evidence_layers:
+  unified_capability_graph:
+    graph: atlas/unified-capability-graph.json
+    retriever: scripts/retrieve_capabilities.py
+    policy: derived_features_only_with_separate_static_runtime_and_visual_status
   reproduction:
     corpus: atlas/reproduction-derived-corpus.json
     methods: atlas/reproduction-methods.json

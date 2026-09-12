@@ -3,16 +3,16 @@ name: biofigure
 description: 设计、绘制、精修或审查生物科研图；R优先，兼容Python，检查科学语义、字体、排版与实际成图。
 ---
 
-# BioFigure 3.3.1
+# BioFigure 3.4.0
 
 ## 执行门禁
 
 读过规范、代码运行、打开图片均不等于合规。每图按下列顺序执行；修图和短请求也适用。失败只交诊断或标记预览，不得称完成或PASS。
 
 1. 读取 `references/personal-style.md`、`references/render-execution.md`、`references/reference-quality.md`、`references/reproduction-learning.md`、`static/core/contract.md` 与 `manifest.yaml`；运行 `scripts/route_figure.py 请求.yaml`。
-2. 科学契约后运行 `scripts/retrieve_reproduction.py --query "任务+图型+数据结构" --output 检索.json`，只读3–5个派生案例；同时查询 `atlas/reproduction-methods.json` 和 `atlas/scidraw-source-compared-methods.json` 的专用包、核心函数、共享排序键与guardrails。命中`source-compared-png`案例时优先采用其已实跑的方法约束。先安装、锁定并实测原代码使用的专用R包；禁止用基础ggplot2替代该包的核心布局能力。禁止查看或复制整段案例原代码；从用户数据合同重建。检索凭证必须进入CP2。
+2. 科学契约后运行 `scripts/retrieve_reproduction.py --query "任务+图型+数据结构" --output 检索.json` 和 `scripts/retrieve_capabilities.py --query "任务+图型+数据结构" --output 能力检索.json`，只读派生特征；同时查询专用包、核心函数、共享排序键与guardrails。`static-code-audited`只证明代码建档，`source-compared-needs-revision`只证明已经对照并发现缺陷；只有`source-compared-png`且`review_status=pass`才可作为高保真先例。先安装、锁定并实测原代码使用的专用R包；禁止用基础ggplot2替代该包的核心布局能力。禁止查看或复制整段案例原代码；从用户数据合同重建。检索凭证必须进入CP2。
 3. 参考图实际查看、Design Spec、CP0–CP2先完成。读取 `references/enforced-execution.md`。ggplot最终PNG只用 `bf_render_png`；把 `scripts/figure_style.R` 复制进项目并随代码交付。
-4. 打开最终PNG，按实际使用尺寸审查，填写对象级inspection与Critic。每张PNG单独ledger。
+4. 打开最终PNG，按实际使用尺寸审查，填写对象级inspection与Critic。复现任务必须用当前PNG重新生成原图并排图，分别审查布局、编码、字体、配色、信息密度；旧对照图在PNG变化后立即失效。每张PNG单独ledger。
 5. 运行 `python3 scripts/validate_checkpoints.py checkpoint-ledger.yaml --json`。仅退出码0且CP0–CP4全部PASS可交付；保存输出。渲染凭据仅证明技术预检，不能替代视觉质量。
 
 ## 首版就实现
