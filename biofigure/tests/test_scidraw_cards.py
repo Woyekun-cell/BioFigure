@@ -20,4 +20,7 @@ class CardTests(unittest.TestCase):
   self.assertIn('ggridges',by_id['SCIDRAW-RIDGE-BIPOLAR-001']['packages'])
   self.assertIn('category-factor-order',by_id['SCIDRAW-RIDGE-BIPOLAR-001']['shared_keys'])
   self.assertTrue(all(x['runtime_status']=='source-compared-png' for x in doc['cases']))
+  entry=(root/'SKILL.md').read_text()
+  self.assertIn('atlas/scidraw-source-compared-methods.json',entry)
+  self.assertIn('命中`source-compared-png`案例时优先采用',entry)
 if __name__=='__main__':unittest.main()
