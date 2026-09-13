@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "tasks_verified": 6,
+  "errors": [],
+  "items": [
+    {
+      "task": "survival",
+      "png_sha256": "11301e1f32c79a22092c1c232a8efebb463de333d168c9a922116609be2d6b8a",
+      "plot_data_sha256": "ac03de100dbe934e3b8f87568f8a72ccc25595fbf93eeeba9463eba256e947bc",
+      "pixels": [
+        1181,
+        885
+      ]
+    },
+    {
+      "task": "annotated_heatmap",
+      "png_sha256": "10c16ff858bea98232257174a89085b1eed110ad7d05c45d5a871e8e0cc67ddb",
+      "plot_data_sha256": "6b9a34697eba45676e8493bc2604975b67eff025c2efbf1edb8fa0fbcfdace8e",
+      "pixels": [
+        1181,
+        1039
+      ]
+    },
+    {
+      "task": "circular_composition",
+      "png_sha256": "4d8970c5c38e0a4296b83d770d3ad859bd50eb70bf25f0b84306a98979c9874f",
+      "plot_data_sha256": "0f8b43a24414171cc5bbdafd4af15640cd2af5cbab1e33af2843e204e584acf2",
+      "pixels": [
+        1476,
+        826
+      ]
+    },
+    {
+      "task": "swimmer",
+      "png_sha256": "be37449f0021975d0040767f695d02f739c09004ae1005fd73cbd2bf99b3550d",
+      "plot_data_sha256": "ee6f5a206e59977bd65f6ae12d4a303d151e1110f172da74491ce01f49698fc9",
+      "pixels": [
+        1181,
+        885
+      ]
+    },
+    {
+      "task": "enrichment_network",
+      "png_sha256": "7e5c38ef92fda3400321e7a08223fda0d4d8aa3210c7618f7c4b4013dae0b60b",
+      "plot_data_sha256": "60a801c66ac4e88c4509343e9e55505f262cd7a56b2c559ac022ca5563d77e19",
+      "pixels": [
+        1181,
+        885
+      ]
+    },
+    {
+      "task": "time_series",
+      "png_sha256": "e6df99352f9e1aee742fa8c77bf4257ac0c4c2fe959cf99f5a0960ee64314e6e",
+      "plot_data_sha256": "55c7a7c28d6a117cafa00da15f7243fded95f6c4d61f8b5bae5b90fbc0d001de",
+      "pixels": [
+        1181,
+        885
+      ]
+    }
+  ],
+  "scope": "artifact integrity and render receipt; visual review recorded separately"
+}

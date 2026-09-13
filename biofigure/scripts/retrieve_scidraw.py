@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "atlas/scidraw-derived-corpus.json"
+METHODS = ROOT / "atlas/scidraw-source-compared-methods.json"
 
 
 def tokens(value: str) -> list[str]:
@@ -52,8 +53,9 @@ def score_case(case: dict, query: str) -> float:
     return score
 
 
-def retrieve(query: str, limit: int = 5) -> dict:
+def retrieve(query: str, limit: int = 5, require_validated: bool = False) -> dict:
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
+    methods = {x["id"]: x for x in json.loads(METHODS.read_text(encoding="utf-8"))["cases"]}
     visuals = {v["visual_id"]: v for v in corpus["visuals"]}
     ranked = sorted(((score_case(case, query), case) for case in corpus["cases"]), key=lambda x: (-x[0], x[1]["case_id"]))
     results = []
@@ -65,6 +67,14 @@ def retrieve(query: str, limit: int = 5) -> dict:
         item["requires_actual_image_review"] = True
         item["score"] = round(score, 2)
         item["transfer_policy"] = "inspect_then_distill_never_copy"
+        method = methods.get(case["case_id"], {})
+        item["source_compared_method"] = method
+        item["high_fidelity_eligible"] = (
+            method.get("runtime_status") == "source-compared-png"
+            and method.get("review_status") == "pass"
+        )
+        if require_validated and not item["high_fidelity_eligible"]:
+            continue
         results.append(item)
         if len(results) >= limit:
             break
@@ -72,6 +82,10 @@ def retrieve(query: str, limit: int = 5) -> dict:
         "query": query,
         "evidence_status": "optional_reference_not_ground_truth",
         "source_precedence": "scientific_contract_and_official_guidance",
+        "retrieval_policy": {
+            "require_validated": require_validated,
+            "high_fidelity_rule": "runtime_status=source-compared-png and review_status=pass",
+        },
         "results": results,
     }
 
@@ -81,8 +95,9 @@ def main() -> int:
     parser.add_argument("--query", required=True)
     parser.add_argument("--limit", type=int, default=5)
     parser.add_argument("--json", action="store_true")
+    parser.add_argument("--require-validated", action="store_true")
     args = parser.parse_args()
-    payload = retrieve(args.query, max(1, min(args.limit, 20)))
+    payload = retrieve(args.query, max(1, min(args.limit, 20)), args.require_validated)
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:

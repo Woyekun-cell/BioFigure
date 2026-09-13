@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('builder',Path(__file__).resolve().parents[1]/'scripts/build_scidraw_atlas.py')
@@ -10,4 +11,20 @@ class CardTests(unittest.TestCase):
   self.assertEqual([(i['heading'],i['src']) for i in items],[('Radar','https://example.org/a.png'),('Tree','https://example.org/b.png')])
   self.assertEqual(items[0]['source_url'],'https://mp.weixin.qq.com/s/a')
   self.assertEqual(items[1]['source_url'],'')
+ def test_source_compared_methods_lock_specialized_packages_and_alignment(self):
+  root=Path(__file__).resolve().parents[1]
+  doc=json.loads((root/'atlas/scidraw-source-compared-methods.json').read_text())
+  by_id={x['id']:x for x in doc['cases']}
+  self.assertIn('rms',by_id['SCIDRAW-RCS-001']['packages'])
+  self.assertIn('do-not-substitute-geom-smooth',by_id['SCIDRAW-RCS-001']['guardrails'])
+  self.assertIn('ggridges',by_id['SCIDRAW-RIDGE-BIPOLAR-001']['packages'])
+  self.assertIn('category-factor-order',by_id['SCIDRAW-RIDGE-BIPOLAR-001']['shared_keys'])
+  self.assertEqual(by_id['SCIDRAW-RCS-001']['runtime_status'],'source-compared-png')
+  self.assertEqual(by_id['SCIDRAW-RIDGE-BIPOLAR-001']['runtime_status'],'source-compared-png')
+  self.assertEqual(by_id['SCIDRAW-PCOA-MARGINAL-001']['runtime_status'],'source-compared-png-renderer-exception')
+  self.assertTrue(all(x['review_status'] in {'pass','needs-review'} for x in doc['cases']))
+  self.assertIn('encode-groups-with-shape-and-color',by_id['SCIDRAW-TERNARY-001']['guardrails'])
+  self.assertIn('legend-must-not-overlap-data-region',by_id['SCIDRAW-VOLCANO-GSEA-001']['guardrails'])
+  entry=(root/'references/reproduction-learning.md').read_text()
+  self.assertIn('review_status=pass',entry)
 if __name__=='__main__':unittest.main()

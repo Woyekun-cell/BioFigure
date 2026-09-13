@@ -1,0 +1,3964 @@
+{
+  "schema_version": 1,
+  "coverage": {
+    "available_cases": 79,
+    "requested_range": "1-80",
+    "missing_issues": [
+      30
+    ]
+  },
+  "policy": {
+    "specialized_package_first": true,
+    "validation_format": "png-only",
+    "runtime_claim_requires_render": true
+  },
+  "cases": [
+    {
+      "issue": 1,
+      "title": "分面堆积柱状图",
+      "figure_families": [
+        "composition"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "apply",
+        "as.data.frame",
+        "element_blank",
+        "element_text",
+        "facet_grid",
+        "function",
+        "geom_bar",
+        "getwd",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "melt",
+        "p_load",
+        "rbind",
+        "runif",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "sum",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 2,
+      "title": "径向堆积柱状图",
+      "figure_families": [
+        "composition"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "annotate",
+        "as.factor",
+        "coord_radial",
+        "element_blank",
+        "element_text",
+        "geom_bar",
+        "geom_segment",
+        "geom_text",
+        "getwd",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "margin",
+        "max",
+        "mean",
+        "min",
+        "mutate",
+        "nrow",
+        "p_load",
+        "read.xlsx",
+        "rowwise",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "summarize",
+        "theme",
+        "threatened",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 3,
+      "title": "分组比较小提琴图",
+      "figure_families": [
+        "distribution"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "element_blank",
+        "element_text",
+        "expression",
+        "filter",
+        "geom_boxplot",
+        "geom_violin",
+        "getwd",
+        "ggplot",
+        "ggsave",
+        "italic",
+        "labs",
+        "library",
+        "p_load",
+        "plot_annotation",
+        "read.xlsx",
+        "scale_colour_manual",
+        "stat_compare_means",
+        "theme",
+        "theme_classic",
+        "ylim"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 4,
+      "title": "相关性热图附P值标记",
+      "figure_families": [
+        "heatmap",
+        "association"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "Heatmap",
+        "as.matrix",
+        "colorRamp2",
+        "column_to_rownames",
+        "dcast",
+        "draw",
+        "function",
+        "getwd",
+        "gpar",
+        "grid.text",
+        "is.na",
+        "library",
+        "p_load",
+        "read.xlsx",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 5,
+      "title": "差异基因火山图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggrepel"
+      ],
+      "core_package_status": {
+        "ggrepel": "installed"
+      },
+      "key_functions": [
+        "Significance",
+        "aes",
+        "annotate",
+        "arrange",
+        "as.vector",
+        "case_when",
+        "element_blank",
+        "element_text",
+        "expansion",
+        "filter",
+        "geom_hline",
+        "geom_label_repel",
+        "geom_point",
+        "geom_rect",
+        "geom_segment",
+        "geom_vline",
+        "getwd",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "log10",
+        "max",
+        "min",
+        "mutate",
+        "n",
+        "read.table",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "select",
+        "siRNA",
+        "subset",
+        "t",
+        "theme",
+        "theme_classic",
+        "top_n",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 6,
+      "title": "分组折线图+蜂群点图+柱状图",
+      "figure_families": [
+        "time_series"
+      ],
+      "core_packages": [
+        "ggbeeswarm",
+        "openxlsx"
+      ],
+      "core_package_status": {
+        "ggbeeswarm": "installed",
+        "openxlsx": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "annotation_custom",
+        "change",
+        "coord_cartesian",
+        "coord_flip",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "geom_beeswarm",
+        "geom_hline",
+        "geom_jitter",
+        "geom_rect",
+        "geom_vline",
+        "getwd",
+        "ggplot",
+        "ggplotGrob",
+        "ggplot_build",
+        "ggplot_gtable",
+        "ggsave",
+        "labs",
+        "library",
+        "margin",
+        "max",
+        "mean",
+        "position_beeswarm",
+        "position_dodge",
+        "rate",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_x_continuous",
+        "scale_x_discrete",
+        "scale_y_continuous",
+        "stat_summary",
+        "theme",
+        "theme_classic",
+        "unit",
+        "which",
+        "ylab"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 7,
+      "title": "部分突出显示的饼图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "export",
+        "ggforce",
+        "ggpubr",
+        "ggrepel"
+      ],
+      "core_package_status": {
+        "export": "installed",
+        "ggforce": "installed",
+        "ggpubr": "installed",
+        "ggrepel": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "as_ggplot",
+        "atop",
+        "coord_fixed",
+        "cumsum",
+        "element_blank",
+        "element_text",
+        "expression",
+        "geom_arc",
+        "geom_arc_bar",
+        "geom_tile",
+        "get_legend",
+        "ggplot",
+        "graph2ppt",
+        "italic",
+        "lag",
+        "library",
+        "margin",
+        "mutate",
+        "n",
+        "plot_layout",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "theme",
+        "theme_bw",
+        "theme_no_axes",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 8,
+      "title": "基因突变全景瀑布图",
+      "figure_families": [
+        "genome"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "TCGAbiolinks",
+        "aplot",
+        "circlize",
+        "export",
+        "ggplotify",
+        "ggpubr"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "TCGAbiolinks": "installed",
+        "aplot": "installed",
+        "circlize": "installed",
+        "export": "installed",
+        "ggplotify": "installed",
+        "ggpubr": "installed"
+      },
+      "key_functions": [
+        "GDCdownload",
+        "GDCprepare",
+        "GDCquery",
+        "GDCquery_clinic",
+        "HeatmapAnnotation",
+        "Legend",
+        "aes",
+        "alter_graphic",
+        "anno_empty",
+        "apply",
+        "as.data.frame",
+        "case_when",
+        "column_order",
+        "current.viewport",
+        "decorate_annotation",
+        "draw",
+        "element_rect",
+        "filter",
+        "function",
+        "geom_bar",
+        "ggplot",
+        "gpar",
+        "grep",
+        "group_by",
+        "if",
+        "install.packages",
+        "is.na",
+        "library",
+        "load",
+        "mutate",
+        "n",
+        "oncoPrint",
+        "order",
+        "requireNamespace",
+        "rowSums",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "substr",
+        "sum",
+        "summarise"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 9,
+      "title": "桑基堆积柱状图",
+      "figure_families": [
+        "composition"
+      ],
+      "core_packages": [
+        "ggalluvial",
+        "ggh4x"
+      ],
+      "core_package_status": {
+        "ggalluvial": "installed",
+        "ggh4x": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "element_text",
+        "expand.grid",
+        "geom_alluvium",
+        "geom_col",
+        "geom_stratum",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "labs",
+        "library",
+        "melt",
+        "mutate",
+        "nrow",
+        "rename",
+        "runif",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "sum",
+        "theme",
+        "theme_classic",
+        "ungroup"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 10,
+      "title": "多组比较火山图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggnewscale",
+        "ggrepel"
+      ],
+      "core_package_status": {
+        "ggnewscale": "installed",
+        "ggrepel": "installed"
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "element_blank",
+        "element_line",
+        "element_text",
+        "expansion",
+        "geom_col",
+        "geom_jitter",
+        "geom_text",
+        "geom_text_repel",
+        "geom_tile",
+        "getOption",
+        "getwd",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "max",
+        "min",
+        "nrow",
+        "scale_color_manual",
+        "scale_colour_manual",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "subset",
+        "summarise",
+        "theme",
+        "theme_minimal",
+        "top_n",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 11,
+      "title": "组织器官解剖图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "gganatogram",
+        "ggpolypath",
+        "gridExtra"
+      ],
+      "core_package_status": {
+        "gganatogram": "missing",
+        "ggpolypath": "installed",
+        "gridExtra": "installed"
+      },
+      "key_functions": [
+        "gganatogram",
+        "ggsave",
+        "library",
+        "plot_layout",
+        "scale_fill_viridis",
+        "theme_void"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 12,
+      "title": "采样地图",
+      "figure_families": [
+        "map"
+      ],
+      "core_packages": [
+        "ggspatial",
+        "raster",
+        "sf",
+        "stars"
+      ],
+      "core_package_status": {
+        "ggspatial": "installed",
+        "raster": "installed",
+        "sf": "installed",
+        "stars": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotation_north_arrow",
+        "annotation_scale",
+        "coord_sf",
+        "element_blank",
+        "element_rect",
+        "element_text",
+        "geom_sf",
+        "ggplot",
+        "ggsave",
+        "guide_legend",
+        "guides",
+        "is.na",
+        "labs",
+        "layer_spatial",
+        "library",
+        "merge",
+        "mutate",
+        "mutate_all",
+        "n",
+        "replace",
+        "scale_fill_gradientn",
+        "scale_fill_manual",
+        "showtext_auto",
+        "st_as_sf",
+        "theme",
+        "theme_bw",
+        "tibble",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 13,
+      "title": "气泡热图",
+      "figure_families": [
+        "heatmap"
+      ],
+      "core_packages": [
+        "ggplot2"
+      ],
+      "core_package_status": {
+        "ggplot2": {
+          "loadable": true,
+          "version": "4.0.3"
+        }
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "case_when",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "facet_grid",
+        "geom_col",
+        "geom_hline",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "margin",
+        "mutate",
+        "plot_layout",
+        "rnorm",
+        "scale_fill_gradient2",
+        "scale_fill_manual",
+        "scale_size_manual",
+        "scale_y_discrete",
+        "theme",
+        "theme_classic",
+        "theme_void",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/21_bubble_heatmap.png",
+          "sha256": "064472c9661467808fa5d89ff87ffea337f4a21323cdcce2efc6cadd5323bee2",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_point",
+        "facet_grid"
+      ]
+    },
+    {
+      "issue": 14,
+      "title": "网络相关性热图",
+      "figure_families": [
+        "heatmap",
+        "network",
+        "association"
+      ],
+      "core_packages": [
+        "linkET",
+        "vegan"
+      ],
+      "core_package_status": {
+        "linkET": {
+          "loadable": true,
+          "version": "0.1.0"
+        },
+        "vegan": {
+          "loadable": true,
+          "version": "2.7.5"
+        }
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "brewer.pal",
+        "color_pal",
+        "correlate",
+        "cut",
+        "data",
+        "geom_couple",
+        "geom_mark",
+        "geom_point",
+        "geom_square",
+        "ggsave",
+        "guide_colorbar",
+        "guide_legend",
+        "guides",
+        "library",
+        "mantel_test",
+        "mutate",
+        "n",
+        "new_scale",
+        "nice_curvature",
+        "qcorrplot",
+        "scale_color_manual",
+        "scale_fill_gradientn",
+        "scale_size",
+        "scale_size_manual",
+        "theme",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/22_mantel_network_heatmap.png",
+          "sha256": "39a187001d5227280eb70429ff570bed1b140933aca3ae10e2ba08f5dcf01eaf",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "correlate",
+        "qcorrplot",
+        "mantel_test",
+        "geom_couple"
+      ]
+    },
+    {
+      "issue": 15,
+      "title": "组合热图",
+      "figure_families": [
+        "heatmap"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": {
+          "loadable": true,
+          "version": "2.28.0"
+        },
+        "circlize": {
+          "loadable": true,
+          "version": "0.4.18"
+        }
+      },
+      "key_functions": [
+        "Heatmap",
+        "Legend",
+        "anno_mark",
+        "as.dendrogram",
+        "colorRampPalette",
+        "column_to_rownames",
+        "dev.list",
+        "dist",
+        "draw",
+        "for",
+        "function",
+        "gpar",
+        "green2purple.less.white",
+        "grepl",
+        "grid.rect",
+        "gsub",
+        "hclust",
+        "if",
+        "is.na",
+        "is.null",
+        "library",
+        "match",
+        "mutate",
+        "pivot_wider",
+        "pushViewport",
+        "read.xlsx",
+        "rowAnnotation",
+        "sapply",
+        "scale",
+        "str_c",
+        "t",
+        "unit",
+        "viewport",
+        "which",
+        "while"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/23_combined_heatmap.png",
+          "sha256": "b6711413adae2b3c0771c609af175f50087ce8ef1c08edcff379b6adc5df70c8",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "Heatmap",
+        "HeatmapAnnotation"
+      ]
+    },
+    {
+      "issue": 16,
+      "title": "山脊图",
+      "figure_families": [
+        "distribution"
+      ],
+      "core_packages": [
+        "ggridges",
+        "patchwork"
+      ],
+      "core_package_status": {
+        "ggridges": {
+          "loadable": true,
+          "version": "0.5.7"
+        },
+        "patchwork": {
+          "loadable": true,
+          "version": "1.3.2"
+        }
+      },
+      "key_functions": [
+        "aes",
+        "coord_flip",
+        "element_blank",
+        "element_text",
+        "geom_col",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "margin",
+        "plot_layout",
+        "readRDS",
+        "scale_fill_manual",
+        "scale_x_discrete",
+        "scale_x_reverse",
+        "scale_y_continuous",
+        "scale_y_discrete",
+        "theme",
+        "theme_classic",
+        "theme_void",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/24_ridge_tracks.png",
+          "sha256": "ae9c238446a2c8a7b88d38197c9aa0babd211c946ad48aca886a24109423630a",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_density_ridges"
+      ]
+    },
+    {
+      "issue": 17,
+      "title": "箱线图/小提琴图/云雨图",
+      "figure_families": [
+        "distribution"
+      ],
+      "core_packages": [
+        "gghalves",
+        "patchwork"
+      ],
+      "core_package_status": {
+        "gghalves": {
+          "loadable": true,
+          "version": "0.1.4"
+        },
+        "patchwork": {
+          "loadable": true,
+          "version": "1.3.2"
+        }
+      },
+      "key_functions": [
+        "aes",
+        "bind_rows",
+        "coord_flip",
+        "element_line",
+        "element_text",
+        "filter",
+        "geom_boxplot",
+        "geom_half_violin",
+        "geom_jitter",
+        "geom_line",
+        "geom_point",
+        "geom_violin",
+        "ggplot",
+        "ggsave",
+        "library",
+        "plot_layout",
+        "position_nudge",
+        "readRDS",
+        "sample_n",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "stat_pvalue_manual",
+        "theme",
+        "theme_classic",
+        "wilcox_test",
+        "xlab",
+        "ylab"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/25_violin_raincloud_paired.png",
+          "sha256": "286edd5f56a47ed694e001bae56f8848a8b47362f07a231ab0c82f7803d3e120",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_half_violin"
+      ]
+    },
+    {
+      "issue": 18,
+      "title": "FC-FC散点图（变异火山图）",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "ggrepel"
+      ],
+      "core_package_status": {
+        "ggrepel": {
+          "loadable": true,
+          "version": "0.9.8"
+        }
+      },
+      "key_functions": [
+        "ERKi",
+        "Protein",
+        "aes",
+        "annotate",
+        "arrange",
+        "case_when",
+        "dependent",
+        "element_rect",
+        "element_text",
+        "filter",
+        "geom_hline",
+        "geom_point",
+        "geom_text_repel",
+        "ggplot",
+        "ggsave",
+        "guide_legend",
+        "guides",
+        "join_by",
+        "labs",
+        "left_join",
+        "library",
+        "mRNA",
+        "mutate",
+        "read_table",
+        "row_number",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_x_continuous",
+        "select",
+        "suppressed",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/26_fc_fc_scatter.png",
+          "sha256": "cf4ce43cd2de50118e808ecfb682241e06db8b4e0dbf21c540995351024f033d",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_smooth",
+        "geom_text_repel"
+      ]
+    },
+    {
+      "issue": 19,
+      "title": "桑基图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggsankey"
+      ],
+      "core_package_status": {
+        "ggsankey": {
+          "loadable": true,
+          "version": "0.0.99999"
+        }
+      },
+      "key_functions": [
+        "Transcription",
+        "aes",
+        "element_blank",
+        "element_text",
+        "geom_sankey",
+        "geom_sankey_text",
+        "ggplot",
+        "ggsave",
+        "library",
+        "make_long",
+        "scale_fill_manual",
+        "setNames",
+        "theme",
+        "theme_sankey",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/27_sankey.png",
+          "sha256": "116a68f0f40a3fa3d7a474d7da49ebbca744c17b60ccc969c449baae1e43e54a",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "make_long",
+        "geom_sankey",
+        "geom_sankey_text"
+      ]
+    },
+    {
+      "issue": 20,
+      "title": "生存曲线",
+      "figure_families": [
+        "survival"
+      ],
+      "core_packages": [
+        "ggsurvfit",
+        "survival"
+      ],
+      "core_package_status": {
+        "ggsurvfit": {
+          "loadable": true,
+          "version": "1.2.1"
+        },
+        "survival": {
+          "loadable": true,
+          "version": "3.8.6"
+        }
+      },
+      "key_functions": [
+        "OS",
+        "Surv",
+        "add_censor_mark",
+        "add_pvalue",
+        "add_quantile",
+        "add_risktable",
+        "add_risktable_strata_symbol",
+        "aes",
+        "annotate",
+        "coxph",
+        "element_blank",
+        "element_line",
+        "element_text",
+        "geom_segment",
+        "geom_table",
+        "ggsave",
+        "ggsurvfit",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "margin",
+        "n",
+        "nchemotherapy",
+        "randomisation",
+        "randomization",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "summary",
+        "survfit2",
+        "survival",
+        "theme",
+        "theme_classic",
+        "theme_risktable_default",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/28_survival_risktable.png",
+          "sha256": "5e7051b9e5dcfd4ee8918de0050c62578991f00baabd65d7630e4106493cb858",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "survfit2",
+        "ggsurvfit",
+        "add_risktable"
+      ]
+    },
+    {
+      "issue": 21,
+      "title": "棒棒糖和甜甜圈图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggforce"
+      ],
+      "core_package_status": {
+        "ggforce": {
+          "loadable": true,
+          "version": "0.5.0"
+        }
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "cells",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "expression",
+        "format",
+        "geom_arc",
+        "geom_arc_bar",
+        "geom_point",
+        "geom_segment",
+        "geom_text",
+        "geom_tile",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "mutate",
+        "plot_layout",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_x_discrete",
+        "scale_y_continuous",
+        "theme",
+        "theme_bw",
+        "theme_classic2",
+        "theme_no_axes",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/29_lollipop_donuts.png",
+          "sha256": "1a04fbfda00312335c59ef893c3bad4052c37c406cd5b5831d38a095ce06cca0",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_segment",
+        "coord_polar"
+      ]
+    },
+    {
+      "issue": 22,
+      "title": "散点图附边缘分布注释",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "ggside"
+      ],
+      "core_package_status": {
+        "ggside": {
+          "loadable": true,
+          "version": "0.4.1"
+        }
+      },
+      "key_functions": [
+        "aes",
+        "element_blank",
+        "element_text",
+        "geom_point",
+        "ggplot",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "margin",
+        "rnorm",
+        "runif",
+        "sample_n",
+        "scale_color_manual",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/30_scatter_marginals.png",
+          "sha256": "4b6db8ef46885f1bc1547cd2f1d4c4eb4a4bb4ee4deb101626308bcdef5fbdd4",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_xsidedensity",
+        "geom_ysidedensity"
+      ]
+    },
+    {
+      "issue": 23,
+      "title": "基因集富集(GSEA)图",
+      "figure_families": [
+        "enrichment"
+      ],
+      "core_packages": [
+        "GseaVis"
+      ],
+      "core_package_status": {
+        "GseaVis": {
+          "available": false,
+          "version": null,
+          "note": "install failed: get_organism missing"
+        }
+      },
+      "key_functions": [
+        "library",
+        "readRDS",
+        "system.file"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 31,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 24,
+      "title": "经典相关性热图",
+      "figure_families": [
+        "heatmap",
+        "association"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize",
+        "corrplot"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": {
+          "available": true,
+          "version": "2.28.0",
+          "note": null
+        },
+        "circlize": {
+          "available": true,
+          "version": "0.4.18",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "COL2",
+        "Heatmap",
+        "HeatmapAnnotation",
+        "anno_block",
+        "as.matrix",
+        "colorRamp2",
+        "column_to_rownames",
+        "corrplot",
+        "draw",
+        "function",
+        "gpar",
+        "grid.text",
+        "gsub",
+        "if",
+        "is.na",
+        "library",
+        "pindex",
+        "sapply",
+        "strsplit",
+        "tail",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 32,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 25,
+      "title": "和弦图+UpSet图",
+      "figure_families": [
+        "circular"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize"
+      ],
+      "core_package_status": {
+        "circlize": {
+          "available": true,
+          "version": "0.4.18",
+          "note": null
+        },
+        "ComplexHeatmap": {
+          "available": true,
+          "version": "2.28.0",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "UpSet",
+        "chordDiagram",
+        "circos.clear",
+        "circos.text",
+        "circos.track",
+        "column_order",
+        "comb_size",
+        "decorate_annotation",
+        "draw",
+        "function",
+        "get.cell.meta.data",
+        "gpar",
+        "grid.text",
+        "lapply",
+        "library",
+        "make_comb_mat",
+        "max",
+        "mean",
+        "mm_h",
+        "mutate",
+        "read_csv",
+        "seq_along",
+        "split",
+        "table",
+        "unit",
+        "upset_top_annotation",
+        "with"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 33,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 26,
+      "title": "分面堆积柱状图",
+      "figure_families": [
+        "composition"
+      ],
+      "core_packages": [],
+      "core_package_status": {
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        },
+        "patchwork": {
+          "available": true,
+          "version": "1.3.2",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "aes",
+        "alpha",
+        "arrange",
+        "count",
+        "distinct",
+        "element_blank",
+        "element_text",
+        "facet_wrap",
+        "fct_reorder",
+        "geom_bar",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "labs",
+        "library",
+        "mutate",
+        "pull",
+        "readRDS",
+        "rename",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "separate",
+        "sort",
+        "sum",
+        "theme",
+        "theme_classic",
+        "ungroup"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 34,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 27,
+      "title": "带聚类树的气泡热图",
+      "figure_families": [
+        "heatmap",
+        "tree"
+      ],
+      "core_packages": [
+        "circlize",
+        "dendextend"
+      ],
+      "core_package_status": {
+        "dendextend": {
+          "available": true,
+          "version": "1.19.1",
+          "note": null
+        },
+        "patchwork": {
+          "available": true,
+          "version": "1.3.2",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "Expr",
+        "Sys.Date",
+        "aes",
+        "as.dendrogram",
+        "as.matrix",
+        "colorRampPalette",
+        "colored_bars",
+        "dist",
+        "element_blank",
+        "element_line",
+        "element_text",
+        "geom_col",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "hclust",
+        "labs",
+        "library",
+        "par",
+        "plot",
+        "plot_layout",
+        "readRDS",
+        "scale_color_gradientn",
+        "scale_fill_gradientn",
+        "scale_fill_manual",
+        "scale_size",
+        "set",
+        "t",
+        "theme",
+        "theme_minimal",
+        "theme_void"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 35,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 28,
+      "title": "泳道图",
+      "figure_families": [
+        "clinical"
+      ],
+      "core_packages": [
+        "aplot"
+      ],
+      "core_package_status": {
+        "aplot": {
+          "available": true,
+          "version": "0.3.1",
+          "note": null
+        },
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "arrange",
+        "arrow",
+        "element_blank",
+        "element_line",
+        "element_text",
+        "geom_point",
+        "geom_segment",
+        "geom_tile",
+        "ggplot",
+        "ggsave",
+        "insert_left",
+        "is.na",
+        "labs",
+        "library",
+        "margin",
+        "scale_fill_manual",
+        "surgery",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 36,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 29,
+      "title": "Table1",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "flextable",
+        "table1"
+      ],
+      "core_package_status": {
+        "table1": {
+          "available": true,
+          "version": "1.5.1",
+          "note": null
+        },
+        "gridExtra": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
+      },
+      "key_functions": [
+        "Mean",
+        "Median",
+        "as.logical",
+        "chisq.test",
+        "data",
+        "exp",
+        "f",
+        "fisher.test",
+        "format.pval",
+        "function",
+        "if",
+        "is.numeric",
+        "label",
+        "library",
+        "log",
+        "parse.abbrev.render.code",
+        "render.categorical.default",
+        "rnorm",
+        "s",
+        "sample.int",
+        "sapply",
+        "save_as_docx",
+        "sprintf",
+        "stats.apply.rounding",
+        "stats.default",
+        "sub",
+        "switch",
+        "t.test",
+        "t1flex",
+        "table",
+        "table1",
+        "units",
+        "unlist",
+        "wilcox.test",
+        "with"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 37,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 31,
+      "title": "局部放大图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "elementalist",
+        "ggessentials",
+        "ggfx",
+        "ggmagnify",
+        "sf"
+      ],
+      "core_package_status": {
+        "ggmagnify": {
+          "available": true,
+          "version": "0.4.2",
+          "note": null
+        },
+        "ggfx": {
+          "available": true,
+          "version": "1.0.3",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "aes",
+        "alpha",
+        "coord_cartesian",
+        "coord_sf",
+        "cos",
+        "element_blank",
+        "element_rect_round",
+        "element_text",
+        "facet_wrap",
+        "filter",
+        "geom_density2d_filled",
+        "geom_histogram_theme",
+        "geom_magnify",
+        "geom_point",
+        "geom_sf",
+        "ggplot",
+        "labs",
+        "library",
+        "readRDS",
+        "runif",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "sin",
+        "theme",
+        "xlim"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 38,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 32,
+      "title": "多分组火山图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggrastr",
+        "ggrepel",
+        "maps",
+        "sf"
+      ],
+      "core_package_status": {
+        "ggrastr": {
+          "available": true,
+          "version": "1.0.2",
+          "note": null
+        },
+        "ggrepel": {
+          "available": true,
+          "version": "0.9.8",
+          "note": null
+        }
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "element_blank",
+        "element_rect",
+        "element_text",
+        "facet_wrap",
+        "filter",
+        "geom_jitter",
+        "geom_point",
+        "geom_sf",
+        "geom_text_repel",
+        "ggplot",
+        "ggtitle",
+        "labs",
+        "library",
+        "options",
+        "rasterise",
+        "rasterize",
+        "rnorm",
+        "runif",
+        "theme",
+        "theme_classic"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 39,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 33,
+      "title": "风车图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [],
+      "core_package_status": {
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
+      },
+      "key_functions": [
+        "aes",
+        "arrange",
+        "as.integer",
+        "ceiling",
+        "coord_radial",
+        "filter",
+        "geom_hline",
+        "geom_segment",
+        "geom_text",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "labs",
+        "library",
+        "max",
+        "min",
+        "n",
+        "scale_color_manual",
+        "scale_y_reverse",
+        "slice",
+        "theme",
+        "theme_void",
+        "ungroup"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 40,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
+    },
+    {
+      "issue": 34,
+      "title": "嵌套图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggrastr"
+      ],
+      "core_package_status": {
+        "ggrastr": "installed"
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "filter",
+        "geom_point",
+        "geom_rect",
+        "ggplot",
+        "ggsave",
+        "ggtitle",
+        "guide_colorbar",
+        "inset_element",
+        "is.na",
+        "labs",
+        "library",
+        "mutate",
+        "plot_layout",
+        "readRDS",
+        "scale_color_gradient2",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "theme",
+        "theme_classic"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_41_inset_scatter.png",
+          "sha256": "54e753daca3137be3167b28dd47ff2986e4093796dc4202a79ce4804b38b7a82"
+        }
+      ],
+      "validation_batch": 41,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "inset_element",
+        "geom_point_rast"
+      ]
+    },
+    {
+      "issue": 35,
+      "title": "分面散点图带基因标签",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "ggrastr",
+        "ggrepel"
+      ],
+      "core_package_status": {
+        "ggrastr": "installed",
+        "ggrepel": "installed"
+      },
+      "key_functions": [
+        "abs",
+        "aes",
+        "element_blank",
+        "facet_wrap",
+        "filter",
+        "geom_hline",
+        "geom_point",
+        "geom_text_repel",
+        "geom_vline",
+        "ggplot",
+        "ggsave",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "readRDS",
+        "scale_color_manual",
+        "scale_size_continuous",
+        "theme",
+        "theme_classic"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_42_faceted_gene_scatter.png",
+          "sha256": "a9ae25e9ee6bc5e8a62a21a2ab62f3ed27f806a53c5f8f3f28fdd9612b8d954e"
+        }
+      ],
+      "validation_batch": 42,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_point_rast",
+        "geom_text_repel"
+      ]
+    },
+    {
+      "issue": 36,
+      "title": "亚组分析森林图",
+      "figure_families": [
+        "clinical"
+      ],
+      "core_packages": [
+        "forestploter",
+        "ggsurvfit",
+        "jstable",
+        "survival"
+      ],
+      "core_package_status": {
+        "forestploter": "installed",
+        "ggsurvfit": "installed",
+        "jstable": "installed",
+        "survival": "installed"
+      },
+      "key_functions": [
+        "Count",
+        "Ratio",
+        "Surv",
+        "TableSubgroupMultiCox",
+        "across",
+        "everything",
+        "forest",
+        "forest_theme",
+        "gpar",
+        "gsub",
+        "insert_text",
+        "is.na",
+        "library",
+        "mutate",
+        "rename",
+        "unit",
+        "view"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_43_subgroup_forest.png",
+          "sha256": "e9df418964f00f36bccaaf099163ed30a46304097d6368d25dab4e3f33395718"
+        }
+      ],
+      "validation_batch": 43,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "forest",
+        "forest_theme"
+      ]
+    },
+    {
+      "issue": 37,
+      "title": "瀑布图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "arrange",
+        "baseline",
+        "case_when",
+        "desc",
+        "element_blank",
+        "element_rect",
+        "filter",
+        "geom_col",
+        "geom_hline",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "gsub",
+        "is.na",
+        "labs",
+        "library",
+        "mutate",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "showtext_auto",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_44_waterfall.png",
+          "sha256": "e903d403eb54e4febcc266828f31aa61d6aa4592fcbe159870354594e085665f"
+        }
+      ],
+      "validation_batch": 44,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_col"
+      ]
+    },
+    {
+      "issue": 38,
+      "title": "泳道图",
+      "figure_families": [
+        "clinical"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "annotate",
+        "arrange",
+        "element_blank",
+        "element_rect",
+        "element_text",
+        "filter",
+        "geom_col",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "initiation",
+        "is.na",
+        "labs",
+        "library",
+        "mutate",
+        "scale_fill_manual",
+        "scale_x_continuous",
+        "select",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_45_swimmer.png",
+          "sha256": "65bbb9d1f3aa5d22e21089d12dea4999d6fb870e044029656e26f8e5912fbf0d"
+        }
+      ],
+      "validation_batch": 45,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_segment"
+      ]
+    },
+    {
+      "issue": 39,
+      "title": "棒棒糖图+GO富集条形图",
+      "figure_families": [
+        "enrichment"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "element_blank",
+        "element_text",
+        "geom_bar",
+        "geom_point",
+        "geom_segment",
+        "geom_text",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "log10",
+        "mutate",
+        "plot_layout",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_size_continuous",
+        "scale_x_continuous",
+        "scale_x_discrete",
+        "theme",
+        "theme_bw"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_46_lollipop_go.png",
+          "sha256": "b37b68d2938512ae24e65e7b711a1d74c7d01b4cd1b6372c8eb6a941ebdd90c6"
+        }
+      ],
+      "validation_batch": 46,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_segment",
+        "geom_col"
+      ]
+    },
+    {
+      "issue": 40,
+      "title": "Whittaker生物群系图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggpubr",
+        "plotbiomes"
+      ],
+      "core_package_status": {
+        "ggpubr": "installed",
+        "plotbiomes": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "draw_plot",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "expression",
+        "geom_point",
+        "get_legend",
+        "ggarrange",
+        "ggdraw",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "margin",
+        "precipitation",
+        "scale_color_viridis",
+        "scale_size",
+        "theme",
+        "theme_bw",
+        "theme_void",
+        "unit",
+        "view"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_47_whittaker.png",
+          "sha256": "8d79bcee3835865a9fb827b01baa61e45ab37e054cc4096e5f1019aca94f2fe4"
+        }
+      ],
+      "validation_batch": 47,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "Whittaker_biomes",
+        "Ricklefs_colors"
+      ]
+    },
+    {
+      "issue": 41,
+      "title": "逻辑回归模型+ROC曲线",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "binom",
+        "pROC"
+      ],
+      "core_package_status": {
+        "binom": "installed",
+        "pROC": "installed"
+      },
+      "key_functions": [
+        "annotate",
+        "as.factor",
+        "as.formula",
+        "auc",
+        "binom.confint",
+        "ci.auc",
+        "coords",
+        "element_rect",
+        "element_text",
+        "filter",
+        "geom_line",
+        "ggroc",
+        "ggsave",
+        "glm",
+        "guides",
+        "library",
+        "load",
+        "options",
+        "predict",
+        "roc",
+        "scale_color_manual",
+        "setwd",
+        "sum",
+        "suppressMessages",
+        "table",
+        "theme",
+        "theme_bw",
+        "which.max",
+        "xlab",
+        "ylab"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_48_dual_roc.png",
+          "sha256": "376da37bda015f5ba4a7563b45c591f151d897ab52e7702d634365a88cc95b74"
+        }
+      ],
+      "validation_batch": 48,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "roc",
+        "ggroc"
+      ]
+    },
+    {
+      "issue": 42,
+      "title": "各式各样的韦恩图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "VennDiagram",
+        "eulerr",
+        "ggVennDiagram",
+        "ggvenn"
+      ],
+      "core_package_status": {
+        "VennDiagram": "installed",
+        "eulerr": "installed",
+        "ggVennDiagram": "installed",
+        "ggvenn": "installed"
+      },
+      "key_functions": [
+        "Venn",
+        "aes",
+        "alpha",
+        "coord_equal",
+        "element_rect",
+        "element_text",
+        "euler",
+        "geom_path",
+        "geom_polygon",
+        "geom_text",
+        "ggplot",
+        "ggsave",
+        "ggvenn",
+        "library",
+        "mutate",
+        "plot",
+        "plot_shapes",
+        "process_data",
+        "scale_color_manual",
+        "scale_fill_gradient",
+        "sum",
+        "theme",
+        "theme_void",
+        "vectors",
+        "venn",
+        "venn.diagram",
+        "venn_regionedge",
+        "venn_regionlabel",
+        "venn_setedge",
+        "venn_setlabel"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_49_venn_gallery.png",
+          "sha256": "74d159f85d5e0a0bc4d385a277ba4498318a94cf16caf738d59827e72306a97f"
+        }
+      ],
+      "validation_batch": 49,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "venn.diagram",
+        "euler",
+        "ggVennDiagram",
+        "ggvenn"
+      ]
+    },
+    {
+      "issue": 43,
+      "title": "雷达图/蜘蛛图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggradar",
+        "plotthis"
+      ],
+      "core_package_status": {
+        "ggradar": "installed",
+        "plotthis": "installed"
+      },
+      "key_functions": [
+        "RadarPlot",
+        "SpiderPlot",
+        "as_tibble",
+        "ggradar",
+        "ggsave",
+        "library",
+        "mutate_at",
+        "select",
+        "tail",
+        "vars",
+        "view",
+        "waiver"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_50_radar_spider.png",
+          "sha256": "35cf5c23b56409b3cd240c255b29fe0b298a6fe7f6188f59810478e78653fbee"
+        }
+      ],
+      "validation_batch": 50,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "RadarPlot",
+        "SpiderPlot"
+      ]
+    },
+    {
+      "issue": 44,
+      "title": "分组环状热图",
+      "figure_families": [
+        "heatmap",
+        "circular"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 45,
+      "title": "单细胞之UMAP+细胞占比图",
+      "figure_families": [
+        "single_cell",
+        "composition"
+      ],
+      "core_packages": [
+        "Seurat",
+        "SeuratExtend"
+      ],
+      "core_package_status": {
+        "Seurat": "installed",
+        "SeuratExtend": "missing"
+      },
+      "key_functions": [
+        "DimPlot",
+        "NoLegend",
+        "aes",
+        "as.data.frame",
+        "captured",
+        "coord_fixed",
+        "coord_flip",
+        "element_text",
+        "geom_bar",
+        "ggplot",
+        "ggsave",
+        "ggtitle",
+        "labs",
+        "library",
+        "plot_annotation",
+        "plot_layout",
+        "readRDS",
+        "scale_fill_manual",
+        "scale_x_discrete",
+        "table",
+        "theme",
+        "theme_bw",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 46,
+      "title": "单细胞之marker基因表达热图",
+      "figure_families": [
+        "heatmap",
+        "single_cell"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "Seurat",
+        "circlize"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "Seurat": "installed",
+        "circlize": "installed"
+      },
+      "key_functions": [
+        "AverageExpression",
+        "Heatmap",
+        "HeatmapAnnotation",
+        "Legend",
+        "SetIdent",
+        "anno_block",
+        "anno_mark",
+        "anno_simple",
+        "as.data.frame",
+        "colorRamp2",
+        "draw",
+        "function",
+        "gpar",
+        "grid.rect",
+        "grid.text",
+        "group_by",
+        "library",
+        "readRDS",
+        "row",
+        "rowAnnotation",
+        "scale",
+        "t",
+        "table",
+        "top_n",
+        "unit",
+        "which"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 47,
+      "title": "细胞通讯网络图",
+      "figure_families": [
+        "network"
+      ],
+      "core_packages": [
+        "CellChat",
+        "NMF",
+        "Seurat",
+        "SeuratObject",
+        "future",
+        "ggalluvial"
+      ],
+      "core_package_status": {
+        "CellChat": "missing",
+        "NMF": "installed",
+        "Seurat": "installed",
+        "SeuratObject": "installed",
+        "future": "installed",
+        "ggalluvial": "installed"
+      },
+      "key_functions": [
+        "DimPlot",
+        "NoLegend",
+        "aggregateNet",
+        "computeCommunProb",
+        "computeCommunProbPathway",
+        "createCellChat",
+        "droplevels",
+        "extractEnrichedLR",
+        "identifyOverExpressedGenes",
+        "identifyOverExpressedInteractions",
+        "library",
+        "netAnalysis_computeCentrality",
+        "netAnalysis_signalingRole_heatmap",
+        "netVisual_individual",
+        "options",
+        "par",
+        "projectData",
+        "readRDS",
+        "saveRDS",
+        "subset",
+        "subsetCommunication",
+        "subsetData",
+        "table"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 48,
+      "title": "聚类网络图",
+      "figure_families": [
+        "network"
+      ],
+      "core_packages": [
+        "ggforce",
+        "ggraph",
+        "graphlayouts",
+        "igraph"
+      ],
+      "core_package_status": {
+        "ggforce": "installed",
+        "ggraph": "installed",
+        "graphlayouts": "installed",
+        "igraph": "installed"
+      },
+      "key_functions": [
+        "V",
+        "abline",
+        "adjustcolor",
+        "annotated",
+        "annotation",
+        "annotations",
+        "axis",
+        "barplot",
+        "brewer.pal",
+        "cbind",
+        "complex",
+        "components",
+        "degree",
+        "degree_distribution",
+        "delete.vertices",
+        "delete_vertices",
+        "distance_table",
+        "distances",
+        "duplicated",
+        "fit_power_law",
+        "for",
+        "graph_from_data_frame",
+        "grepl",
+        "hist",
+        "induced_subgraph",
+        "is.na",
+        "keeping_degseq",
+        "left_join",
+        "legend",
+        "library",
+        "lines",
+        "max",
+        "mean_distance",
+        "melt",
+        "network",
+        "nrow",
+        "of",
+        "plot",
+        "rbind",
+        "rewire"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_055_cluster_network_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "群落结构已恢复；来源为41类且互作更密，仍需真实网络数据",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 49,
+      "title": "CytoTRACE细胞分化潜能图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "CytoTRACE2",
+        "Seurat",
+        "SeuratExtend"
+      ],
+      "core_package_status": {
+        "CytoTRACE2": "source-url-404",
+        "Seurat": "installed",
+        "SeuratExtend": "missing"
+      },
+      "key_functions": [
+        "FeaturePlot",
+        "as.data.frame",
+        "brewer.pal",
+        "cytotrace2",
+        "element_text",
+        "ggsave",
+        "ggtitle",
+        "library",
+        "plotData",
+        "rasterize",
+        "readRDS",
+        "saveRDS",
+        "scale_colour_gradientn",
+        "theme",
+        "unit"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 50,
+      "title": "单细胞RNA分析全流程",
+      "figure_families": [
+        "single_cell"
+      ],
+      "core_packages": [
+        "AUCell",
+        "ComplexHeatmap",
+        "DoubletFinder",
+        "GSEABase",
+        "Seurat",
+        "SeuratDisk",
+        "SeuratExtend",
+        "VisCello",
+        "ggrastr",
+        "ggunchull",
+        "gt",
+        "irlba"
+      ],
+      "core_package_status": {
+        "AUCell": "installed",
+        "ComplexHeatmap": "installed",
+        "DoubletFinder": "missing",
+        "GSEABase": "installed",
+        "Seurat": "installed",
+        "SeuratDisk": "installed",
+        "SeuratExtend": "missing",
+        "VisCello": "missing",
+        "ggrastr": "installed",
+        "ggunchull": "installed",
+        "gt": "installed",
+        "irlba": "installed"
+      },
+      "key_functions": [
+        "CreateSeuratObject",
+        "DefaultAssay",
+        "DimPlot",
+        "FeaturePlot",
+        "FindAllMarkers",
+        "FindClusters",
+        "FindDoublets",
+        "FindNeighbors",
+        "FindVariableFeatures",
+        "NoAxes",
+        "NoLegend",
+        "NormalizeData",
+        "PercentageFeatureSet",
+        "Read10X",
+        "RenameIdents",
+        "RunPCA",
+        "RunUMAP",
+        "ScaleData",
+        "SetIdent",
+        "VariableFeatures",
+        "VlnPlot",
+        "as.factor",
+        "assayDataNew",
+        "assign",
+        "brewer.pal",
+        "coord_fixed",
+        "doubletFinder_v3",
+        "find.pK",
+        "for",
+        "function",
+        "getOption",
+        "ggsave",
+        "grep",
+        "gt",
+        "gtsave",
+        "library",
+        "mean",
+        "median",
+        "merge",
+        "modelHomotypic"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 51,
+      "title": "星云图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggpubr"
+      ],
+      "core_package_status": {
+        "ggpubr": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "facet_wrap",
+        "galaxyTheme_black",
+        "geom_point",
+        "geom_polygon",
+        "ggplot",
+        "ggsave",
+        "library",
+        "n",
+        "readRDS",
+        "scale_fill_viridis",
+        "stat_density_2d"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_058_galaxy_density_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "黑底、magma密度、白点、虚线边界和双分面完整",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 52,
+      "title": "蜘蛛图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [
+        "aes",
+        "baseline",
+        "element_text",
+        "filter",
+        "geom_hline",
+        "geom_line",
+        "geom_point",
+        "ggplot",
+        "ggsave",
+        "guide_axis",
+        "guide_legend",
+        "guides",
+        "labs",
+        "left_join",
+        "library",
+        "scale_color_manual",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_059_spider_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "患者轨迹、-30阈值和双面板完整",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 53,
+      "title": "带注释的泳道图+瀑布图",
+      "figure_families": [
+        "clinical"
+      ],
+      "core_packages": [
+        "ggnewscale",
+        "ggrepel",
+        "swimplot"
+      ],
+      "core_package_status": {
+        "ggnewscale": "installed",
+        "ggrepel": "installed",
+        "swimplot": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "any",
+        "arrange",
+        "case_when",
+        "coord_flip",
+        "distinct",
+        "element_blank",
+        "element_text",
+        "filter",
+        "geom_bar",
+        "geom_hline",
+        "geom_point",
+        "geom_tile",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "guide_legend",
+        "guides",
+        "join_by",
+        "labs",
+        "left_join",
+        "library",
+        "margin",
+        "mutate",
+        "order",
+        "pivot_longer",
+        "plot_layout",
+        "rename",
+        "scale_color_manual",
+        "scale_fill_manual",
+        "scale_shape_manual",
+        "scale_x_discrete",
+        "scale_y_continuous",
+        "select",
+        "sprintf",
+        "swimmer_arrows",
+        "swimmer_plot",
+        "swimmer_points",
+        "theme"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_060_swimmer_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "泳道和左侧注释已恢复；同一案例的瀑布子图尚未并入",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 54,
+      "title": "多变量比较和相关性分析矩阵图",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "GGally",
+        "ggsci"
+      ],
+      "core_package_status": {
+        "GGally": "installed",
+        "ggsci": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "data",
+        "element_blank",
+        "element_rect",
+        "ggpairs",
+        "ggsave",
+        "library",
+        "scale_color_manual",
+        "scale_color_npg",
+        "scale_fill_manual",
+        "scale_fill_npg",
+        "theme",
+        "theme_bw",
+        "wrap"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_061_ggally_matrix_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "对角密度、下三角拟合、上三角分组相关完整",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 55,
+      "title": "带有误差棒、坐标轴截断和科学计数法的堆积柱状图",
+      "figure_families": [
+        "composition"
+      ],
+      "core_packages": [
+        "ggbreak"
+      ],
+      "core_package_status": {
+        "ggbreak": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "arrange",
+        "cumsum",
+        "desc",
+        "element_blank",
+        "element_text",
+        "function",
+        "geom_bar",
+        "geom_errorbar",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "labs",
+        "library",
+        "mean",
+        "mutate",
+        "parse",
+        "read_xlsx",
+        "scale_fill_manual",
+        "scale_y_break",
+        "scale_y_continuous",
+        "scientific_format",
+        "sd",
+        "sub",
+        "summarise",
+        "theme",
+        "theme_classic",
+        "ungroup",
+        "unit"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_062_ggbreak_stacked_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "真实断轴和累计误差棒已实现；科学计数法第二版本未合并",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 56,
+      "title": "三维散点图",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "plot3D",
+        "plot3Drgl"
+      ],
+      "core_package_status": {
+        "plot3D": "installed",
+        "plot3Drgl": "installed"
+      },
+      "key_functions": [
+        "cut",
+        "function",
+        "install.packages",
+        "library",
+        "min",
+        "nrow",
+        "plotrgl",
+        "scatter2D",
+        "trans3D"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 57,
+      "title": "多分组环状火山图",
+      "figure_families": [
+        "circular"
+      ],
+      "core_packages": [
+        "corrplot",
+        "scRNAtoolVis"
+      ],
+      "core_package_status": {
+        "corrplot": "installed",
+        "scRNAtoolVis": "download-failed"
+      },
+      "key_functions": [
+        "arrange",
+        "data",
+        "filter",
+        "ggsave",
+        "jjVolcano",
+        "library",
+        "read_excel",
+        "str_detect"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 58,
+      "title": "气泡网络地图",
+      "figure_families": [
+        "network",
+        "map"
+      ],
+      "core_packages": [],
+      "core_package_status": {},
+      "key_functions": [],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 59,
+      "title": "基因聚类富集注释热图",
+      "figure_families": [
+        "heatmap",
+        "enrichment"
+      ],
+      "core_packages": [
+        "ClusterGVis",
+        "ComplexHeatmap",
+        "Seurat",
+        "ggsci",
+        "org.Hs.eg.db",
+        "org.Mm.eg.db"
+      ],
+      "core_package_status": {
+        "ClusterGVis": "installed",
+        "ComplexHeatmap": "installed",
+        "Seurat": "installed",
+        "ggsci": "installed",
+        "org.Hs.eg.db": "installed",
+        "org.Mm.eg.db": "installed"
+      },
+      "key_functions": [
+        "UpdateSeuratObject",
+        "clusterData",
+        "data",
+        "enrichCluster",
+        "getClusters",
+        "library",
+        "prepareDataFromscRNA",
+        "visCluster"
+      ],
+      "runtime_status": "validated-png",
+      "validated_pngs": [
+        "issue059_cluster_heatmap.png"
+      ]
+    },
+    {
+      "issue": 60,
+      "title": "沃罗诺伊树图",
+      "figure_families": [
+        "tree"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "WeightedTreemaps",
+        "colorspace"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "WeightedTreemaps": "installed",
+        "colorspace": "installed"
+      },
+      "key_functions": [
+        "Legend",
+        "arrange",
+        "desc",
+        "diverging_hcl",
+        "draw",
+        "drawTreemap",
+        "filter",
+        "gpar",
+        "grey",
+        "install.packages",
+        "library",
+        "mutate",
+        "par",
+        "rename",
+        "select",
+        "sequential_hcl",
+        "slice",
+        "unit",
+        "voronoiTreemap"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_067_weighted_voronoi_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "圆形层级Voronoi、多边形面积和收入组颜色完整",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 61,
+      "title": "决策曲线分析图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "broom",
+        "dcurves",
+        "gt",
+        "gtsummary",
+        "labelled"
+      ],
+      "core_package_status": {
+        "broom": "installed",
+        "dcurves": "installed",
+        "gt": "installed",
+        "gtsummary": "installed",
+        "labelled": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "all_dichotomous",
+        "as_tibble",
+        "dca",
+        "element_blank",
+        "element_text",
+        "filter",
+        "function",
+        "ggplot",
+        "ggsave",
+        "glm",
+        "install.packages",
+        "is.na",
+        "labs",
+        "library",
+        "mutate",
+        "plot",
+        "pull",
+        "scale_color_manual",
+        "scale_linetype_manual",
+        "scale_y_continuous",
+        "select",
+        "stat_smooth",
+        "style_sigfig",
+        "tbl_regression",
+        "tbl_summary",
+        "theme",
+        "theme_bw"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_068_dcurves_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "真实二分类结局、多模型、Treat All/None及共同阈值完整",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 62,
+      "title": "带复杂注释的系统发育树",
+      "figure_families": [
+        "tree"
+      ],
+      "core_packages": [
+        "ComplexUpset",
+        "ggnewscale",
+        "ggtree",
+        "ggtreeExtra",
+        "phytools",
+        "picante"
+      ],
+      "core_package_status": {
+        "ComplexUpset": "installed",
+        "ggnewscale": "installed",
+        "ggtree": "installed",
+        "ggtreeExtra": "installed",
+        "phytools": "installed",
+        "picante": "installed"
+      },
+      "key_functions": [
+        "Genus",
+        "Max",
+        "Min",
+        "across",
+        "aes",
+        "arrange",
+        "as.data.frame",
+        "colorRampPalette",
+        "filter",
+        "full_join",
+        "geom_aline",
+        "geom_fruit",
+        "geom_treescale",
+        "get_taxa_name",
+        "ggsave",
+        "ggtree",
+        "group_by",
+        "gsub",
+        "guide_colorbar",
+        "guide_legend",
+        "layout_fan",
+        "library",
+        "merge",
+        "mutate",
+        "new_scale_fill",
+        "read.table",
+        "read.tree",
+        "rename",
+        "scale_color_manual",
+        "scale_fill_gradientn",
+        "scale_fill_manual",
+        "select",
+        "summarise_if",
+        "table",
+        "unit",
+        "where"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_069_ggtreeextra_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "四类外轨道完整；来源tip密度和中心树占比仍更高",
+      "validation_date": "2026-09-13"
+    },
+    {
+      "issue": 63,
+      "title": "通路富集网络图",
+      "figure_families": [
+        "network",
+        "enrichment"
+      ],
+      "core_packages": [
+        "DOSE",
+        "aPEAR",
+        "clusterProfiler",
+        "org.Hs.eg.db"
+      ],
+      "core_package_status": {
+        "DOSE": "installed",
+        "aPEAR": "install-failed-dependency",
+        "clusterProfiler": "installed",
+        "org.Hs.eg.db": "installed"
+      },
+      "key_functions": [
+        "duplicated",
+        "enrichmentNetwork",
+        "gseGO",
+        "library",
+        "sort"
+      ],
+      "runtime_status": "method-parsed-awaiting-png-reproduction",
+      "validated_pngs": []
+    },
+    {
+      "issue": 64,
+      "title": "差异甲基化（DMR）染色体分布图",
+      "figure_families": [
+        "genome"
+      ],
+      "core_packages": [
+        "circlize",
+        "ggalign"
+      ],
+      "core_package_status": {
+        "circlize": "installed",
+        "ggalign": "installed"
+      },
+      "key_functions": [
+        "add_transparency",
+        "aes",
+        "after_scale",
+        "circle_genomic",
+        "circos.genomicInitialize",
+        "circos.genomicPoints",
+        "circos.genomicTrack",
+        "circos.initializeWithIdeogram",
+        "circos.lines",
+        "circos.nested",
+        "circos.par",
+        "circos.track",
+        "circos.yaxis",
+        "coord_radial",
+        "element_blank",
+        "element_rect",
+        "element_text",
+        "for",
+        "function",
+        "genomic_density",
+        "genomic_dist",
+        "geom_density",
+        "geom_point",
+        "get.all.sector.index",
+        "ggalign",
+        "ggsave",
+        "guide_axis_theta",
+        "guide_legend",
+        "guides",
+        "lapply",
+        "library",
+        "load",
+        "log10",
+        "margin",
+        "mm_h",
+        "nrow",
+        "plot_ideogram",
+        "rand_color",
+        "regions",
+        "scale_color_brewer"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_071_issue064_ggalign_dmr.png",
+        "figure_072_issue064_circlize_nested_dmr.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared structural validation: chromosome sectors, nested circular tracks, cluster/point encodings; simulated loci only."
+    },
+    {
+      "issue": 65,
+      "title": "三元相图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggtern",
+        "rstatix"
+      ],
+      "core_package_status": {
+        "ggtern": "installed",
+        "rstatix": "installed"
+      },
+      "key_functions": [
+        "Age",
+        "aes",
+        "arrange",
+        "desc",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "geom_point",
+        "ggsave",
+        "ggtern",
+        "labs",
+        "library",
+        "scale_L_continuous",
+        "scale_R_continuous",
+        "scale_T_continuous",
+        "scale_fill_distiller",
+        "scale_fill_manual",
+        "theme",
+        "theme_rgbw"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_073_issue065_ternary_groups.png",
+        "figure_074_issue065_ternary_continuous.png",
+        "figure_075_issue065_ternary_density.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared validation of categorical, continuous and density ternary variants; shape plus color required for groups."
+    },
+    {
+      "issue": 66,
+      "title": "时间序列折线图+流线图+拟合曲线图",
+      "figure_families": [
+        "time_series"
+      ],
+      "core_packages": [
+        "corrplot",
+        "ggh4x",
+        "ggpubr",
+        "ggstream",
+        "rstatix"
+      ],
+      "core_package_status": {
+        "corrplot": "installed",
+        "ggh4x": "installed",
+        "ggpubr": "installed",
+        "ggstream": "installed",
+        "rstatix": "installed"
+      },
+      "key_functions": [
+        "Age",
+        "Percent",
+        "RAM",
+        "adjustcolor",
+        "aes",
+        "align_plots",
+        "character",
+        "col2rgb",
+        "coord_flip",
+        "cor.test",
+        "elem_list_rect",
+        "elem_list_text",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "expansion",
+        "facet_grid2",
+        "facet_wrap2",
+        "filter",
+        "for",
+        "function",
+        "geom_density",
+        "geom_line",
+        "geom_smooth",
+        "geom_text",
+        "ggplot",
+        "group_by",
+        "gsub",
+        "if",
+        "interaction",
+        "is_dark_color",
+        "labs",
+        "lapply",
+        "library",
+        "margin",
+        "max",
+        "min",
+        "plot_grid",
+        "scale_color_manual"
+      ],
+      "runtime_status": "validated-png",
+      "validated_pngs": [
+        "issue066_stream.png"
+      ]
+    },
+    {
+      "issue": 67,
+      "title": "彩虹热图",
+      "figure_families": [
+        "heatmap"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize",
+        "paletteer"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "circlize": "installed",
+        "paletteer": "installed"
+      },
+      "key_functions": [
+        "Legend",
+        "as.matrix",
+        "brewer.pal",
+        "case_match",
+        "circos.barplot",
+        "circos.clear",
+        "circos.heatmap",
+        "circos.par",
+        "circos.trackPlotRegion",
+        "cm_h",
+        "colorRamp2",
+        "draw",
+        "function",
+        "get.cell.meta.data",
+        "gpar",
+        "if",
+        "intersect",
+        "library",
+        "mad",
+        "max",
+        "median",
+        "mutate",
+        "packLegend",
+        "score",
+        "select",
+        "seq_along",
+        "seq_len",
+        "setNames",
+        "set_track_gap",
+        "starts_with",
+        "sum",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_076_issue067_circlize_rainbow_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared semicircular multitrack validation with annotation, heatmap and bar tracks plus complete legends."
+    },
+    {
+      "issue": 68,
+      "title": "临床特征热图",
+      "figure_families": [
+        "heatmap"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "circlize": "installed"
+      },
+      "key_functions": [
+        "HeatmapAnnotation",
+        "Legend",
+        "Size",
+        "Smoking",
+        "anno_barplot",
+        "anno_text",
+        "arrange",
+        "case_when",
+        "cfDNA",
+        "ctDNA",
+        "draw",
+        "gpar",
+        "library",
+        "log10",
+        "max",
+        "mutate",
+        "read_tsv",
+        "replace_na",
+        "str_remove",
+        "str_to_title",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_077_issue068_clinical_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared clinical heatmap validation with aligned response bar, annotations, expression matrix and split legends."
+    },
+    {
+      "issue": 69,
+      "title": "带有行和列注释的经典热图",
+      "figure_families": [
+        "heatmap"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize",
+        "pheatmap",
+        "tidyHeatmap"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "circlize": "installed",
+        "pheatmap": "installed",
+        "tidyHeatmap": "installed"
+      },
+      "key_functions": [
+        "Age",
+        "Heatmap",
+        "HeatmapAnnotation",
+        "anno_block",
+        "annotation_group",
+        "annotation_tile",
+        "as.data.frame",
+        "as.matrix",
+        "cividis",
+        "column_to_rownames",
+        "contains",
+        "draw",
+        "gpar",
+        "join_by",
+        "left_join",
+        "library",
+        "mutate",
+        "pheatmap",
+        "pivot_longer",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_078_issue069_complexheatmap.png",
+        "figure_079_issue069_pheatmap.png",
+        "figure_080_issue069_tidy_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Three independent package-native implementations validated: ComplexHeatmap, pheatmap and tidyHeatmap."
+    },
+    {
+      "issue": 70,
+      "title": "泳道图",
+      "figure_families": [
+        "clinical"
+      ],
+      "core_packages": [
+        "ggnewscale"
+      ],
+      "core_package_status": {
+        "ggnewscale": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "case_when",
+        "ceiling",
+        "complete.cases",
+        "distinct",
+        "draw_plot",
+        "element_blank",
+        "element_line",
+        "element_rect",
+        "element_text",
+        "fct_reorder",
+        "filter",
+        "function",
+        "geom_point",
+        "geom_segment",
+        "ggdraw",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "if",
+        "if_else",
+        "is.na",
+        "left_join",
+        "library",
+        "margin",
+        "min",
+        "mutate",
+        "new_scale",
+        "pdf.options",
+        "read_tsv",
+        "scale_color_gradient",
+        "scale_color_gradient2",
+        "scale_color_manual",
+        "scale_shape_manual",
+        "scale_x_continuous",
+        "scale_x_reverse",
+        "scale_y_discrete",
+        "select",
+        "sort",
+        "summarise"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_081_issue070_annotated_swimmer.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared swimmer structure validated; cohort density differs because validation data are simulated."
+    },
+    {
+      "issue": 71,
+      "title": "旭日图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "d3r",
+        "htmltools",
+        "htmlwidgets",
+        "moonBook",
+        "sunburstR"
+      ],
+      "core_package_status": {
+        "d3r": "installed",
+        "htmltools": "installed",
+        "htmlwidgets": "installed",
+        "moonBook": "installed",
+        "sunburstR": "installed"
+      },
+      "key_functions": [
+        "View",
+        "case_match",
+        "cat",
+        "for",
+        "function",
+        "group_by",
+        "library",
+        "mutate",
+        "n",
+        "packageVersion",
+        "select",
+        "sort",
+        "summarise",
+        "sunburst",
+        "unlist"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_082_issue071_sunburst.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Five-level sunburst hierarchy validated. The source outer irregular numeric bar track was not numerically assessed because source data were unavailable."
+    },
+    {
+      "issue": 72,
+      "title": "双层嵌套的饼图+甜甜圈图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "moonBook",
+        "webr"
+      ],
+      "core_package_status": {
+        "moonBook": "installed",
+        "webr": "installed"
+      },
+      "key_functions": [
+        "PieDonut",
+        "View",
+        "aes",
+        "group_by",
+        "library",
+        "n",
+        "summarise"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_083_issue072_nested_piedonut.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "webr::PieDonut was runtime-audited but lost the inner ring with the current ggplot2. Final PNG uses a stable cumulative-angle geom_arc_bar reconstruction; compatibility evidence retained."
+    },
+    {
+      "issue": 73,
+      "title": "花瓣图（环形柱状图）",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "Hmisc",
+        "ggforce",
+        "ggsci"
+      ],
+      "core_package_status": {
+        "Hmisc": "installed",
+        "ggforce": "installed",
+        "ggsci": "installed"
+      },
+      "key_functions": [
+        "across",
+        "aes",
+        "c_across",
+        "coord_polar",
+        "coord_radial",
+        "drop_na",
+        "element_blank",
+        "element_text",
+        "everything",
+        "facet_grid",
+        "filter",
+        "geom_col",
+        "geom_errorbar",
+        "geom_text",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "if_all",
+        "if_else",
+        "labs",
+        "library",
+        "mean",
+        "mean_cl_boot",
+        "mutate",
+        "pivot_longer",
+        "reframe",
+        "relocate",
+        "rename",
+        "row_number",
+        "rowwise",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "select",
+        "slice_max",
+        "str_to_upper",
+        "summarise",
+        "theme",
+        "theme_minimal",
+        "theme_void",
+        "ungroup"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_084_issue073_polar_bars.png",
+        "figure_085_issue073_spline_petals.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared faceted polar bars plus the source code spline-petal alternative validated."
+    },
+    {
+      "issue": 74,
+      "title": "花瓣网络图",
+      "figure_families": [
+        "network"
+      ],
+      "core_packages": [
+        "ggraph",
+        "ggsci",
+        "tidygraph",
+        "treemap"
+      ],
+      "core_package_status": {
+        "ggraph": "installed",
+        "ggsci": "installed",
+        "tidygraph": "installed",
+        "treemap": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "coord_cartesian",
+        "gather_graph_edge",
+        "gather_graph_node",
+        "geom_edge_diagonal",
+        "geom_node_point",
+        "geom_node_text",
+        "ggraph",
+        "ggsave",
+        "library",
+        "node_angle",
+        "scale_size",
+        "source",
+        "tbl_graph",
+        "theme",
+        "theme_void"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_086_issue074_petal_network.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared radial hierarchical network validated with enlarged hubs and readable circular leaf labels."
+    },
+    {
+      "issue": 75,
+      "title": "散点饼图",
+      "figure_families": [
+        "association"
+      ],
+      "core_packages": [
+        "Ecdat",
+        "gganimate",
+        "ggcats",
+        "ggdogs",
+        "ggprism",
+        "ggrepel",
+        "scatterpie"
+      ],
+      "core_package_status": {
+        "Ecdat": "installed",
+        "gganimate": "installed",
+        "ggcats": "installed",
+        "ggdogs": "installed",
+        "ggprism": "installed",
+        "ggrepel": "installed",
+        "scatterpie": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "coord_cartesian",
+        "coord_equal",
+        "data",
+        "element_blank",
+        "element_text",
+        "expand.grid",
+        "function",
+        "geom_cat",
+        "geom_dog",
+        "geom_label",
+        "geom_line",
+        "geom_scatterpie",
+        "geom_scatterpie_legend",
+        "ggplot",
+        "ggsave",
+        "ggtitle",
+        "labs",
+        "library",
+        "pivot_longer",
+        "rename",
+        "scale_fill_manual",
+        "select",
+        "setNames",
+        "starts_with",
+        "theme",
+        "transition_reveal",
+        "unit",
+        "which",
+        "xlab",
+        "xlim",
+        "ylab",
+        "ylim"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_087_issue075_scatterpie.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared scatterpie validated with radius/composition encodings, external legend and repelled labels."
+    },
+    {
+      "issue": 76,
+      "title": "云雨图",
+      "figure_families": [
+        "distribution"
+      ],
+      "core_packages": [
+        "gghalves",
+        "ggpp",
+        "ggpubr",
+        "ggrain"
+      ],
+      "core_package_status": {
+        "gghalves": "installed",
+        "ggpp": "installed",
+        "ggpubr": "installed",
+        "ggrain": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "cbind",
+        "coord_flip",
+        "element_blank",
+        "element_rect",
+        "element_text",
+        "facet_wrap",
+        "geom_boxplot",
+        "geom_half_violin",
+        "geom_jitter",
+        "geom_point",
+        "geom_rain",
+        "ggplot",
+        "ggsave",
+        "guides",
+        "labs",
+        "library",
+        "moisture",
+        "mutate",
+        "nrow",
+        "pivot_longer",
+        "position_dodge",
+        "position_jitterdodge",
+        "position_nudge",
+        "rbind",
+        "read_excel",
+        "rnorm",
+        "scale_color_brewer",
+        "scale_color_manual",
+        "scale_color_viridis_c",
+        "scale_fill_brewer",
+        "scale_fill_manual",
+        "scale_y_continuous",
+        "stat_compare_means",
+        "stat_summary",
+        "sum",
+        "temperate",
+        "theme",
+        "theme_bw",
+        "theme_classic"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "issue076_raincloud.png"
+      ]
+    },
+    {
+      "issue": 77,
+      "title": "带有底部条码的山峦图",
+      "figure_families": [
+        "general"
+      ],
+      "core_packages": [
+        "ggridges"
+      ],
+      "core_package_status": {
+        "ggridges": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "element_blank",
+        "element_text",
+        "function",
+        "geom_density_ridges",
+        "ggplot",
+        "ggsave",
+        "labs",
+        "library",
+        "mutate",
+        "parse",
+        "position_points_jitter",
+        "read_excel",
+        "scale_fill_manual",
+        "scale_y_discrete",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_088_issue077_ridgeline_barcode.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared ridgeline plus barcode validation complete."
+    },
+    {
+      "issue": 78,
+      "title": "分组环状热图",
+      "figure_families": [
+        "heatmap",
+        "circular"
+      ],
+      "core_packages": [
+        "ComplexHeatmap",
+        "circlize"
+      ],
+      "core_package_status": {
+        "ComplexHeatmap": "installed",
+        "circlize": "installed"
+      },
+      "key_functions": [
+        "Legend",
+        "circos.clear",
+        "circos.heatmap",
+        "circos.par",
+        "circos.text",
+        "circos.track",
+        "colorRamp2",
+        "convert_x",
+        "convert_y",
+        "draw",
+        "function",
+        "get.current.track.index",
+        "gpar",
+        "if",
+        "library",
+        "runif",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "issue078_circular_heatmap.png"
+      ]
+    },
+    {
+      "issue": 79,
+      "title": "时间序列堆叠面积图",
+      "figure_families": [
+        "time_series"
+      ],
+      "core_packages": [
+        "ggstream"
+      ],
+      "core_package_status": {
+        "ggstream": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "annotate",
+        "bind_rows",
+        "brewer.pal",
+        "colorRampPalette",
+        "element_blank",
+        "element_text",
+        "facet_grid",
+        "geom_stream",
+        "ggplot",
+        "ggsave",
+        "grep",
+        "guide_legend",
+        "guides",
+        "labs",
+        "library",
+        "mutate",
+        "scale_fill_manual",
+        "scale_x_continuous",
+        "scale_y_continuous",
+        "sort",
+        "theme",
+        "theme_classic",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_089_issue079_streamgraph.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared faceted proportional streamgraph validation complete; simulated proportions only."
+    },
+    {
+      "issue": 80,
+      "title": "传播/流向/扩散地图",
+      "figure_families": [
+        "map"
+      ],
+      "core_packages": [
+        "bangladesh",
+        "sf"
+      ],
+      "core_package_status": {
+        "bangladesh": "installed",
+        "sf": "installed"
+      },
+      "key_functions": [
+        "aes",
+        "arrange",
+        "arrow",
+        "facet_wrap",
+        "filter",
+        "geom_curve",
+        "geom_sf",
+        "geom_sf_text",
+        "ggplot",
+        "ggsave",
+        "group_by",
+        "labs",
+        "left_join",
+        "library",
+        "min",
+        "mutate",
+        "scale_alpha",
+        "scale_color_brewer",
+        "scale_size_continuous",
+        "st_centroid",
+        "sum",
+        "theme_void",
+        "ungroup",
+        "unit"
+      ],
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_090_issue080_flow_map.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared sf flow-map structure validated; simulated flows only."
+    }
+  ]
+}

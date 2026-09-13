@@ -1,4 +1,4 @@
-# BioFigure 3.1 中文完整手册
+# BioFigure 3.5 中文完整手册
 
 ## 1. 定位
 
@@ -60,4 +60,3 @@ Scientific Critic 检查语义和统计；Visual 检查层级、密度、构图�
 | `examples/gallery/` | 可运行模拟模板 |
 
 返回：[README](../README.md) · [English handbook](HANDBOOK.en.md)
-

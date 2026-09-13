@@ -1,4 +1,4 @@
-# BioFigure 3.1 Full Handbook
+# BioFigure 3.5 Full Handbook
 
 ## 1. Scope
 
@@ -60,4 +60,3 @@ The Scientific Critic covers semantics and statistics; Visual covers hierarchy, 
 | `examples/gallery/` | Runnable simulated templates |
 
 Back to [README](../README.md) · [中文手册](HANDBOOK.zh-CN.md)
-

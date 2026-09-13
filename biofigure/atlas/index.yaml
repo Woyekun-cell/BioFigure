@@ -1,6 +1,6 @@
 schema_version: "1.0"
 read_only_runtime: true
-runtime_release: BioFigure-3.0
+runtime_release: BioFigure-3.5
 entries:
   - {atlas_id: ATLAS-CHM-001, pattern_id: MAT-EXPR-001, pattern_version: "1.0", domain: matrix, task: annotated-expression, source: source-index://complexheatmap, figure_number: null, reference_type: author-vignette, code_available: true, data_available: true, license_status: verify-upstream, review_status: source-reviewed, approval_scope: documentation_pattern_only, reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01, strengths: [annotation-layout, matrix-semantics], limitations: [not_local_run, not_human_render_approved], failure_tags: [none]}
   - {atlas_id: ATLAS-GEN-001, pattern_id: GEN-SYNTENY-001, pattern_version: "1.0", domain: comparative-genomics, task: synteny, source: source-index://gggenomes, figure_number: null, reference_type: author-vignette, code_available: true, data_available: true, license_status: verify-upstream, review_status: source-reviewed, approval_scope: documentation_pattern_only, reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01, strengths: [coordinate-linked-tracks], limitations: [layout_not_evidence, not_human_render_approved], failure_tags: [misleading_encoding_if_unchecked]}

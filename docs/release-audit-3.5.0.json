@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "release": "3.5.0",
+  "status": "PASS",
+  "errors": [],
+  "versions": {
+    "manifest": "3.5.0",
+    "skill": "3.5.0",
+    "readme": "3.5",
+    "handbook_zh": "3.5",
+    "handbook_en": "3.5"
+  },
+  "hot_load": {
+    "files": [
+      {
+        "path": "references/enforced-execution.md",
+        "zh_chars": 359
+      },
+      {
+        "path": "references/personal-style.md",
+        "zh_chars": 497
+      },
+      {
+        "path": "references/render-execution.md",
+        "zh_chars": 425
+      },
+      {
+        "path": "references/reference-quality.md",
+        "zh_chars": 816
+      },
+      {
+        "path": "references/reproduction-learning.md",
+        "zh_chars": 461
+      },
+      {
+        "path": "static/core/contract.md",
+        "zh_chars": 269
+      },
+      {
+        "path": "static/core/stance.md",
+        "zh_chars": 380
+      },
+      {
+        "path": "references/checkpoints.md",
+        "zh_chars": 381
+      }
+    ],
+    "total_zh_chars": 3588
+  },
+  "reproduction_atlas": {
+    "total": 79,
+    "runtime_status": {
+      "method-parsed-awaiting-png-reproduction": 22,
+      "source-compared-needs-revision": 24,
+      "source-compared-png": 31,
+      "validated-png": 2
+    },
+    "review_status": {
+      "missing": 56,
+      "needs-revision": 4,
+      "pass": 19
+    },
+    "high_fidelity_eligible": 19,
+    "source_compared_excluded": 12,
+    "eligible_missing_png": []
+  },
+  "scidraw_atlas": {
+    "total": 8,
+    "runtime_status": {
+      "source-compared-png": 7,
+      "source-compared-png-renderer-exception": 1
+    },
+    "review_status": {
+      "needs-review": 8
+    },
+    "high_fidelity_eligible": 0,
+    "source_compared_excluded": 7,
+    "eligible_missing_png": []
+  },
+  "selected_public_gallery_pngs": [
+    "figure_073_issue065_ternary_groups.png",
+    "figure_076_issue067_circlize_rainbow_heatmap.png",
+    "figure_077_issue068_clinical_heatmap.png",
+    "figure_081_issue070_annotated_swimmer.png",
+    "figure_083_issue072_nested_piedonut.png",
+    "figure_086_issue074_petal_network.png",
+    "figure_088_issue077_ridgeline_barcode.png",
+    "figure_090_issue080_flow_map.png"
+  ],
+  "claim_boundary": "Only high_fidelity_eligible records may be cited as source-compared precedents; excluded records remain diagnostic evidence."
+}

@@ -1,0 +1,9 @@
+schema_version: "1.0"
+seed: 3200
+tasks:
+  - {id: survival, prompt: "两组时间到事件数据，绘制含删失标记的Kaplan–Meier曲线", data_contract: "subject_id, group, time_month, event", input_mode: natural-language-plus-data-contract}
+  - {id: annotated_heatmap, prompt: "基因×样本标准化矩阵，绘制方形单元格热图并表达样本分组", data_contract: "gene, sample, group, z_score", input_mode: natural-language-plus-data-contract}
+  - {id: circular_composition, prompt: "展示三个条件的细胞类型组成，使用环状堆积表达比例", data_contract: "condition, cell_type, proportion", input_mode: natural-language-plus-data-contract}
+  - {id: swimmer, prompt: "展示12名患者的治疗时长、响应起点和进展时点", data_contract: "patient, duration, response_start, progression, status", input_mode: natural-language-plus-data-contract}
+  - {id: enrichment_network, prompt: "展示富集通路的相似性网络，节点大小表达基因数，颜色表达FDR", data_contract: "term, gene_count, fdr, source, target, similarity", input_mode: natural-language-plus-data-contract}
+  - {id: time_series, prompt: "两组四时点的重复测量，绘制原始点、均值趋势和95%CI", data_contract: "subject_id, group, day, value", input_mode: natural-language-plus-data-contract}
