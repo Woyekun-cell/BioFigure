@@ -568,8 +568,15 @@
       "figure_families": [
         "heatmap"
       ],
-      "core_packages": [],
-      "core_package_status": {},
+      "core_packages": [
+        "ggplot2"
+      ],
+      "core_package_status": {
+        "ggplot2": {
+          "loadable": true,
+          "version": "4.0.3"
+        }
+      },
       "key_functions": [
         "abs",
         "aes",
@@ -599,8 +606,19 @@
         "theme_void",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/21_bubble_heatmap.png",
+          "sha256": "064472c9661467808fa5d89ff87ffea337f4a21323cdcce2efc6cadd5323bee2",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_point",
+        "facet_grid"
+      ]
     },
     {
       "issue": 14,
@@ -611,14 +629,18 @@
         "association"
       ],
       "core_packages": [
-        "ggnewscale",
         "linkET",
         "vegan"
       ],
       "core_package_status": {
-        "ggnewscale": "installed",
-        "linkET": "installed",
-        "vegan": "installed"
+        "linkET": {
+          "loadable": true,
+          "version": "0.1.0"
+        },
+        "vegan": {
+          "loadable": true,
+          "version": "2.7.5"
+        }
       },
       "key_functions": [
         "abs",
@@ -650,8 +672,21 @@
         "theme",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/22_mantel_network_heatmap.png",
+          "sha256": "39a187001d5227280eb70429ff570bed1b140933aca3ae10e2ba08f5dcf01eaf",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "correlate",
+        "qcorrplot",
+        "mantel_test",
+        "geom_couple"
+      ]
     },
     {
       "issue": 15,
@@ -661,15 +696,17 @@
       ],
       "core_packages": [
         "ComplexHeatmap",
-        "circlize",
-        "dendsort",
-        "openxlsx"
+        "circlize"
       ],
       "core_package_status": {
-        "ComplexHeatmap": "installed",
-        "circlize": "installed",
-        "dendsort": "installed",
-        "openxlsx": "installed"
+        "ComplexHeatmap": {
+          "loadable": true,
+          "version": "2.28.0"
+        },
+        "circlize": {
+          "loadable": true,
+          "version": "0.4.18"
+        }
       },
       "key_functions": [
         "Heatmap",
@@ -708,8 +745,19 @@
         "which",
         "while"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/23_combined_heatmap.png",
+          "sha256": "b6711413adae2b3c0771c609af175f50087ce8ef1c08edcff379b6adc5df70c8",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "Heatmap",
+        "HeatmapAnnotation"
+      ]
     },
     {
       "issue": 16,
@@ -718,10 +766,18 @@
         "distribution"
       ],
       "core_packages": [
-        "ggridges"
+        "ggridges",
+        "patchwork"
       ],
       "core_package_status": {
-        "ggridges": "installed"
+        "ggridges": {
+          "loadable": true,
+          "version": "0.5.7"
+        },
+        "patchwork": {
+          "loadable": true,
+          "version": "1.3.2"
+        }
       },
       "key_functions": [
         "aes",
@@ -747,8 +803,18 @@
         "theme_void",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/24_ridge_tracks.png",
+          "sha256": "ae9c238446a2c8a7b88d38197c9aa0babd211c946ad48aca886a24109423630a",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_density_ridges"
+      ]
     },
     {
       "issue": 17,
@@ -758,13 +824,17 @@
       ],
       "core_packages": [
         "gghalves",
-        "ggpubr",
-        "rstatix"
+        "patchwork"
       ],
       "core_package_status": {
-        "gghalves": "installed",
-        "ggpubr": "installed",
-        "rstatix": "installed"
+        "gghalves": {
+          "loadable": true,
+          "version": "0.1.4"
+        },
+        "patchwork": {
+          "loadable": true,
+          "version": "1.3.2"
+        }
       },
       "key_functions": [
         "aes",
@@ -796,8 +866,18 @@
         "xlab",
         "ylab"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/25_violin_raincloud_paired.png",
+          "sha256": "286edd5f56a47ed694e001bae56f8848a8b47362f07a231ab0c82f7803d3e120",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_half_violin"
+      ]
     },
     {
       "issue": 18,
@@ -809,7 +889,10 @@
         "ggrepel"
       ],
       "core_package_status": {
-        "ggrepel": "installed"
+        "ggrepel": {
+          "loadable": true,
+          "version": "0.9.8"
+        }
       },
       "key_functions": [
         "ERKi",
@@ -846,8 +929,19 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/26_fc_fc_scatter.png",
+          "sha256": "cf4ce43cd2de50118e808ecfb682241e06db8b4e0dbf21c540995351024f033d",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_smooth",
+        "geom_text_repel"
+      ]
     },
     {
       "issue": 19,
@@ -859,7 +953,10 @@
         "ggsankey"
       ],
       "core_package_status": {
-        "ggsankey": "installed"
+        "ggsankey": {
+          "loadable": true,
+          "version": "0.0.99999"
+        }
       },
       "key_functions": [
         "Transcription",
@@ -878,8 +975,20 @@
         "theme_sankey",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/27_sankey.png",
+          "sha256": "116a68f0f40a3fa3d7a474d7da49ebbca744c17b60ccc969c449baae1e43e54a",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "make_long",
+        "geom_sankey",
+        "geom_sankey_text"
+      ]
     },
     {
       "issue": 20,
@@ -888,14 +997,18 @@
         "survival"
       ],
       "core_packages": [
-        "ggpp",
         "ggsurvfit",
         "survival"
       ],
       "core_package_status": {
-        "ggpp": "installed",
-        "ggsurvfit": "installed",
-        "survival": "installed"
+        "ggsurvfit": {
+          "loadable": true,
+          "version": "1.2.1"
+        },
+        "survival": {
+          "loadable": true,
+          "version": "3.8.6"
+        }
       },
       "key_functions": [
         "OS",
@@ -936,9 +1049,19 @@
         "theme_risktable_default",
         "unit"
       ],
-      "runtime_status": "validated-png",
+      "runtime_status": "source-compared-needs-revision",
       "validated_pngs": [
-        "issue020_survival.png"
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/28_survival_risktable.png",
+          "sha256": "5e7051b9e5dcfd4ee8918de0050c62578991f00baabd65d7630e4106493cb858",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "survfit2",
+        "ggsurvfit",
+        "add_risktable"
       ]
     },
     {
@@ -951,7 +1074,10 @@
         "ggforce"
       ],
       "core_package_status": {
-        "ggforce": "installed"
+        "ggforce": {
+          "loadable": true,
+          "version": "0.5.0"
+        }
       },
       "key_functions": [
         "aes",
@@ -985,8 +1111,19 @@
         "theme_no_axes",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/29_lollipop_donuts.png",
+          "sha256": "1a04fbfda00312335c59ef893c3bad4052c37c406cd5b5831d38a095ce06cca0",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_segment",
+        "coord_polar"
+      ]
     },
     {
       "issue": 22,
@@ -998,7 +1135,10 @@
         "ggside"
       ],
       "core_package_status": {
-        "ggside": "installed"
+        "ggside": {
+          "loadable": true,
+          "version": "0.4.1"
+        }
       },
       "key_functions": [
         "aes",
@@ -1021,8 +1161,19 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        {
+          "path": "workspace/Project_012_BioFigure第三批十图验证/results/figures/30_scatter_marginals.png",
+          "sha256": "4b6db8ef46885f1bc1547cd2f1d4c4eb4a4bb4ee4deb101626308bcdef5fbdd4",
+          "validation": "rendered-and-source-compared",
+          "review_status": "needs-revision"
+        }
+      ],
+      "verified_core_functions": [
+        "geom_xsidedensity",
+        "geom_ysidedensity"
+      ]
     },
     {
       "issue": 23,
@@ -1034,15 +1185,21 @@
         "GseaVis"
       ],
       "core_package_status": {
-        "GseaVis": "install-failed-api-incompatibility"
+        "GseaVis": {
+          "available": false,
+          "version": null,
+          "note": "install failed: get_organism missing"
+        }
       },
       "key_functions": [
         "library",
         "readRDS",
         "system.file"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 31,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 24,
@@ -1057,9 +1214,16 @@
         "corrplot"
       ],
       "core_package_status": {
-        "ComplexHeatmap": "installed",
-        "circlize": "installed",
-        "corrplot": "installed"
+        "ComplexHeatmap": {
+          "available": true,
+          "version": "2.28.0",
+          "note": null
+        },
+        "circlize": {
+          "available": true,
+          "version": "0.4.18",
+          "note": null
+        }
       },
       "key_functions": [
         "COL2",
@@ -1084,8 +1248,10 @@
         "tail",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 32,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 25,
@@ -1098,8 +1264,16 @@
         "circlize"
       ],
       "core_package_status": {
-        "ComplexHeatmap": "installed",
-        "circlize": "installed"
+        "circlize": {
+          "available": true,
+          "version": "0.4.18",
+          "note": null
+        },
+        "ComplexHeatmap": {
+          "available": true,
+          "version": "2.28.0",
+          "note": null
+        }
       },
       "key_functions": [
         "UpSet",
@@ -1130,11 +1304,10 @@
         "upset_top_annotation",
         "with"
       ],
-      "runtime_status": "validated-png",
-      "validated_pngs": [
-        "issue025_chord.png",
-        "issue025_upset.png"
-      ]
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 33,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 26,
@@ -1143,7 +1316,18 @@
         "composition"
       ],
       "core_packages": [],
-      "core_package_status": {},
+      "core_package_status": {
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        },
+        "patchwork": {
+          "available": true,
+          "version": "1.3.2",
+          "note": null
+        }
+      },
       "key_functions": [
         "aes",
         "alpha",
@@ -1173,8 +1357,10 @@
         "theme_classic",
         "ungroup"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 34,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 27,
@@ -1188,8 +1374,16 @@
         "dendextend"
       ],
       "core_package_status": {
-        "circlize": "installed",
-        "dendextend": "installed"
+        "dendextend": {
+          "available": true,
+          "version": "1.19.1",
+          "note": null
+        },
+        "patchwork": {
+          "available": true,
+          "version": "1.3.2",
+          "note": null
+        }
       },
       "key_functions": [
         "Expr",
@@ -1224,8 +1418,10 @@
         "theme_minimal",
         "theme_void"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 35,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 28,
@@ -1237,7 +1433,16 @@
         "aplot"
       ],
       "core_package_status": {
-        "aplot": "installed"
+        "aplot": {
+          "available": true,
+          "version": "0.3.1",
+          "note": null
+        },
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
       },
       "key_functions": [
         "aes",
@@ -1263,10 +1468,10 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "validated-png",
-      "validated_pngs": [
-        "issue028_swimmer.png"
-      ]
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 36,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 29,
@@ -1279,8 +1484,16 @@
         "table1"
       ],
       "core_package_status": {
-        "flextable": "installed",
-        "table1": "installed"
+        "table1": {
+          "available": true,
+          "version": "1.5.1",
+          "note": null
+        },
+        "gridExtra": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
       },
       "key_functions": [
         "Mean",
@@ -1319,8 +1532,10 @@
         "wilcox.test",
         "with"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 37,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 31,
@@ -1336,11 +1551,16 @@
         "sf"
       ],
       "core_package_status": {
-        "elementalist": "installed",
-        "ggessentials": "installed",
-        "ggfx": "installed",
-        "ggmagnify": "missing",
-        "sf": "installed"
+        "ggmagnify": {
+          "available": true,
+          "version": "0.4.2",
+          "note": null
+        },
+        "ggfx": {
+          "available": true,
+          "version": "1.0.3",
+          "note": null
+        }
       },
       "key_functions": [
         "aes",
@@ -1369,8 +1589,10 @@
         "theme",
         "xlim"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 38,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 32,
@@ -1385,10 +1607,16 @@
         "sf"
       ],
       "core_package_status": {
-        "ggrastr": "installed",
-        "ggrepel": "installed",
-        "maps": "installed",
-        "sf": "installed"
+        "ggrastr": {
+          "available": true,
+          "version": "1.0.2",
+          "note": null
+        },
+        "ggrepel": {
+          "available": true,
+          "version": "0.9.8",
+          "note": null
+        }
       },
       "key_functions": [
         "abs",
@@ -1414,8 +1642,10 @@
         "theme",
         "theme_classic"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 39,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 33,
@@ -1424,7 +1654,13 @@
         "general"
       ],
       "core_packages": [],
-      "core_package_status": {},
+      "core_package_status": {
+        "ggplot2": {
+          "available": false,
+          "version": null,
+          "note": null
+        }
+      },
       "key_functions": [
         "aes",
         "arrange",
@@ -1450,8 +1686,10 @@
         "theme_void",
         "ungroup"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [],
+      "validation_batch": 40,
+      "validation_project": "Project_013_BioFigure第四批十图验证"
     },
     {
       "issue": 34,
@@ -1492,8 +1730,19 @@
         "theme",
         "theme_classic"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_41_inset_scatter.png",
+          "sha256": "54e753daca3137be3167b28dd47ff2986e4093796dc4202a79ce4804b38b7a82"
+        }
+      ],
+      "validation_batch": 41,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "inset_element",
+        "geom_point_rast"
+      ]
     },
     {
       "issue": 35,
@@ -1531,8 +1780,19 @@
         "theme",
         "theme_classic"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_42_faceted_gene_scatter.png",
+          "sha256": "a9ae25e9ee6bc5e8a62a21a2ab62f3ed27f806a53c5f8f3f28fdd9612b8d954e"
+        }
+      ],
+      "validation_batch": 42,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_point_rast",
+        "geom_text_repel"
+      ]
     },
     {
       "issue": 36,
@@ -1573,7 +1833,16 @@
       ],
       "runtime_status": "source-compared-png",
       "validated_pngs": [
-        "issue036_forest.png"
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_43_subgroup_forest.png",
+          "sha256": "e9df418964f00f36bccaaf099163ed30a46304097d6368d25dab4e3f33395718"
+        }
+      ],
+      "validation_batch": 43,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "forest",
+        "forest_theme"
       ]
     },
     {
@@ -1610,8 +1879,18 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_44_waterfall.png",
+          "sha256": "e903d403eb54e4febcc266828f31aa61d6aa4592fcbe159870354594e085665f"
+        }
+      ],
+      "validation_batch": 44,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_col"
+      ]
     },
     {
       "issue": 38,
@@ -1645,8 +1924,18 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_45_swimmer.png",
+          "sha256": "65bbb9d1f3aa5d22e21089d12dea4999d6fb870e044029656e26f8e5912fbf0d"
+        }
+      ],
+      "validation_batch": 45,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_segment"
+      ]
     },
     {
       "issue": 39,
@@ -1679,8 +1968,19 @@
         "theme",
         "theme_bw"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_46_lollipop_go.png",
+          "sha256": "b37b68d2938512ae24e65e7b711a1d74c7d01b4cd1b6372c8eb6a941ebdd90c6"
+        }
+      ],
+      "validation_batch": 46,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "geom_segment",
+        "geom_col"
+      ]
     },
     {
       "issue": 40,
@@ -1722,8 +2022,19 @@
         "unit",
         "view"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_47_whittaker.png",
+          "sha256": "8d79bcee3835865a9fb827b01baa61e45ab37e054cc4096e5f1019aca94f2fe4"
+        }
+      ],
+      "validation_batch": 47,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "Whittaker_biomes",
+        "Ricklefs_colors"
+      ]
     },
     {
       "issue": 41,
@@ -1771,8 +2082,19 @@
         "xlab",
         "ylab"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_48_dual_roc.png",
+          "sha256": "376da37bda015f5ba4a7563b45c591f151d897ab52e7702d634365a88cc95b74"
+        }
+      ],
+      "validation_batch": 48,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "roc",
+        "ggroc"
+      ]
     },
     {
       "issue": 42,
@@ -1824,8 +2146,21 @@
         "venn_setedge",
         "venn_setlabel"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_49_venn_gallery.png",
+          "sha256": "74d159f85d5e0a0bc4d385a277ba4498318a94cf16caf738d59827e72306a97f"
+        }
+      ],
+      "validation_batch": 49,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "venn.diagram",
+        "euler",
+        "ggVennDiagram",
+        "ggvenn"
+      ]
     },
     {
       "issue": 43,
@@ -1855,8 +2190,19 @@
         "view",
         "waiver"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        {
+          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_50_radar_spider.png",
+          "sha256": "35cf5c23b56409b3cd240c255b29fe0b298a6fe7f6188f59810478e78653fbee"
+        }
+      ],
+      "validation_batch": 50,
+      "validation_project": "Project_014_BioFigure第五批十图验证",
+      "validated_core_functions": [
+        "RadarPlot",
+        "SpiderPlot"
+      ]
     },
     {
       "issue": 44,
@@ -2072,8 +2418,13 @@
         "rbind",
         "rewire"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_055_cluster_network_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "群落结构已恢复；来源为41类且互作更密，仍需真实网络数据",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 49,
@@ -2217,8 +2568,13 @@
         "scale_fill_viridis",
         "stat_density_2d"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_058_galaxy_density_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "黑底、magma密度、白点、虚线边界和双分面完整",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 52,
@@ -2251,8 +2607,13 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_059_spider_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "患者轨迹、-30阈值和双面板完整",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 53,
@@ -2312,8 +2673,13 @@
         "swimmer_points",
         "theme"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_060_swimmer_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "泳道和左侧注释已恢复；同一案例的瀑布子图尚未并入",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 54,
@@ -2345,8 +2711,13 @@
         "theme_bw",
         "wrap"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_061_ggally_matrix_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "对角密度、下三角拟合、上三角分组相关完整",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 55,
@@ -2391,8 +2762,13 @@
         "ungroup",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_062_ggbreak_stacked_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "真实断轴和累计误差棒已实现；科学计数法第二版本未合并",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 56,
@@ -2537,8 +2913,13 @@
         "unit",
         "voronoiTreemap"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_067_weighted_voronoi_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "圆形层级Voronoi、多边形面积和收入组颜色完整",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 61,
@@ -2590,8 +2971,13 @@
         "theme",
         "theme_bw"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_068_dcurves_code_driven.png"
+      ],
+      "review_status": "pass",
+      "validation_note": "真实二分类结局、多模型、Treat All/None及共同阈值完整",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 62,
@@ -2653,8 +3039,13 @@
         "unit",
         "where"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-needs-revision",
+      "validated_pngs": [
+        "figure_069_ggtreeextra_code_driven.png"
+      ],
+      "review_status": "needs-revision",
+      "validation_note": "四类外轨道完整；来源tip密度和中心树占比仍更高",
+      "validation_date": "2026-09-13"
     },
     {
       "issue": 63,
@@ -2741,8 +3132,14 @@
         "regions",
         "scale_color_brewer"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_071_issue064_ggalign_dmr.png",
+        "figure_072_issue064_circlize_nested_dmr.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared structural validation: chromosome sectors, nested circular tracks, cluster/point encodings; simulated loci only."
     },
     {
       "issue": 65,
@@ -2779,8 +3176,15 @@
         "theme",
         "theme_rgbw"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_073_issue065_ternary_groups.png",
+        "figure_074_issue065_ternary_continuous.png",
+        "figure_075_issue065_ternary_density.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared validation of categorical, continuous and density ternary variants; shape plus color required for groups."
     },
     {
       "issue": 66,
@@ -2899,8 +3303,13 @@
         "sum",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_076_issue067_circlize_rainbow_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared semicircular multitrack validation with annotation, heatmap and bar tracks plus complete legends."
     },
     {
       "issue": 68,
@@ -2939,8 +3348,13 @@
         "str_to_title",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_077_issue068_clinical_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared clinical heatmap validation with aligned response bar, annotations, expression matrix and split legends."
     },
     {
       "issue": 69,
@@ -2982,8 +3396,15 @@
         "pivot_longer",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_078_issue069_complexheatmap.png",
+        "figure_079_issue069_pheatmap.png",
+        "figure_080_issue069_tidy_heatmap.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Three independent package-native implementations validated: ComplexHeatmap, pheatmap and tidyHeatmap."
     },
     {
       "issue": 70,
@@ -3039,8 +3460,13 @@
         "sort",
         "summarise"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_081_issue070_annotated_swimmer.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared swimmer structure validated; cohort density differs because validation data are simulated."
     },
     {
       "issue": 71,
@@ -3079,8 +3505,13 @@
         "sunburst",
         "unlist"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_082_issue071_sunburst.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Five-level sunburst hierarchy validated. The source outer irregular numeric bar track was not numerically assessed because source data were unavailable."
     },
     {
       "issue": 72,
@@ -3105,8 +3536,13 @@
         "n",
         "summarise"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_083_issue072_nested_piedonut.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "webr::PieDonut was runtime-audited but lost the inner ring with the current ggplot2. Final PNG uses a stable cumulative-angle geom_arc_bar reconstruction; compatibility evidence retained."
     },
     {
       "issue": 73,
@@ -3166,8 +3602,14 @@
         "theme_void",
         "ungroup"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_084_issue073_polar_bars.png",
+        "figure_085_issue073_spline_petals.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared faceted polar bars plus the source code spline-petal alternative validated."
     },
     {
       "issue": 74,
@@ -3205,8 +3647,13 @@
         "theme",
         "theme_void"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_086_issue074_petal_network.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared radial hierarchical network validated with enlarged hubs and readable circular leaf labels."
     },
     {
       "issue": 75,
@@ -3267,8 +3714,13 @@
         "ylab",
         "ylim"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_087_issue075_scatterpie.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared scatterpie validated with radius/composition encodings, external legend and repelled labels."
     },
     {
       "issue": 76,
@@ -3367,8 +3819,13 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_088_issue077_ridgeline_barcode.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared ridgeline plus barcode validation complete."
     },
     {
       "issue": 78,
@@ -3447,8 +3904,13 @@
         "theme_classic",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_089_issue079_streamgraph.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared faceted proportional streamgraph validation complete; simulated proportions only."
     },
     {
       "issue": 80,
@@ -3490,8 +3952,13 @@
         "ungroup",
         "unit"
       ],
-      "runtime_status": "method-parsed-awaiting-png-reproduction",
-      "validated_pngs": []
+      "runtime_status": "source-compared-png",
+      "validated_pngs": [
+        "figure_090_issue080_flow_map.png"
+      ],
+      "review_status": "pass",
+      "validation_date": "2026-09-13",
+      "validation_note": "Source-compared sf flow-map structure validated; simulated flows only."
     }
   ]
 }

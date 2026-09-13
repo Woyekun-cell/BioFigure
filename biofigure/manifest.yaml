@@ -1,4 +1,4 @@
-version: "3.4.0"
+version: "3.5.0"
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
@@ -62,7 +62,7 @@ reference_evidence_layers:
     retriever: scripts/retrieve_reproduction.py
     load: [references/reproduction-learning.md]
     policy: required_derived_design_evidence
-    source_material_access: forbidden_during_generation
+    source_material_access: authorized_inspection_allowed_no_wholesale_copy
     package_policy: specialized_package_first_and_runtime_verified
   top_journal:
     corpus: atlas/top-journal-corpus.yaml

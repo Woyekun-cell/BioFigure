@@ -27,7 +27,9 @@
         "show-95ci",
         "show-hr-one-reference",
         "do-not-substitute-geom-smooth"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-RIDGE-BIPOLAR-001",
@@ -50,7 +52,9 @@
         "same-row-order-across-panels",
         "zero-centered-bipolar-axis",
         "continuous-fill-for-effect-direction"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-PCOA-MARGINAL-001",
@@ -75,7 +79,9 @@
         "marginals-share-main-axis-values",
         "ellipse-is-not-confidence-proof",
         "patchwork-output-needs-biofigure-receipt-support-before-final-pass"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-TERNARY-001",
@@ -98,7 +104,9 @@
         "avoid-opaque-grey-ternary-panel",
         "encode-groups-with-shape-and-color",
         "inspect-ternary-grid-after-background-change"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-CORRPLOT-001",
@@ -118,7 +126,9 @@
         "disclose-correlation-method",
         "category-colors-encode-label-groups",
         "reduce-density-before-shrinking-text"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-SWIMMER-001",
@@ -142,7 +152,9 @@
         "events-and-treatment-share-time-axis",
         "ongoing-status-uses-arrow",
         "metadata-columns-align-by-patient"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-CHORD-TRACK-001",
@@ -164,7 +176,9 @@
         "clear-circos-state",
         "outer-track-shares-sector-boundaries",
         "limit-sectors-for-readable-labels"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     },
     {
       "id": "SCIDRAW-VOLCANO-GSEA-001",
@@ -190,7 +204,9 @@
         "legend-must-not-overlap-data-region",
         "reserve-label-space-before-ggrepel",
         "inspect-label-boxes-at-final-size"
-      ]
+      ],
+      "review_status": "needs-review",
+      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
     }
   ]
 }

@@ -3,14 +3,14 @@ name: biofigure
 description: 设计、绘制、精修或审查生物科研图；R优先，兼容Python，检查科学语义、字体、排版与实际成图。
 ---
 
-# BioFigure 3.4.0
+# BioFigure 3.5.0
 
 ## 执行门禁
 
 读过规范、代码运行、打开图片均不等于合规。每图按下列顺序执行；修图和短请求也适用。失败只交诊断或标记预览，不得称完成或PASS。
 
-1. 读取 `references/personal-style.md`、`references/render-execution.md`、`references/reference-quality.md`、`references/reproduction-learning.md`、`static/core/contract.md` 与 `manifest.yaml`；运行 `scripts/route_figure.py 请求.yaml`。
-2. 科学契约后运行 `scripts/retrieve_reproduction.py --query "任务+图型+数据结构" --output 检索.json` 和 `scripts/retrieve_capabilities.py --query "任务+图型+数据结构" --output 能力检索.json`，只读派生特征；同时查询专用包、核心函数、共享排序键与guardrails。`static-code-audited`只证明代码建档，`source-compared-needs-revision`只证明已经对照并发现缺陷；只有`source-compared-png`且`review_status=pass`才可作为高保真先例。先安装、锁定并实测原代码使用的专用R包；禁止用基础ggplot2替代该包的核心布局能力。禁止查看或复制整段案例原代码；从用户数据合同重建。检索凭证必须进入CP2。
+1. 读取 `references/personal-style.md`、`references/render-execution.md`、`references/reference-quality.md`、`references/reproduction-learning.md`、`static/core/contract.md` 与 `manifest.yaml`；运行 `scripts/route_figure.py 请求.yaml`。模型、推理档位和请求长短不改变本门禁。
+2. 科学契约后运行 `scripts/retrieve_reproduction.py --query "任务+图型+数据结构" --require-validated --output 检索.json` 和 `scripts/retrieve_capabilities.py --query "任务+图型+数据结构" --output 能力检索.json`。`static-code-audited`只证明代码建档，`source-compared-needs-revision`只证明发现缺陷；只有`source-compared-png`且`review_status=pass`才可作为高保真先例。先锁定并实测来源方法使用的专用R包；禁止用基础ggplot2替代其核心布局能力。用户已授权且持有来源代码时，可检查包、函数、变换、排序和布局；禁止复制整段代码、来源数据或受限图片，生成脚本按当前数据合同独立重写。检索凭证必须进入CP2。
 3. 参考图实际查看、Design Spec、CP0–CP2先完成。读取 `references/enforced-execution.md`。ggplot最终PNG只用 `bf_render_png`；把 `scripts/figure_style.R` 复制进项目并随代码交付。
 4. 打开最终PNG，按实际使用尺寸审查，填写对象级inspection与Critic。复现任务必须用当前PNG重新生成原图并排图，分别审查布局、编码、字体、配色、信息密度；旧对照图在PNG变化后立即失效。每张PNG单独ledger。
 5. 运行 `python3 scripts/validate_checkpoints.py checkpoint-ledger.yaml --json`。仅退出码0且CP0–CP4全部PASS可交付；保存输出。渲染凭据仅证明技术预检，不能替代视觉质量。
@@ -26,3 +26,5 @@ description: 设计、绘制、精修或审查生物科研图；R优先，兼容
 门禁代码与阈值不由绘图任务自行删改。不得补写假凭据、从成图反向批准所有文字或降级Critic过检。未受托不重跑NGS。
 
 Skill不能强制平台调用工具；可核验门禁约束实际执行流程，人工/模型视觉观察仍是可信声明。科学正确、技术合规、参考质量与用户认可分别报告。
+
+回复只写已完成动作、证据、缺陷和下一步。避免“全面提升”“一键顶刊”“效果拉满”等宣传语，也不使用套话式总结；文件、数量、状态和限制用可核验名称表达。

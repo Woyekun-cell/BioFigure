@@ -21,14 +21,22 @@ def rank_cases(cases,query,limit):
   if score<=0:continue
   results.append({k:c.get(k,[] if k in {'chart_tags','advantage_tags','layout_tags','visuals'} else '') for k in ['case_id','title','source_url','chart_tags','advantage_tags','layout_tags','code_analysis','visuals']}|{'score':score})
   if len(results)>=limit:break
- return {'query':query,'results':results,'generation_contract':{'author_material_access':'forbidden','implementation':'new-script-from-user-data-and-derived-patterns','technique_transfer':'abstract-patterns-only','requires_render_and_visual_review':True}}
-def retrieve(query,limit=5):
- out=rank_cases(json.loads(CORPUS.read_text())['cases'],query,max(3,min(limit,5)))
+ return {'query':query,'results':results,'generation_contract':{'author_material_access':'authorized-inspection-no-copy','implementation':'new-script-from-user-data-and-derived-patterns','technique_transfer':'abstract-patterns-and-method-structure','requires_render_and_visual_review':True}}
+def high_fidelity_eligible(method):
+ return method.get('runtime_status') == 'source-compared-png' and method.get('review_status') == 'pass'
+def retrieve(query,limit=5,require_validated=False):
+ corpus_cases=json.loads(CORPUS.read_text())['cases']
+ candidate_limit=len(corpus_cases) if require_validated else max(3,min(limit,5))
+ out=rank_cases(corpus_cases,query,candidate_limit)
  methods={x['issue']:x for x in json.loads(METHODS.read_text())['cases']}
  for item in out['results']:
   issue=int(item['case_id'].split('-')[-1]);m=methods.get(issue,{})
-  item['package_method']={k:m.get(k) for k in ('core_packages','core_package_status','key_functions','runtime_status')}
+  item['package_method']={k:m.get(k) for k in ('core_packages','core_package_status','key_functions','runtime_status','review_status','validated_pngs','validation_date','validation_note')}
+  item['high_fidelity_eligible']=high_fidelity_eligible(m)
+ if require_validated:
+  out['results']=[x for x in out['results'] if x['high_fidelity_eligible']][:limit]
+ out['retrieval_policy']={'require_validated':require_validated,'high_fidelity_rule':'runtime_status=source-compared-png and review_status=pass','returned':len(out['results'])}
  out['schema_version']=1;out['corpus']={'path':str(CORPUS.resolve()),'sha256':hashlib.sha256(CORPUS.read_bytes()).hexdigest()}
  return out
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--query',required=True);p.add_argument('--limit',type=int,default=5);p.add_argument('--json',action='store_true');p.add_argument('--output',type=Path);a=p.parse_args();out=retrieve(a.query,a.limit);payload=json.dumps(out,ensure_ascii=False,indent=2)+'\n';a.output.write_text(payload) if a.output else print(payload,end='');raise SystemExit(0 if len(out['results'])>=3 else 1)
+ p=argparse.ArgumentParser();p.add_argument('--query',required=True);p.add_argument('--limit',type=int,default=5);p.add_argument('--require-validated',action='store_true');p.add_argument('--json',action='store_true');p.add_argument('--output',type=Path);a=p.parse_args();out=retrieve(a.query,a.limit,a.require_validated);payload=json.dumps(out,ensure_ascii=False,indent=2)+'\n';a.output.write_text(payload) if a.output else print(payload,end='');minimum=1 if a.require_validated else 3;raise SystemExit(0 if len(out['results'])>=minimum else 1)

@@ -28,5 +28,10 @@ class ReproductionAtlasTests(unittest.TestCase):
   self.assertEqual(doc['coverage']['missing_issues'],[30])
   self.assertTrue(doc['policy']['specialized_package_first'])
   self.assertTrue(all('core_packages' in x and 'key_functions' in x for x in doc['cases']))
+ def test_high_fidelity_status_requires_review_field(self):
+  doc=json.loads((ROOT/'atlas/reproduction-methods.json').read_text())
+  eligible=[x for x in doc['cases'] if x.get('runtime_status')=='source-compared-png' and x.get('review_status')=='pass']
+  self.assertTrue(eligible)
+  self.assertTrue(all(x.get('validated_pngs') for x in eligible))
 
 if __name__=='__main__':unittest.main()

@@ -5,7 +5,7 @@
 **参考引导的生物科研图设计与质控 Skill**<br>
 **A reference-guided design and quality-control skill for biological figures**
 
-[![BioFigure](https://img.shields.io/badge/BioFigure-3.1-28527A)](biofigure/SKILL.md)
+[![BioFigure](https://img.shields.io/badge/BioFigure-3.5-28527A)](biofigure/SKILL.md)
 [![R first](https://img.shields.io/badge/backend-R%20first-4F8F8A)](biofigure/renderer-registry.yaml)
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
@@ -24,6 +24,9 @@ R is the default backend, while native workflows such as AnnData and Scanpy may 
 
 下列 18 张图均由仓库中的 R 代码和固定随机种子生成，只展示图形语法、排版和质控边界，不承载生物学结论。<br>
 The 18 figures below are generated from repository R code with fixed seeds. They demonstrate visual grammar, layout, and QA boundaries and carry no biological conclusions.
+
+新增的源码方法验证图库同样使用固定随机种子和模拟数据。它验证专用 R 包、信息层与版式迁移，不复用来源数据或来源图片。<br>
+The source-method validation gallery also uses fixed seeds and simulated data. It validates package-specific methods, information layers, and layout transfer without redistributing source data or source images.
 
 ### 常规组学与多组学 / Bulk omics and multi-omics
 
@@ -60,6 +63,21 @@ The 18 figures below are generated from repository R code with fixed seeds. They
 | ![Imaging assay plate](docs/assets/gallery/domain-imaging-assay.png) | ![ROC and calibration](docs/assets/gallery/domain-ml-evaluation.png) |
 | 证据分级机制图 / Evidence-aware mechanism | 多面板证据链 / Multi-panel evidence chain |
 | ![Evidence-aware mechanism](docs/assets/gallery/domain-mechanism.png) | ![Multi-panel evidence chain](docs/assets/gallery/domain-multipanel-evidence.png) |
+
+### 专用 R 包方法验证 / Package-specific method validation
+
+| 三元分组 / Ternary groups | 半圆多轨热图 / Semicircular multitrack heatmap |
+|---|---|
+| ![Ternary groups](docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png) | ![Semicircular multitrack heatmap](docs/assets/reproduction-gallery/figure_076_issue067_circlize_rainbow_heatmap.png) |
+| 临床注释热图 / Clinical annotated heatmap | 带注释泳道 / Annotated swimmer |
+| ![Clinical annotated heatmap](docs/assets/reproduction-gallery/figure_077_issue068_clinical_heatmap.png) | ![Annotated swimmer](docs/assets/reproduction-gallery/figure_081_issue070_annotated_swimmer.png) |
+| 双层环图 / Nested donut | 层级花瓣网络 / Hierarchical petal network |
+| ![Nested donut](docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png) | ![Hierarchical petal network](docs/assets/reproduction-gallery/figure_086_issue074_petal_network.png) |
+| 山峦与条码 / Ridgeline with barcode | 流向地图 / Flow map |
+| ![Ridgeline with barcode](docs/assets/reproduction-gallery/figure_088_issue077_ridgeline_barcode.png) | ![Flow map](docs/assets/reproduction-gallery/figure_090_issue080_flow_map.png) |
+
+生成脚本位于 [`biofigure/examples/reproduction-gallery`](biofigure/examples/reproduction-gallery)。这些图使用模拟数据，只验证绘图方法和版式。<br>
+The generator is available under [`biofigure/examples/reproduction-gallery`](biofigure/examples/reproduction-gallery). These figures use simulated data and validate plotting methods and layout only.
 
 ## 使用 / Use
 
