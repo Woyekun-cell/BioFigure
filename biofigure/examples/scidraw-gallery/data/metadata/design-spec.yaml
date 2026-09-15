@@ -1,0 +1,6 @@
+schema_version: "1.0"
+figure_set: scidraw-six-source-compared
+simulation: true
+font: Arial
+background: white
+export: png-only

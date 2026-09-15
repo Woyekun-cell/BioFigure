@@ -1,0 +1,558 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-14",
+  "policy": "PASS requires all six visual dimensions to pass; method-family similarity alone is insufficient.",
+  "cases": [
+    {
+      "case_id": "SCIDRAW-RCS-001",
+      "family": "restricted-cubic-spline",
+      "core_packages": [
+        "rms",
+        "survival",
+        "ggplot2"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "blocked-scientific-correction",
+      "scientific_blockers": [
+        "Hard-coded Pnon-linear = 0.02 and Poverall < 0.001 in simulated-data renderer; must compute from fitted models before acceptance."
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-RIDGE-BIPOLAR-001",
+      "family": "ridge-bipolar-composite",
+      "core_packages": [
+        "ggridges",
+        "patchwork",
+        "ggplot2"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-PCOA-MARGINAL-001",
+      "family": "ordination-marginal",
+      "core_packages": [
+        "vegan",
+        "patchwork"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-TERNARY-001",
+      "family": "ternary-composition",
+      "core_packages": [
+        "ggtern"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "point density and axis/grid semantics are below the source",
+        "panel scale and text hierarchy diverge"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-CORRPLOT-001",
+      "family": "correlation-matrix",
+      "core_packages": [
+        "corrplot"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "matrix density, significance marks, and group annotations are reduced"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-SWIMMER-001",
+      "family": "patient-swimmer",
+      "core_packages": [
+        "ggnewscale",
+        "ggplot2"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-CHORD-TRACK-001",
+      "family": "chord-with-outer-track",
+      "core_packages": [
+        "circlize"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "outer tracks, labels, and chord information density are incomplete"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-VOLCANO-GSEA-001",
+      "family": "volcano-gene-set-track",
+      "core_packages": [
+        "ggrepel",
+        "ggplot2"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-POLYGON-RADAR-001",
+      "family": "radar",
+      "core_packages": [
+        "fmsb"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "per-axis numeric annotations and outer reference frame are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-FACET-RADAR-001",
+      "family": "radar",
+      "core_packages": [
+        "fmsb"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "map background, location callouts, and numeric annotations are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-OUTER-RADAR-001",
+      "family": "radar",
+      "core_packages": [
+        "ggradar"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-LMM-RADAR-001",
+      "family": "radar",
+      "core_packages": [
+        "ggradar"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "outer section arcs, group labels, and significance marks are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-DIFF-RADAR-001",
+      "family": "radar",
+      "core_packages": [
+        "ggradar"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-HALF-VIOLIN-001",
+      "family": "distribution",
+      "core_packages": [
+        "gghalves"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-BEESWARM-VIOLIN-001",
+      "family": "distribution",
+      "core_packages": [
+        "gghalves",
+        "ggbeeswarm"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-QUANTILE-RAIN-001",
+      "family": "distribution",
+      "core_packages": [
+        "gghalves"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "statistical annotation block and source text hierarchy are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-GROUPED-RAIN-001",
+      "family": "distribution",
+      "core_packages": [
+        "gghalves"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "distribution layers and significance structure do not match the source topology"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-RAINDROP-001",
+      "family": "distribution",
+      "core_packages": [
+        "ggdist"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "bilateral central rain geometry and significance bracket are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-RESIDUAL-001",
+      "family": "regression-diagnostic",
+      "core_packages": [
+        "ggside",
+        "patchwork"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-CORRBAR-001",
+      "family": "correlation",
+      "core_packages": [
+        "corrplot"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "side grouping, labels, and annotation hierarchy are simplified"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-CLUSTER-CORR-001",
+      "family": "correlation",
+      "core_packages": [
+        "factoextra",
+        "ggplot2"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "diamond matrix orientation and multiple dendrogram blocks are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-PHEATMAP-001",
+      "family": "heatmap",
+      "core_packages": [
+        "pheatmap"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "block annotations, structural bars, and categorical legend are incomplete"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-FACET-BUBBLE-001",
+      "family": "correlation",
+      "core_packages": [
+        "ggplot2"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "semantic group labels and boxed subpanels are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-GROUP-BUBBLE-001",
+      "family": "correlation",
+      "core_packages": [
+        "ggplot2"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "major group labels and source information hierarchy are incomplete"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-GGALLY-REG-001",
+      "family": "matrix-regression",
+      "core_packages": [
+        "GGally"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "right-side regression column, equations, and significance density are missing"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-LINKET-NET-001",
+      "family": "correlation-network",
+      "core_packages": [
+        "linkET"
+      ],
+      "strict_review_status": "needs-revision",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [
+        "trait matrix placement and Mantel network topology diverge from the source"
+      ],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-DENSITY-RAINBOW-001",
+      "family": "density-matrix",
+      "core_packages": [
+        "GGally"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    },
+    {
+      "case_id": "SCIDRAW-DENSITY-RED-001",
+      "family": "density-matrix",
+      "core_packages": [
+        "GGally"
+      ],
+      "strict_review_status": "pass",
+      "required_dimensions": [
+        "family",
+        "panel_topology",
+        "required_structures",
+        "typography",
+        "annotation",
+        "information_density"
+      ],
+      "mismatch_reasons": [],
+      "benchmark_status": "pending-evidence"
+    }
+  ],
+  "benchmark_version": 2
+}

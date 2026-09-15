@@ -1,0 +1,915 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-14",
+  "review_method": "same-article code and source image, independent rerender, object-level side-by-side inspection",
+  "source_material_policy": "source images and source code remain local; public repository contains derived method metadata, independent code and generated PNG only",
+  "cases": [
+    {
+      "case_id": "SCIDRAW-POLYGON-RADAR-001",
+      "graph_node_id": "scidraw-1bfce60b92",
+      "label": "多边形雷达图(fmsb包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/DIgq_16wimecJ3HH5ITO2Q",
+        "archive_status": "ok",
+        "code_files": 3,
+        "code_sha256": "1fb2c0b5101b706b8d4ebf25786eb3a5543962f5119e943a6c512331742ac60f",
+        "image_sha256": "9bedef943a28bb8dcb42e36d6519f655c6a793f47428da2cb9b05b90230ec778",
+        "image_pixels": [
+          914,
+          540
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png",
+        "artifact_sha256": "7bbe3a4fb96dad41575a5e1421374b5221267fc8c7ccc224b3bb959837f7ae71",
+        "artifact_pixels": [
+          1260,
+          990
+        ]
+      },
+      "comparison_sha256": "012e1e64d73dbacfb146063fccc592501baacb20daef47596352d0909c15e89b",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "per-axis numeric annotations and outer reference frame are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-FACET-RADAR-001",
+      "graph_node_id": "scidraw-18559fe057",
+      "label": "多边形雷达图+分面(fmsb包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/DIgq_16wimecJ3HH5ITO2Q",
+        "archive_status": "ok",
+        "code_files": 4,
+        "code_sha256": "8e5210f290257c654d4660ea112bb82d48c6e9d55bec1652979cd48d592b7574",
+        "image_sha256": "70434d05dc97f396d68d1ca344b00b79f1a86d78064712ec4b47a9b56c2b56a6",
+        "image_pixels": [
+          1011,
+          625
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png",
+        "artifact_sha256": "286f0b40417892ff7cda9928c07b0f1e36ce262ec88df503e69181e1a3a2c31a",
+        "artifact_pixels": [
+          1620,
+          1260
+        ]
+      },
+      "comparison_sha256": "b2eecdaa47f260fc2f15c316b423ef585ee06ca007a7b3c28ee2021d0704ef1c",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "map background, location callouts, and numeric annotations are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-OUTER-RADAR-001",
+      "graph_node_id": "scidraw-0fa39f5379",
+      "label": "圆形雷达图+分面+外圈(ggradar包)",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/DIgq_16wimecJ3HH5ITO2Q",
+        "archive_status": "ok",
+        "code_files": 5,
+        "code_sha256": "b78f785419795e7862ab25030aafff45ae07994b316caae97a19b7759e135233",
+        "image_sha256": "5817eb6565a9f3a26fc153ad919660bfe1cd25fba3a91104f69b37888d0e36ff",
+        "image_pixels": [
+          1080,
+          372
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png",
+        "artifact_sha256": "04043134cef97995adfedef2104fb16fa11484682450a0fe6ef18251501cd0e4",
+        "artifact_pixels": [
+          1800,
+          612
+        ]
+      },
+      "comparison_sha256": "31253461f7892ceb4013a60a2edd6b73945520e996968a3253e15c02239fa3d5",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-LMM-RADAR-001",
+      "graph_node_id": "scidraw-9c0a4518e9",
+      "label": "圆形雷达图+LMM-ANOVA",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/GWJqUZJScfDEqgkJtmQXuQ",
+        "archive_status": "ok",
+        "code_files": 4,
+        "code_sha256": "d0d5c274ebd1ee0492dfb43ec9f3e64eee392788ce5df65618836d937ba22a94",
+        "image_sha256": "5f9730dc8225a50df362c297a9e7f90798df1c8e95063a396969d75a2bc172eb",
+        "image_pixels": [
+          667,
+          665
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png",
+        "artifact_sha256": "50db8542e496369c94bc4361fb161e00f0f62708f8adad165587ef853af76269",
+        "artifact_pixels": [
+          1080,
+          990
+        ]
+      },
+      "comparison_sha256": "e2b3062e15f175644e0864a6f15e7724bc8850fece214863c253d0a00d497f5e",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "outer section arcs, group labels, and significance marks are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-DIFF-RADAR-001",
+      "graph_node_id": "scidraw-016f2b9242",
+      "label": "圆形雷达图+差值比较（黄点）",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/GWJqUZJScfDEqgkJtmQXuQ",
+        "archive_status": "ok",
+        "code_files": 3,
+        "code_sha256": "c9b6c89fdebbfe95d78cca76e562dca889ef62c4dfb5a85bb1c22f44e442c773",
+        "image_sha256": "e28eb699036fc4037df64ef54ace15f3077728cc5ce30e81364233906481dc39",
+        "image_pixels": [
+          1080,
+          535
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png",
+        "artifact_sha256": "1cc50a64bc3e80978f5a4e270f0fc10afde2c2c7b95118c23d24b6f94cb72d69",
+        "artifact_pixels": [
+          1350,
+          1080
+        ]
+      },
+      "comparison_sha256": "e2c17d83cd3dfbf80cf256d18f248082d08164c28ae10d12e7a3ce20fe51c358",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-HALF-VIOLIN-001",
+      "graph_node_id": "scidraw-ebccc5da31",
+      "label": "小提琴图+箱式图+散点图",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/HIEzY7DoILiSxcqUZqaoSw",
+        "archive_status": "ok",
+        "code_files": 2,
+        "code_sha256": "b1b5bd793d9481381e8d02db981a1f60aa0963096457e36dd8f7ec42dfef09ef",
+        "image_sha256": "6c449209d48851001b4f81d155ff2719ed38163d789cf9c154757d86ce557a9e",
+        "image_pixels": [
+          1080,
+          732
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/06_half_violin_box_points.png",
+        "artifact_sha256": "60885fe762dfe0cd435ad63d14bb6601c3e3aa11065de9934e590b2153ed3842",
+        "artifact_pixels": [
+          1260,
+          900
+        ]
+      },
+      "comparison_sha256": "afb1723744e352d255776610d6494958a050a0593cfeb09434ca941dd1311958",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-BEESWARM-VIOLIN-001",
+      "graph_node_id": "scidraw-efefe11ed4",
+      "label": "小提琴图+箱式图+蜂窝图",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/EtPC_It96I7duu5vHkbhOQ",
+        "archive_status": "ok",
+        "code_files": 2,
+        "code_sha256": "46cc34130b81211ac6c51ed8afae98d27671cd0a4567c8bc48cd9f8562f3d2f7",
+        "image_sha256": "780d7df704cd06db7ed9dd8bb2682b653e44b9085527d41d09443c34aca95e08",
+        "image_pixels": [
+          1080,
+          837
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/07_violin_box_beeswarm.png",
+        "artifact_sha256": "c2a5d620049c930ff59f4a049bcfb1bd3fe30191de25880dc5f6e0913b86376e",
+        "artifact_pixels": [
+          1440,
+          936
+        ]
+      },
+      "comparison_sha256": "3882bcd5c5be2cfe87406f68ad4b7e328bfc7518fc1dd8bac59d95e8e4d5e699",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-QUANTILE-RAIN-001",
+      "graph_node_id": "scidraw-5c1b7a133f",
+      "label": "差异云雨图+分位数(gghalves包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/CvT5LpM4d92sGxOImMgaYw",
+        "archive_status": "ok",
+        "code_files": 4,
+        "code_sha256": "f961f1223b81aef7c1b7a82f67d5f48d90db1a1beb4df689ed611ee98154bcde",
+        "image_sha256": "3bf88debae9919d2cd2ebb674aeb67784aca1b43bfc6047cb400b01cbf380ec6",
+        "image_pixels": [
+          1080,
+          483
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/08_quantile_raincloud_gghalves.png",
+        "artifact_sha256": "1e4c346affd6de2b75594014f6dfc812b86ac4ec6e1c3d00d764906a77037504",
+        "artifact_pixels": [
+          1440,
+          864
+        ]
+      },
+      "comparison_sha256": "6b83217a44cca9f1ea24dbd625c013b073b5f94d13b924c82a5782c4b4ea9149",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "statistical annotation block and source text hierarchy are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-GROUPED-RAIN-001",
+      "graph_node_id": "scidraw-33c2eeb01a",
+      "label": "差异云雨图+分组(gghalves包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/CvT5LpM4d92sGxOImMgaYw",
+        "archive_status": "ok",
+        "code_files": 2,
+        "code_sha256": "ffdd134f31198b79ab2eb458721b7c96e9437faa58b0544766c663bc59a040b7",
+        "image_sha256": "859a9ed0cfe0eef06c7e5eda64de4a891baa279ed1330212979d57a4e348007b",
+        "image_pixels": [
+          979,
+          590
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/09_grouped_raincloud_gghalves.png",
+        "artifact_sha256": "fab8a0d718366d31d9802d000b813e87d1bdcb45bf51fb146fb635acc9cb4529",
+        "artifact_pixels": [
+          1260,
+          900
+        ]
+      },
+      "comparison_sha256": "a91eff63816900b7b2992744e3985a1ce61373c17f3e6d68e008f18f4afba83c",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": [
+        "distribution layers and significance structure do not match the source topology"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-RAINDROP-001",
+      "graph_node_id": "scidraw-ae710aed03",
+      "label": "差异云雨图+雨滴(ggdist包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/CvT5LpM4d92sGxOImMgaYw",
+        "archive_status": "ok",
+        "code_files": 2,
+        "code_sha256": "f45a81c37856b5f871f4441f92989f9017d7528bf555e700b77a42d94068616d",
+        "image_sha256": "c06c1cdd22829a9a5ee992efef9f8bb8fa6cf16dcba98c095ccbe1cc45e0b103",
+        "image_pixels": [
+          489,
+          822
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/10_raindrop_ggdist.png",
+        "artifact_sha256": "8d59036e418bd5275e1bb48791755d48d93052b21c412cbff9bac4ba6366635c",
+        "artifact_pixels": [
+          1007,
+          1080
+        ]
+      },
+      "comparison_sha256": "6c8300a2cf55fbf4e8a3f017a818ca14a4cd94c334e4e912cefed45452c69897",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "bilateral central rain geometry and significance bracket are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-RESIDUAL-001",
+      "graph_node_id": "scidraw-0ca6fd537f",
+      "label": "拟合曲线+残差箱式图（R版）",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/jGjeT85wmyn9to7UCqLLlw",
+        "archive_status": "ok",
+        "code_files": 4,
+        "code_sha256": "c2614ede5d72aa9eebe7a737ac64ad9a92a5f48b4b834bc4001b1e5200ebdf21",
+        "image_sha256": "d690a8dc073a47cded2ad47f3cb4140435077a56d38acfddf2655e993a31cd32",
+        "image_pixels": [
+          588,
+          576
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/11_fit_marginal_residual_box.png",
+        "artifact_sha256": "fcf6246fb938d7bcd90d43c8d461edc0873415a0405055f675eb74d541cb92a7",
+        "artifact_pixels": [
+          1260,
+          1080
+        ]
+      },
+      "comparison_sha256": "d50205d079b12c6eaff28c4f8d6074e6986b2c16099f9a24c07e65c42d59cf4c",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-CORRBAR-001",
+      "graph_node_id": "scidraw-0cfb70f863",
+      "label": "一维变量(corrplot包)+柱形图",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/SmmaxcZTpNbV5E3L2yAzzA",
+        "archive_status": "ok",
+        "code_files": 5,
+        "code_sha256": "34ee926f2ee4c8b0985eb54a195f957e4206d3acd83a068c7e5af5cc9abe76f3",
+        "image_sha256": "7bd6c5985fb7cb30b849eefbbc96a83202696e4bda9ae0ff3cf6c18f958c16f9",
+        "image_pixels": [
+          800,
+          551
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/12_corrplot_with_sidebars.png",
+        "artifact_sha256": "e561e3c6baaf32800d60640d888c1c32ccf30b2e16f5f16044d9a49400575250",
+        "artifact_pixels": [
+          1620,
+          1260
+        ]
+      },
+      "comparison_sha256": "bad5b01b3f3de51dbea1ad9b2f7e062d308c1aa70ec063160152e799ff416935",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "side grouping, labels, and annotation hierarchy are simplified"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-CLUSTER-CORR-001",
+      "graph_node_id": "scidraw-9cadf84f2a",
+      "label": "一维变量(ggplot2包)+层次聚类",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/MQxVax8taUCEYOZR9zF2iQ",
+        "archive_status": "ok",
+        "code_files": 8,
+        "code_sha256": "e2a2f6f9543aa0a6ed0eea8dd1d8dc4861904ce7033286c01f0b1cfe0a0fadb0",
+        "image_sha256": "c1694884d908f7300c931412e078b7cd0dd6a6fdc9a0523e8ffc5a99e036e01c",
+        "image_pixels": [
+          869,
+          540
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png",
+        "artifact_sha256": "0dd6da35eee254e1e67d295d865a8f433c18e9096e62178e4c20161b5d6827a8",
+        "artifact_pixels": [
+          1440,
+          1260
+        ]
+      },
+      "comparison_sha256": "959bc4a23128a8c93ae7dac7bd11d6328a0a10ac71474fe295d172f7a075e7a9",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "diamond matrix orientation and multiple dendrogram blocks are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-PHEATMAP-001",
+      "graph_node_id": "scidraw-21594fb20c",
+      "label": "二维变量(pheatmap包)",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/yPGgFO8Y050w5itmkcpvoQ",
+        "archive_status": "ok",
+        "code_files": 1,
+        "code_sha256": "06716c37d02fd03cabc377e5b6a21ada7eb3fcca550b36255916660773d08d47",
+        "image_sha256": "3a18dabec6803e71724eb347d01ea697bb003829372933816b9911e7ebc12d9e",
+        "image_pixels": [
+          850,
+          724
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/14_annotated_pheatmap.png",
+        "artifact_sha256": "edb82b74aa15c54b99cc8140b024dd8bbad54347049ae0fa0478eedf8d18c989",
+        "artifact_pixels": [
+          1440,
+          1260
+        ]
+      },
+      "comparison_sha256": "8e223dabcf3ee3a38f1da697437ef92ffc12307924e25f093a3641a2bb69bd26",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "block annotations, structural bars, and categorical legend are incomplete"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-FACET-BUBBLE-001",
+      "graph_node_id": "scidraw-be637f518e",
+      "label": "气泡热图-分面",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/5Fj1f0NeOxTM1_6IHHF2KA",
+        "archive_status": "needs_review",
+        "code_files": 2,
+        "code_sha256": "974df8f3d62405c3f5b567ff5dae829de1c398d588720c8e5dc8795bb9b4d282",
+        "image_sha256": "b04a2016f2edae1724e4a13fec689e471de9b6725a40cb5506c7d7d55d64f686",
+        "image_pixels": [
+          1044,
+          689
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/15_faceted_correlation_bubbles.png",
+        "artifact_sha256": "80177fbbe0bd05a879c498d7f6398c8720fcb1584873ef5c289fc42ae0d6e3f7",
+        "artifact_pixels": [
+          1620,
+          1224
+        ]
+      },
+      "comparison_sha256": "d4c6db3634a376ac11e3f4e273dee8772774c90968e233893514e746befaf817",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "semantic group labels and boxed subpanels are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-GROUP-BUBBLE-001",
+      "graph_node_id": "scidraw-89ae3c286a",
+      "label": "二维变量(ggplot2包)+分组",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/guZfhXmKiz2qKp2Vs9l4-w",
+        "archive_status": "ok",
+        "code_files": 2,
+        "code_sha256": "fdc8cfcafb40ab6ec77061b39a7cd373c74878bcfe539ec4af45e3bc31a4a854",
+        "image_sha256": "05236effb2d953f29fa03f253ab05559aacb85cc9426ec0ec834740c1dcf49c7",
+        "image_pixels": [
+          976,
+          640
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/16_grouped_correlation_bubbles.png",
+        "artifact_sha256": "9ba082ff76f8f911d9218bdadaaf42781d6853a6a7cbfac53f62ffdfaf716d51",
+        "artifact_pixels": [
+          1620,
+          1080
+        ]
+      },
+      "comparison_sha256": "ea3edda7b5a04b741c5eb38782e0c529420ff3d19571f28bd67a6e6a9350ab5a",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "major group labels and source information hierarchy are incomplete"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-GGALLY-REG-001",
+      "graph_node_id": "scidraw-fb8ec364b3",
+      "label": "一维变量(GGally包)+线性回归",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/OwMi1XDqiDmUbetDoPdcJA",
+        "archive_status": "ok",
+        "code_files": 4,
+        "code_sha256": "27d4c53f2499610cfc9ae9639fcefca6db4e343cf7a24c590d402106dcc9c674",
+        "image_sha256": "8eaf31ff71861d65be84c1297221934333c5e48bff16206be397a402df1824fb",
+        "image_pixels": [
+          905,
+          656
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/17_ggally_regression_matrix.png",
+        "artifact_sha256": "f74fa0fd41d7d55f72eb979d84e899c55e53b10a299fa6de2479dc0bb71def26",
+        "artifact_pixels": [
+          1350,
+          1260
+        ]
+      },
+      "comparison_sha256": "87fbe4c3046981a842eb91cfd1776f833c364c50fe8c92d57f87894044f63816",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "right-side regression column, equations, and significance density are missing"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-LINKET-NET-001",
+      "graph_node_id": "scidraw-9bd10160d2",
+      "label": "一维变量(GGally包)+网络图",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/BeBVV6H8gq7uJDB-r3h6xQ",
+        "archive_status": "ok",
+        "code_files": 3,
+        "code_sha256": "6529f7703825577181ea40c45214173e893b87526a354094c2608784b274b113",
+        "image_sha256": "ef0209691e3cde6d7464dddf7bc866c09b6d1671040673d90ec81cf7ffc66257",
+        "image_pixels": [
+          967,
+          641
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png",
+        "artifact_sha256": "f5c7b4709b9772552dac281fdb3553091f1c770bab6e29c339302ef04274fcac",
+        "artifact_pixels": [
+          1530,
+          1170
+        ]
+      },
+      "comparison_sha256": "89dfd6598d1ce57c93465453353c917bf6ce6bfea865f6273061c9ae1c7bc2a1",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": [
+        "trait matrix placement and Mantel network topology diverge from the source"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-DENSITY-RAINBOW-001",
+      "graph_node_id": "scidraw-032969b5e8",
+      "label": "一维变量+核密度(R版)-彩虹色",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/8h2-V8zBuGzTdpHwmBwQbg",
+        "archive_status": "needs_review",
+        "code_files": 3,
+        "code_sha256": "99a2b58890ae23caef6b6371691ad7928e22bf24629a54d27211a3378ad0da32",
+        "image_sha256": "6a4cfc7e2cba2bd1975dd72c1d58d7a27dcf7d7ed053dd355ebd7439e1a369d6",
+        "image_pixels": [
+          1080,
+          925
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/19_density_matrix_rainbow.png",
+        "artifact_sha256": "e5fea8b3308fb7eed3dc286eb4bb8f8c5bd7112576fc8f63a6058cce7a719918",
+        "artifact_pixels": [
+          1440,
+          1260
+        ]
+      },
+      "comparison_sha256": "1a50d13c3cd3f9d2ec32136605d9ee61dbcb0a66d727f9f8f63d18d7207bedc0",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-DENSITY-RED-001",
+      "graph_node_id": "scidraw-b1af8f12e5",
+      "label": "一维变量+核密度(R版)-红色",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/8h2-V8zBuGzTdpHwmBwQbg",
+        "archive_status": "needs_review",
+        "code_files": 3,
+        "code_sha256": "99a2b58890ae23caef6b6371691ad7928e22bf24629a54d27211a3378ad0da32",
+        "image_sha256": "ec83f27e17b84f466cf350c1e79b77b3bf0e57b721eef412f149b2bf61718a82",
+        "image_pixels": [
+          1030,
+          886
+        ]
+      },
+      "implementation": {
+        "script": "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R",
+        "artifact": "docs/assets/scidraw-gallery-batch2/20_density_matrix_red.png",
+        "artifact_sha256": "6139176b0a1db83bf7d157210e53657b2ee6e52ded65beae2602869bc98d071c",
+        "artifact_pixels": [
+          1440,
+          1260
+        ]
+      },
+      "comparison_sha256": "bf293e22c3be471f23a60a1df8a3c228bca34c354c9c849a2f3a9f37c0ec55fe",
+      "visual_review": {
+        "core_geometry": "pass",
+        "layout_hierarchy": "pass",
+        "font_legibility": "pass",
+        "legend_collision": "pass",
+        "clipping": "pass"
+      },
+      "limitation": "fixed-seed simulated data; method/layout precedent only",
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    }
+  ],
+  "claim_boundary": "method and layout fidelity with simulated data; not numerical reproduction or model-weight training"
+}

@@ -36,6 +36,11 @@ class ReceiptTests(unittest.TestCase):
         return m.validate_render_receipt(str(self.receipt), self.artifact)
     def test_valid_bound_receipt(self):
         self.assertEqual(self.check(), [])
+    def test_repository_relative_static_receipt(self):
+        receipt = ROOT.parent/'results/reproduction_benchmark/figures/survival.png.render.json'
+        artifact = ROOT.parent/'results/reproduction_benchmark/figures/survival.png'
+        design = ROOT.parent/'results/reproduction_benchmark/plot_data/survival-design.yaml'
+        self.assertEqual(m.validate_render_receipt(str(receipt), artifact, design), [])
     def test_missing_receipt(self):
         self.receipt.unlink()
         self.assertTrue(self.check())
@@ -120,3 +125,19 @@ class ReceiptTests(unittest.TestCase):
         self.assertTrue(any('CP4 actual' in e for e in errors))
 
 if __name__ == '__main__': unittest.main()
+
+class ReproductionAccessTests(unittest.TestCase):
+    def test_one_reference_and_authorized_inspection(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); corpus=root/'corpus.json'; corpus.write_text('{}')
+            receipt=root/'receipt.json'
+            value={'schema_version':1,'query':'forest', 'corpus':{'path':str(corpus),'sha256':m.digest(corpus)},'results':[{'case_id':'test'}], 'generation_contract':{'author_material_access':'authorized-inspection-no-copy','implementation':'new-script-from-user-data-and-derived-patterns'}}
+            receipt.write_text(json.dumps(value))
+            self.assertEqual(m.validate_reproduction_receipt(str(receipt),corpus),[])
+            value['generation_contract']['blind_generation']=True
+            receipt.write_text(json.dumps(value))
+            self.assertTrue(m.validate_reproduction_receipt(str(receipt),corpus))
+            value['generation_contract']['blind_generation']=False
+            value['results']=[]
+            receipt.write_text(json.dumps(value))
+            self.assertTrue(m.validate_reproduction_receipt(str(receipt),corpus))

@@ -1,0 +1,2315 @@
+{
+  "schema_version": 2,
+  "cases": [
+    {
+      "case_id": "scidraw-d77781c141",
+      "source": "scidraw",
+      "label": "NMDS可视化+边缘箱式图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-62b8290bc1",
+      "source": "scidraw",
+      "label": "PCoA可视化+多分组边缘箱式图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-b418bcc5db",
+      "source": "scidraw",
+      "label": "PCoA可视化+边缘箱式图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-e61f108d09",
+      "source": "scidraw",
+      "label": "UMAP可视化 + 多维分组信息",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-e47434e3a0",
+      "source": "scidraw",
+      "label": "小提琴图+NMDS分析",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-61087f8513",
+      "source": "scidraw",
+      "label": "upset图-无分组",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d58ad3d724",
+      "source": "scidraw",
+      "label": "upset图-有分组",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-541f574857",
+      "source": "scidraw",
+      "label": "二元Venn图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-bd80e4e753",
+      "source": "scidraw",
+      "label": "β 值森林图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-bf67d7a9a6",
+      "source": "scidraw",
+      "label": "三元图(CD4 T 细胞状态)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-b589988b73",
+      "source": "scidraw",
+      "label": "三元图(OTUs的生态位偏好)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6be07d3441",
+      "source": "scidraw",
+      "label": "三元图(三个时间点的细胞)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7cd62a766b",
+      "source": "scidraw",
+      "label": "三元图(三种施肥处理)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6a305a6d16",
+      "source": "scidraw",
+      "label": "免疫细胞亚群森林图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ee762c7885",
+      "source": "scidraw",
+      "label": "分组-患者泳道图(R版)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-660abde3cf",
+      "source": "scidraw",
+      "label": "双分组 HR 森林图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-74de273c36",
+      "source": "scidraw",
+      "label": "患者泳道图(Python版)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-1a060be0fe",
+      "source": "scidraw",
+      "label": "患者泳道图(R版)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ebccc5da31",
+      "source": "scidraw",
+      "label": "小提琴图+箱式图+散点图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-efefe11ed4",
+      "source": "scidraw",
+      "label": "小提琴图+箱式图+蜂窝图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-5c1b7a133f",
+      "source": "scidraw",
+      "label": "差异云雨图+分位数(gghalves包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-33c2eeb01a",
+      "source": "scidraw",
+      "label": "差异云雨图+分组(gghalves包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ae710aed03",
+      "source": "scidraw",
+      "label": "差异云雨图+雨滴(ggdist包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-fdf13d26d3",
+      "source": "scidraw",
+      "label": "分组-和弦图+外围条形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-674cd09aff",
+      "source": "scidraw",
+      "label": "分面-散点饼图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7ede687832",
+      "source": "scidraw",
+      "label": "模型参数恢复验证图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9590cbea69",
+      "source": "scidraw",
+      "label": "表格形式的热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a54e1600ef",
+      "source": "scidraw",
+      "label": "logFC-FC-1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9a3e084213",
+      "source": "scidraw",
+      "label": "logFC-FC-2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-495e79623f",
+      "source": "scidraw",
+      "label": "logFC-FC-象限1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7024a41283",
+      "source": "scidraw",
+      "label": "logFC-FC-象限2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7ba9efecaa",
+      "source": "scidraw",
+      "label": "丰度差异蜂群图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-f8089cf9ea",
+      "source": "scidraw",
+      "label": "丰度差异蜂群图-分面",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0987a96040",
+      "source": "scidraw",
+      "label": "双曲线火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-bb7a4cebde",
+      "source": "scidraw",
+      "label": "垂直线火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6b8dae7dcf",
+      "source": "scidraw",
+      "label": "基础热图-分面风格",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-c5fa16bf7b",
+      "source": "scidraw",
+      "label": "基础热图-对称风格",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9b03558c39",
+      "source": "scidraw",
+      "label": "多个比较组-火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-1ddd3aaf04",
+      "source": "scidraw",
+      "label": "多个组织-火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-04450641d7",
+      "source": "scidraw",
+      "label": "多个细胞群-火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-be637f518e",
+      "source": "scidraw",
+      "label": "气泡热图-分面",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-40f5e6167d",
+      "source": "scidraw",
+      "label": "气泡热图-空白行",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a9693534f0",
+      "source": "scidraw",
+      "label": "添加显著性星号的热图-分面",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-fdf028504a",
+      "source": "scidraw",
+      "label": "添加显著性星号的热图-空白行",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-f749086eb5",
+      "source": "scidraw",
+      "label": "火山图+GSEA_MSigDB富集得分",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-5a0c5b2f13",
+      "source": "scidraw",
+      "label": "火山图+富集条形图1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-e2fa692b0b",
+      "source": "scidraw",
+      "label": "火山图+富集条形图2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-29f7623f28",
+      "source": "scidraw",
+      "label": "火山图+富集网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-cf64d1a42c",
+      "source": "scidraw",
+      "label": "环形热图+Upset",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-023dc744b7",
+      "source": "scidraw",
+      "label": "环形热图+Venn",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-5bdc86ce12",
+      "source": "scidraw",
+      "label": "分面-小提琴图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a709b0db4c",
+      "source": "scidraw",
+      "label": "分面-配对箱线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-3e2f561fec",
+      "source": "scidraw",
+      "label": "半圆形小提琴图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-de58ba8efb",
+      "source": "scidraw",
+      "label": "基础箱线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-cd898311a2",
+      "source": "scidraw",
+      "label": "小提琴图+渐变背景",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-66b22bca3d",
+      "source": "scidraw",
+      "label": "扇形箱线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-edecf1603e",
+      "source": "scidraw",
+      "label": "比较小提琴图（一）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-920aa79970",
+      "source": "scidraw",
+      "label": "比较小提琴图（三）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-19cda3fbcd",
+      "source": "scidraw",
+      "label": "比较小提琴图（二）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-618bb50b47",
+      "source": "scidraw",
+      "label": "箱线图+渐变背景",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-854d5758cc",
+      "source": "scidraw",
+      "label": "配对箱线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-22ea3af5f5",
+      "source": "scidraw",
+      "label": "分组+分面-山脊图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-3fb21f121d",
+      "source": "scidraw",
+      "label": "分组-山脊图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-2fad7dd304",
+      "source": "scidraw",
+      "label": "分面-山脊图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d789adad2d",
+      "source": "scidraw",
+      "label": "分面-山脊图+垂直刻度",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-709e0a8c86",
+      "source": "scidraw",
+      "label": "渐变色山脊图+双向柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-453d99f2f3",
+      "source": "scidraw",
+      "label": "定制化的平滑曲线",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a31445c6ad",
+      "source": "scidraw",
+      "label": "拟合趋势线",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-91bd0e9df9",
+      "source": "scidraw",
+      "label": "拟合趋势线+配对数据",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a872fff245",
+      "source": "scidraw",
+      "label": "点线图+取对数",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-f9e1785638",
+      "source": "scidraw",
+      "label": "美化线条路径",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-23398be1c5",
+      "source": "scidraw",
+      "label": "折线图+柱形图（组合）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0896267665",
+      "source": "scidraw",
+      "label": "环状分组折线图+显著性",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-c607bd2c3e",
+      "source": "scidraw",
+      "label": "分组散点图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d2d1cce95d",
+      "source": "scidraw",
+      "label": "分组散点图+线性/对数拟合",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d5dd06620a",
+      "source": "scidraw",
+      "label": "分组气泡图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-8696e16721",
+      "source": "scidraw",
+      "label": "分组气泡图+线性拟合",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a708af5f4c",
+      "source": "scidraw",
+      "label": "对角线散点图+直方图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-e63f00b1fd",
+      "source": "scidraw",
+      "label": "差异 OTU 曼哈顿图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6df02113dd",
+      "source": "scidraw",
+      "label": "散点+误差线+边际图（Python版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-61c98496a9",
+      "source": "scidraw",
+      "label": "散点图+拟合曲线+均值+双向误差线",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-1e94e8be1f",
+      "source": "scidraw",
+      "label": "散点图+线性拟合",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9dff299814",
+      "source": "scidraw",
+      "label": "时序图1：分组+误差带",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-78b8faa556",
+      "source": "scidraw",
+      "label": "时序图2：分面+误差带",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-c70ed71706",
+      "source": "scidraw",
+      "label": "时序图3：分组-分面+误差棒",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-259c38dbd7",
+      "source": "scidraw",
+      "label": "时序图4：重复测量方差分析+事后检验",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-3888423616",
+      "source": "scidraw",
+      "label": "分组-堆积柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-fb69ca7082",
+      "source": "scidraw",
+      "label": "分组-柱形图+方差分析+Dunnett",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-2d06347752",
+      "source": "scidraw",
+      "label": "分组-柱形图+方差分析+LSD",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-4c8c47abc4",
+      "source": "scidraw",
+      "label": "分组-柱形图+方差分析+Tukey HSD（Python版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-8005a75d90",
+      "source": "scidraw",
+      "label": "分组-渐变-环状柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-41f12f8a9d",
+      "source": "scidraw",
+      "label": "分组-环状柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d1de3d9183",
+      "source": "scidraw",
+      "label": "分面-堆积柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-abe7d4db3a",
+      "source": "scidraw",
+      "label": "单组-渐变-环状柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-84c07631f0",
+      "source": "scidraw",
+      "label": "堆积柱形图+散点图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-b15917204d",
+      "source": "scidraw",
+      "label": "堆积点图 + 内嵌饼图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6a5740abac",
+      "source": "scidraw",
+      "label": "嵌套柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6171e1e04a",
+      "source": "scidraw",
+      "label": "柱形图+方差分析+Tukey's Test",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-476ea182a8",
+      "source": "scidraw",
+      "label": "柱形图+点折线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-830110c39d",
+      "source": "scidraw",
+      "label": "环状柱形图(7花瓣3柱子)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-af521313e0",
+      "source": "scidraw",
+      "label": "环状柱形图+误差线(7花瓣3柱子)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a3b7dbdbce",
+      "source": "scidraw",
+      "label": "环状柱形图+饼图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-2633e984c9",
+      "source": "scidraw",
+      "label": "网络+环形柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-dfd6ad1819",
+      "source": "scidraw",
+      "label": "网络+环形气泡图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ab9db747ef",
+      "source": "scidraw",
+      "label": "世界地图1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-d5446370db",
+      "source": "scidraw",
+      "label": "世界地图2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-cef80d7c1f",
+      "source": "scidraw",
+      "label": "世界地图3",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0bdc438bfe",
+      "source": "scidraw",
+      "label": "中国地图1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ae763a0c61",
+      "source": "scidraw",
+      "label": "中国地图2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-816989f15c",
+      "source": "scidraw",
+      "label": "动态交互+渐变色+桑基图1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0afe561156",
+      "source": "scidraw",
+      "label": "动态交互+渐变色+桑基图2",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-4d8dfacaff",
+      "source": "scidraw",
+      "label": "关联性-环形棒棒糖图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7d1f45001a",
+      "source": "scidraw",
+      "label": "堆积柱形图+哑铃图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-3a0b68e03b",
+      "source": "scidraw",
+      "label": "展示样本信息的环形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-199acfc4a0",
+      "source": "scidraw",
+      "label": "空间转录组可视化",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ad2732b417",
+      "source": "scidraw",
+      "label": "一维变量(ComplexHeatmap包)+上/下三角为2个分组（不同配色）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-fc5fef052a",
+      "source": "scidraw",
+      "label": "一维变量(ComplexHeatmap包)+上/下三角为2个分组（同一配色）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-fb8ec364b3",
+      "source": "scidraw",
+      "label": "一维变量(GGally包)+线性回归",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9bd10160d2",
+      "source": "scidraw",
+      "label": "一维变量(GGally包)+网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9a92615206",
+      "source": "scidraw",
+      "label": "一维变量(corrplot包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0cfb70f863",
+      "source": "scidraw",
+      "label": "一维变量(corrplot包)+柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9cadf84f2a",
+      "source": "scidraw",
+      "label": "一维变量(ggplot2包)+层次聚类",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-e02f199767",
+      "source": "scidraw",
+      "label": "一维变量(seaborn库)+层次聚类（Python版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-834d8490d7",
+      "source": "scidraw",
+      "label": "一维变量+核密度(Python版)-彩虹色",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-6c73b1c6f1",
+      "source": "scidraw",
+      "label": "一维变量+核密度(Python版)-红色",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-032969b5e8",
+      "source": "scidraw",
+      "label": "一维变量+核密度(R版)-彩虹色",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-b1af8f12e5",
+      "source": "scidraw",
+      "label": "一维变量+核密度(R版)-红色",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-89ae3c286a",
+      "source": "scidraw",
+      "label": "二维变量(ggplot2包)+分组",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-954b9e852f",
+      "source": "scidraw",
+      "label": "二维变量(ggplot2包)+分面",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-21594fb20c",
+      "source": "scidraw",
+      "label": "二维变量(pheatmap包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-10101c2d6d",
+      "source": "scidraw",
+      "label": "位点饱和突变能量热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-39da6cded3",
+      "source": "scidraw",
+      "label": "位点饱和突变能量热图(geom_tile)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-67dc14bdc7",
+      "source": "scidraw",
+      "label": "多维变量(linkET包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-78afa372a5",
+      "source": "scidraw",
+      "label": "拟合曲线+残差箱式图（Python版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0ca6fd537f",
+      "source": "scidraw",
+      "label": "拟合曲线+残差箱式图（R版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-81b2c2dced",
+      "source": "scidraw",
+      "label": "填充型：密度区域以不同颜色填充",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7e596d9e68",
+      "source": "scidraw",
+      "label": "渐变型：等高线颜色随密度水平渐变",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-ed39287f57",
+      "source": "scidraw",
+      "label": "联合密度图+边缘直方图（Python版）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-7b08dbb135",
+      "source": "scidraw",
+      "label": "系统发育树+3层热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-cf14defcb3",
+      "source": "scidraw",
+      "label": "系统发育树+热图+柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a01cd8b232",
+      "source": "scidraw",
+      "label": "系统发育树+背景颜色和名称+2层热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-5bc64d1df3",
+      "source": "scidraw",
+      "label": "系统发育树+背景高亮+分支点+热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-55694feb09",
+      "source": "scidraw",
+      "label": "火山图+EnrichmentMap-GSEA",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-c1445c3a23",
+      "source": "scidraw",
+      "label": "蝶状堆积柱形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-645d29c4ee",
+      "source": "scidraw",
+      "label": "蝶状小提琴图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-a2dd8d3b52",
+      "source": "scidraw",
+      "label": "限制性立方样条(RCS)分析",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-9c0a4518e9",
+      "source": "scidraw",
+      "label": "圆形雷达图+LMM-ANOVA",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-31b67c5532",
+      "source": "scidraw",
+      "label": "圆形雷达图+分面(ggiraphExtra包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-0fa39f5379",
+      "source": "scidraw",
+      "label": "圆形雷达图+分面+外圈(ggradar包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-016f2b9242",
+      "source": "scidraw",
+      "label": "圆形雷达图+差值比较（黄点）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-1bfce60b92",
+      "source": "scidraw",
+      "label": "多边形雷达图(fmsb包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "scidraw-18559fe057",
+      "source": "scidraw",
+      "label": "多边形雷达图+分面(fmsb包)",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-001-31fab794",
+      "source": "topjournal",
+      "label": "分面堆积柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-002-df26695e",
+      "source": "topjournal",
+      "label": "径向堆积柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-003-32b31efd",
+      "source": "topjournal",
+      "label": "分组比较小提琴图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-004-31021bfb",
+      "source": "topjournal",
+      "label": "相关性热图附P值标记",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-005-ad51e344",
+      "source": "topjournal",
+      "label": "差异基因火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-006-6a12f01b",
+      "source": "topjournal",
+      "label": "分组折线图+蜂群点图+柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-007-b6c082ad",
+      "source": "topjournal",
+      "label": "部分突出显示的饼图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-008-01dabc1e",
+      "source": "topjournal",
+      "label": "基因突变全景瀑布图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-009-6bea4c3c",
+      "source": "topjournal",
+      "label": "桑基堆积柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-010-a0bed801",
+      "source": "topjournal",
+      "label": "多组比较火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-011-69347e6e",
+      "source": "topjournal",
+      "label": "组织器官解剖图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-012-b50762a8",
+      "source": "topjournal",
+      "label": "采样地图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-013-e6b99869",
+      "source": "topjournal",
+      "label": "气泡热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-014-b2b42026",
+      "source": "topjournal",
+      "label": "网络相关性热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-015-2dca6cf7",
+      "source": "topjournal",
+      "label": "组合热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-016-0e6e0519",
+      "source": "topjournal",
+      "label": "山脊图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-017-356b9513",
+      "source": "topjournal",
+      "label": "箱线图/小提琴图/云雨图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-018-827d6fc5",
+      "source": "topjournal",
+      "label": "FC-FC散点图（变异火山图）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-019-1d557ae5",
+      "source": "topjournal",
+      "label": "桑基图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-020-4bc33b23",
+      "source": "topjournal",
+      "label": "生存曲线",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-021-b7d20f1c",
+      "source": "topjournal",
+      "label": "棒棒糖和甜甜圈图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-022-a4f8aa06",
+      "source": "topjournal",
+      "label": "散点图附边缘分布注释",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-023-f3b4fe5f",
+      "source": "topjournal",
+      "label": "基因集富集(GSEA)图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-024-93d0820c",
+      "source": "topjournal",
+      "label": "经典相关性热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-025-9e59007a",
+      "source": "topjournal",
+      "label": "和弦图+UpSet图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-026-16954359",
+      "source": "topjournal",
+      "label": "分面堆积柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-027-b98590c7",
+      "source": "topjournal",
+      "label": "带聚类树的气泡热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-028-7f48d1e5",
+      "source": "topjournal",
+      "label": "泳道图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-029-19f58d31",
+      "source": "topjournal",
+      "label": "Table1",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-031-4e68d00f",
+      "source": "topjournal",
+      "label": "局部放大图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-032-7e773730",
+      "source": "topjournal",
+      "label": "多分组火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-033-19253cf6",
+      "source": "topjournal",
+      "label": "风车图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-034-40a6e1a2",
+      "source": "topjournal",
+      "label": "嵌套图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-035-4a6def6b",
+      "source": "topjournal",
+      "label": "分面散点图带基因标签",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-036-dee2914d",
+      "source": "topjournal",
+      "label": "亚组分析森林图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-037-44fb344f",
+      "source": "topjournal",
+      "label": "瀑布图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-038-0eee5d17",
+      "source": "topjournal",
+      "label": "泳道图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-039-a1ee7220",
+      "source": "topjournal",
+      "label": "棒棒糖图+GO富集条形图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-040-aeeab50e",
+      "source": "topjournal",
+      "label": "Whittaker生物群系图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-041-780f63a6",
+      "source": "topjournal",
+      "label": "逻辑回归模型+ROC曲线",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-042-765dbb4a",
+      "source": "topjournal",
+      "label": "各式各样的韦恩图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-043-446e81e1",
+      "source": "topjournal",
+      "label": "雷达图/蜘蛛图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-044-53db92d5",
+      "source": "topjournal",
+      "label": "分组环状热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-045-21c44a43",
+      "source": "topjournal",
+      "label": "单细胞之UMAP+细胞占比图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-046-e3288fa7",
+      "source": "topjournal",
+      "label": "单细胞之marker基因表达热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-047-58b1c55b",
+      "source": "topjournal",
+      "label": "细胞通讯网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-048-8e0b0214",
+      "source": "topjournal",
+      "label": "聚类网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-049-81606aa9",
+      "source": "topjournal",
+      "label": "CytoTRACE细胞分化潜能图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-050-0d3bccd9",
+      "source": "topjournal",
+      "label": "单细胞RNA分析全流程",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-051-90ee646d",
+      "source": "topjournal",
+      "label": "星云图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-052-343196fa",
+      "source": "topjournal",
+      "label": "蜘蛛图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-053-77be1890",
+      "source": "topjournal",
+      "label": "带注释的泳道图+瀑布图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-054-dab3c988",
+      "source": "topjournal",
+      "label": "多变量比较和相关性分析矩阵图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-055-6742e681",
+      "source": "topjournal",
+      "label": "带有误差棒、坐标轴截断和科学计数法的堆积柱状图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-056-c838e3dc",
+      "source": "topjournal",
+      "label": "三维散点图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-057-9f69b783",
+      "source": "topjournal",
+      "label": "多分组环状火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-058-cfbd3784",
+      "source": "topjournal",
+      "label": "气泡网络地图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-059-73736576",
+      "source": "topjournal",
+      "label": "基因聚类富集注释热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-060-137821e4",
+      "source": "topjournal",
+      "label": "沃罗诺伊树图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-061-d18a4ac0",
+      "source": "topjournal",
+      "label": "决策曲线分析图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-062-1476ddf8",
+      "source": "topjournal",
+      "label": "带复杂注释的系统发育树",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-063-8192fc21",
+      "source": "topjournal",
+      "label": "通路富集网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-064-4450fbb4",
+      "source": "topjournal",
+      "label": "差异甲基化（DMR）染色体分布图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-065-dce07a6b",
+      "source": "topjournal",
+      "label": "三元相图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-066-8fd3c4b2",
+      "source": "topjournal",
+      "label": "时间序列折线图+流线图+拟合曲线图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-067-7110872c",
+      "source": "topjournal",
+      "label": "彩虹热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-068-3d40652f",
+      "source": "topjournal",
+      "label": "临床特征热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-069-a878eafc",
+      "source": "topjournal",
+      "label": "带有行和列注释的经典热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-070-c9bddabf",
+      "source": "topjournal",
+      "label": "泳道图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-071-1cbaaa78",
+      "source": "topjournal",
+      "label": "旭日图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-072-08a7c9dc",
+      "source": "topjournal",
+      "label": "双层嵌套的饼图+甜甜圈图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-073-d04c06c5",
+      "source": "topjournal",
+      "label": "花瓣图（环形柱状图）",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-074-3be354a4",
+      "source": "topjournal",
+      "label": "花瓣网络图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-075-d5f90ecf",
+      "source": "topjournal",
+      "label": "散点饼图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-076-8f8d0495",
+      "source": "topjournal",
+      "label": "云雨图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-077-ffc68333",
+      "source": "topjournal",
+      "label": "带有底部条码的山峦图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-078-6ab9d2b4",
+      "source": "topjournal",
+      "label": "分组环状热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-079-5029a934",
+      "source": "topjournal",
+      "label": "时间序列堆叠面积图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "topfigure-080-0afecf83",
+      "source": "topjournal",
+      "label": "传播/流向/扩散地图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    }
+  ]
+}

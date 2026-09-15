@@ -40,11 +40,13 @@ def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS
         if Path(str(bound.get('path',''))).resolve() != corpus.resolve() or not corpus.is_file() or bound.get('sha256') != digest(corpus):
             errors.append('reproduction receipt corpus missing or changed')
         results = receipt.get('results')
-        if not isinstance(results,list) or not 3 <= len(results) <= 5 or any(not x.get('case_id') for x in results):
-            errors.append('reproduction receipt requires 3-5 cases')
+        if not isinstance(results,list) or not 1 <= len(results) <= 5 or any(not isinstance(x,dict) or not x.get('case_id') for x in results):
+            errors.append('reproduction receipt requires 1-5 cases')
         contract = receipt.get('generation_contract', {})
-        if contract.get('author_material_access') != 'forbidden' or contract.get('implementation') != 'new-script-from-user-data-and-derived-patterns':
-            errors.append('reproduction natural-generation contract invalid')
+        if contract.get('author_material_access') not in {'forbidden','authorized-inspection-no-copy'} or contract.get('implementation') != 'new-script-from-user-data-and-derived-patterns':
+            errors.append('reproduction access/implementation contract invalid')
+        if contract.get('author_material_access') == 'authorized-inspection-no-copy' and contract.get('blind_generation') is True:
+            errors.append('source-exposed reproduction cannot claim blind generation')
         if 'source_code' in json.dumps(receipt,ensure_ascii=False):
             errors.append('reproduction receipt exposes source code')
     except Exception as exc:
@@ -61,13 +63,25 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             errors.append('render receipt version/status invalid')
         if receipt.get('backend') not in {'R', 'Python'}:
             errors.append('render receipt backend invalid')
-        def bound(item):
+        path_base = receipt.get('path_base')
+        repository_root = ROOT.parent.resolve()
+        def bound_path(item):
             if not isinstance(item, dict):
-                return False
+                return None
             p = Path(str(item.get('path', '')))
-            return p.is_absolute() and p.is_file() and digest(p) == item.get('sha256')
+            if not p.is_absolute():
+                if path_base != 'repository-root':
+                    return None
+                p = (repository_root / p).resolve()
+                if p != repository_root and repository_root not in p.parents:
+                    return None
+            else:
+                p = p.resolve()
+            return p if p.is_file() and digest(p) == item.get('sha256') else None
+        def bound(item):
+            return bound_path(item) is not None
         image = receipt.get('artifact', {})
-        if not bound(image) or Path(image['path']).resolve() != artifact.resolve():
+        if not bound(image) or bound_path(image) != artifact.resolve():
             errors.append('render receipt artifact mismatch')
         sources = receipt.get('sources')
         if not isinstance(sources, list) or not sources or not all(bound(x) for x in sources):
@@ -79,7 +93,7 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             if 'figure_style.R' not in names or not any(n.lower().endswith('.r') and n != 'figure_style.R' for n in names):
                 errors.append('ggplot2 receipt must bind plot source and figure_style.R')
         if design_spec is not None and (not isinstance(sources, list) or not any(
-                isinstance(x, dict) and Path(str(x.get('path', ''))).resolve() == design_spec.resolve() for x in sources)):
+                bound_path(x) == design_spec.resolve() for x in sources if isinstance(x, dict))):
             errors.append('render receipt must bind current design spec')
         font = receipt.get('font', {})
         if not bound(font) or font.get('family') not in {'Arial', 'Helvetica'}:

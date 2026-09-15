@@ -1,8 +1,13 @@
-version: "3.5.0"
+version: "3.5.1"
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
   note: R packages are selected by renderer and checked before rendering
+execution_profiles:
+  low_reasoning:
+    planner: scripts/plan_figure_method.py
+    contracts: atlas/family-execution-contracts.yaml
+    policy: same_evidence_gates_as_all_other_modes
 always_load:
   - references/enforced-execution.md
   - references/personal-style.md
@@ -72,6 +77,10 @@ reference_evidence_layers:
     corpus: atlas/scidraw-derived-corpus.json
     grammar: atlas/scidraw-visual-grammar.yaml
     source_compared_methods: atlas/scidraw-source-compared-methods.json
+    review_evidence: atlas/scidraw-review-evidence.json
+    batch2_methods: atlas/scidraw-batch2-methods.json
+    batch2_review_evidence: atlas/scidraw-batch2-review-evidence.json
+    executable_gallery: examples/scidraw-gallery
     retriever: scripts/retrieve_scidraw.py
     critic: critics/reference-transfer.md
     load: [references/scidraw-learning.md]

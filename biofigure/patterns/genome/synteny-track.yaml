@@ -1,7 +1,7 @@
 pattern_id: GEN-SYNTENY-001
 version: "1.0"
 domain: [comparative-genomics, genome-coordinates]
-scientific_task: [synteny-and-genome-track]
+scientific_task: [synteny-and-genome-track, local-synteny]
 message_type: coordinate-relationship
 data_contract: {required: [sequence_lengths, features, links, assembly], optional: [coverage, sv], assumptions: [bp_or_kb_declared]}
 applicable_when: {data_profile: {n_chromosomes: 2-60}, relationship_evidence: explicit, message: coordinate_conservation}

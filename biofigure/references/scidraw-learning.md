@@ -4,6 +4,8 @@ SciDraw 图库和用户提供代码包只作**默认检索的候选设计证据*
 
 运行 `scripts/retrieve_scidraw.py`，按科学任务、数据结构、几何、包和图型找案例。只提取视觉语法：主次层级、几何、排序、留白、注释带、图例槽位、标签预算和配色语义。不得直接复制原代码、数据处理、统计结论或装饰；许可不清时只学习抽象布局。
 
+28 个已落地方法先例分两组记录在 `atlas/scidraw-source-compared-methods.json` 与 `atlas/scidraw-batch2-methods.json`；逐图来源绑定、原图/成图/对照图哈希和对象级审查见对应的 `scidraw-review-evidence.json` 与 `scidraw-batch2-review-evidence.json`。独立实现位于 `examples/scidraw-gallery/`。仅当成图哈希有效且状态为 `source-compared-png + pass` 才可优先检索；迁移到新数据后仍须重新渲染与看图。
+
 证据状态必须保留：`ok` 仍需重做科学和出版 QA；`needs_review` 表示代码、标题或图像对应关系不确定；`failed/no_code/no_content` 只能作反例或视觉线索。图片未可靠配对时不得猜配。当前旧配对已降级为candidate-unverified；不能凭heading字段认定原图语义。
 
 优先迁移：矩阵与窄注释带对齐、分布层叠、排序图、树与轨道共轴、边际分布、真实关系的环形连接、多面板证据链。条件使用：雷达、桑基、环状柱、密集网络、双轴和内嵌图。反例包括装饰性圆形化、彩虹色、图内拥挤图例、过量显著性括号、黑底、不可读径向标签和无主图碎片化拼版。

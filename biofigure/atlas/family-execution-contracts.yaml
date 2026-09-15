@@ -1,0 +1,126 @@
+schema_version: 1
+families:
+  general-statistical:
+    required_fields: [value, group, experimental_unit]
+    preferred_packages: [ggplot2, ggrepel, ggpubr]
+    mandatory_layers: [raw_data_or_full_matrix, estimate_or_model, uncertainty, readable_labels]
+    failure_conditions: [summary_without_units, label_overlap, unsupported_significance]
+  matrix:
+    required_fields: [row_id, column_id, value, annotation_keys]
+    preferred_packages: [ComplexHeatmap, tidyHeatmap, pheatmap, linkET]
+    mandatory_layers: [matrix, shared_order, annotations, separate_continuous_and_discrete_legends]
+    failure_conditions: [independent_panel_order, legend_over_matrix, non_square_cells_when_discrete]
+  association:
+    required_fields: [entity_a, entity_b_or_y, effect, significance]
+    preferred_packages: [linkET, GGally, corrplot, scatterpie, ggrepel]
+    mandatory_layers: [effect_encoding, uncertainty_or_significance, label_budget, external_legend]
+    failure_conditions: [correlation_without_method, labels_cover_points, mixed_scale_legend]
+  circular:
+    required_fields: [sector_id, position_or_category, value, track_id]
+    preferred_packages: [circlize, ggtreeExtra, ggalign, ggforce]
+    mandatory_layers: [fixed_sector_order, complete_tracks, track_specific_scales, reserved_legend_space]
+    failure_conditions: [missing_outer_track, inconsistent_sector_keys, stale_circos_state]
+  composition:
+    required_fields: [group, category, abundance_or_count]
+    preferred_packages: [ggalluvial, ggsankey, ggtern, ggVennDiagram]
+    mandatory_layers: [closed_or_total_checked_values, stable_category_order, complete_legend]
+    failure_conditions: [wrong_denominator, arbitrary_flow_order, composition_not_closed]
+  network:
+    required_fields: [node_id, source, target, node_or_edge_weight]
+    preferred_packages: [igraph, tidygraph, ggraph, graphlayouts]
+    mandatory_layers: [real_topology, node_roles, edge_roles, readable_hubs]
+    failure_conditions: [decorative_edges, hidden_hubs, labels_without_budget]
+  clinical:
+    required_fields: [patient_id, time_or_effect, event_or_interval, clinical_keys]
+    preferred_packages: [ggsurvfit, swimplot, forestploter, ComplexHeatmap, ggnewscale]
+    mandatory_layers: [shared_patient_or_row_order, aligned_annotations, event_legend, endpoint_definition]
+    failure_conditions: [manual_misaligned_table, event_outside_followup, duplicated_patient_labels]
+  distribution:
+    required_fields: [experimental_unit, group, value]
+    preferred_packages: [gghalves, ggridges, ggrain, ggdist]
+    mandatory_layers: [distribution, raw_units, robust_summary, uncertainty_when_applicable]
+    failure_conditions: [fake_pairing, hidden_raw_data, overplotting]
+  enrichment:
+    required_fields: [term, score_or_effect, adjusted_p, genes_or_members]
+    preferred_packages: [clusterProfiler, enrichplot, GseaVis, aPEAR]
+    mandatory_layers: [rank_or_term_axis, effect_direction, adjusted_significance, gene_set_context]
+    failure_conditions: [gsea_track_without_gsea, unadjusted_p_presented_as_fdr, unreadable_terms]
+  time-series:
+    required_fields: [time, group_or_lineage, value, replicate_or_denominator]
+    preferred_packages: [ggstream, ggplot2]
+    mandatory_layers: [shared_time_axis, uncertainty_or_total_constraint, stable_color_roles]
+    failure_conditions: [independent_time_scales, proportions_not_normalized, smoothed_false_measurements]
+  map:
+    required_fields: [geometry_or_coordinates, location_id, value_or_flow]
+    preferred_packages: [sf, ggspatial, rnaturalearth]
+    mandatory_layers: [declared_crs, real_geometry, geographic_context, nonoverlapping_legend]
+    failure_conditions: [placeholder_map, mixed_crs, inferred_direction_without_data]
+  tree:
+    required_fields: [tip_id, parent_or_tree, metadata_keys]
+    preferred_packages: [ggtree, ggtreeExtra, ape, treeio]
+    mandatory_layers: [tree, tip_key_join, aligned_metadata_tracks, readable_clades]
+    failure_conditions: [metadata_join_by_row_number, missing_required_track, clipped_tip_labels]
+  single-cell:
+    required_fields: [cell_id, sample_id, embedding_or_expression, cell_annotation]
+    preferred_packages: [Seurat, scRNAtoolVis, ggplot2, ComplexHeatmap]
+    mandatory_layers: [cell_level_data, sample_aware_summary, annotation_confidence, density_control]
+    failure_conditions: [pseudoreplication, cell_count_as_biological_replicate, unsupported_cell_labels]
+  genome:
+    required_fields: [assembly, chromosome, start, end, feature_or_value]
+    preferred_packages: [ggbio, circlize, ggalign, karyoploteR]
+    mandatory_layers: [assembly_match, coordinate_bounds, complete_tracks, scale_and_units]
+    failure_conditions: [assembly_mismatch, out_of_bounds_coordinates, omitted_track]
+  time-to-event:
+    required_fields: [subject_id, time, event, group]
+    preferred_packages: [survival, ggsurvfit, survminer]
+    mandatory_layers: [survival_curve, censor_marks, confidence_interval, aligned_risk_table]
+    failure_conditions: [risk_table_misaligned, missing_censoring, undefined_time_origin]
+subtypes:
+  ternary:
+    aliases: [三元, ternary, ggtern]
+    required_fields: [component_t, component_l, component_r, group]
+    preferred_packages: [ggtern]
+    mandatory_layers: [composition_closure_check, three_axes, ternary_grid, color_and_shape_group_encoding, external_legend]
+    failure_conditions: [components_do_not_sum_to_one, hidden_axis, grey_panel_slab, clipped_axis_title]
+  survival:
+    aliases: [生存, survival, kaplan]
+    required_fields: [subject_id, time, event, group]
+    preferred_packages: [survival, ggsurvfit]
+    mandatory_layers: [curve, confidence_interval, censor_marks, aligned_risk_table]
+    failure_conditions: [risk_table_misaligned, missing_censor_marks, invented_event_time]
+  swimmer:
+    aliases: [泳道, swimmer]
+    required_fields: [patient_id, followup_time, interval_start, interval_end, event_time, clinical_keys]
+    preferred_packages: [swimplot, ggnewscale, aplot]
+    mandatory_layers: [followup_bar, treatment_interval, event_symbols, aligned_clinical_tracks, external_legends]
+    failure_conditions: [event_outside_followup, independent_patient_order, legend_over_timeline]
+  volcano:
+    aliases: [火山, volcano]
+    required_fields: [feature_id, log2_fold_change, adjusted_p]
+    preferred_packages: [ggplot2, ggrepel, ggrastr]
+    mandatory_layers: [threshold_classes, full_point_cloud, limited_priority_labels, threshold_lines, external_legend]
+    failure_conditions: [raw_p_presented_as_fdr, label_collision, scale_limits_drop_points]
+  chord:
+    aliases: [和弦, chord]
+    required_fields: [source, target, weight, sector_group, track_values]
+    preferred_packages: [circlize, ComplexHeatmap]
+    mandatory_layers: [stable_sector_order, weighted_links, sector_labels, required_outer_tracks, separate_legends]
+    failure_conditions: [missing_outer_track, wrong_sector_key, stale_circos_state]
+  stream:
+    aliases: [流图, streamgraph, ggstream]
+    required_fields: [time, category, value, panel]
+    preferred_packages: [ggstream]
+    mandatory_layers: [shared_time_axis, normalized_total_when_proportional, stable_stack_order, external_legend]
+    failure_conditions: [proportions_not_normalized, changing_category_order, clipped_stream_edges]
+  flow-map:
+    aliases: [流向地图, 传播地图, 流向, 传播, 扩散, 地图, flow map]
+    required_fields: [source_location, target_location, geometry_or_coordinates, event_count, time]
+    preferred_packages: [sf, ggspatial]
+    mandatory_layers: [real_geometry, declared_crs, directed_curves, size_and_time_encoding, geographic_context]
+    failure_conditions: [mixed_crs, placeholder_map, invented_direction]
+  clinical-heatmap:
+    aliases: [临床热图, 临床, 热图, clinical heatmap]
+    required_fields: [sample_id, feature_id, value, clinical_annotations, response_order_key]
+    preferred_packages: [ComplexHeatmap, circlize]
+    mandatory_layers: [response_track, shared_sample_order, clinical_annotation_tracks, expression_matrix, separate_legends]
+    failure_conditions: [independent_annotation_order, legend_over_matrix, missing_response_track]

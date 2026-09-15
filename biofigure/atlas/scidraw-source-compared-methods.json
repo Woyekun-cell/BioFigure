@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-09-12",
+  "reviewed_at": "2026-09-14",
   "cases": [
     {
       "id": "SCIDRAW-RCS-001",
@@ -28,8 +28,23 @@
         "show-hr-one-reference",
         "do-not-substitute-geom-smooth"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/scidraw_rcs.png",
+          "sha256": "3667a0862c53429b18c9c3e82763c6a961c12c03a2bb13bc052ade16a881ea9e",
+          "pixels": [
+            1948,
+            1440
+          ],
+          "source_image_sha256": "2fe61811df39ad22f88c9d7469dad04e7981972f3cb2d80b23af69e3a57315a0",
+          "comparison_sha256": "6f525956a1b69d6a8a29c8a157be667b7de1aed134fe0d54c845e637afdfedfd"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-RIDGE-BIPOLAR-001",
@@ -53,8 +68,23 @@
         "zero-centered-bipolar-axis",
         "continuous-fill-for-effect-direction"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/scidraw_ridge_bipolar.png",
+          "sha256": "6effff9f899ea91f2d79be6ed0ba580e30e3be4c6fd6bc1f15c8e948af76797a",
+          "pixels": [
+            2397,
+            2125
+          ],
+          "source_image_sha256": "15ea8b4222df5a799d7e7ee7191536f3531ef6a565b3377c3d240ced1df67973",
+          "comparison_sha256": "9bc3048e086416c4b544227e19a2be4b08cdc0c14a769bacef8d37835aea9633"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-PCOA-MARGINAL-001",
@@ -73,15 +103,30 @@
         "sample-id",
         "group-levels"
       ],
-      "runtime_status": "source-compared-png-renderer-exception",
+      "runtime_status": "source-compared-png",
       "guardrails": [
         "distance-method-must-be-disclosed",
         "marginals-share-main-axis-values",
         "ellipse-is-not-confidence-proof",
-        "patchwork-output-needs-biofigure-receipt-support-before-final-pass"
+        "patchwork-composite-requires-current-source-comparison-and-artifact-hash"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/01_pcoa_marginal.png",
+          "sha256": "d9d9cc66d0b2d2e7dc42637bf13aa06845de4b57576cb40e93dbe2cb3278630b",
+          "pixels": [
+            1948,
+            1594
+          ],
+          "source_image_sha256": "01fbcb70bf20ad54d0af5e4ad20d8e456e6f2b463adccab2d054aced60c002f3",
+          "comparison_sha256": "d3519b1f10885fe8f20b29d94358d6891e2d287370f69b31a2d83f0be8905e16"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-TERNARY-001",
@@ -97,7 +142,7 @@
       "shared_keys": [
         "three-components-sum-to-one"
       ],
-      "runtime_status": "source-compared-png",
+      "runtime_status": "source-compared-needs-revision",
       "guardrails": [
         "validate-compositional-closure",
         "retain-ternary-axis-semantics",
@@ -105,8 +150,23 @@
         "encode-groups-with-shape-and-color",
         "inspect-ternary-grid-after-background-change"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "needs-revision",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/02_ternary_cell_state.png",
+          "sha256": "b38a107743a5618dd2602ceb23a898462fd1e19823d786a886032cda51d59e79",
+          "pixels": [
+            2125,
+            968
+          ],
+          "source_image_sha256": "7a26dec553c4660777dbe450956efa1ec0ec2d17c87f46264f8b2df86f5c4e19",
+          "comparison_sha256": "627a35fbd04c94f8530e17e929a19b381238ad9c92433d98fd023698b2746e2e"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-CORRPLOT-001",
@@ -121,14 +181,29 @@
       "shared_keys": [
         "same-variable-order-for-matrix-and-labels"
       ],
-      "runtime_status": "source-compared-png",
+      "runtime_status": "source-compared-needs-revision",
       "guardrails": [
         "disclose-correlation-method",
         "category-colors-encode-label-groups",
         "reduce-density-before-shrinking-text"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "needs-revision",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/03_correlation_heatmap.png",
+          "sha256": "71e70955140675e5b8a6bf4fe7b06c3c7e93718f5a45000d095de53cc5077007",
+          "pixels": [
+            1948,
+            1712
+          ],
+          "source_image_sha256": "a79d96847180345ebf2ce6a5b3c57694efbe4f43853010eecf7e1f96de8b2e7f",
+          "comparison_sha256": "51bb307c106dd0d961cf82be47305333aa8c6c24ecdb6fbd4ba072cb0ff07b79"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-SWIMMER-001",
@@ -153,8 +228,23 @@
         "ongoing-status-uses-arrow",
         "metadata-columns-align-by-patient"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/04_patient_swimmer.png",
+          "sha256": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
+          "pixels": [
+            2598,
+            2007
+          ],
+          "source_image_sha256": "5558094eca371bdb1885fa0bec7a54deb83def3fa1991d25869ceb9622f42124",
+          "comparison_sha256": "432cfb619dfd25275d7f496d99646446a46c6ea06e99a831fcf5b9c1cc550733"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-CHORD-TRACK-001",
@@ -171,14 +261,29 @@
         "sector-order",
         "sector-colors"
       ],
-      "runtime_status": "source-compared-png",
+      "runtime_status": "source-compared-needs-revision",
       "guardrails": [
         "clear-circos-state",
         "outer-track-shares-sector-boundaries",
         "limit-sectors-for-readable-labels"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "needs-revision",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/05_chord_outer_track.png",
+          "sha256": "32749221bbeacad9378021e785e6b88d5e718bd2238f14e982b79eae520cf7c4",
+          "pixels": [
+            2007,
+            2007
+          ],
+          "source_image_sha256": "62156084021cd74b5b886abee15474dbc870d689d31135de4eddad2e65c05e44",
+          "comparison_sha256": "98cb4cd1bb45acfa75315dd11e91a1e0b367b9c2389f093fcb4ec4fdd14a239c"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     },
     {
       "id": "SCIDRAW-VOLCANO-GSEA-001",
@@ -205,8 +310,23 @@
         "reserve-label-space-before-ggrepel",
         "inspect-label-boxes-at-final-size"
       ],
-      "review_status": "needs-review",
-      "validation_note": "Legacy source-comparison record lacks a current object-level inspection file and artifact hash; excluded from high-fidelity retrieval until re-audited."
+      "review_status": "pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density.",
+      "reviewed_at": "2026-09-14",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery/06_volcano_gsea.png",
+          "sha256": "2f7f7bfe799c65bb8c38a4207edbc48c1cf8803fdcd44d5e6579dc605a0e862e",
+          "pixels": [
+            1594,
+            1358
+          ],
+          "source_image_sha256": "ce410d6dd4d141bf4a17f76c9fec48abad023d3d54dc2692d0fca3745ad9d55d",
+          "comparison_sha256": "f5193df39b65c8c68f55f065555b7b63d76f259a2620f6d4335c257630c2fc00"
+        }
+      ],
+      "claim_boundary": "method-and-layout precedent using fixed-seed simulated data",
+      "strict_fidelity_gate": "all-six-dimensions-pass"
     }
   ]
 }

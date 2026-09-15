@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-14",
+  "review_method": "actual PNG opened beside code-bound public article image; object-level review recorded manually",
+  "source_material_policy": "source images and article code hashes retained as local evidence only; public repository contains independent code and self-generated PNGs",
+  "cases": [
+    {
+      "case_id": "SCIDRAW-RCS-001",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/sgNPHr405xBXptTumdj10g",
+        "article_key": "rcs",
+        "image_index": 4,
+        "image_sha256": "2fe61811df39ad22f88c9d7469dad04e7981972f3cb2d80b23af69e3a57315a0",
+        "image_pixels": [
+          976,
+          713
+        ],
+        "html_sha256": "4ed196108361cf6857d122faaddd04496b25f9fd3d46593c2a65f9807ffbccfa",
+        "code_blocks": 5,
+        "code_blocks_sha256": "9e288c6184f42c11394b4e7a0f97e90ec896c59937b7a5d55bcb92618db86fab"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/scidraw_rcs.png",
+        "artifact_sha256": "3667a0862c53429b18c9c3e82763c6a961c12c03a2bb13bc052ade16a881ea9e",
+        "artifact_pixels": [
+          1948,
+          1440
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/scidraw_rcs_reproduction.R",
+        "script_sha256": "59bfdbdd821a7e784b72ab9d9f9f740d9e48ee3739d416941a527cac95eeb93b"
+      },
+      "comparison_sha256": "6f525956a1b69d6a8a29c8a157be667b7de1aed134fe0d54c845e637afdfedfd",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "main curve and inset retain source hierarchy"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "spline estimate, 95% CI and HR=1 reference retained"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "Arial and final-size labels readable"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "green estimate and lighter confidence band preserve roles"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "source-level main and inset layers retained"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; estimates are not source-study results"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-RIDGE-BIPOLAR-001",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/nPp9dMmQeaF_jNjMr-ORrQ",
+        "article_key": "ridge",
+        "image_index": 4,
+        "image_sha256": "15ea8b4222df5a799d7e7ee7191536f3531ef6a565b3377c3d240ced1df67973",
+        "image_pixels": [
+          1080,
+          1259
+        ],
+        "html_sha256": "22b7bf28d7c112cb37ed1953cffc77b017b6f810c8e3cfe8137f47d54df1ea08",
+        "code_blocks": 4,
+        "code_blocks_sha256": "007262bfe1e211a9bdc2e32711d071a18d10af278f329e565f04dc1cff1328e9"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/scidraw_ridge_bipolar.png",
+        "artifact_sha256": "6effff9f899ea91f2d79be6ed0ba580e30e3be4c6fd6bc1f15c8e948af76797a",
+        "artifact_pixels": [
+          2397,
+          2125
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/scidraw_ridge_bipolar_reproduction.R",
+        "script_sha256": "4e2dc4f564f77c6075ac7de4c413ff0744989c1b760233c6e977dcb750ad9ec4"
+      },
+      "comparison_sha256": "9bc3048e086416c4b544227e19a2be4b08cdc0c14a769bacef8d37835aea9633",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "ridge and bipolar panels share exact genus order"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "density direction and signed counts remain distinct"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "Arial genus labels and axes readable"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "blue-negative and green-positive roles are stable"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "20 aligned genera preserve source information structure"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-PCOA-MARGINAL-001",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/deuYTanHaDr6D8y3lKjW-Q",
+        "article_key": "pcoa",
+        "image_index": 6,
+        "image_sha256": "01fbcb70bf20ad54d0af5e4ad20d8e456e6f2b463adccab2d054aced60c002f3",
+        "image_pixels": [
+          1080,
+          1004
+        ],
+        "html_sha256": "3f4ef972e37c0d27ead8025f1136c667ec91941b606afb86ff6dc131e1ed7fa5",
+        "code_blocks": 7,
+        "code_blocks_sha256": "cbf621630d28856ebc06b73933078244f113d24ed7195dee7f1286fe05670de9"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/01_pcoa_marginal.png",
+        "artifact_sha256": "d9d9cc66d0b2d2e7dc42637bf13aa06845de4b57576cb40e93dbe2cb3278630b",
+        "artifact_pixels": [
+          1948,
+          1594
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "d3519b1f10885fe8f20b29d94358d6891e2d287370f69b31a2d83f0be8905e16",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "top and right marginals align with main ordination axes"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "Bray-Curtis PCoA, ellipse, shapes and colors retained"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "external legend and statistic box remain legible"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "three groups use stable color and shape roles"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "main, two marginals and PERMANOVA form complete four-panel structure"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; PERMANOVA is calculated from simulated matrix"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-TERNARY-001",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/r8eg8BJffDzg9FCDmbT6Zg",
+        "article_key": "ternary",
+        "image_index": 2,
+        "image_sha256": "7a26dec553c4660777dbe450956efa1ec0ec2d17c87f46264f8b2df86f5c4e19",
+        "image_pixels": [
+          1080,
+          398
+        ],
+        "html_sha256": "24a6119ae3423a9018ae36488f71ccc7801cabae46d580b6b202c1a3dc01eb33",
+        "code_blocks": 6,
+        "code_blocks_sha256": "5ac1b34293019737c428824724941fd04503f3b59498e7e9a7887c743567fd22"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/02_ternary_cell_state.png",
+        "artifact_sha256": "b38a107743a5618dd2602ceb23a898462fd1e19823d786a886032cda51d59e79",
+        "artifact_pixels": [
+          2125,
+          968
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "627a35fbd04c94f8530e17e929a19b381238ad9c92433d98fd023698b2746e2e",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "three time panels share size and one external legend"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "components close to one and stages use color plus shape"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "time labels, ternary axes and legend remain readable"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "white panel and low-weight ternary grid replace grey slab"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "reduced point count keeps three-state pattern legible"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; point density is lower than source"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "point density and axis/grid semantics are below the source",
+        "panel scale and text hierarchy diverge"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-CORRPLOT-001",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/yPGgFO8Y050w5itmkcpvoQ",
+        "article_key": "corr",
+        "image_index": 1,
+        "image_sha256": "a79d96847180345ebf2ce6a5b3c57694efbe4f43853010eecf7e1f96de8b2e7f",
+        "image_pixels": [
+          893,
+          824
+        ],
+        "html_sha256": "1225317b7452d15310b6ec68399f3e5241d3381cabf909098a906e13d1fcce3e",
+        "code_blocks": 10,
+        "code_blocks_sha256": "758627704c56db468e4a610987c49a755504ceedb9238c4550f8bb6260abc0f5"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/03_correlation_heatmap.png",
+        "artifact_sha256": "71e70955140675e5b8a6bf4fe7b06c3c7e93718f5a45000d095de53cc5077007",
+        "artifact_pixels": [
+          1948,
+          1712
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "51bb307c106dd0d961cf82be47305333aa8c6c24ecdb6fbd4ba072cb0ff07b79",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "upper triangular matrix and horizontal color key match source grammar"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "same variable order drives cells and colored labels"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "28 variable labels remain readable at final size"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "diverging scale and category-colored labels have separate roles"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "reduced matrix retains grouped dense-correlation structure"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; variable count reduced for legibility"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "matrix density, significance marks, and group annotations are reduced"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-SWIMMER-001",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/DWxaxZvIFW0_Ve1yDRYSZQ",
+        "article_key": "swimmer",
+        "image_index": 1,
+        "image_sha256": "5558094eca371bdb1885fa0bec7a54deb83def3fa1991d25869ceb9622f42124",
+        "image_pixels": [
+          1080,
+          1217
+        ],
+        "html_sha256": "f85d33171818ebdaede7fb46ae3c38bb52e9e0556332f807e2dbe0f6ffaefdd2",
+        "code_blocks": 2,
+        "code_blocks_sha256": "ff99d597a792f11950b97a6b4400a76039676f8bc730c531d9384fad09a67b02"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/04_patient_swimmer.png",
+        "artifact_sha256": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
+        "artifact_pixels": [
+          2598,
+          2007
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "432cfb619dfd25275d7f496d99646446a46c6ea06e99a831fcf5b9c1cc550733",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "metadata tracks and timeline share patient order"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "sequential treatment intervals, gaps, events and ongoing arrows retained"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "right-side legends do not cover timeline"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "treatment, response and metadata scales remain separate"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "28 patients and four aligned clinical tracks retain source structure"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; patient and metadata counts reduced"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    },
+    {
+      "case_id": "SCIDRAW-CHORD-TRACK-001",
+      "review_status": "needs-revision",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/F_U3GtEy3dd_NK99-6vfiw",
+        "article_key": "chord",
+        "image_index": 0,
+        "image_sha256": "62156084021cd74b5b886abee15474dbc870d689d31135de4eddad2e65c05e44",
+        "image_pixels": [
+          1080,
+          1073
+        ],
+        "html_sha256": "b2bf1d83149875247445ffa47e80655fdd27a9510f2bec0db4789dd20757d9b1",
+        "code_blocks": 4,
+        "code_blocks_sha256": "3a37e2c84a6b2a02f6ed29a3ac2a515815ed0dca8b3de650c3acef9b0bd13a15"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/05_chord_outer_track.png",
+        "artifact_sha256": "32749221bbeacad9378021e785e6b88d5e718bd2238f14e982b79eae520cf7c4",
+        "artifact_pixels": [
+          2007,
+          2007
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "98cb4cd1bb45acfa75315dd11e91a1e0b367b9c2389f093fcb4ec4fdd14a239c",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "chord sectors, labels and segmented outer quantitative track are complete"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "link width uses weight and outer bars share sector boundaries"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "sector labels stay outside chords without clipping"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "region and driver families use stable palettes"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "132 outer bars restore high-density ring structure"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; sector count reduced"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "fail",
+        "required_structures": "fail",
+        "typography": "fail",
+        "annotation": "fail",
+        "information_density": "fail"
+      },
+      "strict_mismatch_reasons": [
+        "outer tracks, labels, and chord information density are incomplete"
+      ]
+    },
+    {
+      "case_id": "SCIDRAW-VOLCANO-GSEA-001",
+      "review_status": "pass",
+      "source": {
+        "url": "https://mp.weixin.qq.com/s/kihdXkAsiznY5ibzRq8VpQ",
+        "article_key": "volcano",
+        "image_index": 3,
+        "image_sha256": "ce410d6dd4d141bf4a17f76c9fec48abad023d3d54dc2692d0fca3745ad9d55d",
+        "image_pixels": [
+          1080,
+          819
+        ],
+        "html_sha256": "c15cef30f72167a65cf840556e92919c012274b44d8328f5a503cc36e54802d1",
+        "code_blocks": 4,
+        "code_blocks_sha256": "9fd84b34c0b9e7ddb675c171570a418507c78d2203987d9a1c92decc053abbcd"
+      },
+      "implementation": {
+        "artifact_path": "docs/assets/scidraw-gallery/06_volcano_gsea.png",
+        "artifact_sha256": "2f7f7bfe799c65bb8c38a4207edbc48c1cf8803fdcd44d5e6579dc605a0e862e",
+        "artifact_pixels": [
+          1594,
+          1358
+        ],
+        "script_path": "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R",
+        "script_sha256": "33bf35f99d9f64727d0f667c5cc80c6c5dc8b7bb695aed5904078f239404ef84"
+      },
+      "comparison_sha256": "f5193df39b65c8c68f55f065555b7b63d76f259a2620f6d4335c257630c2fc00",
+      "visual_review": {
+        "layout": {
+          "status": "pass",
+          "evidence": "volcano body, direct group headings and lower member tracks form source hierarchy"
+        },
+        "encoding": {
+          "status": "pass",
+          "evidence": "adjusted P, fold change, thresholds and priority labels are retained"
+        },
+        "typography": {
+          "status": "pass",
+          "evidence": "three labels repel without covering points"
+        },
+        "color": {
+          "status": "pass",
+          "evidence": "blue and green zones match effect-direction roles"
+        },
+        "density": {
+          "status": "pass",
+          "evidence": "full 1800-point cloud and ranked-member tracks are retained"
+        },
+        "legend_and_labels": {
+          "status": "pass",
+          "evidence": "no visible overlap or clipping in the current source-comparison sheet"
+        }
+      },
+      "limitations": [
+        "fixed-seed simulation; member tracks do not claim a computed GSEA result"
+      ],
+      "strict_fidelity": {
+        "family": "pass",
+        "panel_topology": "pass",
+        "required_structures": "pass",
+        "typography": "pass",
+        "annotation": "pass",
+        "information_density": "pass"
+      },
+      "strict_mismatch_reasons": []
+    }
+  ],
+  "claim_boundary": "Pass covers method and visual-structure transfer with fixed-seed simulation; it does not assert numerical identity, source-study reproduction, journal acceptance, or model-weight training."
+}

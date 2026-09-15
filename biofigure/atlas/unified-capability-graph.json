@@ -43,9 +43,9 @@
     "existing_namespaced_functions": 100,
     "method_family_count": 23,
     "visual_evidence_pending": 0,
-    "source_compared_cases": 8,
-    "source_compared_pass": 0,
-    "source_compared_needs_revision": 8,
+    "source_compared_cases": 86,
+    "source_compared_pass": 31,
+    "source_compared_needs_revision": 55,
     "status_boundary": "source-compared means visually reviewed; only review_status=pass means fidelity accepted"
   },
   "nodes": [
@@ -63,7 +63,9 @@
       "label": "PCoA可视化+多分组边缘箱式图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-b418bcc5db",
@@ -119,7 +121,10 @@
       "label": "β 值森林图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-bf67d7a9a6",
@@ -143,7 +148,9 @@
       "label": "三元图(三个时间点的细胞)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-7cd62a766b",
@@ -191,7 +198,9 @@
       "label": "患者泳道图(R版)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "source-compared-needs-revision"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-ebccc5da31",
@@ -199,7 +208,9 @@
       "label": "小提琴图+箱式图+散点图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-efefe11ed4",
@@ -207,7 +218,9 @@
       "label": "小提琴图+箱式图+蜂窝图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-5c1b7a133f",
@@ -215,7 +228,9 @@
       "label": "差异云雨图+分位数(gghalves包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-33c2eeb01a",
@@ -223,7 +238,9 @@
       "label": "差异云雨图+分组(gghalves包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-ae710aed03",
@@ -231,7 +248,9 @@
       "label": "差异云雨图+雨滴(ggdist包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-fdf13d26d3",
@@ -239,7 +258,9 @@
       "label": "分组-和弦图+外围条形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "source-compared-needs-revision"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-674cd09aff",
@@ -271,7 +292,10 @@
       "label": "logFC-FC-1",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-9a3e084213",
@@ -375,7 +399,9 @@
       "label": "气泡热图-分面",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-40f5e6167d",
@@ -407,7 +433,9 @@
       "label": "火山图+GSEA_MSigDB富集得分",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "source-compared-needs-revision"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-5a0c5b2f13",
@@ -575,7 +603,9 @@
       "label": "渐变色山脊图+双向柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "source-compared-needs-revision"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-453d99f2f3",
@@ -639,7 +669,10 @@
       "label": "分组散点图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-d2d1cce95d",
@@ -727,7 +760,10 @@
       "label": "时序图3：分组-分面+误差棒",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-259c38dbd7",
@@ -855,7 +891,10 @@
       "label": "环状柱形图+误差线(7花瓣3柱子)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-a3b7dbdbce",
@@ -991,7 +1030,9 @@
       "label": "一维变量(GGally包)+线性回归",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-9bd10160d2",
@@ -999,7 +1040,9 @@
       "label": "一维变量(GGally包)+网络图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-9a92615206",
@@ -1007,7 +1050,9 @@
       "label": "一维变量(corrplot包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-0cfb70f863",
@@ -1015,7 +1060,9 @@
       "label": "一维变量(corrplot包)+柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-9cadf84f2a",
@@ -1023,7 +1070,9 @@
       "label": "一维变量(ggplot2包)+层次聚类",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-e02f199767",
@@ -1055,7 +1104,9 @@
       "label": "一维变量+核密度(R版)-彩虹色",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-b1af8f12e5",
@@ -1063,7 +1114,9 @@
       "label": "一维变量+核密度(R版)-红色",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-89ae3c286a",
@@ -1071,7 +1124,9 @@
       "label": "二维变量(ggplot2包)+分组",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-954b9e852f",
@@ -1087,7 +1142,9 @@
       "label": "二维变量(pheatmap包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-10101c2d6d",
@@ -1095,7 +1152,10 @@
       "label": "位点饱和突变能量热图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed",
+      "benchmark_status": "pending-independent-transfer-and-stress",
+      "high_fidelity_eligible": false,
+      "learning_note": "references/benchmark-random-three.md"
     },
     {
       "id": "scidraw-39da6cded3",
@@ -1127,7 +1187,9 @@
       "label": "拟合曲线+残差箱式图（R版）",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-81b2c2dced",
@@ -1215,7 +1277,9 @@
       "label": "限制性立方样条(RCS)分析",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "source-compared-needs-revision"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-9c0a4518e9",
@@ -1223,7 +1287,9 @@
       "label": "圆形雷达图+LMM-ANOVA",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-31b67c5532",
@@ -1239,7 +1305,9 @@
       "label": "圆形雷达图+分面+外圈(ggradar包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-016f2b9242",
@@ -1247,7 +1315,9 @@
       "label": "圆形雷达图+差值比较（黄点）",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "scidraw-1bfce60b92",
@@ -1255,7 +1325,9 @@
       "label": "多边形雷达图(fmsb包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-18559fe057",
@@ -1263,7 +1335,9 @@
       "label": "多边形雷达图+分面(fmsb包)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-001-31fab794",
@@ -1271,7 +1345,9 @@
       "label": "分面堆积柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-002-df26695e",
@@ -1279,7 +1355,9 @@
       "label": "径向堆积柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-003-32b31efd",
@@ -1287,7 +1365,9 @@
       "label": "分组比较小提琴图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-004-31021bfb",
@@ -1295,7 +1375,9 @@
       "label": "相关性热图附P值标记",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-005-ad51e344",
@@ -1303,7 +1385,9 @@
       "label": "差异基因火山图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-006-6a12f01b",
@@ -1311,7 +1395,9 @@
       "label": "分组折线图+蜂群点图+柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-007-b6c082ad",
@@ -1319,7 +1405,9 @@
       "label": "部分突出显示的饼图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-008-01dabc1e",
@@ -1327,7 +1415,9 @@
       "label": "基因突变全景瀑布图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-009-6bea4c3c",
@@ -1335,7 +1425,9 @@
       "label": "桑基堆积柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-010-a0bed801",
@@ -1343,7 +1435,9 @@
       "label": "多组比较火山图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-011-69347e6e",
@@ -1351,7 +1445,9 @@
       "label": "组织器官解剖图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-012-b50762a8",
@@ -1359,7 +1455,9 @@
       "label": "采样地图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-013-e6b99869",
@@ -1367,7 +1465,9 @@
       "label": "气泡热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-014-b2b42026",
@@ -1375,7 +1475,9 @@
       "label": "网络相关性热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-015-2dca6cf7",
@@ -1383,7 +1485,9 @@
       "label": "组合热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-016-0e6e0519",
@@ -1391,7 +1495,9 @@
       "label": "山脊图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-017-356b9513",
@@ -1399,7 +1505,9 @@
       "label": "箱线图/小提琴图/云雨图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-018-827d6fc5",
@@ -1407,7 +1515,9 @@
       "label": "FC-FC散点图（变异火山图）",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-019-1d557ae5",
@@ -1415,7 +1525,9 @@
       "label": "桑基图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-020-4bc33b23",
@@ -1423,7 +1535,9 @@
       "label": "生存曲线",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-021-b7d20f1c",
@@ -1431,7 +1545,9 @@
       "label": "棒棒糖和甜甜圈图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-022-a4f8aa06",
@@ -1439,7 +1555,9 @@
       "label": "散点图附边缘分布注释",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-023-f3b4fe5f",
@@ -1447,7 +1565,9 @@
       "label": "基因集富集(GSEA)图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-024-93d0820c",
@@ -1455,7 +1575,9 @@
       "label": "经典相关性热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-025-9e59007a",
@@ -1463,7 +1585,9 @@
       "label": "和弦图+UpSet图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-026-16954359",
@@ -1471,7 +1595,9 @@
       "label": "分面堆积柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-027-b98590c7",
@@ -1479,7 +1605,9 @@
       "label": "带聚类树的气泡热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-028-7f48d1e5",
@@ -1487,7 +1615,9 @@
       "label": "泳道图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-029-19f58d31",
@@ -1495,7 +1625,9 @@
       "label": "Table1",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-031-4e68d00f",
@@ -1503,7 +1635,9 @@
       "label": "局部放大图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-032-7e773730",
@@ -1511,7 +1645,9 @@
       "label": "多分组火山图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-033-19253cf6",
@@ -1519,7 +1655,9 @@
       "label": "风车图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-034-40a6e1a2",
@@ -1527,7 +1665,9 @@
       "label": "嵌套图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-035-4a6def6b",
@@ -1535,7 +1675,9 @@
       "label": "分面散点图带基因标签",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-036-dee2914d",
@@ -1543,7 +1685,9 @@
       "label": "亚组分析森林图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-037-44fb344f",
@@ -1551,7 +1695,9 @@
       "label": "瀑布图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-038-0eee5d17",
@@ -1559,7 +1705,9 @@
       "label": "泳道图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-039-a1ee7220",
@@ -1567,7 +1715,9 @@
       "label": "棒棒糖图+GO富集条形图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-040-aeeab50e",
@@ -1575,7 +1725,9 @@
       "label": "Whittaker生物群系图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-041-780f63a6",
@@ -1583,7 +1735,9 @@
       "label": "逻辑回归模型+ROC曲线",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-042-765dbb4a",
@@ -1591,7 +1745,9 @@
       "label": "各式各样的韦恩图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-043-446e81e1",
@@ -1599,7 +1755,9 @@
       "label": "雷达图/蜘蛛图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-044-53db92d5",
@@ -1607,7 +1765,9 @@
       "label": "分组环状热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-045-21c44a43",
@@ -1615,7 +1775,9 @@
       "label": "单细胞之UMAP+细胞占比图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-046-e3288fa7",
@@ -1623,7 +1785,9 @@
       "label": "单细胞之marker基因表达热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-047-58b1c55b",
@@ -1631,7 +1795,9 @@
       "label": "细胞通讯网络图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-048-8e0b0214",
@@ -1639,7 +1805,9 @@
       "label": "聚类网络图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-049-81606aa9",
@@ -1647,7 +1815,9 @@
       "label": "CytoTRACE细胞分化潜能图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-050-0d3bccd9",
@@ -1655,7 +1825,9 @@
       "label": "单细胞RNA分析全流程",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-051-90ee646d",
@@ -1663,7 +1835,9 @@
       "label": "星云图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-052-343196fa",
@@ -1671,7 +1845,9 @@
       "label": "蜘蛛图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-053-77be1890",
@@ -1679,7 +1855,9 @@
       "label": "带注释的泳道图+瀑布图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-054-dab3c988",
@@ -1687,7 +1865,9 @@
       "label": "多变量比较和相关性分析矩阵图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-055-6742e681",
@@ -1695,7 +1875,9 @@
       "label": "带有误差棒、坐标轴截断和科学计数法的堆积柱状图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-056-c838e3dc",
@@ -1703,7 +1885,9 @@
       "label": "三维散点图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-057-9f69b783",
@@ -1711,7 +1895,9 @@
       "label": "多分组环状火山图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-058-cfbd3784",
@@ -1719,7 +1905,9 @@
       "label": "气泡网络地图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-059-73736576",
@@ -1727,7 +1915,9 @@
       "label": "基因聚类富集注释热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "validated-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-060-137821e4",
@@ -1735,7 +1925,9 @@
       "label": "沃罗诺伊树图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-061-d18a4ac0",
@@ -1743,7 +1935,9 @@
       "label": "决策曲线分析图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-062-1476ddf8",
@@ -1751,7 +1945,9 @@
       "label": "带复杂注释的系统发育树",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-063-8192fc21",
@@ -1759,7 +1955,9 @@
       "label": "通路富集网络图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "method-parsed-awaiting-png-reproduction",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-064-4450fbb4",
@@ -1767,7 +1965,9 @@
       "label": "差异甲基化（DMR）染色体分布图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-065-dce07a6b",
@@ -1775,7 +1975,9 @@
       "label": "三元相图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-066-8fd3c4b2",
@@ -1783,7 +1985,9 @@
       "label": "时间序列折线图+流线图+拟合曲线图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "validated-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-067-7110872c",
@@ -1791,7 +1995,9 @@
       "label": "彩虹热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-068-3d40652f",
@@ -1799,7 +2005,9 @@
       "label": "临床特征热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-069-a878eafc",
@@ -1807,7 +2015,9 @@
       "label": "带有行和列注释的经典热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-070-c9bddabf",
@@ -1815,7 +2025,9 @@
       "label": "泳道图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-071-1cbaaa78",
@@ -1823,7 +2035,9 @@
       "label": "旭日图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-072-08a7c9dc",
@@ -1831,7 +2045,9 @@
       "label": "双层嵌套的饼图+甜甜圈图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-073-d04c06c5",
@@ -1839,7 +2055,9 @@
       "label": "花瓣图（环形柱状图）",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-074-3be354a4",
@@ -1847,7 +2065,9 @@
       "label": "花瓣网络图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-075-d5f90ecf",
@@ -1855,7 +2075,9 @@
       "label": "散点饼图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-076-8f8d0495",
@@ -1863,7 +2085,9 @@
       "label": "云雨图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-077-ffc68333",
@@ -1871,7 +2095,9 @@
       "label": "带有底部条码的山峦图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-078-6ab9d2b4",
@@ -1879,7 +2105,9 @@
       "label": "分组环状热图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "missing",
+      "high_fidelity_eligible": false
     },
     {
       "id": "topfigure-079-5029a934",
@@ -1887,7 +2115,9 @@
       "label": "时间序列堆叠面积图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "topfigure-080-0afecf83",
@@ -1895,7 +2125,9 @@
       "label": "传播/流向/扩散地图",
       "source": "topjournal",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true
     },
     {
       "id": "family:alluvial-sankey",
@@ -11189,11 +11421,11 @@
       "evidence_id": "scidraw-rcs",
       "source_url": "https://mp.weixin.qq.com/s/sgNPHr405xBXptTumdj10g",
       "case_id": "scidraw-a2dd8d3b52",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/work/source_candidates/rcs_05.png",
+      "source_image": "workspace/Project_007_SciDraw复现训练/work/source_candidates/rcs_05.png",
       "source_sha256": "2fe61811df39ad22f88c9d7469dad04e7981972f3cb2d80b23af69e3a57315a0",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/results/figures/scidraw_rcs.png",
+      "reproduction_png": "workspace/Project_007_SciDraw复现训练/results/figures/scidraw_rcs.png",
       "reproduction_sha256": "a6ca5d71498e9641900ec5599d9bf7abc5d696ac96118d039f4be4689ece4eea",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_rcs_source_comparison.png",
+      "comparison_png": "workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_rcs_source_comparison.png",
       "comparison_sha256": "e94bb9592bfd4091e59dcf4f3930ab56207b0c21de7679d7873499025e230686",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11203,11 +11435,11 @@
       "evidence_id": "scidraw-ridge-bipolar",
       "source_url": "https://mp.weixin.qq.com/s/nPp9dMmQeaF_jNjMr-ORrQ",
       "case_id": "scidraw-709e0a8c86",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/work/source_candidates/ridge_02.png",
+      "source_image": "workspace/Project_007_SciDraw复现训练/work/source_candidates/ridge_02.png",
       "source_sha256": "d3758bb1eee737c41b8539f12206c0996bb64f621809f84f4bdf30b63a965239",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/results/figures/scidraw_ridge_bipolar.png",
+      "reproduction_png": "workspace/Project_007_SciDraw复现训练/results/figures/scidraw_ridge_bipolar.png",
       "reproduction_sha256": "dc302f8953e33fe9a9c0c7e9b7af5b5ec344171c2248a4d2229122b5280b8d3e",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_ridge_bipolar_source_comparison.png",
+      "comparison_png": "workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_ridge_bipolar_source_comparison.png",
       "comparison_sha256": "8b1d3efe2167d5fb2131b7347177412e41e5c6836716e46358ea91d6f55fe1ea",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11217,11 +11449,11 @@
       "evidence_id": "01_pcoa_marginal",
       "source_url": "https://mp.weixin.qq.com/s/deuYTanHaDr6D8y3lKjW-Q",
       "case_id": "scidraw-b418bcc5db",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/pcoa_02.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/pcoa_02.png",
       "source_sha256": "860ec5cb58574af93f0ee9496570f9bc71f5ef582ca27fa0733794d8e6ec138d",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/01_pcoa_marginal.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/01_pcoa_marginal.png",
       "reproduction_sha256": "06337baba336c5387027b02a789bee14a583cacc5d521a114f1f85433292b5a0",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/01_pcoa_marginal.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/01_pcoa_marginal.png",
       "comparison_sha256": "464a0a80460abc204ce1e284b59d9444ab6855c7ed97cbc1cb7f2056587b9835",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11231,11 +11463,11 @@
       "evidence_id": "02_ternary_cell_state",
       "source_url": "https://mp.weixin.qq.com/s/r8eg8BJffDzg9FCDmbT6Zg",
       "case_id": "scidraw-7cd62a766b",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/ternary_03.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/ternary_03.png",
       "source_sha256": "f8f09602b2090dc80258dac97d8cac6cda98403bbeb5b4db6d12bd1501bec0b3",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/02_ternary_cell_state.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/02_ternary_cell_state.png",
       "reproduction_sha256": "ea4dbe093d34fbbc2aa497470b375f207d8d213701784ec485720e651479ce95",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/02_ternary_cell_state.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/02_ternary_cell_state.png",
       "comparison_sha256": "e062f9960d64b75784a5614fa0eefe4d6cf91e294b00998f7b4446e8a499de24",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11245,11 +11477,11 @@
       "evidence_id": "03_correlation_heatmap",
       "source_url": "https://mp.weixin.qq.com/s/yPGgFO8Y050w5itmkcpvoQ",
       "case_id": "scidraw-67dc14bdc7",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/corr_03.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/corr_03.png",
       "source_sha256": "b7186784519cfdc7a141ca47c674d749a8a954cd17db5b29e3da9564f7153191",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/03_correlation_heatmap.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/03_correlation_heatmap.png",
       "reproduction_sha256": "41f54aee3a5a38bbc179b59d6a7fa86f2431007eea9dd1e945d97df0dd803561",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/03_correlation_heatmap.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/03_correlation_heatmap.png",
       "comparison_sha256": "bd755c32637db127811bc72df306dc8c44d6bc28bbc0f050adb8346c8a53b9bc",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11259,11 +11491,11 @@
       "evidence_id": "04_patient_swimmer",
       "source_url": "https://mp.weixin.qq.com/s/DWxaxZvIFW0_Ve1yDRYSZQ",
       "case_id": "scidraw-1a060be0fe",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/swimmer_02.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/swimmer_02.png",
       "source_sha256": "20ad47d4f825413b6fd000451f84afe874ce4c44d2b8e577a6eb8b8e218934eb",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/04_patient_swimmer.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/04_patient_swimmer.png",
       "reproduction_sha256": "1c58ae721ab4fb6702ceb0962ae5a760f418c377c192c77920914ae2255999ae",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/04_patient_swimmer.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/04_patient_swimmer.png",
       "comparison_sha256": "2c427da86d115b1d70d1e3de038542928aad19f66b004c2e7973187a30e46114",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11273,11 +11505,11 @@
       "evidence_id": "05_chord_outer_track",
       "source_url": "https://mp.weixin.qq.com/s/F_U3GtEy3dd_NK99-6vfiw",
       "case_id": "scidraw-fdf13d26d3",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/chord_02.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/chord_02.png",
       "source_sha256": "78bb318c4bc3301715db2082e9d086c49644ab48beee8272bcdbaa86c329a0c5",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/05_chord_outer_track.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/05_chord_outer_track.png",
       "reproduction_sha256": "f424a4bd6d799af945380f1314afa456d6983bd5d8449ead51185e3ce4674446",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/05_chord_outer_track.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/05_chord_outer_track.png",
       "comparison_sha256": "e62b52a42e9b30745d4e08c92650213faeecbb4cbb942c7ff9d14ae102787548",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
@@ -11287,11 +11519,11 @@
       "evidence_id": "06_volcano_gsea",
       "source_url": "https://mp.weixin.qq.com/s/kihdXkAsiznY5ibzRq8VpQ",
       "case_id": "scidraw-f749086eb5",
-      "source_image": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/source_candidates/volcano_02.png",
+      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/volcano_02.png",
       "source_sha256": "e67aed3263f0bdaaff2c61a6e3e4ee66ff5b4accc98591a8eb1365f785591ae7",
-      "reproduction_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/results/figures/06_volcano_gsea.png",
+      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/06_volcano_gsea.png",
       "reproduction_sha256": "b792d93d7d8ef4e4ead302db0c94aa8cb7b9f9115097bdb32334daa6b7e7d13f",
-      "comparison_png": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_008_SciDraw六图复现/work/comparison/06_volcano_gsea.png",
+      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/06_volcano_gsea.png",
       "comparison_sha256": "64dbc8d5a6b934cb8a418b4c73ef1a2209b1b4c17b4cfd7aea610b6810e5fd6d",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",

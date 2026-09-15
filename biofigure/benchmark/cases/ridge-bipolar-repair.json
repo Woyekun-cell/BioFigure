@@ -1,0 +1,44 @@
+{
+  "case_id": "SCIDRAW-RIDGE-BIPOLAR-001",
+  "mode": "reproduction",
+  "family": "ridge-bipolar-composite",
+  "required_structures": [
+    "ridge-distributions",
+    "signed-count-bars",
+    "shared-taxon-order",
+    "zero-reference",
+    "continuous-row-baselines"
+  ],
+  "packages": [
+    "ggplot2",
+    "ggridges",
+    "patchwork",
+    "dplyr",
+    "tidyr",
+    "ragg",
+    "systemfonts"
+  ],
+  "scientific_checks": [
+    "finite-values",
+    "twenty-taxa",
+    "signed-count-conservation"
+  ],
+  "reference": {
+    "path": "reference.png",
+    "sha256": "15ea8b4222df5a799d7e7ee7191536f3531ef6a565b3377c3d240ced1df67973"
+  },
+  "learning": {
+    "input_contract": "Genus categorical, value finite signed effect; simulation seed 7001, 20 taxa. Counts are observation counts, not inferred significance.",
+    "transform": "Estimate within-taxon density; count observed value > 0 or <= 0. Display negative count to the left, positive count to the right; label count magnitude.",
+    "join_order": "Create one Genus factor with explicit levels; both layers consume identical levels. Do not sort each panel separately.",
+    "package_roles": "ggridges::geom_density_ridges_gradient supplies continuous sign-based density fill; ggplot2::geom_col supplies signed counts; patchwork::plot_layout aligns rows.",
+    "layout_rules": "150 by 180 mm; 3:2 data panel ratio; 20 continuous baselines connect density shapes to ordered row labels. Arial 8.4 pt taxon labels, 10 pt base text; source-aligned compact aspect.",
+    "failure_modes": "Reject nonfinite values; account for zero observations; density needs sufficient observations. Labels or unbalanced counts beyond fixed limits require adaptive width/range and fresh review."
+  },
+  "stress_variants": [
+    "long taxon labels: enlarge label slot before reducing font",
+    "8/40 taxa: adapt height and use same factor levels",
+    "all-negative taxon: retain zero-count positive category"
+  ],
+  "independent_transfer_status": "not-tested; current run uses an existing script"
+}

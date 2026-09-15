@@ -1733,7 +1733,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_41_inset_scatter.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_41_inset_scatter.png",
           "sha256": "54e753daca3137be3167b28dd47ff2986e4093796dc4202a79ce4804b38b7a82"
         }
       ],
@@ -1783,7 +1783,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_42_faceted_gene_scatter.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_42_faceted_gene_scatter.png",
           "sha256": "a9ae25e9ee6bc5e8a62a21a2ab62f3ed27f806a53c5f8f3f28fdd9612b8d954e"
         }
       ],
@@ -1834,7 +1834,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_43_subgroup_forest.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_43_subgroup_forest.png",
           "sha256": "e9df418964f00f36bccaaf099163ed30a46304097d6368d25dab4e3f33395718"
         }
       ],
@@ -1882,7 +1882,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_44_waterfall.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_44_waterfall.png",
           "sha256": "e903d403eb54e4febcc266828f31aa61d6aa4592fcbe159870354594e085665f"
         }
       ],
@@ -1927,7 +1927,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_45_swimmer.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_45_swimmer.png",
           "sha256": "65bbb9d1f3aa5d22e21089d12dea4999d6fb870e044029656e26f8e5912fbf0d"
         }
       ],
@@ -1971,7 +1971,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_46_lollipop_go.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_46_lollipop_go.png",
           "sha256": "b37b68d2938512ae24e65e7b711a1d74c7d01b4cd1b6372c8eb6a941ebdd90c6"
         }
       ],
@@ -2025,7 +2025,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_47_whittaker.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_47_whittaker.png",
           "sha256": "8d79bcee3835865a9fb827b01baa61e45ab37e054cc4096e5f1019aca94f2fe4"
         }
       ],
@@ -2085,7 +2085,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_48_dual_roc.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_48_dual_roc.png",
           "sha256": "376da37bda015f5ba4a7563b45c591f151d897ab52e7702d634365a88cc95b74"
         }
       ],
@@ -2149,7 +2149,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_49_venn_gallery.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_49_venn_gallery.png",
           "sha256": "74d159f85d5e0a0bc4d385a277ba4498318a94cf16caf738d59827e72306a97f"
         }
       ],
@@ -2193,7 +2193,7 @@
       "runtime_status": "source-compared-png",
       "validated_pngs": [
         {
-          "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_50_radar_spider.png",
+          "path": "workspace/Project_014_BioFigure第五批十图验证/results/figures/revision_v1_50_radar_spider.png",
           "sha256": "35cf5c23b56409b3cd240c255b29fe0b298a6fe7f6188f59810478e78653fbee"
         }
       ],

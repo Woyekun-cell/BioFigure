@@ -1,0 +1,609 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-14",
+  "cases": [
+    {
+      "id": "SCIDRAW-POLYGON-RADAR-001",
+      "graph_node_id": "scidraw-1bfce60b92",
+      "label": "多边形雷达图(fmsb包)",
+      "family": "radar",
+      "packages": [
+        "fmsb"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png",
+          "sha256": "7bbe3a4fb96dad41575a5e1421374b5221267fc8c7ccc224b3bb959837f7ae71",
+          "pixels": [
+            1260,
+            990
+          ],
+          "source_image_sha256": "9bedef943a28bb8dcb42e36d6519f655c6a793f47428da2cb9b05b90230ec778",
+          "comparison_sha256": "012e1e64d73dbacfb146063fccc592501baacb20daef47596352d0909c15e89b"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-FACET-RADAR-001",
+      "graph_node_id": "scidraw-18559fe057",
+      "label": "多边形雷达图+分面(fmsb包)",
+      "family": "radar",
+      "packages": [
+        "fmsb"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png",
+          "sha256": "286f0b40417892ff7cda9928c07b0f1e36ce262ec88df503e69181e1a3a2c31a",
+          "pixels": [
+            1620,
+            1260
+          ],
+          "source_image_sha256": "70434d05dc97f396d68d1ca344b00b79f1a86d78064712ec4b47a9b56c2b56a6",
+          "comparison_sha256": "b2eecdaa47f260fc2f15c316b423ef585ee06ca007a7b3c28ee2021d0704ef1c"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-OUTER-RADAR-001",
+      "graph_node_id": "scidraw-0fa39f5379",
+      "label": "圆形雷达图+分面+外圈(ggradar包)",
+      "family": "radar",
+      "packages": [
+        "ggradar"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png",
+          "sha256": "04043134cef97995adfedef2104fb16fa11484682450a0fe6ef18251501cd0e4",
+          "pixels": [
+            1800,
+            612
+          ],
+          "source_image_sha256": "5817eb6565a9f3a26fc153ad919660bfe1cd25fba3a91104f69b37888d0e36ff",
+          "comparison_sha256": "31253461f7892ceb4013a60a2edd6b73945520e996968a3253e15c02239fa3d5"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-LMM-RADAR-001",
+      "graph_node_id": "scidraw-9c0a4518e9",
+      "label": "圆形雷达图+LMM-ANOVA",
+      "family": "radar",
+      "packages": [
+        "ggradar"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png",
+          "sha256": "50db8542e496369c94bc4361fb161e00f0f62708f8adad165587ef853af76269",
+          "pixels": [
+            1080,
+            990
+          ],
+          "source_image_sha256": "5f9730dc8225a50df362c297a9e7f90798df1c8e95063a396969d75a2bc172eb",
+          "comparison_sha256": "e2b3062e15f175644e0864a6f15e7724bc8850fece214863c253d0a00d497f5e"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-DIFF-RADAR-001",
+      "graph_node_id": "scidraw-016f2b9242",
+      "label": "圆形雷达图+差值比较（黄点）",
+      "family": "radar",
+      "packages": [
+        "ggradar"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png",
+          "sha256": "1cc50a64bc3e80978f5a4e270f0fc10afde2c2c7b95118c23d24b6f94cb72d69",
+          "pixels": [
+            1350,
+            1080
+          ],
+          "source_image_sha256": "e28eb699036fc4037df64ef54ace15f3077728cc5ce30e81364233906481dc39",
+          "comparison_sha256": "e2c17d83cd3dfbf80cf256d18f248082d08164c28ae10d12e7a3ce20fe51c358"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-HALF-VIOLIN-001",
+      "graph_node_id": "scidraw-ebccc5da31",
+      "label": "小提琴图+箱式图+散点图",
+      "family": "distribution",
+      "packages": [
+        "gghalves"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/06_half_violin_box_points.png",
+          "sha256": "60885fe762dfe0cd435ad63d14bb6601c3e3aa11065de9934e590b2153ed3842",
+          "pixels": [
+            1260,
+            900
+          ],
+          "source_image_sha256": "6c449209d48851001b4f81d155ff2719ed38163d789cf9c154757d86ce557a9e",
+          "comparison_sha256": "afb1723744e352d255776610d6494958a050a0593cfeb09434ca941dd1311958"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-BEESWARM-VIOLIN-001",
+      "graph_node_id": "scidraw-efefe11ed4",
+      "label": "小提琴图+箱式图+蜂窝图",
+      "family": "distribution",
+      "packages": [
+        "gghalves",
+        "ggbeeswarm"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/07_violin_box_beeswarm.png",
+          "sha256": "c2a5d620049c930ff59f4a049bcfb1bd3fe30191de25880dc5f6e0913b86376e",
+          "pixels": [
+            1440,
+            936
+          ],
+          "source_image_sha256": "780d7df704cd06db7ed9dd8bb2682b653e44b9085527d41d09443c34aca95e08",
+          "comparison_sha256": "3882bcd5c5be2cfe87406f68ad4b7e328bfc7518fc1dd8bac59d95e8e4d5e699"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-QUANTILE-RAIN-001",
+      "graph_node_id": "scidraw-5c1b7a133f",
+      "label": "差异云雨图+分位数(gghalves包)",
+      "family": "distribution",
+      "packages": [
+        "gghalves"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/08_quantile_raincloud_gghalves.png",
+          "sha256": "1e4c346affd6de2b75594014f6dfc812b86ac4ec6e1c3d00d764906a77037504",
+          "pixels": [
+            1440,
+            864
+          ],
+          "source_image_sha256": "3bf88debae9919d2cd2ebb674aeb67784aca1b43bfc6047cb400b01cbf380ec6",
+          "comparison_sha256": "6b83217a44cca9f1ea24dbd625c013b073b5f94d13b924c82a5782c4b4ea9149"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-GROUPED-RAIN-001",
+      "graph_node_id": "scidraw-33c2eeb01a",
+      "label": "差异云雨图+分组(gghalves包)",
+      "family": "distribution",
+      "packages": [
+        "gghalves"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/09_grouped_raincloud_gghalves.png",
+          "sha256": "fab8a0d718366d31d9802d000b813e87d1bdcb45bf51fb146fb635acc9cb4529",
+          "pixels": [
+            1260,
+            900
+          ],
+          "source_image_sha256": "859a9ed0cfe0eef06c7e5eda64de4a891baa279ed1330212979d57a4e348007b",
+          "comparison_sha256": "a91eff63816900b7b2992744e3985a1ce61373c17f3e6d68e008f18f4afba83c"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-RAINDROP-001",
+      "graph_node_id": "scidraw-ae710aed03",
+      "label": "差异云雨图+雨滴(ggdist包)",
+      "family": "distribution",
+      "packages": [
+        "ggdist"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/10_raindrop_ggdist.png",
+          "sha256": "8d59036e418bd5275e1bb48791755d48d93052b21c412cbff9bac4ba6366635c",
+          "pixels": [
+            1007,
+            1080
+          ],
+          "source_image_sha256": "c06c1cdd22829a9a5ee992efef9f8bb8fa6cf16dcba98c095ccbe1cc45e0b103",
+          "comparison_sha256": "6c8300a2cf55fbf4e8a3f017a818ca14a4cd94c334e4e912cefed45452c69897"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-RESIDUAL-001",
+      "graph_node_id": "scidraw-0ca6fd537f",
+      "label": "拟合曲线+残差箱式图（R版）",
+      "family": "regression-diagnostic",
+      "packages": [
+        "ggside",
+        "patchwork"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/11_fit_marginal_residual_box.png",
+          "sha256": "fcf6246fb938d7bcd90d43c8d461edc0873415a0405055f675eb74d541cb92a7",
+          "pixels": [
+            1260,
+            1080
+          ],
+          "source_image_sha256": "d690a8dc073a47cded2ad47f3cb4140435077a56d38acfddf2655e993a31cd32",
+          "comparison_sha256": "d50205d079b12c6eaff28c4f8d6074e6986b2c16099f9a24c07e65c42d59cf4c"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-CORRBAR-001",
+      "graph_node_id": "scidraw-0cfb70f863",
+      "label": "一维变量(corrplot包)+柱形图",
+      "family": "correlation",
+      "packages": [
+        "corrplot"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/12_corrplot_with_sidebars.png",
+          "sha256": "e561e3c6baaf32800d60640d888c1c32ccf30b2e16f5f16044d9a49400575250",
+          "pixels": [
+            1620,
+            1260
+          ],
+          "source_image_sha256": "7bd6c5985fb7cb30b849eefbbc96a83202696e4bda9ae0ff3cf6c18f958c16f9",
+          "comparison_sha256": "bad5b01b3f3de51dbea1ad9b2f7e062d308c1aa70ec063160152e799ff416935"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-CLUSTER-CORR-001",
+      "graph_node_id": "scidraw-9cadf84f2a",
+      "label": "一维变量(ggplot2包)+层次聚类",
+      "family": "correlation",
+      "packages": [
+        "factoextra",
+        "ggplot2"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png",
+          "sha256": "0dd6da35eee254e1e67d295d865a8f433c18e9096e62178e4c20161b5d6827a8",
+          "pixels": [
+            1440,
+            1260
+          ],
+          "source_image_sha256": "c1694884d908f7300c931412e078b7cd0dd6a6fdc9a0523e8ffc5a99e036e01c",
+          "comparison_sha256": "959bc4a23128a8c93ae7dac7bd11d6328a0a10ac71474fe295d172f7a075e7a9"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-PHEATMAP-001",
+      "graph_node_id": "scidraw-21594fb20c",
+      "label": "二维变量(pheatmap包)",
+      "family": "heatmap",
+      "packages": [
+        "pheatmap"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/14_annotated_pheatmap.png",
+          "sha256": "edb82b74aa15c54b99cc8140b024dd8bbad54347049ae0fa0478eedf8d18c989",
+          "pixels": [
+            1440,
+            1260
+          ],
+          "source_image_sha256": "3a18dabec6803e71724eb347d01ea697bb003829372933816b9911e7ebc12d9e",
+          "comparison_sha256": "8e223dabcf3ee3a38f1da697437ef92ffc12307924e25f093a3641a2bb69bd26"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-FACET-BUBBLE-001",
+      "graph_node_id": "scidraw-be637f518e",
+      "label": "气泡热图-分面",
+      "family": "correlation",
+      "packages": [
+        "ggplot2"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/15_faceted_correlation_bubbles.png",
+          "sha256": "80177fbbe0bd05a879c498d7f6398c8720fcb1584873ef5c289fc42ae0d6e3f7",
+          "pixels": [
+            1620,
+            1224
+          ],
+          "source_image_sha256": "b04a2016f2edae1724e4a13fec689e471de9b6725a40cb5506c7d7d55d64f686",
+          "comparison_sha256": "d4c6db3634a376ac11e3f4e273dee8772774c90968e233893514e746befaf817"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-GROUP-BUBBLE-001",
+      "graph_node_id": "scidraw-89ae3c286a",
+      "label": "二维变量(ggplot2包)+分组",
+      "family": "correlation",
+      "packages": [
+        "ggplot2"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/16_grouped_correlation_bubbles.png",
+          "sha256": "9ba082ff76f8f911d9218bdadaaf42781d6853a6a7cbfac53f62ffdfaf716d51",
+          "pixels": [
+            1620,
+            1080
+          ],
+          "source_image_sha256": "05236effb2d953f29fa03f253ab05559aacb85cc9426ec0ec834740c1dcf49c7",
+          "comparison_sha256": "ea3edda7b5a04b741c5eb38782e0c529420ff3d19571f28bd67a6e6a9350ab5a"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-GGALLY-REG-001",
+      "graph_node_id": "scidraw-fb8ec364b3",
+      "label": "一维变量(GGally包)+线性回归",
+      "family": "matrix-regression",
+      "packages": [
+        "GGally"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/17_ggally_regression_matrix.png",
+          "sha256": "f74fa0fd41d7d55f72eb979d84e899c55e53b10a299fa6de2479dc0bb71def26",
+          "pixels": [
+            1350,
+            1260
+          ],
+          "source_image_sha256": "8eaf31ff71861d65be84c1297221934333c5e48bff16206be397a402df1824fb",
+          "comparison_sha256": "87fbe4c3046981a842eb91cfd1776f833c364c50fe8c92d57f87894044f63816"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-LINKET-NET-001",
+      "graph_node_id": "scidraw-9bd10160d2",
+      "label": "一维变量(GGally包)+网络图",
+      "family": "correlation-network",
+      "packages": [
+        "linkET"
+      ],
+      "runtime_status": "source-compared-needs-revision",
+      "review_status": "needs-revision",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png",
+          "sha256": "f5c7b4709b9772552dac281fdb3553091f1c770bab6e29c339302ef04274fcac",
+          "pixels": [
+            1530,
+            1170
+          ],
+          "source_image_sha256": "ef0209691e3cde6d7464dddf7bc866c09b6d1671040673d90ec81cf7ffc66257",
+          "comparison_sha256": "89dfd6598d1ce57c93465453353c917bf6ce6bfea865f6273061c9ae1c7bc2a1"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison failed; see atlas/reference-fidelity-requirements.json."
+    },
+    {
+      "id": "SCIDRAW-DENSITY-RAINBOW-001",
+      "graph_node_id": "scidraw-032969b5e8",
+      "label": "一维变量+核密度(R版)-彩虹色",
+      "family": "density-matrix",
+      "packages": [
+        "GGally"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/19_density_matrix_rainbow.png",
+          "sha256": "e5fea8b3308fb7eed3dc286eb4bb8f8c5bd7112576fc8f63a6058cce7a719918",
+          "pixels": [
+            1440,
+            1260
+          ],
+          "source_image_sha256": "6a4cfc7e2cba2bd1975dd72c1d58d7a27dcf7d7ed053dd355ebd7439e1a369d6",
+          "comparison_sha256": "1a50d13c3cd3f9d2ec32136605d9ee61dbcb0a66d727f9f8f63d18d7207bedc0"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    },
+    {
+      "id": "SCIDRAW-DENSITY-RED-001",
+      "graph_node_id": "scidraw-b1af8f12e5",
+      "label": "一维变量+核密度(R版)-红色",
+      "family": "density-matrix",
+      "packages": [
+        "GGally"
+      ],
+      "runtime_status": "source-compared-png",
+      "review_status": "pass",
+      "validated_pngs": [
+        {
+          "path": "docs/assets/scidraw-gallery-batch2/20_density_matrix_red.png",
+          "sha256": "6139176b0a1db83bf7d157210e53657b2ee6e52ded65beae2602869bc98d071c",
+          "pixels": [
+            1440,
+            1260
+          ],
+          "source_image_sha256": "ec83f27e17b84f466cf350c1e79b77b3bf0e57b721eef412f149b2bf61718a82",
+          "comparison_sha256": "bf293e22c3be471f23a60a1df8a3c228bca34c354c9c849a2f3a9f37c0ec55fe"
+        }
+      ],
+      "guardrails": [
+        "source-code-and-image-bound-to-same-article",
+        "rerender-and-inspect-after-data-transfer",
+        "simulation-is-not-source-study-result"
+      ],
+      "strict_fidelity_gate": "all-six-dimensions-pass",
+      "validation_note": "Strict source comparison passed across family, panel topology, required structures, typography, annotation, and information density."
+    }
+  ]
+}
