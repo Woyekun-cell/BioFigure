@@ -76,6 +76,12 @@ reference_evidence_layers:
     retriever: scripts/retrieve_references.py
     load: [references/topjournal-recipes-001-010.md]
     policy: primary_curated_reference_evidence
+  awesome_scientific_figure:
+    corpus: atlas/awesome-scientific-figure-candidates.json
+    retriever: scripts/retrieve_awesome_figures.py
+    load: [references/awesome-scientific-figure-learning.md]
+    policy: optional_catalog_candidates_only_not_verified_evidence
+    precedence: scientific_contract_and_verified_figure_references
   scidraw:
     corpus: atlas/scidraw-derived-corpus.json
     grammar: atlas/scidraw-visual-grammar.yaml

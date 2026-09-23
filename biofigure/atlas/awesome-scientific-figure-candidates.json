@@ -1,0 +1,54 @@
+{
+  "source_repository": "https://github.com/nehSgnaiL/awesome-scientific-figure",
+  "source_revision": "8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8",
+  "source_readme": "https://github.com/nehSgnaiL/awesome-scientific-figure/blob/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/README.md",
+  "inventory_status": "catalog-metadata-only",
+  "rights_status": "no-repository-license-detected; verify article and asset rights before reuse",
+  "candidates": [
+    {
+      "id": "ASF-TEGALLY-2022-F1",
+      "catalog_heading": "2022-Tegally-Science",
+      "figure_locator": "Fig. 1",
+      "paper_url_reported_by_catalog": "https://doi.org/10.1126/science.abq5358",
+      "reported_tags": ["period"],
+      "candidate_family": "time-series-combination",
+      "candidate_family_status": "inferred-from-catalog",
+      "domains": ["genome-sequence-variation", "multipanel"],
+      "scientific_tasks_inferred": ["genomic surveillance", "temporal comparison"],
+      "actual_figure_reviewed": false,
+      "original_article_checked": false,
+      "source_data_status": "not-verified",
+      "figure_code_status": "not-identified-in-catalog"
+    },
+    {
+      "id": "ASF-JIN-2022-F2",
+      "catalog_heading": "2022-Jin-Emerg Microbes Infect",
+      "figure_locator": "Fig. 2",
+      "paper_url_reported_by_catalog": "https://doi.org/10.1080/22221751.2022.2155251",
+      "reported_tags": ["comparison", "confidence"],
+      "candidate_family": "group-comparison",
+      "candidate_family_status": "inferred-from-catalog",
+      "domains": ["imaging-assay", "multipanel"],
+      "scientific_tasks_inferred": ["antibody comparison", "longitudinal response"],
+      "actual_figure_reviewed": false,
+      "original_article_checked": false,
+      "source_data_status": "not-verified",
+      "figure_code_status": "not-identified-in-catalog"
+    },
+    {
+      "id": "ASF-IBRAHIM-2025-F2",
+      "catalog_heading": "2025-Ibrahim-Fundam Res",
+      "figure_locator": "Fig. 2",
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.fmre.2025.04.005",
+      "reported_tags": ["fit"],
+      "candidate_family": "association-fit",
+      "candidate_family_status": "inferred-from-catalog",
+      "domains": ["transcriptomics-metabolomics-multiomics"],
+      "scientific_tasks_inferred": ["association", "response fit"],
+      "actual_figure_reviewed": false,
+      "original_article_checked": false,
+      "source_data_status": "not-verified",
+      "figure_code_status": "not-identified-in-catalog"
+    }
+  ]
+}

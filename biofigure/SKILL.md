@@ -20,6 +20,8 @@ description: 根据生物数据、实验设计与研究目的判断适合的图�
 2. 图型确定后读 `manifest.yaml` 的 `always_load`，运行 `scripts/route_figure.py 请求.yaml`，按领域加载参考。读取 [执行门禁](references/figure-execution-gates.md) 和 [首版约束](references/first-render-policy.md)；遇到桑基、火山、环形 UMAP、系统发育树或三元图，读 [SciDraw 36–45 包范式](references/scidraw-package-recipes-36-45.md)；遇到渐变小提琴、山脊、样本环图、哑铃组合或双三角矩阵，读 [SciDraw 46–55 包范式](references/scidraw-package-recipes-46-55.md)；遇到时序、地图组成、花瓣环柱、气泡矩阵或多条件对数曲线，读 [SciDraw 56–65 包范式](references/scidraw-package-recipes-56-65.md)；遇到分面组成、径向堆积、双组相关热图、OncoPrint、桑基堆积或多组火山图，读 [顶刊案例 001–010 配方](references/topjournal-recipes-001-010.md)。完整执行检索、读图、方法合同、渲染及验图门禁。
 3. 语义层只是前置决策，不替代科学契约、Design Spec、CP0–CP4、Critic或视觉证据。关键实验设计未知时允许数据QC和条件式建议，暂停依赖该信息的推断或绘图。
 
+外部图目录学习可选 `reference_sources` 加入 `awesome_scientific_figure`，先读 [候选学习层](references/awesome-scientific-figure-learning.md)。此层只帮助发现不同图型；目录元数据不是已审图或可复现证据。
+
 ## 能力验收
 
 能力验收与案例学习先读 [benchmark协议](references/benchmark-protocol.md)。历史PASS不代表V2通过；严格检索用 `--require-benchmark`，无结果按待验证方法处理。单例用 `audit_reference_fidelity.py --bundle ... --root ...`；无bundle只查库存。
