@@ -38,29 +38,28 @@ These are areas covered by the method library and routing rules. Individual task
 
 ## 分类图廊 / Gallery by plot type
 
-点击分类名称，进入对应图片页。每张图附原尺寸、生成脚本与运行说明。<br>
-Choose a category to view its figures, full-size images, generator scripts and instructions.
+完整收录本地已有科研成图 **14 类、216 张**。点击分类查看对应图片，较大类别分页；历史修订版折叠保留。<br>All 216 inventoried scientific figures are organized into 14 categories. Click a category to browse; historical versions remain available in folded sections.
 
-图廊含 **12 类、57 张**模拟图，涵盖参考方法迁移及基础领域示例。不是原论文数据复现，展示不等于完整验收；不承载真实研究结论。<br>
-The gallery contains **57 simulated figures in 12 categories**, including reference-informed method transfers and domain examples. These are not reproductions of original paper data or evidence of complete validation.
+数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。<br>Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings.
 
 | 图型分类 / Category | 图数 / Figures |
 |---|---:|
-| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 6 |
-| [分布、小提琴与云雨图 / Distributions](docs/gallery/distributions.md) | 8 |
-| [相关、回归与气泡矩阵 / Correlations](docs/gallery/correlations.md) | 10 |
-| [组成、三元与环图 / Composition](docs/gallery/composition.md) | 4 |
-| [雷达与多指标比较 / Radar plots](docs/gallery/radar.md) | 6 |
-| [差异表达与富集 / Differential expression](docs/gallery/differential.md) | 2 |
-| [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 5 |
-| [临床效应与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 5 |
-| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 4 |
-| [网络与地理流向 / Networks and flows](docs/gallery/networks.md) | 3 |
-| [信号曲线 / Signal profiles](docs/gallery/profiles.md) | 1 |
-| [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
+| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 25 |
+| [分布、箱线与小提琴 / Distributions](docs/gallery/distributions.md) | 27 |
+| [相关、散点与气泡矩阵 / Correlations and scatter plots](docs/gallery/correlations.md) | 20 |
+| [组成、桑基与三元图 / Composition and flows](docs/gallery/composition.md) | 19 |
+| [柱形、棒棒糖与花瓣图 / Bars and lollipops](docs/gallery/bars.md) | 14 |
+| [雷达与多指标比较 / Radar plots](docs/gallery/radar.md) | 7 |
+| [差异表达、富集与曼哈顿图 / Differential expression](docs/gallery/differential.md) | 19 |
+| [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 12 |
+| [生存、森林与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 18 |
+| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 25 |
+| [网络与地图 / Networks and maps](docs/gallery/networks.md) | 10 |
+| [时序、曲线与信号 / Time courses and profiles](docs/gallery/profiles.md) | 14 |
+| [集合交叠与 UpSet / Set intersections](docs/gallery/intersections.md) | 2 |
+| [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 4 |
 
-[浏览完整分类目录 / Browse all categories](docs/GALLERY.md)。复合图按主要图型归类一次；配色变体单独计数。<br>
-Composite figures appear in one primary category; color variants count separately.
+[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，变体分别计数。
 
 ## 绘图方法与质量检查 / Methods and quality checks
 
@@ -124,8 +123,8 @@ The Skill does not change model weights or guarantee identical results across mo
 
 ## 来源与反馈 / Sources and feedback
 
-方法来源见[设计来源](docs/DESIGN-SOURCES.md)和[来源声明](NOTICE.md)。本图廊展示自行生成的模拟图，不随本次更新上传第三方原图、网页或来源代码。<br>
-See [design sources](docs/DESIGN-SOURCES.md) and [NOTICE](NOTICE.md) for provenance. The gallery contains independently generated simulations; third-party source images, webpages, and code are not included in this update.
+方法来源见[设计来源](docs/DESIGN-SOURCES.md)和[来源声明](NOTICE.md)。本图廊展示自行生成的图件，模拟数据、公开数据与软件包示例逐图标注；不上传第三方参考原图、网页或抓取代码。<br>
+See [design sources](docs/DESIGN-SOURCES.md) and [NOTICE](NOTICE.md) for provenance. The gallery contains independently generated figures with per-figure data-origin labels; third-party reference images, webpages and scraped code are not included.
 
 绘图需求、参考案例和审美建议欢迎发到 [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions)。可复现的问题请提交 [Issue](https://github.com/Woyekun-cell/BioFigure/issues/new/choose)，附数据结构、代码、包版本和成图；贡献方式见[贡献指南](CONTRIBUTING.md)。
 <br>

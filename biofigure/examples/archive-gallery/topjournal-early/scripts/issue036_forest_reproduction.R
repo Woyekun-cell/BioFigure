@@ -1,0 +1,11 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages({library(forestploter); library(grid)})
+set.seed(3601)
+lab <- c("Overall","Age","  ≤70","  >70","ECOG status","  Asymptomatic","  Symptomatic and ambulatory","  In bed <50% of day","Performance status (physician)","  ≤80","  >80","Performance status (patient)","  ≤80","  >80","Meal calories","  ≤800","  >800","Weight loss","  ≤10 kg","  >10 kg")
+est <- c(.59,NA,.62,.48,NA,.54,.53,.70,NA,.62,.55,NA,.70,.49,NA,.58,.57,NA,.66,.49); lo <- c(.42,NA,.43,.23,NA,.25,.33,.37,NA,.40,.32,NA,.47,.29,NA,.31,.36,NA,.43,.27); hi <- c(.82,NA,.89,.99,NA,1.15,.85,1.30,NA,.94,.93,NA,1.07,.85,NA,1.11,.91,NA,1.01,.89)
+trt <- c("53/90","","43/75","10/15","","9/27","28/42","16/21","","33/49","20/41","","33/46","19/43","","15/27","26/40","","35/62","14/24"); ctl <- c("112/138","","84/107","28/31","","28/36","54/71","28/29","","64/75","47/62","","70/84","40/52","","27/32","66/82","","56/72","47/56"); pv <- c(.001,NA,.011,.047,NA,.112,.008,.254,NA,.025,.025,NA,.099,.012,NA,.098,.017,NA,.054,.020)
+d <- data.frame(Subgroup=lab,Dapagliflozin=trt,Placebo=ctl,` `=strrep(" ",23),`Hazard ratio (95% CI)`=ifelse(is.na(est),"",sprintf("%.2f (%.2f–%.2f)",est,lo,hi)),`P value`=ifelse(is.na(pv),"",sprintf("%.3f",pv)),check.names=FALSE)
+tm <- forest_theme(base_size=9,ci_pch=15,ci_col="#202A2E",ci_fill="#202A2E",ci_lwd=1.15,refline_gp=gpar(lty=2,col="#4D5558"),core=list(padding=unit(c(2.1,3),"mm")),colhead=list(fg_params=list(fontface=2)))
+pdf(NULL); p <- forest(d,est=est,lower=lo,upper=hi,ci_column=4,ref_line=1,xlim=c(0,2),ticks_at=c(0,.5,1,1.5,2),arrow_lab=c("Dapagliflozin better","Placebo better"),theme=tm); dev.off()
+ragg::agg_png("results/figures/issue036_forest.png",width=2600,height=1850,res=300,background="white"); grid.newpage(); pushViewport(viewport(y=.47,height=.87)); grid.draw(p); upViewport(); grid.text("Forest plot of Cox subgroup analysis",x=.08,y=.97,just="left",gp=gpar(fontface=2,fontsize=16)); grid.text("Simulated example; layout matched to issue 36",x=.08,y=.945,just="left",gp=gpar(fontsize=9,col="#68757B")); dev.off()
+write.csv(transform(d,estimate=est,lower=lo,upper=hi,p_value=pv,source="simulated",seed=3601),"results/plot_data/issue036_forest.csv",row.names=FALSE)

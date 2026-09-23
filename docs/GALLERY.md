@@ -1,26 +1,28 @@
-# BioFigure 分类图廊 / Gallery by plot type
+# BioFigure 全量分类图廊 / Complete gallery
 
-[返回首页 / Home](../README.md)
+[返回首页 / Home](../README.md) · [逐图清单 CSV](gallery/catalog.csv) · [完整来源记录 JSON](gallery/catalog.json)
 
-按图型浏览 **12 类、57 张**已有图件。点击分类链接，进入该类图片页；每张图提供原尺寸、生成脚本与运行说明。图件按主要视觉表达归类，复合图只收录一次。<br>Browse 57 existing figures in 12 categories. Each category opens a page with images, full-size links, code and instructions. Composite figures appear once.
+当前收录 **14 类、216 张**，按图型浏览；点击类别后显示该类图片，较大类别分页，每页最多 8 张。<br>Browse 216 figures in 14 categories, with up to 8 images per page.
 
-这些是使用模拟数据生成的参考方法迁移与布局示例，不是原论文数据复现，也不表示期刊认可或完整 benchmark 通过。图内数值、P 值及显著性符号均不得解释为真实研究结论。<br>These are simulated method-transfer and layout examples, not reproductions of original research data or journal-endorsed benchmarks.
+范围：本地项目的已有自行成图，包括 benchmark 工作目录及维护示例。相同字节文件只计一次；配色、布局及修订变体分别计数，因此张数不等于独立方法数。历史版本折叠展示。
 
-| 分类 / Category | 图数 | 内容 |
-|---|---:|---|
-| [热图与矩阵注释 / Heatmaps](gallery/heatmaps.md) | 6 | 表达矩阵、临床注释、突变能量与环形多轨热图。 |
-| [分布、小提琴与云雨图 / Distributions](gallery/distributions.md) | 8 | 原始点、箱线、小提琴、云雨及山脊分布。 |
-| [相关、回归与气泡矩阵 / Correlations](gallery/correlations.md) | 10 | 相关矩阵、边际分布、回归与残差组合。 |
-| [组成、三元与环图 / Composition](gallery/composition.md) | 4 | 三元比例、双层环图及弦图。 |
-| [雷达与多指标比较 / Radar plots](gallery/radar.md) | 6 | 多边形、分面、环形与差值雷达。 |
-| [差异表达与富集 / Differential expression](gallery/differential.md) | 2 | 火山图及火山与 GSEA 组合。 |
-| [降维、单细胞与空间 / Embeddings and spatial plots](gallery/embeddings.md) | 5 | PCA、PCoA、UMAP、标记基因与空间表达。 |
-| [临床效应与患者轨迹 / Clinical plots](gallery/clinical.md) | 5 | 森林图、限制性立方样条、患者泳道与模型评估。 |
-| [基因组、染色体与系统树 / Genomes and phylogeny](gallery/genomes.md) | 4 | 染色体区间、结构变异、共线性和系统树注释。 |
-| [网络与地理流向 / Networks and flows](gallery/networks.md) | 3 | 层级网络、相关网络及地理流向。 |
-| [信号曲线 / Signal profiles](gallery/profiles.md) | 1 | 沿基因组相对位置展示染色质信号。 |
-| [机制、图像与多面板 / Mechanisms and panels](gallery/multipanel.md) | 3 | 机制关系、图像实验板和综合证据面板。 |
+包含模拟数据、公开数据分析与软件包示例，各图分别注明。展示不代表完整验收；待修订案例保留状态。第三方参考原图、对照拼图、网页截图、调试首稿及纯技术测试图不列入。
 
-分类按图型而非批次组织；同类配色变体仍单独计数，57 张不等于 57 种独立方法。
+| 分类 / Category | 图数 | 页数 |
+|---|---:|---:|
+| [热图与矩阵注释 / Heatmaps](gallery/heatmaps.md) | 25 | 4 |
+| [分布、箱线与小提琴 / Distributions](gallery/distributions.md) | 27 | 4 |
+| [相关、散点与气泡矩阵 / Correlations and scatter plots](gallery/correlations.md) | 20 | 3 |
+| [组成、桑基与三元图 / Composition and flows](gallery/composition.md) | 19 | 3 |
+| [柱形、棒棒糖与花瓣图 / Bars and lollipops](gallery/bars.md) | 14 | 2 |
+| [雷达与多指标比较 / Radar plots](gallery/radar.md) | 7 | 1 |
+| [差异表达、富集与曼哈顿图 / Differential expression](gallery/differential.md) | 19 | 3 |
+| [降维、单细胞与空间 / Embeddings and spatial plots](gallery/embeddings.md) | 12 | 2 |
+| [生存、森林与患者轨迹 / Clinical plots](gallery/clinical.md) | 18 | 3 |
+| [基因组、染色体与系统树 / Genomes and phylogeny](gallery/genomes.md) | 25 | 4 |
+| [网络与地图 / Networks and maps](gallery/networks.md) | 10 | 2 |
+| [时序、曲线与信号 / Time courses and profiles](gallery/profiles.md) | 14 | 2 |
+| [集合交叠与 UpSet / Set intersections](gallery/intersections.md) | 2 | 1 |
+| [机制、图像与多面板 / Mechanisms and panels](gallery/multipanel.md) | 4 | 1 |
 
-来源与边界：[来源声明](../NOTICE.md) · [设计来源](DESIGN-SOURCES.md) · [验收规则](../biofigure/references/benchmark-protocol.md)。完整 V2 benchmark 尚未完成。
+[来源与权利](../NOTICE.md) · [脚本存档与复现边界](../biofigure/examples/archive-gallery/README.md) · [验收规则](../biofigure/references/benchmark-protocol.md)

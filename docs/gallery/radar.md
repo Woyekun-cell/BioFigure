@@ -1,57 +1,81 @@
 # 雷达与多指标比较 / Radar plots
 
-[全部分类 / All categories](../GALLERY.md) · [首页 / Home](../../README.md)
+[全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)
 
-多边形、分面、环形与差值雷达。 共 6 张。
+本类 **7 张**；第 **1/1 页**。页码：**1**
 
-全部为模拟数据示例；展示不代表完整验收，不能据此推断真实生物学结论。<br>Simulated examples only; display does not imply full validation or biological findings.
+图型与数据来源分别标注；旧版折叠保留。收录不等于原论文数据复现或完整 CP 验收。<br>Data origin is stated per figure. Historical versions are folded. Inclusion does not certify scientific fidelity.
 
-## 1. 多指标雷达图
+<a id="bf-0015"></a>
 
-基础与领域模拟示例。
+## BF-0015 · 多指标雷达图
 
-![多指标雷达图](../assets/gallery/template-radar.png)
+模拟数据／方法展示；非原论文数据复现。
 
-[原尺寸 / Full size](../assets/gallery/template-radar.png) · [生成脚本 / Script](../../biofigure/examples/gallery/generate_advanced_gallery.R) · [运行说明 / Instructions](../../biofigure/examples/gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+![BF-0015 多指标雷达图](../../docs/assets/gallery/template-radar.png)
 
-## 2. 多边形雷达图
+[原尺寸](../../docs/assets/gallery/template-radar.png) · [脚本](../../biofigure/examples/gallery/generate_advanced_gallery.R) · [记录](catalog.csv)
 
-SciDraw 方法迁移示例。
+<a id="bf-0038"></a>
 
-![多边形雷达图](../assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png)
+## BF-0038 · 多边形雷达图
 
-[原尺寸 / Full size](../assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png) · [生成脚本 / Script](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [运行说明 / Instructions](../../biofigure/examples/scidraw-gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+模拟数据／方法展示；非原论文数据复现。
 
-## 3. 分面雷达图
+![BF-0038 多边形雷达图](../../docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png)
 
-SciDraw 方法迁移示例。
+[原尺寸](../../docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [记录](catalog.csv)
 
-![分面雷达图](../assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png)
+<a id="bf-0039"></a>
 
-[原尺寸 / Full size](../assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png) · [生成脚本 / Script](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [运行说明 / Instructions](../../biofigure/examples/scidraw-gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+## BF-0039 · 分面雷达图
 
-## 4. 外圈标注雷达图
+模拟数据／方法展示；非原论文数据复现。
 
-SciDraw 方法迁移示例。
+![BF-0039 分面雷达图](../../docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png)
 
-![外圈标注雷达图](../assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png)
+[原尺寸](../../docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [记录](catalog.csv)
 
-[原尺寸 / Full size](../assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png) · [生成脚本 / Script](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [运行说明 / Instructions](../../biofigure/examples/scidraw-gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+<a id="bf-0040"></a>
 
-## 5. 双组环形雷达图
+## BF-0040 · 外圈标注雷达图
 
-SciDraw 方法迁移示例。
+模拟数据／方法展示；非原论文数据复现。
 
-![双组环形雷达图](../assets/scidraw-gallery-batch2/04_circular_radar_lmm.png)
+![BF-0040 外圈标注雷达图](../../docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png)
 
-[原尺寸 / Full size](../assets/scidraw-gallery-batch2/04_circular_radar_lmm.png) · [生成脚本 / Script](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [运行说明 / Instructions](../../biofigure/examples/scidraw-gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+[原尺寸](../../docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [记录](catalog.csv)
 
-## 6. 差值环形雷达图
+<a id="bf-0041"></a>
 
-SciDraw 方法迁移示例。
+## BF-0041 · 双组环形雷达图
 
-![差值环形雷达图](../assets/scidraw-gallery-batch2/05_circular_radar_difference.png)
+模拟数据／方法展示；非原论文数据复现。
 
-[原尺寸 / Full size](../assets/scidraw-gallery-batch2/05_circular_radar_difference.png) · [生成脚本 / Script](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [运行说明 / Instructions](../../biofigure/examples/scidraw-gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+![BF-0041 双组环形雷达图](../../docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png)
 
-来源与边界：[来源声明](../../NOTICE.md) · [设计来源](../DESIGN-SOURCES.md) · [验收规则](../../biofigure/references/benchmark-protocol.md)。
+[原尺寸](../../docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [记录](catalog.csv)
+
+<a id="bf-0042"></a>
+
+## BF-0042 · 差值环形雷达图
+
+模拟数据／方法展示；非原论文数据复现。
+
+![BF-0042 差值环形雷达图](../../docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png)
+
+[原尺寸](../../docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [记录](catalog.csv)
+
+<a id="bf-0213"></a>
+
+## BF-0213 · 分面雷达蜘蛛图
+
+模拟数据／方法展示；非原论文数据复现。
+
+![BF-0213 分面雷达蜘蛛图](../../docs/assets/archive-gallery/full-reproduction/revision_v1_50_radar_spider.png)
+
+[原尺寸](../../docs/assets/archive-gallery/full-reproduction/revision_v1_50_radar_spider.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R) · [记录](catalog.csv)
+
+页码：**1**
+
+[全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)

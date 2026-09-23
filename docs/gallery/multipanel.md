@@ -1,33 +1,51 @@
 # 机制、图像与多面板 / Mechanisms and panels
 
-[全部分类 / All categories](../GALLERY.md) · [首页 / Home](../../README.md)
+[全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)
 
-机制关系、图像实验板和综合证据面板。 共 3 张。
+本类 **4 张**；第 **1/1 页**。页码：**1**
 
-全部为模拟数据示例；展示不代表完整验收，不能据此推断真实生物学结论。<br>Simulated examples only; display does not imply full validation or biological findings.
+图型与数据来源分别标注；旧版折叠保留。收录不等于原论文数据复现或完整 CP 验收。<br>Data origin is stated per figure. Historical versions are folded. Inclusion does not certify scientific fidelity.
 
-## 1. 机制关系示意
+<a id="bf-0003"></a>
 
-基础与领域模拟示例。
+## BF-0003 · 图像实验板示意
 
-![机制关系示意](../assets/gallery/domain-mechanism.png)
+模拟数据／方法展示；非原论文数据复现。
 
-[原尺寸 / Full size](../assets/gallery/domain-mechanism.png) · [生成脚本 / Script](../../biofigure/examples/gallery/generate_domain_gallery.R) · [运行说明 / Instructions](../../biofigure/examples/gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+![BF-0003 图像实验板示意](../../docs/assets/gallery/domain-imaging-assay.png)
 
-## 2. 图像实验板示意
+[原尺寸](../../docs/assets/gallery/domain-imaging-assay.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [记录](catalog.csv)
 
-基础与领域模拟示例。
+<a id="bf-0004"></a>
 
-![图像实验板示意](../assets/gallery/domain-imaging-assay.png)
+## BF-0004 · 机制关系示意
 
-[原尺寸 / Full size](../assets/gallery/domain-imaging-assay.png) · [生成脚本 / Script](../../biofigure/examples/gallery/generate_domain_gallery.R) · [运行说明 / Instructions](../../biofigure/examples/gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+模拟数据／方法展示；非原论文数据复现。
 
-## 3. 多面板证据组合
+![BF-0004 机制关系示意](../../docs/assets/gallery/domain-mechanism.png)
 
-基础与领域模拟示例。
+[原尺寸](../../docs/assets/gallery/domain-mechanism.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [记录](catalog.csv)
 
-![多面板证据组合](../assets/gallery/domain-multipanel-evidence.png)
+<a id="bf-0008"></a>
 
-[原尺寸 / Full size](../assets/gallery/domain-multipanel-evidence.png) · [生成脚本 / Script](../../biofigure/examples/gallery/generate_domain_gallery.R) · [运行说明 / Instructions](../../biofigure/examples/gallery/README.md) · [分类目录 / Categories](../GALLERY.md)
+## BF-0008 · 多面板证据组合
 
-来源与边界：[来源声明](../../NOTICE.md) · [设计来源](../DESIGN-SOURCES.md) · [验收规则](../../biofigure/references/benchmark-protocol.md)。
+模拟数据／方法展示；非原论文数据复现。
+
+![BF-0008 多面板证据组合](../../docs/assets/gallery/domain-multipanel-evidence.png)
+
+[原尺寸](../../docs/assets/gallery/domain-multipanel-evidence.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [记录](catalog.csv)
+
+<a id="bf-0172"></a>
+
+## BF-0172 · 比较基因组综合面板
+
+斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
+
+![BF-0172 比较基因组综合面板](../../docs/assets/archive-gallery/comparative-genomics/06_comparative_genomics_workflow_overview.png)
+
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/06_comparative_genomics_workflow_overview.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
+
+页码：**1**
+
+[全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)
