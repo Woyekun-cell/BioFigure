@@ -38,28 +38,28 @@ These are areas covered by the method library and routing rules. Individual task
 
 ## 分类图廊 / Gallery by plot type
 
-完整收录本地已有科研成图 **14 类、216 张**。点击分类查看对应图片，较大类别分页；历史修订版折叠保留。<br>All 216 inventoried scientific figures are organized into 14 categories. Click a category to browse; historical versions remain available in folded sections.
+从216张本地成图中精选 **14 类、73 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。<br>Selected 73 representatives from 216 local figures across 14 categories. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
 
 数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。<br>Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings.
 
 | 图型分类 / Category | 图数 / Figures |
 |---|---:|
-| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 25 |
-| [分布、箱线与小提琴 / Distributions](docs/gallery/distributions.md) | 27 |
-| [相关、散点与气泡矩阵 / Correlations and scatter plots](docs/gallery/correlations.md) | 20 |
-| [组成、桑基与三元图 / Composition and flows](docs/gallery/composition.md) | 19 |
-| [柱形、棒棒糖与花瓣图 / Bars and lollipops](docs/gallery/bars.md) | 14 |
-| [雷达与多指标比较 / Radar plots](docs/gallery/radar.md) | 7 |
-| [差异表达、富集与曼哈顿图 / Differential expression](docs/gallery/differential.md) | 19 |
-| [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 12 |
-| [生存、森林与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 18 |
-| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 25 |
-| [网络与地图 / Networks and maps](docs/gallery/networks.md) | 10 |
-| [时序、曲线与信号 / Time courses and profiles](docs/gallery/profiles.md) | 14 |
+| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 6 |
+| [分布、箱线与小提琴 / Distributions](docs/gallery/distributions.md) | 5 |
+| [相关、散点与气泡矩阵 / Correlations and scatter plots](docs/gallery/correlations.md) | 6 |
+| [组成、桑基与三元图 / Composition and flows](docs/gallery/composition.md) | 7 |
+| [柱形、棒棒糖与花瓣图 / Bars and lollipops](docs/gallery/bars.md) | 6 |
+| [雷达与多指标比较 / Radar plots](docs/gallery/radar.md) | 2 |
+| [差异表达、富集与曼哈顿图 / Differential expression](docs/gallery/differential.md) | 6 |
+| [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 6 |
+| [生存、森林与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 7 |
+| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 7 |
+| [网络与地图 / Networks and maps](docs/gallery/networks.md) | 5 |
+| [时序、曲线与信号 / Time courses and profiles](docs/gallery/profiles.md) | 5 |
 | [集合交叠与 UpSet / Set intersections](docs/gallery/intersections.md) | 2 |
-| [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 4 |
+| [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
 
-[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，变体分别计数。
+[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。
 
 ## 绘图方法与质量检查 / Methods and quality checks
 

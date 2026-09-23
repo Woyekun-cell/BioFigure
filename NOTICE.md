@@ -12,5 +12,5 @@ SciDraw learning material is retained only as distilled visual features, source 
 Nature 及其他期刊名称用于描述排版与审稿目标，不表示合作、认可或投稿结果保证。  
 Nature and other journal names describe layout and review targets and do not imply affiliation, endorsement, or guaranteed acceptance.
 
-全量图库另含公开数据分析与软件包示例，数据来源见[逐图清单](docs/gallery/catalog.csv)。第三方数据和软件包保留原许可；图中结果受已提供输入与分析范围限制。历史错误或修订前版本仅作存档，不作为科学结论或方法验收证据。
-The full gallery also includes public-data analyses and package examples. Data origin is listed in the inventory; third-party licenses remain applicable. Historical erroneous or superseded figures are archived, not endorsed as scientific evidence.
+精选图库另含公开数据分析与软件包示例，数据来源见[逐图清单](docs/gallery/catalog.csv)。第三方数据和软件包保留原许可；图中结果受已提供输入与分析范围限制。历史错误及重复修订版本不纳入精选图库，本地保留原始档案。
+The curated gallery also includes public-data analyses and package examples. Data origin is listed in the inventory; third-party licenses remain applicable. Historical erroneous or repeated revisions are excluded from the curated gallery; original local archives are retained.

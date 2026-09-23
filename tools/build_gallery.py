@@ -20,10 +20,13 @@ def generate():
     catalog = json.loads((ROOT / 'docs/gallery/catalog.json').read_text())
     figures = catalog['figures']
     categories = catalog['categories']
-    ids, images = set(), set()
+    ids, images, subtypes = set(), set(), set()
     for row in figures:
         assert row['id'] not in ids and row['image'] not in images, row['id']
         ids.add(row['id']); images.add(row['image'])
+        subtype = (row['category'], row['subtype'])
+        assert subtype not in subtypes, f'Duplicate visual subtype: {subtype}'
+        subtypes.add(subtype)
         assert row['category'] in {c['slug'] for c in categories}, row['id']
         assert hashlib.sha256((ROOT / row['image']).read_bytes()).hexdigest() == row['sha256'], row['id']
         for script in row['scripts']:
@@ -48,15 +51,15 @@ def generate():
             paging = ' · '.join(f'**{n}**' if n == number else f'[{n}]({page_name(slug, n)})' for n in range(1, pages + 1))
             body = [f'# {category["title"]} / {category["english"]}\n',
                     '[全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)\n',
-                    f'本类 **{count} 张**；第 **{number}/{pages} 页**。页码：{paging}\n',
-                    '图型与数据来源分别标注；旧版折叠保留。收录不等于原论文数据复现或完整 CP 验收。<br>Data origin is stated per figure. Historical versions are folded. Inclusion does not certify scientific fidelity.\n']
+                    f'本类 **{count} 张代表图**，每个细分图型保留一例。\n',
+                    '按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.\n']
             for row in rows[(number - 1) * PAGE_SIZE:number * PAGE_SIZE]:
                 ident = row['id']
                 body.append(f'<a id="{ident.lower()}"></a>\n')
                 if row['historical']:
                     body.append(f'<details>\n<summary>{ident} · {row["title"]}（历史存档，点击展开）</summary>\n')
                 body.append(f'## {ident} · {row["title"]}\n')
-                body.append(row['note'] + '\n')
+                body.append(f'图型：{row["subtype"]}。' + row['note'] + '\n')
                 if row['validation'].startswith('needs-revision'):
                     body.append('状态：方法展示／仍待修订，不能视为高保真验收通过。\n')
                 if row.get('superseded_by'):
@@ -75,29 +78,29 @@ def generate():
                 body.append(' · '.join(links) + '\n')
                 if row['historical']:
                     body.append('</details>\n')
-            body.append(f'页码：{paging}\n\n[全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)\n')
+            body.append((f'页码：{paging}\n\n' if pages > 1 else '') + '[全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)\n')
             files[f'docs/gallery/{page_name(slug, number)}'] = '\n'.join(body)
     heading = f'**{len(categories)} 类、{total} 张**'
-    index = ['# BioFigure 全量分类图廊 / Complete gallery\n', '[返回首页 / Home](../README.md) · [逐图清单 CSV](gallery/catalog.csv) · [完整来源记录 JSON](gallery/catalog.json)\n',
-             f'当前收录 {heading}，按图型浏览；点击类别后显示该类图片，较大类别分页，每页最多 {PAGE_SIZE} 张。<br>Browse {total} figures in {len(categories)} categories, with up to {PAGE_SIZE} images per page.\n',
-             '范围：本地项目的已有自行成图，包括 benchmark 工作目录及维护示例。相同字节文件只计一次；配色、布局及修订变体分别计数，因此张数不等于独立方法数。历史版本折叠展示。\n',
+    index = ['# BioFigure 分类代表图库 / Curated gallery\n', '[返回首页 / Home](../README.md) · [逐图清单 CSV](gallery/catalog.csv) · [完整来源记录 JSON](gallery/catalog.json)\n',
+             f'精选 {heading}，每个细分图型保留一个代表。点击类别即可查看对应图片。<br>Browse {total} representative figures in {len(categories)} categories, with one example per visual subtype.\n',
+             '从216张本地成图中按图形结构与用途筛选，移除同图型的配色、数据集、批次和历史修订变体；保留有实质差异的子类型。本地原始成果与脚本保留。\n',
              '包含模拟数据、公开数据分析与软件包示例，各图分别注明。展示不代表完整验收；待修订案例保留状态。第三方参考原图、对照拼图、网页截图、调试首稿及纯技术测试图不列入。\n',
-             '| 分类 / Category | 图数 | 页数 |\n|---|---:|---:|']
+             '| 分类 / Category | 代表图数 |\n|---|---:|']
     for cat, count, pages in nav_rows:
-        index.append(f'| [{cat["title"]} / {cat["english"]}](gallery/{cat["slug"]}.md) | {count} | {pages} |')
+        index.append(f'| [{cat["title"]} / {cat["english"]}](gallery/{cat["slug"]}.md) | {count} |')
     index.append('\n[来源与权利](../NOTICE.md) · [脚本存档与复现边界](../biofigure/examples/archive-gallery/README.md) · [验收规则](../biofigure/references/benchmark-protocol.md)\n')
     files['docs/GALLERY.md'] = '\n'.join(index)
     readme = (ROOT / 'README.md').read_text()
     start, end = readme.index('## 分类图廊'), readme.index('## 绘图方法')
     section = ['## 分类图廊 / Gallery by plot type\n',
-               f'完整收录本地已有科研成图 {heading}。点击分类查看对应图片，较大类别分页；历史修订版折叠保留。<br>All {total} inventoried scientific figures are organized into {len(categories)} categories. Click a category to browse; historical versions remain available in folded sections.\n',
+               f'从216张本地成图中精选 {heading}。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。<br>Selected {total} representatives from 216 local figures across {len(categories)} categories. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.\n',
                '数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。<br>Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings.\n',
                '| 图型分类 / Category | 图数 / Figures |\n|---|---:|']
     for cat, count, _ in nav_rows:
         section.append(f'| [{cat["title"]} / {cat["english"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
-    section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，变体分别计数。\n\n')
+    section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。\n\n')
     files['README.md'] = readme[:start] + '\n'.join(section) + readme[end:]
-    fields = ['id', 'category', 'title', 'image', 'sha256', 'data_origin', 'historical', 'validation', 'note', 'origin_paths', 'scripts']
+    fields = ['id', 'category', 'subtype', 'title', 'image', 'sha256', 'data_origin', 'historical', 'validation', 'note', 'origin_paths', 'scripts']
     out = io.StringIO(newline='')
     writer = csv.DictWriter(out, fieldnames=fields, lineterminator="\n")
     writer.writeheader()

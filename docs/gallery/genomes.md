@@ -2,25 +2,15 @@
 
 [全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)
 
-本类 **25 张**；第 **1/4 页**。页码：**1** · [2](genomes-2.md) · [3](genomes-3.md) · [4](genomes-4.md)
+本类 **7 张代表图**，每个细分图型保留一例。
 
-图型与数据来源分别标注；旧版折叠保留。收录不等于原论文数据复现或完整 CP 验收。<br>Data origin is stated per figure. Historical versions are folded. Inclusion does not certify scientific fidelity.
-
-<a id="bf-0011"></a>
-
-## BF-0011 · 结构变异 Circos 示意
-
-模拟数据／方法展示；非原论文数据复现。
-
-![BF-0011 结构变异 Circos 示意](../../docs/assets/gallery/domain-structural-variation.png)
-
-[原尺寸](../../docs/assets/gallery/domain-structural-variation.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [记录](catalog.csv)
+按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
 
 <a id="bf-0012"></a>
 
 ## BF-0012 · 共线性示意
 
-模拟数据／方法展示；非原论文数据复现。
+图型：共线性。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0012 共线性示意](../../docs/assets/gallery/domain-synteny.png)
 
@@ -30,7 +20,7 @@
 
 ## BF-0014 · 系统树与多轨注释
 
-模拟数据／方法展示；非原论文数据复现。
+图型：系统树与注释。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0014 系统树与多轨注释](../../docs/assets/gallery/template-phylogeny-tracks.png)
 
@@ -40,60 +30,50 @@
 
 ## BF-0019 · 嵌套染色体与区间分布
 
-模拟数据／方法展示；非原论文数据复现。
+图型：嵌套染色体。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0019 嵌套染色体与区间分布](../../docs/assets/genome-gallery/chromosome-distribution.png)
 
 [原尺寸](../../docs/assets/genome-gallery/chromosome-distribution.png) · [脚本](../../biofigure/examples/genome-gallery/draw.R) · [记录](catalog.csv)
 
-<a id="bf-0092"></a>
+<a id="bf-0156"></a>
 
-## BF-0092 · 系统树与三层热图
+## BF-0156 · ATAC：染色体峰位置
 
-模拟数据／方法展示；非原论文数据复现。
+图型：染色体峰位置。公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。
 
-状态：方法展示／仍待修订，不能视为高保真验收通过。
+![BF-0156 ATAC：染色体峰位置](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png)
 
-![BF-0092 系统树与三层热图](../../docs/assets/archive-gallery/scidraw-001-065/19_phylogeny_three_heatmaps.png)
+[原尺寸](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png) · [脚本](../../biofigure/examples/archive-gallery/public-omics/scripts/analysis.R) · [记录](catalog.csv)
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/19_phylogeny_three_heatmaps.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R) · [方法来源](https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg) · [记录](catalog.csv)
+<a id="bf-0167"></a>
 
-<a id="bf-0093"></a>
+## BF-0167 · 双物种组装与注释概览
 
-## BF-0093 · 系统树、热图与柱形轨道
+图型：组装注释概览。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
 
-模拟数据／方法展示；非原论文数据复现。
+![BF-0167 双物种组装与注释概览](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png)
 
-状态：方法展示／仍待修订，不能视为高保真验收通过。
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
 
-![BF-0093 系统树、热图与柱形轨道](../../docs/assets/archive-gallery/scidraw-001-065/20_phylogeny_heatmap_bar.png)
+<a id="bf-0168"></a>
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/20_phylogeny_heatmap_bar.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R) · [方法来源](https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg) · [记录](catalog.csv)
+## BF-0168 · 染色体基因密度
 
-<a id="bf-0115"></a>
+图型：基因密度。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
 
-## BF-0115 · 高亮系统树与注释热图
+![BF-0168 染色体基因密度](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png)
 
-模拟数据／方法展示；非原论文数据复现。
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
 
-状态：方法展示／仍待修订，不能视为高保真验收通过。
+<a id="bf-0170"></a>
 
-![BF-0115 高亮系统树与注释热图](../../docs/assets/archive-gallery/scidraw-001-065/42_phylogeny_highlight_heatmap.png)
+## BF-0170 · 代表性基因结构示意
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/42_phylogeny_highlight_heatmap.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R) · [方法来源](https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg) · [记录](catalog.csv)
+图型：基因结构。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
 
-<a id="bf-0116"></a>
+![BF-0170 代表性基因结构示意](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png)
 
-## BF-0116 · 系统树与双层热图
-
-模拟数据／方法展示；非原论文数据复现。
-
-状态：方法展示／仍待修订，不能视为高保真验收通过。
-
-![BF-0116 系统树与双层热图](../../docs/assets/archive-gallery/scidraw-001-065/43_phylogeny_two_heatmaps.png)
-
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/43_phylogeny_two_heatmaps.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R) · [方法来源](https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg) · [记录](catalog.csv)
-
-页码：**1** · [2](genomes-2.md) · [3](genomes-3.md) · [4](genomes-4.md)
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
 
 [全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)

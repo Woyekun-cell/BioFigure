@@ -2,15 +2,15 @@
 
 [全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)
 
-本类 **19 张**；第 **1/3 页**。页码：**1** · [2](differential-2.md) · [3](differential-3.md)
+本类 **6 张代表图**，每个细分图型保留一例。
 
-图型与数据来源分别标注；旧版折叠保留。收录不等于原论文数据复现或完整 CP 验收。<br>Data origin is stated per figure. Historical versions are folded. Inclusion does not certify scientific fidelity.
+按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
 
 <a id="bf-0018"></a>
 
 ## BF-0018 · 火山图
 
-模拟数据／方法展示；非原论文数据复现。
+图型：基础火山。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0018 火山图](../../docs/assets/gallery/template-volcano.png)
 
@@ -20,7 +20,7 @@
 
 ## BF-0035 · 火山图与 GSEA 组合
 
-模拟数据／方法展示；非原论文数据复现。
+图型：火山与富集组合。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0035 火山图与 GSEA 组合](../../docs/assets/scidraw-gallery/06_volcano_gsea.png)
 
@@ -30,66 +30,42 @@
 
 ## BF-0070 · 双条件 log2FC 比较
 
-模拟数据／方法展示；非原论文数据复现。
+图型：双条件效应比较。模拟数据／方法展示；非原论文数据复现。
 
 ![BF-0070 双条件 log2FC 比较](../../docs/assets/archive-gallery/random-three/logfc.png)
 
 [原尺寸](../../docs/assets/archive-gallery/random-three/logfc.png) · [脚本](../../biofigure/examples/archive-gallery/random-three/scripts/draw_three.R) · [记录](catalog.csv)
 
-<a id="bf-0079"></a>
+<a id="bf-0112"></a>
 
-## BF-0079 · 火山图与上下调富集条形图
+## BF-0112 · 多细胞群火山图
 
-模拟数据／方法展示；非原论文数据复现。
-
-![BF-0079 火山图与上下调富集条形图](../../docs/assets/archive-gallery/scidraw-001-065/07_volcano_enrichment_1.png)
-
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/07_volcano_enrichment_1.png) · [批次脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts) · [方法来源](https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw) · [记录](catalog.csv)
-
-<a id="bf-0080"></a>
-
-## BF-0080 · 双侧富集与差异表达组合
-
-模拟数据／方法展示；非原论文数据复现。
-
-![BF-0080 双侧富集与差异表达组合](../../docs/assets/archive-gallery/scidraw-001-065/08_volcano_enrichment_2.png)
-
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/08_volcano_enrichment_2.png) · [批次脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts) · [方法来源](https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw) · [记录](catalog.csv)
-
-<a id="bf-0081"></a>
-
-## BF-0081 · 火山图与富集网络
-
-模拟数据／方法展示；非原论文数据复现。
-
-![BF-0081 火山图与富集网络](../../docs/assets/archive-gallery/scidraw-001-065/09_volcano_enrichment_network.png)
-
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/09_volcano_enrichment_network.png) · [批次脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts) · [方法来源](https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw) · [记录](catalog.csv)
-
-<a id="bf-0095"></a>
-
-## BF-0095 · 双曲阈值火山图
-
-模拟数据／方法展示；非原论文数据复现。
+图型：多组火山。模拟数据／方法展示；非原论文数据复现。
 
 状态：方法展示／仍待修订，不能视为高保真验收通过。
 
-![BF-0095 双曲阈值火山图](../../docs/assets/archive-gallery/scidraw-001-065/22_hyperbolic_volcano.png)
+![BF-0112 多细胞群火山图](../../docs/assets/archive-gallery/scidraw-001-065/39_multi_cell_volcano.png)
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/22_hyperbolic_volcano.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R) · [方法来源](https://mp.weixin.qq.com/s/mDUBhuWkYBN8XwPxJozEhw) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/39_multi_cell_volcano.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R) · [方法来源](https://mp.weixin.qq.com/s/yeMUSZIac-nHXA-WY6P08Q) · [记录](catalog.csv)
 
-<a id="bf-0096"></a>
+<a id="bf-0209"></a>
 
-## BF-0096 · RNA 与翻译变化象限图
+## BF-0209 · 细胞比例棒棒糖与 GO 富集
 
-模拟数据／方法展示；非原论文数据复现。
+图型：棒棒糖与GO富集。模拟数据／方法展示；非原论文数据复现。
 
-状态：方法展示／仍待修订，不能视为高保真验收通过。
+![BF-0209 细胞比例棒棒糖与 GO 富集](../../docs/assets/archive-gallery/full-reproduction/revision_v1_46_lollipop_go.png)
 
-![BF-0096 RNA 与翻译变化象限图](../../docs/assets/archive-gallery/scidraw-001-065/23_rna_translation_quadrants.png)
+[原尺寸](../../docs/assets/archive-gallery/full-reproduction/revision_v1_46_lollipop_go.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R) · [记录](catalog.csv)
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/23_rna_translation_quadrants.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R) · [方法来源](https://mp.weixin.qq.com/s/1Mv-fsKQnkrbi-YL4-yOMQ) · [记录](catalog.csv)
+<a id="bf-0215"></a>
 
-页码：**1** · [2](differential-2.md) · [3](differential-3.md)
+## BF-0215 · 模拟 GWAS 曼哈顿图
+
+图型：GWAS曼哈顿。模拟数据／方法展示；非原论文数据复现。
+
+![BF-0215 模拟 GWAS 曼哈顿图](../../docs/assets/archive-gallery/manhattan/manhattan_simulated.png)
+
+[原尺寸](../../docs/assets/archive-gallery/manhattan/manhattan_simulated.png) · [脚本](../../biofigure/examples/archive-gallery/manhattan/scripts/draw_manhattan.R) · [记录](catalog.csv)
 
 [全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)

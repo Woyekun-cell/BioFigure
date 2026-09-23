@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inventory_date": "2026-09-23",
-  "scope": "All existing self-generated scientific PNG outputs found in the workspace, including benchmark work directories and substantive maintenance examples. Byte-identical copies are merged; archived revisions remain accessible.",
+  "scope": "Curated representatives selected by visual subtype from the 216-image local inventory. Color-only, dataset-only, repeated batch and historical variants are omitted; original local artifacts remain preserved.",
   "exclusions": [
     "Third-party reference images and scraped source galleries",
     "Source/output comparison sheets, contact sheets and browser captures",
@@ -98,7 +98,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "信号强度矩阵"
     },
     {
       "id": "BF-0002",
@@ -117,7 +118,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "染色质信号"
     },
     {
       "id": "BF-0003",
@@ -136,7 +138,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "图像实验板"
     },
     {
       "id": "BF-0004",
@@ -155,26 +158,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0005",
-      "title": "代谢组 PCA",
-      "category": "embeddings",
-      "image": "docs/assets/gallery/domain-metabolomics-pca.png",
-      "sha256": "3853d3170cce55ec50f850b9294e06743302d926ccb3596fbe057f0a7840f2e9",
-      "pixel_sha256": "5001924cfd057a3b9d98178e26189ba12a35a248f1cabb879a9d9c35387619ed",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/domain-metabolomics-pca.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_domain_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "机制关系"
     },
     {
       "id": "BF-0006",
@@ -193,26 +178,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0007",
-      "title": "跨组学关联",
-      "category": "correlations",
-      "image": "docs/assets/gallery/domain-multiomics-association.png",
-      "sha256": "9491c88cf9601bfd9f7df8510ddb1815f169446450f7bc44669fdd1b34fdcd95",
-      "pixel_sha256": "69a4aaa7dacb50447c4fcf8e1daa591e81da7af0c892e272eac1b54d33609cf1",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/domain-multiomics-association.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_domain_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "ROC与校准"
     },
     {
       "id": "BF-0008",
@@ -231,26 +198,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0009",
-      "title": "单细胞 UMAP 布局示意",
-      "category": "embeddings",
-      "image": "docs/assets/gallery/domain-single-cell-umap.png",
-      "sha256": "63e5828460e0d2f19d70d0db98c958376d9ce81215e17d28cf70818734070b41",
-      "pixel_sha256": "1c7258932055a55295ab68bf2cb5de9670a17c995ed40238088af9e3a81bf900",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/domain-single-cell-umap.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_domain_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "综合证据面板"
     },
     {
       "id": "BF-0010",
@@ -269,26 +218,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0011",
-      "title": "结构变异 Circos 示意",
-      "category": "genomes",
-      "image": "docs/assets/gallery/domain-structural-variation.png",
-      "sha256": "cd86c3af43b174c5de5745fe7f9e7ec2387f4ed7258eb1187b87bf335e8fdc8e",
-      "pixel_sha256": "ce0cfa471f56be6d568ccd1587658268c482fa0cdad904b4c80c5239f12a4a5c",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/domain-structural-variation.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_domain_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "空间表达"
     },
     {
       "id": "BF-0012",
@@ -307,26 +238,8 @@
         "biofigure/examples/gallery/generate_domain_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0013",
-      "title": "表达热图",
-      "category": "heatmaps",
-      "image": "docs/assets/gallery/template-heatmap.png",
-      "sha256": "4371cea8532889139f0adf3cdd3c0c022a77a55ae3e2350c1b779a37f5c8b2a5",
-      "pixel_sha256": "543c9cba2d8de98458b58b84208b486b674ca13ee39287030597bee7ee330afe",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/template-heatmap.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_core_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "共线性"
     },
     {
       "id": "BF-0014",
@@ -346,7 +259,8 @@
         "biofigure/examples/gallery/generate_advanced_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "系统树与注释"
     },
     {
       "id": "BF-0015",
@@ -366,27 +280,8 @@
         "biofigure/examples/gallery/generate_advanced_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0016",
-      "title": "云雨图",
-      "category": "distributions",
-      "image": "docs/assets/gallery/template-raincloud.png",
-      "sha256": "0db3e621c498ba8197aaba4ea260e4fe9958c8e116a61c2111c7fcb47647299a",
-      "pixel_sha256": "bfe35b4350eb2d4b0fc6540b470539e2caf7ea9bf5a3d2e667dda04d5232e1dc",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/gallery/template-raincloud.png",
-        "Project_001_生物科研绘图Skill/reproductions/2026-09-09/output/raincloud.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/gallery/generate_advanced_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "单面板雷达"
     },
     {
       "id": "BF-0017",
@@ -405,7 +300,8 @@
         "biofigure/examples/gallery/generate_core_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "标记基因气泡"
     },
     {
       "id": "BF-0018",
@@ -424,7 +320,8 @@
         "biofigure/examples/gallery/generate_core_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "基础火山"
     },
     {
       "id": "BF-0019",
@@ -445,7 +342,8 @@
         "biofigure/examples/genome-gallery/draw.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "嵌套染色体"
     },
     {
       "id": "BF-0020",
@@ -466,28 +364,8 @@
         "biofigure/examples/reference-transfer/scripts/draw.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0021",
-      "title": "突变能量热图",
-      "category": "heatmaps",
-      "image": "docs/assets/reference-transfer/mutation.png",
-      "sha256": "9122bdc0b1f0b7d6544c86de2d24c41c912001ecfcb981f058ba714875d8cdfd",
-      "pixel_sha256": "8dfe10bdb773d94e4f2baebd52571d00df10a9e508d0a6c3944f82651bda060a",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/reference-transfer/mutation.png",
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/random-next-three/results/figures/mutation.png",
-        "Project_001_生物科研绘图Skill/work/github-refresh/reproduction/results/figures/mutation.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/reference-transfer/scripts/draw.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "效应量森林"
     },
     {
       "id": "BF-0022",
@@ -507,7 +385,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "三元组成"
     },
     {
       "id": "BF-0023",
@@ -527,7 +406,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "半圆多轨矩阵"
     },
     {
       "id": "BF-0024",
@@ -547,7 +427,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "临床注释矩阵"
     },
     {
       "id": "BF-0025",
@@ -567,7 +448,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "患者泳道"
     },
     {
       "id": "BF-0026",
@@ -587,7 +469,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "嵌套环图"
     },
     {
       "id": "BF-0027",
@@ -607,27 +490,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0028",
-      "title": "山脊与条码组合",
-      "category": "distributions",
-      "image": "docs/assets/reproduction-gallery/figure_088_issue077_ridgeline_barcode.png",
-      "sha256": "136a48d73d40a8eeff8704912d80c49657c1c401d625c8774b7223ec54503136",
-      "pixel_sha256": "ae5f05fe162c1e2add5ebc743ec2b6ab5152b535f4dc2b323f9137d0d17e6aac",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_088_issue077_ridgeline_barcode.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_088_issue077_ridgeline_barcode.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "层级网络"
     },
     {
       "id": "BF-0029",
@@ -647,7 +511,8 @@
         "biofigure/examples/reproduction-gallery/generate_064_080_gallery.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "地理流向"
     },
     {
       "id": "BF-0030",
@@ -667,67 +532,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0031",
-      "title": "细胞状态三元图",
-      "category": "composition",
-      "image": "docs/assets/scidraw-gallery/02_ternary_cell_state.png",
-      "sha256": "b38a107743a5618dd2602ceb23a898462fd1e19823d786a886032cda51d59e79",
-      "pixel_sha256": "0aadb93b290b0d323202778e198ed6401595be6a2113d05def46a0774b9d8343",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/02_ternary_cell_state.png",
-        "Project_008_SciDraw六图复现/results/figures/02_ternary_cell_state.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0032",
-      "title": "相关热图",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery/03_correlation_heatmap.png",
-      "sha256": "71e70955140675e5b8a6bf4fe7b06c3c7e93718f5a45000d095de53cc5077007",
-      "pixel_sha256": "4ff39c4ebf2743f9c48289e9a8ccef14d2cc35d0fb4cecc5240ebe0dd0522894",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/03_correlation_heatmap.png",
-        "Project_008_SciDraw六图复现/results/figures/03_correlation_heatmap.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0033",
-      "title": "患者泳道图",
-      "category": "clinical",
-      "image": "docs/assets/scidraw-gallery/04_patient_swimmer.png",
-      "sha256": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
-      "pixel_sha256": "af22c11e90bb75aee0b6dc3d9e16d9f56fa9506ebd18e9c51f84b156ac6784d2",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/04_patient_swimmer.png",
-        "Project_008_SciDraw六图复现/results/figures/04_patient_swimmer.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "PCoA"
     },
     {
       "id": "BF-0034",
@@ -747,7 +553,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "弦图"
     },
     {
       "id": "BF-0035",
@@ -767,7 +574,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "火山与富集组合"
     },
     {
       "id": "BF-0036",
@@ -787,149 +595,8 @@
         "biofigure/examples/scidraw-gallery/scripts/scidraw_rcs_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0037",
-      "title": "双向山脊分布",
-      "category": "distributions",
-      "image": "docs/assets/scidraw-gallery/scidraw_ridge_bipolar.png",
-      "sha256": "6effff9f899ea91f2d79be6ed0ba580e30e3be4c6fd6bc1f15c8e948af76797a",
-      "pixel_sha256": "513071d4ed37674d873a5b580f2fdf33edf11a3e94385e5477293f2af79c1f81",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/scidraw_ridge_bipolar.png",
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/ridge-run/results/figures/scidraw_ridge_bipolar.png",
-        "Project_007_SciDraw复现训练/results/figures/scidraw_ridge_bipolar.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "双向山脊的历史版本；当前修订版见 BF-0072。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/scidraw_ridge_bipolar_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": true,
-      "superseded_by": "BF-0072"
-    },
-    {
-      "id": "BF-0038",
-      "title": "多边形雷达图",
-      "category": "radar",
-      "image": "docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png",
-      "sha256": "7bbe3a4fb96dad41575a5e1421374b5221267fc8c7ccc224b3bb959837f7ae71",
-      "pixel_sha256": "f7961b4e70ecde43bc0ce5975224082e35f7c6f92a8b4b35267415f9ce9cd84e",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png",
-        "Project_016_SciDraw第二批20图/results/figures/01_polygon_radar_fmsb.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0039",
-      "title": "分面雷达图",
-      "category": "radar",
-      "image": "docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png",
-      "sha256": "286f0b40417892ff7cda9928c07b0f1e36ce262ec88df503e69181e1a3a2c31a",
-      "pixel_sha256": "95cab4531f59646ff20104cbf1c4c7413fe0cf27a1c3d36342339ed557c89cd5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/02_faceted_radar_fmsb.png",
-        "Project_016_SciDraw第二批20图/results/figures/02_faceted_radar_fmsb.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0040",
-      "title": "外圈标注雷达图",
-      "category": "radar",
-      "image": "docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png",
-      "sha256": "04043134cef97995adfedef2104fb16fa11484682450a0fe6ef18251501cd0e4",
-      "pixel_sha256": "473b2ce0d6d6672f701ea4c416ca6f8cde9151dd1c5ef4db767a426fc4087b4b",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/03_circular_radar_outer_ggradar.png",
-        "Project_016_SciDraw第二批20图/results/figures/03_circular_radar_outer_ggradar.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0041",
-      "title": "双组环形雷达图",
-      "category": "radar",
-      "image": "docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png",
-      "sha256": "50db8542e496369c94bc4361fb161e00f0f62708f8adad165587ef853af76269",
-      "pixel_sha256": "0ce8fa7a06b72474df3e8f04cdee6bb40da9e23ff781b74556e2db8c6769c361",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/04_circular_radar_lmm.png",
-        "Project_016_SciDraw第二批20图/results/figures/04_circular_radar_lmm.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0042",
-      "title": "差值环形雷达图",
-      "category": "radar",
-      "image": "docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png",
-      "sha256": "1cc50a64bc3e80978f5a4e270f0fc10afde2c2c7b95118c23d24b6f94cb72d69",
-      "pixel_sha256": "5f2150d6854f38d0beb14f9bbeeaca268c5fa4e0b4e926c6d1cfa346bf47ba23",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/05_circular_radar_difference.png",
-        "Project_016_SciDraw第二批20图/results/figures/05_circular_radar_difference.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0043",
-      "title": "半小提琴、箱线与原始点",
-      "category": "distributions",
-      "image": "docs/assets/scidraw-gallery-batch2/06_half_violin_box_points.png",
-      "sha256": "60885fe762dfe0cd435ad63d14bb6601c3e3aa11065de9934e590b2153ed3842",
-      "pixel_sha256": "b08ab7c9c1e964c91b789d043d2d7530eb59c40cbe1bbb7b941d26652129660b",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/06_half_violin_box_points.png",
-        "Project_016_SciDraw第二批20图/results/figures/06_half_violin_box_points.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "限制性立方样条"
     },
     {
       "id": "BF-0044",
@@ -949,27 +616,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0045",
-      "title": "分位数云雨图",
-      "category": "distributions",
-      "image": "docs/assets/scidraw-gallery-batch2/08_quantile_raincloud_gghalves.png",
-      "sha256": "1e4c346affd6de2b75594014f6dfc812b86ac4ec6e1c3d00d764906a77037504",
-      "pixel_sha256": "0297ddd79c81c3d56b1eb7bcaf1c2d20f86c3b743c80a26af05f1b5e7ed95626",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/08_quantile_raincloud_gghalves.png",
-        "Project_016_SciDraw第二批20图/results/figures/08_quantile_raincloud_gghalves.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "小提琴与蜂群"
     },
     {
       "id": "BF-0046",
@@ -989,27 +637,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0047",
-      "title": "雨滴分布图",
-      "category": "distributions",
-      "image": "docs/assets/scidraw-gallery-batch2/10_raindrop_ggdist.png",
-      "sha256": "8d59036e418bd5275e1bb48791755d48d93052b21c412cbff9bac4ba6366635c",
-      "pixel_sha256": "3f301164c37cf7e93348083488545e9bd6e913aa355bc416e56c18254f231f17",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/10_raindrop_ggdist.png",
-        "Project_016_SciDraw第二批20图/results/figures/10_raindrop_ggdist.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "云雨图"
     },
     {
       "id": "BF-0048",
@@ -1029,67 +658,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0049",
-      "title": "相关矩阵与侧边注释",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery-batch2/12_corrplot_with_sidebars.png",
-      "sha256": "e561e3c6baaf32800d60640d888c1c32ccf30b2e16f5f16044d9a49400575250",
-      "pixel_sha256": "10ac696bc8ec4003782348d02c35f195d2db19021a038a30140927bc3d376707",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/12_corrplot_with_sidebars.png",
-        "Project_016_SciDraw第二批20图/results/figures/12_corrplot_with_sidebars.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0050",
-      "title": "聚类上三角相关矩阵",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png",
-      "sha256": "0dd6da35eee254e1e67d295d865a8f433c18e9096e62178e4c20161b5d6827a8",
-      "pixel_sha256": "0424c87067ecf6e59a1dd386c8d0045e04fbe37cec9b542b14a5b98763d3b845",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png",
-        "Project_016_SciDraw第二批20图/results/figures/13_clustered_upper_triangle.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0051",
-      "title": "细胞状态注释热图",
-      "category": "heatmaps",
-      "image": "docs/assets/scidraw-gallery-batch2/14_annotated_pheatmap.png",
-      "sha256": "edb82b74aa15c54b99cc8140b024dd8bbad54347049ae0fa0478eedf8d18c989",
-      "pixel_sha256": "35d01c7387ec805eca0e9a18662428d1edf5b5a738dfff444743d24ec29aec9c",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/14_annotated_pheatmap.png",
-        "Project_016_SciDraw第二批20图/results/figures/14_annotated_pheatmap.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "拟合与残差组合"
     },
     {
       "id": "BF-0052",
@@ -1109,47 +679,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0053",
-      "title": "分组相关气泡矩阵",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery-batch2/16_grouped_correlation_bubbles.png",
-      "sha256": "9ba082ff76f8f911d9218bdadaaf42781d6853a6a7cbfac53f62ffdfaf716d51",
-      "pixel_sha256": "6c6b6432d070c8dad26c0b5e93ba2d1d796878aab2a798f2e31521e0ced89919",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/16_grouped_correlation_bubbles.png",
-        "Project_016_SciDraw第二批20图/results/figures/16_grouped_correlation_bubbles.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0054",
-      "title": "成对回归矩阵",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery-batch2/17_ggally_regression_matrix.png",
-      "sha256": "f74fa0fd41d7d55f72eb979d84e899c55e53b10a299fa6de2479dc0bb71def26",
-      "pixel_sha256": "17c36b30035e56f7a73a223b3c4136eb53e9eb6d9d981c5361b40c3bd2275d9e",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/17_ggally_regression_matrix.png",
-        "Project_016_SciDraw第二批20图/results/figures/17_ggally_regression_matrix.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "分面相关气泡"
     },
     {
       "id": "BF-0055",
@@ -1169,7 +700,8 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "相关网络"
     },
     {
       "id": "BF-0056",
@@ -1189,145 +721,12 @@
         "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0057",
-      "title": "密度相关矩阵：红色版",
-      "category": "correlations",
-      "image": "docs/assets/scidraw-gallery-batch2/20_density_matrix_red.png",
-      "sha256": "6139176b0a1db83bf7d157210e53657b2ee6e52ded65beae2602869bc98d071c",
-      "pixel_sha256": "2b7032c84b1400e85bd6b0a64de8fe5d4a895532aed7d01037b2c77221ac27bc",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/20_density_matrix_red.png",
-        "Project_016_SciDraw第二批20图/results/figures/20_density_matrix_red.png"
-      ],
-      "collection": "existing-gallery",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/scidraw-gallery/scripts/generate_batch20.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0058",
-      "title": "分组分布与原始观测点",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/maintenance-examples/distribution.png",
-      "sha256": "c7952f80a97cf45df40a76c6c09f06919866302b9e247175a9df5535309f58b5",
-      "pixel_sha256": "b6d9ec54492592c5652b4a7078eb8d09d1cdf1d3a0a556cf818d8eb26e1203ff",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/maintenance/2026-09-08/distribution.png"
-      ],
-      "collection": "maintenance-examples",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/maintenance-examples/scripts/render_checks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0059",
-      "title": "分组表达与检测比例气泡图",
-      "category": "embeddings",
-      "image": "docs/assets/archive-gallery/maintenance-examples/dotplot.png",
-      "sha256": "2dfbc5ca533b1802c1dbac0ce22159aae352b2fa01475f765ff45689f4979ba1",
-      "pixel_sha256": "0cd8d1cd597f8d8dfe4efb778d6ba37272d1681612e50a502437b3e86f43e3eb",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/maintenance/2026-09-08/dotplot.png"
-      ],
-      "collection": "maintenance-examples",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/maintenance-examples/scripts/render_checks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0060",
-      "title": "模块化表达注释热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/maintenance-examples/heatmap.png",
-      "sha256": "43382670c99a83608866025e0684336be6a681cd5857449a508c7a9a74ab84d6",
-      "pixel_sha256": "661f192495191861871d60181edfb4c8b41745f7c25503fda25a68c5dfc2cce6",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/maintenance/2026-09-08/heatmap.png"
-      ],
-      "collection": "maintenance-examples",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/maintenance-examples/scripts/render_checks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0061",
-      "title": "基准：分组注释热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/benchmark-six/annotated_heatmap.png",
-      "sha256": "10c16ff858bea98232257174a89085b1eed110ad7d05c45d5a871e8e0cc67ddb",
-      "pixel_sha256": "3633bdd933cb2d66327d9c92ab5f51d6790bd5f82b3b87b065e0604fe72d4c11",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/annotated_heatmap.png"
-      ],
-      "collection": "benchmark-six",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0062",
-      "title": "基准：多条件环形组成",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/benchmark-six/circular_composition.png",
-      "sha256": "4d8970c5c38e0a4296b83d770d3ad859bd50eb70bf25f0b84306a98979c9874f",
-      "pixel_sha256": "d4bcca785a34006e5e22e3800d679f7c35f4133670260a10406a12d952dba9b0",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/circular_composition.png"
-      ],
-      "collection": "benchmark-six",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0063",
-      "title": "基准：富集关联网络",
-      "category": "networks",
-      "image": "docs/assets/archive-gallery/benchmark-six/enrichment_network.png",
-      "sha256": "7e5c38ef92fda3400321e7a08223fda0d4d8aa3210c7618f7c4b4013dae0b60b",
-      "pixel_sha256": "14b97a822c7300c688b30507d3217a463193cdf6ddfa77e3a5408957ba638056",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/enrichment_network.png"
-      ],
-      "collection": "benchmark-six",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "成对密度矩阵"
     },
     {
       "id": "BF-0064",
-      "title": "基准：生存曲线",
+      "title": "生存曲线",
       "category": "clinical",
       "image": "docs/assets/archive-gallery/benchmark-six/survival.png",
       "sha256": "11301e1f32c79a22092c1c232a8efebb463de333d168c9a922116609be2d6b8a",
@@ -1342,65 +741,8 @@
         "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0065",
-      "title": "基准：治疗泳道",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/benchmark-six/swimmer.png",
-      "sha256": "be37449f0021975d0040767f695d02f739c09004ae1005fd73cbd2bf99b3550d",
-      "pixel_sha256": "c66b52b46833b9f7be6017e1038f2a6e2ed2828e308779d3c69246bf75cd3655",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/swimmer.png"
-      ],
-      "collection": "benchmark-six",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0066",
-      "title": "基准：个体轨迹与时序均值",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/benchmark-six/time_series.png",
-      "sha256": "e6df99352f9e1aee742fa8c77bf4257ac0c4c2fe959cf99f5a0960ee64314e6e",
-      "pixel_sha256": "b2dada80018fb9e49c671299cb0450bf55d8e0584efc9d162ac2316f22c827b2",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/time_series.png"
-      ],
-      "collection": "benchmark-six",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/benchmark-six/scripts/generate_natural_r_benchmarks.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0067",
-      "title": "分面荧光信号时序",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/reference-transfer/time.png",
-      "sha256": "aa339fae7396441f4ac38ceaf47dde0645eafe7f57117a1c88ec7c4779e6d703",
-      "pixel_sha256": "c1f428b36d05d48d962d74cb6d0934a5449b2bea76b308eb6674c525599bf1b1",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/random-next-three/results/figures/time.png",
-        "Project_001_生物科研绘图Skill/work/github-refresh/reproduction/results/figures/time.png"
-      ],
-      "collection": "reference-transfer",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/reference-transfer/scripts/draw.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "生存曲线"
     },
     {
       "id": "BF-0068",
@@ -1419,26 +761,8 @@
         "biofigure/examples/archive-gallery/random-three/scripts/draw_three.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0069",
-      "title": "多类别分组散点比较",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/random-three/grouped.png",
-      "sha256": "94b83fb2ddb9b181d83c6403e78b9434606a8973986816cddc02d174bd45fd79",
-      "pixel_sha256": "a73e50d896596efff8ad96d3355c91487a1e1f862489eca08bc3dd1755ef401d",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/random-three/results/figures/grouped.png"
-      ],
-      "collection": "random-three",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/random-three/scripts/draw_three.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "环形分组柱"
     },
     {
       "id": "BF-0070",
@@ -1457,31 +781,12 @@
         "biofigure/examples/archive-gallery/random-three/scripts/draw_three.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0071",
-      "title": "双向山脊：中间修订版",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/ridge-repaired/scidraw_ridge_bipolar.png",
-      "sha256": "6913f677dc83153871528d3abfd54205a96292a1998fe83b15c06b506a468959",
-      "pixel_sha256": "f10b180ce8fd8fea6d909af179a673550104b9a6a1b1992d1ae01a5dffa8227e",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/ridge-repaired/results/figures/scidraw_ridge_bipolar.png"
-      ],
-      "collection": "ridge-repaired",
-      "data_origin": "simulated",
-      "note": "双向山脊的历史版本；当前修订版见 BF-0072。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/ridge-repaired/scripts/render.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": true,
-      "superseded_by": "BF-0072"
+      "historical": false,
+      "subtype": "双条件效应比较"
     },
     {
       "id": "BF-0072",
-      "title": "双向山脊：第二次修订版",
+      "title": "双向山脊分布",
       "category": "distributions",
       "image": "docs/assets/archive-gallery/ridge-repaired-v2/scidraw_ridge_bipolar.png",
       "sha256": "345cc86aef87bcdbdec75b2acd201c0b9b3f5b1a5698eb46ec899dd65d517cb0",
@@ -1496,7 +801,8 @@
         "biofigure/examples/archive-gallery/ridge-repaired-v2/scripts/render.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "山脊分布"
     },
     {
       "id": "BF-0073",
@@ -1524,231 +830,8 @@
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/deuYTanHaDr6D8y3lKjW-Q"
-    },
-    {
-      "id": "BF-0074",
-      "title": "小提琴与双 NMDS 组合",
-      "category": "embeddings",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/02_violin_nmds.png",
-      "sha256": "899f11d9f9b0954dc0a37e9cdd1f8988d13ff8a21914d293b98b7477d30e13c4",
-      "pixel_sha256": "d3b11e0078ad7ba4ac15abaa76119c6439976b8314468c1630df5477708f97a6",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/02_violin_nmds.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/i-DyiZ1EQaWwX-xp0k8FzA"
-    },
-    {
-      "id": "BF-0075",
-      "title": "免疫指标森林图",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/03_immune_forest.png",
-      "sha256": "abb9ff6559f77deeedc0236e96a2bfcacf5d4e95115e6d9d9faaff166129e815",
-      "pixel_sha256": "e5a2f618e8a84aaf6d070b22c6a06162425dfa0c5ba3bc7a23979022367be26f",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/03_immune_forest.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/2B95P3is3_NWGJmcY9prsQ"
-    },
-    {
-      "id": "BF-0076",
-      "title": "双列 HR 森林图",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/04_dual_hr_forest.png",
-      "sha256": "e9de8c94d1a7fd5cfb37fe551df42b2bafa89a05d74f4c14d04cd46c7cace03f",
-      "pixel_sha256": "e8177facceb50b5cf18688d82df9716c411ec0dd00ce943b0c81295261fa8dda",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/04_dual_hr_forest.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/2B95P3is3_NWGJmcY9prsQ"
-    },
-    {
-      "id": "BF-0077",
-      "title": "治疗事件泳道图",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/05_swimmer.png",
-      "sha256": "163d3d8eefe8b3fa1da809277f3d54afdd4eacc0379e8eb639be7235a9f02380",
-      "pixel_sha256": "cae192272d3ea3f99298c759b47a92b99fe082e6d0bda357f94f09ba5a0b2a13",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/05_swimmer.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/DWxaxZvIFW0_Ve1yDRYSZQ"
-    },
-    {
-      "id": "BF-0078",
-      "title": "数值表与热图组合",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/06_table_heatmap.png",
-      "sha256": "1eb078ae48584c456d5cbea8c8fc4070a4255674bee0069286043e1479152523",
-      "pixel_sha256": "7cf4a34a5efd30c686ce73b965d69b8e6e19b58c3411a07bca64e672fd309188",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/06_table_heatmap.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/0lwFmwrD7e5Pu8_fCUGv9Q"
-    },
-    {
-      "id": "BF-0079",
-      "title": "火山图与上下调富集条形图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/07_volcano_enrichment_1.png",
-      "sha256": "c48e2cefe2445b2d9513d14f2dff680aee510932ad671ebcbce812fe379abaa9",
-      "pixel_sha256": "99dd3b984cfe90ff309142ae391bf0e85159c31bbbec8e847e1a30c1877b2ed5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/07_volcano_enrichment_1.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw"
-    },
-    {
-      "id": "BF-0080",
-      "title": "双侧富集与差异表达组合",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/08_volcano_enrichment_2.png",
-      "sha256": "854a230720701b31f7f7a5046da2f523253e01358a0be926651f4ab546a1de40",
-      "pixel_sha256": "2df5f4b7e1539fdbb4fcb89bede28a4632a9a7afaae6e9a8d153fd999b692f40",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/08_volcano_enrichment_2.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw"
-    },
-    {
-      "id": "BF-0081",
-      "title": "火山图与富集网络",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/09_volcano_enrichment_network.png",
-      "sha256": "65cbb58c131d28d6c07d042c25d11475517e28dd22fd3e543111ce65c8844187",
-      "pixel_sha256": "53115678b704e1274ce37c35bbb7766e887d206a1a11f5c5979ff307f81f22b7",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/09_volcano_enrichment_network.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/9q-SMHq0RHzn81n4KYuhtw"
+      "source_url": "https://mp.weixin.qq.com/s/deuYTanHaDr6D8y3lKjW-Q",
+      "subtype": "NMDS"
     },
     {
       "id": "BF-0082",
@@ -1776,35 +859,8 @@
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA"
-    },
-    {
-      "id": "BF-0083",
-      "title": "环形热图与集合交叠",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/11_circular_heatmap_venn.png",
-      "sha256": "341874ebf41fe14f10a605e7f755736f43505a83cc0d9f33864cbe3803ae88b1",
-      "pixel_sha256": "9147b2bbe4ec7ca86fc31350c792b3b2d2b948d2b081c8f7c2ce46e137c727b6",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/11_circular_heatmap_venn.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/5MuPle8NnqdNaBJj0lSW8Q"
+      "source_url": "https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA",
+      "subtype": "环形热图与交集"
     },
     {
       "id": "BF-0084",
@@ -1824,27 +880,8 @@
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cPBBUA1QLryNnMS554uCqw"
-    },
-    {
-      "id": "BF-0085",
-      "title": "扇形箱线图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/13_fan_boxplot.png",
-      "sha256": "f384480cbb1ff0c14a51f2c3b3279a962ab4d7caf70c043ae2bd9a5811c15230",
-      "pixel_sha256": "8930754b81a03a3534637ddb7077ba04ccd90e5f092a1c6ed5f85d7c2f1e5ac5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/13_fan_boxplot.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cPBBUA1QLryNnMS554uCqw"
+      "source_url": "https://mp.weixin.qq.com/s/cPBBUA1QLryNnMS554uCqw",
+      "subtype": "径向小提琴"
     },
     {
       "id": "BF-0086",
@@ -1864,36 +901,8 @@
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/u8IgzYxdRHu8xwnnlvgawQ"
-    },
-    {
-      "id": "BF-0087",
-      "title": "环形轨迹：早期版本",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/14_circular_trajectory.png",
-      "sha256": "567e5ea3873f306cc70077851e17626478ee1e4ff45e06225e699acd504f562b",
-      "pixel_sha256": "80805f51997fcb67659e3cdaa82b8fc32b255f3195dbb21363dcb75a29c574b7",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/14_circular_trajectory.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "早期环形轨迹；对应分组曲线修订版见 BF-0086。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": true,
-      "superseded_by": "BF-0086",
-      "source_url": "https://mp.weixin.qq.com/s/u8IgzYxdRHu8xwnnlvgawQ"
+      "source_url": "https://mp.weixin.qq.com/s/u8IgzYxdRHu8xwnnlvgawQ",
+      "subtype": "环形曲线"
     },
     {
       "id": "BF-0088",
@@ -1921,377 +930,8 @@
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/2FDViuydPNLybOrfM9eW9w"
-    },
-    {
-      "id": "BF-0089",
-      "title": "径向网络与外圈柱图",
-      "category": "networks",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/16_network_circular_bar.png",
-      "sha256": "b5ce2a32088bd5aebfc8aff67fb0adc00ff37710a901f45a4442b89665194ace",
-      "pixel_sha256": "fa1251f1a01355a40b961244ce0b67bc47173c2c459f8f3f81c1f2039e51eff7",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/16_network_circular_bar.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/m0zb6F7PpycKcGABHt-qqw",
-      "historical_review_status": "needs-revision"
-    },
-    {
-      "id": "BF-0090",
-      "title": "径向网络与外圈气泡",
-      "category": "networks",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/17_network_circular_bubble.png",
-      "sha256": "1f5740b8989f708c1abbad2fc00dd973aa51707b98c0f231854d6abb759a52d8",
-      "pixel_sha256": "8d1bdd8232cff5d352c099b3d8f1df90b281c4af51d011b5d2820be242bbbe49",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/17_network_circular_bubble.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/m0zb6F7PpycKcGABHt-qqw",
-      "historical_review_status": "needs-revision"
-    },
-    {
-      "id": "BF-0091",
-      "title": "环形棒棒糖与关联连线",
-      "category": "networks",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/18_circular_lollipop_links.png",
-      "sha256": "06758ddb3544920d53f6bb9e4fa13233375624ec2c0060c5ca583911e0741720",
-      "pixel_sha256": "f3aa085fb4f276aad2a77d0e23bec20354eeb776ac861e9c6519f0681305f04a",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/18_circular_lollipop_links.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_batch.R",
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_16_18.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/ABiUom7wjWAK8dK5qFZUbw",
-      "historical_review_status": "needs-revision"
-    },
-    {
-      "id": "BF-0092",
-      "title": "系统树与三层热图",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/19_phylogeny_three_heatmaps.png",
-      "sha256": "d6291f0c2353aca4744cf31ba93bf0b3d154b8ee06064dc3c6f98d8a07e2d6d7",
-      "pixel_sha256": "77385820ff513f52828ecb75803090dc482ef5f345d29019b2fd735d719173a2",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/19_phylogeny_three_heatmaps.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg",
-      "historical_review_status": "needs-revision"
-    },
-    {
-      "id": "BF-0093",
-      "title": "系统树、热图与柱形轨道",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/20_phylogeny_heatmap_bar.png",
-      "sha256": "878555737224c416fdd2d718c1fa1a30ed99d354f9ccbbf1c420d22f535b53ac",
-      "pixel_sha256": "0dbca192d0521bbd0fb8fcd816176791e135f814781bbd99e02ecc445a53cee0",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/20_phylogeny_heatmap_bar.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_19_20.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg",
-      "historical_review_status": "needs-revision"
-    },
-    {
-      "id": "BF-0094",
-      "title": "双矩阵分面热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/21_faceted_dual_heatmap.png",
-      "sha256": "ee0bd3b2d6675709667e44b91e306b8dd04a0b27b10f7e8bd9ce66122c736b36",
-      "pixel_sha256": "875e4d00cc966e6bd8a99cfc7e3a8864e3c817acdbd385d6e15173f641837738",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/21_faceted_dual_heatmap.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/7vEXy51vXTHczgRcNg6o7g",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0095",
-      "title": "双曲阈值火山图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/22_hyperbolic_volcano.png",
-      "sha256": "3e3e04b2a607db69ffa0f10b6dd111b935d9853b2d10787313967db4fc02e34c",
-      "pixel_sha256": "8feec139fea02b5cbc81fec49386300c31cb0bb8fbbc43a2e9b41a9943761372",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/22_hyperbolic_volcano.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/mDUBhuWkYBN8XwPxJozEhw",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0096",
-      "title": "RNA 与翻译变化象限图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/23_rna_translation_quadrants.png",
-      "sha256": "16a5430a942c79cb130909527d965273b1dc85c6981354ce7ba6171ea45defd4",
-      "pixel_sha256": "50bc2fc7a10f16cfbd3bbe764d50681acb1316fb12eb6ca1dd1d372a4cdc4765",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/23_rna_translation_quadrants.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/1Mv-fsKQnkrbi-YL4-yOMQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0097",
-      "title": "细胞丰度蜂群图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/24_cell_abundance_beeswarm.png",
-      "sha256": "e7aa70c67e544074a9a2dc0273c440cf47ac457d32529aea9af2d208527be2ae",
-      "pixel_sha256": "aecd71aff8b311ab247b16674ca0ca17845341262811b4d4395847e5cc495713",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/24_cell_abundance_beeswarm.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/5tsdXXahgEDeuvKA6C0SBA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0098",
-      "title": "OTU 气泡曼哈顿图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/25_otu_bubble_manhattan.png",
-      "sha256": "36677c0565590460cc282d7c219d458362d666e04573ec54128f5dca33b14dd9",
-      "pixel_sha256": "bf48b0f44a709a594bb2d67d592f081ea4422147a88391d7961e1a8cf5af60d5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/25_otu_bubble_manhattan.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_21_25.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/QtTyTtYYjik1QGwcGE9F2w",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0099",
-      "title": "分面散点饼图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/26_faceted_scatterpie.png",
-      "sha256": "24f96cb38fa7468e11bdf1e1f721f039f0680d8176c22ffb1716c46ada58d9e6",
-      "pixel_sha256": "b804bccba2664c34e42333102ee8b351a9af98b18fa224af6df9c68706f4aa42",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/26_faceted_scatterpie.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/tU4NvjPzjzDxUxHjuSAW6Q",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0100",
-      "title": "参数恢复分布矩阵",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/27_parameter_recovery_matrix.png",
-      "sha256": "987c9161ac40c0ce06896d6907002bff521075893e0bf32af59301b9ffbb5e7d",
-      "pixel_sha256": "989387490dcb39f82415ecb856eefb30d911f2ad92e87e614af84272b579d19a",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/27_parameter_recovery_matrix.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/4JTm5XooEv8B4CdQ2lqsGg",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0101",
-      "title": "双效应量散点图",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/28_dual_effect_scatter.png",
-      "sha256": "79ec46f69745ed9c9bf7f2a4c08a19f31bbe1e048f149090aa2001cb7ec284a0",
-      "pixel_sha256": "794d03e89dcfda0a9d21e8b6be2d11d030cbb57c79f037cbc0e9ba1bb87b8738",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/28_dual_effect_scatter.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/icWwRHufcX3n6Gz-jpVEhQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0102",
-      "title": "方向与显著性四象限图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/29_significance_quadrants.png",
-      "sha256": "f554e97f7e2a11bd9a3bea3cdce986b39fabeecd9002ccfb215a7d7d8bbf2d58",
-      "pixel_sha256": "7253f53e5e8b762409d7fbc5acc98284db5631726955c164ae8bedeaede19010",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/29_significance_quadrants.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/1Mv-fsKQnkrbi-YL4-yOMQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0103",
-      "title": "分面细胞效应蜂群图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/30_faceted_cell_beeswarm.png",
-      "sha256": "603ea9f9363aafa65105df4da469e906a2de179d03aa5195c19055ce53b94714",
-      "pixel_sha256": "40ab672fd1c87aef04bf4085b4bb605df377b4bae50246d569b6710e6600ff99",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/30_faceted_cell_beeswarm.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/5tsdXXahgEDeuvKA6C0SBA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0104",
-      "title": "纵向火山气泡图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/31_vertical_volcano.png",
-      "sha256": "1123137e785eabd970f86a6740e6314834860d23c7dd5cfd196d49d225c17d17",
-      "pixel_sha256": "c7d9ca95a27074a5b1d241aec4867663cb5170cd228f8f077840ceb8d6e7b8f6",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/31_vertical_volcano.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/mDUBhuWkYBN8XwPxJozEhw",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0105",
-      "title": "对称双组热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/32_symmetric_dual_heatmap.png",
-      "sha256": "5c93e7ea5170edab2d13767e5cdde881839e1fb5401c40f14774922d123d5110",
-      "pixel_sha256": "179c6ba989376feaf288652dcadc11e58ab11e91935e83220088dabececa4aff",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/32_symmetric_dual_heatmap.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/7vEXy51vXTHczgRcNg6o7g",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "source_url": "https://mp.weixin.qq.com/s/2FDViuydPNLybOrfM9eW9w",
+      "subtype": "分组柱"
     },
     {
       "id": "BF-0106",
@@ -2313,51 +953,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/82Pmi41CjpUtQrm5Rvzezw",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0107",
-      "title": "带空白分隔行的气泡热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/34_bubble_heatmap_blank_rows.png",
-      "sha256": "407418cf85c53786b31bca05bee0069de731a459af3e383a96df66380e66ef95",
-      "pixel_sha256": "8f8cac4c67630c9cb66118dded1d73836c65f98bd44795139ff50c5da9d98b6b",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/34_bubble_heatmap_blank_rows.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/5Fj1f0NeOxTM1_6IHHF2KA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0108",
-      "title": "分面显著性热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/35_faceted_significance_heatmap.png",
-      "sha256": "b94ed2fb216d6a0d524fa0e97138cf0ade78d1cfbdcdc1ccc01acfeb7a658dd9",
-      "pixel_sha256": "2f1c983ed3b88fdcc4b4d61ced997601da127e1612324dd7d4b541a98fab5fb5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/35_faceted_significance_heatmap.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_26_35.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/McDhZRHN4YzB8T5xvV-eKQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "配对箱线"
     },
     {
       "id": "BF-0109",
@@ -2379,51 +976,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/iDi21LdR2_V3fVRMos0LqQ",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0110",
-      "title": "显著性符号与空行注释热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/37_heatmap_significance_blankrow.png",
-      "sha256": "9910641fa18e499f5d665561a606a7b86919c0fb43a070ed0a18184451fc6bbc",
-      "pixel_sha256": "1fb4d62d20a06629370b2fd25985d3eaf700ef8468d82df5a748e443c8996278",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/37_heatmap_significance_blankrow.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/McDhZRHN4YzB8T5xvV-eKQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0111",
-      "title": "多组织火山图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/38_multi_tissue_volcano.png",
-      "sha256": "f5df8b6ea05a6593a96f29f92fa0f025de28bd6e1166cf3d0eec3700632a729c",
-      "pixel_sha256": "9515b981c0ce32df17d33e7ca3020cb7cb0cac20386213f317ba6e5edd87c3c1",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/38_multi_tissue_volcano.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/yeMUSZIac-nHXA-WY6P08Q",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "桑基图"
     },
     {
       "id": "BF-0112",
@@ -2445,315 +999,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/yeMUSZIac-nHXA-WY6P08Q",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0113",
-      "title": "多比较 jjVolcano 图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/40_jjvolcano_comparisons.png",
-      "sha256": "a6f990057581aaefe8ba514d7153451781745d00c419e7c5c78f99cbe0092acd",
-      "pixel_sha256": "a0ec14b70bf0319d86eeef60becb9c716d79ca47e974c9a3e377a16e9bf0394f",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/40_jjvolcano_comparisons.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/yeMUSZIac-nHXA-WY6P08Q",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0114",
-      "title": "环形 UMAP 与元数据轨道",
-      "category": "embeddings",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/41_circular_umap_metadata.png",
-      "sha256": "8cdadf1ec9ae8a180c3a099057dc6efb33575983b6cff6ee56197c36c9527e71",
-      "pixel_sha256": "308308d7198878198242906c0878e511a80c093777257739b33a2fde6cd0c6a1",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/41_circular_umap_metadata.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/jq4mmMURtIK6R4Twm8CXXA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0115",
-      "title": "高亮系统树与注释热图",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/42_phylogeny_highlight_heatmap.png",
-      "sha256": "586c9253cb069d639e89aa66095ce9ba5d80cd45026b63c53f2ab5e498b9df4f",
-      "pixel_sha256": "eb2a881bd04c1f25ca78f64a1421f955c8048e74a4db39582f26fc185497c113",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/42_phylogeny_highlight_heatmap.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0116",
-      "title": "系统树与双层热图",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/43_phylogeny_two_heatmaps.png",
-      "sha256": "62749efd3074c91d0c1024082af90039e9f955b6235282d551f165a2eded46b7",
-      "pixel_sha256": "1ce67a2fed4418b01db0658f4b8b15f269f38b190a10def620d951fdb87177d4",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/43_phylogeny_two_heatmaps.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/cRhAFPWWalGdtNhRMKDHJg",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0117",
-      "title": "OTU 生态位三元图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/44_otu_niche_ternary.png",
-      "sha256": "f6e612e98657adc865a1b72fabf15969548697ffb75f895af094d93ecf0a82b1",
-      "pixel_sha256": "a021679682611c813435ea3dcbb7c92bfca3ea6c3e3cc7fa50eee6496756e54d",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/44_otu_niche_ternary.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/r8eg8BJffDzg9FCDmbT6Zg",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0118",
-      "title": "蝴蝶式双向小提琴",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/45_butterfly_violin.png",
-      "sha256": "9d17c99843e2ac88d2491ccb156422e5b22dd0785fe8bad43539071c87ae5a4d",
-      "pixel_sha256": "8b64be7e6b97a317886bab0ae96a7eaf05b679c3eebbfe902821613d0f274e70",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/45_butterfly_violin.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/fbRUFLBirVnyHD32Pvp1jg",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0119",
-      "title": "渐变背景小提琴图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/46_gradient_violin.png",
-      "sha256": "8b05b65b681ccf003eb22a17cd18a207f0c7b4aa75935f0cc62e90a09e387f25",
-      "pixel_sha256": "7833c9a53679412b982c58fccb42502a3208f0cee89b3d4d826561942dbecbad",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/46_gradient_violin.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/JNQ4iubLlNE8JMDEsdXvzA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0120",
-      "title": "分面山脊分布图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/47_faceted_ridgeline.png",
-      "sha256": "c9567364afa38c771efd8cddb4096365eb93dda3ba5cff4d0c321446b2e034d8",
-      "pixel_sha256": "704b6b46887a1138b803fed58bfbceaeb540f8751fcc96816a9733467e49ba1b",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/47_faceted_ridgeline.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/ztzBYFm_jJUqYuXMD5AnQA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0121",
-      "title": "多峰平滑频谱",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/48_custom_smooth_spectrum.png",
-      "sha256": "ee7df2716d4ccdfa5d1bcc71c56e01a9536175edf2df051d446468ddd87a3d4a",
-      "pixel_sha256": "715610596f337a8e4333bac7585bd673114d4da2eac804558146f124344aa8ee",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/48_custom_smooth_spectrum.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/KA6UW4q-BzmnIdpqvoI5lQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0122",
-      "title": "纵向折线与终点柱图",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/49_line_bar_combo.png",
-      "sha256": "c180390789d7294c7345ec359fd0b8e0266db5f34aaf4c44ec128e8dee51369e",
-      "pixel_sha256": "012f8ade129b6441a4269df7f4ecfe402fb5fc390970e03a63b4bfaae5407507",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/49_line_bar_combo.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/rAlb9MeQzqT-iQP1-aesyA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0123",
-      "title": "散点与对角直方图",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/50_diagonal_scatter_hist.png",
-      "sha256": "46c747207ed64605db723e6f1c4541a72b176174a706edfa994a73911ec332df",
-      "pixel_sha256": "7b3504043b49405a8bbc8ea965156480ae1aff9c41e4f0a66cefc073deb8baef",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/50_diagonal_scatter_hist.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/0qWUE0DhlAJrnXPWZNKldQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0124",
-      "title": "渐变分组环形柱图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/51_grouped_gradient_circular_bar.png",
-      "sha256": "7a98c6ffa18af813eb602c6b95be2d39639e2607e250bc0d074d7295e8916b14",
-      "pixel_sha256": "b59f136403bfff06c674976ea916cbe65831666c3264f794f077327968302019",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/51_grouped_gradient_circular_bar.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/u8IgzYxdRHu8xwnnlvgawQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0125",
-      "title": "堆叠点与嵌入饼图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/52_stacked_dot_inset_pie.png",
-      "sha256": "f828e2c828de6297b67d225825bab5a248bd7eadbb5873382070d50b9a1ced95",
-      "pixel_sha256": "37f94de73e659686da688b444088977749ccf7e07f4bbe8f13807ecf26c035e5",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/52_stacked_dot_inset_pie.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/4ambuuw1fI07X0PoipIGsA",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0126",
-      "title": "样本信息 Circos 环图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/53_sample_information_circos.png",
-      "sha256": "434b94cef398f06fd1521c09ea30c09f7bcbddb2dc2ec564659a088ff4498af4",
-      "pixel_sha256": "8fcab3ec12604f69309079a0cedf0d8f0ef6f756146f0be5fc75caf0eeaab020",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/53_sample_information_circos.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_46_55.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/AD0NWQJPlkVOs0O8r8joww",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "多组火山"
     },
     {
       "id": "BF-0127",
@@ -2775,7 +1022,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/SlQfiOpHiUNfu2SPR_UhMw",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "堆积柱与哑铃"
     },
     {
       "id": "BF-0128",
@@ -2797,7 +1045,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/KVctDUes-A30fYwss8r1jQ",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "双组相关矩阵"
     },
     {
       "id": "BF-0129",
@@ -2819,51 +1068,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/mAOgsMJJJnHVHHMteS5O_A",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0130",
-      "title": "重复测量曲线与阶段背景",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/57_repeated_measures_clamp.png",
-      "sha256": "c39bc73b9196a34635a2330674041ee123bc9769c9a97f45ae55edb99c945a82",
-      "pixel_sha256": "683cfd347394e65183b29a68e28ef792e330913fdcfa42c28a0f061da7359a7c",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/57_repeated_measures_clamp.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/mAOgsMJJJnHVHHMteS5O_A",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0131",
-      "title": "世界地图与散点饼图",
-      "category": "networks",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/58_world_scatterpie.png",
-      "sha256": "a875f7cf478d53418b42679346961a58a609cc5e3930a52ba253cb6c6667f480",
-      "pixel_sha256": "5ba971dd74de70b46c324c318eebc4189ec81b823b95831ea50c3c5dadd5fa9a",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/58_world_scatterpie.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "地图上的采样点、位置与组成是模拟；不能作真实地理分布解读。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/mvTk5wcc_N7l5l4kHm3G0w",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "时序与误差带"
     },
     {
       "id": "BF-0132",
@@ -2885,117 +1091,8 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/a8-pyP8L9KdE32l1gTnlpw",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0133",
-      "title": "对齐堆积柱与点图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/60_stacked_bar_dot_aligned.png",
-      "sha256": "78d7032eb2bb6d9bf22975bf00b6a5dc9d5d9fbaf3238fdd8f644e59195a71bc",
-      "pixel_sha256": "07805dd88f0f6246a6104771c74cb2c2b310704ec45a093823de853f4074861a",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/60_stacked_bar_dot_aligned.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/13HZqQU5AhK3-Ib2UKt4YQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0134",
-      "title": "七瓣环形柱图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/61_seven_petal_circular_bar.png",
-      "sha256": "6579eb76e4bab9f33a2344b0d398e936931308e891f3ac9e0ef1a09163a356da",
-      "pixel_sha256": "49e366231530d4f35d2c297908214f2e4a96f02ece3622d65cc6ff603aa9bcf9",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/61_seven_petal_circular_bar.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/RRVWmv8Iaiso5e_YaOtrRw",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0135",
-      "title": "环形柱与嵌入饼图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/62_circular_bar_inset_pie.png",
-      "sha256": "90b4a61fb6e607a8300981857b104829dfdb3bbeb858e21ac0e093b0fd6adcc0",
-      "pixel_sha256": "d4708a28dc9e51614381febad00054f7364d3507be23da3a584ee9bc3530cccf",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/62_circular_bar_inset_pie.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/vizpuhFSYiKTm6cdvaxoZQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0136",
-      "title": "多组分面小提琴图",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/63_faceted_violin.png",
-      "sha256": "43faed954a8f2bef0159258fb0e81bca56edaa4065d3e0ee034926268fcda601",
-      "pixel_sha256": "4cb4bed16750ab36a67a8d143dd7d4d0a8271d60be5f613f6409b404f3b58f01",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/63_faceted_violin.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/Rr5VIMvWEnOCSabPP32gWw",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0137",
-      "title": "分组气泡矩阵",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/scidraw-001-065/64_grouped_bubble.png",
-      "sha256": "397ffe681c3382a15979b1764198eece254780cfd21809b9461a8c0a1687b38f",
-      "pixel_sha256": "86a52c2bca435c849446e46e4913c83a7c1b2126c92a60cfc51794fd89470bd7",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/64_grouped_bubble.png"
-      ],
-      "collection": "scidraw-001-065",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_56_65.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/qgYSXPXKQgWxvAV9JGCp2A",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "地图饼图"
     },
     {
       "id": "BF-0138",
@@ -3017,158 +1114,12 @@
       "historical": false,
       "source_url": "https://mp.weixin.qq.com/s/vejTfuLTdhn-3qG8RSal5A",
       "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0139",
-      "title": "顶刊案例001：分面堆积组成",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/01_faceted_stacked_composition.png",
-      "sha256": "d2c18737a99c5fb7856c276f08f53e9d3e52b0f91bc7bf4d497d4724990f9b23",
-      "pixel_sha256": "b8db8e6ea446f6c0436f5e0e3a56a735b552dd18f7f313848782fb019b410492",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/01_faceted_stacked_composition.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0140",
-      "title": "顶刊案例002：径向堆积柱图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/02_radial_stacked_bar.png",
-      "sha256": "737c5aecb2dc9ec24e10c7be3517acd04f83f674f0846b0a7c7506fac450a2b8",
-      "pixel_sha256": "17ecf83fbb1e806704f7f083e809acf055fa9ae207363bd577387ffe3fde13a6",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/02_radial_stacked_bar.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0141",
-      "title": "顶刊案例003：分组小提琴与统计标注",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/03_grouped_violin_statistics.png",
-      "sha256": "e9e4eedd3e685a05d88ce26970701ee59bc8f5aadb21daec7c24f911ab7ca550",
-      "pixel_sha256": "330c0676dbdcdf6a74414c2cc8ff9a7770a580098058d21c465b84d5901b32f9",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/03_grouped_violin_statistics.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0142",
-      "title": "顶刊案例004：双组相关热图",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/04_dual_correlation_heatmap.png",
-      "sha256": "b602557bcec10cb25c4ed5cbb30f58a1aa1d67d4622ece916a6cec5d6fd6da6b",
-      "pixel_sha256": "789d2069fff7ed1a28d504ece116a570a91017b0ad31e68fc076c6a7f8d8bde3",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/04_dual_correlation_heatmap.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0143",
-      "title": "顶刊案例005：基因集火山图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/05_gene_set_volcano.png",
-      "sha256": "7c4e01165d409b37040c57ca4c62bb64d808443fe0c5a3b939766daa4b716cf0",
-      "pixel_sha256": "10d1854e8a007fee1bb2100e216760f3a208e990a7502c6908f2d291c028a320",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/05_gene_set_volcano.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0144",
-      "title": "顶刊案例006：纵向多面板组合",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/06_longitudinal_multi_panel.png",
-      "sha256": "d770e1b9e51775ee56167a1d0bd6936d246b5d2b6094535731fdc6f01797d1c0",
-      "pixel_sha256": "3a246ac0371e70712a500e9323bf8a4144812f0e6672026e1a9e2cd77c63cc03",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/06_longitudinal_multi_panel.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0145",
-      "title": "顶刊案例007：突出扇区饼图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/07_exploded_pie.png",
-      "sha256": "19e330a42c13c6d74c95f5b14008a56c79d4c635618ae1d243c705d000dd67f6",
-      "pixel_sha256": "12b24268380aca8144d0ea25e85f50895aa2d79602df7ef996dd2458398ec27f",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/07_exploded_pie.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
+      "historical_review_hash_matches": true,
+      "subtype": "对数频率曲线"
     },
     {
       "id": "BF-0146",
-      "title": "顶刊案例008：OncoPrint 突变景观",
+      "title": "OncoPrint 突变景观",
       "category": "heatmaps",
       "image": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
       "sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
@@ -3185,87 +1136,8 @@
       "validation": "needs-revision; full-CP0-CP4-not-passed",
       "historical": false,
       "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0147",
-      "title": "顶刊案例009：流向与堆积组成",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/09_alluvial_stacked_composition.png",
-      "sha256": "7d4d3e204bb035af8bd82b44f9fd33345f9e447d1eabdf80d0403a9b662981bd",
-      "pixel_sha256": "fd608c20cf00aaf31c5e5c79c979e516f696ca0de0db94f89f16cf50055729fd",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/09_alluvial_stacked_composition.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0148",
-      "title": "顶刊案例010：多组火山图",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/topjournal-001-010/10_multi_group_volcano.png",
-      "sha256": "6ea5fc8173643f8ca94c32982319876b134827dba23f50abbad8a1cc11fca900",
-      "pixel_sha256": "6e2432788767fe325ef6734cdcd058c8c6470b9acb8292aa59af158b9798b26b",
-      "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/10_multi_group_volcano.png"
-      ],
-      "collection": "topjournal-001-010",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
-      ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
-      "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true
-    },
-    {
-      "id": "BF-0149",
-      "title": "PBMC：单细胞质控分布",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/public-omics/01_scrna_qc.png",
-      "sha256": "51181573ec691196f580186ec2835c4f5e860b580159d1067c32072ac622f402",
-      "pixel_sha256": "e9d9a2faab803d305973f7a1a33063481222b2e20cf6725d4298af569252e0af",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/01_scrna_qc.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0150",
-      "title": "PBMC：高变基因均值与方差",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/public-omics/02_scrna_hvg.png",
-      "sha256": "5182ec16f5ae820ab464a268a12211a9a9d9b7d0b38dbac511a2262dc3a37de3",
-      "pixel_sha256": "dc7d1cc15d1f5f29d049bbb5d541b08fe10da97648a474d867984d451912bfa8",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/02_scrna_hvg.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical_review_hash_matches": true,
+      "subtype": "OncoPrint"
     },
     {
       "id": "BF-0151",
@@ -3284,7 +1156,8 @@
         "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "PCA"
     },
     {
       "id": "BF-0152",
@@ -3303,64 +1176,8 @@
         "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0153",
-      "title": "PBMC：候选标记基因热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/public-omics/05_scrna_candidate_marker_heatmap.png",
-      "sha256": "b71f85c3cb7cc800e5d8526dc168a1497687a22a11db666f8c94096c71a7a03e",
-      "pixel_sha256": "c00457882fcd3ea22e2958d67c76e928720267f32bf28559dd84fc72e4f82dae",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/05_scrna_candidate_marker_heatmap.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0154",
-      "title": "ATAC：峰宽与信号分布",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/public-omics/06_atac_peak_landscape.png",
-      "sha256": "8b85b013abe3d8928c936ff4eeb2e10db4eed3e729fc22b6fe246d3cb049bb37",
-      "pixel_sha256": "74d6f559d30e7b0f121b4aa026251feec19e208d34b5dc3606cbb45b214c0c79",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/06_atac_peak_landscape.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0155",
-      "title": "ATAC：峰信号排名曲线",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/public-omics/07_atac_top_peak_rank.png",
-      "sha256": "b2385268a43e6a94930395865d65cdda0031332aee3f5996d7caf45e8f48492f",
-      "pixel_sha256": "38fc1dfe23a4abad4b46115409357f6c9300a2fce60fc9aeb09d9f210d0b4710",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/07_atac_top_peak_rank.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "UMAP"
     },
     {
       "id": "BF-0156",
@@ -3379,197 +1196,8 @@
         "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0157",
-      "title": "ChIP：峰宽与信号分布",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/public-omics/09_chip_peak_landscape.png",
-      "sha256": "21a5f9d8654f447f3f3ef4b45491b1537fb40baaeca4c45ef03fd3e7d09e3ac1",
-      "pixel_sha256": "ab75a0de53841886d79f42676e2fed7f0c7046dadbcf3d579aa6439262c47a67",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/09_chip_peak_landscape.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0158",
-      "title": "ChIP：峰信号排名曲线",
-      "category": "profiles",
-      "image": "docs/assets/archive-gallery/public-omics/10_chip_top_peak_rank.png",
-      "sha256": "bc33c8ad0fd0fb2ed5af4b9de74fc053166a8c250154bdff00e5d218e133023c",
-      "pixel_sha256": "c48a54b3fc03a807327b96b74047e61bc5afee2ae54d3264c20133dc24e3d22f",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/10_chip_top_peak_rank.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0159",
-      "title": "ChIP：染色体峰位置",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/11_chip_chromosome_peak_map.png",
-      "sha256": "8ca1fbc1588aee92485fd1dcac07da2f794ebe1e98036f08a95523554377b982",
-      "pixel_sha256": "53f8bcdbfbeb1cd91c3529bea4246e380ad3bc617f3c45ce98b585e1eb7d8f8d",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/11_chip_chromosome_peak_map.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0160",
-      "title": "斑马鱼：组装长度与 GC",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/12_zebrafish_assembly.png",
-      "sha256": "8e246e673ea9cc6d1c939e0d746cdca5a410ce22406196528fb249ef605df29e",
-      "pixel_sha256": "50e85cd9ce165e69c972950f49e93bf52df45c329d2e4b7942ff661603e2741a",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/12_zebrafish_assembly.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0161",
-      "title": "斑马鱼：组装结构代理指标",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/12_zebrafish_assembly_structural_signatures_SV_proxy.png",
-      "sha256": "ddd799665a5af9077787af20bb9e224d0c58c63addb1a1c5c30103a01464c32a",
-      "pixel_sha256": "28c8db4e26de73ea3bb4073e5133d41bfe1bd2dc2c1084726356bd6bf8c03f0c",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/12_zebrafish_assembly_structural_signatures_SV_proxy.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开参考组装的结构代理指标；未进行 SV calling，不能解读为已验证结构变异。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0162",
-      "title": "斑马鱼：注释组成与基因分布",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/12_zebrafish_gff_features.png",
-      "sha256": "82cd00bdad62546f85be6ba634bcfd865406cf551e2340cdf1bd9a7f6ef4b40f",
-      "pixel_sha256": "15a12a611382e4eaf234a0d4da71543924aa712edf9664a8ffb5ee2e2818563a",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/12_zebrafish_gff_features.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0163",
-      "title": "大黄鱼：组装长度与 GC",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/15_croaker_assembly.png",
-      "sha256": "7ccc25821e3f9e578cdced2ba888e3a0893fd6ade51a6c2f6b98b6cec0b31096",
-      "pixel_sha256": "ae60aa6b0da6a5304af48341a134f6bd64979ba40e9805a6e7183a7fd18e5d8b",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/15_croaker_assembly.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0164",
-      "title": "大黄鱼：组装结构代理指标",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/15_croaker_assembly_structural_signatures_SV_proxy.png",
-      "sha256": "97b6a8626ce325a2d693203669679bba369ad808032e5a69ec261255090c0137",
-      "pixel_sha256": "07f43473f986dcbb63801a10e745c29e932ab6b797a32bddaaba2bbd86580a27",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/15_croaker_assembly_structural_signatures_SV_proxy.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开参考组装的结构代理指标；未进行 SV calling，不能解读为已验证结构变异。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0165",
-      "title": "大黄鱼：注释组成与基因分布",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/15_croaker_gff_features.png",
-      "sha256": "ee3db295faf1acb61bdffed95535947368f31dee0d3b8fb7c2f21e1cbab804ae",
-      "pixel_sha256": "35d77a732fc63480993345c84805dbab8a4a27d972391a0cb526c8e8713ba922",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/15_croaker_gff_features.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0166",
-      "title": "双物种组装摘要",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/public-omics/18_comparative_assembly_summary.png",
-      "sha256": "efcb3e0b0107f429bc9b0e63a65e6bbf8a17756c93ed2ebeb6dbbfba9f31ccfd",
-      "pixel_sha256": "e81bdb6fdf894cbfdc1500dd3024af6879c62f005b7c12c8274b46c8013d3159",
-      "origin_paths": [
-        "Project_002_生物数据全流程绘图分析/figures/18_comparative_assembly_summary.png"
-      ],
-      "collection": "public-omics",
-      "data_origin": "public-data",
-      "note": "公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/public-omics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "染色体峰位置"
     },
     {
       "id": "BF-0167",
@@ -3588,7 +1216,8 @@
         "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "组装注释概览"
     },
     {
       "id": "BF-0168",
@@ -3607,26 +1236,8 @@
         "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0169",
-      "title": "双物种注释类型组成",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/comparative-genomics/03_annotation_feature_composition.png",
-      "sha256": "a61427a7eeecafa79fcc766953b77d1b4db11b84bc021efa36333c0b430e7112",
-      "pixel_sha256": "7a0bddf07f33986c206b27c08f65204c56f0f5e51eea37496b0921b90c0859d1",
-      "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/03_annotation_feature_composition.png"
-      ],
-      "collection": "comparative-genomics",
-      "data_origin": "public-data",
-      "note": "斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "基因密度"
     },
     {
       "id": "BF-0170",
@@ -3645,83 +1256,8 @@
         "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0171",
-      "title": "双物种组装结构代理比较",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/comparative-genomics/05_assembly_structural_signatures_proxy.png",
-      "sha256": "d6e2f67db700603d2644ebb5e66f44f69d5fe49334c4e0bf20cc471a62b17128",
-      "pixel_sha256": "e07207e120fc9466fbdcd016ff317a2fcd9779b9c144f749d17c6eefaf03a135",
-      "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/05_assembly_structural_signatures_proxy.png"
-      ],
-      "collection": "comparative-genomics",
-      "data_origin": "public-data",
-      "note": "斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0172",
-      "title": "比较基因组综合面板",
-      "category": "multipanel",
-      "image": "docs/assets/archive-gallery/comparative-genomics/06_comparative_genomics_workflow_overview.png",
-      "sha256": "ac6b44613076eabff1bdcac0da8dec32a9fe6e1f4161e4494e96e4a77f23a638",
-      "pixel_sha256": "eb0457d38c871ca84cbc4a08ab225c4174a3c8cc186d5005a2ba01cc8f4c7491",
-      "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/06_comparative_genomics_workflow_overview.png"
-      ],
-      "collection": "comparative-genomics",
-      "data_origin": "public-data",
-      "note": "斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0173",
-      "title": "生存曲线与风险表：历史标签错误示例",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue020_survival.png",
-      "sha256": "f6b288ed46bbbbb81269ce84da50e19f61a91b6b2e81a7ef0f815552607d94eb",
-      "pixel_sha256": "3df432ae5cba5a3821c928a15e7a53cb9445bc7f1e9e71ce7ab3a1817528b030",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue020_survival.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "package-example",
-      "note": "历史错误示例：survival::lung 的 sex 被误标为药物组，图中药物比较无效。仅存档，不可用于疗效解读。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue020_survival_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": true
-    },
-    {
-      "id": "BF-0174",
-      "title": "组织间弦图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue025_chord.png",
-      "sha256": "1e7193514f5ba940f37c0dee9e94d359478920037baa04d9c10cee2b18b4c205",
-      "pixel_sha256": "ff1815953a4123b8241f6f4d6d99a670b0ad09eb4bc6bacf8bd489adf472e330",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue025_chord.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue025_chord_upset_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "基因结构"
     },
     {
       "id": "BF-0175",
@@ -3740,45 +1276,8 @@
         "biofigure/examples/archive-gallery/topjournal-early/scripts/issue025_chord_upset_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0176",
-      "title": "纵向患者泳道与临床注释",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue028_swimmer.png",
-      "sha256": "15ab20b9effe7123e96ce0b41937bc9a9c430452c7282bd1bcf9e3d18ca9dee5",
-      "pixel_sha256": "a64f3fb1b0207150f0fce86a7e798df53fce809fe46ca70a0e191c6fd0514f17",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue028_swimmer.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue028_swimmer_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0177",
-      "title": "Cox 亚组森林图布局",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue036_forest.png",
-      "sha256": "68447895cb4cb5d8ea8e0413ae7292727c1df2369b80fe320b166535ec487b80",
-      "pixel_sha256": "bdb61793f2f321844b992a111b4e27e6e720f8eaa78af15e9d1d26bf239745aa",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue036_forest.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue036_forest_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "UpSet"
     },
     {
       "id": "BF-0178",
@@ -3797,64 +1296,8 @@
         "biofigure/examples/archive-gallery/topjournal-early/scripts/issue059_cluster_heatmap_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0179",
-      "title": "年龄分层组成流图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue066_stream.png",
-      "sha256": "cfd3642e44e2888583e544c2bffe89c9c63cc1808f9533a7156140f91b124a53",
-      "pixel_sha256": "70422882180859e6ba50246db1187e60e11c9df24f1ea1dc7d0c81c2ff75c0bc",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue066_stream.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue066_stream_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0180",
-      "title": "分组半小提琴与箱线",
-      "category": "distributions",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue076_raincloud.png",
-      "sha256": "4132f1f2fa11a73ee22869df1b8d763660ab955dc7d4ea2b6d00d05c3effa813",
-      "pixel_sha256": "abbe00f6d5d0cec4600c37174844b564b8aee93c1de910b20f3adb48d3d2a545",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue076_raincloud.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue076_raincloud_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0181",
-      "title": "环形聚类热图与树",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/topjournal-early/issue078_circular_heatmap.png",
-      "sha256": "c897b3a380653c221786d44527c916996950fd49ae9b69ce50c5f1aa965e4d80",
-      "pixel_sha256": "8fdb63d6fc4bdf134793d7f5104b360d72fe396da4723d10158b02ec3d521f63",
-      "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue078_circular_heatmap.png"
-      ],
-      "collection": "topjournal-early",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-early/scripts/issue078_circular_heatmap_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "聚类矩阵与行趋势"
     },
     {
       "id": "BF-0182",
@@ -3873,26 +1316,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0183",
-      "title": "星云密度嵌入示意",
-      "category": "embeddings",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_058_galaxy_density_code_driven.png",
-      "sha256": "583328970aee297adbc64b4a954c7c786e4c7509836ac816267ad6f9d3aa8d0f",
-      "pixel_sha256": "ac4cdc4374b880d1f7bbf4536c5a1e0119d332a1b7033c8fd7ac43a678da6117",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_058_galaxy_density_code_driven.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "簇网络"
     },
     {
       "id": "BF-0184",
@@ -3911,45 +1336,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0185",
-      "title": "患者泳道与多列注释",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_060_swimmer_code_driven.png",
-      "sha256": "7554725a2fffbae7897fef24e0370609490fe26e58faeff8e57bd2e42bb5d0c3",
-      "pixel_sha256": "d5fe10e3db88a44e7436546e64f74b43544402eda8d20600881e738a45118e19",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_060_swimmer_code_driven.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0186",
-      "title": "成对回归与密度矩阵",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_061_ggally_matrix_code_driven.png",
-      "sha256": "dc0c1dc77d17e0835cb926f3c8828f1b14ae182609233e64107630252ca13d0a",
-      "pixel_sha256": "ddac2f27bed466167e62126eaded7929fe7e238548bc847ff3c32bdde0cd0c2f",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_061_ggally_matrix_code_driven.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "个体蜘蛛轨迹"
     },
     {
       "id": "BF-0187",
@@ -3968,32 +1356,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0188",
-      "title": "聚类注释热图：复用变体",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_066_cluster_annotation_heatmap_reused.png",
-      "sha256": "e9bf0597c22030ac6b96e3fc320d4cd5378088abbe48e583e9a95eec4ec73505",
-      "pixel_sha256": "d3ceb075346efb84f9299466031e563cd1c4691a65a2240ad8ca0c463e5cc0bb",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_066_cluster_annotation_heatmap_reused.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch31_40_reproduction.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/figure_style.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/figures_051_070.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R",
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/reproduce_batch21_30.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "断轴堆积柱"
     },
     {
       "id": "BF-0189",
@@ -4012,7 +1376,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "Voronoi组成"
     },
     {
       "id": "BF-0190",
@@ -4031,159 +1396,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0191",
-      "title": "系统树与外部多轨图",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_069_ggtreeextra_code_driven.png",
-      "sha256": "3602de57f2696d98ec34bea585eeefda61ae5552486ded833a239a504f527d74",
-      "pixel_sha256": "1312b46978e17a2b4233ca483f6b81f93e2b68d554fec0399216f43552918c71",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_069_ggtreeextra_code_driven.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0192",
-      "title": "ggalign 基因组 DMR 轨道",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_071_issue064_ggalign_dmr.png",
-      "sha256": "f2e695a78a2b644a0c5073858e6c09c9045b3d1b15d37f1dac455ee0dac43826",
-      "pixel_sha256": "124a15f3e0f251aaf608bd4c5040896a5f5e3037d8310f87f9d073d6d4a11cfc",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_071_issue064_ggalign_dmr.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "package-example",
-      "note": "circlize 软件包维护的 DMR／区段示例；不是用户实验数据。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0193",
-      "title": "circlize 嵌套 DMR 轨道",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_072_issue064_circlize_nested_dmr.png",
-      "sha256": "690a3a67face8f5ce1f9a2d6c30098da6d6e299bb46d861462031ee61aff0963",
-      "pixel_sha256": "13938f634785b2a8ab0a130c4383664e4bc80823baa552cdeeaaea93ebefb321",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_072_issue064_circlize_nested_dmr.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "package-example",
-      "note": "circlize 软件包维护的 DMR／区段示例；不是用户实验数据。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0194",
-      "title": "连续变量三元图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_074_issue065_ternary_continuous.png",
-      "sha256": "e2ee775234090730f8a9588dad7ded25a57a370664ab423b7ef64e32252065f7",
-      "pixel_sha256": "15552647f5a501dc2422ba860c217cd9eca53fae9b05bc290d3c44fefe1abc5a",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_074_issue065_ternary_continuous.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0195",
-      "title": "三元密度图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_075_issue065_ternary_density.png",
-      "sha256": "1e3390712d5f6956b2b97b2c78f2e1a8dabf2cfff677ac1169ffe020a67e43df",
-      "pixel_sha256": "d0999e8dbe0935c07ce2df4ee78cdd4369e9e36a72ec68264a224cec2185b282",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_075_issue065_ternary_density.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0196",
-      "title": "ComplexHeatmap 注释矩阵",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_078_issue069_complexheatmap.png",
-      "sha256": "3fa1786f142d2a8d95fc7a61c11aeaf1f5e02b4c1ded041fcf98320036b9aa7a",
-      "pixel_sha256": "e1560490b422931e0e461f0acd920db608a8771bba29765f4e13b59b5f13ea7e",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_078_issue069_complexheatmap.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0197",
-      "title": "pheatmap 注释矩阵",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_079_issue069_pheatmap.png",
-      "sha256": "30642cb7934df29732fdd616259592419d072886fd0b77b97cc57f9bb0ed2b53",
-      "pixel_sha256": "0b08bdf5b4ccca18ebbdc01a40416a5d1d42fe0bfa171504d60a04a0b05f4867",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_079_issue069_pheatmap.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0198",
-      "title": "整洁数据热图",
-      "category": "heatmaps",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_080_issue069_tidy_heatmap.png",
-      "sha256": "b96afa4d59241d9906049741aea7d5dcda63ad0ae0e5327e83a8397cac7b549b",
-      "pixel_sha256": "dfbf03b432939dfaa66a24b5951a6306cecc03466a47bac676f998830b8154ea",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_080_issue069_tidy_heatmap.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "决策曲线"
     },
     {
       "id": "BF-0199",
@@ -4202,26 +1416,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0200",
-      "title": "分面极坐标柱图",
-      "category": "bars",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_084_issue073_polar_bars.png",
-      "sha256": "23cfa84dea466de91cf29b77319440e96c03b4b92c2ab4e13146d65aaeb164ae",
-      "pixel_sha256": "42fb233e73c81bbf527130b7a538454078e61d78c026c7b91eec227cf7a60696",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_084_issue073_polar_bars.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "旭日图"
     },
     {
       "id": "BF-0201",
@@ -4240,26 +1436,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0202",
-      "title": "组成变化散点饼图",
-      "category": "composition",
-      "image": "docs/assets/archive-gallery/full-reproduction/figure_087_issue075_scatterpie.png",
-      "sha256": "bee8dd9f3e68410100d3c7858d7af4c22ef2d23ccc3f0c18b520b6fc31d01d8d",
-      "pixel_sha256": "bde245fa30a2292c724b8c0c90d5f6d620d578e8093fa49d72070046d9de4ef5",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_087_issue075_scatterpie.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "花瓣图"
     },
     {
       "id": "BF-0203",
@@ -4278,7 +1456,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "流图"
     },
     {
       "id": "BF-0204",
@@ -4297,30 +1476,12 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0205",
-      "title": "分面基因表达比较",
-      "category": "differential",
-      "image": "docs/assets/archive-gallery/full-reproduction/revision_v1_42_faceted_gene_scatter.png",
-      "sha256": "a9ae25e9ee6bc5e8a62a21a2ab62f3ed27f806a53c5f8f3f28fdd9612b8d954e",
-      "pixel_sha256": "7a61e843da69fc073667fc5c2d2f052f17afb16d194e7276fdac5ced0dab86ae",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_42_faceted_gene_scatter.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "局部放大散点"
     },
     {
       "id": "BF-0206",
-      "title": "亚组森林图：修订版",
+      "title": "亚组 HR 森林图",
       "category": "clinical",
       "image": "docs/assets/archive-gallery/full-reproduction/revision_v1_43_subgroup_forest.png",
       "sha256": "e9df418964f00f36bccaaf099163ed30a46304097d6368d25dab4e3f33395718",
@@ -4335,7 +1496,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "亚组HR森林"
     },
     {
       "id": "BF-0207",
@@ -4354,26 +1516,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0208",
-      "title": "患者泳道：修订版",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/full-reproduction/revision_v1_45_swimmer.png",
-      "sha256": "65bbb9d1f3aa5d22e21089d12dea4999d6fb870e044029656e26f8e5912fbf0d",
-      "pixel_sha256": "c534492df32c0a260bb084f118431440d7d11c31c74ecfdf3f9d5a3ef7e07a53",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_45_swimmer.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "瀑布图"
     },
     {
       "id": "BF-0209",
@@ -4392,45 +1536,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0210",
-      "title": "温度降水生态区图",
-      "category": "correlations",
-      "image": "docs/assets/archive-gallery/full-reproduction/revision_v1_47_whittaker.png",
-      "sha256": "8d79bcee3835865a9fb827b01baa61e45ab37e054cc4096e5f1019aca94f2fe4",
-      "pixel_sha256": "40f100e499d384d6d2e70f160b4b13d0a9df5daeda88fac75275cbf051a29313",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_47_whittaker.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0211",
-      "title": "双组 ROC 曲线",
-      "category": "clinical",
-      "image": "docs/assets/archive-gallery/full-reproduction/revision_v1_48_dual_roc.png",
-      "sha256": "376da37bda015f5ba4a7563b45c591f151d897ab52e7702d634365a88cc95b74",
-      "pixel_sha256": "37168353549f4ca2701d673ad90733dafd8f2f00e5522393b0a801e6dbceb877",
-      "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_48_dual_roc.png"
-      ],
-      "collection": "full-reproduction",
-      "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "棒棒糖与GO富集"
     },
     {
       "id": "BF-0212",
@@ -4449,7 +1556,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "Venn"
     },
     {
       "id": "BF-0213",
@@ -4468,26 +1576,8 @@
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
-    },
-    {
-      "id": "BF-0214",
-      "title": "hg19 软件包示例：嵌套染色体",
-      "category": "genomes",
-      "image": "docs/assets/archive-gallery/genome-hg19/genome_distribution_circos.png",
-      "sha256": "da022afc61244ad8353ca8119299c4e8397735621736ab2a5e22077a4f697ad7",
-      "pixel_sha256": "012893dc6e56b9261509429d45032e5dc056b3fc667ca4fcccf1ae0b4a881f4e",
-      "origin_paths": [
-        "Project_017_基因组分布图验证/results/figures/genome_distribution_circos.png"
-      ],
-      "collection": "genome-hg19",
-      "data_origin": "package-example",
-      "note": "circlize 软件包维护的 DMR／区段示例；不是用户实验数据。",
-      "scripts": [
-        "biofigure/examples/archive-gallery/genome-hg19/scripts/plot_genome_distribution.R"
-      ],
-      "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "分面雷达"
     },
     {
       "id": "BF-0215",
@@ -4506,7 +1596,8 @@
         "biofigure/examples/archive-gallery/manhattan/scripts/draw_manhattan.R"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "GWAS曼哈顿"
     },
     {
       "id": "BF-0216",
@@ -4526,7 +1617,8 @@
         "biofigure/examples/archive-gallery/linear/scripts/generate_data.py"
       ],
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
-      "historical": false
+      "historical": false,
+      "subtype": "线性散点与置信带"
     }
   ],
   "collections": {
@@ -4646,5 +1738,157 @@
         "biofigure/examples/archive-gallery/linear/scripts/generate_data.py"
       ]
     }
-  }
+  },
+  "curation": {
+    "date": "2026-09-23",
+    "previous_count": 216,
+    "retained_count": 73,
+    "removed_count": 143,
+    "policy": "One representative per visual subtype; preserve scientifically distinct methods. Remove historical errors, superseded revisions, color-only and dataset-only variants."
+  },
+  "omitted_ids": [
+    "BF-0005",
+    "BF-0007",
+    "BF-0009",
+    "BF-0011",
+    "BF-0013",
+    "BF-0016",
+    "BF-0021",
+    "BF-0028",
+    "BF-0031",
+    "BF-0032",
+    "BF-0033",
+    "BF-0037",
+    "BF-0038",
+    "BF-0039",
+    "BF-0040",
+    "BF-0041",
+    "BF-0042",
+    "BF-0043",
+    "BF-0045",
+    "BF-0047",
+    "BF-0049",
+    "BF-0050",
+    "BF-0051",
+    "BF-0053",
+    "BF-0054",
+    "BF-0057",
+    "BF-0058",
+    "BF-0059",
+    "BF-0060",
+    "BF-0061",
+    "BF-0062",
+    "BF-0063",
+    "BF-0065",
+    "BF-0066",
+    "BF-0067",
+    "BF-0069",
+    "BF-0071",
+    "BF-0074",
+    "BF-0075",
+    "BF-0076",
+    "BF-0077",
+    "BF-0078",
+    "BF-0079",
+    "BF-0080",
+    "BF-0081",
+    "BF-0083",
+    "BF-0085",
+    "BF-0087",
+    "BF-0089",
+    "BF-0090",
+    "BF-0091",
+    "BF-0092",
+    "BF-0093",
+    "BF-0094",
+    "BF-0095",
+    "BF-0096",
+    "BF-0097",
+    "BF-0098",
+    "BF-0099",
+    "BF-0100",
+    "BF-0101",
+    "BF-0102",
+    "BF-0103",
+    "BF-0104",
+    "BF-0105",
+    "BF-0107",
+    "BF-0108",
+    "BF-0110",
+    "BF-0111",
+    "BF-0113",
+    "BF-0114",
+    "BF-0115",
+    "BF-0116",
+    "BF-0117",
+    "BF-0118",
+    "BF-0119",
+    "BF-0120",
+    "BF-0121",
+    "BF-0122",
+    "BF-0123",
+    "BF-0124",
+    "BF-0125",
+    "BF-0126",
+    "BF-0130",
+    "BF-0131",
+    "BF-0133",
+    "BF-0134",
+    "BF-0135",
+    "BF-0136",
+    "BF-0137",
+    "BF-0139",
+    "BF-0140",
+    "BF-0141",
+    "BF-0142",
+    "BF-0143",
+    "BF-0144",
+    "BF-0145",
+    "BF-0147",
+    "BF-0148",
+    "BF-0149",
+    "BF-0150",
+    "BF-0153",
+    "BF-0154",
+    "BF-0155",
+    "BF-0157",
+    "BF-0158",
+    "BF-0159",
+    "BF-0160",
+    "BF-0161",
+    "BF-0162",
+    "BF-0163",
+    "BF-0164",
+    "BF-0165",
+    "BF-0166",
+    "BF-0169",
+    "BF-0171",
+    "BF-0172",
+    "BF-0173",
+    "BF-0174",
+    "BF-0176",
+    "BF-0177",
+    "BF-0179",
+    "BF-0180",
+    "BF-0181",
+    "BF-0183",
+    "BF-0185",
+    "BF-0186",
+    "BF-0188",
+    "BF-0191",
+    "BF-0192",
+    "BF-0193",
+    "BF-0194",
+    "BF-0195",
+    "BF-0196",
+    "BF-0197",
+    "BF-0198",
+    "BF-0200",
+    "BF-0202",
+    "BF-0205",
+    "BF-0208",
+    "BF-0210",
+    "BF-0211",
+    "BF-0214"
+  ]
 }
