@@ -36,55 +36,31 @@ R is the default backend. Dedicated packages handle annotated matrices, circular
 以上是方法与路由覆盖范围；具体任务取决于输入数据、包依赖和相应方法的验证状态。已有分析结果可直接用于绘图，缺少上游数据时不会声称完成了相应分析。<br>
 These are areas covered by the method library and routing rules. Individual tasks depend on the available data, dependencies, and validation status. Existing analysis results can be plotted directly; unavailable upstream analyses are not treated as completed.
 
-## 精选图示 / Selected figures
+## 分类图廊 / Gallery by plot type
 
-以下图使用模拟数据，展示信息组织、配色和版式，不承载真实研究结论。图廊中可查看更大图片和复现代码。<br>
-The examples below use simulated data to demonstrate layout and visual encoding, not research findings. Larger images and reproduction code are available in the gallery.
+点击分类名称，进入对应图片页。每张图附原尺寸、生成脚本与运行说明。<br>
+Choose a category to view its figures, full-size images, generator scripts and instructions.
 
-### 组学矩阵与注释 / Omics matrices and annotations
+图廊含 **12 类、57 张**模拟图，涵盖参考方法迁移及基础领域示例。不是原论文数据复现，展示不等于完整验收；不承载真实研究结论。<br>
+The gallery contains **57 simulated figures in 12 categories**, including reference-informed method transfers and domain examples. These are not reproductions of original paper data or evidence of complete validation.
 
-| 临床注释热图 / Clinical annotated heatmap | 突变能量热图 / Mutation energy heatmap |
-|---|---|
-| ![临床注释热图](docs/assets/reproduction-gallery/figure_077_issue068_clinical_heatmap.png) | ![突变能量热图](docs/assets/reference-transfer/mutation.png) |
+| 图型分类 / Category | 图数 / Figures |
+|---|---:|
+| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 6 |
+| [分布、小提琴与云雨图 / Distributions](docs/gallery/distributions.md) | 8 |
+| [相关、回归与气泡矩阵 / Correlations](docs/gallery/correlations.md) | 10 |
+| [组成、三元与环图 / Composition](docs/gallery/composition.md) | 4 |
+| [雷达与多指标比较 / Radar plots](docs/gallery/radar.md) | 6 |
+| [差异表达与富集 / Differential expression](docs/gallery/differential.md) | 2 |
+| [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 5 |
+| [临床效应与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 5 |
+| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 4 |
+| [网络与地理流向 / Networks and flows](docs/gallery/networks.md) | 3 |
+| [信号曲线 / Signal profiles](docs/gallery/profiles.md) | 1 |
+| [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
 
-### 组成与多层信息 / Composition and multiple tracks
-
-| 三元分组 / Ternary groups | 半圆多轨热图 / Semicircular multitrack heatmap |
-|---|---|
-| ![三元分组](docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png) | ![半圆多轨热图](docs/assets/reproduction-gallery/figure_076_issue067_circlize_rainbow_heatmap.png) |
-
-### 分布与效应估计 / Distributions and effect estimates
-
-| 山峦与条码 / Ridgelines with barcode | β 森林图 / Beta forest plot |
-|---|---|
-| ![山峦与条码](docs/assets/reproduction-gallery/figure_088_issue077_ridgeline_barcode.png) | ![β 森林图](docs/assets/reference-transfer/forest.png) |
-
-### 纵向与空间关系 / Longitudinal and spatial relationships
-
-| 带注释泳道 / Annotated swimmer | 流向地图 / Flow map |
-|---|---|
-| ![带注释泳道](docs/assets/reproduction-gallery/figure_081_issue070_annotated_swimmer.png) | ![流向地图](docs/assets/reproduction-gallery/figure_090_issue080_flow_map.png) |
-
-### 基因组与染色体 / Genomes and chromosomes
-
-**嵌套染色体与区间分布 / Nested chromosome and interval distribution**
-
-![嵌套染色体分布 / Nested chromosome distribution](docs/assets/genome-gallery/chromosome-distribution.png)
-
-使用 circlize 将外层染色体、选定区间及内层正负效应点对应起来；染色体、区间和效应值均为模拟数据。这是布局示例，不是染色体实测结果。<br>
-Built with circlize to connect outer chromosomes, selected intervals, and inner signed-effect points. Chromosomes, intervals, and effects are simulated; this is a layout demonstration, not a measured genomic result.
-
-[代码与运行说明 / Code and instructions](biofigure/examples/genome-gallery)
-
-| 系统树与多轨注释 / Phylogeny with annotation tracks | 共线性示意 / Synteny illustration |
-|---|---|
-| ![Phylogeny](docs/assets/gallery/template-phylogeny-tracks.png) | ![Synteny](docs/assets/gallery/domain-synteny.png) |
-
-系统树与共线性示例同样使用模拟数据。[生成代码 / Generator scripts](biofigure/examples/gallery)。<br>
-The phylogeny and synteny examples also use simulated data.
-
-[浏览精选图廊与代码](docs/GALLERY.md)。图示是部分版式示例，并非上述每个领域的完整验证清单。<br>
-[Browse the gallery and code](docs/GALLERY.md). These are selected examples, not a complete validation checklist for every research area.
+[浏览完整分类目录 / Browse all categories](docs/GALLERY.md)。复合图按主要图型归类一次；配色变体单独计数。<br>
+Composite figures appear in one primary category; color variants count separately.
 
 ## 绘图方法与质量检查 / Methods and quality checks
 

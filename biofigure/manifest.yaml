@@ -18,6 +18,8 @@ always_load:
   - static/core/stance.md
   - references/checkpoints.md
 common_dynamic_load:
+  - references/semantic-context.md
+  - references/selection.md
   - references/biology-ontology.md
   - references/first-render-contract.md
   - references/layout.md
@@ -72,6 +74,7 @@ reference_evidence_layers:
   top_journal:
     corpus: atlas/top-journal-corpus.yaml
     retriever: scripts/retrieve_references.py
+    load: [references/topjournal-recipes-001-010.md]
     policy: primary_curated_reference_evidence
   scidraw:
     corpus: atlas/scidraw-derived-corpus.json
@@ -86,4 +89,4 @@ reference_evidence_layers:
     load: [references/scidraw-learning.md]
     policy: optional_retrieval_not_ground_truth
     precedence: scientific_contract_and_official_guidance
-pipeline: [scientific_contract, visual_ontology, pattern_retrieval, figure_design_spec, renderer, actual_figure, visual_inspection, critics, revise_or_pass]
+pipeline: [data_profile, semantic_context, chart_decision, scientific_contract, visual_ontology, pattern_retrieval, figure_design_spec, renderer, actual_figure, visual_inspection, critics, revise_or_pass]

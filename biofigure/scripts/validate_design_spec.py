@@ -202,6 +202,79 @@ def validate(doc: dict, schema: dict) -> list[str]:
                 errors.append("reference_evidence.supplemental_evidence_status must be optional-not-ground-truth")
             if reference.get("source_precedence") != "scientific-contract-over-supplemental":
                 errors.append("reference_evidence.source_precedence must be scientific-contract-over-supplemental")
+    analysis = doc.get("reference_analysis")
+    if not isinstance(analysis, dict):
+        errors.append("reference_analysis must be a mapping completed before rendering")
+    else:
+        for key in schema.get("reference_analysis_required", []):
+            if key not in analysis:
+                errors.append(f"reference_analysis.{key} is required")
+        for key in ("figure_family", "semantic_purpose"):
+            if not isinstance(analysis.get(key), str) or not analysis[key].strip():
+                errors.append(f"reference_analysis.{key} must be a non-empty string")
+        panels = analysis.get("panels")
+        if not isinstance(panels, list) or not panels:
+            errors.append("reference_analysis.panels must be a non-empty list")
+        else:
+            for index, panel in enumerate(panels):
+                if not isinstance(panel, dict):
+                    errors.append(f"reference_analysis.panels[{index}] must be a mapping")
+                    continue
+                for key in schema.get("reference_panel_required", []):
+                    if not isinstance(panel.get(key), str) or not panel[key].strip():
+                        errors.append(f"reference_analysis.panels[{index}].{key} must be a non-empty string")
+        elements = analysis.get("elements")
+        element_ids = set()
+        if not isinstance(elements, list) or not elements:
+            errors.append("reference_analysis.elements must be a non-empty list")
+        else:
+            for index, element in enumerate(elements):
+                if not isinstance(element, dict):
+                    errors.append(f"reference_analysis.elements[{index}] must be a mapping")
+                    continue
+                for key in schema.get("reference_element_required", []):
+                    if key not in element:
+                        errors.append(f"reference_analysis.elements[{index}].{key} is required")
+                for key in ("id", "role", "geometry", "position", "data_mapping"):
+                    if not isinstance(element.get(key), str) or not element[key].strip():
+                        errors.append(f"reference_analysis.elements[{index}].{key} must be a non-empty string")
+                if not isinstance(element.get("required"), bool):
+                    errors.append(f"reference_analysis.elements[{index}].required must be a boolean")
+                element_id = element.get("id")
+                if isinstance(element_id, str) and element_id:
+                    if element_id in element_ids:
+                        errors.append(f"duplicate reference_analysis element id: {element_id}")
+                    element_ids.add(element_id)
+        relationships = analysis.get("relationships")
+        allowed_relationships = set(schema.get("reference_relationship_types", []))
+        if not isinstance(relationships, list) or not relationships:
+            errors.append("reference_analysis.relationships must be a non-empty list")
+        else:
+            for index, relationship in enumerate(relationships):
+                if not isinstance(relationship, dict):
+                    errors.append(f"reference_analysis.relationships[{index}] must be a mapping")
+                    continue
+                for key in schema.get("reference_relationship_required", []):
+                    if not isinstance(relationship.get(key), str) or not relationship[key].strip():
+                        errors.append(f"reference_analysis.relationships[{index}].{key} must be a non-empty string")
+                if relationship.get("type") not in allowed_relationships:
+                    errors.append(f"reference_analysis.relationships[{index}].type is invalid")
+                for endpoint in ("from", "to"):
+                    value = relationship.get(endpoint)
+                    if isinstance(value, str) and value and element_ids and value not in element_ids:
+                        errors.append(f"reference_analysis.relationships[{index}].{endpoint} references unknown element: {value}")
+        topology = analysis.get("spatial_topology")
+        if not isinstance(topology, dict):
+            errors.append("reference_analysis.spatial_topology must be a mapping")
+        else:
+            for key in schema.get("reference_spatial_topology_required", []):
+                value = topology.get(key)
+                if not isinstance(value, (str, list)) or not value or (isinstance(value, list) and not all(isinstance(x, str) and x for x in value)):
+                    errors.append(f"reference_analysis.spatial_topology.{key} must be a non-empty string or list of strings")
+        for key in ("required_structures", "forbidden_substitutions"):
+            value = analysis.get(key)
+            if not isinstance(value, list) or not value or not all(isinstance(x, str) and x.strip() for x in value):
+                errors.append(f"reference_analysis.{key} must be a non-empty list of strings")
     if not isinstance(renderer, dict):
         errors.append("renderer must be a mapping")
     else:

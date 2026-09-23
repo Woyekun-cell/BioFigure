@@ -1,5 +1,7 @@
 # 跨图型选择：从问题到 Ontology
 
+先执行 [语义与情景理解](semantic-context.md)，获得实际数据剖析与实验设计。
+
 同一数据可回答不同问题。先选 `scientific_task/message_type`，再选 Pattern 与 primitive，最后叠加领域规则；不按文件扩展名或“组学”关键词套图。
 
 | 要回答的问题 | 候选表达 | 必须保留的信息 |

@@ -1,4 +1,4 @@
-schema_version: "3.0"
+schema_version: "3.1"
 kind: figure-design-spec
 required:
   - figure_task
@@ -13,6 +13,7 @@ required:
   - selected_pattern
   - selection_reason
   - reference_evidence
+  - reference_analysis
   - visual_hierarchy
   - encoding
   - annotation
@@ -28,8 +29,14 @@ required:
   - inspection_plan
   - critic_targets
 notes: Internal pre-render contract; it does not replace scientific result tables.
-field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
+field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, reference_analysis: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
 reference_evidence_required: [retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
+reference_analysis_required: [figure_family, semantic_purpose, panels, elements, relationships, spatial_topology, required_structures, forbidden_substitutions]
+reference_panel_required: [id, role, position]
+reference_element_required: [id, role, geometry, position, data_mapping, required]
+reference_relationship_required: [from, to, type, shared_key]
+reference_relationship_types: [contains, aligns-with, shares-order, shares-coordinate, connects-to, inner-outer-track, contrasts-with, reading-order]
+reference_spatial_topology_required: [coordinate_system, reading_order, alignment_keys, layer_order]
 supplemental_reference_contract:
   trigger: reference_evidence.supplemental_case_ids_is_nonempty
   required: [supplemental_visual_ids, supplemental_transfer_decisions, supplemental_rejected_elements, supplemental_evidence_status, source_precedence]

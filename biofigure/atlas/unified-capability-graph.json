@@ -43,9 +43,9 @@
     "existing_namespaced_functions": 100,
     "method_family_count": 23,
     "visual_evidence_pending": 0,
-    "source_compared_cases": 86,
+    "source_compared_cases": 141,
     "source_compared_pass": 31,
-    "source_compared_needs_revision": 55,
+    "source_compared_needs_revision": 110,
     "status_boundary": "source-compared means visually reviewed; only review_status=pass means fidelity accepted"
   },
   "nodes": [
@@ -55,7 +55,7 @@
       "label": "NMDS可视化+边缘箱式图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-62b8290bc1",
@@ -81,7 +81,9 @@
       "label": "UMAP可视化 + 多维分组信息",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-e47434e3a0",
@@ -89,7 +91,7 @@
       "label": "小提琴图+NMDS分析",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-61087f8513",
@@ -140,7 +142,9 @@
       "label": "三元图(OTUs的生态位偏好)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-6be07d3441",
@@ -166,7 +170,7 @@
       "label": "免疫细胞亚群森林图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-ee762c7885",
@@ -174,7 +178,7 @@
       "label": "分组-患者泳道图(R版)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-660abde3cf",
@@ -182,7 +186,7 @@
       "label": "双分组 HR 森林图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-74de273c36",
@@ -268,7 +272,9 @@
       "label": "分面-散点饼图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-7ede687832",
@@ -276,7 +282,9 @@
       "label": "模型参数恢复验证图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-9590cbea69",
@@ -284,7 +292,7 @@
       "label": "表格形式的热图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-a54e1600ef",
@@ -303,7 +311,9 @@
       "label": "logFC-FC-2",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-495e79623f",
@@ -311,7 +321,9 @@
       "label": "logFC-FC-象限1",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-7024a41283",
@@ -319,7 +331,9 @@
       "label": "logFC-FC-象限2",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-7ba9efecaa",
@@ -327,7 +341,9 @@
       "label": "丰度差异蜂群图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-f8089cf9ea",
@@ -335,7 +351,9 @@
       "label": "丰度差异蜂群图-分面",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-0987a96040",
@@ -343,7 +361,9 @@
       "label": "双曲线火山图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-bb7a4cebde",
@@ -351,7 +371,9 @@
       "label": "垂直线火山图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-6b8dae7dcf",
@@ -359,7 +381,9 @@
       "label": "基础热图-分面风格",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-c5fa16bf7b",
@@ -367,7 +391,9 @@
       "label": "基础热图-对称风格",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-9b03558c39",
@@ -375,7 +401,9 @@
       "label": "多个比较组-火山图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-1ddd3aaf04",
@@ -383,7 +411,9 @@
       "label": "多个组织-火山图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-04450641d7",
@@ -391,7 +421,9 @@
       "label": "多个细胞群-火山图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-be637f518e",
@@ -409,7 +441,9 @@
       "label": "气泡热图-空白行",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-a9693534f0",
@@ -417,7 +451,9 @@
       "label": "添加显著性星号的热图-分面",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-fdf028504a",
@@ -425,7 +461,9 @@
       "label": "添加显著性星号的热图-空白行",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-f749086eb5",
@@ -443,7 +481,7 @@
       "label": "火山图+富集条形图1",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-e2fa692b0b",
@@ -451,7 +489,7 @@
       "label": "火山图+富集条形图2",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-29f7623f28",
@@ -459,7 +497,7 @@
       "label": "火山图+富集网络图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-cf64d1a42c",
@@ -467,7 +505,7 @@
       "label": "环形热图+Upset",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png"
     },
     {
       "id": "scidraw-023dc744b7",
@@ -475,7 +513,7 @@
       "label": "环形热图+Venn",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png"
     },
     {
       "id": "scidraw-5bdc86ce12",
@@ -483,7 +521,9 @@
       "label": "分面-小提琴图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-a709b0db4c",
@@ -491,7 +531,9 @@
       "label": "分面-配对箱线图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-3e2f561fec",
@@ -499,7 +541,7 @@
       "label": "半圆形小提琴图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png"
     },
     {
       "id": "scidraw-de58ba8efb",
@@ -515,7 +557,9 @@
       "label": "小提琴图+渐变背景",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-66b22bca3d",
@@ -523,7 +567,7 @@
       "label": "扇形箱线图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png"
     },
     {
       "id": "scidraw-edecf1603e",
@@ -571,7 +615,9 @@
       "label": "分组+分面-山脊图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-3fb21f121d",
@@ -613,7 +659,9 @@
       "label": "定制化的平滑曲线",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-a31445c6ad",
@@ -637,7 +685,9 @@
       "label": "点线图+取对数",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-f9e1785638",
@@ -653,7 +703,9 @@
       "label": "折线图+柱形图（组合）",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-0896267665",
@@ -661,7 +713,7 @@
       "label": "环状分组折线图+显著性",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png"
     },
     {
       "id": "scidraw-c607bd2c3e",
@@ -688,7 +740,9 @@
       "label": "分组气泡图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-8696e16721",
@@ -704,7 +758,9 @@
       "label": "对角线散点图+直方图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-e63f00b1fd",
@@ -712,7 +768,9 @@
       "label": "差异 OTU 曼哈顿图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-6df02113dd",
@@ -744,7 +802,9 @@
       "label": "时序图1：分组+误差带",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-78b8faa556",
@@ -771,7 +831,9 @@
       "label": "时序图4：重复测量方差分析+事后检验",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-3888423616",
@@ -811,7 +873,9 @@
       "label": "分组-渐变-环状柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-41f12f8a9d",
@@ -843,7 +907,9 @@
       "label": "堆积柱形图+散点图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-b15917204d",
@@ -851,7 +917,9 @@
       "label": "堆积点图 + 内嵌饼图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-6a5740abac",
@@ -859,7 +927,7 @@
       "label": "嵌套柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-exposed-transfer-reviewed"
     },
     {
       "id": "scidraw-6171e1e04a",
@@ -883,7 +951,9 @@
       "label": "环状柱形图(7花瓣3柱子)",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-af521313e0",
@@ -902,7 +972,9 @@
       "label": "环状柱形图+饼图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-2633e984c9",
@@ -910,7 +982,9 @@
       "label": "网络+环形柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-dfd6ad1819",
@@ -918,7 +992,9 @@
       "label": "网络+环形气泡图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-ab9db747ef",
@@ -926,7 +1002,9 @@
       "label": "世界地图1",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-d5446370db",
@@ -950,7 +1028,9 @@
       "label": "中国地图1",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-ae763a0c61",
@@ -974,7 +1054,9 @@
       "label": "动态交互+渐变色+桑基图2",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-4d8dfacaff",
@@ -982,7 +1064,9 @@
       "label": "关联性-环形棒棒糖图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-7d1f45001a",
@@ -990,7 +1074,9 @@
       "label": "堆积柱形图+哑铃图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-3a0b68e03b",
@@ -998,7 +1084,9 @@
       "label": "展示样本信息的环形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-199acfc4a0",
@@ -1014,7 +1102,9 @@
       "label": "一维变量(ComplexHeatmap包)+上/下三角为2个分组（不同配色）",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-fc5fef052a",
@@ -1221,7 +1311,9 @@
       "label": "系统发育树+3层热图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-cf14defcb3",
@@ -1229,7 +1321,9 @@
       "label": "系统发育树+热图+柱形图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-a01cd8b232",
@@ -1237,7 +1331,9 @@
       "label": "系统发育树+背景颜色和名称+2层热图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-5bc64d1df3",
@@ -1245,7 +1341,9 @@
       "label": "系统发育树+背景高亮+分支点+热图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-55694feb09",
@@ -1269,7 +1367,9 @@
       "label": "蝶状小提琴图",
       "source": "scidraw",
       "status": "static-code-audited",
-      "visual_status": "not-run"
+      "visual_status": "source-compared-png",
+      "review_status": "needs-revision",
+      "high_fidelity_eligible": false
     },
     {
       "id": "scidraw-a2dd8d3b52",
