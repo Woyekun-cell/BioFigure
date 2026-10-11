@@ -9,6 +9,9 @@ spec.loader.exec_module(module)
 
 
 class ReleaseAuditTests(unittest.TestCase):
+    def test_local_only_benchmark_evidence_is_not_scanned_as_public(self):
+        self.assertFalse(any(path.startswith("biofigure/benchmark/evidence/") for path in module.machine_specific_references()))
+
     def test_release_contract(self):
         result = module.audit()
         self.assertEqual(result["status"], "PASS", result["errors"])

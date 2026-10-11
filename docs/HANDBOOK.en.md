@@ -1,4 +1,4 @@
-# BioFigure 3.5.1 Full Handbook
+# BioFigure 3.7.0 Full Handbook
 
 ## 1. Scope
 
@@ -6,7 +6,7 @@ BioFigure is a unified production skill for biological scientific figures. It tu
 
 ## 2. Entry point and dynamic routing
 
-`biofigure/SKILL.md` is the concise entry point. Every invocation first loads personal style, rendering execution, reference quality, the scientific contract, the visual stance, and checkpoints. `manifest.yaml` then routes along four axes: primary and secondary biological domains, primary and secondary scientific roles, one locked backend, and one delivery target. `scripts/route_figure.py` emits a module list and backend lock; emitting a path is not evidence that its content has been read.
+`biofigure/SKILL.md` is the concise entry point. Every new, reproduced, or revised figure first runs `scripts/prepare_figure.py`, which searches the reproduction corpus, top-journal atlas, SciDraw, capability graph, and method/package contracts, then writes a content-hashed receipt. The Design Spec and CP2 must bind that receipt and the selected method ID. `manifest.yaml` then routes across biological domains, scientific roles, one backend, and one delivery target. A retrieval hit does not prove that the source was read or the figure validated.
 
 Domains cover transcriptomics/metabolomics/multi-omics, single-cell/spatial, chromatin, genome variation, phylogeny/synteny/gene families, imaging assays, machine learning, mechanisms, and multi-panel figures. Roles cover QC, discovery, comparison, structure, mechanism, validation, prediction, and robustness/model evaluation.
 
@@ -24,7 +24,7 @@ Imaging figures retain scale-bar, exposure, sampling, and representative-image b
 
 ## 5. Figure Design Spec
 
-`schemas/figure-design-spec.schema.yaml` requires the following before coding: task and message; data and biology contracts; backend and delivery locks; candidate and selected Patterns; reference observations and rejected elements; hierarchy, encoding, annotation, legend, and palette semantics; renderer and physical size; layout slots; resolved font file; allowed text; white background; and inspection plan. An invalid Spec blocks rendering.
+`schemas/figure-design-spec.schema.yaml` requires the following before coding: task and message; data and biology contracts; backend and delivery locks; preflight receipt ID and selected method case; candidate and selected Patterns; reference observations and rejected elements; hierarchy, encoding, annotation, legend, and palette semantics; renderer and physical size; layout slots; resolved font file; allowed text; white background; and inspection plan. An invalid Spec or CP2 receipt binding blocks renderer code.
 
 ## 6. Renderers and components
 

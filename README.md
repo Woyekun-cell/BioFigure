@@ -5,7 +5,7 @@
 **参考引导的生物科研图设计与质控 Skill**<br>
 **A reference-guided design and quality-control skill for biological figures**
 
-[![BioFigure](https://img.shields.io/badge/BioFigure-3.5.1-28527A)](biofigure/SKILL.md)
+[![BioFigure](https://img.shields.io/badge/BioFigure-3.7.0-28527A)](biofigure/SKILL.md)
 [![R first](https://img.shields.io/badge/backend-R%20first-4F8F8A)](biofigure/renderer-registry.yaml)
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)

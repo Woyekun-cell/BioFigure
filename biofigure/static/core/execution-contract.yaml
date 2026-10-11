@@ -1,0 +1,84 @@
+schema_version: 1
+name: biofigure-bootstrap-and-execution-contract
+purpose: Canonical rules for BioFigure entry, evidence-bound planning, rendering gates,
+  inspection, and claims. The SKILL entry repeats only the bootstrap hard gate.
+bootstrap:
+  locate_skill_root: true
+  read_before_work: static/core/execution-contract.yaml
+  command: python3 scripts/prepare_figure.py request.yaml --output preparation-receipt.json
+  write_renderer_code_only_after:
+  - valid_request
+  - successful_bootstrap
+  - validated_cp2_spec_and_receipt
+  block_on:
+  - bootstrap_failure
+  - missing_required_data_or_scientific_semantics
+  - missing_required_tool
+  - missing_permission
+  - chart_selection_and_cp2_spec_incomplete
+renderer_authorization:
+  enabled_backend: R
+  python_cp3: BLOCKED_UNTIL_OFFICIAL_AUTHORIZED_RENDERER
+  claim_boundary: workflow_consistency_only_not_anti_forgery_security
+host_boundary:
+  manifest_role: dynamic_module_routing_only
+  can_force_host_loading: false
+  can_guarantee_cross_model_quality: false
+workflow:
+- normalize_request_and_validate_schema
+- analyze_data_and_question_then_propose_chart_family_if_unspecified
+- resolve_statistical_intent_and_design_before_requested_inference
+- validate_declared_statistics_plan_before_cp2_and_bind_results_to_annotations
+- retrieve_all_learned_method_contracts_and_bind_adaptation_and_prior_failures
+- retrieve_locked_template_and_bind_fresh_fixture_replay_before_reuse
+- inspect_bound_sources_and_hash_material
+- validate_cp2_spec_and_receipt_before_code
+- issue_render_authorization_after_source_exists
+- render_only_through_authorized_biofigure_entrypoint
+- bind_first_and_final_render_to_checkpoint_ledger
+- lock_final_size_font_role_sizes_before_code
+- derive_final_physical_canvas_from_panel_count_label_length_and_information_density
+- use_semantic_color_in_first_render_and_reject_monochrome_data_marks_before_visual_PASS
+- reject_canvas_size_outside_declared_publication_column_class
+- reject_small_or_mispositioned_text_label_or_legend_overlap_and_panel_misalignment
+- reject_imbalanced_figure_text_proportion_at_final_size
+- compare_source_margins_row_or_cell_spacing_panel_gaps_and_legend_packing
+- bind_actual_renderer_layout_metrics_to_visual_density_review
+- adapt_reference_font_presets_by_actual_final_size_text_panel_proportion
+- synchronize_font_roles_across_spec_style_renderer_input_and_actual_pdf
+- invalidate_prior_visual_checks_after_every_rerender
+- separate_automated_checks_from_human_or_model_visual_judgment
+claims:
+  script_pass_is_not_visual_acceptance: true
+  cross_model_equivalence_requires_blinded_holdout_measurement: true
+  unmeasured_models_or_versions_must_be_reported_as_untested: true
+stable_reuse:
+  index: atlas/reusable-template-index.json
+  replay_entry: scripts/run_template_replay.py
+  cp2_binding: reference_evidence.template_reuse
+  new_data: fresh_final_size_review_required
+  promotion: source_input_renderer_environment_baseline_and_independent_replay_required
+  baseline_update: never_automatic
+all_learning:
+  index: atlas/learned-method-index.json
+  compiler: scripts/build_learned_method_index.py
+  retriever: scripts/retrieve_learned_methods.py
+  cp2_binding: reference_evidence.learned_method_reuse
+  mastery_requires:
+  - new_input_transfer
+  - structural_stress_cases
+  - two_independent_runs
+  - final_size_visual_review
+  fixed_fixture_is_not_transfer: true
+  validation_registry: atlas/learned-method-validations.json
+  validation_entry: scripts/validate_learned_reuse.py
+  source_syntax_issues: atlas/source-syntax-audit.json
+  explicit_method_controls_primary_plan: true
+  every_call_revalidates_earned_evidence: true
+  earned_adapter_decision: reuse_exact_renderer_sha256_or_declare_adaptation_and_revalidate
+  actual_render_sources_must_include_earned_renderer_sha256: true
+  source_density_contract_required: true
+  no_overlap_is_not_density_acceptance: true
+  preset_font_sizes_are_starting_points_not_universal_fixed_values: true
+  earned_typography_requires_actual_pdf_sizes_and_final_readability_observation: true
+  runtime_and_embedded_font_drift_invalidates_earned_pass: true

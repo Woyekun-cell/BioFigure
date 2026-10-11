@@ -5,11 +5,72 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import hashlib
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "atlas/scidraw-derived-corpus.json"
 METHODS = ROOT / "atlas/scidraw-source-compared-methods.json"
+
+# Explicit semantics audited against the stored corpus and original review URL.
+# The two ambiguous historical pairings remain unverified, never inherited PASS.
+METHOD_CASES = {'SCIDRAW-RCS-001': 'SCICASE-038', 'SCIDRAW-RIDGE-BIPOLAR-001': 'SCICASE-149',
+                'SCIDRAW-PCOA-MARGINAL-001': 'SCICASE-062', 'SCIDRAW-SWIMMER-001': 'SCICASE-075',
+                'SCIDRAW-CHORD-TRACK-001': 'SCICASE-154', 'SCIDRAW-VOLCANO-GSEA-001': 'SCICASE-045',
+                'SCIDRAW-TERNARY-001': 'SCICASE-071', 'SCIDRAW-CORRPLOT-001': 'SCICASE-014'}
+
+
+def learned_records(corpus):
+    by_case = {}
+    title_map = {}
+    for c in corpus['cases']:
+        title_map.setdefault(c['title'], []).append(c['case_id'])
+    for method in json.loads(METHODS.read_text())['cases']:
+        case_id = METHOD_CASES.get(method['id'])
+        if case_id:
+            by_case.setdefault(case_id, []).append(dict(method, record_source=str(METHODS.relative_to(ROOT)),
+                pairing_status='semantics-derived-needs-pairing-review' if method['id'] in {'SCIDRAW-TERNARY-001', 'SCIDRAW-CORRPLOT-001'} else 'explicit-semantic-binding'))
+    path = ROOT / 'atlas/scidraw-batch2-methods.json'
+    for method in json.loads(path.read_text())['cases']:
+        matches = title_map.get(method['label'], [])
+        if len(matches) == 1:
+            by_case.setdefault(matches[0], []).append(dict(method, record_source=str(path.relative_to(ROOT)), pairing_status='unique-source-title-binding'))
+    for path in sorted((ROOT / 'atlas').glob('scidraw-learning-ten*.json')):
+        for case in json.loads(path.read_text())['cases']:
+            by_case.setdefault(case['case_id'], []).append(dict(case, record_source=str(path.relative_to(ROOT))))
+    return by_case
+
+
+@lru_cache(maxsize=1)
+def image_hash_locations():
+    result = {}
+    archive = ROOT / 'benchmark/library/scidraw'
+    for folder in ('sources', 'figures', 'evidence/comparison'):
+        for p in sorted((archive / folder).rglob('*')):
+            if not p.is_file() or p.suffix.lower() not in {'.png', '.jpg', '.jpeg', '.webp', '.avif'}:
+                continue
+            result.setdefault(hashlib.sha256(p.read_bytes()).hexdigest(), []).append(str(p.resolve()))
+    return result
+
+
+def bound_pngs(method):
+    """Resolve migrated filenames only when the original recorded SHA matches."""
+    records = []
+    for item in method.get('validated_pngs', []):
+        if not isinstance(item, dict):
+            continue
+        original = Path(item['path'])
+        candidates = [ROOT / original, ROOT.parent / original, ROOT / 'benchmark/library/scidraw/figures' / original.name]
+        matches = [p for p in candidates if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == item.get('sha256')]
+        locations = image_hash_locations()
+        source = locations.get(item.get('source_image_sha256'), [])
+        comparison = locations.get(item.get('comparison_sha256'), [])
+        records.append(dict(item, resolved_path=str(matches[0].resolve()) if matches else None,
+                            hash_verified=bool(matches), source_image_path=source[0] if source else None,
+                            source_hash_verified=bool(source), comparison_path=comparison[0] if comparison else None,
+                            comparison_hash_verified=bool(comparison)))
+    return records
 
 
 def tokens(value: str) -> list[str]:
@@ -55,7 +116,7 @@ def score_case(case: dict, query: str) -> float:
 
 def retrieve(query: str, limit: int = 5, require_validated: bool = False) -> dict:
     corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
-    methods = {x["id"]: x for x in json.loads(METHODS.read_text(encoding="utf-8"))["cases"]}
+    methods = learned_records(corpus)
     visuals = {v["visual_id"]: v for v in corpus["visuals"]}
     ranked = sorted(((score_case(case, query), case) for case in corpus["cases"]), key=lambda x: (-x[0], x[1]["case_id"]))
     results = []
@@ -67,11 +128,21 @@ def retrieve(query: str, limit: int = 5, require_validated: bool = False) -> dic
         item["requires_actual_image_review"] = True
         item["score"] = round(score, 2)
         item["transfer_policy"] = "inspect_then_distill_never_copy"
-        method = methods.get(case["case_id"], {})
+        resources = methods.get(case['case_id'], [])
+        item['learned_resources'] = resources
+        method = next((m for m in resources if 'runtime_status' in m), {})
         item["source_compared_method"] = method
+        item['bound_pngs'] = bound_pngs(method)
+        item['repeatable_transfer_status'] = 'NOT_VERIFIED'
+        # Historical source review is insufficient when source pairing, migrated
+        # source images or a later critical review remain unresolved.
         item["high_fidelity_eligible"] = (
             method.get("runtime_status") == "source-compared-png"
             and method.get("review_status") == "pass"
+            and bool(item['bound_pngs'])
+            and all(p['hash_verified'] for p in item['bound_pngs'])
+            and all(p['source_hash_verified'] and p['comparison_hash_verified'] for p in item['bound_pngs'])
+            and method.get('pairing_status') == 'unique-source-title-binding'
         )
         if require_validated and not item["high_fidelity_eligible"]:
             continue

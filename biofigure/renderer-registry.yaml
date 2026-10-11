@@ -4,6 +4,7 @@ input_only_tools: [Fiji, QuPath, ImageJ, IGV, UCSC_Genome_Browser, deepTools]
 renderers:
   ggplot2: {language: R, preference: primary_for_general_statistics, strengths: [scatter, distribution, annotation], limitations: [complex-genome-coordinates]}
   ComplexHeatmap: {language: R, preference: primary_for_matrix, strengths: [matrix, annotations, physical-cell-sizing, dense-raster-body], limitations: [general-scatter]}
+  corrplot: {language: R, preference: learned_correlation_matrix, strengths: [symmetric-association, triangular-matrix, keyed-variable-order], limitations: [not-ggplot2, requires-separate-authorized-render-receipt-before-CP3]}
   ggtree: {language: R, strengths: [tree, tree-annotation], limitations: [dense-track-layout]}
   gggenomes: {language: R, strengths: [genome-tracks, synteny], limitations: [generic-statistics]}
   circlize: {language: R, strengths: [circular-coordinates, links], limitations: [small-label-density]}

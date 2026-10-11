@@ -1,0 +1,749 @@
+{
+  "source_repository": "https://github.com/nehSgnaiL/awesome-scientific-figure",
+  "source_revision": "8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8",
+  "reviewed_at": "2026-09-23",
+  "scope": "visual structure and declared catalog metadata only; not a reproduction or scientific-method validation",
+  "review_scope": "All 29 inspected across eight full-resolution contact sheets for panel order, axes, legend placement, annotations and color roles; one representative per 12 recipe families was previously opened individually. This is visual review, not caption/data/code verification or final-size reproduction QA.",
+  "detail_review": {
+    "date": "2026-09-23",
+    "contact_sheets_opened_at_original_resolution": 8,
+    "figures_rechecked": 29,
+    "focus": ["panel topology", "reading order", "axis and scale consistency", "legend and annotation placement", "cross-panel color mapping"],
+    "corrections": {
+      "ASF-V06": "Six curve panels b-g (not five) are arranged 2x3 beside four locator/inset maps.",
+      "ASF-V13": "Panel a is the main region-by-production-stage matrix; panel b shows stage/capacity change over time; panel c is the global production map.",
+      "ASF-V28": "Twelve panels A-L form four representation rows by three matched conditions: raw points, paths/flows, probability summaries and density surfaces; not three rows."
+    },
+    "limits": "Small text, exact statistical definitions and scientific interpretation require the original article and are not certified by contact-sheet review."
+  },
+  "reference_count": 29,
+  "rights": "source art stays external; no images or complete palettes embedded in BioFigure",
+  "entries": [
+    {
+      "id": "ASF-V01",
+      "catalog_heading": "2021-Xu-Tour Manag",
+      "figure_locator": "Fig. 11",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/1-s2.0-S0261517720301217-gr11_lrg.jpg",
+      "source_image_sha256": "dba0d44712efdb8968d4ebc68b1923239830ce722f84e8566162317e7a08f70d",
+      "source_image_pixels": [
+        3256,
+        3679
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.tourman.2020.104195",
+      "catalog_tags": [
+        "flow"
+      ],
+      "catalog_palette_color_count": 7,
+      "visual_family": "geo-network",
+      "visible_layout": "Single tall network-on-map panel; outlined regions, colored hubs and dense weighted links; category and node-size legends at right.",
+      "visible_color_roles": "Many colored clusters on pale map; saturated colors distinguish groups, gray links recede.",
+      "implementation_hypothesis": "Keep equal map projection; simplify edges/labels; place size and category legends outside the geography.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V02",
+      "catalog_heading": "2021-Xu-Ann AAG",
+      "figure_locator": "Fig. 10",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/raag_a_1812372_f0010_c.jpeg",
+      "source_image_sha256": "4e2572dac2b0ffcc7cf89ddef61bf16e9a0b9c053d03511fea080f22f89278e6",
+      "source_image_pixels": [
+        4201,
+        2453
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1080/24694452.2020.1812372",
+      "catalog_tags": [
+        "notation"
+      ],
+      "catalog_palette_color_count": 5,
+      "visual_family": "map-small-multiples",
+      "visible_layout": "Seven matched maps in a 4+3 grid; each panel repeats scale bar, north arrow and local callouts.",
+      "visible_color_roles": "Pale yellow-to-orange-to-red ordered fills on a light basemap.",
+      "implementation_hypothesis": "Fix common extent/projection and category breaks; align repeated map frames; reserve caption/legend space.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V03",
+      "catalog_heading": "2026-Peng-Nature Geoscience",
+      "figure_locator": "Fig. 2",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/41561_2026_1992_Fig2_HTML.webp",
+      "source_image_sha256": "9b7b76027c8f86a87dcbf704e7358a6c7c22a91fce6d3dc981481d78f235c2f9",
+      "source_image_pixels": [
+        1755,
+        927
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41561-026-01992-5",
+      "catalog_tags": [
+        "colorbar"
+      ],
+      "catalog_palette_color_count": 8,
+      "visual_family": "map-plus-distribution",
+      "visible_layout": "Wide map at left and narrow dot-over-box summary at right; common category shapes/color.",
+      "visible_color_roles": "Cool-to-violet map gradient; category hues repeated in points and boxes.",
+      "implementation_hypothesis": "Use sf for map and point+box plot independently; align panel height; never infer sample independence from visual.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V04",
+      "catalog_heading": "2019-Xu-CEUS",
+      "figure_locator": "Fig. 2",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/1-s2.0-S0198971518305192-gr2_lrg.jpg",
+      "source_image_sha256": "1cfc25b2f3611a216a9b4468efc0d11a95bf95b55adecc3169898cbfdad93d45",
+      "source_image_pixels": [
+        3573,
+        901
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.compenvurbsys.2019.02.002",
+      "catalog_tags": [
+        "3D"
+      ],
+      "catalog_palette_color_count": 5,
+      "visual_family": "dark-map-comparison",
+      "visible_layout": "Two dark spatial views side by side with matched camera and one shared stepped color key.",
+      "visible_color_roles": "Near-black background; cyan-blue low and warm yellow-red high.",
+      "implementation_hypothesis": "Lock extent, view and scale for comparison; add sufficient contrast and colorbar ticks.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V05",
+      "catalog_heading": "2020-Gibbs-Nat Commun",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/41467_2020_18783_Fig1_HTML.webp",
+      "source_image_sha256": "0c36a2bd45369fcf69d6f95e27055a0e9b08a75efd369aab528d6b0ff77264e0",
+      "source_image_pixels": [
+        2007,
+        999
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41467-020-18783-0",
+      "catalog_tags": [
+        "cluster"
+      ],
+      "catalog_palette_color_count": 4,
+      "visual_family": "map-plus-distribution",
+      "visible_layout": "Left stack of line, horizontal box/dot and vertical box/dot; center dominant choropleth; right four time-series strips.",
+      "visible_color_roles": "Blue and green groups consistently across map, boxes and curves; gray basemap.",
+      "implementation_hypothesis": "Use asymmetric width ratios and shared time scales; link color semantics across panels; keep legends compact.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V06",
+      "catalog_heading": "2022-Yabe-CEUS",
+      "figure_locator": "Fig. 3",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/1-s2.0-S0198971522000217-gr3_lrg.jpg",
+      "source_image_sha256": "f9672a9002223c944aa9a46a594cf4c48a99b51a38e44904de32984acdb90db5",
+      "source_image_pixels": [
+        3581,
+        1482
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.compenvurbsys.2022.101777",
+      "catalog_tags": [
+        "cross"
+      ],
+      "catalog_palette_color_count": 5,
+      "visual_family": "map-plus-curves",
+      "visible_layout": "Four regional locator/inset maps occupy the left block; six event-specific displacement/decay panels b-g form a 2x3 grid on the right.",
+      "visible_color_roles": "One hue per event, repeated in curve and corresponding map inset.",
+      "implementation_hypothesis": "Keep inset hierarchy and shared x/y definitions; color by event, not by panel; annotate model parameters separately.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V07",
+      "catalog_heading": "2022-Tegally-Science",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/science.abq5358-f1.jpg",
+      "source_image_sha256": "7ddbb7195b570b33006eaedc917c0289485679e2e7589665fbc81ba5c8b21834",
+      "source_image_pixels": [
+        4333,
+        2741
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1126/science.abq5358",
+      "catalog_tags": [
+        "period"
+      ],
+      "catalog_palette_color_count": 14,
+      "visual_family": "time-series-bubble-matrix",
+      "visible_layout": "Six lettered regions arranged 2x3; each has upper log-scaled area/time plot and lower aligned variant bubble rows.",
+      "visible_color_roles": "Pastel variant categories against gray background; gray Others; fill of area matches region.",
+      "implementation_hypothesis": "Pair plots by shared date x scale; encode bubble area, not radius; reserve a common size legend.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V08",
+      "catalog_heading": "2022-Tegally-Science",
+      "figure_locator": "Fig. 4",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/science.abq5358-f4.jpg",
+      "source_image_sha256": "a7e8c28579e62585908933456fe7d8c1a9d86fb36f480f82ed12b6e4e284e5c2",
+      "source_image_pixels": [
+        4333,
+        2390
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1126/science.abq5358",
+      "catalog_tags": [
+        "period"
+      ],
+      "catalog_palette_color_count": 14,
+      "visual_family": "prevalence-trend-flow",
+      "visible_layout": "Three horizontal bands: prevalence small multiples, trend curves with uncertainty, then origin-destination maps by variant.",
+      "visible_color_roles": "Categorical variant colors persist through all bands; movement lines add direction/color.",
+      "implementation_hypothesis": "Reserve row heights before drawing; keep 5 columns aligned; define map direction and line transparency.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V09",
+      "catalog_heading": "2019-Yin-Nature",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/41586_2019_1725_Fig1_HTML.webp",
+      "source_image_sha256": "b64e4202cc10941d7c5437f29a0d505a52dcea1779214a3e46ad13eb9826f92a",
+      "source_image_pixels": [
+        1355,
+        524
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41586-019-1725-y",
+      "catalog_tags": [
+        "font"
+      ],
+      "catalog_palette_color_count": 4,
+      "visual_family": "comparison-plus-model-grid",
+      "visible_layout": "Two rows by five columns; top bar comparisons, bottom CCDF/model plots aligned by category.",
+      "visible_color_roles": "Pink/green top contrasts; lower data/model/null styles separated by marker and line.",
+      "implementation_hypothesis": "Use shared x categories and row-specific y scales; preserve marker/line meaning and logarithmic lower axes.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V10",
+      "catalog_heading": "2020-Alessandretti-Nature",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/41586_2020_2909_Fig1_HTML.webp",
+      "source_image_sha256": "709d4dd73107222b2631661c744bea1efd6e5b61c6205c1f3fb9bd7ff0eb4ea6",
+      "source_image_pixels": [
+        2161,
+        1272
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41586-020-2909-1",
+      "catalog_tags": [
+        "echo"
+      ],
+      "catalog_palette_color_count": 4,
+      "visual_family": "map-mechanism-hybrid",
+      "visible_layout": "Maps/densities form left column, mechanism diagram/equations right, model curves below.",
+      "visible_color_roles": "Muted four-level categorical hues repeat across maps, density and diagram.",
+      "implementation_hypothesis": "Build diagram as independent vector panel; synchronize level colors; validate formulas from primary article.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V11",
+      "catalog_heading": "2022-Ren-Tour Manag",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/1-s2.0-S0261517722000462-gr1_lrg.jpg",
+      "source_image_sha256": "ead1d14e5bc02a6d5dda097e5dad6c99e2cb5904902d38fe7f37ffa35035bc72",
+      "source_image_pixels": [
+        3059,
+        3509
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.tourman.2022.104533",
+      "catalog_tags": [
+        "event"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "timeline-map-hybrid",
+      "visible_layout": "Tall annotated event timeline left, choropleth map upper right, narrow time series stack lower right.",
+      "visible_color_roles": "Red events and curves emphasized; gray context; pink-red map ramp.",
+      "implementation_hypothesis": "Set major panel ratio first; allocate label track for timeline; decimate annotations if crowded.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V12",
+      "catalog_heading": "2025-Chen-Cities",
+      "figure_locator": "Fig. 9",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/1-s2.0-S0264275125005426-gr9_lrg.jpg",
+      "source_image_sha256": "70178a74de4c8f00e5e91b97991c7555fd9a5b1c1aa4502f383ef223f05b73ba",
+      "source_image_pixels": [
+        3238,
+        2145
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.cities.2025.106241",
+      "catalog_tags": [
+        "contrast"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "lollipop-stacked-comparison",
+      "visible_layout": "Two-row comparison: upper sparse weekday/weekend lollipop points; lower paired 100% stacked horizontal bars with connected segment boundaries.",
+      "visible_color_roles": "Red and blue contrast, neutral gray middle segment.",
+      "implementation_hypothesis": "Align categories between rows; separate value labels from segment edges; do not imply paired units unless true.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V13",
+      "catalog_heading": "2025-Cui-NC",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/41467_2025_61979_Fig1_HTML.webp",
+      "source_image_sha256": "d1ee3450952f2e1f9a8eb342294cbf85c69e173f7fe191d545f37f452dfda64f",
+      "source_image_pixels": [
+        2001,
+        1361
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41467-025-61979-5",
+      "catalog_tags": [
+        "process"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "process-map-hybrid",
+      "visible_layout": "Panel a is a wide region-by-production-stage matrix; panel b shows capacity/stage changes over time; panel c is a global production-increase map.",
+      "visible_color_roles": "Stage colors pale blue, red, yellow, green, violet; map uses separate sequential ramp.",
+      "implementation_hypothesis": "Draw node/edge layers from explicit keys; use dedicated map scale; avoid using color for two meanings.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V14",
+      "catalog_heading": "2026-Li-Nature",
+      "figure_locator": "Fig. 3",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/41586_2026_10260_Fig3_HTML.webp",
+      "source_image_sha256": "a7ca3a57e2c4eda1c5feee10866a255db7390acb0a9855c4ab0cd5d892fb86a5",
+      "source_image_pixels": [
+        2162,
+        1295
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s41586-026-10260-w",
+      "catalog_tags": [
+        "bivariate"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "dark-map-marginals",
+      "visible_layout": "Dominant dark world map; longitudinal distribution above, latitudinal marginal at right, signed horizontal bars below; bivariate map key.",
+      "visible_color_roles": "Blue and orange/red opposing changes on black with a two-axis map key; white labels.",
+      "implementation_hypothesis": "Lock shared geographic axis between map and marginals; diverging scale centered at zero; test contrast at export size.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V15",
+      "catalog_heading": "2026-Yang-Nat Comput Sci",
+      "figure_locator": "Fig. 3",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/x3.png",
+      "source_image_sha256": "087da474c12f4d556dc32a90aafd7698889f28073cea98342a6d4a2eda7e6eef",
+      "source_image_pixels": [
+        996,
+        809
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/s43588-026-01003-y",
+      "catalog_tags": [
+        "distribution"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "dark-map-comparison",
+      "visible_layout": "Two-row maps comparing predicted and observed networks; bottom validation scatter and line plots.",
+      "visible_color_roles": "Black background, magenta/white flows with cyan/orange highlights.",
+      "implementation_hypothesis": "Make light text readable; align geographic panels; keep validation axes separate from map color scale.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V16",
+      "catalog_heading": "2022-Xu-CEUS",
+      "figure_locator": "Fig. 5",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/boxplot/1-s2.0-S0198971521001605-gr5_lrg.jpg",
+      "source_image_sha256": "b7c778095ee73a4d7081708e279643111887d680f62a493ff203c243ed0e9a75",
+      "source_image_pixels": [
+        2965,
+        1042
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.compenvurbsys.2021.101753",
+      "catalog_tags": [
+        "comparison"
+      ],
+      "catalog_palette_color_count": 2,
+      "visual_family": "method-comparison-grid",
+      "visible_layout": "Three parallel panels: point estimates, grouped bars and grouped boxplots for same two methods.",
+      "visible_color_roles": "Cyan and coral consistently map to methods; neutral black axes.",
+      "implementation_hypothesis": "Keep method order and palette fixed; distinguish variability/error definition from raw distribution.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V17",
+      "catalog_heading": "2022-Jin-Emerg Microbes Infect",
+      "figure_locator": "Fig. 2",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/boxplot/temi_a_2155251_f0002_oc.jpeg",
+      "source_image_sha256": "8b70526c4a358898ccde1e2fa9421520efb9459c78300df898b3866daa1a8d4e",
+      "source_image_pixels": [
+        1500,
+        1155
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1080/22221751.2022.2155251",
+      "catalog_tags": [
+        "comparison",
+        "confidence"
+      ],
+      "catalog_palette_color_count": 3,
+      "visual_family": "bar-dot-longitudinal",
+      "visible_layout": "Four-panel 2x2 grid: grouped bars on top; individual points and trends below, same two targets across columns.",
+      "visible_color_roles": "Pale orange, green and pink groups; sample marks darker than bars.",
+      "implementation_hypothesis": "Use log y axis only for positive titres; draw reference threshold; brackets need headroom and verified comparisons.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V18",
+      "catalog_heading": "2010-Song-Nat Phys",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/scatter/41567_2010_Article_BFnphys1760_Fig1_HTML.webp",
+      "source_image_sha256": "2092e5c7305b581d03426c4e3ae6344e78bb1fe864b28eee9648a847d22f81f9",
+      "source_image_pixels": [
+        946,
+        629
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1038/nphys1760",
+      "catalog_tags": [
+        "fit"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "log-model-small-multiples",
+      "visible_layout": "Six equal panels 2x3 with log x/y where indicated; symbols separate datasets and lines separate models.",
+      "visible_color_roles": "Small four-color series palette; gray theoretical guides.",
+      "implementation_hypothesis": "Define transformation per panel, shared typography and consistent model/data legend; no zero on log axes.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V19",
+      "catalog_heading": "2009-Wang-Science",
+      "figure_locator": "Fig. 4",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/scatter/324_1071_f4.jpeg",
+      "source_image_sha256": "edfe567baa83157f61707cc5802b58f04ad9438a715e668f220935b26fb7dd2c",
+      "source_image_pixels": [
+        1104,
+        1280
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1126/science.1167053",
+      "catalog_tags": [
+        "fit"
+      ],
+      "catalog_palette_color_count": 3,
+      "visual_family": "model-curve-grid",
+      "visible_layout": "Six panels 3x2; upper errorbar trajectories, middle/lower log parameter scans with threshold lines.",
+      "visible_color_roles": "Blue, red and green methods held constant across panels.",
+      "implementation_hypothesis": "Reserve top margin for equations; annotate regime boundaries; align parameter axes only where units match.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V20",
+      "catalog_heading": "2019-Xu-J R Soc Interface",
+      "figure_locator": "Fig. 2",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/scatter/rsif20190536f02.png",
+      "source_image_sha256": "f745c6800ddc53188e84970549ed3a2a004f67e2bd85f6783ec4193cd2a6d21a",
+      "source_image_pixels": [
+        1922,
+        651
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1098/rsif.2019.0536",
+      "catalog_tags": [
+        "distribution"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "distribution-overlay",
+      "visible_layout": "Left histogram with fitted density and marginal boxplot; right ranked-density raster with overlaid horizontal boxplots and colorbar.",
+      "visible_color_roles": "Orange-red frequency/intensity scale with dark line annotations.",
+      "implementation_hypothesis": "Do not treat heatmap counts as independent points; synchronize rank x and box positions; keep colorbar separate.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V21",
+      "catalog_heading": "2025-Ibrahim-Fundam Res",
+      "figure_locator": "Fig. 2",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/scatter/1-s2.0-S2667325825001943-gr2_lrg.jpg",
+      "source_image_sha256": "420dcb0d7318dc5ebbe0bb743594641a7a5ea231101d29c8bba68cf7cfdf1a71",
+      "source_image_pixels": [
+        2500,
+        1215
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.fmre.2025.04.005",
+      "catalog_tags": [
+        "fit"
+      ],
+      "catalog_palette_color_count": 2,
+      "visual_family": "bubble-regression",
+      "visible_layout": "Two equal scatter panels with size/color encoded points, dashed regression, gray interval and dotted zero reference.",
+      "visible_color_roles": "Cyan and amber groups; black model line, neutral confidence ribbon.",
+      "implementation_hypothesis": "Fit from declared experimental units; label R²/P from the actual model; size mapping needs a legend and overlap control.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V22",
+      "catalog_heading": "2026-Liang-Travel Behav Soc",
+      "figure_locator": "Fig. 3",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/GeoTopo-Net/refs/heads/main/img/Fig3.png",
+      "source_image_sha256": "ee8d95be76a50fdce7f1555e79b3695021805377fb004e5a05074558fbf0f68e",
+      "source_image_pixels": [
+        1706,
+        1179
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.tbs.2025.101152",
+      "catalog_tags": [
+        "trend"
+      ],
+      "catalog_palette_color_count": 2,
+      "visual_family": "faceted-estimate-grid",
+      "visible_layout": "Five columns by three metric rows; each cell shows colored estimates and vertical uncertainty by strategy.",
+      "visible_color_roles": "Navy baseline, cyan sequential and coral parallel; consistent across all 15 cells.",
+      "implementation_hypothesis": "Predeclare metric units and panel-specific y limits; common method x order; avoid truncation hiding uncertainty.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V23",
+      "catalog_heading": "2019-Raval-FT",
+      "figure_locator": "Map showing carbon dioxide emissions by ships in 2015",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/others/http___com.ft.imagepublish.upp-prod-eu.s3.amazonaws.avif",
+      "source_image_sha256": "efdc0ec01a4ae05223e7fcc846ea339070875a42d2de7e5b31ddb172e6d94363",
+      "source_image_pixels": [
+        1260,
+        851
+      ],
+      "paper_url_reported_by_catalog": null,
+      "catalog_tags": [
+        "flow"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "editorial-geoflow",
+      "visible_layout": "World shipping density map dominates with three circular zoom callouts, headline and explanatory side text.",
+      "visible_color_roles": "Sequential cool-to-warm density on warm off-white background.",
+      "implementation_hypothesis": "This is editorial reference only; derive new geographic content/annotation hierarchy, not copied artwork.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V24",
+      "catalog_heading": "2024-News Media Organization-Economist",
+      "figure_locator": "Map showing carbon dioxide emissions by ships in 2015",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/others/Qccfa.jpg",
+      "source_image_sha256": "27b3f8a410724fe7fb759cb86596792176d90e99beb3bfebbf6b6f0a5d6aed7d",
+      "source_image_pixels": [
+        608,
+        1253
+      ],
+      "paper_url_reported_by_catalog": null,
+      "catalog_tags": [
+        "heatmap"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "editorial-dot-matrix",
+      "visible_layout": "Tall dot-matrix timeline above and multiseries line chart below with clear red focal series.",
+      "visible_color_roles": "Restrained cream background, red focal marks, gray/blue context.",
+      "implementation_hypothesis": "Use a raster/dot-matrix only with honest cell meaning; share timeline alignment and explain missing periods.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V25",
+      "catalog_heading": "2022-Max Roser-Our World in Data",
+      "figure_locator": "humanity today and humanity's past",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/others/w=850.avif",
+      "source_image_sha256": "42654c336fd26689213f906063f09104588e33a2aecee4ebce00d0471b710a02",
+      "source_image_pixels": [
+        850,
+        1266
+      ],
+      "paper_url_reported_by_catalog": null,
+      "catalog_tags": [
+        "quantitative"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "editorial-metaphor",
+      "visible_layout": "Large hourglass pictogram made from unit dots with sparse numeric callouts.",
+      "visible_color_roles": "Green present versus muted red historical quantity; gray background.",
+      "implementation_hypothesis": "Metaphor requires explicit unit-to-dot conversion and citation; not a default analytical chart.",
+      "actual_image_reviewed": true,
+      "inspection_level": "individual-image",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V26",
+      "catalog_heading": "2012-Fang-J Transp Geog",
+      "figure_locator": "Fig. 11",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/1-s2.0-S0966692312000816-gr11.jpg",
+      "source_image_sha256": "fc69292c99844db58389813c04f9201b80e7c116c1f72e509f929ebda4d3fa8b",
+      "source_image_pixels": [
+        671,
+        810
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.jtrangeo.2012.03.018",
+      "catalog_tags": [
+        "flow"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "repeated-time-map",
+      "visible_layout": "Nine equal map frames in 3x3 temporal order with one shared ordered line-width/color legend.",
+      "visible_color_roles": "Blue base network; green/yellow/red mark higher path classes.",
+      "implementation_hypothesis": "Fix geographic extent and class boundaries; put time windows outside maps; avoid nine separate legends.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V27",
+      "catalog_heading": "2015-Alexander-Transp Res",
+      "figure_locator": "Fig. 9",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/1-s2.0-S0968090X1500073X-gr9.jpg",
+      "source_image_sha256": "41ff510300142297014d65e782f6175b60d9d5946aa3ff3450a1811871d6c46f",
+      "source_image_pixels": [
+        623,
+        282
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1016/j.trc.2015.02.018",
+      "catalog_tags": [
+        "flow"
+      ],
+      "catalog_palette_color_count": 0,
+      "visual_family": "geo-network",
+      "visible_layout": "Two large network maps plus two detail crops; one purple sequential width/color key.",
+      "visible_color_roles": "Pale base roads, violet-purple traffic intensity.",
+      "implementation_hypothesis": "Crop extents and network widths must be declared; avoid false precision from narrow strokes.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V28",
+      "catalog_heading": "2016-Jiang-PNAS",
+      "figure_locator": "Fig. 1",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/geomap/pnas.1524261113fig01.jpeg",
+      "source_image_sha256": "13b2c6f6e92572cfa1261ac7e4ec455bed6d1be187ec295a4bd7f37e7ddc11f7",
+      "source_image_pixels": [
+        1140,
+        1280
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1073/pnas.1524261113",
+      "catalog_tags": [
+        "prob"
+      ],
+      "catalog_palette_color_count": 4,
+      "visual_family": "multiscale-spatial-grid",
+      "visible_layout": "Twelve panels A-L in four representation rows by three matched conditions: raw points, paths/flows, probability summaries and density surfaces; shared legend at right.",
+      "visible_color_roles": "Gray background; category-colored points/routes; multihue density at bottom.",
+      "implementation_hypothesis": "Pin category definitions, route direction and shared map extent; keep side legend from shrinking frames.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    },
+    {
+      "id": "ASF-V29",
+      "catalog_heading": "2017-Xu-J R Soc Interface",
+      "figure_locator": "Fig. 5",
+      "source_image_url": "https://raw.githubusercontent.com/nehSgnaiL/awesome-scientific-figure/8632aa34fcc1b0b2c3f66a7b1ddd4c0e587a25a8/figures/combination/rsif20161041f05.jpg",
+      "source_image_sha256": "f950c6402a1ee296c4d9eb5587ac009a2de2f259025aca455f6e79c9ed91be6e",
+      "source_image_pixels": [
+        1280,
+        1245
+      ],
+      "paper_url_reported_by_catalog": "https://doi.org/10.1098/rsif.2016.1041",
+      "catalog_tags": [
+        "flow"
+      ],
+      "catalog_palette_color_count": 3,
+      "visual_family": "map-plus-distribution",
+      "visible_layout": "Two quantitative panels across top; large route/demand map below with line-width and origin/destination keys.",
+      "visible_color_roles": "Green/orange/violet charts; green route emphasis and blue-red map fields.",
+      "implementation_hypothesis": "Use independent legend blocks for measures, route width and area fills; avoid encoding collisions.",
+      "actual_image_reviewed": true,
+      "inspection_level": "contact-sheet-macro-layout",
+      "original_caption_verified": false,
+      "data_and_code_verified": false,
+      "fidelity_status": "not-reproduced"
+    }
+  ]
+}

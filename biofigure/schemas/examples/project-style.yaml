@@ -1,0 +1,12 @@
+schema_version: "1.0"
+project_id: biofigure-example-marker-dotplot
+palette:
+  palette_id: viridis-10
+  semantic_colors:
+    continuous_expression: viridis-10
+    condition: exact_project_dictionary
+typography:
+  family: Helvetica
+  size_roles_pt: {axis_text: 7, axis_title: 7, legend_text: 7, strip_text: 7, annotation_text: 6, panel_label: 8}
+size_system:
+  allowed_classes: [double-column]

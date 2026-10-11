@@ -1,0 +1,20 @@
+case_id: distribution-source-exposed
+family: distribution
+exposure: source-exposed
+input_path: inputs/distribution.csv
+input_sha256: aa9819f9381bd67d5e0fe596743c172753447d007a59cdfcf530d68760bb392c
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Compare an unpaired two-group distribution of continuous response values using a violin plot with overlaid box and raw points; preserve every independent replicate value.
+data_semantics: CSV columns are group (categorical groups A/B) and value (continuous response in arbitrary units); each row is an independent unpaired biological replicate (n=2 per group); no repeated measures.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/distribution-source-exposed.txt
+  sha256: 672e4e776634cf00bde5631068b2708e06e596a7b61bd92c39aaa44c706dd200
+  role: source-exposed-fixture
+permitted_materials:
+- source figure
+- author source code

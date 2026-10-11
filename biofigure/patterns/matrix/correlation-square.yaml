@@ -16,7 +16,7 @@ color_semantics: {negative: multi_step_navy_cyan, zero: white, positive: multi_s
 optional_components: [significance-marks, clustering-tree]
 avoid: [na_as_zero, causal_arrow, independent_color_scales]
 scientific_risks: [confounding, low_pairwise_n, pearson_nonlinearity]
-renderer_options: [ComplexHeatmap, ggplot2, matplotlib]
+renderer_options: [ComplexHeatmap, corrplot, ggplot2, matplotlib]
 references: [source-index://colorspace, atlas://ATLAS-TJ-HCL-F4, atlas://ATLAS-TJ-OMICVERSE-F6]
 provenance: {created_from: [source-index://multiassay], reviewed_by: null, reviewed_at: null}
 confidence: medium

@@ -1,0 +1,2 @@
+Allowed synthetic author-material fixture for composition.
+The supplied source example shows a stacked composition panel and its normalization code.

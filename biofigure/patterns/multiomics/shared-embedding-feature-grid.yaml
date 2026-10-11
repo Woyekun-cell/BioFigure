@@ -1,0 +1,24 @@
+pattern_id: MO-EMBED-GRID-001
+version: "1.0"
+domain: [multi-omics, single-cell]
+scientific_task: [shared-embedding-multimodal-features]
+message_type: modality-aligned-cell-state-pattern
+data_contract: {required: [cell_id, umap1, umap2, modality, feature, value], optional: [chromatin_class, motif_score, genomic_track], assumptions: [coordinates_shared_across_modalities, modality_normalization_declared]}
+applicable_when: {data_profile: {n_observations: 100-2000000, n_modalities: 2-4, n_features: 2-30}, message: compare_modalities_on_one_cell_embedding}
+not_recommended_when: [coordinates_recomputed_per_modality, unmatched_cells_presented_as_paired, scale_semantics_undeclared]
+visual_hierarchy: {primary: shared_embedding_and_feature_topology, secondary: modality_row_correspondence, tertiary: motif_or_locus_context}
+geometry: {primary: [cell_level_scatter, feature_summary_hex], secondary: [motif_heatmap, genomic_track]}
+encoding: {categorical_color: fixed_discrete_palette, nonnegative_feature: sequential_scale, signed_feature: zero_centered_diverging_scale, feature_grid: same_coordinates_and_bins}
+layout: {feature_grid: modalities_by_features, row_order: assay_before_expression, whitespace_strategy: reserve_external_guides, locus_tracks: vertically_aligned, embedding_density: dense_connected_cell_cloud, aggregate_only_where_feature_grid_requires}
+annotation_strategy: [panel_tags_at_composite_level, modality_row_labels, gene_or_feature_titles, genomic_span]
+legend_strategy: {place: outside_plot, share_only_identical_scales: true, no_overlap: true}
+color_semantics: {cell_class: fixed_categorical_dictionary, nonnegative_feature: sequential, signed_feature: zero_centered_diverging, genomic_track: assay_specific}
+optional_components: [outside-legend]
+avoid: [independent_umap_per_panel, modality_row_swap, signed_value_on_sequential_scale, repeated_axes_in_dense_feature_grid, legends_over_data, replacing_all_cell_level_umaps_with_heatmaps]
+scientific_risks: [cell_level_pseudoreplication, normalization_mismatch, accessibility_expression_conflation, track_amplitude_overinterpretation]
+renderer_options: [ggplot2, matplotlib]
+references: [pmcid://PMC11143375/figure-2, source-index://signac]
+provenance: {created_from: [pmcid://PMC11143375/figure-2, github://immunogenomics/RA_ATAC_multiome@88f1d3f34fb911649ebce17722ef3bd17356060], reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-26}
+confidence: medium
+validation: {scientific: source-reviewed, visual: final-size-reviewed, benchmark: source-exposed-structural-reproduction}
+status: candidate

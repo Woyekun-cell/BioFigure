@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-cannabis-busco-chr7-2025",
+  "label": "Cannabis Fig4d：BUSCO锚定共线点线图、合酶位点三角、化学型分组",
+  "learning_status": "SOURCE_CODE_AND_INPUTS_AUDITED_ORIGINAL_IMAGES_OPENED",
+  "publication": {
+    "title": "Domesticated cannabinoid synthases amid a wild mosaic cannabis pangenome",
+    "journal": "Nature",
+    "year": 2025,
+    "doi": "10.1038/s41586-025-09065-0",
+    "url": "https://www.nature.com/articles/s41586-025-09065-0",
+    "pmcid": "PMC12286863",
+    "figure_license": "CC BY4.0"
+  },
+  "published_reference": "Fig4d",
+  "author_directory": "Fig5D_BUSCOchrom7",
+  "chart_family": "paper-composite",
+  "method_pattern": "native BUSCOplot::gg_line_map + synthase point overlays; selected single complex genomic panel",
+  "learning_scope": "Native plotting code, exact processed inputs, ordering/anchor/filter semantics, physical layout and new semantic color; no rawNGS analysis",
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "author-code-license",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/LICENSE",
+      "git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/README.md",
+      "sha256": "c9f37f96966356ddf94d0932b7e6177986bd566c5112b5395e704de1df8925e8",
+      "bytes": 1689,
+      "role": "author-repository-readme",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/README.md",
+      "git_blob_sha": "351af6fd56b02df21c488f1346f13f0a05323424"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/DESCRIPTION",
+      "sha256": "2980023bb98ec6f2166d46980426443133ccaf5984fb9d58890d89cbc491d1be",
+      "bytes": 557,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/DESCRIPTION",
+      "git_blob_sha": "ab8764494e83145dc1712e31b4aff88f9070360f"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/LICENSE",
+      "git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/LICENSE.md",
+      "sha256": "585e25ef8f5946a52bf2aed68d5becfc38be94a8663aa01c1b31d88aa57f1de3",
+      "bytes": 34904,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/LICENSE.md",
+      "git_blob_sha": "175443ce8855883fcbf0122a6bfba12ac4cfb49d"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/NAMESPACE",
+      "sha256": "9da9a85192c0b918f6b02d6d0f4b1154f9d42b601efe1db4a3e0f021054efaa9",
+      "bytes": 261,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/NAMESPACE",
+      "git_blob_sha": "ae3d19b081f7a9bcc6a880f166a412d0c3d84ef8"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/BUSCOplot-package.R",
+      "sha256": "45deb21f74d0c76023e8b17137aba369d408fe0686c0971381949554fa2cef2a",
+      "bytes": 93,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/BUSCOplot-package.R",
+      "git_blob_sha": "a65cf643086b37dd78ba50ba8eb3ffe018f39044"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/DM6-full_table.R",
+      "sha256": "7bc8489d161c0f7d7c3d275244a88e76fddfc38add333cf36be07ccc50d7ec8a",
+      "bytes": 1443,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/DM6-full_table.R",
+      "git_blob_sha": "9d4e1d39ee85ad06d2176051971d6a45292af66c"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/add_unknown.R",
+      "sha256": "031e2910a055e224b368755c32d2226ccc695b6eee76f070ffa97d9596fbf817",
+      "bytes": 2026,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/add_unknown.R",
+      "git_blob_sha": "5867c8741f2fd58213cc8ecb28098d0529a9db8e"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/busco_bar.R",
+      "sha256": "c324799368a032227f64dc5e14fbdc74bd826baeda0b6c37c2e1060224a05d37",
+      "bytes": 1793,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/busco_bar.R",
+      "git_blob_sha": "72fbc641dc0bffedc661e7cbb6a7c6fa3bbbfa66"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/check_busco_table.R",
+      "sha256": "92dd8add85a02c59eb6a5af83e1670f6ede707c113ad30527badf3b7d23feeac",
+      "bytes": 1348,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/check_busco_table.R",
+      "git_blob_sha": "c0a12d9384106a1c6d78b2b6737137b86cd4a8d9"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/dist_fingerprint.R",
+      "sha256": "a3989ab7d0545b5dc87c0f9e1a5c3d66ad061436dd5295f5cb119401596a35d2",
+      "bytes": 3115,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/dist_fingerprint.R",
+      "git_blob_sha": "3f1954e546fd645387f46503d058a319d2ac030f"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/gg_line_map.R",
+      "sha256": "251b8c9ae46f7beafd45552df8e0594a986df3f61da60ffc627f634bf5569b40",
+      "bytes": 4984,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/gg_line_map.R",
+      "git_blob_sha": "0a310649926f0ee002f8b800bcd94f2415d11a16"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/line_map.R",
+      "sha256": "b74854f04653da2f0809a2683b6a8838259594bf39fad44da06df605cfb9362e",
+      "bytes": 1928,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/line_map.R",
+      "git_blob_sha": "b54dc28fd9f5ffe08a85216330dc84e101dd3a09"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/make_known.R",
+      "sha256": "d652d653a805df5de1cc782ad5609a2f3bb6683dd1f8c010182e25b8bdd133b8",
+      "bytes": 878,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/make_known.R",
+      "git_blob_sha": "e70867b7cc53a1fb26c8927e892bc67ddc01cfa7"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/position_BUSCOS.R",
+      "sha256": "be4d9a6d0bf12e703844a5797cbf23aa387fd1764ead038e307555d94cfedece",
+      "bytes": 4782,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/position_BUSCOS.R",
+      "git_blob_sha": "72406de3c27a4ac44437df3f4dbe545f2a4abf06"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/read_busco.R",
+      "sha256": "2590250085239a69760a36b31705492d5e6486737a5007f1a9c4a7dca88df4f5",
+      "bytes": 926,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/read_busco.R",
+      "git_blob_sha": "a22cfc7fcb54e3529809aacd43bec46b234f93cf"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/BUSCOplot-package.Rd",
+      "sha256": "043edea4581293b6f0468457c93a1da99cd4a68720a8d961790b55cfd4aa7920",
+      "bytes": 437,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/BUSCOplot-package.Rd",
+      "git_blob_sha": "936646c7b1f3e0006187e392d983ef830b12f8e2"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/DM6.Rd",
+      "sha256": "52c0a83a23ae63b61d0b397f8203654501f798e77cb3f98e79d2829f23968e92",
+      "bytes": 1514,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/DM6.Rd",
+      "git_blob_sha": "86cfa3ed8fa6d04ac4e80b27650209e785859618"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/add_unknown.Rd",
+      "sha256": "6a6101ca18b93f692b5670395b15a5dcb67de9d5c9fe739e6a92f4ebebb8aad6",
+      "bytes": 952,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/add_unknown.Rd",
+      "git_blob_sha": "9d7384840b8febd5b546184459011ecc319a019a"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/busco_bar.Rd",
+      "sha256": "ae30d4e0361a5a4dfce5b1fbf0110a37418d45473a84dcb0be9a76f043c8adc4",
+      "bytes": 561,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/busco_bar.Rd",
+      "git_blob_sha": "77c0df7a523cbdee15828528ae92af9007fa8c06"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/check_busco_table.Rd",
+      "sha256": "a41779bbf85a6f18e9892affba0d166d5bad5c008497b168f175b4d7d416f380",
+      "bytes": 578,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/check_busco_table.Rd",
+      "git_blob_sha": "4088542812c87384e8dfd82ca356b951ce7ce840"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/dist_fingerprint.Rd",
+      "sha256": "6883d2ce62eeaa892810dc53f7fb0ea2ac34c922fc299a31e7af19bd11d0ed7e",
+      "bytes": 1489,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/dist_fingerprint.Rd",
+      "git_blob_sha": "82d42b41f28bd07e2791375742eccff877a57bd8"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/gg_line_map.Rd",
+      "sha256": "a390b755131c24b83a3332929eda5340a4d90170984aaa25f2cf324b7dffec1e",
+      "bytes": 1491,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/gg_line_map.Rd",
+      "git_blob_sha": "84d8bebc9b9e85ea26e5e933e70770896ec9f358"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/line_map.Rd",
+      "sha256": "60c22ad09504f0986fd20366fd39ded5517793fd8743fff40f7392dfda59a7b7",
+      "bytes": 913,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/line_map.Rd",
+      "git_blob_sha": "6130290f7e684458b9fdba24444f8ec98793a13f"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/make_known.Rd",
+      "sha256": "cbb6ebd3fcd628195306292b0058f179710c805bb0453a830d635a4127ab04a8",
+      "bytes": 625,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/make_known.Rd",
+      "git_blob_sha": "593e6a206ed0d2df766861323fda3cf396f39fc9"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/position_BUSCOS.Rd",
+      "sha256": "56e9c3e2563b05df49cd0cd673eb380b6c51e4ec2997b60cf96be378a4572ccc",
+      "bytes": 1268,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/position_BUSCOS.Rd",
+      "git_blob_sha": "936a5afd3b10230649fdbc8d91ff2abb5435e917"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/man/read_busco.Rd",
+      "sha256": "ffbf92597fb5844e3b6f6d9cbe85864a4cc9a088a26dddc1f369e41aa4aca43f",
+      "bytes": 455,
+      "role": "native-package-source",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/read_busco.Rd",
+      "git_blob_sha": "7f3ecab4027fe13c93376bf2547ed50122f0fd8d"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "author-plot-source",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Fig5D_BUSCOchrom7/BUSCOchrom7.Rmd",
+      "git_blob_sha": "23f153c14f386b29281738ef1ee60b78d8949af5"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/raw/BUSCOchrom7.csv.gz",
+      "sha256": "c53ba7186b978a9941fdef49c1ea1c677cb1bc2c791b6b282461fe6b453b3067",
+      "bytes": 50754,
+      "role": "author-processed-input",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Fig5D_BUSCOchrom7/BUSCOchrom7.csv.gz",
+      "git_blob_sha": "bf394cd3c4fd6c48a25054826e06af930a239c90"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/raw/cannsyn_blast.csv",
+      "sha256": "dc2a0641886aa6329247a3f1d9986328731a6087ad147a22ae98cb7762a96ad8",
+      "bytes": 502081,
+      "role": "author-processed-input",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Fig5D_BUSCOchrom7/cannsyn_blast.csv",
+      "git_blob_sha": "f1ab9064f552b0cfb2644dae4231b6c3a33f458d"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author-zerozoom.png",
+      "sha256": "92d3ac1acb3ef32114647fd3c4b92bf8ac97b3a5b523780ea4a39191db765509",
+      "bytes": 636482,
+      "role": "author-prepublication-reference",
+      "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/PAG2024/BUSCOlineplot_zerozoom.png",
+      "git_blob_sha": "27746c2494a8be7b36eb7bcdc1d6d56939a92bad"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/figure4.png",
+      "sha256": "1a0ffa72b7cf4a154c992a5cc7981947e1387e9bda1b8ed57a644a2cd8b22f02",
+      "bytes": 373233,
+      "role": "official-original-figure",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-025-09065-0/MediaObjects/41586_2025_9065_Fig4_HTML.png",
+      "git_blob_sha": null
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/article.xml",
+      "sha256": "9476b69c517352d416e9b0adb4567b47d868fbf181f6e535e7d210e8651bdab8",
+      "bytes": 327536,
+      "role": "official-fulltext-xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12286863/fullTextXML",
+      "acquisition": "byte-identical copy of previously acquired official article XML; original retained"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/Shared-README.md",
+      "sha256": "dd7b6a425d52824e71c53d4c18e84d7f1562d14eacdcd01f5bb49d98161d8460",
+      "bytes": 5464,
+      "role": "official-code-panel-mapping",
+      "url": "https://github.com/padgittl/CannabisPangenomeShared/blob/c5bef7a1a0ff931c78c83f80c49fdef4699939c4/README.md",
+      "acquisition": "byte-identical copy of pinned shared repository README; original retained"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/metadata/source-input-qc.json",
+      "sha256": "4f1553ed779d8574744344108ed5b43797a6cfd0ff5bae96352a9ac701bdf75f",
+      "bytes": 7228,
+      "role": "nonplot-author-preprocessing-qc"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/scripts/audit_inputs.R",
+      "sha256": "7b28180389581473dd703bc850de6a64c9de13fc14082a08229ff4c8d7221434",
+      "bytes": 6250,
+      "role": "source-audit-script"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/scripts/install_native.R",
+      "sha256": "e8c955e7110426acddd7f2dfdb2013f799fe9bda34757cc157e0e38034ee2dc0",
+      "bytes": 1112,
+      "role": "isolated-native-package-install-script"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/scripts/acquire_sources.py",
+      "sha256": "1083778e505e97be17abef9fbb2fbac224bb6cc9e7aa31ef2174183b038fa31f",
+      "bytes": 2448,
+      "role": "pinned-source-acquisition-script"
+    }
+  ],
+  "source_images": [
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/figure4.png",
+      "sha256": "1a0ffa72b7cf4a154c992a5cc7981947e1387e9bda1b8ed57a644a2cd8b22f02",
+      "bytes": 373233,
+      "role": "official-original-figure",
+      "panel": "Fig4d",
+      "pairing_status": "Shared README Fig4d + final article Fig4 caption bind author old Fig5D directory",
+      "pixel_dimensions": [
+        2168,
+        1810
+      ]
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author-zerozoom.png",
+      "sha256": "92d3ac1acb3ef32114647fd3c4b92bf8ac97b3a5b523780ea4a39191db765509",
+      "bytes": 636482,
+      "role": "author-prepublication-reference",
+      "panel": "PAG2024 author zerozoom",
+      "pairing_status": "Secondary only; x order and style differ from current Rmd/final Fig4d, so not final layout authority",
+      "pixel_dimensions": [
+        1950,
+        1350
+      ]
+    }
+  ],
+  "code_locators": [
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "code-locator",
+      "first_line": 26,
+      "last_line": 41,
+      "purpose": "Exclude SN1v3 haplotypes and overlay three query high-stringency matches"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "code-locator",
+      "first_line": 53,
+      "last_line": 112,
+      "purpose": "Processed matrix public-column exclusion, four chemotypes, ordered 76 columns; named inversions are only reordered here"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "code-locator",
+      "first_line": 182,
+      "last_line": 196,
+      "purpose": "Per-sample BUSCO anchor subtraction and author mean imputation of missing anchor"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "code-locator",
+      "first_line": 200,
+      "last_line": 243,
+      "purpose": "Native BUSCOplot map plus low/high synthase marker layers and chemotype separators"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/author/BUSCOchrom7.Rmd",
+      "sha256": "b32036cfabf0fd6ef6722947a296ace8f04ed7f7c70e79d5701508b86031dee3",
+      "bytes": 10043,
+      "role": "code-locator",
+      "first_line": 257,
+      "last_line": 296,
+      "purpose": "Local 0–4.1 Mb scale-limit view; top chemotype labels, bottom anchor annotation and right synthase key"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/gg_line_map.R",
+      "sha256": "251b8c9ae46f7beafd45552df8e0594a986df3f61da60ffc627f634bf5569b40",
+      "bytes": 4984,
+      "role": "code-locator",
+      "first_line": 33,
+      "last_line": 130,
+      "purpose": "Native gg_line_map: ortholog-id keyed long table; remove NA rows; BUSCO points and connecting geom_line; cyclic eight-color magma source palette"
+    },
+    {
+      "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/sources/package/BUSCOplot/R/check_busco_table.R",
+      "sha256": "92dd8add85a02c59eb6a5af83e1670f6ede707c113ad30527badf3b7d23feeac",
+      "bytes": 1348,
+      "role": "code-locator",
+      "first_line": 24,
+      "last_line": 48,
+      "purpose": "Native full_table schema checker; author bypasses this for already processed numeric coordinate matrix"
+    }
+  ],
+  "repositories": [
+    {
+      "url": "https://github.com/ViningLab/CannabisPangenome",
+      "commit": "3c3d9672cff4df811df2d44d4f17d608af9f9f4b",
+      "license": "GPL-3.0"
+    },
+    {
+      "url": "https://github.com/padgittl/CannabisPangenomeShared",
+      "official_original_url": "https://github.com/anthony-aylward/CannabisPangenomeShared",
+      "stable_repository_id": 641014456,
+      "commit": "c5bef7a1a0ff931c78c83f80c49fdef4699939c4",
+      "license": "No LICENSE in pinned repository, no permissive license assumed"
+    },
+    {
+      "url": "https://github.com/knausb/BUSCOplot",
+      "commit": "d4f793988ce89279cf44294ceb8017756e181b0b",
+      "version": "0.0.0.9000",
+      "license": "GPL>=3"
+    }
+  ],
+  "required_packages": {
+    "native": "BUSCOplot::gg_line_map",
+    "imports": [
+      "dplyr",
+      "ggplot2",
+      "magrittr",
+      "tidyr",
+      "tidyselect",
+      "viridisLite"
+    ],
+    "isolated_install": "scripts/install_native.R task_R_library; no global installation",
+    "schema_audit": "scripts/audit_inputs.R task_R_library"
+  },
+  "processing": [
+    "Read author 147 BUSCO x 86 numeric bp matrix with BUSCO IDs as row names; remove 10 public-reference columns and preserve author I/II/III/IV order 32/16/20/8.",
+    "Move five named Type I inversion haplotypes to group end; source does not re-flip their coordinates.",
+    "Subtract BUSCO_ID=127689at71240 separately per column and from synthase sstart; missing NLv1b anchor is the author's mean of 75 available anchors, not a newly observed coordinate.",
+    "Low-stringency marker table is supplied author BLAST output after removing SN1v3a/b; source does not apply a new >=90 predicate at plotting stage.",
+    "High-stringency rows require qseqid AB212829.1 THCAS / AB292682.1 CBDAS / LY658671.1 CBCAS, gaps==0 and pident>=98 (percentage units).",
+    "Preserve native line_na_rm=TRUE semantics, which remove missing rows and can connect nonadjacent retained samples; use explicit 0–4.1e6 scale limits as author local-view selection, not coord_cartesian replacement.",
+    "Display only source-selected local view: 173 finite visible BUSCO cells from five ortholog rows, 2600 low-stringency rows and 106 high-stringency rows; retain full inputs and audit excluded coordinates."
+  ],
+  "input_contract": {
+    "experimental_unit": "assembled haplotype/reference chromosome, not independent biological replicate",
+    "main_matrix": "numeric bp positions, BUSCO ID row keys, sample columns, NA accepted and audited",
+    "marker_table": "author BLAST tabular percent-identity/gaps/reference query and sstart point positions",
+    "author_inputs_available": true,
+    "raw_reanalysis_required": false,
+    "missing_processed_inputs": []
+  },
+  "source_input_qc": {
+    "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/metadata/source-input-qc.json",
+    "sha256": "4f1553ed779d8574744344108ed5b43797a6cfd0ff5bae96352a9ac701bdf75f",
+    "bytes": 7228,
+    "role": "audited-author-data-schema",
+    "summary": {
+      "selected_matrix": {
+        "rows": 147,
+        "columns": 76,
+        "finite_cells": 10744,
+        "missing_cells": 428,
+        "samples": [
+          "AH3Mb",
+          "COFBa",
+          "COFBb",
+          "DPFBa",
+          "DPFBb",
+          "MBFBa",
+          "MBFBb",
+          "NLv1a",
+          "NLv1b",
+          "OFBb",
+          "PPFBa",
+          "PPFBb",
+          "SDFBa",
+          "SDFBb",
+          "SKFBb",
+          "SODLa",
+          "SODLb",
+          "SZFBb",
+          "TKFBb",
+          "TWFBa",
+          "TWFBb",
+          "UFBa",
+          "UFBb",
+          "WCFBa",
+          "WCFBb",
+          "WHWa",
+          "WHWb",
+          "AH3Ma",
+          "OFBa",
+          "SKFBa",
+          "SZFBa",
+          "TKFBa",
+          "COSVa",
+          "COSVb",
+          "DPSVa",
+          "DPSVb",
+          "EH23a",
+          "EH23b",
+          "MBSVa",
+          "MBSVb",
+          "S8Ha",
+          "S8Hb",
+          "SHH5a",
+          "SHH5b",
+          "STHa",
+          "STHb",
+          "TWSVa",
+          "TWSVb",
+          "BCMa",
+          "BCMb",
+          "BOAXa",
+          "BOAXb",
+          "GERv1a",
+          "GERv1b",
+          "GRMa",
+          "GRMb",
+          "KCDv1a",
+          "KCDv1b",
+          "KOMPa",
+          "KOMPb",
+          "MM3v1a",
+          "MM3v1b",
+          "SVA12a",
+          "SVA12b",
+          "SVA6a",
+          "SVA6b",
+          "YMv2a",
+          "YMv2b",
+          "FCS1a",
+          "FCS1b",
+          "H3S1a",
+          "H3S1b",
+          "H3S7a",
+          "H3S7b",
+          "SAN2a",
+          "SAN2b"
+        ],
+        "chemotype_counts": [
+          32,
+          16,
+          20,
+          8
+        ]
+      },
+      "anchor": {
+        "busco_id": "BUSCO_ID=127689at71240",
+        "missing_samples": "NLv1b",
+        "imputed_count": 1,
+        "author_imputation": "mean available sample anchor positions",
+        "positions_bp": {
+          "AH3Mb": 9588489,
+          "COFBa": 9676781,
+          "COFBb": 9794066,
+          "DPFBa": 8913442,
+          "DPFBb": 9763770,
+          "MBFBa": 9707348,
+          "MBFBb": 9485655,
+          "NLv1a": 10283920,
+          "NLv1b": 9944449.773333333,
+          "OFBb": 9733854,
+          "PPFBa": 9833883,
+          "PPFBb": 9912770,
+          "SDFBa": 9446014,
+          "SDFBb": 9978807,
+          "SKFBb": 9937386,
+          "SODLa": 9192038,
+          "SODLb": 13176643,
+          "SZFBb": 9775061,
+          "TKFBb": 9994849,
+          "TWFBa": 10118795,
+          "TWFBb": 9576628,
+          "UFBa": 9243666,
+          "UFBb": 9749235,
+          "WCFBa": 9732687,
+          "WCFBb": 9494797,
+          "WHWa": 9597329,
+          "WHWb": 9551339,
+          "AH3Ma": 9901891,
+          "OFBa": 9944685,
+          "SKFBa": 9874111,
+          "SZFBa": 10776751,
+          "TKFBa": 9969121,
+          "COSVa": 11088780,
+          "COSVb": 10430703,
+          "DPSVa": 10463102,
+          "DPSVb": 10752015,
+          "EH23a": 9365538,
+          "EH23b": 8974067,
+          "MBSVa": 10776475,
+          "MBSVb": 11106356,
+          "S8Ha": 8109174,
+          "S8Hb": 9269526,
+          "SHH5a": 9477314,
+          "SHH5b": 9423124,
+          "STHa": 10344015,
+          "STHb": 9359354,
+          "TWSVa": 10702527,
+          "TWSVb": 9231552,
+          "BCMa": 8671543,
+          "BCMb": 8799378,
+          "BOAXa": 8666340,
+          "BOAXb": 8200412,
+          "GERv1a": 10108566,
+          "GERv1b": 8596342,
+          "GRMa": 8246523,
+          "GRMb": 8542310,
+          "KCDv1a": 8873579,
+          "KCDv1b": 8746354,
+          "KOMPa": 8542930,
+          "KOMPb": 8578119,
+          "MM3v1a": 10038804,
+          "MM3v1b": 25044090,
+          "SVA12a": 10048680,
+          "SVA12b": 8722051,
+          "SVA6a": 10257071,
+          "SVA6b": 8822552,
+          "YMv2a": 12894625,
+          "YMv2b": 13054214,
+          "FCS1a": 9738180,
+          "FCS1b": 9812591,
+          "H3S1a": 9781997,
+          "H3S1b": 9861656,
+          "H3S7a": 9493926,
+          "H3S7b": 9966775,
+          "SAN2a": 9437735,
+          "SAN2b": 9686957
+        },
+        "observed_anchor_zero": true
+      },
+      "view": {
+        "limits_bp": [
+          0,
+          4100000
+        ],
+        "scale_limit_removes_outside_before_line_geometry": true,
+        "busco_visible_cells": 173,
+        "busco_outside_cells": 10571,
+        "busco_rows_with_visible_cells": 5
+      },
+      "low_stringency_markers": {
+        "rows": 4074,
+        "unknown_sample_rows": 0,
+        "finite_shifted_rows": 4074,
+        "visible_rows": 2600
+      },
+      "high_stringency_markers": {
+        "rows": 340,
+        "query_counts": {
+          "AB212829.1": 43,
+          "AB292682.1": 28,
+          "LY658671.1": 269
+        },
+        "predicates": "qseqid in three declared references, gaps == 0, pident >= 98",
+        "unknown_sample_rows": 0,
+        "visible_rows": 106,
+        "visible_query_counts": {
+          "AB212829.1": 43,
+          "AB292682.1": 27,
+          "LY658671.1": 36
+        }
+      }
+    }
+  },
+  "source_density_contract": {
+    "source": "official Fig4d single selected panel",
+    "official_full_figure_pixels": [
+      2168,
+      1810
+    ],
+    "observation": "Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor annotation, right vertical four-triangle key. Final paper omits crowded haplotype tick labels.",
+    "source_panel_boundary_pixels_approx": [
+      0,
+      1020,
+      1275,
+      1810
+    ],
+    "boundary_status": "visual estimate for planning; not an automated measurement",
+    "author_prepublication_pixels": [
+      1950,
+      1350
+    ],
+    "source_author_save_inches": [
+      6.5,
+      4.5
+    ],
+    "adaptation": "Standalone selected Fig4d, retain source plot aspect and density; keep original order in plot data and x-label choice explicit in fresh CP2.",
+    "recolor_proposal": {
+      "chemotype_header": [
+        "#5B7FA3",
+        "#AF8756",
+        "#AC7084",
+        "#769184"
+      ],
+      "high_markers": {
+        "THCAS": "#AC526C",
+        "CBDAS": "#407FA2",
+        "CBCAS": "#B58D3F"
+      },
+      "low_markers": "neutral translucent grey",
+      "BUSCO": "subdued cyclic categorical palette; no abundance or functional interpretation"
+    }
+  },
+  "statistical_analysis": {
+    "requested": false,
+    "plan": "Descriptive coordinate map only; do not add ANOVA or significance tests to comparative genome positions"
+  },
+  "known_failures": [
+    "Directory name Fig5D is historical; official panel is Fig4d. Do not label the delivered standalone panel as complete Fig4.",
+    "NLv1b anchor imputed from mean; disclose in source methods/QC and preserve author policy when reproducing, not promote to generic alignment method.",
+    "Rmd caption line172 misidentifies CBCAS accession as AB292682.1; executable query is LY658671.1. Executable >=98 is inclusive, although caption says greater than98.",
+    "Source native gg_line_map uses processed matrix with check_table=FALSE; manual schema/finite-ID checks are required.",
+    "Scale limits discard out-of-window points before line geometry; localview excludes10571 finite BUSCO coordinates by design.",
+    "PAG2024 source PNG has a different haplotype order from current author Rmd; use final official Fig4d for geometry, source Rmd for current executable order.",
+    "Native package is development version0.0.0.9000, pinned by commit; later package version or ggplot2 may change behavior and needs fresh review."
+  ],
+  "render_scope": {
+    "target": "Selected original author processed-data panel with new colors",
+    "first_color_render_required": true,
+    "preserve_coordinate_and_order_semantics": true,
+    "full_original_figure_reproduction": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_validation": "NOT_VERIFIED",
+    "render_status": "NOT_RENDERED",
+    "cp2_status": "PENDING_FRESH_PARENT_REGISTRATION"
+  },
+  "source_integrity": {
+    "policy": "Original code/data/image bytes immutable and SHA256-bound; no original source patching",
+    "author_code_syntax": "All Rmd Rchunks parse; executed only whitelisted nonplot preprocessing lines",
+    "source_images_actually_opened": true,
+    "native_function_available": true,
+    "native_install_location": "../work/2026-10-11-additional-complex-panels/cannabis/R-library/BUSCOplot"
+  },
+  "mandatory_revalidation": "Fresh prepare/CP2 after method registration, one-use authorization, native render, original/new final-size PNG/PDF visual review, independent font/geometry QC; no inherited PASS",
+  "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+  "immutable_learning_record": {
+    "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/metadata/source-learning.json",
+    "sha256": "d1ed17a47de570cfed847a4c81c1990e4508bff8dbb03e0cbb417be3fc7d050b"
+  },
+  "validation_evidence_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/evidence/bundle.json"
+}

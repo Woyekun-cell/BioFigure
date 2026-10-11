@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Directional integration and pathway enrichment analysis for multi-omics data",
+    "journal": "Nature Communications",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-49986-4",
+    "url": "https://www.nature.com/articles/s41467-024-49986-4",
+    "pmcid": "PMC11227559",
+    "publication_assets_license": "CC BY 4.0"
+  },
+  "repository": {
+    "url": "https://github.com/reimandlab/DPM_publication_code",
+    "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3",
+    "code_license": "No LICENSE found in pinned recursive tree; do not infer author-code license."
+  },
+  "status": "AUTHOR_PROCESSED_DATA_AND_SOURCE_LEARNED_RENDER_NOT_STARTED",
+  "claim_boundary": {
+    "new_input_transfer": "NOT_VERIFIED",
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "prior_first_panel_pass_inherited": false
+  },
+  "original_figure_review": {
+    "figure": "Fig3",
+    "opened": true,
+    "observation_basis": "actual local official figure3.png viewed; article.xml caption cross-checked",
+    "caption": "Directional integration of transcriptomics data from functional experiments of HOXA10-AS lncRNA in GBM cells.A We integrated differential gene expression data from HOXA10-AS knockdown (KD) and overexpression (OE) experiments from a previous study27 that compared sets of three replicates. DPM prioritised genes that showed different fold-change (FC) directions in KD and OE experiments and penalised genes with matching directions using the constraints vector (CV) [KD = −1, OE = +1]. B Scatter plot of merged P-values from directional analysis (DPM, Y-axis) and non-directional analysis (the Brown method, X-axis). Prioritised genes with directionally consistent changes are shown on the diagonal or closely below it (blue), while directionally penalised genes with conflicting directional changes are further below the diagonal (red). Unadjusted P-values are shown. C Examples of prioritised genes (top) and penalised genes (bottom). D Venn diagram of enriched pathways found with directional and non-directional analyses (family-wise error rate (FWER) < 0.05). E Enrichment map of pathways and processes from directional and non-directional analyses (FWER < 0.05). Pathways are shown as node in the network that are connected by edges if the pathways share many genes. Subnetworks represent functional themes. Node colours indicate dataset contributions (KD, OE, both, or combined-only). Node size reflects number of genes per pathway. Node outlines show directionally prioritised pathways (spiky edges), directionally penalised pathways (dotted edges), or pathways found using both approaches (solid edges). Major groups of directionally prioritised or penalised pathways are grouped on the right. F Dot plots of significant genes involved in cell migration and oxygen response processes visualised with P-values and fold-change values from the HOXA10-AS transcriptomics study27. Genes penalised in the non-directional analysis are indicated with asterisks. Carets show known cancer genes from the COSMIC Cancer Gene Census database53."
+  },
+  "author_data_audit": {
+    "scope": "base R load and pure inspections only; no upstream RNA analysis, enrichment, merge_p_values, or plotting code executed",
+    "R": "4.6.1",
+    "ap_background_genes": 19864,
+    "df_oe_kd_shape": [
+      12996,
+      7
+    ],
+    "duplicate_gene_count": 0,
+    "NA_count_in_df_oe_kd": 0,
+    "raw_P_zero_count": 0,
+    "Brown_pathways": 219,
+    "DPM_pathways": 138,
+    "union_pathways": 225,
+    "shared_pathways": 132,
+    "Brown_only_pathways": 87,
+    "DPM_only_pathways": 6,
+    "shared_evidence_disagreements": 0
+  },
+  "case_id": "genomics-dpm-hoxa10-network-2024",
+  "learned_method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+  "recipe_id": "GEN-DPM-HOXA10-EVIDENCE-PIE-NETWORK-005",
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/sources/author/003_enrichment_map_panel_e.R",
+      "relative_path": "sources/author/003_enrichment_map_panel_e.R",
+      "role": "original-author-data-export-code",
+      "sha256": "94d631efb69243876ba23963bbfce19f259b2402405e8a0c0933a6bce3b53206",
+      "bytes": 5570,
+      "repository_path": "Figure_3/003_enrichment_map_panel_e.R",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/003_enrichment_map_panel_e.R",
+      "git_blob_sha": "13f3195c01d7a3aba02edb2c661338e477d8cd39",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/data/raw/panelE_Rdata.Rdata",
+      "relative_path": "data/raw/panelE_Rdata.Rdata",
+      "role": "author-processed-results",
+      "sha256": "b8d7309500dfa9b8a394c05c569c392080494fc7b69776733a2ec4bae2839f7f",
+      "bytes": 732824,
+      "repository_path": "Figure_3/input_data/panelE_Rdata.Rdata",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/input_data/panelE_Rdata.Rdata",
+      "git_blob_sha": "59db99669a39d88707ad9c72d11afa836700e198",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/data/raw/hsapiens.GO_BP_REACTOME.name.gmt",
+      "relative_path": "data/raw/hsapiens.GO_BP_REACTOME.name.gmt",
+      "role": "author-complete-pathway-membership",
+      "sha256": "6aefffcde0ed9b555184cb542166992c2ed25485024fabdcf5f5b0a6ccda1877",
+      "bytes": 11411929,
+      "repository_path": "Figure_3/input_data/hsapiens.GO_BP_REACTOME.name.gmt",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/input_data/hsapiens.GO_BP_REACTOME.name.gmt",
+      "git_blob_sha": "67f03fb582928e3ae5139f41a60a4742c7b22050",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/sources/figure3.png",
+      "relative_path": "sources/figure3.png",
+      "role": "original-publication-figure",
+      "sha256": "20bb3c73db519f1a0352c4d38757635e5e4e8a81a6ecc379df712e881266e7e3",
+      "bytes": 622886,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-024-49986-4/MediaObjects/41467_2024_49986_Fig3_HTML.png"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/sources/article.xml",
+      "relative_path": "sources/article.xml",
+      "role": "official-article-and-caption",
+      "sha256": "ffdabc3775079ee96ffed8dbe6e1db316ba7899865fe33a624238e50e44ad11e",
+      "bytes": 227207,
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11227559/fullTextXML"
+    }
+  ],
+  "title": "DPM HOXA10-AS Fig3E: author pathway evidence pies with declared new overlap graph/layout",
+  "panel": "Fig3E",
+  "input_contract": {
+    "primary_file": "data/raw/panelE_Rdata.Rdata",
+    "objects": [
+      "ap_background",
+      "res_brown",
+      "res_dpm"
+    ],
+    "term_key": "term_id",
+    "all_nodes": 225,
+    "term_attributes": [
+      "term_name",
+      "adjusted_p_val",
+      "term_size",
+      "evidence",
+      "overlap",
+      "Genes_overexpression",
+      "Genes_knockdown"
+    ],
+    "membership_file": "data/raw/hsapiens.GO_BP_REACTOME.name.gmt",
+    "GMT_terms": 18394,
+    "GMT_unique_ids": true,
+    "GMT_missing_selected_terms": 0,
+    "term_size_semantics": "author term_size equals full GMT member intersection with ap_background for all selected terms; not the significant overlap size",
+    "membership_for_new_edges": "full original GMT members, as003 lines128-131 exports; not significant overlap vectors"
+  },
+  "processing": [
+    {
+      "operation": "union225 term_id records; preserve individual Brown and DPM FWER values",
+      "source": "003 lines65-78,113-118"
+    },
+    {
+      "operation": "binary evidence presence for OE/KD/combined; shared132 pathways have identical evidence in both author tables",
+      "source": "003 lines69-85; actual RData audit"
+    },
+    {
+      "operation": "directional category shared132/Brown-only87/DPM-only6",
+      "source": "003 lines88-94"
+    },
+    {
+      "operation": "node display-size mapping explicitly uses original term_size (background-filtered genes), distinct from fullGMT edge-membership and significant overlap",
+      "source": "article Fig3E caption plus saved results; final Cytoscape size mapping unavailable"
+    },
+    {
+      "operation": "new complete overlap-coefficient graph on original full GMT members: |A intersection B| / min(|A|,|B|) >=0.5",
+      "source": "analyst-declared adaptation, not an recovered author edge rule"
+    },
+    {
+      "operation": "new deterministic layout using igraph connected components and within-component FR; seed3302024; all qualifying edges/nodes/isolates retained",
+      "source": "analyst-declared adaptation, not original Cytoscape coordinates"
+    }
+  ],
+  "new_graph_contract": {
+    "similarity": "overlap coefficient",
+    "formula": "|A∩B| / min(|A|,|B|)",
+    "threshold_inclusive": 0.5,
+    "gene_sets": "full original exported GMT members, unique gene symbols per term",
+    "nodes": 225,
+    "edges": 2183,
+    "components": 25,
+    "isolates": 11,
+    "largest_component_nodes": 122,
+    "seed": 3302024,
+    "all_eligible_edges_retained": true,
+    "self_edges": false,
+    "undirected": true,
+    "author_original_threshold": "NOT_VERIFIED"
+  },
+  "functions": {
+    "author": [
+      "ActivePathways",
+      "read.GMT",
+      "write.GMT",
+      "group_by",
+      "summarise",
+      "write.table",
+      "Cytoscape piechart attribute instruction"
+    ],
+    "selected_replot": [
+      "base R load and membership parsing",
+      "igraph::graph_from_data_frame",
+      "igraph::components",
+      "igraph::layout_with_fr",
+      "ggforce::geom_arc_bar",
+      "ggraph or ggplot2 edge segments",
+      "ggrepel term labels"
+    ]
+  },
+  "packages": {
+    "original": [
+      "ActivePathways",
+      "data.table",
+      "dplyr",
+      "Cytoscape3.9.1"
+    ],
+    "planned": [
+      "igraph",
+      "ggforce",
+      "ggplot2",
+      "ggrepel",
+      "grid",
+      "ragg",
+      "systemfonts",
+      "yaml",
+      "jsonlite",
+      "digest"
+    ],
+    "available": {
+      "igraph": "2.3.3",
+      "ggforce": "0.5.0",
+      "ggraph": "2.2.2",
+      "ggplot2": "4.0.3",
+      "ggrepel": "0.9.8"
+    },
+    "ActivePathways": "not installed; use saved author enrichment results without rerunning"
+  },
+  "newpalette": {
+    "palette_id": "dpm-hoxa10-OE-teal-KD-ochre-combined-lavender",
+    "OE": "#2B7A78",
+    "KD": "#AA6B39",
+    "combined_only": "#9C92AC",
+    "edge": "#8FA9B0",
+    "outline": "#30343B",
+    "loss_background": "#F5E4E1",
+    "gain_background": "#E2EEEA"
+  },
+  "layout_constraints": {
+    "source_publication": "dense pathway pie network; light blue edges; node size gene-set size; shared solid, Brown-only dotted, DPM-only spiky outlines; sparse functional-theme labels; right-side gain/loss regions",
+    "new_layout": "pack connected components deterministically; do not move nodes between graph components or change topology for appearance; homogeneous gain/loss components may occupy categorical zones; mixed components retain individual status outlines",
+    "labels": "sparse actual representative term names; deterministic smallest min(BrownFWER,DPMFWER) member per component, lexicographic term_id tie-break; no invented functional-theme groups",
+    "pie_semantics": "binary evidence presence; equal wedges for multiple supported datasets, not quantitative relative omics contribution",
+    "planned_size_mm": [
+      180,
+      165
+    ],
+    "planned_font": "Arial7.5pt legend and sparse labels minimum; panel labels8pt",
+    "final_size_basis": "analyst selected high-density publication width; final manual Cytoscape dimensions unavailable"
+  },
+  "gaps": [
+    {
+      "id": "DPM-F3E-FINAL-NETWORK",
+      "status": "NOT_VERIFIED",
+      "detail": "Pinned recursive tree contains no cys/cyjs/sif/graphml/xgmml/gexf assets, author edge list, threshold, coordinates or theme membership; final Cytoscape session is unavailable."
+    },
+    {
+      "id": "DPM-F3E-ORIGINAL-NODE-AREA",
+      "status": "NOT_VERIFIED",
+      "detail": "Caption gene-count mapping exists, but final Cytoscape node-area parameters are not saved. New explicit term_size mapping must not claim recovered original circle areas."
+    },
+    {
+      "id": "DPM-F3E-EXPERIMENT-LABEL",
+      "status": "SOURCE_FIGURE_LABEL_CORRECTED",
+      "detail": "Original Fig3E image legend says RNA/Protein, inconsistent with HOXA10-AS twoRNA OE/KD experiments, code and article caption. Replot legend explicitly OE/KD/combined-only."
+    },
+    {
+      "id": "DPM-F3E-MIN-Q",
+      "status": "DISPLAY_ONLY",
+      "detail": "Source aggregated pathway file stores min(BrownFWER,DPMFWER), not a newly adjusted combined test. Preserve both values, and label min value only as display selection."
+    },
+    {
+      "id": "DPM-F3E-NEW-GRAPH",
+      "status": "DECLARED_RECONSTRUCTION",
+      "detail": "New OC>=0.5 topology and seed3302024 layout are computed from real author memberships; no claim that they match author final edges, coordinates or manual themes."
+    }
+  ],
+  "code_locators": [
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/sources/author/003_enrichment_map_panel_e.R",
+      "lines": "60-94",
+      "purpose": "saved author results, evidence contributions and direction categories"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/sources/author/003_enrichment_map_panel_e.R",
+      "lines": "97-131",
+      "purpose": "Cytoscape pie attributes, display minq table and original full membership export"
+    }
+  ],
+  "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+  "label": "DPM Fig3E：225通路证据饼图网络、新overlap连边与布局",
+  "immutable_learning_record": {
+    "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/data/metadata/source-learning.json",
+    "sha256": "a39677ea82bf0e86cc01cc7485be1daf05a5a360d377e71d386a2848a9960802"
+  },
+  "validation_evidence_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json"
+}

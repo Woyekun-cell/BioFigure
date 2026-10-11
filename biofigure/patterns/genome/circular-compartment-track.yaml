@@ -1,0 +1,88 @@
+pattern_id: GEN-CIRC-COMPARTMENT-001
+version: '1.0'
+domain:
+- comparative-genomics
+- 3d-genome
+scientific_task:
+- circular-multigenome-compartment-track
+message_type: categorical-genome-state-comparison
+data_contract:
+  required:
+  - sequence_lengths
+  - state_intervals
+  - assembly
+  - species_order
+  optional:
+  - phylogenetic_clade
+  - switch_calls
+  assumptions:
+  - one_coordinate_system_per_assembly
+  - A_B_state_declared
+applicable_when:
+  data_profile:
+    n_chromosomes:
+    - 2
+    - 60
+    n_groups:
+    - 2
+    - 20
+  relationship_evidence: coordinate-resolved categorical intervals
+  message: compare genome states across assemblies
+not_recommended_when:
+- unknown_chromosome_lengths
+- state_without_coordinates
+- too_many_tracks_for_final_size
+visual_hierarchy:
+  primary: chromosome_sector_and_concentric_state_tracks
+  secondary: cross-species_state_conservation
+  tertiary: species_key_and_two-state-legend
+geometry:
+  primary: circular_chromosome-sectors
+  secondary: concentric-segmented-tracks
+encoding:
+  angle: true_within-chromosome coordinate
+  radius: ordered species
+  fill: compartment state
+layout:
+  aspect_ratio: square
+  density_strategy: merge_adjacent_equal_states
+  whitespace_strategy: top_sector_gap_and_open_center
+annotation_strategy:
+- chromosome_labels_outside
+- track_letters_at_gap
+- species_key_in_center
+- external_two-state-legend
+legend_strategy:
+  compact: true
+  place: outside_circle
+color_semantics:
+  A_compartment: dark blue
+  B_compartment: light blue
+optional_components: []
+avoid:
+- equal-angle-chromosomes-without-length-basis
+- track-order-drift
+- rainbow-compartment-colors
+- center-label-overlap
+- too-small-segments
+scientific_risks:
+- assembly-coordinate-mismatch
+- interval-overlap
+- unreported-state-filtering
+- visual-density-misread-as-switch-rate
+renderer_options:
+- circlize
+references:
+- source-index://populus-compartment-edfig1b
+- benchmark://populus-compartment-edfig1b-001
+provenance:
+  created_from:
+  - source-index://populus-compartment-edfig1b
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: '2026-09-27'
+confidence: high
+validation:
+  scientific: 19 chromosomes, 11 tracks, a-k mapping, coordinate bounds and continuous non-overlapping coverage checked
+  visual: official panel, user reference and final-size PNG opened side by side
+  benchmark: populus-compartment-edfig1b-001 reproduction PASS; transfer and stress pending
+status: approved

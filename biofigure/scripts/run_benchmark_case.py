@@ -9,7 +9,28 @@ from pathlib import Path
 from benchmark_core import digest
 
 
-def run(contract_path, script_path, output, inputs=(), timeout=180):
+GENERATION_MODES = {"existing-script-rerun", "source-exposed-independent"}
+
+
+def validate_generation_mode(value):
+    if value not in GENERATION_MODES:
+        raise ValueError(f"unsupported generation mode: {value}")
+    return value
+
+
+def read_scientific_results(path):
+    path = Path(path)
+    if not path.exists():
+        return {}
+    value = json.loads(path.read_text())
+    if not isinstance(value, dict):
+        raise ValueError('scientific_results.json must contain a JSON object')
+    return value
+
+
+def run(contract_path, script_path, output, inputs=(), timeout=180,
+        generation_mode="existing-script-rerun"):
+    generation_mode = validate_generation_mode(generation_mode)
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     contract = json.loads(Path(contract_path).read_text())
@@ -31,9 +52,12 @@ def run(contract_path, script_path, output, inputs=(), timeout=180):
     started = time.monotonic()
     with (output / 'run.log').open('w') as log:
         try:
-            proc = subprocess.run(['Rscript', '--vanilla', 'render.R'], cwd=output, stdout=log, stderr=subprocess.STDOUT, timeout=timeout)
-            code = proc.returncode
+            proc = subprocess.Popen(['Rscript', '--vanilla', 'render.R'], cwd=output, stdout=log, stderr=subprocess.STDOUT)
+            process_id = proc.pid
+            code = proc.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait()
             code = 124
             log.write('\nbenchmark timeout\n')
     elapsed = time.monotonic() - started
@@ -49,12 +73,14 @@ def run(contract_path, script_path, output, inputs=(), timeout=180):
         if len(fields) == 2 and fields[0] in package_names:
             packages[fields[0]] = fields[1].strip()
     artifacts = [record(p) for p in sorted((output / 'results').rglob('*')) if p.is_file()]
+    scientific_results = read_scientific_results(output / 'results/scientific_results.json')
     receipt = {'runner': 'biofigure-benchmark-v2', 'fresh_directory': True, 'case_id': contract['case_id'],
+               'process_id': process_id,
                'contract': contract_record, 'script': script_record, 'inputs': input_records,
                'exit_code': code, 'elapsed_seconds': elapsed, 'log': record(output / 'run.log'),
                'environment': record(output / 'environment.txt'), 'packages': packages,
-               'artifacts': artifacts, 'scientific_results': {},
-               'generation_mode': 'existing-script-rerun', 'function_execution': 'not-instrumented'}
+               'artifacts': artifacts, 'scientific_results': scientific_results,
+               'generation_mode': generation_mode, 'function_execution': 'not-instrumented'}
     (output / 'receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
     return receipt
 
@@ -66,7 +92,8 @@ if __name__ == '__main__':
     p.add_argument('--output', required=True, type=Path)
     p.add_argument('--input', action='append', default=[], help='source=relative_destination')
     p.add_argument('--timeout', type=int, default=180)
+    p.add_argument('--generation-mode', choices=sorted(GENERATION_MODES), default='existing-script-rerun')
     a = p.parse_args()
-    result = run(a.contract, a.script, a.output, [x.split('=', 1) for x in a.input], a.timeout)
+    result = run(a.contract, a.script, a.output, [x.split('=', 1) for x in a.input], a.timeout, a.generation_mode)
     print(json.dumps({'exit_code': result['exit_code'], 'elapsed_seconds': result['elapsed_seconds'], 'artifacts': len(result['artifacts'])}))
     raise SystemExit(result['exit_code'])

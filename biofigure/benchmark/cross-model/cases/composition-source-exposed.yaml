@@ -1,0 +1,19 @@
+case_id: composition-source-exposed
+family: composition
+exposure: source-exposed
+input_path: inputs/composition.csv
+input_sha256: 98233b9f47b150b4d208cc23e4a963b3ff6537f9737d42a4c480b968d7ed9889
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Show within-sample composition; state whether the input counts are normalized.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/composition-source-exposed.txt
+  sha256: 08104ba2c474cd4c7a9b982a71059723a057fc3a78ba30bdb6910ba7ad93a486
+  role: source-exposed-fixture
+permitted_materials:
+- source figure
+- author source code

@@ -17,7 +17,9 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 DEFINITION = ROOT / "checkpoints/checkpoints.yaml"
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
-DETECTED_KEYS = {"overlap", "clipping", "missing_glyph", "font_fallback", "legend_overlap", "non_white_background", "unrequested_text"}
+DETECTED_KEYS = {"overlap", "clipping", "missing_glyph", "font_fallback", "legend_overlap",
+                 "non_white_background", "unrequested_text", "small_text", "text_position",
+                 "label_overlap", "panel_misalignment", "figure_text_proportion"}
 REPRO_CORPUS = ROOT / "atlas/reproduction-derived-corpus.json"
 
 
@@ -30,12 +32,132 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS) -> list[str]:
+def validate_inspection_evidence(document: dict) -> list[str]:
+    """Validate artifact-bound CP3/CP4 inspection evidence fields."""
+    errors = []
+    required = ('artifact_sha256', 'first_render_sha256', 'target_size', 'reviewer_type',
+                'reviewer_id', 'judgment', 'artifact_path', 'first_render_path',
+                'defect_coordinates', 'viewer_method', 'revision_count', 'final_size_checks')
+    for key in required:
+        if key not in document:
+            errors.append(f'{key} required')
+    for key in ('artifact_sha256', 'first_render_sha256'):
+        if key in document and not SHA256.fullmatch(str(document[key])):
+            errors.append(f'{key} must be a SHA-256 hash')
+    size = document.get('target_size')
+    if 'target_size' in document and (not isinstance(size, dict) or not all(isinstance(size.get(k), (int, float)) and size[k] > 0 for k in ('width_mm', 'height_mm'))):
+        errors.append('target_size must include positive width_mm and height_mm')
+    if document.get('reviewer_type') not in {'human', 'model', 'automated'}:
+        errors.append('reviewer_type must be human, model, or automated')
+    if not isinstance(document.get('reviewer_id'), str) or not document['reviewer_id'].strip():
+        errors.append('reviewer_id must identify the reviewer without exposing a model label')
+    if document.get('judgment') not in {'PASS', 'REVISE', 'FAIL'}:
+        errors.append('judgment must be PASS, REVISE, or FAIL')
+    if document.get('judgment') == 'PASS' and document.get('reviewer_type') == 'automated':
+        errors.append('visual PASS requires a human or model reviewer, not automated review alone')
+    for key in ('artifact_path', 'first_render_path'):
+        if not isinstance(document.get(key), str) or not document[key].strip():
+            errors.append(f'{key} must be recorded')
+    if not isinstance(document.get('defect_coordinates'), list):
+        errors.append('defect_coordinates must be a list')
+    # bool subclasses int in Python, but is not a valid revision count.
+    if type(document.get('revision_count')) is not int or document.get('revision_count', -1) < 0:
+        errors.append('revision_count must be a non-negative integer')
+    elif document.get('revision_count', 0) > 0 and (
+            document.get('artifact_path') == document.get('first_render_path')
+            or document.get('artifact_sha256') == document.get('first_render_sha256')):
+        errors.append('revised final and first render must have different paths and hashes')
+    coords = document.get('defect_coordinates')
+    if isinstance(coords, list):
+        for index, coord in enumerate(coords):
+            if (not isinstance(coord, dict) or not isinstance(coord.get('issue'), str) or not coord['issue'].strip()
+                    or not isinstance(coord.get('x'), (int, float)) or isinstance(coord.get('x'), bool)
+                    or not isinstance(coord.get('y'), (int, float)) or isinstance(coord.get('y'), bool)
+                    or coord.get('unit') != 'normalized'):
+                errors.append(f'defect_coordinates[{index}] requires issue, finite normalized x/y in 0..1')
+                continue
+            if not math.isfinite(coord['x']) or not math.isfinite(coord['y']):
+                errors.append(f'defect_coordinates[{index}] coordinates must be finite')
+            elif not (0 <= coord['x'] <= 1 and 0 <= coord['y'] <= 1):
+                errors.append(f'defect_coordinates[{index}] normalized coordinates must be within 0..1')
+    if document.get('viewer_method') not in {'direct-open', 'contact-sheet-open'}:
+        errors.append('viewer_method must record an opened viewer')
+    final_checks = document.get('final_size_checks')
+    required_checks = ('typography_size', 'typography_position', 'label_overlap',
+                       'legend_overlap', 'clipping', 'panel_alignment',
+                       'figure_text_proportion', 'semantic_color')
+    if not isinstance(final_checks, dict):
+        errors.append('final_size_checks must be a mapping')
+    else:
+        if final_checks.get('target_size_opened') is not True:
+            errors.append('final_size_checks.target_size_opened must be true')
+        checks = final_checks.get('checks')
+        if not isinstance(checks, dict):
+            errors.append('final_size_checks.checks must be a mapping')
+        else:
+            for key in required_checks:
+                record = checks.get(key)
+                if (not isinstance(record, dict) or record.get('status') not in {'PASS', 'FAIL'}
+                        or not isinstance(record.get('evidence'), str) or not record['evidence'].strip()):
+                    errors.append(f'final_size_checks.{key} requires PASS/FAIL status and evidence')
+                elif document.get('judgment') == 'PASS' and record['status'] != 'PASS':
+                    errors.append(f'final_size_checks.{key} must PASS before visual PASS')
+    if document.get('judgment') == 'PASS' and isinstance(final_checks, dict):
+        color = (final_checks.get('checks') or {}).get('semantic_color', {})
+        if not isinstance(color, dict) or color.get('colored_data_marks') is not True:
+            errors.append('semantic_color.colored_data_marks must be true: monochrome or decorative-only color cannot receive visual PASS')
+    return errors
+
+
+def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS, root: Path | None = None) -> list[str]:
     errors = []
     try:
         receipt = json.loads(Path(receipt_path).read_text())
         if receipt.get('schema_version') != 1 or not str(receipt.get('query','')).strip():
             errors.append('reproduction receipt version/query invalid')
+        if receipt.get('kind') == 'primary-source-lock':
+            source_root = Path(root or receipt.get('project_root','')).expanduser().resolve()
+            if not source_root.is_dir() or Path(str(receipt.get('project_root',''))).expanduser().resolve() != source_root:
+                errors.append('primary-source lock project root invalid')
+            paper = receipt.get('primary_source', {})
+            for key in ('title','doi','url','figure','panel'):
+                if not isinstance(paper.get(key),str) or not paper[key].strip():
+                    errors.append(f'primary-source lock missing primary_source.{key}')
+            files = receipt.get('source_files')
+            roles = set()
+            if not isinstance(files,list) or len(files)<3:
+                errors.append('primary-source lock requires at least three hashed source files')
+                files = []
+            for item in files:
+                if not isinstance(item,dict):
+                    errors.append('primary-source lock source file entry invalid')
+                    continue
+                role, rel, claimed = item.get('role'), item.get('path'), item.get('sha256')
+                if not isinstance(role,str) or not role.strip() or role in roles:
+                    errors.append('primary-source lock source roles missing or duplicated')
+                    continue
+                roles.add(role)
+                path = (source_root / str(rel or '')).resolve()
+                if path != source_root and source_root not in path.parents:
+                    errors.append(f'primary-source lock path escapes project root: {rel}')
+                elif not path.is_file() or not SHA256.fullmatch(str(claimed or '')) or digest(path)!=claimed:
+                    errors.append(f'primary-source lock file missing or hash changed: {rel}')
+            if not {'figure_asset','author_code','source_data'}.issubset(roles):
+                errors.append('primary-source lock must bind figure_asset, author_code and source_data')
+            mappings = receipt.get('source_mapping')
+            if not isinstance(mappings,list) or not mappings:
+                errors.append('primary-source lock source_mapping required')
+            else:
+                for mapping in mappings:
+                    if not isinstance(mapping,dict) or not mapping.get('panel') or mapping.get('author_code') not in roles or mapping.get('source_data') not in roles:
+                        errors.append('primary-source lock mapping must bind a panel to author code and source data')
+                        break
+            if receipt.get('inspection',{}).get('original_figure_opened') is not True:
+                errors.append('primary-source lock requires opened original figure evidence')
+            contract = receipt.get('generation_contract',{})
+            if contract.get('author_material_access')!='authorized-inspection-no-copy' or contract.get('implementation')!='new-script-from-user-data-and-derived-patterns' or contract.get('blind_generation') is not False:
+                errors.append('primary-source lock source-exposure contract invalid')
+            return errors
         bound = receipt.get('corpus', {})
         if Path(str(bound.get('path',''))).resolve() != corpus.resolve() or not corpus.is_file() or bound.get('sha256') != digest(corpus):
             errors.append('reproduction receipt corpus missing or changed')
@@ -54,8 +176,107 @@ def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS
     return errors
 
 
-def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path | None = None) -> list[str]:
-    """Check freshness and completeness, not authenticity of model-written attestations."""
+def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[str]:
+    """Bind CP2 to the deterministic retrieval receipt used before design/code."""
+    errors = []
+    try:
+        receipt = json.loads(Path(receipt_path).expanduser().read_text(encoding='utf-8'))
+        from reuse_templates import validate_binding
+        errors.extend(validate_binding(receipt, design_spec))
+        from retrieve_learned_methods import validate_binding as validate_learning
+        errors.extend(validate_learning(receipt, design_spec))
+        claimed_id = receipt.get('preparation_id')
+        unsigned = dict(receipt)
+        unsigned.pop('preparation_id', None)
+        actual_id = hashlib.sha256(json.dumps(unsigned, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+        if not re.fullmatch(r'[0-9a-f]{32}', str(receipt.get('invocation_id', ''))):
+            errors.append('preparation receipt missing unique invocation ID')
+        if receipt.get('schema_version') != 1 or not isinstance(claimed_id, str) or claimed_id != actual_id:
+            errors.append('preparation receipt version or integrity hash invalid')
+        if receipt.get('status') != 'PREFLIGHT_COMPLETE':
+            errors.append('preparation receipt is not PREFLIGHT_COMPLETE')
+        if receipt.get('code_gate') != 'BLOCKED_UNTIL_REFERENCE_ANALYSIS_AND_CP2':
+            errors.append('preparation receipt code gate invalid')
+        material = receipt.get('source_hashes', {})
+        required_material = {
+            'SKILL.md', 'manifest.yaml', 'static/core/execution-contract.yaml', 'schemas/figure-request.schema.yaml',
+            'schemas/figure-design-spec.schema.yaml', 'checkpoints/checkpoints.yaml',
+            'scripts/prepare_figure.py', 'scripts/route_figure.py', 'scripts/plan_figure_method.py',
+            'scripts/retrieve_reproduction.py', 'scripts/retrieve_scidraw.py', 'scripts/retrieve_capabilities.py',
+            'scripts/retrieve_references.py', 'scripts/benchmark_core.py', 'scripts/validate_design_spec.py',
+            'scripts/validate_checkpoints.py', 'atlas/reproduction-derived-corpus.json',
+            'atlas/reproduction-methods.json', 'atlas/scidraw-derived-corpus.json',
+            'atlas/scidraw-visual-grammar.yaml', 'atlas/scidraw-source-compared-methods.json',
+            'atlas/scidraw-review-evidence.json', 'atlas/scidraw-batch2-methods.json',
+            'atlas/scidraw-batch2-review-evidence.json', 'atlas/scidraw-learning-ten-20260925.json',
+            'atlas/scidraw-learning-ten-20260925-02.json', 'atlas/top-journal-corpus.yaml',
+            'atlas/unified-capability-graph.json', 'atlas/family-execution-contracts.yaml',
+            'atlas/index.yaml', 'patterns/index.yaml', 'renderer-registry.yaml', 'benchmark/registry.json',
+            'atlas/reusable-template-index.json', 'scripts/reuse_templates.py',
+            'scripts/run_template_replay.py', 'references/stable-template-reuse.md',
+            'atlas/learned-method-index.json', 'scripts/retrieve_learned_methods.py',
+            'scripts/build_learned_method_index.py', 'scripts/learning_materials.py',
+            'references/all-learning-transfer.md', 'references/all-learning-audit-defects.md',
+            'atlas/learned-method-validations.json', 'scripts/validate_learned_reuse.py',
+            'atlas/source-syntax-audit.json',
+        }
+        if not isinstance(material, dict) or receipt.get('missing_material') or not required_material.issubset(material):
+            errors.append('preparation receipt has missing or malformed bound material')
+        else:
+            for name, expected_hash in material.items():
+                path = (ROOT / str(name)).resolve()
+                if path != ROOT.resolve() and ROOT.resolve() not in path.parents:
+                    errors.append(f'preparation receipt source path escapes Skill root: {name}')
+                elif not path.is_file() or not SHA256.fullmatch(str(expected_hash)) or digest(path) != expected_hash:
+                    errors.append(f'preparation receipt source changed or missing: {name}')
+            if not set(receipt.get('route', {}).get('modules', [])) <= set(material):
+                errors.append('preparation receipt does not hash every routed module')
+        expected_sources = {'reproduction', 'top_journal', 'scidraw'}
+        loaded_sources = set(receipt.get('route', {}).get('reference_evidence_layers', {}))
+        if not expected_sources.issubset(loaded_sources):
+            errors.append('preparation receipt omits mandatory reference sources')
+        request = receipt.get('request', {})
+        spec_reference = design_spec.get('reference_evidence', {})
+        if spec_reference.get('preparation_id') != claimed_id:
+            errors.append('Design Spec preparation_id does not match CP2 preparation receipt')
+        if spec_reference.get('preparation_request') != request:
+            errors.append('Design Spec preparation_request differs from complete CP2 request binding')
+        if spec_reference.get('selected_method_case_id') != receipt.get('selected_reference_candidates', {}).get('planner_selected'):
+            errors.append('Design Spec selected_method_case_id differs from deterministic planner candidate')
+        if re.sub(r'\s+', ' ', str(request.get('figure_task', '')).strip()).casefold() != re.sub(r'\s+', ' ', str(design_spec.get('figure_task', '')).strip()).casefold():
+            errors.append('preparation receipt figure_task differs from Design Spec')
+        biology = design_spec.get('biology_contract', {})
+        backend = design_spec.get('backend_lock', {})
+        if request.get('primary_domain') != biology.get('primary_domain'):
+            errors.append('preparation receipt primary_domain differs from Design Spec')
+        if request.get('backend') != backend.get('backend'):
+            errors.append('preparation receipt backend differs from Design Spec')
+        if request.get('primary_role') != design_spec.get('role_contract', {}).get('primary_role'):
+            errors.append('preparation receipt primary_role differs from Design Spec')
+        if request.get('figure_family') and request.get('figure_family') != design_spec.get('reference_analysis', {}).get('figure_family'):
+            errors.append('preparation receipt figure_family differs from Design Spec reference analysis')
+        targets = {'quick-png': ['png'], 'paper-composite': ['pdf', 'svg', 'png'],
+                   'editable-vector': ['svg', 'pdf', 'png'], 'tiff-submission': ['tiff', 'png']}
+        requested_target = request.get('deliverable')
+        contract = design_spec.get('deliverable_contract', {})
+        expected_formats = targets.get(requested_target)
+        spec_formats = contract.get('required_formats') if isinstance(contract, dict) else None
+        output_formats = design_spec.get('output_size', {}).get('formats', [])
+        if (not expected_formats or contract.get('target') != requested_target
+                or spec_formats != expected_formats or set(output_formats) != set(expected_formats)):
+            errors.append('preparation receipt deliverable does not match Design Spec output contract/formats')
+        if not isinstance(receipt.get('method_plan', {}).get('selected_case'), dict):
+            errors.append('preparation receipt has no selected method candidate')
+        elif receipt.get('selected_reference_candidates', {}).get('planner_selected') != receipt['method_plan']['selected_case'].get('case_id'):
+            errors.append('preparation receipt planner candidate binding is inconsistent')
+    except Exception as exc:
+        errors.append(f'preparation receipt unreadable: {exc}')
+    return errors
+
+
+def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path | None = None,
+                            preparation_receipt: Path | None = None) -> list[str]:
+    """Check workflow bindings; this detects mistakes, not deliberate forgery."""
     errors = []
     try:
         receipt = json.loads(Path(receipt_path).read_text())
@@ -63,6 +284,22 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             errors.append('render receipt version/status invalid')
         if receipt.get('backend') not in {'R', 'Python'}:
             errors.append('render receipt backend invalid')
+        if receipt.get('backend') == 'Python':
+            errors.append('Python CP3 PASS blocked: official authorized Python renderer is not implemented')
+        authorization = receipt.get('authorization_consumption', {})
+        authorization = authorization if isinstance(authorization, dict) else {}
+        marker = authorization.get('marker', {})
+        marker_path = Path(str(marker.get('path', ''))).expanduser()
+        if (authorization.get('consumed') is not True or not SHA256.fullmatch(str(authorization.get('authorization_id', '')))
+                or not marker_path.is_file() or digest(marker_path) != marker.get('sha256')
+                or marker_path.read_text(encoding='utf-8').strip() != authorization.get('authorization_id')):
+            errors.append('render authorization consumption evidence missing or invalid')
+        marker_record = authorization.get('marker', {}) if isinstance(authorization, dict) else {}
+        authorization_record = authorization.get('authorization_file', {}) if isinstance(authorization, dict) else {}
+        if authorization_record.get('path') and marker_record.get('path'):
+            expected_marker = str(Path(str(authorization_record['path'])).expanduser().resolve()) + '.consumed'
+            if str(Path(str(marker_record['path'])).expanduser().resolve()) != expected_marker:
+                errors.append('render authorization consumption marker path does not match authorization file')
         path_base = receipt.get('path_base')
         repository_root = ROOT.parent.resolve()
         def bound_path(item):
@@ -80,6 +317,48 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             return p if p.is_file() and digest(p) == item.get('sha256') else None
         def bound(item):
             return bound_path(item) is not None
+        authorization_file = authorization.get('authorization_file', {})
+        if not bound(authorization_file):
+            errors.append('render authorization file missing or changed')
+        else:
+            try:
+                auth_path = bound_path(authorization_file)
+                auth_doc = json.loads(auth_path.read_text(encoding='utf-8'))
+                auth_id = auth_doc.pop('authorization_id', None)
+                was_consumed = auth_doc.pop('consumed', False)
+                calculated_id = hashlib.sha256(json.dumps(auth_doc, sort_keys=True).encode()).hexdigest()
+                if (auth_doc.get('schema_version') != 1 or auth_doc.get('status') != 'AUTHORIZED'
+                        or auth_doc.get('single_use') is not True
+                        or auth_id != calculated_id or auth_id != authorization.get('authorization_id')):
+                    errors.append('render authorization id does not match bound authorization file')
+                if was_consumed is not True:
+                    errors.append('render authorization file is not sealed as consumed')
+                bound_inputs = auth_doc.get('bound', {})
+                consumed_prep = authorization.get('preparation_receipt', {})
+                auth_prep = bound_inputs.get('receipt', {})
+                if (not isinstance(consumed_prep, dict) or not isinstance(auth_prep, dict)
+                        or Path(str(consumed_prep.get('path', ''))).resolve() != Path(str(auth_prep.get('path', ''))).resolve()
+                        or consumed_prep.get('sha256') != auth_prep.get('sha256') or not bound(consumed_prep)):
+                    errors.append('render authorization preparation receipt binding invalid')
+                if preparation_receipt is not None and (
+                        Path(str(consumed_prep.get('path', ''))).resolve() != preparation_receipt.resolve()):
+                    errors.append('render authorization preparation receipt differs from CP2 ledger')
+                auth_design = bound_inputs.get('design_spec', {})
+                if design_spec is not None and Path(str(auth_design.get('path', ''))).resolve() != design_spec.resolve():
+                    errors.append('render authorization Design Spec differs from CP2 ledger')
+                render_sources = receipt.get('sources', [])
+                if not any(bound_path(x) == Path(str(auth_design.get('path', ''))).resolve()
+                           and x.get('sha256') == auth_design.get('sha256') for x in render_sources if isinstance(x, dict)):
+                    errors.append('render authorization Design Spec binding differs from render receipt')
+                expected_sources = bound_inputs.get('sources', [])
+                actual_sources = [x for x in render_sources if isinstance(x, dict)
+                                  and Path(str(x.get('path', ''))).resolve() != Path(str(auth_design.get('path', ''))).resolve()]
+                expected_set = {(str(Path(x.get('path', '')).resolve()), x.get('sha256')) for x in expected_sources if isinstance(x, dict)}
+                actual_set = {(str(Path(x.get('path', '')).resolve()), x.get('sha256')) for x in actual_sources}
+                if expected_set != actual_set:
+                    errors.append('render authorization source bindings differ from render receipt')
+            except Exception as exc:
+                errors.append(f'render authorization file invalid: {exc}')
         image = receipt.get('artifact', {})
         if not bound(image) or bound_path(image) != artifact.resolve():
             errors.append('render receipt artifact mismatch')
@@ -95,6 +374,12 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
         if design_spec is not None and (not isinstance(sources, list) or not any(
                 bound_path(x) == design_spec.resolve() for x in sources if isinstance(x, dict))):
             errors.append('render receipt must bind current design spec')
+        if design_spec is not None:
+            declared_size = load(design_spec).get('output_size', {})
+            receipt_size = receipt.get('target_size', {})
+            for key in ('width_mm', 'height_mm', 'size_class', 'size_basis'):
+                if key in declared_size and receipt_size.get(key) != declared_size.get(key):
+                    errors.append(f'render receipt target_size.{key} differs from Design Spec')
         font = receipt.get('font', {})
         if not bound(font) or font.get('family') not in {'Arial', 'Helvetica'}:
             errors.append('render receipt font invalid')
@@ -106,6 +391,26 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             errors.append('render receipt target text below 5 pt or invalid')
         elif size < 6 and not str(receipt.get('text_size_authorization') or '').strip():
             errors.append('render receipt text below 6 pt requires documented basis')
+        target = receipt.get('target_size')
+        classes = {'single-column': (89, 90, 170),
+                   'one-and-half-column': (120, 136, 170),
+                   'double-column': (180, 183, 170),
+                   'custom': (50, 210, 247)}
+        if not isinstance(target, dict) or target.get('size_class') not in classes:
+            errors.append('render receipt target_size publication class missing or invalid')
+        else:
+            width, height = target.get('width_mm'), target.get('height_mm')
+            lo, hi, max_height = classes[target['size_class']]
+            if (type(width) not in (int, float) or not math.isfinite(width)
+                    or not lo <= width <= hi):
+                errors.append(f"render receipt {target['size_class']} width must be {lo}..{hi} mm")
+            if (type(height) not in (int, float) or not math.isfinite(height)
+                    or height <= 0 or height > max_height):
+                errors.append(f"render receipt {target['size_class']} height must be positive and at most {max_height} mm")
+            if target.get('size_basis') != 'final_physical_output':
+                errors.append('render receipt target_size basis must be final_physical_output')
+            if target['size_class'] == 'custom' and not str(target.get('override_basis') or '').strip():
+                errors.append('render receipt custom target size requires documented basis')
     except Exception as exc:
         errors.append(f'render receipt unreadable: {exc}')
     return errors
@@ -187,7 +492,18 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                     errors.append('CP2 actual design validation failed: ' + result.stdout.strip())
             if not isinstance(evidence.get("selected_pattern"), str) or not evidence["selected_pattern"].strip():
                 errors.append("CP2 selected_pattern must be non-empty")
-            errors.extend(validate_reproduction_receipt(str(evidence.get('reproduction_retrieval_receipt',''))))
+            if spec_path.is_file():
+                try:
+                    spec_doc = load(spec_path)
+                    prep_path = str(evidence.get('preparation_receipt', ''))
+                    if not prep_path:
+                        errors.append('CP2 preparation_receipt is required')
+                    else:
+                        errors.extend(validate_preparation_receipt(prep_path, spec_doc))
+                except Exception as exc:
+                    errors.append(f'CP2 preparation receipt binding failed: {exc}')
+            receipt_path = evidence.get('reference_method_receipt', evidence.get('reproduction_retrieval_receipt',''))
+            errors.extend(validate_reproduction_receipt(str(receipt_path), root=ROOT.parent))
             for key, wanted in (("design_spec_validation", "PASS"), ("renderer_available", True), ("layout_slots_reserved", True)):
                 if evidence.get(key) != wanted:
                     errors.append(f"CP2 {key} must be {wanted}")
@@ -195,7 +511,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             path = Path(str(evidence.get("artifact", ""))).expanduser()
             cp2 = entries[2].get('evidence', {})
             errors.extend(validate_render_receipt(str(evidence.get('render_receipt', '')), path,
-                          Path(str(cp2.get('design_spec', '')))))
+                          Path(str(cp2.get('design_spec', ''))),Path(str(cp2.get('preparation_receipt', '')))))
             claimed = str(evidence.get("artifact_sha256", ""))
             if not path.is_file():
                 errors.append("CP3 artifact missing")
@@ -203,6 +519,14 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                 errors.append("CP3 artifact_sha256 mismatch")
             else:
                 cp3_digest = claimed
+            first = evidence.get('first_render', {})
+            first_path = Path(str(first.get('path', ''))).expanduser() if isinstance(first, dict) else Path('')
+            first_hash = str(evidence.get('first_render_sha256', ''))
+            if not first_path.is_file() or not SHA256.fullmatch(first_hash) or digest(first_path) != first_hash or first.get('sha256') != first_hash:
+                errors.append('CP3 first render missing or hash mismatch')
+            size = evidence.get('target_size')
+            if not isinstance(size, dict) or any(not isinstance(size.get(k), (int, float)) or size[k] <= 0 for k in ('width_mm', 'height_mm')):
+                errors.append('CP3 target_size must record positive width_mm and height_mm')
             if evidence.get("artifact_opened") is not True or evidence.get("viewer_method") not in {"direct-open", "contact-sheet-open"}:
                 errors.append("CP3 requires an actual viewer-open record")
             if evidence.get("target_size_checked") is not True:
@@ -219,6 +543,35 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                        '--pattern', str(cp2.get('selected_pattern', '')), '--mode', 'publication',
                        '--inspection-evidence', str(evidence.get('inspection_evidence', '')),
                        '--design-spec', str(cp2.get('design_spec', '')), '--json']
+            inspection_path = Path(str(evidence.get('inspection_evidence', ''))).expanduser()
+            if not inspection_path.is_file():
+                errors.append('CP4 inspection evidence file required')
+            else:
+                try:
+                    inspection_doc = load(inspection_path)
+                    errors.extend([f'inspection evidence: {item}' for item in validate_inspection_evidence(inspection_doc)])
+                    if inspection_doc.get('artifact_sha256') != cp3.get('artifact_sha256'):
+                        errors.append('inspection evidence artifact hash differs from CP3')
+                    if inspection_doc.get('first_render_sha256') != cp3.get('first_render_sha256'):
+                        errors.append('inspection evidence first render hash differs from CP3')
+                    if inspection_doc.get('target_size') != cp3.get('target_size'):
+                        errors.append('inspection evidence target size differs from CP3')
+                    if inspection_doc.get('reviewer_type') != evidence.get('reviewer_type'):
+                        errors.append('CP4 reviewer_type differs from inspection evidence')
+                    if inspection_doc.get('reviewer_type') not in {'human', 'model'}:
+                        errors.append('CP4 visual PASS requires a human or model reviewer; automated review alone is insufficient')
+                    if inspection_doc.get('reviewer_id') != evidence.get('reviewer_id'):
+                        errors.append('CP4 reviewer_id differs from inspection evidence')
+                    if inspection_doc.get('judgment') != 'PASS':
+                        errors.append('CP4 visual PASS requires explicit reviewer judgment PASS')
+                    cp3_artifact = Path(str(cp3.get('artifact', ''))).resolve()
+                    cp3_first = cp3.get('first_render', {})
+                    if inspection_doc.get('artifact_path') != str(cp3_artifact):
+                        errors.append('CP4 inspection artifact_path differs from CP3 final artifact')
+                    if inspection_doc.get('first_render_path') != str(Path(str(cp3_first.get('path', ''))).resolve()):
+                        errors.append('CP4 inspection first_render_path differs from CP3 first render')
+                except Exception as exc:
+                    errors.append(f'inspection evidence unreadable: {exc}')
             spec_path = Path(str(cp2.get('design_spec', '')))
             try:
                 spec_doc = load(spec_path)

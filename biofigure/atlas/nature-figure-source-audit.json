@@ -1,0 +1,33 @@
+{
+  "audit_id": "NATURE-FIGURE-SOURCE-AUDIT-20260926",
+  "repository": "wp-a/nature-figure",
+  "commit": "57d7a8557467edeceff54e03b76814def4724f1b",
+  "method": "Read the pinned Skill, extract concrete visual claims, and inspect the corresponding official Nature figures at original resolution.",
+  "claims": [
+    {
+      "source": "https://www.nature.com/articles/s41586-026-10408-8",
+      "figure": "Figure 1",
+      "reference_sha256": "696dd19b953721a30732552ba7a1a9c821162984401c55751c6f39c08f0ac104",
+      "claim": "schematic-led composite with a dominant hero panel and quiet supporting evidence",
+      "verdict": "supported"
+    },
+    {
+      "source": "https://www.nature.com/articles/s41586-026-10426-6",
+      "figure": "Figure 2",
+      "reference_sha256": "aff4bd10e46214d43f046c6c634b143b693aa0c8ef1f15c8e28779928e475b01",
+      "claim": "dark image plate with direct labels and fixed grey/cyan/magenta channel semantics",
+      "verdict": "supported"
+    }
+  ],
+  "repository_check": {
+    "claim": "README and demos documentation describe bundled assets/gallery and assets/figures4papers",
+    "observation": "No tracked assets directory exists at the pinned commit.",
+    "verdict": "contradicted"
+  },
+  "transfer_to_biofigure": [
+    "Treat a dominant schematic as the visual anchor and subordinate validation panels through scale and lower contrast.",
+    "For dark microscopy plates, keep channel colors invariant across rows and views; use direct labels and consistent scale-bar placement.",
+    "Verify repository examples against the actual file tree and original publication figures before importing a rule."
+  ],
+  "scope": "Visual-method audit only; no claim that wp-a/nature-figure supplies the experimental data or plotting code of these papers."
+}

@@ -4,7 +4,7 @@
 
 先用 `scripts/retrieve_references.py` 按领域、任务、Pattern 检索 `atlas/top-journal-corpus.yaml`。陌生图型或明确参考任务，再查原论文图号、图注、Source Data、Code Availability、作者仓库和官方 vignette。公众号只能启发审美，不能替代原始证据；无代码则标“视觉参考”，不得伪造链接或复现状态。
 
-`awesome_scientific_figure` 是可选的外部目录候选层，见 [学习边界](awesome-scientific-figure-learning.md)。可按领域和任务找不同图型，但未审原图的候选不得升格为本库已验证案例。
+`awesome_scientific_figure` 是可选的外部图集视觉学习层，见 [学习边界](awesome-scientific-figure-learning.md)。可按布局合同或领域任务检索；拼图级读图不等于原论文图注、数据和代码已核验，不得升格为已验证科学案例。
 
 检索同类科学问题和数据结构，不只搜“好看”：PCA 查尺度/解释率，火山查效应/阈值，富集查背景/比值，轨道查坐标/归一化，树与共线性查 ID/关系，单细胞查样本/细胞层。
 

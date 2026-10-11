@@ -1,0 +1,27 @@
+pattern_id: SC-CLADE-TREE-001
+version: "1.0"
+domain: [single-cell, single-cell-spatial]
+scientific_task: [single-cell-clade-tree]
+message_type: hierarchy-composition-and-split-quality
+data_contract:
+  required: [node_id, parent_id, node_size, leaf_label_proportions]
+  optional: [split_modularity, node_label, continuous_feature]
+  assumptions: [rooted_tree, leaf_proportions_close_to_one, stable_node_identifiers]
+applicable_when: {data_profile: {n_groups: 5-500}, message: cell_clade_relationships_with_leaf_composition}
+not_recommended_when: [cell_level_neighborhood_is_primary_message, topology_is_unavailable]
+visual_hierarchy: {primary: tree_topology, secondary: branch_abundance_and_leaf_composition, tertiary: split_quality_or_node_ids}
+geometry: {primary: radial_or_unrooted_tree, secondary: terminal_pie_or_ring, annotation: internal_node_mark}
+encoding: {branch_width: descendant_cell_count, branch_color: descendant_weighted_label_mix, leaf_angle: topology_order, leaf_glyph: label_composition, internal_mark: split_modularity}
+layout: {aspect_ratio: "1.0", density_strategy: prune_before_annotation, whitespace_strategy: reserve_external_legend_and_leaf_radius}
+annotation_strategy: [stable_internal_ids_only_when_needed, modularity_marks_separate_from_composition, explain_pruning_rule]
+legend_strategy: {compact: true, place: outside_left_or_bottom, order: stable_semantic_dictionary}
+color_semantics: {cell_identity: categorical_fixed_dictionary, split_quality: grayscale, continuous_feature: sequential_single_hue}
+optional_components: [outside-legend, direct-labels, clustering-tree]
+avoid: [independent_cluster_islands_as_tree_substitute, equal_branch_width_when_abundance_is_claimed, pie_legend_overlap, unreadable_node_numbers]
+scientific_risks: [topology_overinterpretation, cell_as_replicate, composition_without_denominator, pruning_hidden_from_caption]
+renderer_options: [ggtree, grid, matplotlib]
+references: [doi://10.1038/s41592-020-0748-5, source-index://ggtree]
+provenance: {created_from: [doi://10.1038/s41592-020-0748-5, source-index://ggtree], reviewed_by: local-source-audit, reviewed_at: "2026-09-27"}
+confidence: medium
+validation: {scientific: source-bounded, visual: source-compared-final-size-pass, benchmark: local-structural-reproduction-pass}
+status: candidate

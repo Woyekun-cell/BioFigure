@@ -1,0 +1,2 @@
+Allowed synthetic author-material fixture for matrix.
+The supplied source example shows a clustered expression heatmap and cell mapping.

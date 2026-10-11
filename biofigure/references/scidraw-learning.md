@@ -4,7 +4,7 @@ SciDraw 图库和用户提供代码包只作**默认检索的候选设计证据*
 
 运行 `scripts/retrieve_scidraw.py`，按科学任务、数据结构、几何、包和图型找案例。只提取视觉语法：主次层级、几何、排序、留白、注释带、图例槽位、标签预算和配色语义。不得直接复制原代码、数据处理、统计结论或装饰；许可不清时只学习抽象布局。
 
-28 个已落地方法先例分两组记录在 `atlas/scidraw-source-compared-methods.json` 与 `atlas/scidraw-batch2-methods.json`；逐图来源绑定、原图/成图/对照图哈希和对象级审查见对应的 `scidraw-review-evidence.json` 与 `scidraw-batch2-review-evidence.json`。独立实现位于 `examples/scidraw-gallery/`。仅当成图哈希有效且状态为 `source-compared-png + pass` 才可优先检索；迁移到新数据后仍须重新渲染与看图。
+已落地方法按 [SciDraw benchmark 索引](scidraw-benchmark-index.md) 管理；第二批 20 图逐案结论见 [SciDraw 第二批学习](scidraw-batch20-learning.md)。来源绑定、原图/成图哈希和对象级审查见对应 atlas JSON；可执行自包含包位于 `benchmark/library/scidraw/`。仅当成图哈希有效且状态为 `source-compared-png + pass` 才可优先检索；迁移到新数据后仍须重新渲染与看图。
 
 证据状态必须保留：`ok` 仍需重做科学和出版 QA；`needs_review` 表示代码、标题或图像对应关系不确定；`failed/no_code/no_content` 只能作反例或视觉线索。图片未可靠配对时不得猜配。当前旧配对已降级为candidate-unverified；不能凭heading字段认定原图语义。
 
@@ -23,3 +23,9 @@ SciDraw 图库和用户提供代码包只作**默认检索的候选设计证据*
 - 关联弦线必须表示真实关系边，用 `circlize::circos.link()` 或等价几何；非线性坐标中不能用无效 `geom_curve()` 伪装弦线。
 - 树与外轨优先 `ggtree`/`ggtreeExtra::geom_fruit()`，网络树优先 `tidygraph`+`ggraph`，表格热图优先 `funkyheatmap`；专用包语义不得用粗略几何代替后声称复现。
 - 双轴图先验证单位换算是否可解释；只有两量具有明确映射时才允许第二轴，并在代码中保留换算常数。
+
+
+本批第 1 组统计/分布版式的逐图源码阅读笔记见 [SciDraw 统计版式十例](references/scidraw-stats-ten.md)，逐图来源与输出账本见 `atlas/scidraw-learning-ten-20260925.json`。该批仍为 source-exposed 新实现；待用户审图，不能作为隔离迁移或全库掌握证据。
+
+
+统计/分布版式十例见 [首批统计图](scidraw-stats-ten.md)；第二批横向对齐堆积图、嵌饼点图、circlize环柱、双轴和分面小提琴见 [第二批结构笔记](scidraw-batch2-structures.md)，逐图来源绑定与图像证据在 `atlas/scidraw-learning-ten-20260925-02.json`。

@@ -1,0 +1,36 @@
+schema_version: 1
+kind: cross-model-independent-review
+required:
+  - reviewer_id
+  - reviewer_type
+  - run_id
+  - blind_id
+  - case_id
+  - repeat
+  - input_sha256
+  - judgment
+  - artifact_sha256
+  - first_pass
+  - scores
+  - scientific_hard_errors
+  - missing_deliverables
+  - defect_coordinates
+reviewer_type: [human, model]
+judgment: [PASS, REVISE, FAIL]
+artifact_sha256: sha256_of_reviewed_png
+first_pass: boolean_judgment_on_first_render; if judgment is PASS and first_pass is false, CP4 revision_count must be an integer >= 1
+revision_count: CP4 JSON integer >= 0; booleans are invalid; PASS with first_pass true requires revision_count == 0
+scores:
+  required_dimensions_from_protocol: integer_1_to_5
+scientific_hard_errors: list_of_specific_findings
+missing_deliverables: list_of_specific_missing_outputs
+defect_coordinates:
+  type: list
+  item_required: [issue, severity, x, y, unit]
+  severity: [hard, minor]
+  coordinates: finite_normalized_canvas_values_inclusive_0_to_1
+  unit: normalized
+binding:
+  run_reviews_item: {path: review_file, sha256: review_file_sha256}
+  CP4_inspection_review_record: {review_file: same_path_and_hash, review: exact_review_file_mapping}
+  expected_run_fields: [run_id, blind_id, case_id, repeat, input_sha256, artifact_sha256]

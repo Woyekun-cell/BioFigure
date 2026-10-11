@@ -1,4 +1,25 @@
 # BioFigure reusable safeguards. Source into the analysis script; no global theme changes.
+bf_skill_root <- local({
+  source_file <- tryCatch(sys.frame(1)$ofile, error=function(e) NULL)
+  if(is.null(source_file)) normalizePath(getwd()) else normalizePath(file.path(dirname(source_file),'..'))
+})
+bf_resolve_skill_root <- function(skill_root=NULL) {
+  valid<-function(path) is.character(path)&&length(path)==1&&nzchar(path)&&
+    file.exists(file.path(path,'static','core','execution-contract.yaml'))&&
+    file.exists(file.path(path,'scripts','authorize_render.py'))&&
+    file.exists(file.path(path,'scripts','figure_style.R'))
+  if(!is.null(skill_root)) {
+    if(valid(skill_root)) return(normalizePath(skill_root,mustWork=TRUE))
+    stop('BIOFIGURE_SKILL_ROOT must point to an installed BioFigure Skill root')
+  }
+  configured<-Sys.getenv('BIOFIGURE_SKILL_ROOT',unset='')
+  if(nzchar(configured)) {
+    if(valid(configured)) return(normalizePath(configured,mustWork=TRUE))
+    stop('BIOFIGURE_SKILL_ROOT must point to an installed BioFigure Skill root')
+  }
+  if(valid(bf_skill_root)) return(normalizePath(bf_skill_root,mustWork=TRUE))
+  stop('set BIOFIGURE_SKILL_ROOT or pass skill_root to the installed BioFigure Skill root')
+}
 bf_font <- function(family='Arial') {
   if (!family %in% c('Arial','Helvetica')) stop('font must be Arial or Helvetica; document scientific glyph exceptions separately')
   fonts <- systemfonts::system_fonts()
@@ -8,6 +29,25 @@ bf_font <- function(family='Arial') {
   if (info$family[1] != family || !file.exists(resolved$path[1])) stop('font fallback detected')
   systemfonts::string_width('Ag012',path=resolved$path[1],index=resolved$index[1],size=7)
   list(family=family,path=resolved$path[1],index=resolved$index[1])
+}
+bf_validate_publication_size <- function(width_mm,height_mm,size_class='single-column',size_override_basis=NULL) {
+  if(!is.numeric(width_mm)||length(width_mm)!=1||!is.finite(width_mm)||width_mm<=0||
+     !is.numeric(height_mm)||length(height_mm)!=1||!is.finite(height_mm)||height_mm<=0)
+    stop('final publication width and height must be positive finite millimetres')
+  ranges<-list(
+    'single-column'=c(89,90,170),
+    'one-and-half-column'=c(120,136,170),
+    'double-column'=c(180,183,170),
+    'custom'=c(50,210,247))
+  if(!size_class %in% names(ranges)) stop('unsupported publication size class')
+  rule<-ranges[[size_class]]
+  if(width_mm<rule[1]||width_mm>rule[2])
+    stop(sprintf('%s width must be %g..%g mm',size_class,rule[1],rule[2]))
+  if(height_mm>rule[3]) stop(sprintf('%s height exceeds %g mm',size_class,rule[3]))
+  if(size_class=='custom' && (is.null(size_override_basis)||!is.character(size_override_basis)||
+      length(size_override_basis)!=1||!nzchar(trimws(size_override_basis))))
+    stop('custom publication size requires a documented journal or user basis')
+  TRUE
 }
 bf_theme <- function(font, size=7) {
   ggplot2::theme_classic(base_size=size,base_family=font$family) +
@@ -122,7 +162,20 @@ bf_complexheatmap_font <- function(font) {
 # Receipts are technical evidence; they do not certify aesthetics or actual viewing.
 bf_render_png <- function(plot,path,font,allowed_text,width_mm,height_mm,target_width_mm,
                           source_files,boxes,allowed_pairs=character(),dpi=300,
-                          heading_authorization=NULL,min_text_pt=6,text_size_authorization=NULL) {
+                          heading_authorization=NULL,min_text_pt=6,text_size_authorization=NULL,
+                          authorization=NULL,skill_root=NULL,
+                          publication_size_class='single-column',size_override_basis=NULL) {
+  if(is.null(authorization)||!is.character(authorization)||length(authorization)!=1||!file.exists(authorization))
+    stop('current single-use render authorization is required')
+  resolved_skill_root<-bf_resolve_skill_root(skill_root)
+  spec_files<-source_files[grepl('\\.ya?ml$',source_files,ignore.case=TRUE)]
+  if(length(spec_files)!=1) stop('bind exactly one current Design Spec for render authorization')
+  auth_script<-file.path(resolved_skill_root,'scripts','authorize_render.py')
+  py<-Sys.getenv('PYTHON','python3')
+  auth_args<-c(auth_script,'--design-spec',spec_files,'--output',authorization,'--consume',
+    unlist(lapply(source_files[source_files!=spec_files],function(x)c('--source',x))))
+  auth_status<-suppressWarnings(system2(py,shQuote(auth_args),stdout=FALSE,stderr=FALSE))
+  if(!identical(auth_status,0L)) stop('render authorization rejected or already consumed')
   receipt_path<-paste0(path,'.render.json')
   if(file.exists(receipt_path)) unlink(receipt_path)
   stopifnot(length(source_files)>0,all(file.exists(source_files)),
@@ -137,16 +190,35 @@ bf_render_png <- function(plot,path,font,allowed_text,width_mm,height_mm,target_
   allow_headings<-!is.null(heading_authorization) && is.character(heading_authorization) &&
     length(heading_authorization)==1 && nzchar(trimws(heading_authorization))
   prepared<-bf_prepare(plot,font,allowed_text,allow_headings,width_mm,height_mm,dpi)
+  target_height_mm<-height_mm*target_width_mm/width_mm
+  bf_validate_publication_size(target_width_mm,target_height_mm,publication_size_class,size_override_basis)
   minimum<-min(prepared$sizes_pt)*target_width_mm/width_mm
   if(!is.finite(minimum)||minimum<min_text_pt) stop('text too small at final target width; redesign canvas and cells')
+  design<-yaml::read_yaml(spec_files[[1]])
+  declared<-design$output_size
+  if(!is.list(declared)||!isTRUE(all.equal(as.numeric(declared$width_mm),as.numeric(target_width_mm)))||
+     !isTRUE(all.equal(as.numeric(declared$height_mm),as.numeric(target_height_mm)))||
+     !identical(declared$size_class,publication_size_class)||
+     !identical(declared$size_basis,'final_physical_output'))
+    stop('final target size differs from the authorized Design Spec')
   bound<-function(p) list(path=normalizePath(p,mustWork=TRUE),sha256=digest::digest(file=p,algo='sha256'))
   sources<-lapply(source_files,bound)
   bf_export_png(prepared,path,width_mm,height_mm,dpi)
   if(!identical(sources,lapply(source_files,bound))) stop('source changed during rendering')
+  auth_doc<-jsonlite::fromJSON(authorization,simplifyVector=FALSE)
+  consumed_marker<-paste0(authorization,'.consumed')
+  if(!file.exists(consumed_marker)||trimws(readLines(consumed_marker,warn=FALSE)[1])!=auth_doc$authorization_id)
+    stop('render authorization consumption record missing')
   receipt<-list(schema_version=1,status='PASS',backend='R',renderer='ggplot2',artifact=bound(path),sources=sources,
+    authorization_consumption=list(consumed=TRUE,authorization_id=auth_doc$authorization_id,
+      marker=bound(consumed_marker),authorization_file=bound(authorization),
+      preparation_receipt=auth_doc$bound$receipt),
     font=c(bound(font$path),list(family=font$family)),
     checks=list(font=TRUE,text_allowlist=TRUE,layout=TRUE,target_size=TRUE),
     target_min_text_pt=minimum,min_text_pt=min_text_pt,text_size_authorization=text_size_authorization,target_width_mm=target_width_mm,
+    target_size=list(width_mm=target_width_mm,height_mm=target_height_mm,
+      size_class=publication_size_class,size_basis='final_physical_output',
+      override_basis=size_override_basis),
     device=list(width_mm=width_mm,height_mm=height_mm,dpi=dpi),
     boxes=boxes,heading_authorization=heading_authorization,
     scope='technical preflight only; separate actual inspection and critics required')

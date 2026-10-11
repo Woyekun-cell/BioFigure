@@ -1,8 +1,275 @@
-schema_version: "1.0"
+schema_version: '1.0'
 read_only_runtime: true
-runtime_release: BioFigure-3.5.1
+runtime_release: BioFigure-3.6.0
 entries:
-  - {atlas_id: ATLAS-CHM-001, pattern_id: MAT-EXPR-001, pattern_version: "1.0", domain: matrix, task: annotated-expression, source: source-index://complexheatmap, figure_number: null, reference_type: author-vignette, code_available: true, data_available: true, license_status: verify-upstream, review_status: source-reviewed, approval_scope: documentation_pattern_only, reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01, strengths: [annotation-layout, matrix-semantics], limitations: [not_local_run, not_human_render_approved], failure_tags: [none]}
-  - {atlas_id: ATLAS-GEN-001, pattern_id: GEN-SYNTENY-001, pattern_version: "1.0", domain: comparative-genomics, task: synteny, source: source-index://gggenomes, figure_number: null, reference_type: author-vignette, code_available: true, data_available: true, license_status: verify-upstream, review_status: source-reviewed, approval_scope: documentation_pattern_only, reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01, strengths: [coordinate-linked-tracks], limitations: [layout_not_evidence, not_human_render_approved], failure_tags: [misleading_encoding_if_unchecked]}
-  - {atlas_id: ATLAS-MO-001, pattern_id: MO-FACTOR-001, pattern_version: "1.0", domain: multi-omics, task: factor-association, source: source-index://mofa, figure_number: "2/3", reference_type: paper-and-author-code, code_available: true, data_available: partial, license_status: verify-upstream, review_status: source-reviewed, approval_scope: documentation_pattern_only, reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-01, strengths: [factor-and-variance], limitations: [factor_not_mechanism, not_human_render_approved], failure_tags: [causal_overstatement]}
-  - {atlas_id: ATLAS-REJECT-UI-001, pattern_id: MULTI-EVIDENCE-001, pattern_version: "1.0", domain: multipanel, task: generic, source: internal-review, figure_number: null, reference_type: rejected-example, code_available: false, data_available: false, license_status: internal, review_status: human_rejected, strengths: [], limitations: [rounded-ui-cards, title-heavy], failure_tags: [AI_like, decorative_without_information, weak_hierarchy]}
+- atlas_id: ATLAS-CHM-001
+  pattern_id: MAT-EXPR-001
+  pattern_version: '1.0'
+  domain: matrix
+  task: annotated-expression
+  source: source-index://complexheatmap
+  figure_number: null
+  reference_type: author-vignette
+  code_available: true
+  data_available: true
+  license_status: verify-upstream
+  review_status: source-reviewed
+  approval_scope: documentation_pattern_only
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-01
+  strengths:
+  - annotation-layout
+  - matrix-semantics
+  limitations:
+  - not_local_run
+  - not_human_render_approved
+  failure_tags:
+  - none
+- atlas_id: ATLAS-GEN-001
+  pattern_id: GEN-SYNTENY-001
+  pattern_version: '1.0'
+  domain: comparative-genomics
+  task: synteny
+  source: source-index://gggenomes
+  figure_number: null
+  reference_type: author-vignette
+  code_available: true
+  data_available: true
+  license_status: verify-upstream
+  review_status: source-reviewed
+  approval_scope: documentation_pattern_only
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-01
+  strengths:
+  - coordinate-linked-tracks
+  limitations:
+  - layout_not_evidence
+  - not_human_render_approved
+  failure_tags:
+  - misleading_encoding_if_unchecked
+- atlas_id: ATLAS-MO-001
+  pattern_id: MO-FACTOR-001
+  pattern_version: '1.0'
+  domain: multi-omics
+  task: factor-association
+  source: source-index://mofa
+  figure_number: 2/3
+  reference_type: paper-and-author-code
+  code_available: true
+  data_available: partial
+  license_status: verify-upstream
+  review_status: source-reviewed
+  approval_scope: documentation_pattern_only
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-01
+  strengths:
+  - factor-and-variance
+  limitations:
+  - factor_not_mechanism
+  - not_human_render_approved
+  failure_tags:
+  - causal_overstatement
+- atlas_id: ATLAS-REJECT-UI-001
+  pattern_id: MULTI-EVIDENCE-001
+  pattern_version: '1.0'
+  domain: multipanel
+  task: generic
+  source: internal-review
+  figure_number: null
+  reference_type: rejected-example
+  code_available: false
+  data_available: false
+  license_status: internal
+  review_status: human_rejected
+  strengths: []
+  limitations:
+  - rounded-ui-cards
+  - title-heavy
+  failure_tags:
+  - AI_like
+  - decorative_without_information
+  - weak_hierarchy
+- atlas_id: ATLAS-SC-QC-002
+  pattern_id: SC-QC-001
+  pattern_version: '1.1'
+  domain: single-cell
+  task: cell-quality-control
+  source: doi://10.15252/msb.20188746
+  figure_number: '2'
+  reference_type: paper-and-author-code
+  code_available: true
+  data_available: true
+  license_status: CC-BY-4.0-paper
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-26
+  strengths:
+  - complementary-qc-views
+  - inset-placement
+  - external-continuous-colourbar
+  limitations:
+  - not-pixel-identical
+  - numerical-fidelity-not-required
+  failure_tags:
+  - inset_tag_drift
+  - legend_overlap
+  - wrong_rank_scale
+- atlas_id: ATLAS-SC-EMBED-003
+  pattern_id: SC-UMAP-001
+  pattern_version: '2.1'
+  domain: single-cell
+  task: shared-embedding-multipanel
+  source: pmcid://PMC10548551
+  figure_number: 6b-e
+  reference_type: paper-author-code-and-output
+  code_available: true
+  data_available: partial
+  license_status: verify-upstream
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-26
+  strengths:
+  - shared-coordinate-contract
+  - variable-type-colour-semantics
+  - six-feature-small-multiples
+  limitations:
+  - synthetic-structural-values
+  - not-numerical-reproduction
+  failure_tags:
+  - coordinate_drift
+  - legend_overlap
+  - nested_tag_drift
+- atlas_id: ATLAS-MO-EMBED-004
+  pattern_id: MO-EMBED-GRID-001
+  pattern_version: '1.0'
+  domain: multi-omics
+  task: shared-embedding-multimodal-features
+  source: pmcid://PMC11143375
+  figure_number: '2'
+  reference_type: paper-author-notebook-and-output
+  code_available: partial
+  data_available: controlled
+  license_status: verify-upstream
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-26
+  strengths:
+  - shared-coordinate-contract
+  - modality-aligned-feature-grid
+  - signed-and-sequential-scale-separation
+  - aligned-genomic-tracks
+  limitations:
+  - synthetic-structural-values
+  - d-right-source-not-located
+  - not-numerical-reproduction
+  failure_tags:
+  - coordinate_drift
+  - modality_row_swap
+  - palette_type_mismatch
+  - legend_overlap
+  - track_misalignment
+- atlas_id: ATLAS-SC-TREE-005
+  pattern_id: SC-CLADE-TREE-001
+  pattern_version: '1.0'
+  domain: single-cell
+  task: single-cell-clade-tree
+  source: doi://10.1038/s41592-020-0748-5
+  figure_number: 2a/c/d/e
+  reference_type: paper-author-code-and-output
+  code_available: true
+  data_available: partial
+  license_status: GPL-3.0-code-local-inspection
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: 2026-09-27
+  strengths:
+  - radial-clade-hierarchy
+  - abundance-scaled-branches
+  - composition-rings
+  - pruning
+  - modularity-and-node-id-overlays
+  limitations:
+  - synthetic-structural-values
+  - original-tabula-muris-matrix-not-bound
+  - not-numerical-reproduction
+  - not-pixel-identical
+  failure_tags:
+  - legend_overlap
+  - hidden_pruning_rule
+  - equal_width_abundance_claim
+  - mixed_overlay_density
+  - clipped_panel_tags
+- atlas_id: ATLAS-GEN-SYNTENY-006
+  pattern_id: GEN-SYNTENY-001
+  pattern_version: '1.1'
+  domain: comparative-genomics
+  task: whole-genome-synteny-and-structural-rearrangement
+  source: doi://10.1038/s41559-026-03069-3
+  figure_number: Extended Data Fig. 1a
+  reference_type: paper-image-and-author-repository-gap-audit
+  code_available: false
+  data_available: false
+  license_status: publisher-figure-local-review; repository-MIT
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: '2026-09-27'
+  strengths:
+  - 11-genome-row-order
+  - 19-chromosome-column-grid
+  - adjacent-row-synteny-ribbons
+  - four-relation-classes
+  - phylogeny-track-alignment
+  - external-legend
+  limitations:
+  - synthetic-structural-coordinates
+  - original-collinearity-table-not-released
+  - panel-code-not-released
+  - not-numerical-reproduction
+  - not-pixel-identical
+  failure_tags:
+  - continuous_chromosome_strip
+  - coordinate_overflow
+  - nonadjacent_link_drift
+  - species_label_clipping
+  - legend_overlap
+  - colour_semantic_drift
+- atlas_id: ATLAS-GEN-COMPARTMENT-007
+  pattern_id: GEN-CIRC-COMPARTMENT-001
+  pattern_version: '1.0'
+  domain: comparative-genomics
+  task: circular-multigenome-compartment-track
+  source: doi://10.1038/s41559-026-03069-3
+  figure_number: Extended Data Fig. 1b
+  reference_type: paper-image-user-reference-and-author-repository-gap-audit
+  code_available: false
+  data_available: false
+  license_status: publisher-figure-local-review; repository-MIT
+  review_status: source-exposed-structural-reproduction
+  approval_scope: local-benchmark
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: '2026-09-27'
+  strengths:
+  - 19-coordinate-scaled-sectors
+  - 11-concentric-species-tracks
+  - two-state-compartment-palette
+  - top-gap-track-key
+  - central-species-dictionary
+  - external-legend
+  limitations:
+  - synthetic-structural-intervals
+  - original-compartment-table-not-released
+  - panel-code-not-released
+  - not-numerical-reproduction
+  - not-pixel-identical
+  failure_tags:
+  - sector_order_drift
+  - track_order_drift
+  - interval_overlap
+  - oversized_center_hole
+  - outer_label_clipping
+  - legend_overlap

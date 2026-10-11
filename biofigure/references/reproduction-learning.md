@@ -7,7 +7,7 @@ V2验收以[benchmark协议](benchmark-protocol.md)为准。以下历史检索�
 ## 必做流程
 
 1. 按科学任务、图型、数据形状、候选R包与编码策略检索；优点标签和原文说明只作候选依据。不能确定图型与科学用途时停在`NEEDS_REFERENCE`，不进入编码。
-2. 运行`retrieve_reproduction.py --require-validated`。只有`runtime_status=source-compared-png`且`review_status=pass`的记录可作高保真先例；其他状态只用于诊断或待办。
+2. 运行`retrieve_reproduction.py --require-validated`。只有`runtime_status=source-compared-png`且`review_status=pass`的记录可作高保真先例；其他状态只用于诊断或待办。无相关先例但论文原图、作者代码和对应数据可核验时，用`primary-source-lock`绑定当前案例源链，不把无关检索结果当替代。
 3. 用户已授权且本地持有来源代码时，可以检查包、函数、数据变换、排序键和布局关系；不得复制整段代码、来源数据或受限图片。生成脚本须按当前数据合同独立重写，公开仓库只收自有代码和自生成图。
 4. 先实测专用包的核心函数，再写主数据层、必要辅助层、注释、图例和布局；基础`ggplot2`不能替代专用包负责的风险表、聚类对齐、圆形轨道、树外圈或网络布局。
 5. 每次PNG变化后重建原图并排图，按最终尺寸检查布局、编码、字体、配色、信息密度、图例重叠、标签碰撞、裁切、描边和面板对齐。
@@ -37,3 +37,12 @@ V2验收以[benchmark协议](benchmark-protocol.md)为准。以下历史检索�
 - 64–80期：[64–80期方法](method-family-064-080.md)
 
 `reproduction-derived-corpus.json`只保存派生结构与来源哈希。检索凭据、包版本、执行函数、并排图哈希和对象级检查结果进入当前任务证据，不以语气或模型名称替代证据。
+# Source-locked composition benchmark: Populus Figure 2b
+
+The published panel compares four A/B compartment-transition ratios for ten Populus species pairs. When the source table already provides proportions, first verify all expected groups/categories and closure within a declared tolerance, then use `geom_col(position = "stack")` to preserve supplied values. Use `position_fill()` only when the input contains counts or unclosed within-group values and the denominator is scientifically correct. Do not normalize exact proportions a second time without documenting why. When an aligned rank band shares the same group order, keep it in the same ggplot coordinate system as an annotation layer; patchwork output is not accepted by the current `bf_render_png` object preflight.
+
+The author R script is an implementation reference, not the final visual ground truth: the published panel has a different A-to-B/B-to-A palette, angled italic species labels, a `b` panel tag, a Ks rank band, and integer tick labels without percent signs. The supplement provides the 40 proportions, while the code orders ten species by increasing Ks. It does not provide numeric Ks values for that band; reproduce its rank/placement only, never infer quantitative Ks from band thickness. See the source-locked case and evidence bundle registered as `POPULUS-FIG2B-SOURCE-001`.
+
+Visual QA caught a legend failure that a generic “in-panel, no overlap” check had missed: 4 mm keys enlarged the swatches, and an opaque legend background erased the framed panel's top rule. Compare the rendered legend's key dimensions, total span and anchor against the opened source at equal crop size. For this panel, 2.2 mm keys, 4.7 mm horizontal key spacing, a 0.48 horizontal anchor and transparent legend background restored the published placement; the final box preflight reserves a separate legend region above the bars. Keep `inside_top` as a valid Design Spec placement only when render-time layout boxes confirm separation.
+
+See [six-project source study and benchmark record](six-project-benchmark-learning.md) for the project-by-project evidence states, transferable rules, validation layers and source links. A single source-exposed reproduction does not count as blind transfer or general figure-family coverage.

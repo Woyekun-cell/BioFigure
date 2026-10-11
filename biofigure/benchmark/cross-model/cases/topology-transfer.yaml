@@ -1,0 +1,19 @@
+case_id: topology-transfer
+family: topology
+exposure: transfer
+input_path: inputs/topology.csv
+input_sha256: 11ae179ce727b8a28703be398b1a18595aebb7fe2d2d2021f7759cd4f34da2c7
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Show directed relationships while preserving edge direction and weight.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/topology-derived-method-card.md
+  sha256: c9b04bc0c04f9b3972eb34d6b276b71fef0f10e8a9dbe42ffa5901b71d67c1ed
+  role: derived-method-card
+forbidden_materials:
+- source figure
+- author source code

@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "batch": "scidraw-learning-20260925-01",
+  "reviewed_at": "2026-09-25",
+  "study_policy": {
+    "source_code_and_image_read": true,
+    "new_implementation": true,
+    "synthetic_data_except_iris": true,
+    "model_weights_changed": false,
+    "user_visual_approval": "pending"
+  },
+  "batch_status": "source-exposed-needs-revision",
+  "high_fidelity_pass": 0,
+  "cases": [
+    {
+      "case_id": "SCICASE-095",
+      "source_title": "柱形图+方差分析+Tukey's Test",
+      "source_url": "https://mp.weixin.qq.com/s/mJVug47j9AtoThD1TiQcVg",
+      "source_code": {
+        "count": 4,
+        "packages": [
+          "ggsignif",
+          "multcomp",
+          "readxl",
+          "tidyverse"
+        ],
+        "combined_sha256": "59f97a2e1c3a04a0ae605ccb11ee464f3e6e02bcc96f5b1e454c0d8461defa87"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-095.png",
+        "sha256": "98bfe78a5e0886d92f7f4f6a1a70dff07ad6cf739b2140fb8c04cca3bb3304d1",
+        "pixels": [
+          600,
+          800
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-095.csv",
+        "plot_data_sha256": "060c4eea227d8a92b9192b4b3b82084eba883df863013e684160214acdff3229",
+        "statistics": "results/learning_validation/tables/SCICASE-095_statistics.csv",
+        "statistics_sha256": "eedbf84f9fd425698efe1621b04e1281fbd2121aa4b2f2bbbd3e8885b4c5fc3a",
+        "png": "results/learning_validation/figures/SCICASE-095.png",
+        "png_sha256": "e8f023c6a2ca781d571a16f775ac0c2239c652330351cb132a2416ce91e7635b",
+        "pixels": [
+          1133,
+          1511
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Tukey omnibus-plus-pairwise; source methods differ among code and preview but figure topology is 3 groups with brackets."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-097",
+      "source_title": "分组-柱形图+方差分析+LSD",
+      "source_url": "https://mp.weixin.qq.com/s/tV64PBExIW8E_pSXzaG2EA",
+      "source_code": {
+        "count": 3,
+        "packages": [
+          "DescTools",
+          "broom",
+          "car",
+          "ggfun",
+          "readxl",
+          "reshape2",
+          "tidyverse"
+        ],
+        "combined_sha256": "f3c2e3c535626bfd6f358def39f1787201c3c7c7e2e8c81695500560ad2a00a3"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-097.png",
+        "sha256": "f13dc2be82796c6a7d03c8eed713940621326f8946b83c68dea546ae3ee4e50c",
+        "pixels": [
+          800,
+          600
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-097.csv",
+        "plot_data_sha256": "d5716385318da1205230328952d1fb0267a426bed1726f29fb3f7da088e0f75e",
+        "statistics": "results/learning_validation/tables/SCICASE-097_statistics.csv",
+        "statistics_sha256": "54d56a22e8999e7dc7adc79917bf6aaa99e3f534877f164539b642f10f135dbc",
+        "png": "results/learning_validation/figures/SCICASE-097.png",
+        "png_sha256": "41d1661c9932e2fdfb4a672d4c6b8d7283ebbb71cb5656ce56b9aeae0d1a5fd9",
+        "pixels": [
+          1700,
+          1275
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Original archived directory’s images/code association uncertain; LSD and broken axis learned from source methods. Comparison shows upper panel should preserve legend/condition context; check ggbreak layer transfer."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-098",
+      "source_title": "分组-柱形图+方差分析+Dunnett",
+      "source_url": "https://mp.weixin.qq.com/s/tV64PBExIW8E_pSXzaG2EA",
+      "source_code": {
+        "count": 3,
+        "packages": [
+          "DescTools",
+          "broom",
+          "car",
+          "ggbreak",
+          "ggprism",
+          "ggpubr",
+          "readxl",
+          "reshape2",
+          "rstatix",
+          "tidyverse"
+        ],
+        "combined_sha256": "aeecd44b2d664c83d334f596485b2edc73c128deb0b0611c37fd9771b186eac5"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-098.png",
+        "sha256": "7f74cb01ea081234ea4074aa5f3e0cf035faa435c92a5492fad050e5b1dd70ea",
+        "pixels": [
+          800,
+          488
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-098.csv",
+        "plot_data_sha256": "edaa8561d7cc260e60a50d64e6b8d06a75968840539f68c721fc8a362360e87a",
+        "statistics": "results/learning_validation/tables/SCICASE-098_statistics.csv",
+        "statistics_sha256": "868b2f6ad74be7a90b9580abdd80837b2936f8d08187d90191779aca4b32a31f",
+        "png": "results/learning_validation/figures/SCICASE-098.png",
+        "png_sha256": "9d862af4a78629e44648cf8344ca59c13679ca02af276962b387c45ac73b3b78",
+        "pixels": [
+          1984,
+          1210
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Dunnett must compare each treatment only to DMSO within variant; vertical p labels make original dense, new chart retains this pattern."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-099",
+      "source_title": "分组-堆积柱形图",
+      "source_url": "https://mp.weixin.qq.com/s/sAUdbGpTR4TvReQu-a1DkA",
+      "source_code": {
+        "count": 4,
+        "packages": [
+          "readxl",
+          "tidyverse"
+        ],
+        "combined_sha256": "042dd19a880d2775549331aadf41e02b6df2fb29e3a153fad8fd37fe530d2a6d"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-099.png",
+        "sha256": "9d02aac3bf6d2f6da4048de7840f3e3085f9fb03923bafd6df29e94a2265f426",
+        "pixels": [
+          800,
+          376
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-099.csv",
+        "plot_data_sha256": "fcdcc66c84f8477b0bb5ac1a69d136464dbdf5e8c755280eff1e44b0c0a08dda",
+        "statistics": null,
+        "statistics_sha256": null,
+        "png": "results/learning_validation/figures/SCICASE-099.png",
+        "png_sha256": "b70d80dd95940aebd720dac5c2f7c86feb4a332296fd3b8516c7959d6a2def42",
+        "pixels": [
+          2173,
+          1021
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "18 bars in 6 time blocks x 3 conditions; replicate-level cumulative boundary uncertainty. Right legend too crowded in current export."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-100",
+      "source_title": "分面-堆积柱形图",
+      "source_url": "https://mp.weixin.qq.com/s/sAUdbGpTR4TvReQu-a1DkA",
+      "source_code": {
+        "count": 4,
+        "packages": [
+          "readxl",
+          "reshape2",
+          "tidyverse"
+        ],
+        "combined_sha256": "cbf8edec6db8abb98d921c4697eff029318daf72b5223173af5c44087bc9826d"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-100.png",
+        "sha256": "fb0eb112ab6a60d1617c924d88c75f9595b9823920d53e9109f24faf3f405703",
+        "pixels": [
+          800,
+          685
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-100.csv",
+        "plot_data_sha256": "03028d6a13be36625e2ac949fc9b33a923bc4f8cd79821ee389259800d766bb3",
+        "statistics": "results/learning_validation/tables/SCICASE-100_statistics.csv",
+        "statistics_sha256": "0963e99b5ab9e517531f10c3beb414ab304043b2e0b8bf84ef7102144a40ad91",
+        "png": "results/learning_validation/figures/SCICASE-100.png",
+        "png_sha256": "715e753f66c405b477fba072e231dde76586fcd5722825984d39f70ec4ab70e0",
+        "pixels": [
+          1700,
+          1456
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Two facets should have clear B6-low/B6-high strip hierarchy; current strips visually weaker than reference."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-115",
+      "source_title": "箱线图+渐变背景",
+      "source_url": "https://mp.weixin.qq.com/s/JNQ4iubLlNE8JMDEsdXvzA",
+      "source_code": {
+        "count": 3,
+        "packages": [
+          "ggplot2",
+          "ggsignif",
+          "ggtext",
+          "grid",
+          "patchwork",
+          "stringr"
+        ],
+        "combined_sha256": "8950e9c52a5cb2db5709f5eb70e46b036b3a4d01f23b39ba67b66c15fe85f73a"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-115.png",
+        "sha256": "93ba5511a7876352a30bf627dfca0a678ad4059340b8cf105b37ddecd912406c",
+        "pixels": [
+          800,
+          492
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-115.csv",
+        "plot_data_sha256": "a0dd1f2f11e42ce7479185a0c3f72c3d107e6c472f8df1b537df174a24238c81",
+        "statistics": "results/learning_validation/tables/SCICASE-115_statistics.csv",
+        "statistics_sha256": "257d64cd022456b3b25eab35facc2aaeee071519d81fd7e19542f13126eabdd0",
+        "png": "results/learning_validation/figures/SCICASE-115.png",
+        "png_sha256": "291b3cc790e14714de2edba359d19dd1520e84972de305e0672084598d76154d",
+        "pixels": [
+          2078,
+          1278
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Reference has four boxplot panels but archived R files appear three violins; image geometry is authoritative and mismatch must remain explicit."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-120",
+      "source_title": "基础箱线图",
+      "source_url": "https://mp.weixin.qq.com/s/cPBBUA1QLryNnMS554uCqw",
+      "source_code": {
+        "count": 6,
+        "packages": [
+          "ggbeeswarm",
+          "ggpubr",
+          "readxl",
+          "tidyr",
+          "tidyverse"
+        ],
+        "combined_sha256": "e388ccaaef6074f310f99e16ac4a1959724b7c7265c0a3c017613f13368d47e6"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-120.png",
+        "sha256": "cf9b749191fa91512e77a70005e4fbed5657c6a621d76d9c09542cb3ce9d1a31",
+        "pixels": [
+          738,
+          800
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-120.csv",
+        "plot_data_sha256": "16138f28640ad1217a504af6c6fca53d5f4d6acc5b95f620e4f38444635c5dfe",
+        "statistics": "results/learning_validation/tables/SCICASE-120_statistics.csv",
+        "statistics_sha256": "d678b8b0ae939c970421c66c929f3eaa072af8cda3e8a27ea99e155f280a7c2a",
+        "png": "results/learning_validation/figures/SCICASE-120.png",
+        "png_sha256": "b05b28a4c1a58d2d0b7bc9606d8dffcc79ed436fd88c5d272e6b423ac24369ac",
+        "pixels": [
+          1700,
+          1843
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "11 groups and four brackets; new bracket placement differs in ordering/height from source; long labels and per-group summary labels need original-size review."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-123",
+      "source_title": "配对箱线图",
+      "source_url": "https://mp.weixin.qq.com/s/82Pmi41CjpUtQrm5Rvzezw",
+      "source_code": {
+        "count": 3,
+        "packages": [
+          "ggpubr",
+          "tidyverse"
+        ],
+        "combined_sha256": "63474ac6bb215dd6ae56401676287215f48907059a3b1129817ed627d8e8a6ac"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-123.png",
+        "sha256": "fae2b5926909bd3e4d5076d2b2c398f1bf0ee404b3b2584fa1c7abbe87551c56",
+        "pixels": [
+          640,
+          800
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-123.csv",
+        "plot_data_sha256": "808585f2870579ae046bb8a92032015d3ed6029a49976973c369a1064f741959",
+        "statistics": "results/learning_validation/tables/SCICASE-123_statistics.csv",
+        "statistics_sha256": "cb561deae6161943b7922b687fc5b487aba7ff3d57a7ed201917b73808ce559f",
+        "png": "results/learning_validation/figures/SCICASE-123.png",
+        "png_sha256": "53f88c457457c6c60890bfe7835010261de05b60abc3b6a9a5eba90ca27d94c9",
+        "pixels": [
+          1322,
+          1653
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Paired lines must join same ID; checked stable ID joins and offset reuse. Source topology retained."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-132",
+      "source_title": "分组气泡图+线性拟合",
+      "source_url": "https://mp.weixin.qq.com/s/KiDCwCBvTZaQ8cdUKB8NBw",
+      "source_code": {
+        "count": 9,
+        "packages": [
+          "RColorBrewer",
+          "ggplot2",
+          "ggpmisc",
+          "ggpubr",
+          "ggrepel",
+          "grid",
+          "patchwork",
+          "readxl",
+          "scales",
+          "tidyverse"
+        ],
+        "combined_sha256": "ec38258ba8224fa84a0b009e6b838eb8f730ff2b0b81f2e3635a4b49bcab9862"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-132.png",
+        "sha256": "5226394a07e6459a4b96ddeb213c74d3b5f9a285ac3b0cc897e1c29ba8c58400",
+        "pixels": [
+          711,
+          800
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-132.csv",
+        "plot_data_sha256": "1ca3490f40b76c5e06adceca2492d7db431a0dcee65009a31e8a0b52c6c6b2c6",
+        "statistics": "results/learning_validation/tables/SCICASE-132_statistics.csv",
+        "statistics_sha256": "2439ec6799a44c824787e6c4e6f0d1bb51444d9171696d62502a2ffc2255d210",
+        "png": "results/learning_validation/figures/SCICASE-132.png",
+        "png_sha256": "85a089ca09ba12465a975f6af1b2ba6d4d4b505a793ae9719dc2902a9c80762c",
+        "pixels": [
+          1700,
+          1913
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "2x2 panels with collected bottom legends and zero-intercept fits only in lower row; current coordinate/bubble balance is close but annotation/legend scale needs review."
+        ]
+      }
+    },
+    {
+      "case_id": "SCICASE-133",
+      "source_title": "散点图+线性拟合",
+      "source_url": "https://mp.weixin.qq.com/s/KiDCwCBvTZaQ8cdUKB8NBw",
+      "source_code": {
+        "count": 9,
+        "packages": [
+          "RColorBrewer",
+          "ggplot2",
+          "ggpmisc",
+          "ggpubr",
+          "ggrepel",
+          "grid",
+          "patchwork",
+          "readxl",
+          "scales",
+          "tidyverse"
+        ],
+        "combined_sha256": "9b5206449e3716aad2a9d2f52eebfd95b1dbcac6f586ce1606eb024d0808645d"
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-133.png",
+        "sha256": "8fc092087d3355e53662b708c8a392802b8cf4794b95b8c7bef859ff0cd20014",
+        "pixels": [
+          800,
+          742
+        ]
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_ten.R",
+        "mode": "source-exposed-new-implementation",
+        "uses_original_source_code": false,
+        "plot_data": "results/learning_validation/plot_data/SCICASE-133.csv",
+        "plot_data_sha256": "ca80a764a10e6fc34ee7c5c48703ebf5a0d9f64531ace018be3e0bfe4981c35b",
+        "statistics": "results/learning_validation/tables/SCICASE-133_statistics.csv",
+        "statistics_sha256": "40f5bec36b06baf1c48d08f722559548c9bba3ee8e87804457aea49eab96d3f8",
+        "png": "results/learning_validation/figures/SCICASE-133.png",
+        "png_sha256": "d924ea9c0ef7edba73805a35d69a7f148fc6af75425328cd7ce65e9fcc719bad",
+        "pixels": [
+          1700,
+          1577
+        ]
+      },
+      "review": {
+        "status": "needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "visual_dims": {
+          "family": "pass",
+          "panel_topology": "pass",
+          "required_structures": "needs-review",
+          "typography": "needs-revision",
+          "annotation": "needs-revision",
+          "information_density": "needs-revision"
+        },
+        "notes": [
+          "Directional rails and labels retained; several repelled labels remain denser than source. Signed r verified against cor.test."
+        ]
+      }
+    }
+  ]
+}

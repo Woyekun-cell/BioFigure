@@ -1,0 +1,30 @@
+pattern_id: GEN-PAN-CURVE-001
+version: '1.0'
+domain:
+- genomics
+- comparative-genomics
+scientific_task:
+- pangenome-accumulation
+message_type: accumulation
+data_contract:
+  required:
+  - subset_id
+  - n_genomes
+  - pan
+  - core
+  assumptions:
+  - source_units_preserved
+  - missing_not_zero
+geometry:
+  primary: time-series
+encoding:
+  color: declared_semantic_dictionary
+renderer_options:
+- ggplot2
+references:
+- atlas://ATLAS-TJ-TOMATO-F2-CURVE
+status: candidate
+validation:
+  scientific: source_audited
+  visual: candidate
+  benchmark: pending_user_acceptance

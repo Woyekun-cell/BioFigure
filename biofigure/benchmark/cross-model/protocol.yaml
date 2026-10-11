@@ -1,0 +1,205 @@
+schema_version: 1
+status: PROTOCOL_VALID_EXECUTION_BLOCKED
+source_exposure_status: template_only_missing_authentic_source_figure_and_author_code
+model_blind_ids:
+- blind-01
+- blind-02
+repeats_per_model_case: 3
+independent_session_per_repeat: true
+randomized_run_order: true
+blind_reviewers_minimum: 2
+review_dimensions:
+- scientific correctness
+- panel topology
+- information density
+- visual hierarchy
+- semantic color
+- source similarity
+scoring_rules:
+  dimension_scale: integer_1_to_5
+  dimension_median: pooled_independent_reviewer_scores
+  reviewer_run_score: arithmetic_mean_of_six_dimensions
+  interrater_agreement: linearly_weighted_cohen_kappa_on_rounded_reviewer_run_score
+  paired_model_difference: blind_01_minus_blind_02_on_case_and_repeat_matched_mean_reviewer_run_score
+  confidence_interval: normal_approximation_mean_plus_minus_1.96_standard_errors
+  defect_rate_denominator: runs_with_one_or_more_hard_visual_defects_divided_by_all_runs
+fixed_conditions:
+  skill_commit: UNSET_BEFORE_REAL_RUN
+  prompt_sha256: UNSET_BEFORE_REAL_RUN
+  package_lock_sha256: UNSET_BEFORE_REAL_RUN
+  toolset: UNSET_BEFORE_REAL_RUN
+  permission_profile: UNSET_BEFORE_REAL_RUN
+  reasoning_effort: MATCHED_LEVEL_PER_MODEL
+  cpu_limit: UNSET_BEFORE_REAL_RUN
+  wall_time_limit_seconds: 1800
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  seed_policy: case seed fixed
+acceptance_thresholds:
+  gate_receipt_consistency: 1.0
+  scientific_hard_errors: 0
+  missing_deliverables: 0
+  first_pass_rate_min: 0.8
+  median_each_dimension_min: 4
+  hard_visual_defect_rate_max: 0.05
+  mean_paired_difference_abs_max: 0.35
+  paired_difference_95ci_abs_max: 0.5
+  weighted_kappa_min: 0.7
+cases:
+- case_id: distribution-transfer
+  family: distribution
+  exposure: transfer
+  input_path: inputs/distribution.csv
+  input_sha256: aa9819f9381bd67d5e0fe596743c172753447d007a59cdfcf530d68760bb392c
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Compare an unpaired two-group distribution of continuous response values using a violin plot with overlaid box and raw points; preserve every independent replicate value.
+  data_semantics: CSV columns are group (categorical groups A/B) and value (continuous response in arbitrary units); each row is an independent unpaired biological replicate (n=2 per group); no repeated measures.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/distribution-derived-method-card.md
+    sha256: 4ca1fede346d563f752719c8d81998c74309ce092b2be7bc0ced03a7781bf9dc
+    role: derived-method-card
+  forbidden_materials:
+  - source figure
+  - author source code
+- case_id: distribution-source-exposed
+  family: distribution
+  exposure: source-exposed
+  input_path: inputs/distribution.csv
+  input_sha256: aa9819f9381bd67d5e0fe596743c172753447d007a59cdfcf530d68760bb392c
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Compare an unpaired two-group distribution of continuous response values using a violin plot with overlaid box and raw points; preserve every independent replicate value.
+  data_semantics: CSV columns are group (categorical groups A/B) and value (continuous response in arbitrary units); each row is an independent unpaired biological replicate (n=2 per group); no repeated measures.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/distribution-source-exposed.txt
+    sha256: 672e4e776634cf00bde5631068b2708e06e596a7b61bd92c39aaa44c706dd200
+    role: source-exposed-fixture
+  permitted_materials:
+  - source figure
+  - author source code
+- case_id: matrix-transfer
+  family: matrix
+  exposure: transfer
+  input_path: inputs/matrix.csv
+  input_sha256: 9c5c8fdb2d0159ced02d2be68ec62ddb60c63cae35414adf4b912bd6ec576e7f
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Render the supplied feature-by-sample matrix with a fixed, readable legend.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/matrix-derived-method-card.md
+    sha256: dc960b93d6b80411d80a12d93be93e0beff08b838cbe3d296716ec5f6b73ae76
+    role: derived-method-card
+  forbidden_materials:
+  - source figure
+  - author source code
+- case_id: matrix-source-exposed
+  family: matrix
+  exposure: source-exposed
+  input_path: inputs/matrix.csv
+  input_sha256: 9c5c8fdb2d0159ced02d2be68ec62ddb60c63cae35414adf4b912bd6ec576e7f
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Render the supplied feature-by-sample matrix with a fixed, readable legend.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/matrix-source-exposed.txt
+    sha256: 060e7b5402d03de9b6911349dc9e449ef61fd8faa257af578f3c5b20dc311369
+    role: source-exposed-fixture
+  permitted_materials:
+  - source figure
+  - author source code
+- case_id: composition-transfer
+  family: composition
+  exposure: transfer
+  input_path: inputs/composition.csv
+  input_sha256: 98233b9f47b150b4d208cc23e4a963b3ff6537f9737d42a4c480b968d7ed9889
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Show within-sample composition; state whether the input counts are normalized.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/composition-derived-method-card.md
+    sha256: a7596329f49193604ecf03615b3ba597670ae46f14f0d2dc03249d264b771d51
+    role: derived-method-card
+  forbidden_materials:
+  - source figure
+  - author source code
+- case_id: composition-source-exposed
+  family: composition
+  exposure: source-exposed
+  input_path: inputs/composition.csv
+  input_sha256: 98233b9f47b150b4d208cc23e4a963b3ff6537f9737d42a4c480b968d7ed9889
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Show within-sample composition; state whether the input counts are normalized.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/composition-source-exposed.txt
+    sha256: 08104ba2c474cd4c7a9b982a71059723a057fc3a78ba30bdb6910ba7ad93a486
+    role: source-exposed-fixture
+  permitted_materials:
+  - source figure
+  - author source code
+- case_id: topology-transfer
+  family: topology
+  exposure: transfer
+  input_path: inputs/topology.csv
+  input_sha256: 11ae179ce727b8a28703be398b1a18595aebb7fe2d2d2021f7759cd4f34da2c7
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Show directed relationships while preserving edge direction and weight.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/topology-derived-method-card.md
+    sha256: c9b04bc0c04f9b3972eb34d6b276b71fef0f10e8a9dbe42ffa5901b71d67c1ed
+    role: derived-method-card
+  forbidden_materials:
+  - source figure
+  - author source code
+- case_id: topology-source-exposed
+  family: topology
+  exposure: source-exposed
+  input_path: inputs/topology.csv
+  input_sha256: 11ae179ce727b8a28703be398b1a18595aebb7fe2d2d2021f7759cd4f34da2c7
+  seed: 20260926
+  canvas_mm:
+  - 180
+  - 120
+  dpi: 300
+  task: Show directed relationships while preserving edge direction and weight.
+  synthetic_smoke_only: true
+  available_materials:
+  - path: materials/topology-source-exposed.txt
+    sha256: d09481a681d1938b008aacbc959b7f0366b6080cd5b8ccfcf1415235bc1678db
+    role: source-exposed-fixture
+  permitted_materials:
+  - source figure
+  - author source code
+execution_ready: false

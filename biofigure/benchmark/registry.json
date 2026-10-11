@@ -2310,6 +2310,312 @@
         "transfer": null,
         "stress": null
       }
+    },
+    {
+      "case_id": "populus-fig2b-source-001",
+      "method_id": "POPULUS-FIG2B-SOURCE-001",
+      "source": "topjournal",
+      "label": "Populus Figure 2b: A/B compartment composition",
+      "bundles": {
+        "reproduction": "benchmark/evidence/populus-fig2b-source-001/bundle.json",
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "toomanycells-fig2-001",
+      "method_id": "TOOMANYCELLS-FIG2-STRUCTURAL-001",
+      "source": "topjournal",
+      "label": "TooManyCells Figure 2a/c/d/e: single-cell clade tree",
+      "bundles": {
+        "reproduction": "benchmark/evidence/toomanycells-fig2-001/bundle.json",
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "populus-synteny-edfig1a-001",
+      "method_id": "POPULUS-SYNTENY-EDFIG1A-STRUCTURAL-001",
+      "source": "topjournal",
+      "label": "Populus Extended Data Figure 1a: whole-genome synteny",
+      "bundles": {
+        "reproduction": "benchmark/evidence/populus-synteny-edfig1a-001/bundle.json",
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "populus-compartment-edfig1b-001",
+      "method_id": "POPULUS-COMPARTMENT-EDFIG1B-STRUCTURAL-001",
+      "source": "topjournal",
+      "label": "Populus Extended Data Figure 1b: circular A/B compartment tracks",
+      "bundles": {
+        "reproduction": "benchmark/evidence/populus-compartment-edfig1b-001/bundle.json",
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-han-foregut",
+      "source": "single-cell",
+      "label": "Han 前肠 foregut 单细胞 scRNA 轨迹 网络 热图 点阵 信号通路",
+      "source_manifest": "library/single-cell/han-foregut/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-wahle-retinal",
+      "source": "single-cell",
+      "label": "Wahle 视网膜 retinal 类器官 空间 多模态 multiome RNA ATAC 热图 小多图",
+      "source_manifest": "library/single-cell/wahle-retinal/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-hochgerner-dentate",
+      "source": "single-cell",
+      "label": "Hochgerner 齿状回 dentate 单细胞 MATLAB 固定坐标 网络 年龄 小多图 峰值排序 热图",
+      "source_manifest": "library/single-cell/hochgerner-dentate/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-trevino-cortex",
+      "source": "single-cell",
+      "label": "Trevino 皮层 cortex 单细胞 多组学 multiome RNA ATAC 拟时序 热图 基因组轨道",
+      "source_manifest": "library/single-cell/trevino-cortex/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-yu-interneuron",
+      "source": "single-cell",
+      "label": "Yu 胎脑 interneuron 单细胞 小提琴 热图 轨迹 拟时序 流向 Sankey",
+      "source_manifest": "library/single-cell/yu-interneuron/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-ma-primate-pfc",
+      "source": "single-cell",
+      "label": "Ma 灵长类 primate 跨物种 前额叶 环形 分轨 点阵 热图 流向 Sankey",
+      "source_manifest": "library/single-cell/ma-primate-pfc/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "single-cell-fleck-organoid",
+      "source": "single-cell",
+      "label": "Fleck 脑类器官 organoid regulome 单细胞 多组学 multiome RNA ATAC 跨模态 热图 调控网络 固定坐标 环形 调控树 扰动 基因组轨道",
+      "source_manifest": "library/single-cell/fleck-organoid/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      }
+    },
+    {
+      "case_id": "genomics-ape-t2t-2025",
+      "source": "genomics",
+      "label": "Yoo Nature 2025 ape T2T 基因组 泛基因组 染色体 共线性 倒位 重排 自比对 三角图 重复序列 相似度 着丝粒 甲基化 基因组轨道 窗口 分歧 SNV gap synteny inversion identity density",
+      "source_manifest": "library/genomics/ape-t2t/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "simulation_bundle": "benchmark/library/genomics/ape-t2t/bundle.json",
+      "validation_scope": "source-exposed selected structures; original high fidelity unverified; unexposed transfer and stress not run"
+    },
+    {
+      "case_id": "genomics-arabidopsis-27-2025",
+      "source": "genomics",
+      "label": "Igolkina Nature Genetics 2025 Arabidopsis 拟南芥 基因组 泛基因组 共线性 倒位 着丝粒 热图 π SV 频谱 TE 嵌套网络 增长 坐标 参考偏差 CNV 甲基化 ggnet rhdf5 Pannagram",
+      "source_manifest": "library/genomics/arabidopsis-27/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "simulation_bundle": "benchmark/library/genomics/arabidopsis-27/bundle.json",
+      "validation_scope": "source-exposed selected structures; original high fidelity unverified; unexposed transfer and stress not run"
+    },
+    {
+      "case_id": "genomics-barley-pantranscriptome-2025",
+      "source": "genomics",
+      "label": "Guo Nature Genetics 2025 barley 大麦 泛转录组 泛基因组 多组学 基因型 模块网络 社区 边束 netgraph Louvain WGCNA 热图 TOM 功能富集 TFBS 启动子 motif 版式 配色 PCA UMAP",
+      "source_manifest": "library/genomics/barley-pantranscriptome/data/metadata/source-manifest.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "simulation_bundle": "benchmark/library/genomics/barley-pantranscriptome/bundle.json",
+      "validation_scope": "source-exposed selected structures; original high fidelity unverified; unexposed transfer and stress not run"
+    },
+    {
+      "case_id": "genomics-rpe1-reference-2025",
+      "source": "genomics",
+      "label": "RPE1 全基因组 SNP密度 HDR HOR 核型 轨道 karyoploteR plotsr",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "simulation_bundle": "benchmark/library/genomics/rpe1-reference/bundle.json",
+      "validation_scope": "source-exposed selected structures; original high fidelity unverified; unexposed transfer and stress not run"
+    },
+    {
+      "case_id": "topfigure-086-7c777dfd",
+      "source": "topjournal",
+      "label": "跟着NC学作图 | 桑基气泡图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_manifest": "benchmark/library/topjournal/issue_086/manifest.json",
+      "status_boundary": "Fixed synthetic fixture rendered, visually reviewed and pixel-regression tested; original study and unexposed transfer not verified",
+      "simulation_bundle": "benchmark/library/topjournal/issue_086/simulation-bundle.json"
+    },
+    {
+      "case_id": "topfigure-089-2407a180",
+      "source": "topjournal",
+      "label": "跟着Cell学作图 | 双曲线火山图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_manifest": "benchmark/library/topjournal/issue_089/manifest.json",
+      "status_boundary": "Fixed synthetic fixture rendered, visually reviewed and pixel-regression tested; original study and unexposed transfer not verified",
+      "simulation_bundle": "benchmark/library/topjournal/issue_089/simulation-bundle.json"
+    },
+    {
+      "case_id": "topfigure-097-19dfbfef",
+      "source": "topjournal",
+      "label": "跟着Nature学作图 | 系统发育树+多轨道注释图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_manifest": "benchmark/library/topjournal/issue_097/manifest.json",
+      "status_boundary": "Fixed synthetic fixture rendered, visually reviewed and pixel-regression tested; original study and unexposed transfer not verified",
+      "simulation_bundle": "benchmark/library/topjournal/issue_097/simulation-bundle.json"
+    },
+    {
+      "case_id": "topfigure-098-23c7513b",
+      "source": "topjournal",
+      "label": "跟着Nature学作图 | 径向分类层级树+外圈热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_manifest": "benchmark/library/topjournal/issue_098/manifest.json",
+      "status_boundary": "Fixed synthetic fixture rendered, visually reviewed and pixel-regression tested; original study and unexposed transfer not verified",
+      "simulation_bundle": "benchmark/library/topjournal/issue_098/simulation-bundle.json"
+    },
+    {
+      "case_id": "genomics-cannabis-pangenome-2025",
+      "source": "genomics",
+      "label": "Cannabis 泛基因组 双单倍型共线性 CpG基因密度 ideogram logistic ribbon GENESPACE sex expression joint marginal histogram",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "learning_source": "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json",
+      "validation_scope": "Author-processed-data recolored selected Fig1a synteny/CpG/gene-count panel; bounded input QC, fresh rendering and final-size visual review. Whole original figure reproduction, new-input transfer and stress NOT_VERIFIED.",
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/cannabis-pangenome/evidence/bundle.json"
+    },
+    {
+      "case_id": "genomics-dpm-multiomics-2024",
+      "source": "genomics",
+      "label": "DPM 多组学 bulk RNA 蛋白组 DNA甲基化 方向约束 signed P 聚类热图 基因组学证据 气泡矩阵 Cytoscape 饼图网络",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "learning_source": "library/genomics/dpm-multiomics/data/metadata/source-manifest.json",
+      "validation_scope": "Author-processed-data recolored selected Fig5D heatmap; caption-guided Brown BH selection and source-code raw-P signed scoring, complete row clustering and final-size visual review. Published final FDR matrix/leaf order, whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/dpm-multiomics/bundle.json"
+    },
+    {
+      "case_id": "genomics-cannabis-busco-chr7-2025",
+      "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+      "source": "genomics",
+      "label": "Cannabis Fig4d：BUSCO锚定共线点线图、合酶位点三角、化学型分组",
+      "learning_source": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/evidence/bundle.json",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+    },
+    {
+      "case_id": "genomics-cannabis-public-chr7-2025",
+      "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+      "source": "genomics",
+      "label": "Cannabis 公共chr7：BUSCO多基因组点连线图、CBDAS定位路径",
+      "learning_source": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+    },
+    {
+      "case_id": "genomics-dpm-hoxa10-bubbles-2024",
+      "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+      "source": "genomics",
+      "label": "DPM Fig3F：双通路基因×OE/KD气泡矩阵、原始P及log2FC",
+      "learning_source": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+    },
+    {
+      "case_id": "genomics-dpm-hoxa10-network-2024",
+      "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+      "source": "genomics",
+      "label": "DPM Fig3E：225通路证据饼图网络、新overlap连边与布局",
+      "learning_source": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "author_processed_data_replot_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json",
+      "validation_scope": "Real author pathway attributes with declared new OC>=0.5 graph and seed3302024 layout. Original edges/coordinates/node-area map/manual themes NOT_VERIFIED; all225 nodes retained. Source study is not original network reproduction."
     }
   ]
 }

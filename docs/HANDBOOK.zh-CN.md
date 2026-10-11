@@ -1,4 +1,4 @@
-# BioFigure 3.5.1 中文完整手册
+# BioFigure 3.7.0 中文完整手册
 
 ## 1. 定位
 
@@ -6,7 +6,7 @@ BioFigure 是统一的生物科研图生产 Skill。目标是从研究问题生�
 
 ## 2. 启动与动态加载
 
-`biofigure/SKILL.md` 是短入口。每次调用先加载个人风格、渲染执行、参考质量、科学契约、立场和检查点，再由 `manifest.yaml` 按四维路由加载领域资料：主/次生物领域、主/次科学角色、唯一后端、交付目标。`scripts/route_figure.py` 返回模块清单和后端锁；返回清单不等于已经阅读模块。
+`biofigure/SKILL.md` 是短入口。每次新图、复现或修图先运行 `scripts/prepare_figure.py`，统一检索复现库、顶刊图谱、SciDraw、能力图谱与方法包，并生成哈希回执；Design Spec/CP2 必须绑定该回执和选中方法ID。随后 `manifest.yaml` 按四维路由加载领域资料：主/次生物领域、主/次科学角色、唯一后端、交付目标。候选命中不等于已读图或验证通过。
 
 领域包括转录/代谢/多组学、单细胞/空间、染色质、基因组与变异、系统树/共线性/基因家族、图像实验、机器学习、机制图和多面板。角色包括 QC、发现、比较、结构、机制、验证、预测及稳健性/模型评估。
 
@@ -24,7 +24,7 @@ BioFigure 是统一的生物科研图生产 Skill。目标是从研究问题生�
 
 ## 5. Figure Design Spec
 
-`schemas/figure-design-spec.schema.yaml` 要求在编码前锁定：任务与信息、数据和生物契约、后端与交付、候选及选中 Pattern、参考观察和拒绝项、视觉层级、编码、注释、图例、配色语义、Renderer、物理尺寸、各版面槽位、字体文件、允许文本、白底和检查计划。Spec 验证失败时不能进入绘图。
+`schemas/figure-design-spec.schema.yaml` 要求在编码前锁定：任务与信息、数据和生物契约、后端与交付、预检回执ID、选中方法案例及 Pattern、参考观察和拒绝项、视觉层级、编码、注释、图例、配色语义、Renderer、物理尺寸、各版面槽位、字体文件、允许文本、白底和检查计划。Spec 或 CP2 校验失败时不能进入绘图。
 
 ## 6. Renderer 与 Components
 

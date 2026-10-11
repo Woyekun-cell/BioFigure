@@ -1,0 +1,19 @@
+case_id: composition-transfer
+family: composition
+exposure: transfer
+input_path: inputs/composition.csv
+input_sha256: 98233b9f47b150b4d208cc23e4a963b3ff6537f9737d42a4c480b968d7ed9889
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Show within-sample composition; state whether the input counts are normalized.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/composition-derived-method-card.md
+  sha256: a7596329f49193604ecf03615b3ba597670ae46f14f0d2dc03249d264b771d51
+  role: derived-method-card
+forbidden_materials:
+- source figure
+- author source code

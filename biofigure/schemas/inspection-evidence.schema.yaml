@@ -1,0 +1,17 @@
+schema_version: "1.0"
+kind: artifact-bound-inspection-evidence
+required: [artifact_sha256, first_render_sha256, artifact_path, first_render_path, target_size, reviewer_type, reviewer_id, judgment, defect_coordinates, viewer_method, revision_count, final_size_checks]
+hash_fields: [artifact_sha256, first_render_sha256]
+target_size_required: [width_mm, height_mm]
+reviewer_type: [human, model, automated]
+viewer_method: [direct-open, contact-sheet-open]
+defect_coordinate_fields: [issue, x, y, unit]
+defect_coordinate_system: normalized canvas coordinates; x and y are finite numbers in the closed interval 0..1; unit must be normalized
+cross_model_binding: [run_id, blind_id, case_id, repeat, input_sha256, artifact_sha256]
+cross_model_review_records: list of {review_file: {path, sha256}, review: complete versioned review record}; cross-model validator requires unique reviewer IDs, exact count, and exact match to separately hashed reviewer files
+judgment: [PASS, REVISE, FAIL]
+revision_count: JSON integer >= 0; booleans are invalid even in runtimes where bool subclasses integer
+final_size_checks_required: [typography_size, typography_position, label_overlap, legend_overlap, clipping, panel_alignment, figure_text_proportion]
+final_size_check_record: {status: [PASS, FAIL], evidence: non_empty_string}
+final_size_pass_policy: visual PASS requires target_size_opened=true and every required check PASS; missing or failed checks block CP4 PASS
+trust_boundary: Human or model reviewer identity and judgment are required for visual PASS; automated checks alone cannot establish acceptance. Evidence binds authorization artifacts and input hashes as a workflow-consistency check, not a security boundary against deliberate forgery.

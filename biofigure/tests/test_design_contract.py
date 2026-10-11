@@ -1,4 +1,6 @@
 import importlib.util
+import hashlib
+import tempfile
 import unittest
 from pathlib import Path
 import yaml
@@ -7,6 +9,28 @@ s=importlib.util.spec_from_file_location('spec',root/'scripts/validate_design_sp
 m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
 schema=yaml.safe_load((root/'schemas/figure-design-spec.schema.yaml').read_text())
 class DesignTests(unittest.TestCase):
+ def test_project_style_contract_matches_registry(self):
+  registry={'schema_version':'1.0','project_id':'Project_021_顶刊配色审阅',
+   'palette':{'palette_id':'tol-muted-9','semantic_colors':{'Group A':'#CC6677','Group B':'#332288'}},
+   'typography':{'family':'Arial','size_roles_pt':{'axis_text':7,'axis_title':7,'legend_text':7,'strip_text':7,'annotation_text':6,'panel_label':8}},
+   'size_system':{'allowed_classes':['double-column']}}
+  with tempfile.TemporaryDirectory() as td:
+   path=Path(td)/'project-style.yaml'; path.write_text(yaml.safe_dump(registry,allow_unicode=True),encoding='utf-8')
+   sha=hashlib.sha256(path.read_bytes()).hexdigest()
+   doc={'project_style_contract':{'registry_path':str(path),'registry_sha256':sha,
+       'project_id':registry['project_id'],'palette_id':'tol-muted-9',
+       'semantic_colors':registry['palette']['semantic_colors'],'reuse_policy':'exact_semantic_mapping',
+       'exception_basis':''},
+      'font_contract':{'family':'Arial','resolved_font_file':'runtime_systemfonts_path','fallback_policy':'verified_Arial_only','warning_policy':'fail','all_layers_inherit_policy':'fail_if_any_layer_unverified','rendered_face_check':'png_visual_plus_metadata','minimum_final_text_pt':5,'size_basis':'final_output_size','size_roles_pt':registry['typography']['size_roles_pt']},
+      'output_size':{'width_mm':180,'height_mm':120,'formats':['png'],'size_class':'double-column','size_basis':'final_physical_output','size_rationale':{'panel_count':1,'density':'low','longest_label_chars':1,'recommended_class':'single-column','selection_reason':'project consistency audit','override_basis':'user requested overview'}}}
+   errors=m.validate(doc,schema,spec_path=path.parent/'design-spec.yaml')
+   self.assertFalse(any(e.startswith('project_style_contract') for e in errors))
+   doc['project_style_contract']['palette_id']='wrong'
+   errors=m.validate(doc,schema,spec_path=path.parent/'design-spec.yaml')
+   self.assertIn('project_style_contract.palette_id differs from project style registry',errors)
+ def test_project_style_contract_is_required(self):
+  errors=m.validate({},schema)
+  self.assertIn('missing required key: project_style_contract',errors)
  def reference_analysis(self):
   return {
    'figure_family':'multi-track circular heatmap',
@@ -46,4 +70,68 @@ class DesignTests(unittest.TestCase):
  def test_reference_analysis_contract_accepts_complete_decomposition(self):
   errors=m.validate({'reference_analysis':self.reference_analysis()},schema)
   self.assertFalse(any(error.startswith('reference_analysis') or error.startswith('duplicate reference_analysis') for error in errors))
+ def test_inside_top_legend_is_a_supported_layout_choice(self):
+  errors=m.validate({'legend':{'place':'inside_top','shared':True},'layout_contract':{'data_bbox':'x 17-87 mm; y 21-44 mm','legend_bbox':'x 22-79 mm; y 46-49 mm'}},schema)
+  self.assertNotIn('legend.place must reserve space outside dense data or use direct labels',errors)
+ def test_unknown_legend_position_is_rejected(self):
+  errors=m.validate({'legend':{'place':'arbitrary','shared':True}},schema)
+  self.assertIn('legend.place must use a supported reserved or direct-label location',errors)
+ def test_font_contract_requires_final_size_roles_and_hierarchy(self):
+  font={'family':'Arial','resolved_font_file':'runtime_systemfonts_path',
+        'fallback_policy':'fail','warning_policy':'fail',
+        'all_layers_inherit_policy':'fail_if_any_layer_unverified',
+        'rendered_face_check':'png_visual_plus_vector_metadata'}
+  errors=m.validate({'font_contract':font},schema)
+  self.assertTrue(any('font_contract.size_roles_pt is required' in e for e in errors))
+  font.update({'minimum_final_text_pt':5,'size_basis':'final_output_size',
+               'size_roles_pt':{'axis_text':4.5,'axis_title':7,'legend_text':6,
+                                'strip_text':7,'annotation_text':6,'panel_label':8}})
+  errors=m.validate({'font_contract':font},schema)
+  self.assertTrue(any('below minimum_final_text_pt' in e for e in errors))
+  font['size_roles_pt']['axis_text']=7.5
+  font['size_roles_pt']['axis_title']=7
+  errors=m.validate({'font_contract':font},schema)
+  self.assertTrue(any('axis_title must be at least axis_text' in e for e in errors))
+ def test_output_size_rejects_oversized_canvas_for_declared_column_class(self):
+  size={'width_mm':183,'height_mm':120,'formats':['png'],
+        'size_class':'single-column','size_basis':'final_physical_output',
+        'size_rationale':{'panel_count':1,'density':'low','longest_label_chars':9,
+                          'recommended_class':'single-column','selection_reason':'one simple panel',
+                          'override_basis':''}}
+  errors=m.validate({'output_size':size,'reference_analysis':self.reference_analysis(),
+                     'text_contract':{'allowed_text':['Cell type'],'allow_headings':False}},schema)
+  self.assertTrue(any('single-column width must be 89..90 mm' in e for e in errors))
+ def test_output_size_class_is_derived_from_panel_density(self):
+  analysis=self.reference_analysis()
+  analysis['panels']=[{'id':f'p{i}','role':'evidence','position':f'cell {i}'} for i in range(4)]
+  size={'width_mm':90,'height_mm':75,'formats':['png'],
+        'size_class':'single-column','size_basis':'final_physical_output',
+        'size_rationale':{'panel_count':4,'density':'high','longest_label_chars':9,
+                          'recommended_class':'single-column','selection_reason':'four panels',
+                          'override_basis':''}}
+  errors=m.validate({'output_size':size,'reference_analysis':analysis,
+                     'text_contract':{'allowed_text':['Cell type'],'allow_headings':False}},schema)
+  self.assertTrue(any('recommended_class must be double-column' in e for e in errors))
+ def test_output_size_accepts_nature_double_column_contract(self):
+  analysis=self.reference_analysis()
+  analysis['panels']=[{'id':f'p{i}','role':'evidence','position':f'cell {i}'} for i in range(4)]
+  size={'width_mm':183,'height_mm':120,'formats':['png'],
+        'size_class':'double-column','size_basis':'final_physical_output',
+        'size_rationale':{'panel_count':4,'density':'high','longest_label_chars':9,
+                          'recommended_class':'double-column','selection_reason':'dense four-panel figure',
+                          'override_basis':''}}
+  errors=m.validate({'output_size':size,'reference_analysis':analysis,
+                     'text_contract':{'allowed_text':['Cell type'],'allow_headings':False}},schema)
+  self.assertFalse(any(e.startswith('output_size.') for e in errors))
+ def test_two_low_density_panels_may_remain_single_column(self):
+  analysis=self.reference_analysis()
+  analysis['panels']=[{'id':f'p{i}','role':'evidence','position':f'row {i}'} for i in range(2)]
+  size={'width_mm':90,'height_mm':120,'formats':['png'],
+        'size_class':'single-column','size_basis':'final_physical_output',
+        'size_rationale':{'panel_count':2,'density':'low','longest_label_chars':9,
+                          'recommended_class':'single-column','selection_reason':'two sparse aligned panels',
+                          'override_basis':''}}
+  errors=m.validate({'output_size':size,'reference_analysis':analysis,
+                     'text_contract':{'allowed_text':['Cell type'],'allow_headings':False}},schema)
+  self.assertFalse(any('recommended_class' in e or 'size_class must equal' in e for e in errors))
 if __name__=='__main__':unittest.main()

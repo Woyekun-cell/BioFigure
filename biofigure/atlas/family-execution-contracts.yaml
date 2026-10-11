@@ -76,6 +76,13 @@ families:
     mandatory_layers: [survival_curve, censor_marks, confidence_interval, aligned_risk_table]
     failure_conditions: [risk_table_misaligned, missing_censoring, undefined_time_origin]
 subtypes:
+  stacked-bar-composition:
+    aliases: [100% stacked bar, 100 percent stacked bar, percentage stacked bar, stacked composition bar, 百分比堆积柱状图, 比例堆积柱状图, 堆积柱状图]
+    required_fields: [group, category, value]
+    preferred_packages: [ggplot2]
+    mandatory_layers: [composition_closure_check, stable_category_order, complete_legend]
+    failure_conditions: [wrong_denominator, composition_not_closed, arbitrary_stack_order, missing_category]
+    normalization_rules: [counts_require_within_group_fill, closed_proportions_preserve_values_with_stack]
   ternary:
     aliases: [三元, ternary, ggtern]
     required_fields: [component_t, component_l, component_r, group]

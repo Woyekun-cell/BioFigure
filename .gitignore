@@ -10,3 +10,8 @@ reproductions/
 01_全局复利与踩坑日志.md
 docs/assets/gallery/sessionInfo-*.txt
 work/
+/biofigure/benchmark/evidence/
+# Local reference archives and audit snapshots retain source/licensing evidence.
+/biofigure/library/
+/biofigure/benchmark/library/
+/results/full_library_audit/

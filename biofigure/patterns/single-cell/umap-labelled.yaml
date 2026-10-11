@@ -1,24 +1,24 @@
 pattern_id: SC-UMAP-001
-version: "2.0"
+version: "2.1"
 domain: [single-cell]
 scientific_task: [cell-embedding-structure]
 message_type: neighborhood-embedding-structure
-data_contract: {required: [umap1, umap2, cell_id, group], optional: [sample_id, cell_type, condition], assumptions: [embedding_parameters_recorded, assay_and_integration_state_declared]}
+data_contract: {required: [umap1, umap2, cell_id, group], optional: [sample_id, cell_type, condition, continuous_feature, binary_status, feature_matrix], assumptions: [embedding_parameters_recorded, assay_and_integration_state_declared]}
 applicable_when: {data_profile: {n_observations: 50-2000000, n_groups: 1-80}, message: cell_embedding_structure}
 not_recommended_when: [coordinates_modified_for_appearance, cell_level_inference_claim, sample_identity_missing_for_condition_claim]
 visual_hierarchy: {primary: embedding_structure, secondary: group_identity, tertiary: selected_direct_labels}
-geometry: {primary: scatter, secondary: optional_density_layer}
-encoding: {x: UMAP1, y: UMAP2, color: group, draw_order: rare_groups_last}
+geometry: {primary: scatter, secondary: [optional_density_layer, shared-coordinate-small-multiples]}
+encoding: {x: UMAP1, y: UMAP2, categorical_color: fixed_discrete_palette, continuous_color: sequential_scale, signed_continuous_color: zero_centered_diverging_scale, binary_color: explicit_two_class_palette, draw_order: rare_or_high_signal_last}
 layout: {aspect_ratio: "1", density_strategy: point_size_alpha_and_rasterization_by_cell_count, whitespace_strategy: external_legend_reserve}
 annotation_strategy: [direct_group_labels_when_stable, sample_level_n_in_caption]
-legend_strategy: {compact: true, place: outside_plot_or_direct}
+legend_strategy: {compact: true, place: outside_plot_or_direct, shared_for_identical_scales: true, no_overlap: true}
 color_semantics: {groups: semantic_dictionary, rare_groups: preserved_by_draw_order}
 optional_components: [density-layer, rare-last, direct-labels]
-avoid: [axis_variance_interpretation, confidence_ellipse_as_test, legend_inside_dense_data, decorative_title]
+avoid: [axis_variance_interpretation, confidence_ellipse_as_test, legend_inside_dense_data, decorative_title, recomputing_coordinates_per_panel, variable_type_palette_mismatch, nested_small_multiple_tag_drift]
 scientific_risks: [embedding_parameter_sensitivity, overplotting, pseudoreplication, integration_artifact]
 renderer_options: [ggplot2, scanpy, matplotlib]
 references: [source-index://scanpy, source-index://signac, atlas://ATLAS-TJ-ARCHR-F3, atlas://ATLAS-TJ-HCL-F2]
-provenance: {created_from: [source-index://scanpy, source-index://signac], reviewed_by: null, reviewed_at: null}
+provenance: {created_from: [source-index://scanpy, source-index://signac, pmcid://PMC10548551/figure-6], reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-26}
 confidence: medium
-validation: {scientific: candidate, visual: candidate, benchmark: actual_artifact_required}
+validation: {scientific: source-reviewed, visual: final-size-reviewed, benchmark: source-exposed-structural-reproduction}
 status: candidate

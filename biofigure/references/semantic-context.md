@@ -31,3 +31,5 @@ python3 scripts/profile_figure_data.py data.csv --group condition --unit subject
 确认后将科学角色、领域、图型和字段传入既有route、Pattern检索与方法合同；科学前提不得被审美或案例匹配分数覆盖。数据、目的、配对或变换改变时重做受影响决策。
 
 来源与边界见 [参考依据](semantic-sources.md)。
+
+请求统计推断时，同时按 [统计流程](statistics-workflow.md)确认主效应、交互、简单效应、对照/全部比较等意向；选对图型不代表已选对检验。

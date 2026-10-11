@@ -4,9 +4,9 @@
 
 - CP0 科学意图：仅当关键科学语义冲突、缺失或涉及不可逆解释选择时，问一个简短问题并 `STOP`。可逆排版、配色与设备选择由 Skill 处理。
 - CP1 科学契约：核对样本映射、实验单位、尺度/变换、统计与坐标。不能证实时停止渲染，不补造。
-- CP2 设计锁定：Pattern、Design Spec、Renderer、data/annotation/legend/label 槽位和当前语料哈希绑定的1–5条相关复现案例检索凭证全部有效后才写绘图代码。
-- CP3 成图检查：生成 PNG 后实际打开；记录精确 SHA-256、查看方式和目标尺寸。重叠、裁切、缺字、字体替代、图例侵入或非白底均 `REVISE`，对象级修复后重画。
-- CP4 交付：Critic逐项有实际证据、QA、格式与哈希均通过才 PASS；模拟状态必须声明。失败时只交诊断，禁止声称发表级完成。
+- CP2 设计锁定：读图门未过不得写绘图代码。Pattern、Design Spec、Renderer、data/annotation/legend/label 槽位、`preparation_id`、`selected_method_case_id`、原始预检回执和 `reference_method_receipt` 全部有效后才放行。CP2核对回执哈希、任务、领域、后端与确定性选中案例；新图型没有可用先例、但论文原图/作者代码/对应输入已锁定时，可用带文件哈希与逐panel映射的 `primary-source-lock`。它只证明当前任务源链已锁定，不算既有能力先例或盲测。
+- CP3 成图检查：生成 PNG 后实际打开；记录精确 SHA-256、查看方式和目标尺寸。小字、文字错位、标签/图例重叠、面板错位、裁切、缺字、字体替代或非白底均 `REVISE`，对象级修复后重画。
+- CP4 交付：Critic、QA、格式与哈希均通过才 PASS；`final_size_checks`须在最终尺寸记录字体大小、文字位置、标签/图例重叠、裁切、面板对齐和图文比例。大画布小字、缺项或任一FAIL均不得视觉PASS；模拟状态必须声明。
 
 运行：`python3 scripts/validate_checkpoints.py checkpoint-ledger.yaml`；依赖 Python 3 与 PyYAML。验证器检查顺序、非空证据、字体回退、成图及交付物哈希；它不替代当前任务实际看图。
 

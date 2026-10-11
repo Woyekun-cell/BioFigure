@@ -333,7 +333,7 @@
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/genome-gallery/chromosome-distribution.png",
         "Project_001_生物科研绘图Skill/work/github-refresh/genome-run/results/figures/genome_distribution_independent.png",
-        "Project_017_基因组分布图验证/results/figures/genome_distribution_independent.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/core-examples/figures/genome_distribution_independent.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -376,7 +376,7 @@
       "pixel_sha256": "3728be8f95f1e232055c62755bfa96df61e059329e568fecdbb98a9fd714f856",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_073_issue065_ternary_groups.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_073_issue065_ternary_groups.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -397,7 +397,7 @@
       "pixel_sha256": "b2b3d5dbf1706cf23e078df79d6efdc018a2e5308525d6e17246a67e0019ceb3",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_076_issue067_circlize_rainbow_heatmap.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_076_issue067_circlize_rainbow_heatmap.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_076_issue067_circlize_rainbow_heatmap.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -418,7 +418,7 @@
       "pixel_sha256": "da2790f9ea52f92c29e5470c40796b2c477b51a64dfd827875ee1e0178c919ca",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_077_issue068_clinical_heatmap.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_077_issue068_clinical_heatmap.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_077_issue068_clinical_heatmap.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -439,7 +439,7 @@
       "pixel_sha256": "5e601d647beca476003a2e83ba9e844310651d72815f2d8464c7c307e62aeebc",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_081_issue070_annotated_swimmer.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_081_issue070_annotated_swimmer.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_081_issue070_annotated_swimmer.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -460,7 +460,7 @@
       "pixel_sha256": "06988cd83683075a36344b8bb3b9e06f45ae200d151bee982a14a644affae30e",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_083_issue072_nested_piedonut.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_083_issue072_nested_piedonut.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -481,7 +481,7 @@
       "pixel_sha256": "cba07666d46183202f2814e077fbe9bb5231b82262c5b621cdf88223a6cb052b",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_086_issue074_petal_network.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_086_issue074_petal_network.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_086_issue074_petal_network.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -502,7 +502,7 @@
       "pixel_sha256": "6831f1586cc9003da95ea3c4db5fb9a335e432c33f43ea79502e13f77b9d1c5f",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/reproduction-gallery/figure_090_issue080_flow_map.png",
-        "Project_015_BioFigure全量复现验证/results/figures/figure_090_issue080_flow_map.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_090_issue080_flow_map.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -523,7 +523,7 @@
       "pixel_sha256": "09c7feac9bea61095f8d743feaa77728a9ee0173d4ce4bfc057d90534e61b3f0",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/01_pcoa_marginal.png",
-        "Project_008_SciDraw六图复现/results/figures/01_pcoa_marginal.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/01_pcoa_marginal.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -544,7 +544,7 @@
       "pixel_sha256": "12b1a9dcc3d4ac410028b75327ef0805f6d6da280699e7537d692aa582a42780",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/05_chord_outer_track.png",
-        "Project_008_SciDraw六图复现/results/figures/05_chord_outer_track.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/05_chord_outer_track.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -565,7 +565,7 @@
       "pixel_sha256": "fba03b5d0787a986764e575993b6d867d4a5752e22f07e5d192b1f799d328b36",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/06_volcano_gsea.png",
-        "Project_008_SciDraw六图复现/results/figures/06_volcano_gsea.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/06_volcano_gsea.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -586,7 +586,7 @@
       "pixel_sha256": "15893916bb90993e93d28bfc8074ac21b4c486843c915bbddeee735f6082cfe5",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery/scidraw_rcs.png",
-        "Project_007_SciDraw复现训练/results/figures/scidraw_rcs.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/scidraw_rcs.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -607,7 +607,7 @@
       "pixel_sha256": "de467f994d9959898df2e94876259fb9df454c0513cf3365245caac57981acc9",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/07_violin_box_beeswarm.png",
-        "Project_016_SciDraw第二批20图/results/figures/07_violin_box_beeswarm.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/07_violin_box_beeswarm.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -628,7 +628,7 @@
       "pixel_sha256": "cb15a028ba0a2b33fdbcc05fd7eb8527bd4f84845ad88c4b3a5b033a556db7fc",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/09_grouped_raincloud_gghalves.png",
-        "Project_016_SciDraw第二批20图/results/figures/09_grouped_raincloud_gghalves.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/09_grouped_raincloud_gghalves.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -649,7 +649,7 @@
       "pixel_sha256": "18d42bf71151f8655ae15ccf60ce96dccd6469e7a9b45d9abf14a94a8f8d1afe",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/11_fit_marginal_residual_box.png",
-        "Project_016_SciDraw第二批20图/results/figures/11_fit_marginal_residual_box.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/11_fit_marginal_residual_box.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -670,7 +670,7 @@
       "pixel_sha256": "299a5a66edb8b7ea40426e37a25e8e94bdbeabf2fa679891dbf4f2716f2cc30a",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/15_faceted_correlation_bubbles.png",
-        "Project_016_SciDraw第二批20图/results/figures/15_faceted_correlation_bubbles.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/15_faceted_correlation_bubbles.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -691,7 +691,7 @@
       "pixel_sha256": "39e28ad70c68814d616fc7784872c8ad3512bac180bdb8c695c4d5cdf8420be7",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png",
-        "Project_016_SciDraw第二批20图/results/figures/18_linket_correlation_network.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/18_linket_correlation_network.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -712,7 +712,7 @@
       "pixel_sha256": "2de31acf8f65a32cfcad19ea2f7a5861c71c2503883ef31b15c4d17b81de11bc",
       "origin_paths": [
         "Project_001_生物科研绘图Skill/docs/assets/scidraw-gallery-batch2/19_density_matrix_rainbow.png",
-        "Project_016_SciDraw第二批20图/results/figures/19_density_matrix_rainbow.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/19_density_matrix_rainbow.png"
       ],
       "collection": "existing-gallery",
       "data_origin": "simulated",
@@ -1207,7 +1207,7 @@
       "sha256": "ef3141028b44e40f4fe1bde8bfab5654cca15ccfa406b1a7f66cd63e1b6bcad8",
       "pixel_sha256": "0210cf3f5791ec445f642579f82ede9d945462ee863d8078f86533557f6c69f6",
       "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/01_assembly_annotation_overview.png"
+        "Project_001_生物科研绘图Skill/docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png"
       ],
       "collection": "comparative-genomics",
       "data_origin": "public-data",
@@ -1227,7 +1227,7 @@
       "sha256": "adfd2a62757ee9b8813d8cce0cd87dd23d23e86389573b47bda8deaf3effd76d",
       "pixel_sha256": "df92d76c43f2b5d5b4902fdc4188778945e6ced864d213e718f9f163606a542d",
       "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/02_chromosome_gene_density.png"
+        "Project_001_生物科研绘图Skill/docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png"
       ],
       "collection": "comparative-genomics",
       "data_origin": "public-data",
@@ -1247,7 +1247,7 @@
       "sha256": "d3c5b5469a9d8dcdb09b9f560bd5bcc82c1030e4d8c2d934c56634b5f793dd71",
       "pixel_sha256": "33e83660d4a182704172308d2e800bdc0b3160bc486ff2b2c390fab523d2e927",
       "origin_paths": [
-        "Project_004_Darwin比较基因组完整度评估/figures/04_representative_gene_models.png"
+        "Project_001_生物科研绘图Skill/docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png"
       ],
       "collection": "comparative-genomics",
       "data_origin": "public-data",
@@ -1267,7 +1267,7 @@
       "sha256": "85607f794b1f8418f02383e35ebab42c1633c7242beb95116fc0918c775f620b",
       "pixel_sha256": "0aa4fb102b848760c9e835c7b748272d6a22f59bad5d0a423cd8139bcc83ec78",
       "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue025_upset.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/issue025_upset.png"
       ],
       "collection": "topjournal-early",
       "data_origin": "simulated",
@@ -1287,7 +1287,7 @@
       "sha256": "02ae17e581d31c86d8277ab264b145b6863f9f565baf4e2bc1b6d9eb7f3d5833",
       "pixel_sha256": "9b55831e15c9859ba9d99820c2ed1e9814c10530d65f1eb8d2355f473b65c505",
       "origin_paths": [
-        "Project_006_顶刊绘图复现训练/results/figures/issue059_cluster_heatmap.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/issue059_cluster_heatmap.png"
       ],
       "collection": "topjournal-early",
       "data_origin": "simulated",
@@ -1307,7 +1307,7 @@
       "sha256": "833a41bb0cf8895cdee885422f48a8facdb62cc237efc01e0d7f0701d760ba50",
       "pixel_sha256": "17cc07c656baeff3e71939e8f89d7e1c521a208b62b507b0b4cb0fe0756209f8",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_055_cluster_network_code_driven.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_055_cluster_network_code_driven.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1327,7 +1327,7 @@
       "sha256": "e3d0e27c7502e8fbe885bc70e8a1602641849858be137f20e866ca534a9ae97f",
       "pixel_sha256": "63140eb4526480383abd8e853d7559c94343d6b5c0330d4f891f072b5e3acd2a",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_059_spider_code_driven.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_059_spider_code_driven.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1347,7 +1347,7 @@
       "sha256": "8d066b073b72ec9b9cf2878efb0d9e43c66a3b60b05729d087555c5c09ec7207",
       "pixel_sha256": "a650d3b6acb45874b54a54983f0b341282466f332e3fb8480ee45e3eade378ac",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_062_ggbreak_stacked_code_driven.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_062_ggbreak_stacked_code_driven.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1367,7 +1367,7 @@
       "sha256": "399f073c3b15c9a75dbefc8a15c9c0bc231025cb6ebbb80b12e6fdf687ebb66a",
       "pixel_sha256": "ec7bceaf7e1e7762baeca8ec108530d181ff5fb06bdc77d91397c8d283e82a31",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_067_weighted_voronoi_code_driven.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_067_weighted_voronoi_code_driven.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1387,7 +1387,7 @@
       "sha256": "f052250c55e3af87df04c0c3269c47e5f261aa7f4a341a22a2b5a798752f2018",
       "pixel_sha256": "e5ceba4e1c5bd17b63ad85733184097ec229b777f78d349b1530a8d19d982e30",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_068_dcurves_code_driven.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_068_dcurves_code_driven.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1407,7 +1407,7 @@
       "sha256": "01b2ec67e9fb331186dc46aaf119385519c4ff19e010fdc1f0463877d32f52de",
       "pixel_sha256": "6b1da0356d4d640e395a926b4b78f9e4cc8b2c4a8df76b931c11346c3fa6e978",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_082_issue071_sunburst.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_082_issue071_sunburst.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1427,7 +1427,7 @@
       "sha256": "581f530c365edca58873333b00902a66b9f1ceac842a4adbed34c5e6f6d1ba68",
       "pixel_sha256": "f72164f613653f4aa7dae4e7c5788654374df053d6c55509a81b77c0ba81eb52",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_085_issue073_spline_petals.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_085_issue073_spline_petals.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1447,7 +1447,7 @@
       "sha256": "3654b56ea7d81b82625367b1773b8f4720618cbecb794b9fcbe0e6ed316f93f3",
       "pixel_sha256": "80cd57a53b46ac92ca7d104748fd9a45379a28f457ed3332ad495d309554c536",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/figure_089_issue079_streamgraph.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/figure_089_issue079_streamgraph.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1467,7 +1467,7 @@
       "sha256": "54e753daca3137be3167b28dd47ff2986e4093796dc4202a79ce4804b38b7a82",
       "pixel_sha256": "f791f356af6348f154514ce54414503e5ff2ed5576e3a447a4c50fb3056b9c2b",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_41_inset_scatter.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_41_inset_scatter.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1487,7 +1487,7 @@
       "sha256": "e9df418964f00f36bccaaf099163ed30a46304097d6368d25dab4e3f33395718",
       "pixel_sha256": "b6a1adbd3d44bb0780a3d4425a3f286a7109192f5b8c625ecc1af113440c2e94",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_43_subgroup_forest.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_43_subgroup_forest.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1507,7 +1507,7 @@
       "sha256": "e903d403eb54e4febcc266828f31aa61d6aa4592fcbe159870354594e085665f",
       "pixel_sha256": "78a8fd9a5e4fe9bcf4f2ae01d441329d24f4d0f67751dbacf88ba03ef9083895",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_44_waterfall.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_44_waterfall.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1527,7 +1527,7 @@
       "sha256": "b37b68d2938512ae24e65e7b711a1d74c7d01b4cd1b6372c8eb6a941ebdd90c6",
       "pixel_sha256": "be88169075d13f499054103f032b1a113dcac6cfa9a49155ecbf053e9c896f7c",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_46_lollipop_go.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_46_lollipop_go.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1547,7 +1547,7 @@
       "sha256": "74d159f85d5e0a0bc4d385a277ba4498318a94cf16caf738d59827e72306a97f",
       "pixel_sha256": "31fa4080947b633d6b581f3602211a7d0d9ede6c30a3e8e21d382eb4a2d7ac8a",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_49_venn_gallery.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_49_venn_gallery.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1567,7 +1567,7 @@
       "sha256": "35cf5c23b56409b3cd240c255b29fe0b298a6fe7f6188f59810478e78653fbee",
       "pixel_sha256": "3746c4fcbc3883eeeef772fc461feae211e5ed6c263de31066ea3e39492cdd98",
       "origin_paths": [
-        "Project_015_BioFigure全量复现验证/results/figures/revision_v1_50_radar_spider.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/topjournal/figures/revision_v1_50_radar_spider.png"
       ],
       "collection": "full-reproduction",
       "data_origin": "simulated",
@@ -1587,7 +1587,7 @@
       "sha256": "3c71081aa4255a8fd263ef7b87cae11d96bda5b0e3add38c50a86ea9d1943a57",
       "pixel_sha256": "cf401dfd483580f5b0a776949880adb3556e1c1366c7955c7e76e8aab6245fdc",
       "origin_paths": [
-        "Project_018_模拟曼哈顿图/results/figures/manhattan_simulated.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/core-examples/figures/manhattan_simulated.png"
       ],
       "collection": "manhattan",
       "data_origin": "simulated",
@@ -1607,7 +1607,7 @@
       "sha256": "7fb9de95399d9e74b4bfa6da611f0276c1aa252a34e5150c5e541c2555a5b260",
       "pixel_sha256": "c369943accbda1af3ed70c4fb7a1187aa3a5c5002624ee9e2e12a3b1122f3c37",
       "origin_paths": [
-        "Project_019_线性模拟选图示例/results/figures/linear_scatter.png"
+        "Project_001_生物科研绘图Skill/biofigure/benchmark/library/core-examples/figures/linear_scatter.png"
       ],
       "collection": "linear",
       "data_origin": "simulated",
@@ -1687,13 +1687,13 @@
       ]
     },
     "comparative-genomics": {
-      "source_directory": "Project_004_Darwin比较基因组完整度评估",
+      "source_directory": "biofigure/examples/archive-gallery/comparative-genomics",
       "scripts": [
         "biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R"
       ]
     },
     "topjournal-early": {
-      "source_directory": "Project_006_顶刊绘图复现训练",
+      "source_directory": "biofigure/benchmark/library/topjournal",
       "scripts": [
         "biofigure/examples/archive-gallery/topjournal-early/scripts/issue020_survival_reproduction.R",
         "biofigure/examples/archive-gallery/topjournal-early/scripts/issue025_chord_upset_reproduction.R",
@@ -1706,7 +1706,7 @@
       ]
     },
     "full-reproduction": {
-      "source_directory": "Project_015_BioFigure全量复现验证",
+      "source_directory": "biofigure/benchmark/library/topjournal",
       "scripts": [
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch31_40_reproduction.R",
         "biofigure/examples/archive-gallery/full-reproduction/scripts/batch41_50_reproduction.R",
@@ -1718,20 +1718,20 @@
       ]
     },
     "genome-hg19": {
-      "source_directory": "Project_017_基因组分布图验证",
+      "source_directory": "biofigure/benchmark/library/core-examples",
       "scripts": [
         "biofigure/examples/archive-gallery/genome-hg19/scripts/plot_genome_distribution.R"
       ]
     },
     "manhattan": {
-      "source_directory": "Project_018_模拟曼哈顿图",
+      "source_directory": "biofigure/benchmark/library/core-examples",
       "scripts": [
         "biofigure/examples/archive-gallery/manhattan/scripts/draw_manhattan.R",
         "biofigure/examples/archive-gallery/manhattan/scripts/figure_style.R"
       ]
     },
     "linear": {
-      "source_directory": "Project_019_线性模拟选图示例",
+      "source_directory": "biofigure/benchmark/library/core-examples",
       "scripts": [
         "biofigure/examples/archive-gallery/linear/scripts/figure_style.R",
         "biofigure/examples/archive-gallery/linear/scripts/plot_linear.R",

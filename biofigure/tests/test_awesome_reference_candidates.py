@@ -44,10 +44,35 @@ class CandidateTests(unittest.TestCase):
         request = {"primary_domain": "imaging-assay", "primary_role": "comparison", "backend": "R", "deliverable": "quick-png"}
         default = routing.route(request)
         self.assertNotIn("awesome_scientific_figure", default["reference_evidence_layers"])
-        request["reference_sources"] = ["top_journal", "awesome_scientific_figure"]
+        request["reference_sources"] = ["reproduction", "top_journal", "scidraw", "awesome_scientific_figure"]
         opted = routing.route(request)
         self.assertIn("references/awesome-scientific-figure-learning.md", opted["modules"])
-        self.assertEqual(opted["reference_evidence_layers"]["awesome_scientific_figure"]["policy"], "optional_catalog_candidates_only_not_verified_evidence")
+        layer = opted["reference_evidence_layers"]["awesome_scientific_figure"]
+        self.assertEqual(layer["policy"], "optional_visual_grammar_only_not_verified_scientific_evidence")
+        self.assertEqual(layer["visual_study"], "atlas/awesome-scientific-figure-visual-study.json")
+
+    def test_all_visuals_have_one_reusable_recipe(self):
+        study = json.loads((ROOT / "atlas/awesome-scientific-figure-visual-study.json").read_text())
+        cards = json.loads((ROOT / "atlas/awesome-scientific-figure-layout-recipes.json").read_text())
+        actual = {entry["id"] for entry in study["entries"]}
+        covered = [fid for recipe in cards["recipes"] for fid in recipe["source_figure_ids"]]
+        self.assertEqual(len(actual), 29)
+        self.assertEqual(len(covered), 29)
+        self.assertEqual(set(covered), actual)
+        self.assertEqual(len(cards["recipes"]), 12)
+        for entry in study["entries"]:
+            self.assertTrue(entry["actual_image_reviewed"])
+            self.assertEqual(entry["fidelity_status"], "not-reproduced")
+            self.assertFalse(entry["original_caption_verified"])
+            self.assertEqual(len(entry["source_image_sha256"]), 64)
+            self.assertTrue(entry["visible_layout"] and entry["visible_color_roles"])
+
+    def test_visual_layout_retrieval_is_explicitly_not_fidelity_evidence(self):
+        result = retrieval.retrieve_layout("two-panel-bubble-fit")
+        self.assertEqual(result["method_card"]["source_figure_ids"], ["ASF-V21"])
+        self.assertEqual([v["id"] for v in result["visual_references"]], ["ASF-V21"])
+        self.assertTrue(result["verified_reference_evidence_gap"])
+        self.assertIsNone(retrieval.retrieve_layout("not-a-layout")["method_card"])
 
 
 if __name__ == "__main__":
