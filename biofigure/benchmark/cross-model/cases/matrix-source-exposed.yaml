@@ -1,0 +1,19 @@
+case_id: matrix-source-exposed
+family: matrix
+exposure: source-exposed
+input_path: inputs/matrix.csv
+input_sha256: 9c5c8fdb2d0159ced02d2be68ec62ddb60c63cae35414adf4b912bd6ec576e7f
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Render the supplied feature-by-sample matrix with a fixed, readable legend.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/matrix-source-exposed.txt
+  sha256: 060e7b5402d03de9b6911349dc9e449ef61fd8faa257af578f3c5b20dc311369
+  role: source-exposed-fixture
+permitted_materials:
+- source figure
+- author source code

@@ -1,0 +1,20 @@
+figure_task: phylogeny-synteny-gene-family
+figure_family: genome
+data_shape: '147BUSCOx31samples/4254finite/303NA BUSCOcells;31CBDASmarkers,fullchr7
+  originalorderedcolumns. Current packaged CSV: results/plot_data/busco-coordinates.csv
+  sha256=929f0b1bbdd43b372bbf77a7e02048aade54687eeec33f81758681fa96dce41a; results/plot_data/busco-palette.csv
+  sha256=5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2; results/plot_data/sample-order.csv
+  sha256=e563f93a0fa8303177e8fc69a6d63cec60582125d5abb2ea0589725980126dce; results/plot_data/synthase-markers.csv
+  sha256=a14b4d7ee68066e0a9a53326e4f2af076365da78840c98c487857caf78746071'
+primary_domain: phylogeny-synteny-gene-family
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: reproduce
+pattern_id: LEARNED-BENCH-genomics-cannabis-public-chr7-2025
+learned_method_id: BENCH-genomics-cannabis-public-chr7-2025
+statistics_required: false
+primary_source: public-own-layout://cannabis-chr7
+claim_boundary: Public packaged currentplotCSV/nativecurrentlayout replay only. No
+  authorraw processing, completepaperfigurefidelity, historicalgate inheritance, newinputtransfer
+  or stabletemplate claim.

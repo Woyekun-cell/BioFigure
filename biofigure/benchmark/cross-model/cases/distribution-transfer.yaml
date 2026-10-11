@@ -1,0 +1,20 @@
+case_id: distribution-transfer
+family: distribution
+exposure: transfer
+input_path: inputs/distribution.csv
+input_sha256: aa9819f9381bd67d5e0fe596743c172753447d007a59cdfcf530d68760bb392c
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Compare an unpaired two-group distribution of continuous response values using a violin plot with overlaid box and raw points; preserve every independent replicate value.
+data_semantics: CSV columns are group (categorical groups A/B) and value (continuous response in arbitrary units); each row is an independent unpaired biological replicate (n=2 per group); no repeated measures.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/distribution-derived-method-card.md
+  sha256: 4ca1fede346d563f752719c8d81998c74309ce092b2be7bc0ced03a7781bf9dc
+  role: derived-method-card
+forbidden_materials:
+- source figure
+- author source code

@@ -1,5 +1,7 @@
 # 基础图也要精修
 
+涉及检验、交互、重复测量或显著性时，先执行 [统计决策](statistics-workflow.md)，再按 [结果与绘图绑定](statistics-results-plotting.md)映射。
+
 先识别实验单位与比较问题，再加载[分布契约](chart-distribution.md)、[降维契约](chart-ordination.md)、[差异契约](chart-differential.md)或[时间契约](chart-time.md)。分布、配对、时间、效应量、计数不必统一柱状图。小样本优先显示真实观测；小提琴需要足够数据支撑密度，不用平滑形状掩盖样本少。
 
 配对线按真实ID连接；缺配对不补连。误差线明确SD/SEM/CI及算法；图上n是独立实验单位，不是技术重复数。已有P/q原样读取，不为画星号重算多组t检验。

@@ -1,0 +1,29 @@
+pattern_id: GEN-PAN-SV-001
+version: '1.0'
+domain:
+- genomics
+- comparative-genomics
+scientific_task:
+- pangenome-sv-composition
+message_type: composition
+data_contract:
+  required:
+  - accession
+  - sv_type
+  - count
+  assumptions:
+  - source_units_preserved
+  - missing_not_zero
+geometry:
+  primary: composition
+encoding:
+  color: declared_semantic_dictionary
+renderer_options:
+- ggplot2
+references:
+- atlas://ATLAS-TJ-TOMATO-F2-SV
+status: candidate
+validation:
+  scientific: source_audited
+  visual: candidate
+  benchmark: pending_user_acceptance

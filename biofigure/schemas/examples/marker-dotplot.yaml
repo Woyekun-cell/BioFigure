@@ -1,3 +1,4 @@
+schema_version: "3.2"
 figure_task: marker-expression-across-cell-types
 scientific_message: selected markers define distinct cell populations
 data_contract_summary: {unit: cell, biological_unit: sample, assay_layer: normalized_data, sample_n: declared_in_metadata}
@@ -18,6 +19,10 @@ candidate_patterns: [SC-DOT-001, MAT-EXPR-001]
 selected_pattern: SC-DOT-001
 selection_reason: moderate_gene_count_and_multiple_cell_types
 reference_evidence:
+  # 模板字段：先运行 prepare_figure.py，再复制真实回执值；否则不能通过CP2。
+  preparation_id: COPY_64_CHAR_HASH_FROM_PREPARATION_RECEIPT
+  preparation_request: COPY_COMPLETE_NORMALIZED_REQUEST_FROM_RECEIPT
+  selected_method_case_id: COPY_PLANNER_SELECTED_CASE_ID
   retrieval_query: {domain: single-cell, task: marker-expression-across-cell-types, pattern: SC-DOT-001}
   selected_atlas_ids: [ATLAS-TJ-HCL-F2]
   observed_principles: [orthogonal evidence types, repeated embedding limits, annotation strips attached to matrices]
@@ -30,10 +35,24 @@ annotation: {gene_module_strip: true, condition_header: optional}
 mark_component: {name: outlined-bubble, shape: 21, outline: "#1A1A1A", stroke: 0.28}
 legend: {place: outside_plot, shared: false}
 palette_semantics: {continuous_expression: sequential, condition: semantic_dictionary}
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: ee3608bacc46e1b80dbe0e91d2293b4df04abca5e61e529e484acc2bd11fd2e5
+  project_id: biofigure-example-marker-dotplot
+  palette_id: viridis-10
+  semantic_colors: {continuous_expression: viridis-10, condition: exact_project_dictionary}
+  reuse_policy: exact_semantic_mapping
+  exception_basis: ""
 renderer: {language: R, backend: ggplot2, packages: [ggplot2, ggrepel]}
-output_size: {width_mm: 170, height_mm: 120, formats: [pdf, svg, png]}
+output_size:
+  width_mm: 183
+  height_mm: 120
+  formats: [pdf, svg, png]
+  size_class: double-column
+  size_basis: final_physical_output
+  size_rationale: {panel_count: 1, density: high, longest_label_chars: 9, recommended_class: double-column, selection_reason: dense marker matrix requires double-column width, override_basis: ""}
 layout_contract: {canvas: standalone, data_bbox: reserved, annotation_bbox: top_strip, legend_bbox: outside_right, label_reserve: longest_gene_and_celltype, collision_policy: fail_and_redraw, text_extent_method: final_size_device_metrics, preflight_collision_check: required_before_first_render, coordinate_policy: computed_from_reserved_bboxes_not_guessed_absolute_coordinates}
-font_contract: {family: Helvetica, resolved_font_file: runtime_systemfonts_or_backend_equivalent_path, fallback_policy: verified_Arial_only, warning_policy: fail, all_layers_inherit_policy: fail_if_any_layer_unverified, rendered_face_check: png_visual_plus_svg_pdf_metadata}
+font_contract: {family: Helvetica, resolved_font_file: runtime_systemfonts_or_backend_equivalent_path, fallback_policy: verified_Arial_only, warning_policy: fail, all_layers_inherit_policy: fail_if_any_layer_unverified, rendered_face_check: png_visual_plus_svg_pdf_metadata, minimum_final_text_pt: 5, size_basis: final_output_size, size_roles_pt: {axis_text: 7, axis_title: 7, legend_text: 7, strip_text: 7, annotation_text: 6, panel_label: 8}}
 background_contract: {canvas: "#FFFFFF", panel: "#FFFFFF", export: "#FFFFFF"}
 inspection_plan: {open_png: true, target_size_check: true, bbox_check: true, font_face_check: true}
 critic_targets: {scientific: required, visual: required, publication: required, anti_ai: required}

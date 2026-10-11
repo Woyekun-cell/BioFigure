@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+  "scope": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
+  "data_origin": "explicitly-simulated",
+  "learning": {
+    "example_id": "gallery-oncoprint-simulated-20261011",
+    "scope": "Self-authored simulated data and original implementation. Teaching example only; not paper-data or original-figure reproduction. Historical records remain unchanged.",
+    "official_method": {
+      "url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html",
+      "sections": [
+        "7.1.1 input formats",
+        "7.1.2 multi-event alter_fun",
+        "7.1.6 annotation and percent settings"
+      ],
+      "reviewed_on": "2026-10-11",
+      "principles": [
+        "Cell values may encode multiple alteration types; retain each type.",
+        "Input and metadata must share sample keys and display order.",
+        "Annotation barplots and legends require separate space from the event matrix."
+      ]
+    },
+    "local_learning": {
+      "method_id": "REPRO-008",
+      "gallery_id": "BF-0146",
+      "source_asset": "biofigure/library/topjournal-corpus/results/figures/issue_008/image_001.png",
+      "sha256": "9d89e4b07c2c19de426f73ce1c1083b81e3cedc1f6b75c47c8ac0593610210a3",
+      "viewed_original_size": true,
+      "old_gallery_asset": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
+      "old_gallery_sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
+      "original_data_available": false,
+      "original_figure_fidelity": "NOT_VERIFIED",
+      "source_is_tutorial_composite": true
+    },
+    "original_code_findings": [
+      "Original MAF and clinical tables require external GDC downloads; no original table copied.",
+      "Old preprocessing collapses coexisting classes to Multi_Hit; new example preserves every type.",
+      "Original clinical unknowns must not be converted to Never smoker; synthetic Unknown is explicit.",
+      "Historic gallery legend overlaps two bottom gene rows; new example reserves independent bottom legend slot."
+    ],
+    "data_contract": {
+      "origin": "explicitly simulated",
+      "seed": 2026101108,
+      "tumours": 144,
+      "genes": 12,
+      "event_classes": [
+        "Missense",
+        "Frameshift",
+        "Nonsense",
+        "Splice",
+        "In_frame"
+      ],
+      "all_genes_assayed": true,
+      "empty_cell_meaning": "No simulated event detected, not missing assay",
+      "clinical_metadata": "Synthetic categorical illustration; no real clinical interpretation"
+    },
+    "layout_contract": {
+      "native_package": "ComplexHeatmap::oncoPrint",
+      "canvas_mm": [
+        180,
+        118
+      ],
+      "native_matrix_mm": [
+        124,
+        66
+      ],
+      "legend": "Separate bottom band with alteration/sex/smoking groups",
+      "frequency_denominator": "144 distinct synthetic tumours, independent of multi-event counts",
+      "sample_sort": "A/B/C cohorts, within-cohort binary lexicographic sort in ranked gene order",
+      "source_fidelity_claim": false,
+      "minimum_font_pt": 7.5
+    },
+    "public_content_policy": "Only original code, self-generated data and figures; no third-party code blocks or original images copied into this package."
+  },
+  "local_case_root": "biofigure/examples/genomics-gallery-20261011/oncoprint",
+  "source_acquisition": [],
+  "public_packaging": "Own code, derived plot CSV and replot images/PDF only. Third-party source code and reference figures remain pinned URL/hash records and are acquired separately.",
+  "execution": "From repository root: python3 biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py --source-view-confirmed --output-dir <new-empty-directory>. Uses bundled published plot tables, portable metadata, native R dependencies and fresh prepare/CP2/single-use render authorization. Original author-raw archive workflow is separate; full original-figure fidelity and new-input qualification NOT_VERIFIED.",
+  "validation": {
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "current_input_only": true,
+    "new_data_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review",
+    "immutable_local_bundle_sha256": "8955144e3c67e6610605f35db03704274480649449d5381ac032a1c7136546e6",
+    "checkpoint_validation_sha256": "b6ea3bda40f5075e0ba746878a397cc03ed84df2743a5c15f891a63f1c3cb0c8",
+    "public_spec_claim": "No gate authorization is inherited by a public clone or a rewritten configuration.",
+    "public_replay": "Execution verified on local runtime; final metadata/file locks are checked independently before publication.",
+    "public_current_table_execution": {
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "historical_authorization_inherited": false,
+      "historical_scoped_PASS_inherited": false,
+      "runtime_record": "docs/gallery/runtime-validation-20261011.json",
+      "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+      "scope": "Fresh native replay and actual final PNG/PDF review of fixed published tables and own current layout on the declared environment only.",
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED"
+    },
+    "historical_delivery_record_only": true
+  },
+  "artifacts": {
+    "image": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
+    "pdf": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+    "scripts": [
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+      "biofigure/examples/genomics-gallery-20261011/replay_public.py"
+    ],
+    "plot_data": [
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+      "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv"
+    ]
+  },
+  "delivery_artifact_id": "GALLERY-SIMULATED-ONCOPRINT-20261011",
+  "public_execution_profile": "data/metadata/public-replay.json"
+}

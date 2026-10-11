@@ -1,0 +1,401 @@
+schema_version: '3.4'
+figure_task: planarian-haplotype-chromosome-alignment-dotplot
+scientific_message: Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints,
+  unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw
+  NGS/full-paper fidelity/new-input qualification.
+data_contract_summary:
+  input: Sealed public3CSV:19637alignmentrows,39274endpointrows,8boundaryrows; no
+    original full TSV input
+  unit: genomic alignment record, not biological replicate
+  source_level: Public own derived tables
+  exclusions: No new exclusions or sampling; original full-input selection is archival
+    metadata only
+  statistical_boundary: Descriptive saved values; no raw NGS/statistics or biological
+    replicate reconstruction
+biology_contract:
+  primary_domain: genome-sequence-variation
+  entities:
+  - alignment record
+  - reference haplotype
+  - query haplotype
+  - chromosome
+  relationships:
+  - paired saved reference/query alignment endpoints
+  - per-alignment identity ratio
+  experimental_unit: genomic alignment record, not biological replicate
+  statistical_unit: descriptive alignment
+  replicate_unit: not applicable; no reconstructed experimental replicates
+  evidence_level: author processed alignment coordinates and identity
+  claim_boundary: Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints,
+    unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw
+    NGS/full-paper fidelity/new-input qualification.
+role_contract:
+  primary_role: structure
+  secondary_roles: []
+backend_lock: {}
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-genomics-planarian-haplotype-dotplot-2026
+selected_pattern: LEARNED-BENCH-genomics-planarian-haplotype-dotplot-2026
+selection_reason: Replay the own sealed public layout with its real supplied values
+  and native R; no original-paper fidelity claim.
+reference_evidence:
+  preparation_id: FRESH_RECEIPT_REQUIRED
+  selected_method_case_id: BENCH-genomics-planarian-haplotype-dotplot-2026
+  retrieval_query:
+    domain: genome-sequence-variation
+    task: planarian-haplotype-chromosome-alignment-dotplot
+    pattern: LEARNED-BENCH-genomics-planarian-haplotype-dotplot-2026
+  selected_atlas_ids: []
+  observed_principles:
+  - Current own public180mm square,140mm4x4endpoint matrix,8boundaryIDs,identity colourbar
+  transfer_decisions:
+  - Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints,
+    unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw
+    NGS/full-paper fidelity/new-input qualification.
+  rejected_elements:
+  - Old receipt/authorization/PASS inheritance
+  - Author full-paper fidelity or new-input qualification
+  - Raw NGS and new inferential claims
+  evidence_status: source-and-visual-reviewed
+reference_analysis:
+  figure_family: genome
+  semantic_purpose: Whole-chromosome haplotype alignment geometry and actual identity
+  panels:
+  - id: A
+    role: author-public haplotype endpoint alignment
+    position: single square data area
+  elements:
+  - id: e0
+    role: all19637selected alignments and39274endpoint marks
+    geometry: all19637selected alignments and39274endpoint marks
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  - id: e1
+    role: source4x4chromosome blocks
+    geometry: source4x4chromosome blocks
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  - id: e2
+    role: fixed reference Chr1/2/3/4_h1 and query Chr1/3/2/4_h2 order
+    geometry: fixed reference Chr1/2/3/4_h1 and query Chr1/3/2/4_h2 order
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  - id: e3
+    role: saved directed/concatenated coordinates consumed unchanged
+    geometry: saved directed/concatenated coordinates consumed unchanged
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  - id: e4
+    role: source max(refEnd2)/max(queryEnd2) boundary lines and labels
+    geometry: source max(refEnd2)/max(queryEnd2) boundary lines and labels
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  - id: e5
+    role: actual per-alignment identity sequential colour
+    geometry: actual per-alignment identity sequential colour
+    position: source-matched4x4matrix with outer labels and below legend
+    data_mapping: exact saved alignment/chromosome keys and source maxEnd rule
+    required: true
+  relationships:
+  - from: e0
+    to: e1
+    type: shares-coordinate
+    shared_key: saved reference/query coordinates
+  - from: e2
+    to: e4
+    type: shares-order
+    shared_key: chromosome IDs and source maxEnd boundaries
+  spatial_topology:
+    coordinate_system: linear saved bp to square physical140mm data area; no new reorientation
+    reading_order:
+    - chromosome matrix
+    - reference/query IDs
+    - identity legend
+    alignment_keys:
+    - source_row
+    - refID
+    - queryID
+    layer_order:
+    - white background
+    - endpoint marks
+    - boundary lines
+    - axis IDs
+    - shared identity colourbar
+  required_structures:
+  - all19637selected alignments and39274endpoint marks
+  - source4x4chromosome blocks
+  - fixed reference Chr1/2/3/4_h1 and query Chr1/3/2/4_h2 order
+  - saved directed/concatenated coordinates consumed unchanged
+  - source max(refEnd2)/max(queryEnd2) boundary lines and labels
+  - actual per-alignment identity sequential colour
+  forbidden_substitutions:
+  - double strand-flipping or reconcat saved coordinates
+  - downsampling or invented interpolated alignment segments
+  - using2588missing percentIDmean to exclude real off-target alignments
+  - formal Fig2b or final journal panel claim
+  - diagnostic pre-plot count title and original4ptquery type
+visual_hierarchy:
+  primary: complete dense chromosome alignment geometry
+  secondary: chromosome IDs/boundaries and quantitative identity legend
+encoding:
+  position: both original saved paired endpoints with linear physical normalization
+    only
+  colour: actual percentID continuous50..100percent,ochre50-teal75-navy100
+  size: constant native geom_point0.35mm,shape16 stroke0; no sampling
+  boundary: full-input source maxEnd rules; source end-position chromosome labels
+annotation:
+  chromosome_ids: all8source IDs; 7.5ptArial; xangle40degrees to separate adjacent
+    last IDs
+  titles: Target and Query8pt; no diagnostic overall heading
+  significance: false
+legend:
+  place: outside_bottom
+  shared: true
+  content: Per-alignment identity (%)50,60,70,80,90,100; percentID itself, not source
+    per-query mean
+palette_semantics:
+  identity_50: '#E7C468'
+  identity_75: '#57AFA8'
+  identity_100: '#173F5F'
+  boundary: '#6D737A'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: fb0541eb52a6e8304b97d28eb65ea1e1ec3dc1b6d20047c8f4d576bc79e997ed
+  project_id: BENCH-genomics-planarian-haplotype-dotplot-2026-public-replay
+  palette_id: planarian-identity-ochre-teal-navy
+  semantic_colors:
+    identity_50: '#E7C468'
+    identity_75: '#57AFA8'
+    identity_100: '#173F5F'
+    boundary: '#6D737A'
+  reuse_policy: exact_semantic_mapping
+  exception_basis: Current public own-layout replay uses its sealed semantic palette
+    and physical dimensions; no private task configuration or old PASS.
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - ggplot2
+  - data.table
+  - grid
+  - ragg
+  - systemfonts
+  - yaml
+  - jsonlite
+  - digest
+  - svglite
+  input_parser: data.table::fread of3public sealed derived CSV files; no original
+    full TSV or raw PAF
+  function_adaptation: Native geom_point twice, source-filtered; physical square assembly
+    reproduces saved positions. Direct aes(colour=percentID) and scale_colour_gradientn
+    replace unused author fermenter scale. Source0.009mm enlarged to0.35mm shape16
+    stroke0 for coloured target-size legibility; no mark thinning or interpolation.
+output_size:
+  width_mm: 180
+  height_mm: 180
+  size_class: custom
+  size_basis: final_physical_output
+  formats:
+  - pdf
+  - svg
+  - png
+  size_rationale:
+    panel_count: 1
+    density: high
+    longest_label_chars: 26
+    recommended_class: double-column
+    selection_reason: retain source square4x4dense alignment matrix and legible IDs
+    override_basis: Analyst-selected180x180mm source-square geometry; custom because180mm
+      height exceeds generic170mm double-column limit; no user physical-size request.
+      FinalPDF only; PNG/SVG required by publication gate are temporary QA assets.
+layout_contract:
+  canvas: 180x180mm white
+  data_bbox: x27..167,y35..175,140x140mm data matrix
+  annotation_bbox: query IDs left,reference IDs40degrees below; source end boundaries;8ptTarget/Query
+    axes
+  legend_bbox: x47..147,y4..14 bottom compact identity band
+  label_reserve: actual Arial7.5pt metrics, all8chromosome IDs
+  collision_policy: fail_and_redraw
+  text_extent_method: actual registered Arial grid metrics and PDF text metadata/target-size
+    view
+  preflight_collision_check: bf_check_boxes exclusive data/query/xlabel/legend reserves;
+    labels macro union may overlap data envelope only because union encloses separated
+    outer strips; actual strips are exclusive
+  coordinate_policy: full19637rows39274endpoints,source boundary maxEnd/order, saved
+    coordinates direct
+font_contract:
+  family: Arial
+  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: actual embedded ArialPDF and openedPNG
+  minimum_final_text_pt: 7.5
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 8
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 8
+design_target:
+  reference: benchmark/library/genomics/planarian-genome/sources/author-haplotype-alignment.pdf
+  reference_opened: true
+  hierarchy:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+  geometry:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+  palette:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+  typography:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+  marks:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+  annotation:
+    observation: 'Author203.2mm square public PDF: single dense4x4chromosome matrix,
+      two black endpoints per source-filtered alignment; thin chromosome-boundary
+      lines; IDs at end boundaries; Target/Query axes; diagnostic title; no functional
+      colour mapping.'
+    implementation: 180mm square custom canvas;140x140mm matrix at x27..167,y35..175;
+      all39274points, size0.35mm native geom_point shape16 stroke0; source boundaries;
+      7.5ptArial IDs, xIDs40degree for close Chr3/4 boundaries; Target/Query8pt; compact
+      identity colourbar below; no headline. Native linear normalization of saved
+      bp to physical data area only, no coordinate reorientation.
+    difference_reason: Learn and redraw public author whole-chromosome haplotype endpoint
+      alignment from real processed coordinates. Published final panel/supplement
+      figure mapping not confirmed; no claim of official Fig2b reproduction or raw
+      genome analysis.
+text_contract:
+  allowed_text:
+  - Chr1_h1
+  - Chr2_h1
+  - Chr3_h1
+  - Chr4_h1
+  - Chr1_h2
+  - Chr3_h2
+  - Chr2_h2
+  - Chr4_h2
+  - Target
+  - Query
+  - Per-alignment identity (%)
+  - '50'
+  - '60'
+  - '70'
+  - '80'
+  - '90'
+  - '100'
+  allow_headings: false
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false
+source_density_contract:
+  source_asset:
+    path: examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf
+    sha256: 35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8
+    role: own sealed public layout
+  source_observation: Own sealed180mm square with full39274endpoint marks,4x4blocks,8IDs
+    and identity legend; source author-paper mapping unverified
+  adaptation: Native replay of current own140mm square data area with all sealed endpoints;
+    no new palette/order/geometry adaptation.
+  metrics_required:
+  - 19637alignments
+  - 39274endpoints
+  - source4x4blocks
+  - 4+4source IDs/order
+  - maxEndboundaries
+  - finite actualidentity
+  final_metrics_required:
+  - 19637alignments
+  - 39274endpoints
+  - source4x4blocks
+  - 4+4source IDs/order
+  - maxEndboundaries
+  - finite actualidentity

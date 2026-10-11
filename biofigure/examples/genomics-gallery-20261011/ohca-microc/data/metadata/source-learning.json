@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-ohca-microc-loops-2024",
+  "learned_method_id": "BENCH-genomics-ohca-microc-loops-2024",
+  "recipe_id": "BENCH-genomics-ohca-microc-loops-2024-PUBLIC-NATIVE-REPLAY",
+  "title": "ohca-microc public native own-layout replay",
+  "scope": "Public own-layout native HiContacts replay using one SHA-pinned author processed RDS and compare all3output CSV hashes with the sealed public tables. No raw NGS/loop calling/full author-paper panel/new-input qualification.",
+  "claim_boundary": "Public own-layout native HiContacts replay using one SHA-pinned author processed RDS and compare all3output CSV hashes with the sealed public tables. No raw NGS/loop calling/full author-paper panel/new-input qualification.",
+  "execution_mode": "ohca-native-rds",
+  "status": "PUBLIC_EXECUTION_CONFIGURATION; NEW_RUNTIME_NOT_YET_VALIDATED",
+  "opened_reference": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+  "source_assets": [
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
+      "sha256": "93e0cc9b51883a8aed40c5432deff5caaeab87d19296347fb865ce994a4be835",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/audit_source_input.R",
+      "sha256": "3a8a895565a10707b1e3dcc37ae218c05323f7ffa2f69d6fa5f61f0e8ed84133",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
+      "sha256": "617320049f2d892f95e7e58e525c8e2595ae941662747b8b4d6466c5f05e3da1",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
+      "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
+      "sha256": "5872c894ed87ae0a8121ddb88c2ee1f8459c7fcdaef87bb483bc8350beebf9ba",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
+      "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
+      "sha256": "a46853fc3253a82308aa295a47a8d1c11e747860f76976222794f050da182b0f",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
+      "sha256": "ccc156a8e2310fc29cb596d3c0c821bc4b291ed2fabd82f427112dfd6d37ab3e",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/figure-request.yaml",
+      "sha256": "66b4cdd69105297daa7b6ecf88ba64c35c2c44af5118bf875a5b722a891e3e74",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/project-style.yaml",
+      "sha256": "a150865f3651022e3edd13c530a319ed56500146fdaa743f0b4260c637f38d82",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/contact-bin-pairs.csv",
+      "sha256": "64a5d886935b89e367e3238c8d11f1a42aa39abc9454d3331d77cd962b11b2d1",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/loop-annotations.csv",
+      "sha256": "26059004b12f800146aca6ed40d48e8a36c7b31ba78aee8cc998860b9e358835",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
+      "sha256": "373fee452263469f38d7954c7a2cdb48746f31ff8b1e7c6e85aadd5983c5cbaf",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+      "sha256": "ff4dec7bfa29e53b1367d2e47ffcf3c8f6d625472aee5ad3f4c0af17b9a03b2d",
+      "role": "own-public-native-execution-material"
+    }
+  ],
+  "read_paths": [
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/audit_source_input.R",
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
+    "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
+    "examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
+    "examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
+    "examples/genomics-gallery-20261011/ohca-microc/data/metadata/figure-request.yaml",
+    "examples/genomics-gallery-20261011/ohca-microc/data/metadata/project-style.yaml",
+    "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/contact-bin-pairs.csv",
+    "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/loop-annotations.csv",
+    "examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
+    "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf"
+  ],
+  "code_locators": [
+    {
+      "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
+      "start": 1,
+      "end": 122,
+      "purpose": "Own native R renderer; public replay scope, not full author pipeline"
+    }
+  ],
+  "packages": [
+    "HiContacts",
+    "HiCExperiment",
+    "InteractionSet",
+    "GenomeInfoDb",
+    "S4Vectors",
+    "ggplot2",
+    "ggrastr",
+    "ragg",
+    "yaml",
+    "jsonlite",
+    "svglite",
+    "systemfonts",
+    "digest",
+    "rhdf5",
+    "Rhdf5lib"
+  ],
+  "input_contract": {
+    "files": [
+      "results/plot_data/contact-bin-pairs.csv",
+      "results/plot_data/loop-annotations.csv",
+      "results/plot_data/bin-axis.csv"
+    ],
+    "mode": "ohca-native-rds",
+    "pinned_external_processed_input": {
+      "path": "data/raw/microC_with-loops.rds",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/extdata/microC_with-loops.rds",
+      "sha256": "b20fc02f9dcd5fcd027d02b4108d08650407a7de80553e2171f87bc7f296750d",
+      "bytes": 249349
+    },
+    "raw_ngs": false
+  },
+  "layout_constraints": {
+    "source": "sealed own public PDF",
+    "physical_mm": [
+      180,
+      158
+    ],
+    "palette": {
+      "balanced_log10": "#F4F8FC,#CBDDE8,#7CAFC0,#37828A,#22465B",
+      "filtered_loops": "#9E4F32"
+    },
+    "new_sampling": false
+  },
+  "gaps": [
+    {
+      "id": "PUBLIC-REPLAY-0",
+      "status": "DECLARED",
+      "detail": "RDS backing filename is unavailable but loaded in-memory plotMatrix does not refocus/zoom"
+    },
+    {
+      "id": "PUBLIC-REPLAY-1",
+      "status": "DECLARED",
+      "detail": "Existing native R package library required; acquisition/install archive helpers are not public defaults"
+    },
+    {
+      "id": "PUBLIC-REPLAY-2",
+      "status": "DECLARED",
+      "detail": "Official paper panel mapping is NOT_VERIFIED; reference is the sealed own public layout"
+    },
+    {
+      "id": "PUBLIC-REPLAY-3",
+      "status": "DECLARED",
+      "detail": "Old authorization and historical PASS are never replayed"
+    }
+  ],
+  "mandatory_revalidation": [
+    "fresh_source_view",
+    "current_read_hashes",
+    "fresh_prepare",
+    "fresh_CP2",
+    "single_use_render_authorization",
+    "new_output_visual_review"
+  ]
+}

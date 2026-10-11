@@ -121,7 +121,9 @@ def validate_evidence(path: Path | None, artifact: Path, metrics: dict | None) -
     if not isinstance(detected, dict):
         hard.append(issue("detected_checks_invalid", detected, "record all defect checks as booleans"))
     else:
-        severe = {"clipping", "overlap", "missing_glyph", "legend_overlap", "non_white_background", "font_fallback", "unrequested_text"}
+        severe = {"clipping", "overlap", "missing_glyph", "legend_overlap", "non_white_background",
+                  "font_fallback", "unrequested_text", "small_text", "text_position",
+                  "label_overlap", "panel_misalignment"}
         for key in severe:
             if not isinstance(detected.get(key), bool):
                 hard.append(issue("inspection_check_missing", key, "record an explicit boolean after inspection"))
@@ -149,15 +151,27 @@ def run(args: argparse.Namespace) -> dict:
     known = {x["pattern_id"] for x in index["patterns"]}
     hard, major, minor = [], [], []
     supplemental_reference_used = False
+    native_source = False
     if getattr(args, "design_spec", None):
         try:
             design_spec = load(Path(args.design_spec))
             if design_spec.get("selected_pattern") != args.pattern:
                 hard.append(issue("design_spec_pattern_mismatch", design_spec.get("selected_pattern"), "run the artifact against its selected Pattern"))
             supplemental_reference_used = bool(design_spec.get("reference_evidence", {}).get("supplemental_case_ids"))
+            if str(args.pattern).startswith("LEARNED-"):
+                # Use CP2's same source binding checks; a prefix alone grants no exception.
+                script_dir = str(ROOT / "scripts")
+                if script_dir not in sys.path:
+                    sys.path.insert(0, script_dir)
+                from validate_design_spec import validate_learned_source_reference
+                native_errors, native_source = validate_learned_source_reference(
+                    design_spec.get("reference_evidence", {}), args.pattern)
+                if native_errors:
+                    hard.append(issue("learned_pattern_source_invalid", native_errors,
+                                      "refresh the exact learned method and its hash-bound opened source"))
         except Exception as exc:
             hard.append(issue("design_spec_invalid", str(exc), "provide a readable validated Figure Design Spec"))
-    if args.pattern not in known:
+    if args.pattern not in known and not native_source:
         hard.append({"issue": "unknown_pattern", "evidence": args.pattern, "proposed_fix": "select a Pattern ID from patterns/index.yaml"})
     atlas = load(ROOT / "atlas/index.yaml")
     reviewed_patterns = {

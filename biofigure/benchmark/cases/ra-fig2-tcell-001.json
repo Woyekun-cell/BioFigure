@@ -1,0 +1,37 @@
+{
+  "case_id": "RA-FIG2-TCELL-001",
+  "mode": "reproduction",
+  "family": "shared-embedding-multiome-feature-grid",
+  "required_structures": [
+    "five-class-umap",
+    "seven-feature-atac-above-rna-grid",
+    "21-bin-hex-summary-only-for-feature-grid",
+    "dense-connected-cell-point-cloud-for-a-c-d",
+    "shared-embedding-coordinates",
+    "zero-centered-tbx21-chromvar-panel",
+    "motif-enrichment-heatmap",
+    "sequential-klrg1-expression-panel",
+    "aligned-gene-motif-peak-coverage-tracks",
+    "external-legends",
+    "explicit-a-to-d-panel-tags"
+  ],
+  "source": {
+    "paper": "Zhang et al., Nature Immunology (2024)",
+    "pmcid": "PMC11143375",
+    "figure": "Figure 2",
+    "repository": "immunogenomics/RA_ATAC_multiome@88f1d3f34fb911649ebce17722ef3bd17356060",
+    "author_notebook": "paper_figures/Tcell_figures.ipynb"
+  },
+  "learning": {
+    "priority": "Preserve shared coordinates, modality row order, scale type, external legends and locus-track alignment after inspecting the publication and executed notebook outputs.",
+    "independent_implementation": "BioFigure independently generates fixed-seed structural data and renders Figure 2 topology in R.",
+    "data_role": "Synthetic values exercise the visual grammar; no numerical, biological-effect or pixel-identity claim is made.",
+    "source_boundary": "Panels a-c and d-left follow notebook implementations. Panel d-right follows the published raster because generating source was not located.",
+    "failure_modes": "Reject coordinate drift, ATAC/RNA row swap, sequential mapping of signed chromVAR values, repeated feature-grid axes, and track or legend overlap."
+  },
+  "validation": {
+    "status": "source-exposed-independent-structural-reproduction",
+    "visual_review": "passed at exported size",
+    "full_v2_gate": "pending"
+  }
+}

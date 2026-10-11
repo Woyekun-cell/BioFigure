@@ -1,0 +1,24 @@
+pattern_id: COMP-STACK-001
+version: "1.0"
+domain: [comparative-genomics]
+scientific_task: [comparative-composition]
+message_type: within-group-category-composition
+data_contract: {required: [group, category, value], optional: [denominator, order, annotation_value], assumptions: [category_set_complete, denominator_defined, closure_checked]}
+applicable_when: {data_profile: {n_groups: 2-20}, message: compare within-group composition with a shared category set}
+not_recommended_when: [absolute_magnitude_is_primary, group_denominators_are_hidden_and_unequal, middle_segments_need_precise_cross_group_comparison, inferential_claim_without_group_level_replicates]
+visual_hierarchy: {primary: category_proportions_by_group, secondary: shared_category_legend, tertiary: ordered_context_band}
+geometry: {primary: stacked_columns, baseline: common_zero, optional_context: rank_or_order_band_with_declared_semantics}
+encoding: {x: ordered_group, y: within_group_proportion, fill: category, annotation: source_supported_order_or_rank}
+layout: {aspect_ratio: data_driven, density_strategy: reserve_labels_and_legend, whitespace_strategy: align_context_band_to_group_centers}
+annotation_strategy: [show_100_percent_axis, italicize_taxonomic_names_when_source_requires, annotate_context_band_without_fabricating_values]
+legend_strategy: {compact: true, place: reserved_top_or_bottom_region_inside_or_outside_frame, inside_frame_requires_data_separation: true, order: match_declared_category_order}
+color_semantics: {category: stable_across_groups_and_figures, background: pure_white}
+optional_components: [ordinal-rank-band, panel-letter-at-assembly]
+avoid: [hidden_denominator, second_normalization_of_closed_values, arbitrary_stack_order, fabricated_numeric_annotation, unreserved_rotated_labels, oversized_legend_keys, opaque_legend_background_hiding_frame]
+scientific_risks: [wrong_comparison_denominator, incomplete_categories, pseudoreplication_from_bins, interpreting_rank_band_as_measurement]
+renderer_options: [ggplot2]
+references: [source-index://populus-fig2b-source-001]
+provenance: {created_from: [source-index://populus-fig2b-source-001], reviewed_by: BioFigure-maintainer, reviewed_at: 2026-09-26}
+confidence: medium
+validation: {scientific: exact-supplement-table-ratios, visual: opened-and-source-compared, benchmark: source-exposed-reproduction}
+status: candidate

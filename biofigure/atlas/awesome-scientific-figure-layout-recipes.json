@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "source_study": "atlas/awesome-scientific-figure-visual-study.json",
+  "evidence_level": "visual-grammar-only",
+  "recipe_count": 12,
+  "recipes": [
+    {
+      "id": "geo-flow-map",
+      "source_figure_ids": [
+        "ASF-V01",
+        "ASF-V23",
+        "ASF-V27",
+        "ASF-V29"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "sf geometry + keyed node/edge table; optional inset or quantitative companion",
+      "layout_contract": "Main map occupies at least two-thirds of its row; inset/detail and legends stay outside dense route area.",
+      "color_contract": "Neutral base; one ordered ramp for magnitude, categorical hue only for source/destination.",
+      "suggested_R_strategy_unverified": "sf::geom_sf + ggplot2::geom_curve/geom_segment; patchwork for insets",
+      "input_contract": "geometry CRS, node IDs, edge endpoints, signed/unsigned weight, units",
+      "first_render_gate": "Check route clipping, overplotting and separate size/color legend meanings."
+    },
+    {
+      "id": "matched-map-grid",
+      "source_figure_ids": [
+        "ASF-V02",
+        "ASF-V26",
+        "ASF-V28"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "shared sf basemap plus scenario/time/category keys",
+      "layout_contract": "Equal-size maps in 3x3 or 4+3 grid; one shared legend and common extent.",
+      "color_contract": "Ordered classes keep identical breaks/hues in every panel.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_sf + facet_wrap or patchwork with fixed coord_sf",
+      "input_contract": "polygon or line geometry, panel key, ordered metric, CRS, common breaks",
+      "first_render_gate": "Check map frame and scale bar alignment; facet legend appears once."
+    },
+    {
+      "id": "map-stat-composite",
+      "source_figure_ids": [
+        "ASF-V03",
+        "ASF-V05",
+        "ASF-V06",
+        "ASF-V11"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "map view plus distribution/time summaries joined by the same group key",
+      "layout_contract": "Asymmetric map:summary width roughly 2:1; time strips share x axis, summary charts own y units.",
+      "color_contract": "Group hues carry across map and chart; context maps stay low saturation.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_sf + geom_point/boxplot/line; patchwork::plot_layout(widths=...)",
+      "input_contract": "geometry, group, experimental unit, date/measure; explicit join key",
+      "first_render_gate": "Check map/summary categorical agreement, time scale, annotation collision."
+    },
+    {
+      "id": "dark-spatial-comparison",
+      "source_figure_ids": [
+        "ASF-V04",
+        "ASF-V14",
+        "ASF-V15"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "matched dark map views with signed or two-axis spatial effects and optional marginal/validation plots",
+      "layout_contract": "Lock world or regional extent; central map dominates; marginal plots align geographically.",
+      "color_contract": "If one signed variable, use zero-centered blue-neutral-warm; if two variables, use an explicit bivariate key; white text on charcoal.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_sf/geom_raster; use scale_fill_gradient2 only for one signed variable, else precompute bivariate classes and use scale_fill_manual; patchwork",
+      "input_contract": "geometry/grid, one or two signed effects, zero definitions, matched extent",
+      "first_render_gate": "Check text contrast, midpoint, shared limits and thin-line visibility at final size."
+    },
+    {
+      "id": "temporal-facet-bubble",
+      "source_figure_ids": [
+        "ASF-V07",
+        "ASF-V08"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "time series upper track plus aligned category-by-time size or flow track",
+      "layout_contract": "Each location/variant gets two vertically aligned tracks; columns share dates and categorical order.",
+      "color_contract": "Category palette stable across panels; pale area fill with darker line; size separately keyed.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_area + geom_point(aes(size=...)) + facet_grid/patchwork",
+      "input_contract": "date, panel, category, value, nonnegative size; time unit",
+      "first_render_gate": "Check bubble area scale, axis alignment, log positivity and legend placement.",
+      "structural_prototype": {
+        "script": "examples/awesome-layout-prototypes/render.R",
+        "status": "simulated-rendered-and-viewed",
+        "source_data": "fixed-seed-simulation"
+      }
+    },
+    {
+      "id": "method-comparison-grid",
+      "source_figure_ids": [
+        "ASF-V09",
+        "ASF-V16",
+        "ASF-V17",
+        "ASF-V22"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "method-by-group summaries, uncertainty and individual observations",
+      "layout_contract": "Small multiples share category order; use rows for distinct metrics and columns for conditions.",
+      "color_contract": "Methods use fixed hues, observations darker than summary fills; neutral model/reference guides.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_col/geom_point/geom_errorbar/geom_boxplot + facet_grid",
+      "input_contract": "method, condition, metric, unit, estimate, interval or raw observation",
+      "first_render_gate": "Check intervals are defined, y-scale per metric, significance brackets only if tested.",
+      "structural_prototype": {
+        "script": "examples/awesome-layout-prototypes/render.R",
+        "status": "simulated-rendered-and-viewed",
+        "source_data": "fixed-seed-simulation"
+      }
+    },
+    {
+      "id": "mechanism-map-hybrid",
+      "source_figure_ids": [
+        "ASF-V10",
+        "ASF-V13"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "process or mechanism nodes plus map and quantitative checks",
+      "layout_contract": "Vector diagram sits in its own panel; map and validation plots align below or beside it.",
+      "color_contract": "Stage colors convey process order; geographic fill uses independent scale.",
+      "suggested_R_strategy_unverified": "Diagram via ggplot2::geom_segment/geom_label or grid; map via sf; patchwork",
+      "input_contract": "node/edge IDs, process stage, geometry, validation data",
+      "first_render_gate": "Check arrow direction, stage order, label overlap, and no palette meaning collision."
+    },
+    {
+      "id": "paired-contrast-bars",
+      "source_figure_ids": [
+        "ASF-V12"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "paired weekday/weekend points and two side-by-side 100% stacked proportions",
+      "layout_contract": "Sparse comparison above and aligned side-by-side category stacks below; optional connectors only between matching segment boundaries.",
+      "color_contract": "Two contrasting hues plus neutral middle; same meaning across both rows.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_point/geom_segment + geom_col(position=stack) + patchwork",
+      "input_contract": "category, group, paired unit if paired, proportions summing to 100%",
+      "first_render_gate": "Check sum-to-100 per row, category order, text legibility and paired status."
+    },
+    {
+      "id": "log-model-grid",
+      "source_figure_ids": [
+        "ASF-V18",
+        "ASF-V19"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "model curves and observations with panel-specific logarithmic axes",
+      "layout_contract": "Equal-size matrix; equations occupy reserved caption space; common legend outside panels.",
+      "color_contract": "Color for model family, shape for data source, gray theoretical reference.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_line/geom_point/geom_errorbar + scale_x_log10/scale_y_log10",
+      "input_contract": "x, y, model, source, unit, uncertainty, positivity where log",
+      "first_render_gate": "Reject nonpositive log values; check common scale only for comparable units."
+    },
+    {
+      "id": "ranked-distribution-overlay",
+      "source_figure_ids": [
+        "ASF-V20"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "distribution histogram plus ranked intensity raster and aligned box summaries",
+      "layout_contract": "Histogram/fit at left; wide ranked field at right with external colorbar.",
+      "color_contract": "Ordered warm intensity ramp; black summary line remains visible.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_histogram/geom_density + geom_raster + geom_boxplot",
+      "input_contract": "raw distribution values, rank, bin counts, metric and units",
+      "first_render_gate": "Check bin definitions, normalization, box alignment and raster/colorbar limits."
+    },
+    {
+      "id": "two-panel-bubble-fit",
+      "source_figure_ids": [
+        "ASF-V21"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "two aligned bubble-scatter regression panels",
+      "layout_contract": "Equal-width panels, shared x range, distinct y labels, model annotation in whitespace.",
+      "color_contract": "Two group hues; neutral confidence ribbon; dashed fit and dotted zero baseline.",
+      "suggested_R_strategy_unverified": "ggplot2::geom_point(aes(size=...)) + geom_smooth + geom_hline; patchwork",
+      "input_contract": "independent unit, x, y, size, group; model and uncertainty specification",
+      "first_render_gate": "Fit on raw units only when valid; recompute R²/P; check bubble overlap and CI.",
+      "structural_prototype": {
+        "script": "examples/awesome-layout-prototypes/render.R",
+        "status": "simulated-rendered-and-viewed",
+        "source_data": "fixed-seed-simulation"
+      }
+    },
+    {
+      "id": "editorial-visual-metaphor",
+      "source_figure_ids": [
+        "ASF-V24",
+        "ASF-V25"
+      ],
+      "status": "visual-derived-implementation-hypothesis; not author-code or fidelity validated",
+      "required_structure": "infographic timelines/dot matrices or scaled pictograms",
+      "layout_contract": "Narrative-first layout with title, visual body, numeric callouts and source strip.",
+      "color_contract": "One focal hue and muted context; quantities must retain explicit unit mapping.",
+      "suggested_R_strategy_unverified": "grid/ggplot2 custom grobs; only use when task is explanatory, not statistical inference",
+      "input_contract": "unit-to-glyph mapping, chronology, cited quantities and scope",
+      "first_render_gate": "Check exact dot-to-unit arithmetic; avoid treating editorial art as method evidence."
+    }
+  ]
+}

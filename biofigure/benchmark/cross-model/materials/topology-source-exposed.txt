@@ -1,0 +1,2 @@
+Allowed synthetic author-material fixture for topology.
+The supplied source example shows a directed topology with edge-weight encoding.

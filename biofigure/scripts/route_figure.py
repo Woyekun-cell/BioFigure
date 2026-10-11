@@ -20,20 +20,52 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
     if domain not in axes["domain"]["values"]: raise ValueError(f"unknown domain: {domain}")
     if role not in axes["role"]["values"]: raise ValueError(f"unknown role: {role}")
     if delivery not in axes["deliverable"]["values"]: raise ValueError(f"unknown deliverable: {delivery}")
-    domains = [domain] + request.get("secondary_domains", [])
+    secondary_domains = request.get("secondary_domains", [])
+    if not isinstance(secondary_domains, list) or any(not isinstance(x, str) for x in secondary_domains):
+        raise ValueError("secondary_domains must be a list of domain values")
+    domains = [domain] + sorted(set(secondary_domains) - {domain})
     secondary_roles = request.get("secondary_roles", [])
     if not isinstance(secondary_roles, list) or any(x not in axes["role"]["values"] for x in secondary_roles):
         raise ValueError("secondary_roles must use the role vocabulary")
+    secondary_roles = sorted(set(secondary_roles))
     bad = [x for x in domains if x not in axes["domain"]["values"]]
     if bad: raise ValueError(f"unknown secondary domains: {bad}")
-    reference_sources = request.get("reference_sources", ["top_journal", "scidraw"])
+    required_reference_sources = {"reproduction", "top_journal", "scidraw"}
+    reference_sources = request.get("reference_sources", sorted(required_reference_sources))
     if not isinstance(reference_sources, list) or not reference_sources or not all(isinstance(x, str) for x in reference_sources):
         raise ValueError("reference_sources must be a non-empty list")
     unknown_sources = sorted(set(reference_sources) - set(manifest.get("reference_evidence_layers", {})))
     if unknown_sources:
         raise ValueError(f"unknown reference source(s): {unknown_sources}")
-    modules = list(manifest.get("always_load", [])) + list(manifest.get("common_dynamic_load", []))
+    missing_sources = required_reference_sources - set(reference_sources)
+    if missing_sources:
+        raise ValueError(f"required reference sources cannot be skipped: {sorted(missing_sources)}")
+    reference_sources = sorted(set(reference_sources))
+    # The manifest is a routing map, not a host-level loading guarantee.
+    modules = list(manifest.get("common_dynamic_load", []))
+    operation = request.get("operation", "draw")
+    phase_routes = manifest.get("phase_dynamic_load", {})
+    if operation not in {"select", "draw", "reproduce", "review", "revise"}:
+        raise ValueError("operation must be select, draw, reproduce, review, or revise")
+    phases = []
+    if operation in {"draw", "revise"}:
+        phases.append("render")
+    if operation == "reproduce":
+        phases.extend(["render", "reproduction"])
+    if operation == "review":
+        phases.append("reference-review")
+    if "statistics_required" in request and type(request["statistics_required"]) is not bool:
+        raise ValueError("statistics_required must be boolean")
+    if request.get("statistics_required") is True:
+        phases.append("statistics")
+    if request.get("use_personal_style") is True:
+        phases.append("user-requested-style")
+    for phase in phases:
+        modules += phase_routes.get(phase, [])
     modules += [axes["domain"]["values"][x] for x in domains]
+    from plan_pangenome_figure import applies as pangenome_applies
+    if pangenome_applies(str(request.get('figure_task','')),request.get('pangenome_context')):
+        modules += ['references/pangenome-learning.md','references/pangenome-statistics.md','library/pangenome/tomato-superpangenome/data/metadata/paradigms.json']
     critics = [manifest["specialty_critics"][x] for x in domains if x in manifest["specialty_critics"]]
     selected_reference_layers = {}
     for source in reference_sources:
@@ -41,7 +73,11 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
         modules += layer.get("load", [])
         if layer.get("critic"):
             critics.append(layer["critic"])
-        selected_reference_layers[source] = {key: value for key, value in layer.items() if key in {"corpus", "grammar", "retriever", "policy", "precedence"}}
+        selected_reference_layers[source] = {key: value for key, value in layer.items() if key in {
+            "corpus", "methods", "grammar", "source_compared_methods", "review_evidence",
+            "batch2_methods", "batch2_review_evidence", "learning_ten_20260925",
+            "learning_ten_methods", "learning_ten_batch2", "learning_ten_batch2_methods",
+            "visual_study", "layout_recipes", "retriever", "load", "policy", "precedence"}}
     changed = bool(previous_lock and previous_lock.get("backend") != backend)
     lock_seed = json.dumps({"backend": backend, "domains": domains, "role": role}, sort_keys=True).encode()
     return {"primary_domain": domain, "domains": domains, "primary_role": role, "secondary_roles": secondary_roles,
@@ -50,7 +86,20 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
                              "preview_export_qa_same_backend": True},
             "deliverable": delivery, "required_formats": axes["deliverable"]["values"][delivery],
             "modules": list(dict.fromkeys(modules)), "critics": list(dict.fromkeys(critics)),
-            "reference_evidence_layers": selected_reference_layers}
+            "reference_evidence_layers": selected_reference_layers,
+            "pre_code_gate": {
+                "mandatory": True,
+                "status": "BLOCKED_UNTIL_REFERENCE_ANALYSIS_AND_CP2",
+                "preparation_command": "python3 scripts/prepare_figure.py request.yaml --output preparation-receipt.json",
+                "required_sources": sorted(required_reference_sources),
+                "must_complete_before_renderer_code": [
+                    "inspect retrieved original-size references and relevant method/package notes",
+                    "decompose panels, layers, spatial relationships, typography and package responsibilities in reference_analysis",
+                    "validate the Design Spec and attach this preparation receipt to CP2",
+                ],
+            "reasoning_mode_independent": True,
+            "operation": operation,
+            }}
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("request", type=Path); p.add_argument("--previous-lock", type=Path)

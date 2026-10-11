@@ -2,26 +2,47 @@
   "schema_version": 2,
   "summary": {
     "schema_version": 2,
-    "case_count": 231,
+    "case_count": 260,
     "source_counts": {
       "scidraw": 152,
-      "topjournal": 79
+      "topjournal": 83,
+      "library/single-cell/han-foregut/data/metadata/source-manifest.json": 1,
+      "library/single-cell/wahle-retinal/data/metadata/source-manifest.json": 1,
+      "library/single-cell/hochgerner-dentate/data/metadata/source-manifest.json": 1,
+      "library/single-cell/trevino-cortex/data/metadata/source-manifest.json": 1,
+      "library/single-cell/yu-interneuron/data/metadata/source-manifest.json": 1,
+      "library/single-cell/ma-primate-pfc/data/metadata/source-manifest.json": 1,
+      "library/single-cell/fleck-organoid/data/metadata/source-manifest.json": 1,
+      "library/genomics/ape-t2t/data/metadata/source-manifest.json": 1,
+      "library/genomics/arabidopsis-27/data/metadata/source-manifest.json": 1,
+      "library/genomics/barley-pantranscriptome/data/metadata/source-manifest.json": 1,
+      "library/genomics/rpe1-reference/data/metadata/source-manifest.json": 1,
+      "benchmark/library/topjournal/issue_086/manifest.json": 1,
+      "benchmark/library/topjournal/issue_089/manifest.json": 1,
+      "benchmark/library/topjournal/issue_097/manifest.json": 1,
+      "benchmark/library/topjournal/issue_098/manifest.json": 1,
+      "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json": 1,
+      "library/genomics/dpm-multiomics/data/metadata/source-manifest.json": 1,
+      "genomics": 6,
+      "gallery-simulation": 2
     },
-    "code_file_count": 999,
-    "r_file_count": 837,
-    "r_parse_ok": 823,
+    "code_file_count": 1015,
+    "r_file_count": 853,
+    "r_parse_ok": 839,
     "r_parse_error": 14,
-    "unique_packages": 172,
-    "installed_packages": 148,
+    "unique_packages": 209,
+    "installed_packages": 153,
     "missing_packages": [
       "CellChat",
       "CytoTRACE2",
       "DescTools",
       "DoubletFinder",
       "GseaVis",
+      "SVbyEye",
       "SeuratExtend",
       "Tag",
       "VisCello",
+      "WGCNA",
       "aPEAR",
       "funkyheatmap",
       "ggExtra",
@@ -29,24 +50,104 @@
       "gganatogram",
       "ggiraphExtra",
       "ggmagnify",
+      "ggnet",
+      "ggpattern",
       "ggpmisc",
+      "ggsankeyfier",
+      "karyoploteR",
+      "khroma",
       "legendry",
       "miloR",
+      "netgraph",
       "networkD3",
+      "networkx",
       "plot3D",
       "plot3Drgl",
+      "plotsr",
+      "rhdf5",
       "rnaturalearth",
       "scRNAtoolVis",
+      "umap",
       "webshot"
     ],
     "namespaced_function_pairs": 102,
     "existing_namespaced_functions": 100,
     "method_family_count": 23,
     "visual_evidence_pending": 0,
-    "source_compared_cases": 141,
-    "source_compared_pass": 31,
+    "source_compared_cases": 145,
+    "source_compared_pass": 35,
     "source_compared_needs_revision": 110,
-    "status_boundary": "source-compared means visually reviewed; only review_status=pass means fidelity accepted"
+    "status_boundary": "Source review: only review_status=pass means historical fidelity accepted. Fixed-data reproduction, source-exposed new-input reuse, stress and user acceptance are separate; no old PASS certifies new output.",
+    "unverified_packages": [
+      "Signac",
+      "StainedGlass",
+      "URD",
+      "destiny",
+      "ggcorrplot",
+      "matplotlib",
+      "pals",
+      "plotly",
+      "ragg",
+      "seaborn",
+      "slingshot",
+      "systemfonts"
+    ],
+    "code_audit_scope": "Historical code counts cover scidraw/topjournal; added single-cell/genomics audits remain in per-case manifests.",
+    "single_cell_candidate_count": 7,
+    "genomics_candidate_count": 6,
+    "topjournal_saved_source_learning": {
+      "articles": 4,
+      "issues": [
+        86,
+        89,
+        97,
+        98
+      ],
+      "R_blocks": 16,
+      "reference_images": 21,
+      "benchmark_status": "PENDING_INPUT",
+      "date": "2026-10-02"
+    },
+    "source_learning_2026_10_11": {
+      "cases": 2,
+      "recipes": 5,
+      "author_source_code_files_syntax_checked": 15,
+      "original_figures_viewed": 4,
+      "author_raw_pipeline_rerun": false,
+      "new_figures_rendered": false,
+      "status": "source-learning-reviewed; original reproduction/transfer/stress not verified",
+      "cases_metadata": [
+        {
+          "case_id": "genomics-cannabis-pangenome-2025",
+          "manifest": "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json",
+          "manifest_sha256": "0dadc523fa0c1627c51248853053467d50eb903c1297394738ca53edc6162739",
+          "recipes": [
+            "GEN-CANNABIS-CGP-SYNTENY-001",
+            "GEN-CANNABIS-SEX-EXPRESSION-JOINT-001"
+          ]
+        },
+        {
+          "case_id": "genomics-dpm-multiomics-2024",
+          "manifest": "library/genomics/dpm-multiomics/data/metadata/source-manifest.json",
+          "manifest_sha256": "9a20ec8e643b85002bca8d401ea75b1dc7e38e30913e217268a4ec0b8d8112f7",
+          "recipes": [
+            "GEN-DPM-SIGNED-HEATMAP-001",
+            "GEN-DPM-GENE-MODALITY-BUBBLES-002",
+            "GEN-DPM-EVIDENCE-PIE-NETWORK-003"
+          ]
+        }
+      ]
+    },
+    "scoped_gallery_delivery_2026_10_11": {
+      "author_processed_panels": 6,
+      "explicit_simulated_revisions": 2,
+      "scoped_reviewed_examples": 8,
+      "bound_file_checks": 499,
+      "protected_old_files_unchanged": 147,
+      "original_whole_figure_new_input_stress": "NOT_VERIFIED",
+      "historical_freeze": "../work/2026-10-11-complex-panels/training-index-freeze.json",
+      "status": "PASS_AT_DELIVERY; subsequent metadata updates invalidate old preparation for new rendering"
+    }
   },
   "nodes": [
     {
@@ -3547,6 +3648,892 @@
       "label": "webshot2",
       "installed": true,
       "version": "0.1.2"
+    },
+    {
+      "id": "populus-fig2b-source-001",
+      "kind": "case",
+      "label": "Populus Fig. 2b A/B compartment composition",
+      "source": "topjournal",
+      "status": "source-compared-png",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true,
+      "generation_mode": "source-exposed-independent"
+    },
+    {
+      "id": "toomanycells-fig2-001",
+      "kind": "case",
+      "label": "TooManyCells Fig. 2a/c/d/e single-cell clade tree",
+      "source": "topjournal",
+      "status": "source-compared-png",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true,
+      "generation_mode": "source-exposed-independent-structural"
+    },
+    {
+      "id": "populus-synteny-edfig1a-001",
+      "kind": "case",
+      "label": "Populus Extended Data Fig. 1a whole-genome synteny",
+      "source": "topjournal",
+      "status": "source-compared-png",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true,
+      "generation_mode": "source-exposed-independent-structural"
+    },
+    {
+      "id": "populus-compartment-edfig1b-001",
+      "kind": "case",
+      "label": "Populus Extended Data Fig. 1b circular A/B compartment tracks",
+      "source": "topjournal",
+      "status": "source-compared-png",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "high_fidelity_eligible": true,
+      "generation_mode": "source-exposed-independent-structural"
+    },
+    {
+      "id": "single-cell-han-foregut",
+      "kind": "case",
+      "label": "Han 前肠 foregut 单细胞 scRNA 轨迹 网络 热图 点阵 信号通路",
+      "source": "library/single-cell/han-foregut/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-example-verified",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/han-foregut/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/han-foregut-single-cell-learning.md"
+    },
+    {
+      "id": "package:URD",
+      "kind": "package",
+      "label": "URD",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "package:ggcorrplot",
+      "kind": "package",
+      "label": "ggcorrplot",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "package:plotly",
+      "kind": "package",
+      "label": "plotly",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "single-cell-wahle-retinal",
+      "kind": "case",
+      "label": "Wahle 视网膜 retinal 类器官 空间 多模态 multiome RNA ATAC 热图 小多图",
+      "source": "library/single-cell/wahle-retinal/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/wahle-retinal/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/wahle-retinal-single-cell-learning.md"
+    },
+    {
+      "id": "package:seaborn",
+      "kind": "package",
+      "label": "seaborn",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "Python"
+    },
+    {
+      "id": "package:matplotlib",
+      "kind": "package",
+      "label": "matplotlib",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "Python"
+    },
+    {
+      "id": "package:destiny",
+      "kind": "package",
+      "label": "destiny",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "package:Signac",
+      "kind": "package",
+      "label": "Signac",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "single-cell-hochgerner-dentate",
+      "kind": "case",
+      "label": "Hochgerner 齿状回 dentate 单细胞 MATLAB 固定坐标 网络 年龄 小多图 峰值排序 热图",
+      "source": "library/single-cell/hochgerner-dentate/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/hochgerner-dentate/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/hochgerner-dentate-single-cell-learning.md"
+    },
+    {
+      "id": "single-cell-trevino-cortex",
+      "kind": "case",
+      "label": "Trevino 皮层 cortex 单细胞 多组学 multiome RNA ATAC 拟时序 热图 基因组轨道",
+      "source": "library/single-cell/trevino-cortex/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/trevino-cortex/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/trevino-cortex-single-cell-learning.md"
+    },
+    {
+      "id": "single-cell-yu-interneuron",
+      "kind": "case",
+      "label": "Yu 胎脑 interneuron 单细胞 小提琴 热图 轨迹 拟时序 流向 Sankey",
+      "source": "library/single-cell/yu-interneuron/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/yu-interneuron/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/yu-interneuron-single-cell-learning.md"
+    },
+    {
+      "id": "package:slingshot",
+      "kind": "package",
+      "label": "slingshot",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "single-cell-ma-primate-pfc",
+      "kind": "case",
+      "label": "Ma 灵长类 primate 跨物种 前额叶 环形 分轨 点阵 热图 流向 Sankey",
+      "source": "library/single-cell/ma-primate-pfc/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/ma-primate-pfc/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "learning_reference": "references/ma-primate-pfc-single-cell-learning.md"
+    },
+    {
+      "id": "single-cell-fleck-organoid",
+      "kind": "case",
+      "label": "Fleck 脑类器官 organoid regulome 单细胞 多组学 multiome RNA ATAC 跨模态 热图 调控网络 固定坐标 环形 调控树 扰动 基因组轨道",
+      "source": "library/single-cell/fleck-organoid/data/metadata/source-manifest.json",
+      "source_collection": "single-cell",
+      "status": "code-learned-static-audit",
+      "visual_status": "source-original-reviewed-no-reproduction",
+      "review_status": "not-run",
+      "high_fidelity_eligible": false,
+      "source_manifest": "library/single-cell/fleck-organoid/data/metadata/source-manifest.json",
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "FLECK-MULTIOMIC-HEATMAP",
+        "FLECK-FIXED-GRN",
+        "FLECK-PERTURB-HEATMAP",
+        "FLECK-CIRCULAR-REGULOME",
+        "FLECK-GENOMIC-TRACKS"
+      ]
+    },
+    {
+      "id": "package:pals",
+      "kind": "package",
+      "label": "pals",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "package:ragg",
+      "kind": "package",
+      "label": "ragg",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "package:systemfonts",
+      "kind": "package",
+      "label": "systemfonts",
+      "installed": null,
+      "version": null,
+      "environment_status": "not-checked",
+      "ecosystem": "R"
+    },
+    {
+      "id": "genomics-ape-t2t-2025",
+      "kind": "case",
+      "label": "Yoo Nature 2025 ape T2T 基因组 泛基因组 染色体 共线性 倒位 重排 自比对 三角图 重复序列 相似度 着丝粒 甲基化 基因组轨道 窗口 分歧 SNV gap synteny inversion identity density",
+      "source": "library/genomics/ape-t2t/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/ape-t2t/data/metadata/source-manifest.json",
+      "status": "code-learned-source-data-audited",
+      "visual_status": "source-original-compared-selected-structure-adapter",
+      "review_status": "not-run-full-original",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "APE-SYNTENY-STACK",
+        "APE-INVERSION-ZOOM",
+        "APE-SELF-IDENTITY-TRIANGLE",
+        "APE-BINNED-DIVERGENCE",
+        "APE-REGISTERED-GENOME-TRACKS"
+      ],
+      "simulation_bundle": "benchmark/library/genomics/ape-t2t/bundle.json",
+      "simulation_review_scope": "separate source-exposed selected-structure bundle; full-original high fidelity, unexposed transfer and stress unverified"
+    },
+    {
+      "id": "package:SVbyEye",
+      "kind": "package",
+      "label": "SVbyEye",
+      "installed": false,
+      "version": null,
+      "ecosystem": "R",
+      "environment_status": "availability-checked-2026-09-30",
+      "source_version": "0.99.0"
+    },
+    {
+      "id": "package:StainedGlass",
+      "kind": "package",
+      "label": "StainedGlass",
+      "installed": null,
+      "version": null,
+      "ecosystem": "Snakemake workflow",
+      "environment_status": "not-checked"
+    },
+    {
+      "id": "package:GenomicRanges",
+      "kind": "package",
+      "label": "GenomicRanges",
+      "installed": true,
+      "version": "1.64.0",
+      "ecosystem": "R",
+      "environment_status": "availability-checked-2026-09-30"
+    },
+    {
+      "id": "genomics-arabidopsis-27-2025",
+      "kind": "case",
+      "label": "Igolkina Nature Genetics 2025 Arabidopsis 拟南芥 基因组 泛基因组 共线性 倒位 着丝粒 热图 π SV 频谱 TE 嵌套网络 增长 坐标 参考偏差 CNV 甲基化 ggnet rhdf5 Pannagram",
+      "source": "library/genomics/arabidopsis-27/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/arabidopsis-27/data/metadata/source-manifest.json",
+      "status": "code-learned-derived-data-audited",
+      "visual_status": "source-original-compared-selected-structure-adapter",
+      "review_status": "not-run-full-original",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "GEN-ATH27-SYNTENY-001",
+        "GEN-ATH27-ALIGNED-TRACKS-001",
+        "GEN-ATH27-SV-SPECTRUM-001",
+        "GEN-ATH27-TE-DISTRIBUTION-001",
+        "GEN-ATH27-NESTED-NETWORK-001",
+        "GEN-ATH27-PANGENOME-GROWTH-001",
+        "GEN-ATH27-COORDINATE-DILUTION-001",
+        "GEN-ATH27-PAIRWISE-SV-001",
+        "GEN-ATH27-REFERENCE-BIAS-001"
+      ],
+      "simulation_bundle": "benchmark/library/genomics/arabidopsis-27/bundle.json",
+      "simulation_review_scope": "separate source-exposed selected-structure bundle; full-original high fidelity, unexposed transfer and stress unverified"
+    },
+    {
+      "id": "package:ggpattern",
+      "kind": "package",
+      "label": "ggpattern",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "checked-in-arabidopsis-27-source-audit"
+    },
+    {
+      "id": "package:ggnet",
+      "kind": "package",
+      "label": "ggnet",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "checked-in-arabidopsis-27-source-audit"
+    },
+    {
+      "id": "package:network",
+      "kind": "package",
+      "label": "network",
+      "ecosystem": "R",
+      "installed": true,
+      "version": "1.20.0",
+      "environment_status": "checked-in-arabidopsis-27-source-audit"
+    },
+    {
+      "id": "package:khroma",
+      "kind": "package",
+      "label": "khroma",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "checked-in-arabidopsis-27-source-audit"
+    },
+    {
+      "id": "package:rhdf5",
+      "kind": "package",
+      "label": "rhdf5",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "checked-in-arabidopsis-27-source-audit"
+    },
+    {
+      "id": "genomics-barley-pantranscriptome-2025",
+      "kind": "case",
+      "label": "Guo Nature Genetics 2025 barley 大麦 泛转录组 泛基因组 多组学 基因型 模块网络 社区 边束 netgraph Louvain WGCNA 热图 TOM 功能富集 TFBS 启动子 motif 版式 配色 PCA UMAP",
+      "source": "library/genomics/barley-pantranscriptome/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/barley-pantranscriptome/data/metadata/source-manifest.json",
+      "status": "code-learned-derived-data-audited",
+      "visual_status": "source-original-compared-selected-structure-adapter",
+      "review_status": "not-run-full-original",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "GEN-BARLEY-COMMUNITY-NETWORK-001",
+        "GEN-BARLEY-MODULE-SIMILARITY-001",
+        "GEN-BARLEY-MODULE-TISSUE-001",
+        "GEN-BARLEY-TOM-DENDROGRAM-001",
+        "GEN-BARLEY-TFBS-FACETS-001",
+        "GEN-BARLEY-TFBS-COHERENCE-001",
+        "GEN-BARLEY-ORDINATION-LAYOUT-001"
+      ],
+      "simulation_bundle": "benchmark/library/genomics/barley-pantranscriptome/bundle.json",
+      "simulation_review_scope": "separate source-exposed selected-structure bundle; full-original high fidelity, unexposed transfer and stress unverified"
+    },
+    {
+      "id": "package:FactoMineR",
+      "kind": "package",
+      "label": "FactoMineR",
+      "ecosystem": "R",
+      "installed": true,
+      "version": "2.16",
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:WGCNA",
+      "kind": "package",
+      "label": "WGCNA",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:netgraph",
+      "kind": "package",
+      "label": "netgraph",
+      "ecosystem": "Python",
+      "installed": false,
+      "version": null,
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:networkx",
+      "kind": "package",
+      "label": "networkx",
+      "ecosystem": "Python",
+      "installed": false,
+      "version": null,
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:numpy",
+      "kind": "package",
+      "label": "numpy",
+      "ecosystem": "Python",
+      "installed": true,
+      "version": "2.3.5",
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:pandas",
+      "kind": "package",
+      "label": "pandas",
+      "ecosystem": "Python",
+      "installed": true,
+      "version": "2.2.3",
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "package:umap",
+      "kind": "package",
+      "label": "umap",
+      "ecosystem": "R",
+      "installed": false,
+      "version": null,
+      "environment_status": "metadata-checked-no-execution"
+    },
+    {
+      "id": "genomics-rpe1-reference-2025",
+      "kind": "case",
+      "label": "RPE1 全基因组 SNP密度 HDR HOR 核型 轨道 karyoploteR plotsr",
+      "source": "library/genomics/rpe1-reference/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/rpe1-reference/data/metadata/source-manifest.json",
+      "status": "code-learned-source-data-audited",
+      "visual_status": "source-original-compared-selected-structure-adapter",
+      "review_status": "not-run-full-original",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "processed-table-replot-not-full-author-runtime",
+      "recipe_ids": [
+        "GEN-RPE1-DENSITY-HDR-HOR-001",
+        "GEN-RPE1-SYRI-PLOTSR-001",
+        "GEN-RPE1-FLAGGER-LENGTH-001"
+      ],
+      "simulation_bundle": "benchmark/library/genomics/rpe1-reference/bundle.json",
+      "simulation_review_scope": "separate source-exposed selected-structure bundle; full-original high fidelity, unexposed transfer and stress unverified"
+    },
+    {
+      "id": "package:karyoploteR",
+      "kind": "package",
+      "label": "karyoploteR",
+      "installed": false,
+      "version": null,
+      "verification_scope": "this run: karyoploteR not installed; plotsr not executed; R others used or metadata verified"
+    },
+    {
+      "id": "package:plotsr",
+      "kind": "package",
+      "label": "plotsr",
+      "installed": false,
+      "version": null,
+      "verification_scope": "this run: karyoploteR not installed; plotsr not executed; R others used or metadata verified"
+    },
+    {
+      "id": "package:IRanges",
+      "kind": "package",
+      "label": "IRanges",
+      "installed": true,
+      "version": null,
+      "verification_scope": "this run: karyoploteR not installed; plotsr not executed; R others used or metadata verified"
+    },
+    {
+      "id": "topfigure-086-7c777dfd",
+      "kind": "case",
+      "label": "桑基气泡图 桑基 sankey bubble 富集 pathway",
+      "source": "benchmark/library/topjournal/issue_086/manifest.json",
+      "source_collection": "topjournal",
+      "status": "source-informed-simulation-replay-verified",
+      "visual_status": "not-run",
+      "review_status": "missing",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "TOPJ-SANKEY-BUBBLE-086"
+      ],
+      "benchmark_status": "PENDING_INPUT",
+      "simulation_status": "PASS_FIXED_FIXTURE",
+      "simulation_bundle": "benchmark/library/topjournal/issue_086/simulation-bundle.json"
+    },
+    {
+      "id": "package:ggsankeyfier",
+      "kind": "package",
+      "label": "ggsankeyfier",
+      "installed": false,
+      "version": null,
+      "verification_scope": "namespace and package version checked 2026-10-02; source renderer not executed"
+    },
+    {
+      "id": "topfigure-089-2407a180",
+      "kind": "case",
+      "label": "双曲线火山图 火山 volcano hyperbolic CRISPR NTC",
+      "source": "benchmark/library/topjournal/issue_089/manifest.json",
+      "source_collection": "topjournal",
+      "status": "source-informed-simulation-replay-verified",
+      "visual_status": "not-run",
+      "review_status": "missing",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "TOPJ-HYPERBOLIC-VOLCANO-089"
+      ],
+      "benchmark_status": "PENDING_INPUT",
+      "simulation_status": "PASS_FIXED_FIXTURE",
+      "simulation_bundle": "benchmark/library/topjournal/issue_089/simulation-bundle.json"
+    },
+    {
+      "id": "topfigure-097-19dfbfef",
+      "kind": "case",
+      "label": "系统发育树 多轨道 树 phylogeny circular ggtreeExtra",
+      "source": "benchmark/library/topjournal/issue_097/manifest.json",
+      "source_collection": "topjournal",
+      "status": "source-informed-simulation-replay-verified",
+      "visual_status": "not-run",
+      "review_status": "missing",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "TOPJ-PHYLOGENY-TRACKS-097"
+      ],
+      "benchmark_status": "PENDING_INPUT",
+      "simulation_status": "PASS_FIXED_FIXTURE",
+      "simulation_bundle": "benchmark/library/topjournal/issue_097/simulation-bundle.json"
+    },
+    {
+      "id": "package:ape",
+      "kind": "package",
+      "label": "ape",
+      "installed": true,
+      "version": "5.8.1",
+      "verification_scope": "namespace and package version checked 2026-10-02; source renderer not executed"
+    },
+    {
+      "id": "topfigure-098-23c7513b",
+      "kind": "case",
+      "label": "径向分类层级树 外圈热图 分类层级树 taxonomy radial multi-ring heatmap ASV",
+      "source": "benchmark/library/topjournal/issue_098/manifest.json",
+      "source_collection": "topjournal",
+      "status": "source-informed-simulation-replay-verified",
+      "visual_status": "not-run",
+      "review_status": "missing",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run",
+      "recipe_ids": [
+        "TOPJ-TAXONOMY-RINGS-098"
+      ],
+      "benchmark_status": "PENDING_INPUT",
+      "simulation_status": "PASS_FIXED_FIXTURE",
+      "simulation_bundle": "benchmark/library/topjournal/issue_098/simulation-bundle.json"
+    },
+    {
+      "id": "package:data.table",
+      "kind": "package",
+      "label": "data.table",
+      "installed": true,
+      "version": "1.18.6.1",
+      "verification_scope": "namespace and package version checked 2026-10-02; source renderer not executed"
+    },
+    {
+      "id": "genomics-cannabis-pangenome-2025",
+      "kind": "case",
+      "label": "Cannabis 泛基因组 双单倍型共线性 CpG基因密度 ideogram logistic ribbon GENESPACE sex expression joint marginal histogram",
+      "source": "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json",
+      "status": "code-learned-original-compared-source-data-audited",
+      "visual_status": "original-source-figures-viewed-no-new-render",
+      "review_status": "source-learning-reviewed-not-original-reproduction",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run-source_learning_only",
+      "recipe_ids": [
+        "GEN-CANNABIS-CGP-SYNTENY-001",
+        "GEN-CANNABIS-SEX-EXPRESSION-JOINT-001"
+      ]
+    },
+    {
+      "id": "package:viridisLite",
+      "kind": "package",
+      "label": "viridisLite",
+      "installed": true,
+      "version": "0.4.3",
+      "runtime_status": "R_installed_metadata_checked_2026-10-11_not_author_renderer_execution"
+    },
+    {
+      "id": "genomics-dpm-multiomics-2024",
+      "kind": "case",
+      "label": "DPM 多组学 bulk RNA 蛋白组 DNA甲基化 方向约束 signed P 聚类热图 基因组学证据 气泡矩阵 Cytoscape 饼图网络",
+      "source": "library/genomics/dpm-multiomics/data/metadata/source-manifest.json",
+      "source_collection": "genomics",
+      "source_manifest": "library/genomics/dpm-multiomics/data/metadata/source-manifest.json",
+      "status": "source-learned-original-viewed-input-audited; transfer-NOT_VERIFIED",
+      "visual_status": "original-source-figures-viewed-no-new-render",
+      "review_status": "source-learning-reviewed-not-original-reproduction",
+      "high_fidelity_eligible": false,
+      "reproduction_status": "not_run-source_learning_only",
+      "recipe_ids": [
+        "GEN-DPM-SIGNED-HEATMAP-001",
+        "GEN-DPM-GENE-MODALITY-BUBBLES-002",
+        "GEN-DPM-EVIDENCE-PIE-NETWORK-003"
+      ]
+    },
+    {
+      "id": "package:gplots",
+      "kind": "package",
+      "label": "gplots",
+      "installed": true,
+      "version": "3.3.0",
+      "runtime_status": "R_installed_metadata_checked_2026-10-11_not_author_renderer_execution"
+    },
+    {
+      "id": "package:statsmodels",
+      "kind": "package",
+      "label": "statsmodels",
+      "installed": null,
+      "version": null,
+      "runtime_status": "not_probed_source_mention_only"
+    },
+    {
+      "id": "package:optparse",
+      "kind": "package",
+      "label": "optparse",
+      "installed": false,
+      "version": null,
+      "runtime_status": "R_installed_metadata_checked_2026-10-11"
+    },
+    {
+      "id": "package:ActivePathways",
+      "kind": "package",
+      "label": "ActivePathways",
+      "installed": false,
+      "version": null,
+      "runtime_status": "R_installed_metadata_checked_2026-10-11"
+    },
+    {
+      "id": "genomics-cannabis-busco-chr7-2025",
+      "kind": "case",
+      "label": "Cannabis Fig4d：BUSCO锚定共线点线图、合酶位点三角、化学型分组",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "new_input_transfer": "NOT_VERIFIED",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理坐标；147个BUSCO、76个基因组。Fig4d选定面板换色重绘，保留锚定、样本顺序、有限窗口与原NA。",
+        "gallery_id": "BF-0217",
+        "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+        "local_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/evidence/bundle.json",
+        "local_bundle_sha256": "97133bb2adf73d18b234777b1e0e27fb81cbc4afdc2edf8c8fa318db2446ac7a",
+        "public_recipe": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-cannabis-public-chr7-2025",
+      "kind": "case",
+      "label": "Cannabis 公共chr7：BUSCO多基因组点连线图、CBDAS定位路径",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "new_input_transfer": "NOT_VERIFIED",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理坐标；147个BUSCO、31个基因组、31个CBDAS位点。作者公开图重绘，正式补图编号未验证。",
+        "gallery_id": "BF-0218",
+        "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+        "local_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json",
+        "local_bundle_sha256": "76cb19e6fd9db7e4c852e914f365743e87e33b5562bbdbcf1cdba33e4bebd187",
+        "public_recipe": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-dpm-hoxa10-bubbles-2024",
+      "kind": "case",
+      "label": "DPM Fig3F：双通路基因×OE/KD气泡矩阵、原始P及log2FC",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "new_input_transfer": "NOT_VERIFIED",
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理数据；37/23基因、120个单元。保留raw P与效应，通路标签为FWER；缺失原星号依据，未补造。",
+        "gallery_id": "BF-0219",
+        "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+        "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json",
+        "local_bundle_sha256": "f53d0b36ee0ae2c1e7c8432b7f2ca8c5fff97b12c620b0465d12ae45a1a85c64",
+        "public_recipe": "examples/genomics-gallery-20261011/dpm-bubbles/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-dpm-hoxa10-network-2024",
+      "kind": "case",
+      "label": "DPM Fig3E：225通路证据饼图网络、新overlap连边与布局",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "new_input_transfer": "NOT_VERIFIED",
+      "validation_scope": "Real author pathway attributes with declared new OC>=0.5 graph and seed3302024 layout. Original edges/coordinates/node-area map/manual themes NOT_VERIFIED; all225 nodes retained. Source study is not original network reproduction.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "225条作者通路；明确新设OC≥0.5、2183边及布局。半饼只编码OE/KD二元证据；原Cytoscape布局、阈值和主题组装未公开。",
+        "gallery_id": "BF-0220",
+        "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+        "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json",
+        "local_bundle_sha256": "78aeff5189f847a715572807563133691bffced3da23f6a3b49ec4b80637f4a8",
+        "public_recipe": "examples/genomics-gallery-20261011/dpm-network/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-ohca-microc-loops-2024",
+      "kind": "case",
+      "label": "OHCA作者书例：原生Micro-C接触矩阵及过滤loop叠加",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者book处理RDS；5kb、200bins、19667联系记录、31个可见环。原生HiContacts；仅对应book案例，正式论文面板未验证。",
+        "gallery_id": "BF-0221",
+        "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+        "local_bundle": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/evidence/bundle.json",
+        "local_bundle_sha256": "c9d1083989dc3e9e56c85ebfa68fc38af01e1e7e9379365076011cf6b1a2cabb",
+        "public_recipe": "examples/genomics-gallery-20261011/ohca-microc/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-planarian-haplotype-dotplot-2026",
+      "kind": "case",
+      "label": "Planarian真实processed双单倍型整染色体alignment dotplot",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者已翻向、拼接的处理坐标；19637条比对、39274端点。保留作者4×4顺序和maxEnd边界，按单条比对identity换色；正式面板未验证。",
+        "gallery_id": "BF-0222",
+        "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+        "local_bundle": "benchmark/library/genomics/planarian-genome/evidence/bundle.json",
+        "local_bundle_sha256": "7349e7bf00b0dd2deb2c42587a2753e8fc2b6a255b00491e4fbfb1e978a325b7",
+        "public_recipe": "examples/genomics-gallery-20261011/planarian-dotplot/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "gallery-multiomics-alluvial-2026",
+      "kind": "case",
+      "label": "模拟匹配DNA RNA蛋白状态的原生三层alluvial修订示例",
+      "source": "gallery-simulation",
+      "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。",
+        "gallery_id": "BF-0109",
+        "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+        "local_bundle": "examples/genomics-gallery-20261011/sankey/evidence/bundle.json",
+        "local_bundle_sha256": "3156cc3dd6693fc3fdc2f8cc010f77a6e2677456ea24242350826cf203896a32",
+        "public_recipe": "examples/genomics-gallery-20261011/sankey/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "gallery-multievent-oncoprint-2026",
+      "kind": "case",
+      "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+      "source": "gallery-simulation",
+      "label": "144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction",
+      "high_fidelity_eligible": false,
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
+        "gallery_id": "BF-0146",
+        "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+        "local_bundle": "examples/genomics-gallery-20261011/oncoprint/evidence/bundle.json",
+        "local_bundle_sha256": "8955144e3c67e6610605f35db03704274480649449d5381ac032a1c7136546e6",
+        "public_recipe": "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
     }
   ],
   "edges": [
@@ -11514,6 +12501,1116 @@
       "from": "topfigure-080-0afecf83",
       "to": "package:tidyverse",
       "relation": "uses-package"
+    },
+    {
+      "from": "populus-fig2b-source-001",
+      "to": "family:bar-composition",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "populus-fig2b-source-001",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-fig2b-source-001",
+      "to": "package:ragg",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-fig2b-source-001",
+      "to": "package:systemfonts",
+      "relation": "uses-package"
+    },
+    {
+      "from": "toomanycells-fig2-001",
+      "to": "family:phylogeny",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "toomanycells-fig2-001",
+      "to": "package:grid",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-synteny-edfig1a-001",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "populus-synteny-edfig1a-001",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-synteny-edfig1a-001",
+      "to": "package:ggnewscale",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-synteny-edfig1a-001",
+      "to": "package:dplyr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "populus-compartment-edfig1b-001",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "populus-compartment-edfig1b-001",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:Seurat",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:URD",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:ggcorrplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-han-foregut",
+      "to": "package:plotly",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:seaborn",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:matplotlib",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:destiny",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:Seurat",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-wahle-retinal",
+      "to": "package:Signac",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-hochgerner-dentate",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-hochgerner-dentate",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-hochgerner-dentate",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-hochgerner-dentate",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:ComplexHeatmap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:ggrastr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:ggrepel",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-trevino-cortex",
+      "to": "package:viridis",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "family:distribution",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "family:time-series",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:Seurat",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:pheatmap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:destiny",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:slingshot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-yu-interneuron",
+      "to": "package:ggalluvial",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "family:circular",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:ComplexHeatmap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:ggsankey",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:ggrastr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-ma-primate-pfc",
+      "to": "package:viridis",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "family:circular",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:ggraph",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:tidygraph",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:patchwork",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:Signac",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:ggrepel",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:ggnewscale",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:viridis",
+      "relation": "uses-package"
+    },
+    {
+      "from": "single-cell-fleck-organoid",
+      "to": "package:pals",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "family:distribution",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:SVbyEye",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:StainedGlass",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:ggforce",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:ggnewscale",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:RColorBrewer",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ape-t2t-2025",
+      "to": "package:GenomicRanges",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:distribution",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:bar-composition",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "family:time-series",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:reshape2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:ggpubr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:ggpattern",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:ggnet",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:network",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:igraph",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:khroma",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:gridExtra",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:dplyr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:rhdf5",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:ggrepel",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-arabidopsis-27-2025",
+      "to": "package:scales",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:correlation",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:enrichment",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "family:time-series",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:FactoMineR",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:RColorBrewer",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:WGCNA",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:clusterProfiler",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:dplyr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:factoextra",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:ggpubr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:gridExtra",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:matplotlib",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:netgraph",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:networkx",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:numpy",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:pandas",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:patchwork",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:readxl",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:reshape2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:scales",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:seaborn",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:stringr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:tidyverse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-barley-pantranscriptome-2025",
+      "to": "package:umap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:karyoploteR",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:plotsr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:GenomicRanges",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:IRanges",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-rpe1-reference-2025",
+      "to": "family:distribution",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "family:enrichment",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "package:tidyverse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "package:ggsankeyfier",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-086-7c777dfd",
+      "to": "package:patchwork",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "family:volcano",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "package:tidyverse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "package:ggrepel",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-089-2407a180",
+      "to": "package:readxl",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "family:phylogeny",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "family:circular",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "family:bar-composition",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:tidyverse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:readxl",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:ape",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:ggtree",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:ggtreeExtra",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:ggnewscale",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-097-19dfbfef",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "family:phylogeny",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "family:circular",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:tidyverse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:data.table",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:ape",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:ggtree",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:ggtreeExtra",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:treeio",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:cowplot",
+      "relation": "uses-package"
+    },
+    {
+      "from": "topfigure-098-23c7513b",
+      "to": "package:RColorBrewer",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "family:distribution",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "package:viridisLite",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "package:ggpubr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "package:matplotlib",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-pangenome-2025",
+      "to": "package:numpy",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "family:enrichment",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:gplots",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:stats",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:statsmodels",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:pandas",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:optparse",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:forcats",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:numpy",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:ActivePathways",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:dplyr",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-multiomics-2024",
+      "to": "package:data.table",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-busco-chr7-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-cannabis-busco-chr7-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-cannabis-public-chr7-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-cannabis-public-chr7-2025",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-hoxa10-bubbles-2024",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-hoxa10-bubbles-2024",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-dpm-hoxa10-network-2024",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-dpm-hoxa10-network-2024",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ohca-microc-loops-2024",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-planarian-haplotype-dotplot-2026",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "gallery-multiomics-alluvial-2026",
+      "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
     }
   ],
   "visual_evidence": [
@@ -11521,12 +13618,12 @@
       "evidence_id": "scidraw-rcs",
       "source_url": "https://mp.weixin.qq.com/s/sgNPHr405xBXptTumdj10g",
       "case_id": "scidraw-a2dd8d3b52",
-      "source_image": "workspace/Project_007_SciDraw复现训练/work/source_candidates/rcs_05.png",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/rcs_05.png",
       "source_sha256": "2fe61811df39ad22f88c9d7469dad04e7981972f3cb2d80b23af69e3a57315a0",
-      "reproduction_png": "workspace/Project_007_SciDraw复现训练/results/figures/scidraw_rcs.png",
-      "reproduction_sha256": "a6ca5d71498e9641900ec5599d9bf7abc5d696ac96118d039f4be4689ece4eea",
-      "comparison_png": "workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_rcs_source_comparison.png",
-      "comparison_sha256": "e94bb9592bfd4091e59dcf4f3930ab56207b0c21de7679d7873499025e230686",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/scidraw_rcs.png",
+      "reproduction_sha256": "3667a0862c53429b18c9c3e82763c6a961c12c03a2bb13bc052ade16a881ea9e",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/scidraw_rcs_source_comparison.png",
+      "comparison_sha256": "6f525956a1b69d6a8a29c8a157be667b7de1aed134fe0d54c845e637afdfedfd",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "结构接近，待校准曲线形态和主图留白"
@@ -11535,12 +13632,12 @@
       "evidence_id": "scidraw-ridge-bipolar",
       "source_url": "https://mp.weixin.qq.com/s/nPp9dMmQeaF_jNjMr-ORrQ",
       "case_id": "scidraw-709e0a8c86",
-      "source_image": "workspace/Project_007_SciDraw复现训练/work/source_candidates/ridge_02.png",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/ridge_02.png",
       "source_sha256": "d3758bb1eee737c41b8539f12206c0996bb64f621809f84f4bdf30b63a965239",
-      "reproduction_png": "workspace/Project_007_SciDraw复现训练/results/figures/scidraw_ridge_bipolar.png",
-      "reproduction_sha256": "dc302f8953e33fe9a9c0c7e9b7af5b5ec344171c2248a4d2229122b5280b8d3e",
-      "comparison_png": "workspace/Project_007_SciDraw复现训练/work/comparison/scidraw_ridge_bipolar_source_comparison.png",
-      "comparison_sha256": "8b1d3efe2167d5fb2131b7347177412e41e5c6836716e46358ea91d6f55fe1ea",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/scidraw_ridge_bipolar.png",
+      "reproduction_sha256": "6effff9f899ea91f2d79be6ed0ba580e30e3be4c6fd6bc1f15c8e948af76797a",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/scidraw_ridge_bipolar_source_comparison.png",
+      "comparison_sha256": "9bc3048e086416c4b544227e19a2be4b08cdc0c14a769bacef8d37835aea9633",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "方向正确，待补原图标签密度与拼版比例"
@@ -11549,12 +13646,12 @@
       "evidence_id": "01_pcoa_marginal",
       "source_url": "https://mp.weixin.qq.com/s/deuYTanHaDr6D8y3lKjW-Q",
       "case_id": "scidraw-b418bcc5db",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/pcoa_02.png",
-      "source_sha256": "860ec5cb58574af93f0ee9496570f9bc71f5ef582ca27fa0733794d8e6ec138d",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/01_pcoa_marginal.png",
-      "reproduction_sha256": "06337baba336c5387027b02a789bee14a583cacc5d521a114f1f85433292b5a0",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/01_pcoa_marginal.png",
-      "comparison_sha256": "464a0a80460abc204ce1e284b59d9444ab6855c7ed97cbc1cb7f2056587b9835",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/pcoa_02.png",
+      "source_sha256": "59a53c9ae1438009d186b47fa2c1903b3b08d530bb2beddfad78a77e9ddf71a4",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/01_pcoa_marginal.png",
+      "reproduction_sha256": "d9d9cc66d0b2d2e7dc42637bf13aa06845de4b57576cb40e93dbe2cb3278630b",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/01_pcoa_marginal.png",
+      "comparison_sha256": "d3519b1f10885fe8f20b29d94358d6891e2d287370f69b31a2d83f0be8905e16",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "主图和边际分布存在，统计框及坐标比例待校准"
@@ -11563,12 +13660,12 @@
       "evidence_id": "02_ternary_cell_state",
       "source_url": "https://mp.weixin.qq.com/s/r8eg8BJffDzg9FCDmbT6Zg",
       "case_id": "scidraw-7cd62a766b",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/ternary_03.png",
-      "source_sha256": "f8f09602b2090dc80258dac97d8cac6cda98403bbeb5b4db6d12bd1501bec0b3",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/02_ternary_cell_state.png",
-      "reproduction_sha256": "ea4dbe093d34fbbc2aa497470b375f207d8d213701784ec485720e651479ce95",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/02_ternary_cell_state.png",
-      "comparison_sha256": "e062f9960d64b75784a5614fa0eefe4d6cf91e294b00998f7b4446e8a499de24",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/ternary_03.png",
+      "source_sha256": "06cd319ed60b02f5df7d86dff2fe5c6ba4b2c4143ed5ad24b3b33302c894b277",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/02_ternary_cell_state.png",
+      "reproduction_sha256": "b38a107743a5618dd2602ceb23a898462fd1e19823d786a886032cda51d59e79",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/02_ternary_cell_state.png",
+      "comparison_sha256": "627a35fbd04c94f8530e17e929a19b381238ad9c92433d98fd023698b2746e2e",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "已改三时点面板、三向网格及形状颜色双编码，轴文字层级仍待校准"
@@ -11577,12 +13674,12 @@
       "evidence_id": "03_correlation_heatmap",
       "source_url": "https://mp.weixin.qq.com/s/yPGgFO8Y050w5itmkcpvoQ",
       "case_id": "scidraw-67dc14bdc7",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/corr_03.png",
-      "source_sha256": "b7186784519cfdc7a141ca47c674d749a8a954cd17db5b29e3da9564f7153191",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/03_correlation_heatmap.png",
-      "reproduction_sha256": "41f54aee3a5a38bbc179b59d6a7fa86f2431007eea9dd1e945d97df0dd803561",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/03_correlation_heatmap.png",
-      "comparison_sha256": "bd755c32637db127811bc72df306dc8c44d6bc28bbc0f050adb8346c8a53b9bc",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/corr_03.png",
+      "source_sha256": "dfd6d5bde9ca7153155188f86d72fe6c867421fef435586d092e1e34cd9c02cd",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/03_correlation_heatmap.png",
+      "reproduction_sha256": "71e70955140675e5b8a6bf4fe7b06c3c7e93718f5a45000d095de53cc5077007",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/03_correlation_heatmap.png",
+      "comparison_sha256": "51bb307c106dd0d961cf82be47305333aa8c6c24ecdb6fbd4ba072cb0ff07b79",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "已恢复28变量密集三角结构，变量语义与原图文字密度仍不同"
@@ -11591,12 +13688,12 @@
       "evidence_id": "04_patient_swimmer",
       "source_url": "https://mp.weixin.qq.com/s/DWxaxZvIFW0_Ve1yDRYSZQ",
       "case_id": "scidraw-1a060be0fe",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/swimmer_02.png",
-      "source_sha256": "20ad47d4f825413b6fd000451f84afe874ce4c44d2b8e577a6eb8b8e218934eb",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/04_patient_swimmer.png",
-      "reproduction_sha256": "1c58ae721ab4fb6702ceb0962ae5a760f418c377c192c77920914ae2255999ae",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/04_patient_swimmer.png",
-      "comparison_sha256": "2c427da86d115b1d70d1e3de038542928aad19f66b004c2e7973187a30e46114",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/swimmer_02.png",
+      "source_sha256": "5558094eca371bdb1885fa0bec7a54deb83def3fa1991d25869ceb9622f42124",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/04_patient_swimmer.png",
+      "reproduction_sha256": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/04_patient_swimmer.png",
+      "comparison_sha256": "432cfb619dfd25275d7f496d99646446a46c6ea06e99a831fcf5b9c1cc550733",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "已扩展28患者和四列临床注释轨，图例结构与事件轨仍需细化"
@@ -11605,12 +13702,12 @@
       "evidence_id": "05_chord_outer_track",
       "source_url": "https://mp.weixin.qq.com/s/F_U3GtEy3dd_NK99-6vfiw",
       "case_id": "scidraw-fdf13d26d3",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/chord_02.png",
-      "source_sha256": "78bb318c4bc3301715db2082e9d086c49644ab48beee8272bcdbaa86c329a0c5",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/05_chord_outer_track.png",
-      "reproduction_sha256": "f424a4bd6d799af945380f1314afa456d6983bd5d8449ead51185e3ce4674446",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/05_chord_outer_track.png",
-      "comparison_sha256": "e62b52a42e9b30745d4e08c92650213faeecbb4cbb942c7ff9d14ae102787548",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/chord_02.png",
+      "source_sha256": "44c06f5ea97ace31423642f9656757ba4904f693bbe558b2abf8998efdefd820",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/05_chord_outer_track.png",
+      "reproduction_sha256": "32749221bbeacad9378021e785e6b88d5e718bd2238f14e982b79eae520cf7c4",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/05_chord_outer_track.png",
+      "comparison_sha256": "98cb4cd1bb45acfa75315dd11e91a1e0b367b9c2389f093fcb4ec4fdd14a239c",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "已扩为22扇区和外围定量轨，原图外圈细分标签仍未完整复现"
@@ -11619,15 +13716,71 @@
       "evidence_id": "06_volcano_gsea",
       "source_url": "https://mp.weixin.qq.com/s/kihdXkAsiznY5ibzRq8VpQ",
       "case_id": "scidraw-f749086eb5",
-      "source_image": "workspace/Project_008_SciDraw六图复现/work/source_candidates/volcano_02.png",
-      "source_sha256": "e67aed3263f0bdaaff2c61a6e3e4ee66ff5b4accc98591a8eb1365f785591ae7",
-      "reproduction_png": "workspace/Project_008_SciDraw六图复现/results/figures/06_volcano_gsea.png",
-      "reproduction_sha256": "b792d93d7d8ef4e4ead302db0c94aa8cb7b9f9115097bdb32334daa6b7e7d13f",
-      "comparison_png": "workspace/Project_008_SciDraw六图复现/work/comparison/06_volcano_gsea.png",
-      "comparison_sha256": "64dbc8d5a6b934cb8a418b4c73ef1a2209b1b4c17b4cfd7aea610b6810e5fd6d",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/sources/volcano_02.png",
+      "source_sha256": "ddee7b83eb8447de49b4ba0f60596e0b4943308b696b9953be8929f0da576d9d",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/figures/06_volcano_gsea.png",
+      "reproduction_sha256": "2f7f7bfe799c65bb8c38a4207edbc48c1cf8803fdcd44d5e6579dc605a0e862e",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/library/scidraw/evidence/comparison/06_volcano_gsea.png",
+      "comparison_sha256": "f5193df39b65c8c68f55f065555b7b63d76f259a2620f6d4335c257630c2fc00",
       "visual_status": "source-compared-needs-revision",
       "review_status": "needs-revision",
       "review_note": "总体语法接近，顶部图例和底部轨道密度待优化"
+    },
+    {
+      "evidence_id": "populus-fig2b-source-001",
+      "source_url": "https://www.nature.com/articles/s41559-026-03069-3/figures/2",
+      "case_id": "populus-fig2b-source-001",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-fig2b-source-001/reference.png",
+      "source_sha256": "283dfc5d803c2ac55f8c667c5c9bdeb733c29022b7e703aa600b555c2de12f8d",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-fig2b-source-001/results/fig2b_v2.png",
+      "reproduction_sha256": "c6bd99d46861ed5a2d91a13f9568d2d3c24f0a79da91b3d6368b3d4960145b75",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-fig2b-source-001/review/comparison.png",
+      "comparison_sha256": "55df91ea4733dad5e5a39272e555291aca5fed69f6c75b73542e64728154c8d8",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "review_note": "v2.19 source-exposed reproduction from exact Sup Tab5 ratios. Visual review caught and corrected oversized, horizontally compressed legend keys and an opaque background hiding the top frame; normalized comparison, bundle audit and CP0-CP4 now bind the corrected PNG. Local-only; no blind-transfer claim."
+    },
+    {
+      "evidence_id": "toomanycells-fig2-001",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7439807/",
+      "case_id": "toomanycells-fig2-001",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/toomanycells-fig2-001/reference-contact-sheet.jpg",
+      "source_sha256": "6725c43de4b7101e3616be0992bb798d215f4df02a3bd857e78ea887798f4621",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/toomanycells-fig2-001/results/figure2-structural.png",
+      "reproduction_sha256": "22fb849b9b9bf042daf089be432ff59c2a043d95f8e9220220afa8be2fba54d9",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/toomanycells-fig2-001/review/source-vs-reproduction.png",
+      "comparison_sha256": "68d5f3c5f9612a364ec89fced3ab9b03d382680cbb19e2f163cc82bd588980fe",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "review_note": "Source-exposed structural reproduction after original-size review. Radial topology, abundance-scaled branches, composition rings, pruning, modularity and node-ID overlays passed final-size comparison; original values and topology are excluded."
+    },
+    {
+      "evidence_id": "populus-synteny-edfig1a-001",
+      "source_url": "https://www.nature.com/articles/s41559-026-03069-3/figures/7",
+      "case_id": "populus-synteny-edfig1a-001",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-synteny-edfig1a-001/reference-panel-a.png",
+      "source_sha256": "aa7c3c91f638bea0fba15895108ae640683e5e8ad0234963b0c5415c74d9adc1",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-synteny-edfig1a-001/results/populus_whole_genome_synteny.png",
+      "reproduction_sha256": "236563ed71f48091b715ba4d77b429454aeed2fb8d6d8656ef40105b944f24fe",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-synteny-edfig1a-001/review/source-vs-reproduction.png",
+      "comparison_sha256": "4a71081af2e4c23e9ff2bf64bf144558fda8b9dc5f2810e68deff467fde63c5a",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "review_note": "Corrected source-compared reproduction: all 19 chromosome headers are positioned from their sequence midpoints above the top track. Eleven species rows, phylogeny alignment, adjacent-row ribbons, four relation classes and external legend passed; original coordinates and biological claims are excluded."
+    },
+    {
+      "evidence_id": "populus-compartment-edfig1b-001",
+      "source_url": "https://www.nature.com/articles/s41559-026-03069-3/figures/7",
+      "case_id": "populus-compartment-edfig1b-001",
+      "source_image": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-compartment-edfig1b-001/reference-panel-b.jpg",
+      "source_sha256": "9302051c21d2fccd3aad5507634edf8eecd0068000f4b91f60b198e2f5cdae2d",
+      "reproduction_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-compartment-edfig1b-001/results/populus_circular_compartment_tracks.png",
+      "reproduction_sha256": "259a871f1cd318cd5c93d8a9772d269a1443d3e19255eba5af1a2a41ae179504",
+      "comparison_png": "workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/evidence/populus-compartment-edfig1b-001/review/source-vs-reproduction.png",
+      "comparison_sha256": "d5152875122cea48e76502a2263daeb0a5389b91f112add4bfab371139fc43a4",
+      "visual_status": "source-compared-png",
+      "review_status": "pass",
+      "review_note": "Official Extended Data Fig. 1b, user reference and final-size output were compared. Nineteen sectors, eleven a-k tracks, two-state palette, central species key and external legend passed; original intervals and biological claims are excluded."
     }
   ]
 }

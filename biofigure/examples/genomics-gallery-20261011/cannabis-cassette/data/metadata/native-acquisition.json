@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "repo": "knausb/BUSCOplot",
+  "commit": "d4f793988ce89279cf44294ceb8017756e181b0b",
+  "license": "GPL >=3, original license files separately downloaded",
+  "assets": [
+    {
+      "path": "DESCRIPTION",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/DESCRIPTION",
+      "sha256": "2980023bb98ec6f2166d46980426443133ccaf5984fb9d58890d89cbc491d1be",
+      "bytes": 557,
+      "role": "native-package-source"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "native-package-source"
+    },
+    {
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/LICENSE.md",
+      "sha256": "585e25ef8f5946a52bf2aed68d5becfc38be94a8663aa01c1b31d88aa57f1de3",
+      "bytes": 34904,
+      "role": "native-package-source"
+    },
+    {
+      "path": "NAMESPACE",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/NAMESPACE",
+      "sha256": "9da9a85192c0b918f6b02d6d0f4b1154f9d42b601efe1db4a3e0f021054efaa9",
+      "bytes": 261,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/BUSCOplot-package.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/BUSCOplot-package.R",
+      "sha256": "45deb21f74d0c76023e8b17137aba369d408fe0686c0971381949554fa2cef2a",
+      "bytes": 93,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/DM6-full_table.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/DM6-full_table.R",
+      "sha256": "7bc8489d161c0f7d7c3d275244a88e76fddfc38add333cf36be07ccc50d7ec8a",
+      "bytes": 1443,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/add_unknown.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/add_unknown.R",
+      "sha256": "031e2910a055e224b368755c32d2226ccc695b6eee76f070ffa97d9596fbf817",
+      "bytes": 2026,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/busco_bar.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/busco_bar.R",
+      "sha256": "c324799368a032227f64dc5e14fbdc74bd826baeda0b6c37c2e1060224a05d37",
+      "bytes": 1793,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/check_busco_table.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/check_busco_table.R",
+      "sha256": "92dd8add85a02c59eb6a5af83e1670f6ede707c113ad30527badf3b7d23feeac",
+      "bytes": 1348,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/dist_fingerprint.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/dist_fingerprint.R",
+      "sha256": "a3989ab7d0545b5dc87c0f9e1a5c3d66ad061436dd5295f5cb119401596a35d2",
+      "bytes": 3115,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/gg_line_map.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/gg_line_map.R",
+      "sha256": "251b8c9ae46f7beafd45552df8e0594a986df3f61da60ffc627f634bf5569b40",
+      "bytes": 4984,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/line_map.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/line_map.R",
+      "sha256": "b74854f04653da2f0809a2683b6a8838259594bf39fad44da06df605cfb9362e",
+      "bytes": 1928,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/make_known.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/make_known.R",
+      "sha256": "d652d653a805df5de1cc782ad5609a2f3bb6683dd1f8c010182e25b8bdd133b8",
+      "bytes": 878,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/position_BUSCOS.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/position_BUSCOS.R",
+      "sha256": "be4d9a6d0bf12e703844a5797cbf23aa387fd1764ead038e307555d94cfedece",
+      "bytes": 4782,
+      "role": "native-package-source"
+    },
+    {
+      "path": "R/read_busco.R",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/R/read_busco.R",
+      "sha256": "2590250085239a69760a36b31705492d5e6486737a5007f1a9c4a7dca88df4f5",
+      "bytes": 926,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/BUSCOplot-package.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/BUSCOplot-package.Rd",
+      "sha256": "043edea4581293b6f0468457c93a1da99cd4a68720a8d961790b55cfd4aa7920",
+      "bytes": 437,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/DM6.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/DM6.Rd",
+      "sha256": "52c0a83a23ae63b61d0b397f8203654501f798e77cb3f98e79d2829f23968e92",
+      "bytes": 1514,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/add_unknown.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/add_unknown.Rd",
+      "sha256": "6a6101ca18b93f692b5670395b15a5dcb67de9d5c9fe739e6a92f4ebebb8aad6",
+      "bytes": 952,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/busco_bar.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/busco_bar.Rd",
+      "sha256": "ae30d4e0361a5a4dfce5b1fbf0110a37418d45473a84dcb0be9a76f043c8adc4",
+      "bytes": 561,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/check_busco_table.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/check_busco_table.Rd",
+      "sha256": "a41779bbf85a6f18e9892affba0d166d5bad5c008497b168f175b4d7d416f380",
+      "bytes": 578,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/dist_fingerprint.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/dist_fingerprint.Rd",
+      "sha256": "6883d2ce62eeaa892810dc53f7fb0ea2ac34c922fc299a31e7af19bd11d0ed7e",
+      "bytes": 1489,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/gg_line_map.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/gg_line_map.Rd",
+      "sha256": "a390b755131c24b83a3332929eda5340a4d90170984aaa25f2cf324b7dffec1e",
+      "bytes": 1491,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/line_map.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/line_map.Rd",
+      "sha256": "60c22ad09504f0986fd20366fd39ded5517793fd8743fff40f7392dfda59a7b7",
+      "bytes": 913,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/make_known.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/make_known.Rd",
+      "sha256": "cbb6ebd3fcd628195306292b0058f179710c805bb0453a830d635a4127ab04a8",
+      "bytes": 625,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/position_BUSCOS.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/position_BUSCOS.Rd",
+      "sha256": "56e9c3e2563b05df49cd0cd673eb380b6c51e4ec2997b60cf96be378a4572ccc",
+      "bytes": 1268,
+      "role": "native-package-source"
+    },
+    {
+      "path": "man/read_busco.Rd",
+      "url": "https://raw.githubusercontent.com/knausb/BUSCOplot/d4f793988ce89279cf44294ceb8017756e181b0b/man/read_busco.Rd",
+      "sha256": "ffbf92597fb5844e3b6f6d9cbe85864a4cc9a088a26dddc1f369e41aa4aca43f",
+      "bytes": 455,
+      "role": "native-package-source"
+    }
+  ]
+}

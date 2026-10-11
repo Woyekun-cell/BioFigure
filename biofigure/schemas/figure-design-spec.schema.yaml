@@ -1,4 +1,4 @@
-schema_version: "3.1"
+schema_version: "3.4"
 kind: figure-design-spec
 required:
   - figure_task
@@ -19,6 +19,7 @@ required:
   - annotation
   - legend
   - palette_semantics
+  - project_style_contract
   - renderer
   - output_size
   - layout_contract
@@ -29,8 +30,9 @@ required:
   - inspection_plan
   - critic_targets
 notes: Internal pre-render contract; it does not replace scientific result tables.
-field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, reference_analysis: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
-reference_evidence_required: [retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
+field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, reference_analysis: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, project_style_contract: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
+reference_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
+primary_source_lock_contract: {trigger: reference_evidence.primary_source_lock_is_nonempty, required: [primary_source_lock, primary_source], empty_atlas_ids_permitted_when_lock_validates: true}
 reference_analysis_required: [figure_family, semantic_purpose, panels, elements, relationships, spatial_topology, required_structures, forbidden_substitutions]
 reference_panel_required: [id, role, position]
 reference_element_required: [id, role, geometry, position, data_mapping, required]
@@ -43,6 +45,15 @@ supplemental_reference_contract:
   evidence_status: optional-not-ground-truth
   source_precedence: scientific-contract-over-supplemental
 output_size_constraints: {width_mm: positive_number, height_mm: positive_number, formats: [pdf, svg, png, tiff]}
+output_size_required: [width_mm, height_mm, formats, size_class, size_basis, size_rationale]
+publication_size_classes:
+  single-column: {min_width_mm: 89, max_width_mm: 90, max_height_mm: 170}
+  one-and-half-column: {min_width_mm: 120, max_width_mm: 136, max_height_mm: 170}
+  double-column: {min_width_mm: 180, max_width_mm: 183, max_height_mm: 170}
+  custom: {min_width_mm: 50, max_width_mm: 210, max_height_mm: 247}
+output_size_basis: final_physical_output
+size_rationale_required: [panel_count, density, longest_label_chars, recommended_class, selection_reason, override_basis]
+size_density_options: [low, medium, high]
 biology_contract_required: [primary_domain, entities, relationships, experimental_unit, statistical_unit, replicate_unit, evidence_level, claim_boundary]
 role_contract_required: [primary_role, secondary_roles]
 backend_lock_required: [backend, lock_id, locked, preview_export_qa_same_backend]
@@ -50,8 +61,20 @@ deliverable_contract_required: [target, required_formats]
 integrity_contract_required: [source_data_preserved, exclusions_declared, uncertainty_declared]
 renderer_constraint: backend_must_exist_in_renderer-registry_and_selected_pattern_options
 layout_contract_required: [canvas, data_bbox, annotation_bbox, legend_bbox, label_reserve, collision_policy, text_extent_method, preflight_collision_check, coordinate_policy]
-font_contract_required: [family, resolved_font_file, fallback_policy, warning_policy, all_layers_inherit_policy, rendered_face_check]
+legend_place_options: [outside_plot, outside_right, outside_left, outside_top, outside_bottom, outside_or_direct, shared_outside, inside_top, direct, none]
+legend_place_guidance: "inside_top is valid for source-matched framed panels only when layout_contract records data_bbox and legend_bbox and render-time box preflight confirms separation."
+font_contract_required: [family, resolved_font_file, fallback_policy, warning_policy, all_layers_inherit_policy, rendered_face_check, minimum_final_text_pt, size_basis, size_roles_pt]
+font_size_roles_required: [axis_text, axis_title, legend_text, strip_text, annotation_text, panel_label]
+font_size_basis: final_output_size
+font_minimum_final_text_pt: 5
+font_max_role_ratio: 1.6
 background_contract_required: [canvas, panel, export]
 inspection_plan_required: [open_png, target_size_check, bbox_check, font_face_check]
 
 text_contract_required: [allowed_text, allow_headings]
+
+statistics_contract:
+  trigger: statistics_required_is_true_or_statistics_plan_is_present
+  validator: scripts/validate_statistics_plan.py
+  required_when_inference_requested: [statistics_required, statistics_plan]
+  legacy_specs: preserve_original_validation_scope_without_statistics_certification

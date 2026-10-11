@@ -1,0 +1,58 @@
+{
+  "case_id": "POPULUS-FIG2B-SOURCE-001",
+  "mode": "reproduction",
+  "family": "stacked-bar-composition",
+  "required_structures": [
+    "panel-tag-b",
+    "ten-ordered-species-bars",
+    "four-transition-states-per-bar",
+    "0-to-100-percent-axis",
+    "top-four-state-legend",
+    "increasing-Ks-order",
+    "qualitative-Ks-band",
+    "angled-italic-species-labels"
+  ],
+  "packages": [
+    "ggplot2",
+    "ragg",
+    "systemfonts",
+    "jsonlite",
+    "digest"
+  ],
+  "scientific_checks": [
+    "ten_species",
+    "four_states_per_species",
+    "composition_closure",
+    "source_ratios_preserved",
+    "published_order",
+    "legend_stack_order"
+  ],
+  "reference": {
+    "path": "reference.png",
+    "sha256": "283dfc5d803c2ac55f8c667c5c9bdeb733c29022b7e703aa600b555c2de12f8d"
+  },
+  "source": {
+    "paper": "Shi et al. Nature Ecology & Evolution (2026)",
+    "title": "Dynamic reorganization of three-dimensional genome architecture during Populus diversification",
+    "doi": "10.1038/s41559-026-03069-3",
+    "figure_url": "https://www.nature.com/articles/s41559-026-03069-3/figures/2",
+    "author_repository": "https://github.com/jingwanglab/Populus_3D_genome_evolution/tree/70d98b88fbcbf7ec0dcf8e2c0c56d69dfea27969",
+    "author_script": "7-Figure plot/Figure2/Figure2bcd.R, lines 1-16",
+    "supplement": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41559-026-03069-3/MediaObjects/41559_2026_3069_MOESM4_ESM.xlsx, Sup Tab5"
+  },
+  "learning": {
+    "input_contract": "Forty official rows: ten P. koreana-to-other-species pairs times four A/B transition states; each row is a precomputed within-pair proportion.",
+    "transform": "Read ratios from Sup Tab5 and preserve values; verify each four-state group sums to one within 1e-12; no second normalization.",
+    "join_order": "Use author factor order Ppse, Pwua, Pyun, Psze, Plas, Psim, Pade, Pdav, Prot, Pqio; categories A-B, B-A, A-A, B-B. Bottom-to-top stack order is reversed by ggplot2 default.",
+    "package_roles": "ggplot2::geom_col and position_stack draw exact ratios; ggplot2::annotation_raster adds the ordinal Ks rank band on the same axes; ggplot2 scales format the 0-100 axis; BioFigure bf_render_png performs typography and layout preflight.",
+    "layout_rules": "One wide panel; four-item legend inside the top border; bars above a shallow peach Ks rank band; ten italic angled species labels below; panel tag b at the far upper-left; pure white canvas; 90 by 54 mm panel canvas inferred from the crop occupying about half of the full-width source figure.",
+    "failure_modes": "Reject incomplete states, wrong denominator, nonclosed groups, reordered species, palette drift, overlapping labels, and numeric Ks claims unsupported by source data."
+  },
+  "scientific_scope": {
+    "denominator": "Homologous 40-kb bins within each species pair",
+    "experimental_or_replicate_unit": "No independent replicate claim; descriptive species-pair compositions only",
+    "claim_boundary": "No significance, confidence interval, or species-level replication inferred from bins",
+    "ks_annotation": "Species order is source-supported; numeric Ks values are absent from matched input. Band is an ordinal visual reconstruction only."
+  },
+  "independent_transfer_status": "not-tested; source and author figure were inspected before writing the independent renderer"
+}

@@ -1,0 +1,115 @@
+{
+  "batch": "SciDraw independent redraw batch 3",
+  "cases": [
+    {
+      "case_id": "SCICASE-014",
+      "source_image": "data/reference/scidraw/SCICASE-014.png",
+      "source_sha256": "a3b300c099053026dd82cdef6ccdcbd75c652121fa6f1e36e37684c9ee5157f9",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-014-redraw.png",
+      "redraw_sha256": "4f6ebc507d8900ca6ce27981f4db5c3943d20ae19a190379dfcd7145e87e4114",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-017",
+      "source_image": "data/reference/scidraw/SCICASE-017.png",
+      "source_sha256": "8a6479ad2531b821591f64957f1231609c736a0e2daf2189a8b8272dddead7f9",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-017-redraw.png",
+      "redraw_sha256": "d5fa9f9c2da37a8e14119c7413c29edb6a3086a10ce8f92bd3c6b4178ae47e53",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-027",
+      "source_image": "data/reference/scidraw/SCICASE-027.png",
+      "source_sha256": "9a9f28efad2c28f132be20dad36037760ad675874fd8cf4237d198a96471b7b2",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-027-redraw.png",
+      "redraw_sha256": "92e6e25a66086aa3182268c4715fd3cb821536c67ee60f0da6a1e96953cba3b8",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-031",
+      "source_image": "data/reference/scidraw/SCICASE-031.png",
+      "source_sha256": "0162195c533e447648133f706f168f52ebf603a33a643446f31152f9b39299a7",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-031-redraw.png",
+      "redraw_sha256": "263565b5e41a6793264ecc3b77d82a640e6c03887ec98517b17255517c226a9d",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-082",
+      "source_image": "data/reference/scidraw/SCICASE-082.png",
+      "source_sha256": "ac462096e3a7c06021495eec7a0e46d1139ff3f0bf73cba33b11c1dd550ef915",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-082-redraw.png",
+      "redraw_sha256": "73ea9e873bbac6bae31476622f1dcb6d46278b1899eb43ff9a34a9687c37f509",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-085",
+      "source_image": "data/reference/scidraw/SCICASE-085.png",
+      "source_sha256": "ba13a89a48630fd1185b40f00283bc986d16fdb96886c2d8e0b768ea214a9414",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-085-redraw.png",
+      "redraw_sha256": "208e91e7e2d189a68f23fb0618994406a32bb89a49d898b9b18cb760e578320d",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-089",
+      "source_image": "data/reference/scidraw/SCICASE-089.png",
+      "source_sha256": "ecdf71384fea78c51fdcc5d2b745f60704ee3eb163b6da2483673541541681ca",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-089-redraw.png",
+      "redraw_sha256": "527d790137465193fd69a5c438175cb845a3fdd8c8186fe0ea827d2b79399e52",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-096",
+      "source_image": "data/reference/scidraw/SCICASE-096.png",
+      "source_sha256": "7e6f9e272633a295df755f2eb299bf595b80cb9f13209d29843d3e9464f369e1",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-096-redraw.png",
+      "redraw_sha256": "fb3f0fb78a5c76a826bac8b7bfd3521430b7f431f41ef89d920d5024afe55cfc",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-135",
+      "source_image": "data/reference/scidraw/SCICASE-135.png",
+      "source_sha256": "6a089657108398a8021174e143b063e8129c896f3b3dc5dd947573139f0f4129",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-135-redraw.png",
+      "redraw_sha256": "2e9d2af262d4166282509caa6559c886091d2a81615df574913a30c6c7205a43",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    },
+    {
+      "case_id": "SCICASE-149",
+      "source_image": "data/reference/scidraw/SCICASE-149.png",
+      "source_sha256": "c27d3458fceccb1044ef45c9436bb3fbf5722bac239d3c11068842fc3b4ce660",
+      "redraw_png": "results/learning_validation/batch3/figures/SCICASE-149-redraw.png",
+      "redraw_sha256": "f345279ce4677a7d10c55bf418f4921caaa9bdd708b2635d985d31fa9001094c",
+      "data": "simulated; fixed R seed 8417",
+      "status": "needs_revision",
+      "visual_acceptance": "not_passed",
+      "user_review": "pending"
+    }
+  ]
+}

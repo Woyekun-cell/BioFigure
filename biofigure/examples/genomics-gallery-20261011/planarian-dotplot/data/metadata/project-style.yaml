@@ -1,0 +1,22 @@
+project_id: BENCH-genomics-planarian-haplotype-dotplot-2026-public-replay
+palette:
+  palette_id: planarian-identity-ochre-teal-navy
+  semantic_colors:
+    identity_50: '#E7C468'
+    identity_75: '#57AFA8'
+    identity_100: '#173F5F'
+    boundary: '#6D737A'
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 8
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 8
+size_system:
+  allowed_classes:
+  - custom
+deviation_basis: Current public own-layout replay uses its sealed semantic palette
+  and physical dimensions; no private task configuration or old PASS.

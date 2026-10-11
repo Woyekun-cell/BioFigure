@@ -4,6 +4,7 @@
 
 0. **情景与选图**：按 [语义与情景理解](semantic-context.md) 实查数据，以事实、假设和未知构建研究情景；先筛可用图型，再比较候选。只咨询选图时到此交付，不进入渲染门禁。
 1. **CP0–CP1**：确认问题、实验单位、样本映射、矩阵层、变换、缺失/零值、统计、方向、单位和尺寸。关键科学语义无法安全推断才问用户；未知项不补造。
+推断任务在CP0–CP1按 [统计流程](statistics-workflow.md)确认分析意向、计划对比和校正家族；Design Spec携带统计合同。需要计算时先生成并核验结果表，再映射标注；未明确的目标不默认运行。
 2. **路由**：确定 task、message、density、primitive；检索 Pattern 并核对 Renderer。常规图 R 优先，AnnData/Scanpy 等明确例外用 Python。
 3. **图级证据**：从 `atlas/top-journal-corpus.yaml` 检索 1–3 个同任务案例。task/pattern 无命中即 `evidence_gap`。publication/reference-guided 模式继续检索原论文并按维护流程入库；普通模式可按出版合同作图，但须声明证据缺口。
 4. **CP2**：Figure Design Spec 按首轮布局合同锁定层级、编码、图例、尺寸、Renderer、Critic targets 与各槽位；验证通过才写代码。

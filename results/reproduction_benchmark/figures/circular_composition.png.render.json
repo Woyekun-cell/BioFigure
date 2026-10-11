@@ -4,20 +4,20 @@
   "backend": "R",
   "renderer": "ggplot2",
   "artifact": {
-    "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/circular_composition.png",
+    "path": "results/reproduction_benchmark/figures/circular_composition.png",
     "sha256": "4d8970c5c38e0a4296b83d770d3ad859bd50eb70bf25f0b84306a98979c9874f"
   },
   "sources": [
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
+      "path": "biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
       "sha256": "ba5ec493d243f67b645c190d817d7c77df8b8ea554e727725a4c5fd04fd492e6"
     },
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/scripts/figure_style.R",
+      "path": "biofigure/scripts/figure_style.R",
       "sha256": "41f019c877d2f50db7d71c64642b2b9cbaa4eb7bebb06d7e93ec7b0512fd6617"
     },
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/plot_data/circular_composition-design.yaml",
+      "path": "results/reproduction_benchmark/plot_data/circular_composition-design.yaml",
       "sha256": "8cafcf19069304c5199f92de65e2bc384d77034f1dc887e958fecd31c6dec349"
     }
   ],
@@ -65,5 +65,6 @@
     }
   ],
   "heading_authorization": {},
-  "scope": "technical preflight only; separate actual inspection and critics required"
+  "scope": "technical preflight only; separate actual inspection and critics required",
+  "path_base": "repository-root"
 }

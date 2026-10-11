@@ -14,3 +14,9 @@ Nature and other journal names describe layout and review targets and do not imp
 
 精选图库另含公开数据分析与软件包示例，数据来源见[逐图清单](docs/gallery/catalog.csv)。第三方数据和软件包保留原许可；图中结果受已提供输入与分析范围限制。历史错误及重复修订版本不纳入精选图库，本地保留原始档案。
 The curated gallery also includes public-data analyses and package examples. Data origin is listed in the inventory; third-party licenses remain applicable. Historical erroneous or repeated revisions are excluded from the curated gallery; original local archives are retained.
+
+2026-10-11 的基因组示例使用公开的作者处理结果重绘；自有适配脚本与第三方输入分别记录在各案例 `provenance.json` 中。公开绘图表是来源数据的派生材料，不因仓库的 MIT 许可证而改变原始数据的权利。Cannabis、OHCA 与 Planarian 的原始代码许可证按固定来源记录保留；DPM 仓库未提供代码许可证，因此本仓库仅链接原作者代码，不发布或重新许可其代码与原始 R 对象。第三方原图用于本地对照，未进入公开图廊。
+The genomics examples refreshed on 2026-10-11 replot public author-processed results. Per-case provenance distinguishes BioFigure adapters from third-party inputs. Derived plotting tables retain the applicable source-data rights; the repository MIT license does not relicense those inputs. Original Cannabis, OHCA, and Planarian code licenses are recorded at pinned sources. The DPM repository provides no code license, so its original code and raw R objects are linked rather than distributed or relicensed. Reference figures were reviewed locally and are not part of the public gallery.
+
+替换的旧桑基图与 OncoPrint 是 BioFigure 生成的模拟示例，保留在案例 `sources/previous-gallery.png` 和 Git 更新前快照中；当前模拟图不代表原论文或患者数据。全部历史提交与版本标签保留。
+The replaced Sankey and OncoPrint images are BioFigure-generated simulated examples. Their prior bytes remain in each case's `sources/previous-gallery.png` and the pre-refresh Git snapshot. The new simulations do not represent original paper or patient data. Existing commits and version tags are preserved.

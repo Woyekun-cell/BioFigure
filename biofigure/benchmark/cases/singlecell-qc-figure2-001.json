@@ -1,0 +1,39 @@
+{
+  "case_id": "SINGLECELL-QC-FIGURE2-001",
+  "mode": "reproduction",
+  "family": "single-cell-qc-multipanel",
+  "required_structures": [
+    "two-by-two-panel-grid",
+    "count-depth-histogram-with-inset",
+    "detected-gene-histogram",
+    "log-scale-barcode-rank-curve",
+    "counts-versus-genes-scatter",
+    "threshold-lines",
+    "mitochondrial-fraction-colourbar-outside-right"
+  ],
+  "reference": {
+    "path": "reference.jpg",
+    "sha256": "854f53c8ee3b40d15bb13418a8150a53f2293c3de7e9ecfa64a1b64262132dda"
+  },
+  "source": {
+    "index_repository": "genecell/single-cell-papers-with-code@7f163c878faf6d8d2e7ef23ff5e04b0edd3057a8",
+    "paper": "Luecken and Theis, Molecular Systems Biology (2019)",
+    "doi": "10.15252/msb.20188746",
+    "figure": "Figure 2",
+    "author_repository": "theislab/single-cell-tutorial@12a86e1277bd1a97f1ecc22533fcdbe843a56dc1",
+    "author_notebook": "plotting_scripts/QC_plots.ipynb",
+    "author_notebook_sha256": "d49d08720a59120c47aa6857a449668650ef7f605a15783d94bb7d792ef31128"
+  },
+  "learning": {
+    "priority": "Reproduce chart topology, encodings, hierarchy, threshold placement, inset geometry and legend position after inspecting the published figure and author code.",
+    "independent_implementation": "The BioFigure renderer was written independently in R/ggplot2 and patchwork; it does not translate or execute the author's Python plotting cells.",
+    "data_role": "Public counts provide realistic plotting values. Exact numeric or pixel identity is outside this case's acceptance target.",
+    "layout_rules": "A and B are distributions; A contains an upper-right low-count inset. C is a descending barcode-rank curve with log y. D is a counts-versus-genes scatter; its continuous mitochondrial-fraction colourbar remains outside the right edge and may not overlap data.",
+    "failure_modes": "Reject missing inset, linear rank y-axis, swapped threshold orientation, panel-letter drift caused by inset tagging, discrete treatment of mitochondrial fraction, or colourbar overlap."
+  },
+  "validation": {
+    "status": "source-exposed-structural-reproduction",
+    "visual_review": "passed at exported size",
+    "numerical_fidelity": "not used as the completion criterion"
+  }
+}

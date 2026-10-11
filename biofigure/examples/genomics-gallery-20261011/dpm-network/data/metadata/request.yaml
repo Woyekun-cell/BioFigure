@@ -1,0 +1,14 @@
+figure_task: hoxa10-pathway-evidence-pie-network
+figure_family: network
+data_shape: 225 author pathway nodes,2183 full-GMT overlap>=0.5 edges,25 connected
+  components,11 isolates
+primary_domain: transcriptomics-metabolomics-multiomics
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: reproduce
+statistics_required: true
+learned_method_id: BENCH-genomics-dpm-hoxa10-network-2024
+pattern_id: LEARNED-BENCH-genomics-dpm-hoxa10-network-2024
+claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.

@@ -2,4 +2,6 @@ schema_version: "1.0"
 kind: biofigure-checkpoint-ledger
 required: [schema_version, artifact_id, mode, checkpoints]
 checkpoint_required: [id, status, evidence, failures, next_action]
+CP3_evidence_required: [artifact, artifact_sha256, first_render_sha256, target_size, render_receipt, artifact_opened, viewer_method]
+CP4_evidence_required: [inspection_evidence, critic_status, qa_status, deliverables]
 notes: PASS is evidence-bound; REVISE or STOP blocks all later checkpoints.

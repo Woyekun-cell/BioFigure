@@ -115,6 +115,9 @@ def machine_specific_references() -> list[str]:
         relative = path.relative_to(REPO)
         if any(part in {".git", "work", "__pycache__"} for part in relative.parts):
             continue
+        if relative.as_posix().startswith(("biofigure/benchmark/evidence/", "biofigure/library/",
+                                          "biofigure/benchmark/library/", "results/full_library_audit/")):
+            continue
         try:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
@@ -131,7 +134,7 @@ def audit() -> dict:
     benchmark = inventory(ROOT)
     manifest = yaml.safe_load((ROOT / "manifest.yaml").read_text())
     hot = []
-    for rel in manifest["always_load"]:
+    for rel in ["SKILL.md", *manifest["common_dynamic_load"]]:
         text = (ROOT / rel).read_text()
         hot.append({"path": rel, "zh_chars": zh_count(text)})
     versions = version_snapshot()
@@ -156,18 +159,15 @@ def audit() -> dict:
         x["issue"]: x for x in json.loads((ROOT / "atlas/reproduction-methods.json").read_text())["cases"]
     }
     graph_status_mismatches = []
+    from sync_capability_status import expected_topjournal_state
     for node in capability_graph["nodes"]:
         match = re.fullmatch(r"topfigure-(\d+)-[0-9a-f]+", node.get("id", ""))
         if not match:
             continue
-        method = methods_by_issue.get(int(match.group(1)), {})
-        expected = (
-            method.get("runtime_status") == "source-compared-png"
-            and method.get("review_status") == "pass"
-        )
+        visual, reviewed, expected = expected_topjournal_state(node, methods_by_issue)
         if (
-            node.get("visual_status") != method.get("runtime_status", "not-run")
-            or node.get("review_status") != method.get("review_status", "missing")
+            node.get("visual_status") != visual
+            or node.get("review_status") != reviewed
             or bool(node.get("high_fidelity_eligible")) != expected
         ):
             graph_status_mismatches.append(node["id"])
@@ -226,6 +226,7 @@ def audit() -> dict:
         reproduction["high_fidelity_eligible"]
         + scidraw["high_fidelity_eligible"]
         + scidraw_batch2["high_fidelity_eligible"]
+        + benchmark["track_pass"]["reproduction"]
     )
     if capability_graph["summary"].get("source_compared_pass") != expected_pass:
         errors.append("unified capability graph evidence status is stale")

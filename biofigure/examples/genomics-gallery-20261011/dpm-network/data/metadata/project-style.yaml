@@ -1,0 +1,25 @@
+project_id: DPM-HOXA10-additional-panels-2026-10-11
+palette:
+  palette_id: dpm-hoxa10-OE-teal-KD-ochre-combined-lavender
+  semantic_colors:
+    OE: '#2B7A78'
+    KD: '#AA6B39'
+    combined_only: '#9C92AC'
+    edge: '#8FA9B0'
+    outline: '#30343B'
+    loss_background: '#F5E4E1'
+    gain_background: '#E2EEEA'
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 8
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 8
+size_system:
+  allowed_classes:
+  - double-column
+deviation_basis: User authorized new palettes for additional source panels; separate
+  effect/diverging and evidence/category encodings, scoped to these new subpackages.

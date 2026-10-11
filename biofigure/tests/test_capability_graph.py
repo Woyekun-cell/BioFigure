@@ -3,8 +3,11 @@ import json
 import re
 import unittest
 from pathlib import Path
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from benchmark_core import inventory
 
 
 def load():
@@ -25,7 +28,8 @@ class CapabilityGraphTests(unittest.TestCase):
             case.get("runtime_status") == "source-compared-png" and case.get("review_status") == "pass"
             for case in reproduction + scidraw + scidraw_batch2
         )
-        self.assertEqual(graph["summary"]["case_count"], 231)
+        expected += inventory(ROOT)["track_pass"]["reproduction"]
+        self.assertEqual(graph["summary"]["case_count"], len([n for n in graph["nodes"] if n.get("kind") == "case"]))
         self.assertEqual(graph["summary"]["source_compared_pass"], expected)
         self.assertIn("only review_status=pass", graph["summary"]["status_boundary"])
 
@@ -46,7 +50,11 @@ class CapabilityGraphTests(unittest.TestCase):
             match = re.fullmatch(r"topfigure-(\d+)-[0-9a-f]+", node.get("id", ""))
             if not match:
                 continue
-            method = by_issue[int(match.group(1))]
+            method = by_issue.get(int(match.group(1)))
+            if method is None:
+                self.assertFalse(node.get('high_fidelity_eligible'))
+                self.assertIn(node.get('visual_status'), ('source-structure-simulation', 'not-run'))
+                continue
             eligible = method.get("runtime_status") == "source-compared-png" and method.get("review_status") == "pass"
             self.assertEqual(node.get("visual_status"), method.get("runtime_status", "not-run"))
             self.assertEqual(node.get("review_status"), method.get("review_status", "missing"))

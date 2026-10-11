@@ -1,0 +1,10 @@
+"stage","state","n_features","percent"
+"DNA_copy_number","Low",512,28.4444444444444
+"DNA_copy_number","Neutral",799,44.3888888888889
+"DNA_copy_number","High",489,27.1666666666667
+"RNA_expression","Low",509,28.2777777777778
+"RNA_expression","Neutral",821,45.6111111111111
+"RNA_expression","High",470,26.1111111111111
+"Protein_abundance","Low",513,28.5
+"Protein_abundance","Neutral",799,44.3888888888889
+"Protein_abundance","High",488,27.1111111111111

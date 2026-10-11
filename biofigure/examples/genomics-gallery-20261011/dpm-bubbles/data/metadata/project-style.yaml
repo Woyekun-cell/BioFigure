@@ -1,0 +1,23 @@
+project_id: DPM-HOXA10-additional-panels-2026-10-11
+palette:
+  palette_id: dpm-hoxa10-negative-teal-positive-ochre
+  semantic_colors:
+    negative_log2FC: '#1F6F8B'
+    zero_log2FC: '#FBF8F1'
+    positive_log2FC: '#C27032'
+    point_outline: '#30343B'
+    CGC_text: '#4D3E67'
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 8
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 8
+size_system:
+  allowed_classes:
+  - one-and-half-column
+deviation_basis: User authorized new palettes for additional source panels; separate
+  effect/diverging and evidence/category encodings, scoped to these new subpackages.

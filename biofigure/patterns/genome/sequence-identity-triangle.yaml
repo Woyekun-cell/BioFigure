@@ -1,0 +1,78 @@
+pattern_id: GEN-IDENTITY-TRI-001
+version: '1.0'
+domain:
+- genomics
+scientific_task:
+- sequence-identity
+message_type: pairwise-genomic-similarity
+data_contract:
+  required:
+  - query_start
+  - query_end
+  - reference_start
+  - reference_end
+  - identity_percent
+  optional:
+  - track_value
+  assumptions:
+  - same_assembly_and_coordinate_system
+  - window_size_declared
+  - identity_definition_and_alignment_source_declared
+applicable_when:
+  message: reference_requests_rotated_pairwise_sequence_identity_map
+not_recommended_when:
+- correlation_or_contact_frequency_input
+visual_hierarchy:
+  primary: aligned_sequence_identity_blocks
+  secondary: genomic_position_and_track
+  tertiary: identity_color_key
+geometry:
+  primary: 45_degree_rotated_square_cells
+  secondary: top_aligned_context_track
+  cell_contract: square_before_rotation_equal_axes_after_rotation
+encoding:
+  x: midpoint_of_pair_coordinates
+  y: negative_half_coordinate_separation
+  fill: identity_percent_discrete_bins
+layout:
+  aspect_ratio: equal_physical_genomic_axes
+  density_strategy: no_per_cell_border
+  whitespace_strategy: independent_legend_reserve
+annotation_strategy:
+- Mb_endpoints
+- explicit_identity_bin_edges
+- simulation_labeled_if_applicable
+legend_strategy:
+  compact: true
+  place: outside_right
+color_semantics:
+  identity: screenshot_or_declared_discrete_percent_palette
+  missing: white_not_zero
+optional_components:
+- context_track
+avoid:
+- generic_correlation_semantics
+- undeclared_quantile_scale
+- hidden_missing_as_zero
+- clustering_genomic_order
+scientific_risks:
+- window_resolution_confusion
+- alignment_identity_definition
+- unconfirmed_top_track_meaning
+- snapshot_without_original_matrix
+renderer_options:
+- ggplot2
+references:
+- https://github.com/vollgerlab/StainedGlass
+provenance:
+  created_from:
+  - user_provided_cropped_reference
+  - StainedGlass aln_plot.R bcd23c73ad232caafc0262445b3141a165c4cb83
+  reviewed_by: Codex-source-inspection
+  reviewed_at: '2026-09-29'
+confidence: medium
+validation:
+  scientific: simulation_only
+  visual: candidate
+  benchmark: not_run
+status: candidate

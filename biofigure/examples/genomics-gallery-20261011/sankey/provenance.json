@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+  "scope": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。",
+  "data_origin": "explicitly-simulated",
+  "learning": {
+    "schema_version": 1,
+    "case_id": "gallery-multiomics-alluvial-2026",
+    "learned_method_id": "BENCH-gallery-multiomics-alluvial-2026",
+    "title": "Matched DNA RNA protein state alluvial: simulated data, native ggalluvial layout correction",
+    "domain": [
+      "transcriptomics-metabolomics-multiomics"
+    ],
+    "status": "SIMULATED_INPUT_AND_REFERENCE_LAYOUT_REVIEWED_NOT_RENDERED",
+    "source_assets": [
+      {
+        "path": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
+        "role": "historical-own-output-layout-counterexample",
+        "sha256": "1272eba2042b59049a645b89e980617073c990d99854f5e910aaf718a98d4e82"
+      },
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/raw/sankey_features.csv",
+        "role": "explicit-simulated-matched-features",
+        "sha256": "3357284915786b69c0b92b69672af9689c074f2a341057879142daf159c5b6d0"
+      },
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/prepare_data.R",
+        "role": "independently-authored-data-preparation",
+        "sha256": "ffa00d4aa4d14e5f9dc2db409607b0e17ac2e707c125fdca0da70c4e7ed202da"
+      }
+    ],
+    "source_urls": {
+      "original_method": "https://mp.weixin.qq.com/s/iDi21LdR2_V3fVRMos0LqQ",
+      "native_method": "https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html"
+    },
+    "prior_method": "SCICASE-036",
+    "code_learning": {
+      "original_functions": [
+        "readxl::read_xlsx",
+        "networkD3::sankeyNetwork",
+        "match(nodes)-1"
+      ],
+      "original_processing": "stage-specific categorical node lists; grouped adjacent stage link totals; explicit zero-based networkD3 indices",
+      "adopted": "each stage total conserved, link width encodes feature counts, stage-aware identity and explicit order",
+      "native_current_functions": [
+        "ggalluvial::geom_alluvium",
+        "ggalluvial::geom_stratum",
+        "ggalluvial::stat_stratum"
+      ],
+      "rejected": "missing data2.xlsx, source node names interpreted as same across modalities, embedded right labels on flows, oversized raster-only web export"
+    },
+    "reference_analysis": {
+      "viewed": true,
+      "image_role": "Own historical simulation, not original article figure",
+      "observed": "Three unequal categorical lanes, count-scaled curves and outlined nodes; right labels cross curves and right/bottom whitespace large",
+      "correction": "3 stages x3 states, uninterrupted27 paths; labels inside sufficiently large nodes, counts direct, shared vertical scale, reserved heading/caption outside flow panel"
+    },
+    "input_contract": {
+      "units": "1800 distinct simulated matched features,not biological replicates",
+      "seed": 20261011,
+      "flow_table": "27 complete 3-state paths with integer counts",
+      "inference": "none",
+      "causality": "none"
+    },
+    "package_roles": {
+      "ggalluvial": "native alluvial path geometry and stratum stacking",
+      "ggplot2": "semantic color, coordinates and typography",
+      "grid": "final grob export only"
+    },
+    "palette_semantics": {
+      "Low": "blue",
+      "Neutral": "teal",
+      "High": "ochre",
+      "flows": "DNA starting state; direct labels state coding in each modality"
+    },
+    "claim_boundary": "Independent simulated-input layout correction; previous source-data and original-figure fidelity NOT_VERIFIED; not a research result or learned-model parameter training",
+    "failure_modes": [
+      "do not treat flows as causal effects",
+      "do not change denominators or drop paths",
+      "stage-aware state identity",
+      "no labels over ribbons",
+      "check full 1800 conservation at every stage",
+      "fresh actual final-size PNG/PDF review required"
+    ]
+  },
+  "local_case_root": "biofigure/examples/genomics-gallery-20261011/sankey",
+  "source_acquisition": [],
+  "public_packaging": "Own code, derived plot CSV and replot images/PDF only. Third-party source code and reference figures remain pinned URL/hash records and are acquired separately.",
+  "execution": "From repository root: python3 biofigure/examples/genomics-gallery-20261011/sankey/scripts/reproduce.py --source-view-confirmed --output-dir <new-empty-directory>. Uses bundled published plot tables, portable metadata, native R dependencies and fresh prepare/CP2/single-use render authorization. Original author-raw archive workflow is separate; full original-figure fidelity and new-input qualification NOT_VERIFIED.",
+  "validation": {
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "current_input_only": true,
+    "new_data_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review",
+    "immutable_local_bundle_sha256": "3156cc3dd6693fc3fdc2f8cc010f77a6e2677456ea24242350826cf203896a32",
+    "checkpoint_validation_sha256": "b6ea3bda40f5075e0ba746878a397cc03ed84df2743a5c15f891a63f1c3cb0c8",
+    "public_spec_claim": "No gate authorization is inherited by a public clone or a rewritten configuration.",
+    "public_replay": "Execution verified on local runtime; final metadata/file locks are checked independently before publication.",
+    "public_current_table_execution": {
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "historical_authorization_inherited": false,
+      "historical_scoped_PASS_inherited": false,
+      "runtime_record": "docs/gallery/runtime-validation-20261011.json",
+      "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+      "scope": "Fresh native replay and actual final PNG/PDF review of fixed published tables and own current layout on the declared environment only.",
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED"
+    },
+    "historical_delivery_record_only": true
+  },
+  "artifacts": {
+    "image": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
+    "pdf": "biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
+    "scripts": [
+      "biofigure/examples/genomics-gallery-20261011/sankey/scripts/prepare_data.R",
+      "biofigure/examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
+      "biofigure/examples/genomics-gallery-20261011/sankey/scripts/render.R",
+      "biofigure/examples/genomics-gallery-20261011/sankey/scripts/reproduce.py",
+      "biofigure/examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
+      "biofigure/examples/genomics-gallery-20261011/replay_public.py"
+    ],
+    "plot_data": [
+      "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_native_strata.csv",
+      "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_nodes.csv",
+      "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_paths.csv"
+    ]
+  },
+  "public_execution_profile": "data/metadata/public-replay.json"
+}

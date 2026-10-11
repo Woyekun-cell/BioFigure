@@ -5,7 +5,7 @@
 **参考引导的生物科研图设计与质控 Skill**<br>
 **A reference-guided design and quality-control skill for biological figures**
 
-[![BioFigure](https://img.shields.io/badge/BioFigure-3.5.1-28527A)](biofigure/SKILL.md)
+[![BioFigure](https://img.shields.io/badge/BioFigure-3.7.1-28527A)](biofigure/SKILL.md)
 [![R first](https://img.shields.io/badge/backend-R%20first-4F8F8A)](biofigure/renderer-registry.yaml)
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
@@ -38,13 +38,13 @@ These are areas covered by the method library and routing rules. Individual task
 
 ## 分类图廊 / Gallery by plot type
 
-从216张本地成图中精选 **14 类、73 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。<br>Selected 73 representatives from 216 local figures across 14 categories. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
+现有成图中精选 **14 类、79 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。<br>Selected 79 representatives from available figures across 14 categories. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
 
 数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。<br>Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings.
 
 | 图型分类 / Category | 图数 / Figures |
 |---|---:|
-| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 6 |
+| [热图与矩阵注释 / Heatmaps](docs/gallery/heatmaps.md) | 7 |
 | [分布、箱线与小提琴 / Distributions](docs/gallery/distributions.md) | 5 |
 | [相关、散点与气泡矩阵 / Correlations and scatter plots](docs/gallery/correlations.md) | 6 |
 | [组成、桑基与三元图 / Composition and flows](docs/gallery/composition.md) | 7 |
@@ -53,8 +53,8 @@ These are areas covered by the method library and routing rules. Individual task
 | [差异表达、富集与曼哈顿图 / Differential expression](docs/gallery/differential.md) | 6 |
 | [降维、单细胞与空间 / Embeddings and spatial plots](docs/gallery/embeddings.md) | 6 |
 | [生存、森林与患者轨迹 / Clinical plots](docs/gallery/clinical.md) | 7 |
-| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 7 |
-| [网络与地图 / Networks and maps](docs/gallery/networks.md) | 5 |
+| [基因组、染色体与系统树 / Genomes and phylogeny](docs/gallery/genomes.md) | 11 |
+| [网络与地图 / Networks and maps](docs/gallery/networks.md) | 6 |
 | [时序、曲线与信号 / Time courses and profiles](docs/gallery/profiles.md) | 5 |
 | [集合交叠与 UpSet / Set intersections](docs/gallery/intersections.md) | 2 |
 | [机制、图像与多面板 / Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
@@ -109,12 +109,25 @@ See the [Chinese handbook](docs/HANDBOOK.zh-CN.md) and [English handbook](docs/H
 方法覆盖不等于每个案例都已通过验收。仓库分别记录来源复现、独立迁移和压力测试；当前全量 V2 benchmark 尚未完成。自动检查主要验证规则、文件和运行证据，最终图仍须审阅。[查看验收规则](biofigure/references/benchmark-protocol.md)与[审计记录](docs/release-audit-3.5.1.json)。<br>
 Method coverage does not mean every case has passed validation. Source reproduction, independent transfer, and stress tests are tracked separately; the full V2 benchmark remains incomplete. Automated checks assess rules, files, and execution evidence, while figures still require visual review. See the [protocol](biofigure/references/benchmark-protocol.md) and [audit](docs/release-audit-3.5.1.json).
 
+3.7.1 新增 6 个作者处理数据的复杂图重绘案例，并替换 2 个模拟示例：BUSCO 锚定区域、跨基因组路径、通路双矩阵、证据网络、Micro-C 接触矩阵与环标记、单倍型比对、桑基图和多事件 OncoPrint。当前输入已逐图核对代码、数据、配色、版式和实际 PDF；学习要点见[基因组案例索引](biofigure/references/genomics-source-gallery-learning-20261011.md)。<br>
+Version 3.7.1 adds six complex replots using author-processed data and refreshes two simulated examples. Code, data, palette, layout, and exported PDFs were reviewed for the current inputs. See the [genomics learning index](biofigure/references/genomics-source-gallery-learning-20261011.md).
+
+公开包包含自有适配脚本、绘图表、PDF、可执行配置和逐案例来源记录；[公开重绘入口](biofigure/examples/genomics-gallery-20261011/README.md)每次使用新目录与新的准备/CP2/授权，OHCA 按固定 URL 和校验值另取处理 RDS。原作者代码、原图、原始 R 对象及本地完整验收档案未随仓库发布。此次通过的是当前输入的限定范围验收；原论文整幅图的高保真资格、新数据迁移及全量 V2 验证仍分别记录。<br>
+Public packages include BioFigure adapters, plotting tables, PDFs, executable configuration, and per-case provenance. The [public replay entries](biofigure/examples/genomics-gallery-20261011/README.md) use new directories and fresh preparation, CP2, and authorization; OHCA separately acquires a SHA-pinned processed RDS. Original author code, reference images, raw R objects, and complete local gate records are not bundled. Current-input acceptance does not certify whole-figure fidelity, transfer to new data, or the full V2 corpus.
+
+公开文件检查：`python3 tools/audit_public_release.py`；图库文档检查：`python3 tools/build_gallery.py --check`。[本次文件与替换清单](docs/gallery/refresh-20261011.json)保留 SHA256。两项检查验证公开包的一致性，不代替科学复现与视觉审阅。<br>
+Use these commands to check public file bindings and generated gallery documents. The [refresh manifest](docs/gallery/refresh-20261011.json) records SHA256 bindings; packaging checks do not replace scientific reproduction or visual review.
+
+8 个公开入口已在新目录完成原生 R 复跑，重新验证 CP2 与一次性授权，并实际检查新 PNG 和 96/120 dpi PDF 预览。绘图表与封存版本哈希一致，新 PNG 与图库字节一致；[本次运行记录](docs/gallery/runtime-validation-20261011.json)记录环境、文件绑定与限定范围结果。127 项相关功能检查和 21 项公开包测试通过；完整历史测试因未随公开包发布的来源与全量证据仍未全通过，不升级全量 V2 资格。<br>
+All eight public entries were run in fresh directories with native R, fresh CP2 and single-use authorization, and actual PNG/PDF-preview review. Plotting-table hashes and PNG bytes match the sealed current layouts. The [runtime record](docs/gallery/runtime-validation-20261011.json) records the environment and scoped results. The 127 selected functional checks and 21 packaging tests passed; the historical full suite remains incomplete without its unbundled source/evidence corpus.
+
 Skill 不改变模型参数，也不能保证不同模型与推理档位得到相同结果。其作用是提供明确的方法、约束和检查流程。<br>
 The Skill does not change model weights or guarantee identical results across models and reasoning settings. It provides methods, constraints, and checks for the actual workflow.
 
 ## 版本与历史 / Versions and history
 
 - [Releases：下载已命名版本 / Download versions](https://github.com/Woyekun-cell/BioFigure/releases)
+- [v3.7.1：本次更新 / Current update](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [更新前快照 / Pre-refresh snapshot](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
 - [v3.5.1 更新记录 / Release notes](docs/RELEASE-NOTES-3.5.1.md) · [v3.5.0 更新记录 / Release notes](docs/RELEASE-NOTES-3.5.0.md)
 - [完整提交历史 / Commit history](https://github.com/Woyekun-cell/BioFigure/commits/main/)：查看每次修改和当时的文件。 / Browse changes and earlier files.
 

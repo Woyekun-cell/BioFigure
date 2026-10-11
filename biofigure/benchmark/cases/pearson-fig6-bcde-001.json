@@ -1,0 +1,33 @@
+{
+  "case_id": "PEARSON-FIG6-BCDE-001",
+  "mode": "reproduction",
+  "family": "shared-single-cell-embedding-multipanel",
+  "required_structures": [
+    "shared-embedding-coordinates",
+    "continuous-heteroplasmy-panel",
+    "discrete-cell-identity-panel",
+    "six-protein-small-multiples",
+    "binary-del7q-panel",
+    "external-legends",
+    "explicit-b-c-d-e-panel-tags"
+  ],
+  "source": {
+    "paper": "Lareau et al., Nature Genetics (2023)",
+    "pmcid": "PMC10548551",
+    "figure": "Figure 6b-e",
+    "repository": "caleblareau/pearson_syndrome@e5adb96770f286b60d880378a7c823163229a3f9",
+    "author_script": "bmmnc_asap/code/03_visualize.R"
+  },
+  "learning": {
+    "priority": "Reproduce the shared-coordinate visual contract and variable-specific encodings after inspecting the publication and author outputs.",
+    "independent_implementation": "BioFigure independently generates fixed-seed structural data and renders the complete b-e composition in R.",
+    "data_role": "Synthetic values exercise the visual grammar; no numerical, biological-effect, or pixel-identity claim is made.",
+    "layout_rules": "One coordinate system is reused across continuous, categorical, six-feature and binary views. Small multiples suppress duplicate axes; continuous guides remain outside the data region.",
+    "failure_modes": "Reject per-panel coordinate recomputation, palette-type mismatch, six independently scaled undocumented protein legends, nested-panel tag drift, and legend overlap."
+  },
+  "validation": {
+    "status": "source-exposed-independent-structural-reproduction",
+    "visual_review": "passed at exported size",
+    "full_v2_gate": "pending"
+  }
+}

@@ -1,0 +1,15 @@
+figure_task: planarian-haplotype-chromosome-alignment-dotplot
+figure_family: genome
+data_shape: Sealed public3CSV:19637alignmentrows,39274endpointrows,8boundaryrows;
+  no original full TSV input
+primary_domain: genome-sequence-variation
+primary_role: structure
+backend: R
+deliverable: paper-composite
+operation: reproduce
+statistics_required: false
+learned_method_id: BENCH-genomics-planarian-haplotype-dotplot-2026
+pattern_id: LEARNED-BENCH-genomics-planarian-haplotype-dotplot-2026
+claim_boundary: Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints,
+  unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw
+  NGS/full-paper fidelity/new-input qualification.

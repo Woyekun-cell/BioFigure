@@ -1,4 +1,4 @@
-version: "3.5.1"
+version: 3.7.1
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
@@ -7,23 +7,35 @@ execution_profiles:
   low_reasoning:
     planner: scripts/plan_figure_method.py
     contracts: atlas/family-execution-contracts.yaml
+    pangenome_planner: scripts/plan_pangenome_figure.py
+    pangenome_contracts: library/pangenome/tomato-superpangenome/data/metadata/paradigms.json
     policy: same_evidence_gates_as_all_other_modes
-always_load:
-  - references/enforced-execution.md
-  - references/personal-style.md
-  - references/render-execution.md
-  - references/reference-quality.md
-  - references/reproduction-learning.md
-  - static/core/contract.md
-  - static/core/stance.md
-  - references/checkpoints.md
+reference_discovery:
+  entry: scripts/find_figure_reference.py
+  catalog: atlas/figure-reference-catalog.json
+  default_limit: 3
+  type_directory_flag: --list-types
+  type_filter_flag: --type
+  classified_library: library/按图型检索
+  rebuild_library: scripts/organize_figure_library.py
+  full_evidence: scripts/retrieve_learned_methods.py
+  on_demand:
+    fallback_catalog: references/benchmark-learning-index.md
+    transfer_rules: references/all-learning-transfer.md
+    registered_adapter: references/stable-template-reuse.md
+  policy: discovery_first_selected_id_then_full_evidence_and_unchanged_CP2
 common_dynamic_load:
-  - references/semantic-context.md
-  - references/selection.md
-  - references/biology-ontology.md
-  - references/first-render-contract.md
-  - references/layout.md
-  - references/export.md
+- references/enforced-execution.md
+- references/visual-design-synthesis.md
+- references/figure-execution-gates.md
+- references/benchmark-protocol.md
+- static/core/execution-contract.yaml
+- static/core/contract.md
+- static/core/stance.md
+- references/checkpoints.md
+- references/semantic-context.md
+- references/selection.md
+- references/biology-ontology.md
 routing_axes:
   domain:
     selection: one_primary_plus_optional_secondary
@@ -39,19 +51,38 @@ routing_axes:
       multipanel: references/chart-multipanel.md
   role:
     selection: one_primary_plus_optional_secondary
-    values: [QC, discovery, comparison, structure, mechanism, validation, prediction, robustness-model-evaluation]
+    values:
+    - QC
+    - discovery
+    - comparison
+    - structure
+    - mechanism
+    - validation
+    - prediction
+    - robustness-model-evaluation
   backend:
     selection: exactly_one_locked_before_design_spec
     default: R
-    values: [R, Python]
+    values:
+    - R
+    - Python
     change_policy: invalidate_preview_export_qa_and_rerender
   deliverable:
     selection: exactly_one
     values:
-      quick-png: [png]
-      paper-composite: [pdf, svg, png]
-      editable-vector: [svg, pdf, png]
-      tiff-submission: [tiff, png]
+      quick-png:
+      - png
+      paper-composite:
+      - pdf
+      - svg
+      - png
+      editable-vector:
+      - svg
+      - pdf
+      - png
+      tiff-submission:
+      - tiff
+      - png
 specialty_critics:
   machine-learning: critics/ml.md
   imaging-assay: critics/imaging.md
@@ -67,20 +98,26 @@ reference_evidence_layers:
     corpus: atlas/reproduction-derived-corpus.json
     methods: atlas/reproduction-methods.json
     retriever: scripts/retrieve_reproduction.py
-    load: [references/reproduction-learning.md]
+    load:
+    - references/reproduction-learning.md
     policy: required_derived_design_evidence
     source_material_access: authorized_inspection_allowed_no_wholesale_copy
     package_policy: specialized_package_first_and_runtime_verified
   top_journal:
     corpus: atlas/top-journal-corpus.yaml
     retriever: scripts/retrieve_references.py
-    load: [references/topjournal-recipes-001-010.md]
+    load:
+    - references/topjournal-recipes-001-010.md
+    - references/topjournal-001-080-learning.md
     policy: primary_curated_reference_evidence
   awesome_scientific_figure:
     corpus: atlas/awesome-scientific-figure-candidates.json
+    visual_study: atlas/awesome-scientific-figure-visual-study.json
+    layout_recipes: atlas/awesome-scientific-figure-layout-recipes.json
     retriever: scripts/retrieve_awesome_figures.py
-    load: [references/awesome-scientific-figure-learning.md]
-    policy: optional_catalog_candidates_only_not_verified_evidence
+    load:
+    - references/awesome-scientific-figure-learning.md
+    policy: optional_visual_grammar_only_not_verified_scientific_evidence
     precedence: scientific_contract_and_verified_figure_references
   scidraw:
     corpus: atlas/scidraw-derived-corpus.json
@@ -89,10 +126,47 @@ reference_evidence_layers:
     review_evidence: atlas/scidraw-review-evidence.json
     batch2_methods: atlas/scidraw-batch2-methods.json
     batch2_review_evidence: atlas/scidraw-batch2-review-evidence.json
+    learning_ten_20260925: atlas/scidraw-learning-ten-20260925.json
+    learning_ten_methods: references/scidraw-stats-ten.md
+    learning_ten_batch2: atlas/scidraw-learning-ten-20260925-02.json
+    learning_ten_batch2_methods: references/scidraw-batch2-structures.md
     executable_gallery: examples/scidraw-gallery
     retriever: scripts/retrieve_scidraw.py
     critic: critics/reference-transfer.md
-    load: [references/scidraw-learning.md]
-    policy: optional_retrieval_not_ground_truth
+    load:
+    - references/scidraw-learning.md
+    - references/scidraw-benchmark-index.md
+    - references/scidraw-batch20-learning.md
+    policy: mandatory_retrieval_supplemental_not_ground_truth
     precedence: scientific_contract_and_official_guidance
-pipeline: [data_profile, semantic_context, chart_decision, scientific_contract, visual_ontology, pattern_retrieval, figure_design_spec, renderer, actual_figure, visual_inspection, critics, revise_or_pass]
+pipeline:
+- data_profile
+- semantic_context
+- chart_decision
+- statistics_intent_and_plan_when_inference_requested
+- scientific_contract
+- visual_ontology
+- pattern_retrieval
+- figure_design_spec
+- renderer
+- actual_figure
+- visual_inspection
+- critics
+- revise_or_pass
+phase_dynamic_load:
+  statistics:
+  - references/statistics-workflow.md
+  - references/statistics-method-selection.md
+  - references/statistics-plan-contract.md
+  user-requested-style:
+  - references/personal-style.md
+  render:
+  - references/render-execution.md
+  - references/first-render-contract.md
+  - references/layout.md
+  - references/export.md
+  - references/checkpoints.md
+  reference-review:
+  - references/reference-quality.md
+  reproduction:
+  - references/reproduction-learning.md

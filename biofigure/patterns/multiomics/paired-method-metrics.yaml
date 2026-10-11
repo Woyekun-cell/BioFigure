@@ -1,0 +1,24 @@
+pattern_id: MO-METRIC-001
+version: '1.0'
+domain: [multi-omics, genomics]
+scientific_task: [method-benchmark, paired-method-comparison, modality-validation]
+message_type: paired-method-metrics
+data_contract: {required: [paired_id, metric, method, value, experimental_unit], optional: [reference, modality, chromosome], assumptions: [same_metric_definition, pairing_declared]}
+applicable_when: {message: measured_method_performance_or_modality_posterior_comparison}
+not_recommended_when: [unmatched_metric_definitions, factor_inference_without_fitted_model]
+visual_hierarchy: {primary: matched_metric_values, secondary: method_or_modality, tertiary: uncertainty_definition}
+geometry: {primary: paired_scatter, secondary: descriptive_ordered_profile}
+encoding: {x: matched_metric_or_declared_order, y: metric_value, color: fixed_method_dictionary, line: identity_or_descriptive_profile_only}
+layout: {aspect_ratio: data_driven, whitespace_strategy: external_legend}
+annotation_strategy: [matched_n, metric_formula_in_companion_table, no_unplanned_p_value]
+legend_strategy: {compact: true, place: outside_plot}
+color_semantics: {method: fixed_dictionary, posterior: zero_to_one}
+optional_components: []
+avoid: [factor_as_mechanism, biological_n_from_seeds, posterior_as_p_value, metric_denominator_changes]
+scientific_risks: [pseudoreplication, unequal_gene_universes, same_data_fit_and_score]
+renderer_options: [ggplot2]
+references: [atlas://ATLAS-TJ-HPRC-ED10, atlas://ATLAS-TJ-SCBASSET-F5, atlas://ATLAS-TJ-NUMBAT-F2]
+provenance: {created_from: [pinned_author_code_and_publisher_source_data], reviewed_by: Codex, reviewed_at: '2026-09-28'}
+confidence: medium
+validation: {scientific: candidate, visual: candidate, benchmark: pending_user_acceptance}
+status: candidate

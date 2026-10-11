@@ -1,0 +1,29 @@
+schema_version: '1.0'
+project_id: BENCH-genomics-cannabis-public-chr7-2025-public-current-table
+palette:
+  palette_id: cannabis-busco-muted-v1
+  semantic_colors:
+    CBDAS: '#237C92'
+    BUSCO_cycle: '#738D9C,#AA7C89,#91A58B,#B49B75,#827DA1,#6D9F9A,#A98670,#A1A1A1'
+    public_reference: '#407FA2'
+  user_requirement: User requested actual author-data replot with a new colour scheme;
+    first render coloured.
+  sources:
+  - Original author categories/coordinate inputs
+  - Task-selected muted categorical hue cycle; no abundance/rank encoding
+  cvd_status: Distinct labeled synthase triangles and keys; no blanket CVD certification
+  neutral_color_role: Low-stringency triangles, axes and grid
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7
+    axis_title: 7
+    legend_text: 7
+    strip_text: 7
+    annotation_text: 7
+    panel_label: 8
+size_system:
+  allowed_classes:
+  - double-column
+exception_basis: Portable public packaged-current-table layout replay; historical
+  author-raw gates/authorization are not inherited.

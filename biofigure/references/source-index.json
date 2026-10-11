@@ -447,7 +447,11 @@
     {
       "id": "nature-reporting",
       "source_type": "期刊报告规范",
-      "tags": ["all", "statistics", "reproducibility"],
+      "tags": [
+        "all",
+        "statistics",
+        "reproducibility"
+      ],
       "url": "https://www.nature.com/nature/editorial-policies/reporting-standards",
       "lesson": "统计、n、数据与代码可用性必须在图注/方法/报告中可追溯",
       "consulted_date": "2026-09-01",
@@ -459,7 +463,10 @@
     {
       "id": "nature-integrity",
       "source_type": "期刊图像规范",
-      "tags": ["all", "image-integrity"],
+      "tags": [
+        "all",
+        "image-integrity"
+      ],
       "url": "https://www.nature.com/nature-portfolio/editorial-policies/image-integrity",
       "lesson": "全图一致处理、原始图像留存、拼接/裁切/伪彩色与软件必须披露",
       "consulted_date": "2026-09-01",
@@ -471,7 +478,10 @@
     {
       "id": "clusterprofiler",
       "source_type": "Bioconductor作者文档",
-      "tags": ["enrichment", "R"],
+      "tags": [
+        "enrichment",
+        "R"
+      ],
       "url": "https://bioconductor.org/packages/release/bioc/manuals/clusterProfiler/man/clusterProfiler.pdf",
       "lesson": "dotplot、cnetplot、emapplot、GSEA与网络图的输出语义需分开",
       "consulted_date": "2026-09-01",
@@ -483,7 +493,11 @@
     {
       "id": "deeptools-profile",
       "source_type": "作者文档",
-      "tags": ["ATAC", "ChIP", "tracks"],
+      "tags": [
+        "ATAC",
+        "ChIP",
+        "tracks"
+      ],
       "url": "https://deeptools.readthedocs.io/en/develop/content/tools/plotProfile.html",
       "lesson": "computeMatrix、plotHeatmap与plotProfile共享底层矩阵但含义不同",
       "consulted_date": "2026-09-01",
@@ -495,7 +509,10 @@
     {
       "id": "scanpy-core",
       "source_type": "作者官方教程",
-      "tags": ["scRNA", "Python"],
+      "tags": [
+        "scRNA",
+        "Python"
+      ],
       "url": "https://scanpy.readthedocs.io/en/latest/tutorials/plotting/core.html",
       "lesson": "单细胞dotplot、violin、heatmap、tracks与embedding各自编码不同统计量",
       "consulted_date": "2026-09-01",
@@ -507,7 +524,10 @@
     {
       "id": "seurat-visualization",
       "source_type": "作者官方API",
-      "tags": ["scRNA", "R"],
+      "tags": [
+        "scRNA",
+        "R"
+      ],
       "url": "https://satijalab.org/seurat/reference/featureplot",
       "lesson": "FeaturePlot的assay/layer、色阶、排序、分面和大细胞数栅格化要显式记录",
       "consulted_date": "2026-09-01",
@@ -519,7 +539,10 @@
     {
       "id": "signac-regionplot",
       "source_type": "作者官方API",
-      "tags": ["scATAC", "tracks"],
+      "tags": [
+        "scATAC",
+        "tracks"
+      ],
       "url": "https://stuartlab.org/signac/reference/regionplot",
       "lesson": "区域图的细胞分组、深度归一化与平滑参数影响可视语义",
       "consulted_date": "2026-09-01",
@@ -531,7 +554,10 @@
     {
       "id": "mofa-downstream",
       "source_type": "作者教程与代码",
-      "tags": ["multiomics", "latent-factor"],
+      "tags": [
+        "multiomics",
+        "latent-factor"
+      ],
       "url": "https://github.com/bioFAM/MOFA2/blob/master/vignettes/downstream_analysis.Rmd",
       "lesson": "factor score、各模态解释方差和feature weights须分开呈现，因子方向不等于机制",
       "consulted_date": "2026-09-01",
@@ -543,7 +569,10 @@
     {
       "id": "ggtree",
       "source_type": "Bioconductor作者文档",
-      "tags": ["phylogeny", "R"],
+      "tags": [
+        "phylogeny",
+        "R"
+      ],
       "url": "https://bioconductor.posit.co/packages/3.22/bioc/html/ggtree.html",
       "lesson": "树对象、tip/node注释、分支比例尺和关联数据应分层绘制",
       "consulted_date": "2026-09-01",
@@ -555,7 +584,10 @@
     {
       "id": "squair-pseudoreplication",
       "source_type": "同行评议方法论文",
-      "tags": ["single-cell", "statistics"],
+      "tags": [
+        "single-cell",
+        "statistics"
+      ],
       "url": "https://www.nature.com/articles/s41467-021-25960-2",
       "lesson": "单细胞差异分析需避免将细胞数当生物重复，样本层推断优先",
       "consulted_date": "2026-09-01",
@@ -565,9 +597,30 @@
       "code_ref": null
     },
     {
+      "id": "populus-fig2b-source-001",
+      "source_type": "论文原图、作者代码与补充数据",
+      "tags": [
+        "comparative-genomics",
+        "composition",
+        "source-locked"
+      ],
+      "url": "https://www.nature.com/articles/s41559-026-03069-3/figures/2",
+      "lesson": "Fig. 2b exact ratios require preserving closed Supplementary Table 5 values; published colors and annotations differ from the author script.",
+      "consulted_date": "2026-09-26",
+      "status": "source_and_visual_reviewed",
+      "upstream_case_run": false,
+      "license_status": "Original figure retained locally for inspection only; no redistribution. Reproduction script independently authored.",
+      "code_ref": "https://github.com/jingwanglab/Populus_3D_genome_evolution/tree/70d98b88fbcbf7ec0dcf8e2c0c56d69dfea27969/7-Figure%20plot/Figure2/Figure2bcd.R"
+    },
+    {
       "id": "nature-research-figure-guide-current",
       "source_type": "期刊官方规范",
-      "tags": ["all", "layout", "accessibility", "export"],
+      "tags": [
+        "all",
+        "layout",
+        "accessibility",
+        "export"
+      ],
       "url": "https://research-figure-guide.nature.com/",
       "lesson": "生产规范约束尺寸、字体、线宽、可访问性和可编辑性；不把期刊名当配色模板",
       "consulted_date": "2026-09-02",
@@ -579,7 +632,11 @@
     {
       "id": "elsevier-artwork-accessibility",
       "source_type": "出版商官方规范",
-      "tags": ["all", "accessibility", "image-integrity"],
+      "tags": [
+        "all",
+        "accessibility",
+        "image-integrity"
+      ],
       "url": "https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions",
       "lesson": "使用色盲安全色、足够对比并保持图像处理完整性",
       "consulted_date": "2026-09-02",
@@ -591,7 +648,11 @@
     {
       "id": "science-editors-author-guide",
       "source_type": "期刊编辑官方指南",
-      "tags": ["all", "figure-story", "caption"],
+      "tags": [
+        "all",
+        "figure-story",
+        "caption"
+      ],
       "url": "https://promo.aaas.org/images/Publishing/Journals/2019/Authors%20Guide%20Brochure_Final.pdf",
       "lesson": "先组织核心图，使方法与数据形成可追踪的论证链；图注描述而不替代结果分析",
       "consulted_date": "2026-09-02",
@@ -603,7 +664,11 @@
     {
       "id": "ggsci-journal-inspired-palettes",
       "source_type": "R包作者文档",
-      "tags": ["palette", "categorical", "journal-inspired"],
+      "tags": [
+        "palette",
+        "categorical",
+        "journal-inspired"
+      ],
       "url": "https://nanx.me/ggsci/articles/ggsci.html",
       "lesson": "NPG、AAAS、Lancet、NEJM、JAMA色板为期刊图形启发，不是期刊官方标准",
       "consulted_date": "2026-09-02",
@@ -615,7 +680,12 @@
     {
       "id": "colorbrewer-scheme-semantics",
       "source_type": "作者官方工具",
-      "tags": ["palette", "categorical", "sequential", "diverging"],
+      "tags": [
+        "palette",
+        "categorical",
+        "sequential",
+        "diverging"
+      ],
       "url": "https://colorbrewer2.org/learnmore/schemes.html",
       "lesson": "定性、顺序、发散色板分别对应类别、有序数值和具有关键中心的数值",
       "consulted_date": "2026-09-02",
@@ -627,7 +697,11 @@
     {
       "id": "paul-tol-colour-schemes",
       "source_type": "作者官方说明",
-      "tags": ["palette", "categorical", "color-vision"],
+      "tags": [
+        "palette",
+        "categorical",
+        "color-vision"
+      ],
       "url": "https://sronpersonalpages.nl/~pault/",
       "lesson": "Bright与Muted方案强调色觉缺陷可辨性，并规定类别顺序和使用边界",
       "consulted_date": "2026-09-02",
@@ -639,7 +713,12 @@
     {
       "id": "crameri-scientific-colour-maps",
       "source_type": "作者官方说明与版本化色图",
-      "tags": ["palette", "continuous", "perceptual-uniformity", "color-vision"],
+      "tags": [
+        "palette",
+        "continuous",
+        "perceptual-uniformity",
+        "color-vision"
+      ],
       "url": "https://www.fabiocrameri.ch/colourmaps/",
       "lesson": "连续色图应保持感知均匀、顺序明确并面向色觉缺陷读者；避免rainbow",
       "consulted_date": "2026-09-02",
@@ -651,7 +730,11 @@
     {
       "id": "okabe-ito-color-universal-design",
       "source_type": "作者配色指南",
-      "tags": ["palette", "categorical", "color-vision"],
+      "tags": [
+        "palette",
+        "categorical",
+        "color-vision"
+      ],
       "url": "https://jfly.uni-koeln.de/color/",
       "lesson": "定性配色结合色相、明度和非颜色通道，不能只靠红绿差异",
       "consulted_date": "2026-09-02",
@@ -663,9 +746,16 @@
     {
       "id": "nature-research-figure-guide-2026",
       "source_type": "Nature官方图稿指南",
-      "tags": ["all", "export", "font", "accessibility"],
+      "tags": [
+        "all",
+        "export",
+        "font",
+        "accessibility",
+        "publication-size",
+        "column-width"
+      ],
       "url": "https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/",
-      "lesson": "要求可编辑文字和矢量对象、Arial或Helvetica、可访问配色及独立比例尺对象",
+      "lesson": "按最终版面检查；单栏89 mm、双栏183 mm、最大高度170 mm，普通文字5–7 pt且使用Arial或Helvetica；画布与字号须共同设计",
       "consulted_date": "2026-09-03",
       "status": "documentation_reviewed",
       "upstream_case_run": false,
@@ -675,7 +765,12 @@
     {
       "id": "nature-image-integrity-2026",
       "source_type": "Nature Portfolio官方政策",
-      "tags": ["imaging", "microscopy", "blot", "integrity"],
+      "tags": [
+        "imaging",
+        "microscopy",
+        "blot",
+        "integrity"
+      ],
       "url": "https://www.nature.com/nature-portfolio/editorial-policies/image-integrity",
       "lesson": "保留原始图像和元数据；全图及对照一致处理；拼接、伪彩和非线性调整须披露",
       "consulted_date": "2026-09-03",
@@ -687,7 +782,11 @@
     {
       "id": "tripod-plus-ai-2024",
       "source_type": "预测模型报告规范",
-      "tags": ["machine-learning", "prediction", "validation"],
+      "tags": [
+        "machine-learning",
+        "prediction",
+        "validation"
+      ],
       "url": "https://www.tripod-statement.org/scope/",
       "lesson": "预测模型开发、验证和更新需透明报告研究背景、数据、模型与评估",
       "consulted_date": "2026-09-03",
@@ -699,7 +798,12 @@
     {
       "id": "nature-methods-image-checklists-2024",
       "source_type": "同行评议图像报告清单",
-      "tags": ["imaging", "scale-bar", "annotation", "raw-data"],
+      "tags": [
+        "imaging",
+        "scale-bar",
+        "annotation",
+        "raw-data"
+      ],
       "url": "https://www.nature.com/articles/s41592-023-01987-9",
       "lesson": "比例尺与注释应可编辑且不遮挡图像；原始图和发表图均应可追溯",
       "consulted_date": "2026-09-03",
@@ -711,7 +815,12 @@
     {
       "id": "scidraw-gallery-2026",
       "source_type": "第三方案例导航站",
-      "tags": ["visual-reference", "R", "Python", "optional-evidence"],
+      "tags": [
+        "visual-reference",
+        "R",
+        "Python",
+        "optional-evidence"
+      ],
       "url": "https://scidraw.msttnote.cn/",
       "lesson": "可用于发现图型和抽象视觉语法；不能替代原论文、官方规范、科学契约或许可核对",
       "consulted_date": "2026-09-04",
@@ -723,7 +832,11 @@
     {
       "id": "scidraw-user-archive-2026",
       "source_type": "用户提供的本地代码归档",
-      "tags": ["code-derived-features", "provenance", "non-executed"],
+      "tags": [
+        "code-derived-features",
+        "provenance",
+        "non-executed"
+      ],
       "url": "https://scidraw.msttnote.cn/",
       "lesson": "650个文件仅做静态特征提取；不执行、不嵌入原代码，状态和不确定匹配必须保留",
       "consulted_date": "2026-09-04",
@@ -731,6 +844,155 @@
       "upstream_case_run": false,
       "license_status": "unknown; abstract grammar only",
       "code_ref": "scripts/build_scidraw_atlas.py"
+    },
+    {
+      "id": "populus-synteny-edfig1a",
+      "source_type": "论文图、图注与作者仓库固定提交",
+      "tags": [
+        "comparative-genomics",
+        "synteny",
+        "structural-variation",
+        "Populus",
+        "Nature Ecology & Evolution"
+      ],
+      "url": "https://www.nature.com/articles/s41559-026-03069-3/figures/7",
+      "lesson": "Extended Data Fig. 1a 确认 11 物种 × 19 染色体、左侧谱系、相邻行共线带和四类关系；作者仓库未公开该面板脚本与原始共线坐标，因此仅做固定种子结构基准。",
+      "consulted_date": "2026-09-27",
+      "status": "source_and_visual_reviewed",
+      "upstream_case_run": false,
+      "license_status": "publisher image retained as local review evidence; author code not redistributed beyond inspected README",
+      "code_ref": "benchmark/evidence/populus-synteny-edfig1a-001/render.R"
+    },
+    {
+      "id": "populus-compartment-edfig1b",
+      "source_type": "论文图、图注与作者仓库固定提交",
+      "tags": [
+        "comparative-genomics",
+        "A-B-compartment",
+        "circular-genome-track",
+        "Populus",
+        "Nature Ecology & Evolution"
+      ],
+      "url": "https://www.nature.com/articles/s41559-026-03069-3/figures/7",
+      "lesson": "Extended Data Fig. 1b 使用 19 个染色体扇区和 11 个同心物种轨道显示 A/B compartment；作者仓库未公开该面板脚本或逐区间 compartment 表，因此只能进行固定种子结构复现。",
+      "consulted_date": "2026-09-27",
+      "status": "source_and_visual_reviewed",
+      "upstream_case_run": false,
+      "license_status": "publisher figure retained as local review evidence; author code not redistributed beyond inspected README",
+      "code_ref": null
+    },
+    {
+      "id": "nature-omics-t2t-y",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "genomics",
+        "epigenomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41586-023-06457-y",
+      "lesson": "固定基因组组装和窗口，结构与信号分层; 甲基化比例/百分数显式换算；各技术量纲独立标注",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "no-root-license-found; local-review-only; assets require independent rights check",
+      "code_ref": "https://github.com/arangrhie/T2T-HG002Y/tree/bfac4fa60864dc101571dd1b6c91d9b5639b8553",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-001"
+    },
+    {
+      "id": "nature-omics-hprc",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "genomics",
+        "transcriptomics",
+        "epigenomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41586-023-05896-x",
+      "lesson": "区分基因、基因家族、组装和样本分母; 方法用形状、参考用颜色；高密度读数采用分箱",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "MIT; assets require independent rights check",
+      "code_ref": "https://github.com/jonassibbesen/hprc-rnaseq-analyses-scripts/tree/81141c419b948925d34f486187522b51675f3404",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-002"
+    },
+    {
+      "id": "nature-omics-scenicplus",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "single-cell",
+        "chromatin",
+        "transcriptomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41592-023-01938-4",
+      "lesson": "双指标给独立图例；细胞类型排序固定; 网络选择主要TF与高变靶标；大图拆成可读子图; 模拟箭头固定原始坐标并声明预测性质",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "no-root-license-found; local-review-only; assets require independent rights check",
+      "code_ref": "https://github.com/aertslab/scenicplus_analyses/tree/81c961927674fd4a15026247afbfc827b7646eeb",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-003"
+    },
+    {
+      "id": "nature-omics-glue",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "single-cell",
+        "chromatin",
+        "epigenomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41587-022-01284-4",
+      "lesson": "联合嵌入保持坐标与类别字典；同时展示生物验证指标; 共同可检测基因作三集合背景；单独记录各模态变换; 推断调控边与pcHi-C/eQTL/ChIP实验证据分轨",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "MIT; assets require independent rights check",
+      "code_ref": "https://github.com/gao-lab/GLUE/tree/38726c508909e62a83326d2a7fed93dce438c8cb",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-004"
+    },
+    {
+      "id": "nature-omics-numbat",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "single-cell",
+        "genomics",
+        "transcriptomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41587-022-01468-y",
+      "lesson": "保持CNV状态字典、基因组边界和后验0–1独立图例; 性能点绑定样本或事件ID；参考DNA验证与RNA推断分层",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "MIT; assets require independent rights check",
+      "code_ref": "https://github.com/kharchenkolab/NumbatAnalysis/tree/bf181ad60fd6e7e10e1b0cf9041ac43be9864c41",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-005"
+    },
+    {
+      "id": "nature-omics-scbasset",
+      "source_type": "论文原图与固定版本作者源码",
+      "tags": [
+        "single-cell",
+        "chromatin",
+        "transcriptomics",
+        "multi-omics"
+      ],
+      "url": "https://www.nature.com/articles/s41592-022-01562-8",
+      "lesson": "同一TF/细胞作为方法匹配键；表达/活性色标分别标单位; ISM比较共用序列与位置；真实PWM与模型贡献分开; 图区及图例留白按最终尺寸重验",
+      "consulted_date": "2026-09-28",
+      "status": "selected_source_code_and_figure_reviewed",
+      "upstream_case_run": false,
+      "license_status": "Apache-2.0; assets require independent rights check",
+      "code_ref": "https://github.com/calico/scBasset/tree/aed3a6f713091fd988196b297e9c06e092ff1d22",
+      "learning_ref": "references/nature-genomics-multiomics-learning.md",
+      "evidence_ref": "library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-006"
     }
   ]
 }

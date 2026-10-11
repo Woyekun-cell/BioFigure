@@ -1,0 +1,14 @@
+figure_task: simulated-tumour-multievent-oncoprint-gallery-revision
+figure_family: matrix
+data_shape: 144 explicitly simulated tumours x12 genes, five event types with multi-event
+  cells, complete assayed universe and aligned cohort/sex/smoking metadata
+primary_domain: genome-sequence-variation
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: draw
+statistics_required: false
+learned_method_id: BENCH-gallery-multievent-oncoprint-2026
+pattern_id: LEARNED-BENCH-gallery-multievent-oncoprint-2026
+claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.

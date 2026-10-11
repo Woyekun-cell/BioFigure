@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+  "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+  "source_asset": "examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+  "public_renderer": "scripts/public-render.R",
+  "archival_renderer": "scripts/render.R",
+  "input_mode": "published-plot-tables",
+  "simulation": false
+}

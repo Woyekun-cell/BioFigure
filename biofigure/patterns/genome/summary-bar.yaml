@@ -1,0 +1,70 @@
+pattern_id: GEN-SUMMARY-BAR-001
+version: '1.0'
+domain:
+- genomics
+scientific_task:
+- genome-summary
+message_type: aggregate-comparison
+data_contract:
+  required:
+  - category
+  - value
+  - unit
+  - source_table
+  optional:
+  - species
+  assumptions:
+  - source_aggregation_declared
+  - no_invented_replicates
+applicable_when:
+  message: Compare published genome-category totals or proportions
+not_recommended_when:
+- raw_biological_replicate_comparison
+- overlapping_classes_stacked_as_partition
+visual_hierarchy:
+  primary: original_aggregate_value
+  secondary: category_or_species
+geometry:
+  primary: outlined_grouped_or_ranked_bars
+  bar_outline_colour: '#30343B'
+  bar_outline_linewidth_mm: 0.35
+encoding:
+  x: category
+  y: source_value_with_declared_units
+  fill: species_or_original_genome_order
+layout:
+  density_strategy: horizontal_for_long_categories
+  whitespace_strategy: reserve_axis_labels_and_local_legend
+annotation_strategy:
+- source_table_and_scope_in_metadata
+legend_strategy:
+  place: external
+  compact: true
+color_semantics:
+  categorical: fixed_species_dictionary
+  ordered: chromosome_order_if_declared
+avoid:
+- invented_SD_SE_CI
+- fake_raw_points
+- category_as_independent_biological_n
+- unverified_percent_denominator
+- sum_of_overlapping_repeat_classes
+scientific_risks:
+- summary_as_replication
+- overlapping_class_double_count
+renderer_options:
+- ggplot2
+references:
+- doi://10.1093/molbev/msad040
+provenance:
+  created_from:
+  - msad040 Supplementary Tables S5 S9 S13
+  reviewed_by: Codex
+  reviewed_at: '2026-09-29'
+confidence: medium
+validation:
+  scientific: candidate
+  visual: pending
+  benchmark: pending
+status: candidate
+optional_components: []

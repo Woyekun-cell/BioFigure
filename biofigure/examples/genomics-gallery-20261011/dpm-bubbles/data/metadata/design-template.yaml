@@ -1,0 +1,592 @@
+schema_version: '3.4'
+figure_task: hoxa10-pathway-gene-evidence-bubbles
+scientific_message: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.
+data_contract_summary:
+  input: two gene x OE/KD matrices,37 and23 genes,120 raw-P/effect cells,5 CGC labels
+  unit: author gene-level differential evidence
+  source_level: pinned author processed RData and original code, fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3
+  exclusions: none of120cells
+  statistical_boundary: no differential/integration/enrichment rerun; saved raw P
+    and pathway FWER retained
+biology_contract:
+  primary_domain: transcriptomics-metabolomics-multiomics
+  entities:
+  - gene
+  - OE
+  - KD
+  - pathway
+  relationships:
+  - two RNA perturbation evidence per gene
+  - Brown/DPM pathway membership
+  experimental_unit: original HOXA10-AS knockdown/overexpression GBM experiment; not
+    re-inferred from summaries
+  statistical_unit: gene and pathway author evidence
+  replicate_unit: original study sets of3replicates; individual measurements not reconstructed
+  evidence_level: author processed P/effect and pathwayFWER tables
+  claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+    not original paper-data/full-figure fidelity or new-input qualification.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock:
+  backend: R
+  exclusive: true
+  lock_id: e73fc052c0177688
+  preview_export_qa_same_backend: true
+  prior_evidence_invalidated: false
+  rerender_required: false
+  locked: true
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-genomics-dpm-hoxa10-bubbles-2024
+selected_pattern: LEARNED-BENCH-genomics-dpm-hoxa10-bubbles-2024
+selection_reason: Exact author processed input and source panel; native evidence encodings
+  preserved with explicit new palette and declared adaptations.
+reference_evidence:
+  preparation_id: FRESH_REQUIRED
+  preparation_request: {}
+  selected_method_case_id: BENCH-genomics-dpm-hoxa10-bubbles-2024
+  retrieval_query:
+    domain: transcriptomics-metabolomics-multiomics
+    task: hoxa10-pathway-gene-evidence-bubbles
+    pattern: LEARNED-BENCH-genomics-dpm-hoxa10-bubbles-2024
+  selected_atlas_ids: []
+  observed_principles:
+  - full120cells and37/23gene lists
+  - original overlap-vector row order
+  - fixed OE/KD columns
+  - zero-centered log2FC fill capped±2
+  - raw-P score-sized black-outline circles
+  - 5 original CGC labels
+  - saved author pathway FWER labels
+  transfer_decisions:
+  - selected Fig3F author-processed-data replot, full120cells, newpalette and explicit
+    publication orientation; missing source asterisks omitted; no full-original-figure
+    claim
+  rejected_elements:
+  - original source1..9size censoring
+  - invented original star criteria
+  - FDR title on pathwayFWER
+  - alphabetic gene ordering
+  evidence_status: source-and-visual-reviewed
+  learned_source_reference:
+    method_id: BENCH-genomics-dpm-hoxa10-bubbles-2024
+    source_record_sha256: FRESH_REQUIRED
+    read_hashes: {}
+    opened_source_asset:
+      path: examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf
+      sha256: bedb55aa32702d18ffd30d7813901d575745225a1fa3a0dc103db445908e7445
+      original_size_viewed: true
+      scope: Current own published figure PDF, not original publication reference.
+  learned_method_reuse:
+    adopted:
+    - BENCH-genomics-dpm-hoxa10-bubbles-2024
+    rejected: []
+    data_adaptation: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    known_failures_addressed: Published plotting tables and explicit simulation labels;
+      retain raw effects/NA/IDs and native layout; never borrow source-fidelity or
+      earlier gate PASS.
+    source_issue_resolutions: []
+  review_scope: Current own output viewed and numerically audited locally; fresh public-directory
+    replay requires independent final review.
+reference_analysis:
+  figure_family: matrix
+  semantic_purpose: two gene x OE/KD matrices,37 and23 genes,120 raw-P/effect cells,5
+    CGC labels
+  panels:
+  - id: F1
+    role: GO:0001667gene evidence
+    position: left
+  - id: F2
+    role: GO:0070482gene evidence
+    position: right
+  elements:
+  - id: e0
+    role: full120cells and37/23gene lists
+    geometry: full120cells and37/23gene lists
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e1
+    role: original overlap-vector row order
+    geometry: original overlap-vector row order
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e2
+    role: fixed OE/KD columns
+    geometry: fixed OE/KD columns
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e3
+    role: zero-centered log2FC fill capped±2
+    geometry: zero-centered log2FC fill capped±2
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e4
+    role: raw-P score-sized black-outline circles
+    geometry: raw-P score-sized black-outline circles
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e5
+    role: 5 original CGC labels
+    geometry: 5 original CGC labels
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  - id: e6
+    role: saved author pathway FWER labels
+    geometry: saved author pathway FWER labels
+    position: source-matched two vertical matrix slots
+    data_mapping: original gene/term keys and saved author evidence
+    required: true
+  relationships:
+  - from: e0
+    to: e1
+    type: shares-order
+    shared_key: gene keys and saved overlap order
+  - from: e0
+    to: e2
+    type: shares-coordinate
+    shared_key: gene/experiment keys
+  spatial_topology:
+    coordinate_system: physicalmm equal-pitch gene rows per pathway
+    reading_order:
+    - two source term titles
+    - raw-P/effect circles
+    - gene/experiment labels
+    - shared legends
+    alignment_keys:
+    - gene
+    - OE_KD
+    layer_order:
+    - full120cells and37/23gene lists
+    - original overlap-vector row order
+    - fixed OE/KD columns
+    - zero-centered log2FC fill capped±2
+    - raw-P score-sized black-outline circles
+    - 5 original CGC labels
+    - saved author pathway FWER labels
+  required_structures:
+  - full120cells and37/23gene lists
+  - original overlap-vector row order
+  - fixed OE/KD columns
+  - zero-centered log2FC fill capped±2
+  - raw-P score-sized black-outline circles
+  - 5 original CGC labels
+  - saved author pathway FWER labels
+  forbidden_substitutions:
+  - original source1..9size censoring
+  - invented original star criteria
+  - FDR title on pathwayFWER
+  - alphabetic gene ordering
+visual_hierarchy:
+  primary: two vertical37/23gene evidence matrices
+  secondary: italic gene labels and savedFWER titles
+  tertiary: compact shared legends below
+encoding:
+  position: original overlap order per term, paired OE/KD columns
+  color: zero-centered cappedlog2FC
+  size: affine point area in -log10(rawP), visible minimum and no censored cells
+annotation:
+  method: CGC5caret labels; original star layer omitted because criterion and merged
+    values unavailable
+legend:
+  place: outside_bottom
+  shared: true
+palette_semantics:
+  negative_log2FC: '#1F6F8B'
+  zero_log2FC: '#FBF8F1'
+  positive_log2FC: '#C27032'
+  point_outline: '#30343B'
+  CGC_text: '#4D3E67'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: FRESH_REQUIRED
+  project_id: DPM-HOXA10-additional-panels-2026-10-11
+  palette_id: dpm-hoxa10-negative-teal-positive-ochre
+  semantic_colors:
+    negative_log2FC: '#1F6F8B'
+    zero_log2FC: '#FBF8F1'
+    positive_log2FC: '#C27032'
+    point_outline: '#30343B'
+    CGC_text: '#4D3E67'
+  reuse_policy: exact_semantic_mapping
+  exception_basis: User authorized new palettes for additional source panels; separate
+    effect/diverging and evidence/category encodings, scoped to these new subpackages.
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - ggplot2
+  - grid
+  - cowplot
+  - ragg
+  - systemfonts
+  - yaml
+  - jsonlite
+  - digest
+  - ggforce
+  input_parser: author RData object load, explicit stable gene/term IDs
+  function_adaptation: ggforce::geom_circle draws source shape21 circular fill/outline
+    with exact physical-mm radius, preserving encoding and avoiding font-relative
+    point-size ambiguity; ggplot2 scales and native two-panel assembly remain.
+output_size:
+  width_mm: 136
+  height_mm: 165
+  size_class: one-and-half-column
+  size_basis: final_physical_output
+  formats:
+  - pdf
+  - svg
+  - png
+  size_rationale:
+    panel_count: 2
+    density: high
+    longest_label_chars: 29
+    recommended_class: double-column
+    selection_reason: preserve both37/23gene lists with native circle encoding and
+      shared legends
+    override_basis: Analyst selected136x165mm to retain both vertical gene matrices
+      and source-like narrow bodies; not a user physical-size request.
+layout_contract:
+  canvas: 136x165mm white
+  data_bbox: two16x125mm vertical data bodies; centered OE/KD pairs; top-aligned
+  annotation_bbox: all gene labels beside bodies; two term/FWER title bands above;
+    5 CGC carets beside rows
+  legend_bbox: compact shared effect/score/CGC band below data
+  label_reserve: all60 gene occurrences at7.5pt with real ArialItalic metrics
+  collision_policy: fail_and_redraw
+  text_extent_method: actual Arial grid/systemfonts metrics at physicalmm output;
+    actualPDF audit after render
+  preflight_collision_check: actual exclusive physical slots must pass bf_check_boxes;
+    canonical data/labels macro envelopes may overlap only because they span two separated
+    interleaved panels, allowed pair data:labels; no actual mark/text overlap authorized
+  coordinate_policy: source overlap order and fixed OE/KD; full120cells
+font_contract:
+  family: Arial
+  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: Arial embedded PDF and openedPNG
+  minimum_final_text_pt: 7.5
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 8
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 8
+design_target:
+  reference: examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf
+  reference_opened: true
+  hierarchy:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  geometry:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  palette:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  typography:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  marks:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  annotation:
+    observation: two adjacent vertical gene lists, left37/right23 rows; paired OE/KD
+      columns; italic gene labels; black thin point outlines; titles and FWER above;
+      shared effect and P score legends below
+    implementation: '{''canvas_mm'': [136, 165], ''assembly'': ''two independently
+      row-spaced vertical gene-by-OE/KD matrices; top-aligned titles and bodies; common
+      legends below; no artificial correspondence between unrelated row positions'',
+      ''panel_row_counts'': [37, 23], ''body_height_mm'': 125, ''planned_body_width_per_panel_mm'':
+      16, ''planned_dataset_column_separation_mm'': 8, ''row_pitch_mm'': [3.3783783783783785,
+      5.434782608695652], ''dataset_order_left_to_right'': [''OE'', ''KD''], ''gene_order'':
+      ''saved original overlap vectors, not alphabetical/default factor order'', ''gene_labels'':
+      ''all60 displayed gene entries in source order; Arial Italic7.5pt; CGC caret
+      and colored label for5 occurrences; no inferred original stars'', ''titles'':
+      ''exact author term names plus saved FWER; source title FDR wording corrected'',
+      ''legend_band'': ''shared fill and raw-P size legends under matrices, with explicit
+      OE/KD and CGC labels; no decorative filler'', ''color_scale'': ''log2FC clipped±2
+      solely for fill; uncapped values retained in eventual plot-data table'', ''size_scale'':
+      {''score'': ''-log10(raw P)'', ''minimum_diameter_mm'': 0.55, ''maximum_diameter_mm'':
+      3.0, ''mapping'': ''d^2 = d_min^2 + (d_max^2 - d_min^2) * score / score_max;
+      visible minimum yields affine area scale, not exact through-zero proportionality'',
+      ''limits'': ''0 to actual maximum; no source1..9 censoring'', ''common_between_both_terms'':
+      True}, ''point_outline_mm'': 0.13, ''minimum_font_pt'': 7.5, ''collision_policy'':
+      ''FAIL_AND_REVISE; row pitch and widest diameter checked in actual render'',
+      ''source_density_review'': ''source narrow vertical matrices retained; reserve
+      longer pathway-title width; verify actual panel/margin/legend proportions at136x165mm''}'
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+text_contract:
+  allowed_text:
+  - SPARC
+  - DCN
+  - WNT11
+  - GJA1
+  - GNA13
+  - SLC8A1
+  - AQP1
+  - SEMA3E
+  - SCG2
+  - STC1
+  - PFN2
+  - TNS1
+  - CYP1B1
+  - KITLG
+  - KIT
+  - APOE
+  - ANGPT1
+  - HAS2
+  - HAND2
+  - EFNB1
+  - SEMA3F
+  - NUS1
+  - HMGB1
+  - ITGA2
+  - DPP4
+  - CYGB
+  - CDH5
+  - FGF2
+  - SEMA3A
+  - ACTA2
+  - ID1
+  - ZEB2
+  - TGFBR1
+  - RHOJ
+  - RAB11A
+  - PTEN
+  - ANLN
+  - RBPJ
+  - COL1A1
+  - CAV1
+  - CCNA2
+  - BNIP3L
+  - RORA
+  - PLOD2
+  - SDHD
+  - VASN
+  - CBS
+  - FAS
+  - GUCY1A2
+  - SFRP1
+  - BNIP2
+  - VCAM1
+  - ERO1A
+  - CD24
+  - OE
+  - KD
+  - log2FC
+  - −log10(raw P)
+  - ≤ -2
+  - '-1'
+  - '0'
+  - '1'
+  - ≥ 2
+  - '2'
+  - '4'
+  - '6'
+  - '8'
+  - ^ CGC gene
+  - FWER = 7.27e-4
+  - FWER = 0.00124
+  - 'Ameboidal-type
+
+    cell migration'
+  - 'Response to
+
+    oxygen levels'
+  - ^
+  allow_headings: false
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: true
+statistics_plan:
+  mode: existing
+  status: ready
+  recompute: false
+  source:
+    path: results/plot_data/dpm_fig3f_recolored_plot_data.csv
+    sha256: 2f510290caed40468736a85fe037b581087b75aa1ef3e56b593443d7abb0c822
+    p_semantics: mixed_declared
+    comparison_mapping: OE versusWT andKD versusWT; original differential rawP; author
+      saved Brown/DPM pathwayFWER
+    provenance: Published derived plotting table from pinned author processed RData;
+      no statistical recomputation. Original RData remains an external archival input.
+  significance_annotations: false
+source_density_contract:
+  source_asset:
+    path: examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf
+    sha256: bedb55aa32702d18ffd30d7813901d575745225a1fa3a0dc103db445908e7445
+  source_observation: two adjacent vertical gene lists, left37/right23 rows; paired
+    OE/KD columns; italic gene labels; black thin point outlines; titles and FWER
+    above; shared effect and P score legends below
+  adaptation: vertical publication orientation, both full gene lists, original author
+    order and explicit OE/KD columns; shared legends; do not turn missing/low-score
+    cells into absent observations
+  metrics_required:
+  - 120cells
+  - 37/23genes
+  - OE/KDfixed
+  - source overlap vector row orders
+  - 5 CGC labels
+  - allcells incl38logP<1
+  final_metrics_required:
+  - 120cells
+  - 37/23genes
+  - OE/KDfixed
+  - source overlap vector row orders
+  - 5 CGC labels
+  - allcells incl38logP<1

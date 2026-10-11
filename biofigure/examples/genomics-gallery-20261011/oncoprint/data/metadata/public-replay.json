@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+  "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+  "source_asset": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+  "public_renderer": "scripts/public-render.R",
+  "archival_renderer": "scripts/render.R",
+  "input_mode": "published-plot-tables",
+  "simulation": true
+}

@@ -1,0 +1,377 @@
+[
+  {
+    "component": 1,
+    "term_id": "GO:0140014",
+    "term_name": "mitotic nuclear division",
+    "text": "mitotic nuclear division",
+    "box": {
+      "component": 1,
+      "x": 5,
+      "y": 76,
+      "w": 89,
+      "h": 77
+    },
+    "max_text_width_mm": 86,
+    "text_width_mm": 28.374622222222218
+  },
+  {
+    "component": 17,
+    "term_id": "REAC:R-HSA-216083",
+    "term_name": "Integrin cell surface interactions",
+    "text": "Integrin cell\nsurface\ninteractions",
+    "box": {
+      "component": 17,
+      "x": 97,
+      "y": 117,
+      "w": 26,
+      "h": 38
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 14.424377777777773
+  },
+  {
+    "component": 2,
+    "term_id": "GO:0048667",
+    "term_name": "cell morphogenesis involved in neuron differentiation",
+    "text": "cell\nmorphogenesis\ninvolved in neuron\ndifferentiation",
+    "box": {
+      "component": 2,
+      "x": 123,
+      "y": 117,
+      "w": 26,
+      "h": 38
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 22.89668888888889
+  },
+  {
+    "component": 5,
+    "term_id": "GO:0048589",
+    "term_name": "developmental growth",
+    "text": "developmental\ngrowth",
+    "box": {
+      "component": 5,
+      "x": 149,
+      "y": 117,
+      "w": 26,
+      "h": 38
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 18.350088888888884
+  },
+  {
+    "component": 11,
+    "term_id": "GO:0071363",
+    "term_name": "cellular response to growth factor stimulus",
+    "text": "cellular response\nto growth factor\nstimulus",
+    "box": {
+      "component": 11,
+      "x": 97,
+      "y": 87,
+      "w": 26,
+      "h": 29
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 21.32753333333333
+  },
+  {
+    "component": 6,
+    "term_id": "GO:0071456",
+    "term_name": "cellular response to hypoxia",
+    "text": "cellular response\nto hypoxia",
+    "box": {
+      "component": 6,
+      "x": 123,
+      "y": 87,
+      "w": 26,
+      "h": 29
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 21.32753333333333
+  },
+  {
+    "component": 15,
+    "term_id": "GO:0090263",
+    "term_name": "positive regulation of canonical Wnt signaling pathway",
+    "text": "positive regulation\nof canonical Wnt\nsignaling pathway",
+    "box": {
+      "component": 15,
+      "x": 149,
+      "y": 87,
+      "w": 26,
+      "h": 29
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 22.735822222222232
+  },
+  {
+    "component": 3,
+    "term_id": "GO:0001503",
+    "term_name": "ossification",
+    "text": "ossification",
+    "box": {
+      "component": 3,
+      "x": 97,
+      "y": 63,
+      "w": 26,
+      "h": 23
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 13.953066666666665
+  },
+  {
+    "component": 9,
+    "term_id": "GO:0010498",
+    "term_name": "proteasomal protein catabolic process",
+    "text": "proteasomal\nprotein catabolic\nprocess",
+    "box": {
+      "component": 9,
+      "x": 123,
+      "y": 63,
+      "w": 26,
+      "h": 23
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 20.540133333333337
+  },
+  {
+    "component": 10,
+    "term_id": "GO:0006888",
+    "term_name": "endoplasmic reticulum to Golgi vesicle-mediated transport",
+    "text": "endoplasmic\nreticulum to Golgi\nvesicle-mediated\ntransport",
+    "box": {
+      "component": 10,
+      "x": 149,
+      "y": 63,
+      "w": 26,
+      "h": 23
+    },
+    "max_text_width_mm": 23,
+    "text_width_mm": 21.942777777777778
+  },
+  {
+    "component": 8,
+    "term_id": "GO:0045859",
+    "term_name": "regulation of protein kinase activity",
+    "text": "regulation of\nprotein\nkinase\nactivity",
+    "box": {
+      "component": 8,
+      "x": 97,
+      "y": 27,
+      "w": 19.5,
+      "h": 35
+    },
+    "max_text_width_mm": 16.5,
+    "text_width_mm": 15.522222222222224
+  },
+  {
+    "component": 18,
+    "term_id": "GO:0040013",
+    "term_name": "negative regulation of locomotion",
+    "text": "negative\nregulation of\nlocomotion",
+    "box": {
+      "component": 18,
+      "x": 116.5,
+      "y": 27,
+      "w": 19.5,
+      "h": 35
+    },
+    "max_text_width_mm": 16.5,
+    "text_width_mm": 15.522222222222224
+  },
+  {
+    "component": 7,
+    "term_id": "GO:0001701",
+    "term_name": "in utero embryonic development",
+    "text": "in utero\nembryonic\ndevelopment",
+    "box": {
+      "component": 7,
+      "x": 136,
+      "y": 27,
+      "w": 19.5,
+      "h": 35
+    },
+    "max_text_width_mm": 16.5,
+    "text_width_mm": 16.154400000000003
+  },
+  {
+    "component": 23,
+    "term_id": "GO:0071604",
+    "term_name": "transforming growth factor beta production",
+    "text": "transforming\ngrowth factor\nbeta\nproduction",
+    "box": {
+      "component": 23,
+      "x": 155.5,
+      "y": 27,
+      "w": 19.5,
+      "h": 35
+    },
+    "max_text_width_mm": 16.5,
+    "text_width_mm": 16.30115555555555
+  },
+  {
+    "component": 4,
+    "term_id": "GO:0001508",
+    "term_name": "action potential",
+    "text": "action potential",
+    "box": {
+      "component": 4,
+      "x": 5,
+      "y": 62.400000000000006,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 18.97097777777778
+  },
+  {
+    "component": 12,
+    "term_id": "GO:0007264",
+    "term_name": "small GTPase mediated signal transduction",
+    "text": "small GTPase\nmediated signal\ntransduction",
+    "box": {
+      "component": 12,
+      "x": 34.66666666666667,
+      "y": 62.400000000000006,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 19.75837777777777
+  },
+  {
+    "component": 13,
+    "term_id": "GO:0008654",
+    "term_name": "phospholipid biosynthetic process",
+    "text": "phospholipid\nbiosynthetic\nprocess",
+    "box": {
+      "component": 13,
+      "x": 64.33333333333334,
+      "y": 62.400000000000006,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 15.843955555555556
+  },
+  {
+    "component": 14,
+    "term_id": "GO:0010638",
+    "term_name": "positive regulation of organelle organization",
+    "text": "positive regulation\nof organelle\norganization",
+    "box": {
+      "component": 14,
+      "x": 5,
+      "y": 49.6,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 22.735822222222232
+  },
+  {
+    "component": 16,
+    "term_id": "GO:0018209",
+    "term_name": "peptidyl-serine modification",
+    "text": "peptidyl-serine\nmodification",
+    "box": {
+      "component": 16,
+      "x": 34.66666666666667,
+      "y": 49.6,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 19.05282222222222
+  },
+  {
+    "component": 19,
+    "term_id": "GO:0033002",
+    "term_name": "muscle cell proliferation",
+    "text": "muscle cell\nproliferation",
+    "box": {
+      "component": 19,
+      "x": 64.33333333333334,
+      "y": 49.6,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 14.737644444444438
+  },
+  {
+    "component": 20,
+    "term_id": "GO:0048144",
+    "term_name": "fibroblast proliferation",
+    "text": "fibroblast\nproliferation",
+    "box": {
+      "component": 20,
+      "x": 5,
+      "y": 36.8,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 14.737644444444438
+  },
+  {
+    "component": 21,
+    "term_id": "GO:0050680",
+    "term_name": "negative regulation of epithelial cell proliferation",
+    "text": "negative regulation\nof epithelial cell\nproliferation",
+    "box": {
+      "component": 21,
+      "x": 34.66666666666667,
+      "y": 36.8,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 23.836488888888887
+  },
+  {
+    "component": 22,
+    "term_id": "GO:0051668",
+    "term_name": "localization within membrane",
+    "text": "localization within\nmembrane",
+    "box": {
+      "component": 22,
+      "x": 64.33333333333334,
+      "y": 36.8,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 21.948422222222213
+  },
+  {
+    "component": 24,
+    "term_id": "GO:0071786",
+    "term_name": "endoplasmic reticulum tubular network organization",
+    "text": "endoplasmic\nreticulum tubular\nnetwork\norganization",
+    "box": {
+      "component": 24,
+      "x": 5,
+      "y": 24.0,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 20.850577777777776
+  },
+  {
+    "component": 25,
+    "term_id": "GO:1901137",
+    "term_name": "carbohydrate derivative biosynthetic process",
+    "text": "carbohydrate\nderivative\nbiosynthetic\nprocess",
+    "box": {
+      "component": 25,
+      "x": 34.66666666666667,
+      "y": 24.0,
+      "w": 29.566666666666666,
+      "h": 12.6
+    },
+    "max_text_width_mm": 24.666666666666668,
+    "text_width_mm": 16.46766666666667
+  }
+]

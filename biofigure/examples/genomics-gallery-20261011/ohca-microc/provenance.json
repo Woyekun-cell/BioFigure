@@ -1,0 +1,1612 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+  "scope": "真实作者book处理RDS；5kb、200bins、19667联系记录、31个可见环。原生HiContacts；仅对应book案例，正式论文面板未验证。",
+  "data_origin": "author-processed-public-data",
+  "learning": {
+    "schema_version": 1,
+    "case_id": "BENCH-genomics-ohca-microc-loops-2024",
+    "label": "OHCA author-book HFFc6 Micro-C contact matrix with filtered loop overlays",
+    "learning_status": "SOURCE_CODE_AND_INPUTS_AUDITED_ORIGINAL_IMAGES_OPENED",
+    "publication": {
+      "title": "Orchestrating chromosome conformation capture analysis with Bioconductor",
+      "journal": "Nature Communications",
+      "year": 2024,
+      "doi": "10.1038/s41467-024-44761-x",
+      "url": "https://www.nature.com/articles/s41467-024-44761-x",
+      "pmcid": "PMC10844600",
+      "figure_license": "CC BY4.0 for paper; MIT for author OHCA book/repository material"
+    },
+    "published_reference": "AUTHOR_BOOK_7.3.1.4_VISUALIZING_CHROMATIN_LOOPS",
+    "official_paper_panel_number": "NOT_VERIFIED",
+    "author_directory": "inst/pages/topological-features.qmd; gh-pages docs/devel/pages/topological-features_files/figure-html/unnamed-chunk-21-1.png",
+    "chart_family": "paper-composite",
+    "method_pattern": "native HiContacts::plotMatrix(HiCExperiment): balanced log10 genomic contact heatmap with exact score/qvalue-filtered loop circles",
+    "learning_scope": "Native source processing, serialized processed-input schema, filtering and clipping semantics, quantitative color scale, original layout and native package responsibilities; no rawNGS or loop calling",
+    "repositories": [
+      {
+        "repo": "js2264/OHCA",
+        "commit": "8ef6242d336e8c8875f4afb2164b47c4d0fbcea4",
+        "role": "current author book source/data snapshot, not publication2024 release",
+        "license": "MIT"
+      },
+      {
+        "repo": "js2264/OHCA",
+        "commit": "08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592",
+        "role": "gh-pages rendered original image/HTML",
+        "deployment_from": "8ef6242d336e8c8875f4afb2164b47c4d0fbcea4",
+        "license": "MIT"
+      },
+      {
+        "repo": "js2264/HiContacts",
+        "commit": "dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d",
+        "role": "native plotting package",
+        "source_version": "1.15.3",
+        "license": "MIT"
+      },
+      {
+        "repo": "js2264/HiCExperiment",
+        "commit": "0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a",
+        "role": "native S4 representation/accessor/conversion package",
+        "source_version": "1.13.1",
+        "license": "MIT"
+      }
+    ],
+    "source_assets": [
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/DESCRIPTION",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/DESCRIPTION",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "be90f51049e64150f188c16c1302887082169abc",
+        "expected_bytes": 1330,
+        "max_bytes": 20000,
+        "sha256": "cf94fd6982c2e8d466fc53a288c8acadc5d63823cf1dbabcb2cb67a19f65d18b",
+        "bytes": 1330
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/LICENSE",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/LICENSE",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "cfc5a023b9d3a5c0bb7b51e7ee98eed122ed528b",
+        "expected_bytes": 45,
+        "max_bytes": 20000,
+        "sha256": "89a4cacad705e7f4f94e0b877f9c6603309bfc8884657b2ce066ff4a297dc211",
+        "bytes": 45
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/LICENSE.md",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/LICENSE.md",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "328ebaebe84bf10df0c803a5b79a5a199584f379",
+        "expected_bytes": 1074,
+        "max_bytes": 20000,
+        "sha256": "e6df19c0410e66ba9041d69dca474fad62052718e199e197bafacdf7d5405a80",
+        "bytes": 1074
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/NAMESPACE",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/NAMESPACE",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "1d2d6ff8f63c3d3958efad4d0aa44c9f3fb0c178",
+        "expected_bytes": 2743,
+        "max_bytes": 20000,
+        "sha256": "f69a82d71d6ce0283e3195bc5417ccc5b4221d676741bb7adff4fa370735d3f1",
+        "bytes": 2743
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/4C.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/4C.R",
+        "role": "native-package-source",
+        "git_blob_sha": "81deb02a2482e82d0ab00027735b6138aa42d575",
+        "expected_bytes": 1948,
+        "max_bytes": 20000,
+        "sha256": "67bc3c2740244513655b1e0c0ad1f23b6c555f8d75ed719267090da2ccea39d4",
+        "bytes": 1948
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/AllGenerics.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/AllGenerics.R",
+        "role": "native-package-source",
+        "git_blob_sha": "455423df34b5e95cefbd598dcae509c630ffcc4c",
+        "expected_bytes": 440,
+        "max_bytes": 20000,
+        "sha256": "ba032f4f889ac0da66ced1ca44369cef92dc00d1ada168daf2d0208ed5d054bc",
+        "bytes": 440
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/Ps.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/Ps.R",
+        "role": "native-package-source",
+        "git_blob_sha": "91cbd0048ad7113adc4b500202dc8cab68448f9f",
+        "expected_bytes": 20676,
+        "max_bytes": 20677,
+        "sha256": "52955649efbae948b810f4065a480c1d7b9ef49fe6e8eb310c5ae11a710c64c4",
+        "bytes": 20676
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/aggregate.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/aggregate.R",
+        "role": "native-package-source",
+        "git_blob_sha": "841ca2a859eafbb630450e1bfdad6c49dd909b16",
+        "expected_bytes": 686,
+        "max_bytes": 20000,
+        "sha256": "ba03e5175e2dbef2be9b8c3ee0707abdf4792c7b40a241c3cb03e0ca78fcd25e",
+        "bytes": 686
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/arithmetics.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/arithmetics.R",
+        "role": "native-package-source",
+        "git_blob_sha": "71a75806f5f17cef9f16b616896ec46b2d9e8e57",
+        "expected_bytes": 15094,
+        "max_bytes": 20000,
+        "sha256": "1334b3deedc13963120319fb494cc8e445761043c231d4c73ed8007559648a9a",
+        "bytes": 15094
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/boost.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/boost.R",
+        "role": "native-package-source",
+        "git_blob_sha": "807a21e0423016b4e91c00d3076ea838c4fe9033",
+        "expected_bytes": 1768,
+        "max_bytes": 20000,
+        "sha256": "2c6866691a0974cb40ffc2e79bbcc6b87e311925022baefb5ec81537621b8ad2",
+        "bytes": 1768
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/checks.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/checks.R",
+        "role": "native-package-source",
+        "git_blob_sha": "70b1d0042dac89ad39e89f658befeaeedf165814",
+        "expected_bytes": 2447,
+        "max_bytes": 20000,
+        "sha256": "ec5c9be18b2e98654e1a45d74d67fcc093259fe30a45811cdf4f183f3aec3098",
+        "bytes": 2447
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/cistrans.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/cistrans.R",
+        "role": "native-package-source",
+        "git_blob_sha": "237febccb507295c3ce28b770585469a66a8d983",
+        "expected_bytes": 1738,
+        "max_bytes": 20000,
+        "sha256": "7b606181844f8865ae103a88e33916a2f8205ec03de1ca1e438c5b97b79e2910",
+        "bytes": 1738
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/coarsen.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/coarsen.R",
+        "role": "native-package-source",
+        "git_blob_sha": "cc221b4e20a547fcd8ca4dc6071d24e75e537704",
+        "expected_bytes": 2635,
+        "max_bytes": 20000,
+        "sha256": "dba06ec9fa026fb0aa28cf0ed8f9de10c16f3e23dd9fc5fb737145d5b20f1116",
+        "bytes": 2635
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/compartments.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/compartments.R",
+        "role": "native-package-source",
+        "git_blob_sha": "eb6eb5d2f596afb58bbd57de4255dc00378f00dc",
+        "expected_bytes": 10511,
+        "max_bytes": 20000,
+        "sha256": "e91468b826a39106b90c1d0bf33910583cbc01d222262ccd5a3cfac3f4694953",
+        "bytes": 10511
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/contacts.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/contacts.R",
+        "role": "native-package-source",
+        "git_blob_sha": "a5e673f89c10453ce397dcf836b388180b34f400",
+        "expected_bytes": 2289,
+        "max_bytes": 20000,
+        "sha256": "f78eea878b88b0d203a5cc7c445feb9ae5419d1b890109d70678f88a89c80e09",
+        "bytes": 2289
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/diamond.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/diamond.R",
+        "role": "native-package-source",
+        "git_blob_sha": "cf77c80b0d6e243f37e9efaa982f3d837348887e",
+        "expected_bytes": 3850,
+        "max_bytes": 20000,
+        "sha256": "9d0166bd77649aed14b3d3855d88dfcd315856d75a3eda366382d1b7cecfeff5",
+        "bytes": 3850
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/globals.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/globals.R",
+        "role": "native-package-source",
+        "git_blob_sha": "6d1bf2ddbb31397dd3eb8bc3c56da100dc3b9ff7",
+        "expected_bytes": 1326,
+        "max_bytes": 20000,
+        "sha256": "517fd37dcaecefdf8d42d656a5eeaec83931fde0658f9cca7898a8eaf4d0f5e6",
+        "bytes": 1326
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/loops.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/loops.R",
+        "role": "native-package-source",
+        "git_blob_sha": "08a86ffad29caf9ca2ff173fb42638e48ac82e69",
+        "expected_bytes": 528,
+        "max_bytes": 20000,
+        "sha256": "020ef925b3d5c15dc9f1d901631ea69dd1a9bc2e208a452da78bbfb80abebc76",
+        "bytes": 528
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/normalize.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/normalize.R",
+        "role": "native-package-source",
+        "git_blob_sha": "f4c08e652e05ce126f509e15e772dd5b3558c90b",
+        "expected_bytes": 2780,
+        "max_bytes": 20000,
+        "sha256": "7ddec28019d4a928b5aff66ece27e9a72366da6b3c2a6377fb55092e7260a1e4",
+        "bytes": 2780
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/plotting.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/plotting.R",
+        "role": "native-package-source",
+        "git_blob_sha": "a854966d8770a5d2c3a912da69c06022f297ecdb",
+        "expected_bytes": 40086,
+        "max_bytes": 40087,
+        "sha256": "b9c36d4c0a335b0c04f02456ef5619eb508f39e9693c5442428834838f689d11",
+        "bytes": 40086
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/reexports.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/reexports.R",
+        "role": "native-package-source",
+        "git_blob_sha": "33236bfb4bc61bdd0c058d6eeee2dee2c90af97d",
+        "expected_bytes": 134,
+        "max_bytes": 20000,
+        "sha256": "45e565ca36a4f214091ed108a23f485a93e0fcce3b6be872788d71265e1aa3b4",
+        "bytes": 134
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/scalogram.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/scalogram.R",
+        "role": "native-package-source",
+        "git_blob_sha": "a7bae45a40ca8825da565728ebb71a4b79cbb6da",
+        "expected_bytes": 2141,
+        "max_bytes": 20000,
+        "sha256": "70e7bfb5e082dd9312158aea28801ba16a7de90989d2020abd5bfebda21decaf",
+        "bytes": 2141
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/subsample.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/subsample.R",
+        "role": "native-package-source",
+        "git_blob_sha": "c35a6fd1df072f1b76d93ac3afd66ed1f6317863",
+        "expected_bytes": 1789,
+        "max_bytes": 20000,
+        "sha256": "3bd0840f2a1543502acebb6848370a89c2d933622699c64a8fb0d1dd3f00951c",
+        "bytes": 1789
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/tracks.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/tracks.R",
+        "role": "native-package-source",
+        "git_blob_sha": "25eb78411b06dfc8f59b2c7e847d82c324059c48",
+        "expected_bytes": 2855,
+        "max_bytes": 20000,
+        "sha256": "f1793021526500bb1bdcc3bcf3db511952740dfc88e7ac3d79cb671eccae691f",
+        "bytes": 2855
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/utils.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/utils.R",
+        "role": "native-package-source",
+        "git_blob_sha": "4b28d8f6545dec18bc91ec630dfa21bfc883bb14",
+        "expected_bytes": 371,
+        "max_bytes": 20000,
+        "sha256": "616e668262a9bd18a41028f53e803d2e682d004cdb9c863e8c80bdfca9bf2e21",
+        "bytes": 371
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/DESCRIPTION",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/DESCRIPTION",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "496142ce870c3dc5f71cf8b06ffb4e8e224a06db",
+        "expected_bytes": 2236,
+        "max_bytes": 20000,
+        "sha256": "9eebecc52e6735b94fbb140b1411eb8e55d8f7481646445dc2546971a07307df",
+        "bytes": 2236
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/LICENSE",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/LICENSE",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "2bdb5ca0383b977cd1a22e0bbceb57b91ef40fdc",
+        "expected_bytes": 51,
+        "max_bytes": 20000,
+        "sha256": "7203e861179dd5e7d7aa1d3ca45b7b91f7c5e8a86df3cc1a1a7129a2a72a5bc6",
+        "bytes": 51
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/LICENSE.md",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/LICENSE.md",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "b41561db9dd76c9fa5d0a6177435ecffb10ee2d4",
+        "expected_bytes": 1080,
+        "max_bytes": 20000,
+        "sha256": "4d4dea83108977acee2bcb200c4c0ee638471b3127889aa88a11f6915ec98be2",
+        "bytes": 1080
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/NAMESPACE",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/NAMESPACE",
+        "role": "source-code-or-metadata",
+        "git_blob_sha": "9b8df58d9be244f12ca37de995ab4064e42ba96f",
+        "expected_bytes": 2942,
+        "max_bytes": 20000,
+        "sha256": "f5966627f2ec04dc0582bfad4832c3d3d9b7d678b0da6e40b391c133e661ece5",
+        "bytes": 2942
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AggrHiCExperiment-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/AggrHiCExperiment-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "ef514a038419413d41c78852c61aa04fa1f2ab32",
+        "expected_bytes": 5732,
+        "max_bytes": 20000,
+        "sha256": "ccbdb5985ff1d2eabe2032f258d73d2bf35a16519d6daf9048caf84f3e382a36",
+        "bytes": 5732
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AggrHiCExperiment-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/AggrHiCExperiment-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "2a243681a452a259a9ddb35d7d51aa52697f3483",
+        "expected_bytes": 2188,
+        "max_bytes": 20000,
+        "sha256": "8b2d5ea65dcff23968290cc6e3167fc0341c12d0cb2893d5d481250c8cafa8e2",
+        "bytes": 2188
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AllGenerics.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/AllGenerics.R",
+        "role": "native-package-source",
+        "git_blob_sha": "ee5708e9c77b93b263db6d1e60852d7ceab22548",
+        "expected_bytes": 2291,
+        "max_bytes": 20000,
+        "sha256": "e70a858e54116b19440791601c17b9df1b66a3dcaa2d49c3786824bdb8178195",
+        "bytes": 2291
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/ContactsFile-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/ContactsFile-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "d493fe2c41124295b137e1c676c2d3c1be3a581c",
+        "expected_bytes": 1427,
+        "max_bytes": 20000,
+        "sha256": "6d4d820b43024861e4ee96e9a4ef81700618ff53d02da197cd7653bf59669866",
+        "bytes": 1427
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/ContactsFile-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/ContactsFile-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "d8fc248f8276fb53a6bef9d236d6000021903e3e",
+        "expected_bytes": 885,
+        "max_bytes": 20000,
+        "sha256": "a2d685cc0f5f4e7394bf52a8951134d55fbb583531b113673ae37b7f82651fcb",
+        "bytes": 885
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/CoolFile-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/CoolFile-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "e5cc2ca14449347197e0faf7a57e7ec351abd93a",
+        "expected_bytes": 2316,
+        "max_bytes": 20000,
+        "sha256": "cb8a7eb3a1ccb41b21910436e416202b0f74b35024500e080c32a27b7f39a996",
+        "bytes": 2316
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/CoolFile-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/CoolFile-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "b3070fdf75b22c8d06e1ae61ba94873e0496aef2",
+        "expected_bytes": 868,
+        "max_bytes": 20000,
+        "sha256": "4dab3afb0f65ef92b47d10631e4bc8a6523aa282750fae21618decde7e2cbab8",
+        "bytes": 868
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HiCExperiment-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HiCExperiment-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "3620180400086e76f85cc108097d19863f50c719",
+        "expected_bytes": 13757,
+        "max_bytes": 20000,
+        "sha256": "9681461961add5cfa35452b87be8c2a75865c53d173d2b7bc001c37948b7a255",
+        "bytes": 13757
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HiCExperiment-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HiCExperiment-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "4d1c46ba2918bef732b0ede6a5e5843d9b0eb4d0",
+        "expected_bytes": 19258,
+        "max_bytes": 20000,
+        "sha256": "ad859a9e1e8506e94022b81ba214087749287036e470e155a63da24a36765974",
+        "bytes": 19258
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicFile-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HicFile-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "4eaf1f03c1633d9ab3e091f6bbb5045dcf907d52",
+        "expected_bytes": 1893,
+        "max_bytes": 20000,
+        "sha256": "967b28e6dfb1a9fa26f9b2f51d07aab934e126b4fdcd948f15464e2efbdd6769",
+        "bytes": 1893
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicFile-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HicFile-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "229a1c085c5f9f2e376f367ba9e890b016a185d8",
+        "expected_bytes": 823,
+        "max_bytes": 20000,
+        "sha256": "31995ece32e47ffe39b82a14367f6d1084e19673a351da8ea113bef7b7fd11be",
+        "bytes": 823
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicproFile-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HicproFile-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "b11c8ee81c7a2a1b5e3db2c5ab772565d4b33a89",
+        "expected_bytes": 2534,
+        "max_bytes": 20000,
+        "sha256": "3b73891fd5057d157753023d752fb0c08d6442d2fcca125e96885d553e3abe32",
+        "bytes": 2534
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicproFile-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/HicproFile-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "6b66213708db903f460ff3ff286066225aadd4ab",
+        "expected_bytes": 735,
+        "max_bytes": 20000,
+        "sha256": "e10c4bd19c97c5eb10b3f9224c2177791dcc961bf289251a756b084e2661ebd4",
+        "bytes": 735
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/PairsFile-class.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/PairsFile-class.R",
+        "role": "native-package-source",
+        "git_blob_sha": "d626f81cafd270178b9873aef2e5232077ff030b",
+        "expected_bytes": 842,
+        "max_bytes": 20000,
+        "sha256": "fff53bd0157d08febe71fe9553d9ec6615a870822d005a5fdefc9f29a3cbc111",
+        "bytes": 842
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/PairsFile-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/PairsFile-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "3530747f462d16dcc7f213280c2312412dfff895",
+        "expected_bytes": 340,
+        "max_bytes": 20000,
+        "sha256": "2a62f308c64aae0ef2126beb97d490bb6255999a185e9c25f8c89480f99b26d2",
+        "bytes": 340
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/available.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/available.R",
+        "role": "native-package-source",
+        "git_blob_sha": "67c29ee7ca414864084683381734885926837236",
+        "expected_bytes": 2693,
+        "max_bytes": 20000,
+        "sha256": "56a79d5126049e31e586a1ffab86e4a177b242d0afdab220beff41f6f3c0d82c",
+        "bytes": 2693
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/bin.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/bin.R",
+        "role": "native-package-source",
+        "git_blob_sha": "f1af8e2b1186ce6d8ff2987df7eb28962be032ec",
+        "expected_bytes": 2972,
+        "max_bytes": 20000,
+        "sha256": "551fa227786263df19b7349497778bab9a8befb5bead924c74925601c2d1dbc7",
+        "bytes": 2972
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/checks.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/checks.R",
+        "role": "native-package-source",
+        "git_blob_sha": "be23d914eeb20e671f0699549847ea304c47849b",
+        "expected_bytes": 7528,
+        "max_bytes": 20000,
+        "sha256": "d90c62b66d817501a05bfaf53f066dd9257e7a22d7dd23a115187498e503e457",
+        "bytes": 7528
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/coerce.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/coerce.R",
+        "role": "native-package-source",
+        "git_blob_sha": "83c190e2a1e3cf4aa6dc811909a7024cd5f15282",
+        "expected_bytes": 6348,
+        "max_bytes": 20000,
+        "sha256": "1490fdebb0bd276fe16bef23b7a5cc21810552c9abe06438ba440750abc5e9f4",
+        "bytes": 6348
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/data.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/data.R",
+        "role": "native-package-source",
+        "git_blob_sha": "2f733414346b70e55a624c5140ef35741a0b92a9",
+        "expected_bytes": 1120,
+        "max_bytes": 20000,
+        "sha256": "cd6e775ad9c8cd9872f16181a0c2c252dfae1abe71b7cc2d3d194bd3ad3bf676",
+        "bytes": 1120
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/export-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/export-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "f82f73f4002f8a8d5362ba6df38edb45e2e63a49",
+        "expected_bytes": 11998,
+        "max_bytes": 20000,
+        "sha256": "19e16f0d0eb1313a2f5a7ca8128b58ba3b744ba8ab2fefd0ac6c402cf9a92657",
+        "bytes": 11998
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/globals.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/globals.R",
+        "role": "native-package-source",
+        "git_blob_sha": "86e34df7c99982a00e788a51f46d579f03afdd56",
+        "expected_bytes": 598,
+        "max_bytes": 20000,
+        "sha256": "9e2ba597e8975417f2434dfeabc5022fb73f9dd9c7a851673ec1e0ab933d9bde",
+        "bytes": 598
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/import-methods.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/import-methods.R",
+        "role": "native-package-source",
+        "git_blob_sha": "740e88589e60caa22db046522c3cd3d6f56aba4c",
+        "expected_bytes": 10431,
+        "max_bytes": 20000,
+        "sha256": "1c86c3776adc0852608be1fbb7714226f075ef9a3958ef24f66f44d79eae1078",
+        "bytes": 10431
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-cool.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/parse-cool.R",
+        "role": "native-package-source",
+        "git_blob_sha": "4c500585d942889bab7eac9e3e2f34438962406a",
+        "expected_bytes": 12519,
+        "max_bytes": 20000,
+        "sha256": "20461887723d588016d0a3505e026f852022866a9c7ffaf71ed590f6c8b40b7e",
+        "bytes": 12519
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-hic.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/parse-hic.R",
+        "role": "native-package-source",
+        "git_blob_sha": "6b10dd99afd37f0d380751080936281a8037ef9c",
+        "expected_bytes": 13661,
+        "max_bytes": 20000,
+        "sha256": "5ca64330244747413d8ff149be659f84be2eba565a815d7429049779fbb00d49",
+        "bytes": 13661
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-hicpro.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/parse-hicpro.R",
+        "role": "native-package-source",
+        "git_blob_sha": "128b5c3b5d6bc277b18732fa34b8152b42d62f50",
+        "expected_bytes": 4237,
+        "max_bytes": 20000,
+        "sha256": "77170c0bc02e28ca343fc9e06615d315cb7e4eec7a690e37297e14730920f1b8",
+        "bytes": 4237
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-pairs.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/parse-pairs.R",
+        "role": "native-package-source",
+        "git_blob_sha": "1d77656398c04555eb69085d92a8be93addb722c",
+        "expected_bytes": 11885,
+        "max_bytes": 20000,
+        "sha256": "687ce05034bee0a6166447afe18b026233e3ae7f2a4e3978cddadc355c4daae2",
+        "bytes": 11885
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-slices.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/parse-slices.R",
+        "role": "native-package-source",
+        "git_blob_sha": "c5d0646673a946729776cb9901b03250ffe88b75",
+        "expected_bytes": 9238,
+        "max_bytes": 20000,
+        "sha256": "e87eb21878b6d5da09ee47214236c9af2e8cd192b2705e67fa67388265f95fe4",
+        "bytes": 9238
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/reexports.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/reexports.R",
+        "role": "native-package-source",
+        "git_blob_sha": "44aab857537ba971abb9519009653cf8627efc8d",
+        "expected_bytes": 54,
+        "max_bytes": 20000,
+        "sha256": "8fd11e17dcf75da97ba2ccd72f4acae42fb1fc7d625a777c21ec0116176028b3",
+        "bytes": 54
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/utils.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/utils.R",
+        "role": "native-package-source",
+        "git_blob_sha": "092b946abe11bb7c3cd0c5ed81369e79db461c5d",
+        "expected_bytes": 9934,
+        "max_bytes": 20000,
+        "sha256": "dd1a209a0f82853e7a407b2788a12edd08cf81a60ff1d5107b8ea4bcfa3cc61e",
+        "bytes": 9934
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/zzz.R",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiCExperiment/R/zzz.R",
+        "role": "native-package-source",
+        "git_blob_sha": "59862d5426ec76210925c2c67acf5cbbead81bbd",
+        "expected_bytes": 299,
+        "max_bytes": 20000,
+        "sha256": "b2839bd04bbcb8cfe3811febaa8348b1e54758e1a10673eb3164207dc9eb31a0",
+        "bytes": 299
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/pages/topological-features.qmd",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/inst/pages/topological-features.qmd",
+        "role": "author-code-or-license",
+        "git_blob_sha": "808f81765be8edf44803ff62a794045ef88eda2c",
+        "expected_bytes": 11289,
+        "max_bytes": 11290,
+        "sha256": "133a3d18207d49e1c7fc5d44dab3f26d307f7c2521e4001f2400ca41634fed98",
+        "bytes": 11289
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/pages/visualization.qmd",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/inst/pages/visualization.qmd",
+        "role": "author-code-or-license",
+        "git_blob_sha": "a52aa9d3084d7e4f1c47aebe747a2870be026c10",
+        "expected_bytes": 8377,
+        "max_bytes": 8378,
+        "sha256": "d939671ca1e5c38ef5bed50e4a29e329a81f1a5098e75f7bacdef151ba2c306b",
+        "bytes": 8377
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/README.md",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/README.md",
+        "role": "author-code-or-license",
+        "git_blob_sha": "f2a8d47b29c86428d312acc900cb4e498506c734",
+        "expected_bytes": 5709,
+        "max_bytes": 5710,
+        "sha256": "1f3994a6809cbfad5dec68902f19019fa647136cd50efeb94c3931fbd3d973a9",
+        "bytes": 5709
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/LICENSE",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/LICENSE",
+        "role": "author-code-or-license",
+        "git_blob_sha": "8df9cbc5e14782b3e12d5361be7bf194e0eaa32c",
+        "expected_bytes": 45,
+        "max_bytes": 46,
+        "sha256": "6020a35cc56be051289338374e0fe03c26d28dce938b2b880d43019047ffb6ff",
+        "bytes": 45
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/LICENSE.md",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/LICENSE.md",
+        "role": "author-code-or-license",
+        "git_blob_sha": "6e4f550cdf1a387c23d010a3e5512df96f2fe9da",
+        "expected_bytes": 1074,
+        "max_bytes": 1075,
+        "sha256": "0839b70bfd1e690dd18a37f2a7c177f58a6c0f564c96d33a0a53a417a765606d",
+        "bytes": 1074
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features.html",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author-book/topological-features.html",
+        "role": "author-rendered-code-binding",
+        "git_blob_sha": "e4f78912fc900df5f0766f30bf71a293df9113f5",
+        "expected_bytes": 152182,
+        "max_bytes": 152183,
+        "sha256": "760dc506eea71df63d7954bd9c26c296119c1fef4d4711a5d827671bd01517bb",
+        "bytes": 152182
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features_files/figure-html/unnamed-chunk-21-1.png",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/images/author-book-microc-loops.png",
+        "role": "author-original-plot",
+        "git_blob_sha": "5c7534d86acf5c75c137edd759f641799b391276",
+        "expected_bytes": 310691,
+        "max_bytes": 310692,
+        "sha256": "6adbdfc194947f1b30596a7b4a66045957ff44ff9cb7e9d24d411218259e58a4",
+        "bytes": 310691
+      },
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/extdata/microC_with-loops.rds",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/data/raw/microC_with-loops.rds",
+        "role": "author-processed-plot-object",
+        "git_blob_sha": "261badaf5f6b2f4e5327b39da6b542264ebbc90d",
+        "expected_bytes": 249349,
+        "max_bytes": 249350,
+        "sha256": "b20fc02f9dcd5fcd027d02b4108d08650407a7de80553e2171f87bc7f296750d",
+        "bytes": 249349
+      },
+      {
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-44761-x/MediaObjects/41467_2024_44761_MOESM1_ESM.pdf",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/publication/official-supplement.pdf",
+        "role": "official-figure-mapping-audit",
+        "expected_bytes": 7759429,
+        "max_bytes": 10000000,
+        "sha256": "4b3c223b5be0ae5fc0c6183abb4d6f3616d9674860387ad62580024d473e79f8",
+        "bytes": 7759429
+      }
+    ],
+    "source_images": [
+      {
+        "url": "https://raw.githubusercontent.com/js2264/OHCA/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features_files/figure-html/unnamed-chunk-21-1.png",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/images/author-book-microc-loops.png",
+        "role": "author-original-plot",
+        "git_blob_sha": "5c7534d86acf5c75c137edd759f641799b391276",
+        "expected_bytes": 310691,
+        "max_bytes": 310692,
+        "sha256": "6adbdfc194947f1b30596a7b4a66045957ff44ff9cb7e9d24d411218259e58a4",
+        "bytes": 310691,
+        "mapping_status": "EXACT_RENDERED_AUTHOR_BOOK_CODE_IMAGE_BOUND",
+        "pixels": [
+          1344,
+          960
+        ],
+        "actually_opened": true
+      },
+      {
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-44761-x/MediaObjects/41467_2024_44761_MOESM1_ESM.pdf",
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/publication/official-supplement.pdf",
+        "role": "official-figure-mapping-audit",
+        "expected_bytes": 7759429,
+        "max_bytes": 10000000,
+        "sha256": "4b3c223b5be0ae5fc0c6183abb4d6f3616d9674860387ad62580024d473e79f8",
+        "bytes": 7759429,
+        "mapping_status": "OFFICIAL_CONTEXT_ONLY_NOT_TARGET",
+        "pages": 7,
+        "selected_page": 4,
+        "actually_opened": true
+      }
+    ],
+    "code_locators": [
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/inst/pages/topological-features.qmd",
+        "sha256": "133a3d18207d49e1c7fc5d44dab3f26d307f7c2521e4001f2400ca41634fed98",
+        "bytes": 11289,
+        "lines": [
+          279,
+          288
+        ],
+        "focus": "Author explicitly does not run HiCool getLoops here; reads saved author RDS"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author/inst/pages/topological-features.qmd",
+        "sha256": "133a3d18207d49e1c7fc5d44dab3f26d307f7c2521e4001f2400ca41634fed98",
+        "bytes": 11289,
+        "lines": [
+          325,
+          339
+        ],
+        "focus": "Original loop score >=0.4/qvalue<=1e-6 filter and native plotMatrix limits [-4,-1.2]"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author-book/topological-features.html",
+        "sha256": "760dc506eea71df63d7954bd9c26c296119c1fef4d4711a5d827671bd01517bb",
+        "bytes": 152182,
+        "lines": [
+          916,
+          934
+        ],
+        "focus": "Rendered HiCExperiment schema: chr17/200bins/5kb/19667 records/2103634 counts/2419 loops"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/author-book/topological-features.html",
+        "sha256": "760dc506eea71df63d7954bd9c26c296119c1fef4d4711a5d827671bd01517bb",
+        "bytes": 152182,
+        "lines": [
+          1118,
+          1138
+        ],
+        "focus": "Exact author rendered-code to unnamed-chunk-21-1.png binding"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/plotting.R",
+        "sha256": "b9c36d4c0a335b0c04f02456ef5619eb508f39e9693c5442428834838f689d11",
+        "bytes": 40086,
+        "lines": [
+          78,
+          164
+        ],
+        "focus": "Native HiCExperiment method delegates to GInteractions in memory; fileName used only for caption"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/plotting.R",
+        "sha256": "b9c36d4c0a335b0c04f02456ef5619eb508f39e9693c5442428834838f689d11",
+        "bytes": 40086,
+        "lines": [
+          190,
+          280
+        ],
+        "focus": "Select existing balanced score; log10; author global filter then both-anchor overlap; circle centers/geometry"
+      },
+      {
+        "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/sources/package/HiContacts/R/plotting.R",
+        "sha256": "b9c36d4c0a335b0c04f02456ef5619eb508f39e9693c5442428834838f689d11",
+        "bytes": 40086,
+        "lines": [
+          350,
+          405
+        ],
+        "focus": "Symmetric matrix mirror, range filtering and clamp via oob_squish; coordinate scaling and top x-axis"
+      }
+    ],
+    "processing": [
+      "Read immutable author saved RDS; use in-memory HiCExperiment scores/interactions. Preserve 19667 records, 2103634 raw count sum, 200 contiguous 5kb bins and exact chr17 coordinates.",
+      "Author loop annotations cover chr17 beyond selected matrix. Filter score>=0.4 & qvalue<=1e-6 exactly (1639/2419), then native both-anchor overlap leaves31 visible loops; retain all2419 in provenance/plot_data with selection flags.",
+      "Heatmap score is balanced interaction frequency transformed log10; preserve limits[-4,-1.2]. Source squishes115 low and396 high records; neither drop nor reinterpret saturation as missing.",
+      "Native square plot mirrors record centers;39334 tile rows including doubled diagonal entries. Preserve upper/lower symmetry and source 1:1 physical data aspect.",
+      "Do not call import/refocus/zoom: RDS fileName points to an unavailable backing mcool; direct in-memory nativeplotMatrix needs no backing file. Do not run HiCool/getLoops/chromosight.",
+      "Current book deployment uses HiContacts1.15.2; pinned package source is1.15.3. Record version distinction and validate fresh native output rather than claim byte-identical publication output."
+    ],
+    "packages": [
+      {
+        "package": "HiCExperiment",
+        "role": "native S4 object and genomic interaction/score/topological-feature accessors",
+        "required": true
+      },
+      {
+        "package": "HiContacts",
+        "role": "native plotMatrix genomic heatmap, score transform/squish and loop geometry",
+        "required": true
+      },
+      {
+        "package": "InteractionSet",
+        "role": "GInteractions anchors, overlap and boundingBox",
+        "required": true
+      },
+      {
+        "package": "GenomicRanges/IRanges/S4Vectors",
+        "role": "genomic ranges and S4 metadata semantics",
+        "required": true
+      },
+      {
+        "package": "ggplot2/ggrastr/scales",
+        "role": "native ggplot geometry/raster matrix and editable labels/vector circles",
+        "required": true
+      },
+      {
+        "package": "HiCool/chromosight",
+        "role": "upstream author loop-calling source only; NOT executed/installed for this selected saved-object replot",
+        "required": false
+      }
+    ],
+    "input_contract": {
+      "experimental_unit": "one processed HFFc6 Micro-C sample, binned genomic contact/author loop record; not independent replicate",
+      "input": "author serialized HiCExperiment with count+balanced vectors and GInteractions loops",
+      "author_inputs_available": true,
+      "raw_reanalysis_required": false,
+      "missing_processed_inputs_for_target": [],
+      "missing_processed_inputs_for_whole_paper": [
+        "OfficialS2F yeast O/E/chromosight loops+borders+Scc1ChIP source track not this RDS",
+        "OfficialFig4c chicken three timepoint contactfiles+G2compartments not this target"
+      ]
+    },
+    "source_input_qc": {
+      "path": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/data/metadata/source-input-qc.json",
+      "sha256": "78cd1755b5fd08ee62dba815616b4abb1017de37869ae242f852ea5f96a45275",
+      "bytes": 1256,
+      "role": "audited-author-data-schema",
+      "summary": {
+        "schema_version": 1,
+        "purpose": "Author processed-input QC only; no plotting or raw-NGS recomputation",
+        "object_class": "HiCExperiment",
+        "focus": "chr17:62500001-63500000",
+        "resolution_bp": 5000,
+        "backing_file": "../4d434d8538a0_4DNFI9FVHJZQ_subset.mcool",
+        "backing_file_exists": false,
+        "backing_file_required_for_loaded_plot": "NOT_REQUIRED_FOR_IN_MEMORY_PLOTMATRIX; refocus/zoom would require it",
+        "bins": 200,
+        "coordinate_range": [
+          62500001,
+          63500000
+        ],
+        "bin_widths": 5000,
+        "interactions": 19667,
+        "sum_count": 2103634,
+        "count_range": [
+          1,
+          16754
+        ],
+        "balanced_range": [
+          6.28953449456664e-05,
+          1.1281553803773
+        ],
+        "balanced_missing": 0,
+        "log10_balanced_range": [
+          -4.20138149667274,
+          0.0523689189675288
+        ],
+        "source_color_limits": [
+          -4,
+          -1.2
+        ],
+        "clamped_low": 115,
+        "clamped_high": 396,
+        "loop_annotation_rows": 2419,
+        "loop_filtered_rows": 1639,
+        "loop_filtered_visible_rows": 31,
+        "loop_unfiltered_visible_rows": 39,
+        "loop_filter": "score >= 0.4 & qvalue <= 1e-6; both anchors overlap selected matrix region",
+        "native_symmetrical_tile_rows": 39334,
+        "input_mutated": false,
+        "scientific_unit": "binned interaction counts and author loop calls within one HFFc6 processed sample; not independent biological replicates"
+      }
+    },
+    "source_density_contract": {
+      "source": "exact author-book selected matrix plot",
+      "original_pixels": [
+        1344,
+        960
+      ],
+      "observed_data_bbox_pixels": [
+        231,
+        73,
+        1103,
+        945
+      ],
+      "bbox_status": "visually observed approximate plotting rectangle, validated against axes and square tiles",
+      "data_aspect": 1.0,
+      "observations": [
+        "Square symmetric dense200x200 grid; top chr17 Mb coordinates and descending left axis",
+        "Black empty loop circles on lower triangle and one boundary circle; compact vertical score legend at right",
+        "Warm sequential source score colormap with strong diagonal and localized off-diagonal blocks; no Scc1 or border layer"
+      ],
+      "target_canvas_mm": [
+        180,
+        158
+      ],
+      "target_font_pt": 7,
+      "adaptation": "Standalone author-book selected complex matrix/loop panel; source data aspect retained within5%; clearer log10 balanced frequency legend and explicit filtered-loop key",
+      "recolor_proposal": {
+        "balanced_log10": "monotonic light-to-dark pale blue/teal/navy sequential map; same score limits",
+        "loops": "warm rust outline distinguishes author filtered annotation from quantitative score color",
+        "missing_or_absent_tiles": "white; do not impute absent contacts"
+      }
+    },
+    "statistical_analysis": {
+      "requested": false,
+      "plan": "Descriptive genomic contact visualization. Preserve upstream author chromosight qvalues and stated filter; do not add ANOVA, new significance or causal claims."
+    },
+    "known_failures": [
+      "OfficialSupplementS2F is yeast chrII O/E+Scc1, whereas this author-book target is humanchr17 balanced matrix; official figure-panel equivalence NOT_VERIFIED.",
+      "Book source snapshot/compiled image is2026 companion resource of2024 NatureCommun paper, not original2024 final assembly.",
+      "Backing mcool path is missing; safe loaded-objectplot only, no refocus/zoom and no arbitrary-input portability claim.",
+      "Loop qvalue filter is author-specific chromosight output; circle does not prove causal enhancer/promoter function.",
+      "Native code only draws loops when maxDistance=NULL; triangular auxiliary view would omit loop circles and constitutes a separately declared new layout.",
+      "Native palette clamps extremes; saturation is not sample-wise zscore or missing data.",
+      "Saved object uses old GenomeInfoDb Seqinfo class, so compatibility with current native packages requires explicit actual loaded-object QC.",
+      "Source rasterizes only matrix layer; text/loop circles remain editable vector; PDF must be inspected rather than assumed fully vector matrix."
+    ],
+    "render_scope": {
+      "target": "selected author-book processed-data matrix and loops, recolored",
+      "first_color_render_required": true,
+      "preserve_coordinate_and_order_semantics": true,
+      "full_original_figure_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress_validation": "NOT_VERIFIED",
+      "render_status": "NOT_RENDERED",
+      "cp2_status": "PENDING_FRESH_PARENT_REGISTRATION"
+    },
+    "source_integrity": {
+      "policy": "Original code/data/image bytes immutable and SHA256/Gitblob bound",
+      "source_images_actually_opened": true,
+      "native_function_available": "PENDING_ISOLATED_DEPENDENCY_INSTALL",
+      "native_install_location": "work/2026-10-11-next-complex-training/ohca/R-library"
+    },
+    "mandatory_revalidation": "Fresh prepare/CP2 after registration; one-use authorization; actual native render; original/new target-size PNG/PDF inspection; fresh independent sourcecount and editable-font/aspect QC; no inheritedPASS"
+  },
+  "local_case_root": "biofigure/benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops",
+  "source_acquisition": [
+    {
+      "path": "sources/package/HiContacts/DESCRIPTION",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/DESCRIPTION",
+      "sha256": "cf94fd6982c2e8d466fc53a288c8acadc5d63823cf1dbabcb2cb67a19f65d18b",
+      "bytes": 1330,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiContacts/LICENSE",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/LICENSE",
+      "sha256": "89a4cacad705e7f4f94e0b877f9c6603309bfc8884657b2ce066ff4a297dc211",
+      "bytes": 45,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiContacts/LICENSE.md",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/LICENSE.md",
+      "sha256": "e6df19c0410e66ba9041d69dca474fad62052718e199e197bafacdf7d5405a80",
+      "bytes": 1074,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiContacts/NAMESPACE",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/NAMESPACE",
+      "sha256": "f69a82d71d6ce0283e3195bc5417ccc5b4221d676741bb7adff4fa370735d3f1",
+      "bytes": 2743,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiContacts/R/4C.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/4C.R",
+      "sha256": "67bc3c2740244513655b1e0c0ad1f23b6c555f8d75ed719267090da2ccea39d4",
+      "bytes": 1948,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/AllGenerics.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/AllGenerics.R",
+      "sha256": "ba032f4f889ac0da66ced1ca44369cef92dc00d1ada168daf2d0208ed5d054bc",
+      "bytes": 440,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/Ps.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/Ps.R",
+      "sha256": "52955649efbae948b810f4065a480c1d7b9ef49fe6e8eb310c5ae11a710c64c4",
+      "bytes": 20676,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/aggregate.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/aggregate.R",
+      "sha256": "ba03e5175e2dbef2be9b8c3ee0707abdf4792c7b40a241c3cb03e0ca78fcd25e",
+      "bytes": 686,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/arithmetics.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/arithmetics.R",
+      "sha256": "1334b3deedc13963120319fb494cc8e445761043c231d4c73ed8007559648a9a",
+      "bytes": 15094,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/boost.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/boost.R",
+      "sha256": "2c6866691a0974cb40ffc2e79bbcc6b87e311925022baefb5ec81537621b8ad2",
+      "bytes": 1768,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/checks.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/checks.R",
+      "sha256": "ec5c9be18b2e98654e1a45d74d67fcc093259fe30a45811cdf4f183f3aec3098",
+      "bytes": 2447,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/cistrans.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/cistrans.R",
+      "sha256": "7b606181844f8865ae103a88e33916a2f8205ec03de1ca1e438c5b97b79e2910",
+      "bytes": 1738,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/coarsen.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/coarsen.R",
+      "sha256": "dba06ec9fa026fb0aa28cf0ed8f9de10c16f3e23dd9fc5fb737145d5b20f1116",
+      "bytes": 2635,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/compartments.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/compartments.R",
+      "sha256": "e91468b826a39106b90c1d0bf33910583cbc01d222262ccd5a3cfac3f4694953",
+      "bytes": 10511,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/contacts.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/contacts.R",
+      "sha256": "f78eea878b88b0d203a5cc7c445feb9ae5419d1b890109d70678f88a89c80e09",
+      "bytes": 2289,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/diamond.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/diamond.R",
+      "sha256": "9d0166bd77649aed14b3d3855d88dfcd315856d75a3eda366382d1b7cecfeff5",
+      "bytes": 3850,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/globals.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/globals.R",
+      "sha256": "517fd37dcaecefdf8d42d656a5eeaec83931fde0658f9cca7898a8eaf4d0f5e6",
+      "bytes": 1326,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/loops.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/loops.R",
+      "sha256": "020ef925b3d5c15dc9f1d901631ea69dd1a9bc2e208a452da78bbfb80abebc76",
+      "bytes": 528,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/normalize.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/normalize.R",
+      "sha256": "7ddec28019d4a928b5aff66ece27e9a72366da6b3c2a6377fb55092e7260a1e4",
+      "bytes": 2780,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/plotting.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/plotting.R",
+      "sha256": "b9c36d4c0a335b0c04f02456ef5619eb508f39e9693c5442428834838f689d11",
+      "bytes": 40086,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/reexports.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/reexports.R",
+      "sha256": "45e565ca36a4f214091ed108a23f485a93e0fcce3b6be872788d71265e1aa3b4",
+      "bytes": 134,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/scalogram.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/scalogram.R",
+      "sha256": "70e7bfb5e082dd9312158aea28801ba16a7de90989d2020abd5bfebda21decaf",
+      "bytes": 2141,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/subsample.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/subsample.R",
+      "sha256": "3bd0840f2a1543502acebb6848370a89c2d933622699c64a8fb0d1dd3f00951c",
+      "bytes": 1789,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/tracks.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/tracks.R",
+      "sha256": "f1793021526500bb1bdcc3bcf3db511952740dfc88e7ac3d79cb671eccae691f",
+      "bytes": 2855,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiContacts/R/utils.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiContacts/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/R/utils.R",
+      "sha256": "616e668262a9bd18a41028f53e803d2e682d004cdb9c863e8c80bdfca9bf2e21",
+      "bytes": 371,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/DESCRIPTION",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/DESCRIPTION",
+      "sha256": "9eebecc52e6735b94fbb140b1411eb8e55d8f7481646445dc2546971a07307df",
+      "bytes": 2236,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiCExperiment/LICENSE",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/LICENSE",
+      "sha256": "7203e861179dd5e7d7aa1d3ca45b7b91f7c5e8a86df3cc1a1a7129a2a72a5bc6",
+      "bytes": 51,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiCExperiment/LICENSE.md",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/LICENSE.md",
+      "sha256": "4d4dea83108977acee2bcb200c4c0ee638471b3127889aa88a11f6915ec98be2",
+      "bytes": 1080,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiCExperiment/NAMESPACE",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/NAMESPACE",
+      "sha256": "f5966627f2ec04dc0582bfad4832c3d3d9b7d678b0da6e40b391c133e661ece5",
+      "bytes": 2942,
+      "role": "source-code-or-metadata"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/AggrHiCExperiment-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AggrHiCExperiment-class.R",
+      "sha256": "ccbdb5985ff1d2eabe2032f258d73d2bf35a16519d6daf9048caf84f3e382a36",
+      "bytes": 5732,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/AggrHiCExperiment-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AggrHiCExperiment-methods.R",
+      "sha256": "8b2d5ea65dcff23968290cc6e3167fc0341c12d0cb2893d5d481250c8cafa8e2",
+      "bytes": 2188,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/AllGenerics.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/AllGenerics.R",
+      "sha256": "e70a858e54116b19440791601c17b9df1b66a3dcaa2d49c3786824bdb8178195",
+      "bytes": 2291,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/ContactsFile-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/ContactsFile-class.R",
+      "sha256": "6d4d820b43024861e4ee96e9a4ef81700618ff53d02da197cd7653bf59669866",
+      "bytes": 1427,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/ContactsFile-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/ContactsFile-methods.R",
+      "sha256": "a2d685cc0f5f4e7394bf52a8951134d55fbb583531b113673ae37b7f82651fcb",
+      "bytes": 885,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/CoolFile-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/CoolFile-class.R",
+      "sha256": "cb8a7eb3a1ccb41b21910436e416202b0f74b35024500e080c32a27b7f39a996",
+      "bytes": 2316,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/CoolFile-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/CoolFile-methods.R",
+      "sha256": "4dab3afb0f65ef92b47d10631e4bc8a6523aa282750fae21618decde7e2cbab8",
+      "bytes": 868,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HiCExperiment-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HiCExperiment-class.R",
+      "sha256": "9681461961add5cfa35452b87be8c2a75865c53d173d2b7bc001c37948b7a255",
+      "bytes": 13757,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HiCExperiment-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HiCExperiment-methods.R",
+      "sha256": "ad859a9e1e8506e94022b81ba214087749287036e470e155a63da24a36765974",
+      "bytes": 19258,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HicFile-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicFile-class.R",
+      "sha256": "967b28e6dfb1a9fa26f9b2f51d07aab934e126b4fdcd948f15464e2efbdd6769",
+      "bytes": 1893,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HicFile-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicFile-methods.R",
+      "sha256": "31995ece32e47ffe39b82a14367f6d1084e19673a351da8ea113bef7b7fd11be",
+      "bytes": 823,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HicproFile-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicproFile-class.R",
+      "sha256": "3b73891fd5057d157753023d752fb0c08d6442d2fcca125e96885d553e3abe32",
+      "bytes": 2534,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/HicproFile-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/HicproFile-methods.R",
+      "sha256": "e10c4bd19c97c5eb10b3f9224c2177791dcc961bf289251a756b084e2661ebd4",
+      "bytes": 735,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/PairsFile-class.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/PairsFile-class.R",
+      "sha256": "fff53bd0157d08febe71fe9553d9ec6615a870822d005a5fdefc9f29a3cbc111",
+      "bytes": 842,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/PairsFile-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/PairsFile-methods.R",
+      "sha256": "2a62f308c64aae0ef2126beb97d490bb6255999a185e9c25f8c89480f99b26d2",
+      "bytes": 340,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/available.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/available.R",
+      "sha256": "56a79d5126049e31e586a1ffab86e4a177b242d0afdab220beff41f6f3c0d82c",
+      "bytes": 2693,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/bin.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/bin.R",
+      "sha256": "551fa227786263df19b7349497778bab9a8befb5bead924c74925601c2d1dbc7",
+      "bytes": 2972,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/checks.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/checks.R",
+      "sha256": "d90c62b66d817501a05bfaf53f066dd9257e7a22d7dd23a115187498e503e457",
+      "bytes": 7528,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/coerce.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/coerce.R",
+      "sha256": "1490fdebb0bd276fe16bef23b7a5cc21810552c9abe06438ba440750abc5e9f4",
+      "bytes": 6348,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/data.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/data.R",
+      "sha256": "cd6e775ad9c8cd9872f16181a0c2c252dfae1abe71b7cc2d3d194bd3ad3bf676",
+      "bytes": 1120,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/export-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/export-methods.R",
+      "sha256": "19e16f0d0eb1313a2f5a7ca8128b58ba3b744ba8ab2fefd0ac6c402cf9a92657",
+      "bytes": 11998,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/globals.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/globals.R",
+      "sha256": "9e2ba597e8975417f2434dfeabc5022fb73f9dd9c7a851673ec1e0ab933d9bde",
+      "bytes": 598,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/import-methods.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/import-methods.R",
+      "sha256": "1c86c3776adc0852608be1fbb7714226f075ef9a3958ef24f66f44d79eae1078",
+      "bytes": 10431,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/parse-cool.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-cool.R",
+      "sha256": "20461887723d588016d0a3505e026f852022866a9c7ffaf71ed590f6c8b40b7e",
+      "bytes": 12519,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/parse-hic.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-hic.R",
+      "sha256": "5ca64330244747413d8ff149be659f84be2eba565a815d7429049779fbb00d49",
+      "bytes": 13661,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/parse-hicpro.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-hicpro.R",
+      "sha256": "77170c0bc02e28ca343fc9e06615d315cb7e4eec7a690e37297e14730920f1b8",
+      "bytes": 4237,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/parse-pairs.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-pairs.R",
+      "sha256": "687ce05034bee0a6166447afe18b026233e3ae7f2a4e3978cddadc355c4daae2",
+      "bytes": 11885,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/parse-slices.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/parse-slices.R",
+      "sha256": "e87eb21878b6d5da09ee47214236c9af2e8cd192b2705e67fa67388265f95fe4",
+      "bytes": 9238,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/reexports.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/reexports.R",
+      "sha256": "8fd11e17dcf75da97ba2ccd72f4acae42fb1fc7d625a777c21ec0116176028b3",
+      "bytes": 54,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/utils.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/utils.R",
+      "sha256": "dd1a209a0f82853e7a407b2788a12edd08cf81a60ff1d5107b8ea4bcfa3cc61e",
+      "bytes": 9934,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/package/HiCExperiment/R/zzz.R",
+      "url": "https://raw.githubusercontent.com/js2264/HiCExperiment/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/R/zzz.R",
+      "sha256": "b2839bd04bbcb8cfe3811febaa8348b1e54758e1a10673eb3164207dc9eb31a0",
+      "bytes": 299,
+      "role": "native-package-source"
+    },
+    {
+      "path": "sources/author/inst/pages/topological-features.qmd",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/pages/topological-features.qmd",
+      "sha256": "133a3d18207d49e1c7fc5d44dab3f26d307f7c2521e4001f2400ca41634fed98",
+      "bytes": 11289,
+      "role": "author-code-or-license"
+    },
+    {
+      "path": "sources/author/inst/pages/visualization.qmd",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/pages/visualization.qmd",
+      "sha256": "d939671ca1e5c38ef5bed50e4a29e329a81f1a5098e75f7bacdef151ba2c306b",
+      "bytes": 8377,
+      "role": "author-code-or-license"
+    },
+    {
+      "path": "sources/author/README.md",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/README.md",
+      "sha256": "1f3994a6809cbfad5dec68902f19019fa647136cd50efeb94c3931fbd3d973a9",
+      "bytes": 5709,
+      "role": "author-code-or-license"
+    },
+    {
+      "path": "sources/author/LICENSE",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/LICENSE",
+      "sha256": "6020a35cc56be051289338374e0fe03c26d28dce938b2b880d43019047ffb6ff",
+      "bytes": 45,
+      "role": "author-code-or-license"
+    },
+    {
+      "path": "sources/author/LICENSE.md",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/LICENSE.md",
+      "sha256": "0839b70bfd1e690dd18a37f2a7c177f58a6c0f564c96d33a0a53a417a765606d",
+      "bytes": 1074,
+      "role": "author-code-or-license"
+    },
+    {
+      "path": "sources/author-book/topological-features.html",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features.html",
+      "sha256": "760dc506eea71df63d7954bd9c26c296119c1fef4d4711a5d827671bd01517bb",
+      "bytes": 152182,
+      "role": "author-rendered-code-binding"
+    },
+    {
+      "path": "sources/images/author-book-microc-loops.png",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features_files/figure-html/unnamed-chunk-21-1.png",
+      "sha256": "6adbdfc194947f1b30596a7b4a66045957ff44ff9cb7e9d24d411218259e58a4",
+      "bytes": 310691,
+      "role": "author-original-plot"
+    },
+    {
+      "path": "data/raw/microC_with-loops.rds",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/extdata/microC_with-loops.rds",
+      "sha256": "b20fc02f9dcd5fcd027d02b4108d08650407a7de80553e2171f87bc7f296750d",
+      "bytes": 249349,
+      "role": "author-processed-plot-object"
+    },
+    {
+      "path": "sources/publication/official-supplement.pdf",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-44761-x/MediaObjects/41467_2024_44761_MOESM1_ESM.pdf",
+      "sha256": "4b3c223b5be0ae5fc0c6183abb4d6f3616d9674860387ad62580024d473e79f8",
+      "bytes": 7759429,
+      "role": "official-figure-mapping-audit"
+    }
+  ],
+  "public_packaging": "Own code, derived plot CSV and replot images/PDF only. Third-party source code and reference figures remain pinned URL/hash records and are acquired separately.",
+  "execution": {
+    "profile": "public-native-own-layout-replay",
+    "entrypoint": "scripts/reproduce.py",
+    "skill_root_discovery": "Walk package ancestors for manifest.yaml plus scripts/prepare_figure.py; optional --skill-root override",
+    "command_from_repository_root": "python3 biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py --output-dir <new-empty-directory> --source-view-confirmed --pdf-previews --r-library <existing-native-R-library>",
+    "fresh_source_view": "Open current own sealed PDF at its target physical size first; caller declaration is hash-bound each invocation; not historical author-paper review",
+    "bundled_own_configuration": [
+      "data/metadata/design-template.yaml",
+      "data/metadata/execution-config.json",
+      "data/metadata/figure-request.yaml",
+      "data/metadata/project-style.yaml",
+      "data/metadata/public-replay.json",
+      "data/metadata/source-learning.json"
+    ],
+    "input_mode": "ohca-native-rds",
+    "scope": "Public own-layout native HiContacts replay using one SHA-pinned author processed RDS and compare all3output CSV hashes with the sealed public tables. No raw NGS/loop calling/full author-paper panel/new-input qualification.",
+    "requirements": "macOS: native Quartz PDF and Arial; Python PyYAML and existing R dependencies; no automatic installation",
+    "required_R_packages": [
+      "HiContacts",
+      "HiCExperiment",
+      "InteractionSet",
+      "GenomeInfoDb",
+      "S4Vectors",
+      "ggplot2",
+      "ggrastr",
+      "ragg",
+      "yaml",
+      "jsonlite",
+      "svglite",
+      "systemfonts",
+      "digest",
+      "rhdf5",
+      "Rhdf5lib"
+    ],
+    "preserves_sealed_assets": true,
+    "output_requirement": "New or empty directory outside this sealed example package; final PDF there, PNG/SVG/previews under its work/",
+    "gates": "Current public execution profile readset -> fresh prepare -> CP2 -> one-use authorization -> native R. No historical receipt/authorization/CP4 copied.",
+    "archive_recipe_scope": "Original learning and local_case_root describe the historical author-source study, not the public executable entry. Source acquisition URLs remain archival provenance.",
+    "archival_helpers_not_called": [
+      "scripts/acquire.py",
+      "scripts/install_native.py"
+    ],
+    "first_runtime_validation": {
+      "fresh_CP2": true,
+      "authorization_consumed": true,
+      "all3_plot_CSV_hashes_match": true,
+      "new_PNG_and_PDF120_actual_viewed": true,
+      "PDF120_exact_match_to_own_sealed_reference": true,
+      "scope": "Selected own-layout replay on current local environment; final globally frozen readset must be replayed again before release",
+      "author_full_paper_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED"
+    },
+    "pinned_processed_input": {
+      "path": "data/raw/microC_with-loops.rds",
+      "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/extdata/microC_with-loops.rds",
+      "sha256": "b20fc02f9dcd5fcd027d02b4108d08650407a7de80553e2171f87bc7f296750d",
+      "bytes": 249349
+    },
+    "offline_option": "--input-rds <byte-identical-pinned-RDS>; same SHA/size validation, no refocus or raw loop calling",
+    "final_frozen_runtime_validation": {
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "historical_authorization_inherited": false,
+      "historical_scoped_PASS_inherited": false,
+      "runtime_record": "docs/gallery/runtime-validation-20261011.json",
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "scope": "Fresh native replay and actual final PNG/PDF review of fixed published tables and own current layout on the declared environment only.",
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED"
+    }
+  },
+  "validation": {
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "current_input_only": true,
+    "new_data_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review",
+    "immutable_local_bundle_sha256": "c9d1083989dc3e9e56c85ebfa68fc38af01e1e7e9379365076011cf6b1a2cabb",
+    "checkpoint_validation_sha256": "b6ea3bda40f5075e0ba746878a397cc03ed84df2743a5c15f891a63f1c3cb0c8",
+    "public_spec_claim": "No gate authorization is inherited by a public clone or a rewritten configuration.",
+    "historical_delivery_record_only": true,
+    "public_current_table_execution": {
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "historical_authorization_inherited": false,
+      "historical_scoped_PASS_inherited": false,
+      "runtime_record": "docs/gallery/runtime-validation-20261011.json",
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "scope": "Fresh native replay and actual final PNG/PDF review of fixed published tables and own current layout on the declared environment only.",
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED"
+    }
+  },
+  "artifacts": {
+    "image": "docs/assets/genomics-gallery-20261011/ohca-microc.png",
+    "pdf": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+    "scripts": [
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/audit_source_input.R",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py"
+    ],
+    "plot_data": [
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/contact-bin-pairs.csv",
+      "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/loop-annotations.csv"
+    ]
+  }
+}

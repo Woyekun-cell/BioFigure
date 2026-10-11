@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "policy": "Only independently replayed locked fixtures enter stable reuse; legacy source review alone never qualifies. Baselines are never refreshed by replay.",
+  "cases": [
+    {
+      "case_id": "topfigure-086-7c777dfd",
+      "issue": 86,
+      "title": "跟着NC学作图 | 桑基气泡图",
+      "template_root": "benchmark/library/topjournal/issue_086",
+      "status": "LOCKED_FIXED_FIXTURE",
+      "cue_groups": [
+        [
+          "sankey",
+          "桑基"
+        ],
+        [
+          "bubble",
+          "气泡"
+        ]
+      ],
+      "backend": "R",
+      "scope": "fixed synthetic fixture in locked environment; new data requires fresh final-size review",
+      "source_figure": "benchmark/library/topjournal/issue_086/sources/image_001.webp",
+      "renderer": "benchmark/library/topjournal/issue_086/scripts/render.R",
+      "baseline": "benchmark/library/topjournal/issue_086/evidence/simulation-baseline.json",
+      "visual_review": "benchmark/library/topjournal/issue_086/evidence/visual-review.json",
+      "request": "benchmark/library/topjournal/issue_086/data/metadata/request.yaml",
+      "bound_records": [
+        {
+          "path": "benchmark/library/topjournal/issue_086/manifest.json",
+          "sha256": "aeb41d0adab635c8b8f2c1f7e7da011a141ae237b85c7ad6c7c297a83bbd7609"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_086/simulation-bundle.json",
+          "sha256": "1df78cdd9013ba144fb0f650d109b0e9a79817e5c128a6f3e761e89d3f0cb343"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_086/evidence/simulation-baseline.json",
+          "sha256": "c54b2b63db2d54903882420b837dc58c4054eeace106f4a0d182a39694eca4a4"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_086/evidence/visual-review.json",
+          "sha256": "f1c179bf237417f1addcdf75f800cd0caa1c0ebab39474b67278311ca0c14593"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_086/data/metadata/request.yaml",
+          "sha256": "48ce6984273f877293101bca660e50afa8c567aee7e38c594caef86fd4c359fe"
+        }
+      ],
+      "user_acceptance": "pending",
+      "transfer_tested": false
+    },
+    {
+      "case_id": "topfigure-089-2407a180",
+      "issue": 89,
+      "title": "跟着Cell学作图 | 双曲线火山图",
+      "template_root": "benchmark/library/topjournal/issue_089",
+      "status": "LOCKED_FIXED_FIXTURE",
+      "cue_groups": [
+        [
+          "volcano",
+          "火山"
+        ],
+        [
+          "hyperbolic",
+          "双曲线",
+          "ntc"
+        ]
+      ],
+      "backend": "R",
+      "scope": "fixed synthetic fixture in locked environment; new data requires fresh final-size review",
+      "source_figure": "benchmark/library/topjournal/issue_089/sources/image_001.webp",
+      "renderer": "benchmark/library/topjournal/issue_089/scripts/render.R",
+      "baseline": "benchmark/library/topjournal/issue_089/evidence/simulation-baseline.json",
+      "visual_review": "benchmark/library/topjournal/issue_089/evidence/visual-review.json",
+      "request": "benchmark/library/topjournal/issue_089/data/metadata/request.yaml",
+      "bound_records": [
+        {
+          "path": "benchmark/library/topjournal/issue_089/manifest.json",
+          "sha256": "77259c08053a638cc29609563388831ca9232bb33435c60778f523d8b7f65572"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_089/simulation-bundle.json",
+          "sha256": "cc3a2ff68da6f3c126ba4f73a4da5d796fad4ff17b50550e8f36b63cc3e2fd2c"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_089/evidence/simulation-baseline.json",
+          "sha256": "fa0bb28abd7a0e2e2c60915f7f49f1870475591b635b7c74bb2a497a3909c678"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_089/evidence/visual-review.json",
+          "sha256": "513c9590df08f8c3fe16e606696d8107cbbd0fd2099fff38f12fbbb9041bc247"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_089/data/metadata/request.yaml",
+          "sha256": "d5e9548cbb7f03a66695e208a58fd8556c696821569646fd526a37a42e8946a0"
+        }
+      ],
+      "user_acceptance": "pending",
+      "transfer_tested": false
+    },
+    {
+      "case_id": "topfigure-097-19dfbfef",
+      "issue": 97,
+      "title": "跟着Nature学作图 | 系统发育树+多轨道注释图",
+      "template_root": "benchmark/library/topjournal/issue_097",
+      "status": "LOCKED_FIXED_FIXTURE",
+      "cue_groups": [
+        [
+          "tree",
+          "树"
+        ],
+        [
+          "track",
+          "轨",
+          "mag"
+        ]
+      ],
+      "backend": "R",
+      "scope": "fixed synthetic fixture in locked environment; new data requires fresh final-size review",
+      "source_figure": "benchmark/library/topjournal/issue_097/sources/image_001.webp",
+      "renderer": "benchmark/library/topjournal/issue_097/scripts/render.R",
+      "baseline": "benchmark/library/topjournal/issue_097/evidence/simulation-baseline.json",
+      "visual_review": "benchmark/library/topjournal/issue_097/evidence/visual-review.json",
+      "request": "benchmark/library/topjournal/issue_097/data/metadata/request.yaml",
+      "bound_records": [
+        {
+          "path": "benchmark/library/topjournal/issue_097/manifest.json",
+          "sha256": "cfd6aa114f75792c6a1715ae59d7c3edc9702faf61d77f1d9ae5c45526d0756e"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_097/simulation-bundle.json",
+          "sha256": "5257f0e926c892b80f9808ab1c7ba6a97fdf993509b7057ca1c6f3b84e41efe5"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_097/evidence/simulation-baseline.json",
+          "sha256": "c484ffbe7dd5f36bd244b48580a02a426c2fc6e0d10b98a704cedc0139c3f5d8"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_097/evidence/visual-review.json",
+          "sha256": "810914cccb9ffbe70f3f122d8a8af1f820095062b4106abb0ef4bea0acc509f2"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_097/data/metadata/request.yaml",
+          "sha256": "dd36a61799dd304940949451a5211285bb275b5a127bdb971ac34907c5634bdd"
+        }
+      ],
+      "user_acceptance": "pending",
+      "transfer_tested": false
+    },
+    {
+      "case_id": "topfigure-098-23c7513b",
+      "issue": 98,
+      "title": "跟着Nature学作图 | 径向分类层级树+外圈热图",
+      "template_root": "benchmark/library/topjournal/issue_098",
+      "status": "LOCKED_FIXED_FIXTURE",
+      "cue_groups": [
+        [
+          "tree",
+          "树"
+        ],
+        [
+          "taxonomy",
+          "分类",
+          "asv"
+        ],
+        [
+          "ring",
+          "环"
+        ]
+      ],
+      "backend": "R",
+      "scope": "fixed synthetic fixture in locked environment; new data requires fresh final-size review",
+      "source_figure": "benchmark/library/topjournal/issue_098/sources/image_001.png",
+      "renderer": "benchmark/library/topjournal/issue_098/scripts/render.R",
+      "baseline": "benchmark/library/topjournal/issue_098/evidence/simulation-baseline.json",
+      "visual_review": "benchmark/library/topjournal/issue_098/evidence/visual-review.json",
+      "request": "benchmark/library/topjournal/issue_098/data/metadata/request.yaml",
+      "bound_records": [
+        {
+          "path": "benchmark/library/topjournal/issue_098/manifest.json",
+          "sha256": "06fd10678a32a5588894d9d5b6da823bec41e628cb32fc6fcca449c9e44773fb"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_098/simulation-bundle.json",
+          "sha256": "ed408d7f7e15b5e2b6f5c17ad11a1e2d83705c9d936b91b705b730dc6a26881d"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_098/evidence/simulation-baseline.json",
+          "sha256": "17d4bb170edc63f3b5ce6f130b39cc82f9483d8b5d29b834ad8be67adb406e05"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_098/evidence/visual-review.json",
+          "sha256": "453a2eddd100442aa70af6a56a4cd8bbc4fd4d3735d7e9e7a55b0d7e283f99d9"
+        },
+        {
+          "path": "benchmark/library/topjournal/issue_098/data/metadata/request.yaml",
+          "sha256": "bc377e0297e46ef42793a54f3166955cac0a6d6b3ea4ad3a2ccc94572fc8dbe7"
+        }
+      ],
+      "user_acceptance": "pending",
+      "transfer_tested": false
+    }
+  ]
+}

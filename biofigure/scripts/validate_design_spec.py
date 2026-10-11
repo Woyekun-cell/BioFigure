@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -18,6 +19,22 @@ _ref_module = importlib.util.module_from_spec(_ref_spec)
 assert _ref_spec and _ref_spec.loader
 _ref_spec.loader.exec_module(_ref_module)
 retrieve_references = _ref_module.retrieve
+
+_cp_spec = importlib.util.spec_from_file_location("biofigure_checkpoint_validator", ROOT / "scripts/validate_checkpoints.py")
+_cp_module = importlib.util.module_from_spec(_cp_spec)
+assert _cp_spec and _cp_spec.loader
+_cp_spec.loader.exec_module(_cp_module)
+validate_reproduction_receipt = _cp_module.validate_reproduction_receipt
+_auth_spec = importlib.util.spec_from_file_location("biofigure_authorize_render", ROOT / "scripts/authorize_render.py")
+_auth_module = importlib.util.module_from_spec(_auth_spec)
+assert _auth_spec and _auth_spec.loader
+_auth_spec.loader.exec_module(_auth_module)
+
+
+_stats_spec = importlib.util.spec_from_file_location("biofigure_statistics_plan", ROOT / "scripts/validate_statistics_plan.py")
+_stats_module = importlib.util.module_from_spec(_stats_spec)
+assert _stats_spec and _stats_spec.loader
+_stats_spec.loader.exec_module(_stats_module)
 
 
 def load(path: Path):
@@ -40,8 +57,162 @@ def annotation_value_valid(value) -> bool:
     return False
 
 
-def validate(doc: dict, schema: dict) -> list[str]:
+def validate_primary_source_reference(reference: dict, project_root: Path) -> tuple[list[str], bool]:
+    """Validate a task-locked source figure without requiring an unrelated atlas precedent."""
+    lock_path = reference.get("primary_source_lock")
+    if not lock_path:
+        return [], False
+    path = Path(str(lock_path)).expanduser()
+    if not path.is_file():
+        return ["reference_evidence.primary_source_lock file missing"], False
+    try:
+        locked = load(path)
+        errors = validate_reproduction_receipt(str(path), root=project_root)
+        source = reference.get("primary_source")
+        if not isinstance(source, dict) or source != locked.get("primary_source"):
+            errors.append("reference_evidence primary source metadata differs from primary source lock")
+        return [f"primary source lock: {error}" for error in errors], not errors
+    except Exception as exc:
+        return [f"reference_evidence.primary_source_lock unreadable: {exc}"], False
+
+
+def validate_project_style_contract(doc: dict, spec_path: Path | None = None) -> list[str]:
+    contract = doc.get("project_style_contract")
+    if not isinstance(contract, dict):
+        return ["project_style_contract must be a mapping"]
+    required = ("registry_path", "registry_sha256", "project_id", "palette_id",
+                "semantic_colors", "reuse_policy", "exception_basis")
+    errors = [f"project_style_contract.{key} is required" for key in required if key not in contract]
+    if errors:
+        return errors
+    raw_path = Path(str(contract["registry_path"])).expanduser()
+    if not raw_path.is_absolute() and spec_path is not None:
+        raw_path = spec_path.parent / raw_path
+    if not raw_path.is_file():
+        return ["project_style_contract.registry_path file missing"]
+    digest = hashlib.sha256(raw_path.read_bytes()).hexdigest()
+    if contract.get("registry_sha256") != digest:
+        errors.append("project_style_contract.registry_sha256 differs from project style registry")
+    try:
+        registry = load(raw_path)
+    except Exception as exc:
+        return errors + [f"project_style_contract.registry_path unreadable: {exc}"]
+    if not isinstance(registry, dict):
+        return errors + ["project_style_contract registry must be a mapping"]
+    if contract.get("project_id") != registry.get("project_id"):
+        errors.append("project_style_contract.project_id differs from project style registry")
+    palette = registry.get("palette", {})
+    if contract.get("palette_id") != palette.get("palette_id"):
+        errors.append("project_style_contract.palette_id differs from project style registry")
+    if contract.get("semantic_colors") != palette.get("semantic_colors"):
+        errors.append("project_style_contract.semantic_colors differs from project style registry")
+    if contract.get("reuse_policy") != "exact_semantic_mapping":
+        errors.append("project_style_contract.reuse_policy must be exact_semantic_mapping")
+    font = doc.get("font_contract", {})
+    typography = registry.get("typography", {})
+    if isinstance(font, dict) and font:
+        if font.get("family") != typography.get("family"):
+            errors.append("project_style_contract typography family differs from project style registry")
+        if font.get("size_roles_pt") != typography.get("size_roles_pt"):
+            errors.append("project_style_contract typography roles differ from project style registry")
+    size = doc.get("output_size", {})
+    allowed = registry.get("size_system", {}).get("allowed_classes", [])
+    if isinstance(size, dict) and size and size.get("size_class") not in allowed:
+        errors.append("project_style_contract output size class is not allowed by project style registry")
+    exception = contract.get("exception_basis")
+    if not isinstance(exception, str):
+        errors.append("project_style_contract.exception_basis must be a string")
+    return errors
+
+
+def validate_learned_source_reference(reference: dict, pattern: str) -> tuple[list[str], bool]:
+    """Allow an exact learned source to define a pattern absent from the old catalog.
+
+    This binds current materials and a declared direct source view. It does not
+    certify the view's aesthetic judgment or promote the method's reuse status.
+    """
+    if not str(pattern).startswith('LEARNED-'):
+        return [], False
+    errors = []
+    binding = reference.get('learned_source_reference', {})
+    method_id = binding.get('method_id')
+    if not method_id or pattern != 'LEARNED-' + str(method_id) or reference.get('selected_method_case_id') != method_id:
+        return ['learned native pattern must bind the exact selected learned method'], False
+    try:
+        from retrieve_learned_methods import retrieve
+        entry = retrieve('', case_id=method_id)['results'][0]
+    except (ValueError, OSError, KeyError) as exc:
+        return ['learned native source unavailable: ' + str(exc)], False
+    if (entry['missing_material'] or entry['source_record_changed'] or entry['changed_bound_material']
+            or binding.get('source_record_sha256') != entry['source_sha256']
+            or binding.get('read_hashes') != entry['current_read_hashes']):
+        errors.append('learned native source/read set missing, stale or incomplete')
+    asset = binding.get('opened_source_asset', {})
+    path = str(asset.get('path', ''))
+    if (Path(path).suffix.lower() not in {'.png', '.jpg', '.jpeg', '.webp', '.avif', '.svg', '.pdf'}
+            or path not in entry['current_read_hashes'] or asset.get('sha256') != entry['current_read_hashes'].get(path)
+            or asset.get('original_size_viewed') is not True):
+        errors.append('learned native reference requires an opened, hash-bound source image from its read set')
+    # Adoption/data-unit/defect handling is independently checked against the
+    # invocation receipt by validate_preparation_receipt; no fixed replay waiver.
+    return errors, not errors
+
+
+def validate_source_panel_background(doc: dict) -> list[str]:
+    """Permit only the hash-bound SCICASE-071 source's neutral gray triangle.
+
+    Canvas and export white checks remain separate. This narrow source-derived
+    exception does not permit arbitrary colored panels or claim visual fidelity.
+    """
+    background = doc.get("background_contract", {})
+    if not isinstance(background, dict) or str(background.get("panel", "")).upper() == "#FFFFFF":
+        return []
+    prefix = "source_panel_background_contract"
+    contract = doc.get(prefix)
+    if not isinstance(contract, dict):
+        return ["background_contract.panel must be #FFFFFF unless a source-derived gray panel contract validates"]
+    errors = []
+    panel = str(background.get("panel", "")).upper()
+    if panel != "#EBEBEB" or str(contract.get("color", "")).upper() != panel:
+        errors.append(f"{prefix}.color must match panel and be the source neutral gray #EBEBEB")
+    if not isinstance(contract.get("reason"), str) or not contract["reason"].strip():
+        errors.append(f"{prefix}.reason must be a non-empty source-derived explanation")
+    reference = doc.get("reference_evidence", {})
+    if not isinstance(reference, dict):
+        reference = {}
+    binding = reference.get("learned_source_reference", {})
+    if not isinstance(binding, dict):
+        binding = {}
+    if (binding.get("method_id") != "SCICASE-071"
+            or reference.get("selected_method_case_id") != "SCICASE-071"
+            or doc.get("selected_pattern") != "LEARNED-SCICASE-071"):
+        errors.append(f"{prefix} is limited to the original SCICASE-071 ternary panel")
+    asset = contract.get("source_asset")
+    original = binding.get("original_source_asset")
+    if not isinstance(asset, dict) or not isinstance(original, dict):
+        return errors + [f"{prefix}.source_asset and original_source_asset hash binding are required"]
+    expected_path = "benchmark/library/scidraw/sources/ternary_03.png"
+    if (asset.get("path") != expected_path or original.get("path") != expected_path
+            or asset.get("sha256") != original.get("sha256")
+            or original.get("original_size_viewed") is not True):
+        errors.append(f"{prefix}.source_asset must match the viewed original SCICASE-071 image binding")
+    raw_path = asset.get("path")
+    if not isinstance(raw_path, str) or not raw_path.strip():
+        return errors + [f"{prefix}.source_asset.path is required"]
+    path = (ROOT / raw_path).resolve()
+    if not path.is_relative_to(ROOT.resolve()) or not path.is_file():
+        errors.append(f"{prefix}.source_asset must be an existing file within ROOT")
+    else:
+        actual_sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
+        if asset.get("sha256") != actual_sha256:
+            errors.append(f"{prefix}.source_asset.sha256 differs from current source image")
+    return errors
+
+
+def validate(doc: dict, schema: dict, spec_path: Path | None = None) -> list[str]:
     errors = [f"missing required key: {key}" for key in schema["required"] if key not in doc]
+    errors.extend(validate_project_style_contract(doc, spec_path))
+    errors.extend(_stats_module.validate_document(doc, spec_path.parent if spec_path else None))
     contract_requirements_3 = {
         "biology_contract": schema.get("biology_contract_required", []),
         "role_contract": schema.get("role_contract_required", []),
@@ -91,8 +262,10 @@ def validate(doc: dict, schema: dict) -> list[str]:
     if isinstance(legend, dict):
         if not isinstance(legend.get("place"), str) or not legend["place"].strip():
             errors.append("legend.place must be a non-empty string")
-        elif legend["place"] not in {"outside_plot", "outside_right", "outside_left", "outside_top", "outside_bottom", "outside_or_direct", "shared_outside", "direct", "none"}:
-            errors.append("legend.place must reserve space outside dense data or use direct labels")
+        # `inside_top` supports framed source figures; its non-overlap is checked
+        # later by the BioFigure layout-box preflight.
+        elif legend["place"] not in set(schema.get("legend_place_options", [])):
+            errors.append("legend.place must use a supported reserved or direct-label location")
         if "shared" in legend and not isinstance(legend["shared"], bool):
             errors.append("legend.shared must be a boolean")
     palette = doc.get("palette_semantics")
@@ -109,10 +282,13 @@ def validate(doc: dict, schema: dict) -> list[str]:
         errors.append("selected_pattern must be set")
     elif isinstance(candidates, list) and selected not in candidates:
         errors.append("selected_pattern must be one of candidate_patterns")
+    reference = doc.get('reference_evidence', {})
+    native_errors, native_source = validate_learned_source_reference(reference if isinstance(reference, dict) else {}, selected)
+    errors.extend(native_errors)
     index = load(ROOT / "patterns/index.yaml")
     known_patterns = {x["pattern_id"] for x in index["patterns"]}
     for pattern in candidates or []:
-        if pattern not in known_patterns:
+        if pattern not in known_patterns and not (native_source and pattern == selected):
             errors.append(f"unknown pattern: {pattern}")
     registry = load(ROOT / "renderer-registry.yaml")["renderers"]
     renderer = doc.get("renderer")
@@ -120,6 +296,10 @@ def validate(doc: dict, schema: dict) -> list[str]:
     if selected in known_patterns:
         selected_item = next(x for x in index["patterns"] if x["pattern_id"] == selected)
         selected_card = load(ROOT / "patterns" / selected_item["path"])
+    elif native_source:
+        query = reference.get('retrieval_query', {})
+        selected_card = {'domain': [query.get('domain', '')], 'scientific_task': [doc.get('figure_task', '')],
+                         'renderer_options': list(registry)}
     reference = doc.get("reference_evidence")
     if not isinstance(reference, dict):
         errors.append("reference_evidence must be a mapping")
@@ -127,6 +307,12 @@ def validate(doc: dict, schema: dict) -> list[str]:
         for key in schema.get("reference_evidence_required", []):
             if key not in reference:
                 errors.append(f"reference_evidence.{key} is required")
+        preparation_id = reference.get("preparation_id")
+        if not isinstance(preparation_id, str) or not re.fullmatch(r"[0-9a-f]{64}", preparation_id):
+            errors.append("reference_evidence.preparation_id must be a 64-character preflight receipt hash")
+        selected_method = reference.get("selected_method_case_id")
+        if not isinstance(selected_method, str) or not selected_method.strip():
+            errors.append("reference_evidence.selected_method_case_id must name a preflight candidate")
         query = reference.get("retrieval_query")
         if not isinstance(query, dict) or not query:
             errors.append("reference_evidence.retrieval_query must be a non-empty mapping")
@@ -144,10 +330,14 @@ def validate(doc: dict, schema: dict) -> list[str]:
             if norm(query["task"]) not in card_tasks:
                 errors.append("reference_evidence.retrieval_query.task must be supported by selected_pattern")
         atlas_ids = reference.get("selected_atlas_ids")
+        source_lock_errors, source_locked = validate_primary_source_reference(reference, ROOT.parent)
+        errors.extend(source_lock_errors)
         entries_by_id = {}
-        if not isinstance(atlas_ids, list) or not atlas_ids or not all(isinstance(x, str) and x for x in atlas_ids):
+        if not isinstance(atlas_ids, list) or not all(isinstance(x, str) and x for x in atlas_ids):
+            errors.append("reference_evidence.selected_atlas_ids must be a list of non-empty IDs")
+        elif not atlas_ids and not (source_locked or native_source):
             errors.append("reference_evidence.selected_atlas_ids must be a non-empty list")
-        else:
+        elif atlas_ids:
             corpus = load(ROOT / "atlas/top-journal-corpus.yaml")
             entries_by_id = {entry["atlas_id"]: entry for entry in corpus.get("entries", [])}
             known_atlas = set(entries_by_id)
@@ -297,6 +487,9 @@ def validate(doc: dict, schema: dict) -> list[str]:
     if not isinstance(size, dict):
         errors.append("output_size must be a mapping")
     else:
+        for key in schema.get("output_size_required", []):
+            if key not in size:
+                errors.append(f"output_size.{key} is required")
         for key in ("width_mm", "height_mm"):
             value = size.get(key)
             if not isinstance(value, (int, float)) or isinstance(value, bool) or value <= 0:
@@ -305,6 +498,61 @@ def validate(doc: dict, schema: dict) -> list[str]:
             errors.append("output_size.formats must be non-empty")
         elif any(str(x).lower() not in {"pdf", "svg", "png", "tiff"} for x in size["formats"]):
             errors.append("output_size.formats contains unsupported format")
+        size_class = size.get("size_class")
+        classes = schema.get("publication_size_classes", {})
+        if size_class not in classes:
+            errors.append("output_size.size_class must use a supported publication column class")
+        elif all(isinstance(size.get(k), (int, float)) and not isinstance(size.get(k), bool)
+                 for k in ("width_mm", "height_mm")):
+            rule = classes[size_class]
+            if not rule["min_width_mm"] <= size["width_mm"] <= rule["max_width_mm"]:
+                errors.append(
+                    f"output_size.{size_class} width must be {rule['min_width_mm']}..{rule['max_width_mm']} mm")
+            if size["height_mm"] > rule["max_height_mm"]:
+                errors.append(
+                    f"output_size.{size_class} height exceeds {rule['max_height_mm']} mm")
+        if size.get("size_basis") != schema.get("output_size_basis", "final_physical_output"):
+            errors.append("output_size.size_basis must be final_physical_output")
+        rationale = size.get("size_rationale")
+        if not isinstance(rationale, dict):
+            errors.append("output_size.size_rationale must be a mapping")
+        else:
+            for key in schema.get("size_rationale_required", []):
+                if key not in rationale:
+                    errors.append(f"output_size.size_rationale.{key} is required")
+            panel_count = rationale.get("panel_count")
+            longest = rationale.get("longest_label_chars")
+            density = rationale.get("density")
+            if type(panel_count) is not int or panel_count < 1:
+                errors.append("output_size.size_rationale.panel_count must be a positive integer")
+            if type(longest) is not int or longest < 0:
+                errors.append("output_size.size_rationale.longest_label_chars must be a non-negative integer")
+            if density not in schema.get("size_density_options", []):
+                errors.append("output_size.size_rationale.density must be low, medium, or high")
+            panels = doc.get("reference_analysis", {}).get("panels", [])
+            if isinstance(panels, list) and panels and type(panel_count) is int and panel_count != len(panels):
+                errors.append("output_size.size_rationale.panel_count must equal reference_analysis panel count")
+            allowed_text = doc.get("text_contract", {}).get("allowed_text", [])
+            if isinstance(allowed_text, list) and allowed_text and type(longest) is int:
+                actual_longest = max(len(str(label)) for label in allowed_text)
+                if longest != actual_longest:
+                    errors.append("output_size.size_rationale.longest_label_chars must equal the text allowlist maximum")
+            if type(panel_count) is int and type(longest) is int and density in {"low", "medium", "high"}:
+                recommended = ("double-column" if density == "high" or panel_count >= 4
+                               else "one-and-half-column" if density == "medium" or panel_count >= 3 or longest > 24
+                               else "single-column")
+                if rationale.get("recommended_class") != recommended:
+                    errors.append(f"output_size.size_rationale.recommended_class must be {recommended}")
+                override = rationale.get("override_basis")
+                if not isinstance(override, str):
+                    errors.append("output_size.size_rationale.override_basis must be a string")
+                    override = ""
+                if size_class != recommended and not override.strip():
+                    errors.append("output_size.size_class must equal recommended_class unless override_basis cites a journal or user constraint")
+            if not isinstance(rationale.get("selection_reason"), str) or not rationale["selection_reason"].strip():
+                errors.append("output_size.size_rationale.selection_reason must be non-empty")
+            if size_class == "custom" and not str(rationale.get("override_basis") or "").strip():
+                errors.append("output_size custom size requires a journal or user override_basis")
     delivery = doc.get("deliverable_contract")
     if isinstance(delivery, dict):
         targets = {"quick-png": ["png"], "paper-composite": ["pdf", "svg", "png"], "editable-vector": ["svg", "pdf", "png"], "tiff-submission": ["tiff", "png"]}
@@ -334,21 +582,53 @@ def validate(doc: dict, schema: dict) -> list[str]:
         for key in keys:
             if key not in value:
                 errors.append(f"{contract}.{key} is required")
-        if contract in {"layout_contract", "font_contract", "background_contract"} and any(not isinstance(v, str) or not v.strip() for v in value.values()):
+        if contract in {"layout_contract", "background_contract"} and any(not isinstance(v, str) or not v.strip() for v in value.values()):
             errors.append(f"{contract} values must be non-empty strings")
     background = doc.get("background_contract")
     if isinstance(background, dict):
-        for key in ("canvas", "panel", "export"):
+        for key in ("canvas", "export"):
             if str(background.get(key, "")).upper() != "#FFFFFF":
                 errors.append(f"background_contract.{key} must be #FFFFFF")
+        errors.extend(validate_source_panel_background(doc))
     font = doc.get("font_contract")
     if isinstance(font, dict) and font.get("family") not in {"Helvetica", "Arial"}:
         errors.append("font_contract.family must be Helvetica or Arial")
     if isinstance(font, dict):
+        for key in ("family", "resolved_font_file", "fallback_policy", "warning_policy",
+                    "all_layers_inherit_policy", "rendered_face_check", "size_basis"):
+            if not isinstance(font.get(key), str) or not font[key].strip():
+                errors.append(f"font_contract.{key} must be a non-empty string")
         if font.get("resolved_font_file") in {"", "unknown", "unresolved", None}:
             errors.append("font_contract.resolved_font_file must record a resolved file or runtime resolution method")
         if font.get("all_layers_inherit_policy") != "fail_if_any_layer_unverified":
             errors.append("font_contract.all_layers_inherit_policy must fail if any layer is unverified")
+        minimum = font.get("minimum_final_text_pt")
+        if (not isinstance(minimum, (int, float)) or isinstance(minimum, bool)
+                or minimum < schema.get("font_minimum_final_text_pt", 5)):
+            errors.append("font_contract.minimum_final_text_pt must be at least 5 pt at final output size")
+        if font.get("size_basis") != schema.get("font_size_basis", "final_output_size"):
+            errors.append("font_contract.size_basis must be final_output_size")
+        roles = font.get("size_roles_pt")
+        required_roles = schema.get("font_size_roles_required", [])
+        if not isinstance(roles, dict):
+            errors.append("font_contract.size_roles_pt must be a mapping")
+        else:
+            for role in required_roles:
+                if role not in roles:
+                    errors.append(f"font_contract.size_roles_pt.{role} is required")
+                elif (not isinstance(roles[role], (int, float)) or isinstance(roles[role], bool)
+                      or not isinstance(minimum, (int, float)) or roles[role] < minimum):
+                    errors.append(f"font_contract.size_roles_pt.{role} is below minimum_final_text_pt")
+            numeric = [roles.get(role) for role in required_roles
+                       if isinstance(roles.get(role), (int, float)) and not isinstance(roles.get(role), bool)]
+            if numeric and isinstance(minimum, (int, float)) and max(numeric) > minimum * schema.get("font_max_role_ratio", 1.6):
+                errors.append("font_contract size hierarchy exceeds allowed final-size ratio")
+            if all(isinstance(roles.get(role), (int, float)) and not isinstance(roles.get(role), bool)
+                   for role in ("axis_text", "axis_title")) and roles["axis_title"] < roles["axis_text"]:
+                errors.append("font_contract axis_title must be at least axis_text")
+            if all(isinstance(roles.get(role), (int, float)) and not isinstance(roles.get(role), bool)
+                   for role in ("axis_title", "panel_label")) and roles["panel_label"] < roles["axis_title"]:
+                errors.append("font_contract panel_label must be at least axis_title")
     target = doc.get("design_target")
     if not isinstance(target, dict):
         errors.append("design_target must bind a viewed reference to executable design choices")
@@ -382,6 +662,9 @@ def validate(doc: dict, schema: dict) -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("path", type=Path)
+    parser.add_argument("--preparation-receipt", type=Path)
+    parser.add_argument("--issue-render-authorization", type=Path)
+    parser.add_argument("--source", type=Path, action="append", default=[])
     args = parser.parse_args(argv)
     try:
         doc = load(args.path)
@@ -390,12 +673,25 @@ def main(argv: list[str] | None = None) -> int:
         print("DESIGN_SPEC_VALIDATION_FAIL")
         print(str(exc))
         return 1
-    errors = validate(doc if isinstance(doc, dict) else {}, schema)
+    errors = validate(doc if isinstance(doc, dict) else {}, schema, spec_path=args.path)
+    if args.preparation_receipt and not errors:
+        errors.extend(_cp_module.validate_preparation_receipt(str(args.preparation_receipt), doc))
+    if args.issue_render_authorization and (not args.preparation_receipt or not args.source):
+        errors.append("authorization requires --preparation-receipt and at least one --source")
     if errors:
         print("DESIGN_SPEC_VALIDATION_FAIL")
         print("\n".join(errors))
         return 1
     print("DESIGN_SPEC_VALIDATION_OK")
+    if args.issue_render_authorization:
+        try:
+            issued = _auth_module.issue(args.preparation_receipt, args.path, args.source,
+                                        args.issue_render_authorization)
+            print("RENDER_AUTHORIZATION_ISSUED " + issued["authorization_id"])
+        except Exception as exc:
+            print("RENDER_AUTHORIZATION_FAIL")
+            print(str(exc))
+            return 1
     return 0
 
 

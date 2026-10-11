@@ -4,20 +4,20 @@
   "backend": "R",
   "renderer": "ggplot2",
   "artifact": {
-    "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/figures/swimmer.png",
+    "path": "results/reproduction_benchmark/figures/swimmer.png",
     "sha256": "be37449f0021975d0040767f695d02f739c09004ae1005fd73cbd2bf99b3550d"
   },
   "sources": [
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
+      "path": "biofigure/benchmark/reproduction/generate_natural_r_benchmarks.R",
       "sha256": "ba5ec493d243f67b645c190d817d7c77df8b8ea554e727725a4c5fd04fd492e6"
     },
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/biofigure/scripts/figure_style.R",
+      "path": "biofigure/scripts/figure_style.R",
       "sha256": "41f019c877d2f50db7d71c64642b2b9cbaa4eb7bebb06d7e93ec7b0512fd6617"
     },
     {
-      "path": "/Users/woyekun/Documents/ChatGPT/科研绘图skill/workspace/Project_001_生物科研绘图Skill/results/reproduction_benchmark/plot_data/swimmer-design.yaml",
+      "path": "results/reproduction_benchmark/plot_data/swimmer-design.yaml",
       "sha256": "9da87218178b21d5a86bc7c883c38ce15024ba340dba175cf4d04b29d02fb154"
     }
   ],
@@ -65,5 +65,6 @@
     }
   ],
   "heading_authorization": {},
-  "scope": "technical preflight only; separate actual inspection and critics required"
+  "scope": "technical preflight only; separate actual inspection and critics required",
+  "path_base": "repository-root"
 }

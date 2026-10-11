@@ -38,15 +38,13 @@
 
 <a id="bf-0109"></a>
 
-## BF-0109 · 渐变桑基图
+## BF-0109 · DNA–RNA–Protein 状态桑基图
 
-图型：桑基图。模拟数据／方法展示；非原论文数据复现。
+图型：桑基图。明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。
 
-状态：方法展示／仍待修订，不能视为高保真验收通过。
+![BF-0109 DNA–RNA–Protein 状态桑基图](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png)
 
-![BF-0109 渐变桑基图](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png)
-
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png) · [脚本](../../biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R) · [方法来源](https://mp.weixin.qq.com/s/iDi21LdR2_V3fVRMos0LqQ) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/sankey/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/sankey/provenance.json) · [方法来源](https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html) · [记录](catalog.csv)
 
 <a id="bf-0189"></a>
 

@@ -1,0 +1,1222 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "method_id": "SCICASE-007",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/06_half_violin_box_points.png": "60885fe762dfe0cd435ad63d14bb6601c3e3aa11065de9934e590b2153ed3842",
+        "benchmark/library/scidraw/sources/06_half_violin_box_points_source.jpg": "6c449209d48851001b4f81d155ff2719ed38163d789cf9c154757d86ce557a9e",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-HALF-VIOLIN-001.png": "afb1723744e352d255776610d6494958a050a0593cfeb09434ca941dd1311958",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+散点图/code_01.R": "408c03d846314452b41ada761b508cce432717b22a26e420ae9bdb51861b653c",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+散点图/code_02.R": "65d5a53d7e021f099dfa53790d675236b083b4becae1822388980ae7d7473940",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+散点图/metadata.json": "a8670ea8d3f4280ae245cca4bdebdd376a6691554634d13ea9e79377c4a76003"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-007/new-input/bundle.json",
+          "sha256": "dbf9299880e7c2a120db11d04cedf642b10b6f09ad6448c2bab63f837b8d9545"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-007/repeat/bundle.json",
+          "sha256": "c75cccbc4ef6740fdd227ad904da5a8f128671ce4f9e10c76516cb45cda9b216"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-007/stress/bundle.json",
+          "sha256": "04a364bc391055295c3e96429d3e1be5bfc98da0bb17bb9034a106c083c952ea"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "gghalves": "0.1.4",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-014",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../data/reference/scidraw/SCICASE-014.png": "a3b300c099053026dd82cdef6ccdcbd75c652121fa6f1e36e37684c9ee5157f9",
+        "../docs/assets/scidraw-gallery/03_correlation_heatmap.png": "71e70955140675e5b8a6bf4fe7b06c3c7e93718f5a45000d095de53cc5077007",
+        "benchmark/library/scidraw/evidence/comparison/03_correlation_heatmap.png": "51bb307c106dd0d961cf82be47305333aa8c6c24ecdb6fbd4ba072cb0ff07b79",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/code_01.R": "1a63dc7abf61d4434316b5dd94d1482673274ab6f83725dadcf14e1408151fc0",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/code_02.R": "fa2f1a71517e65337227372f64c774aac4e8af8bbf14592a960486cb89fb2ae2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/code_03.txt": "f11eabde3e8f831aa9389d94f0dca56a938c7f64f00c14007a1023288a01fe8b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/code_04.R": "0e933247d387aaa84bc7bbd2afadf9a40149eaf9eda01feb39552347e90efd47",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/code_05.R": "5544847b8dce11c2c28d5faab243c873b4e908d8b59bc2eeb921cd91f85c6a40",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)/metadata.json": "457cf9b806c6d9ac40940e099ac1a21f1d608b26525843e401accd1845b15e10"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/compact-v5/SCICASE-014/new-input/bundle.json",
+          "sha256": "1dafaea1079ecb0dd5dd505ab3c633b66acc6f57ff32fab7a241744eecbc459f"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/compact-v5/SCICASE-014/repeat/bundle.json",
+          "sha256": "5e30e46a554ce6adc498cbb1b8d26559fe20398a9e105a10eeb8e9ac8f3a07d4"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/compact-v4/SCICASE-014/stress/bundle.json",
+          "sha256": "a942e2067d332dbd8bc1b858efa3ac22a7949a0960128258bb85bc544672d05e"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "RColorBrewer": "1.1.3",
+          "corrplot": "0.95",
+          "digest": "0.6.39",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-149",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../data/reference/scidraw/SCICASE-149.png": "c27d3458fceccb1044ef45c9436bb3fbf5722bac239d3c11068842fc3b4ce660",
+        "../docs/assets/scidraw-gallery/scidraw_ridge_bipolar.png": "6effff9f899ea91f2d79be6ed0ba580e30e3be4c6fd6bc1f15c8e948af76797a",
+        "benchmark/library/scidraw/evidence/comparison/scidraw_ridge_bipolar_source_comparison.png": "9bc3048e086416c4b544227e19a2be4b08cdc0c14a769bacef8d37835aea9633",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/山脊_峰峦图/渐变色山脊图+双向柱形图/code_01.R": "69d5492f2bb0a810ca803965ac48652c5bdfed96a02afca6a8ceab15ed24c4a3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/山脊_峰峦图/渐变色山脊图+双向柱形图/code_02.R": "6226433324fe8aac092eec5714f304932a0e4f6820645dddfc7cc97930ed1270",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/山脊_峰峦图/渐变色山脊图+双向柱形图/code_03.R": "72c242cdd6fbb856ce06dc08b74c32bd3a0c4dec076a4cec5f6651e05ca6ecdc",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/山脊_峰峦图/渐变色山脊图+双向柱形图/code_04.txt": "81447e5cada66eb23ddbd6e3bd4e6a5968090dd5841c7f866e066e270b4bc690",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/山脊_峰峦图/渐变色山脊图+双向柱形图/metadata.json": "41cc1f7fae170650fcee529e42d788025fcdf40d0bec40c39ee5bb4aed49db44"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-149/new-input/bundle.json",
+          "sha256": "fead5bc44123075daffb0e938896796fc3270a17d827169402d10829a1d894ba"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-149/repeat/bundle.json",
+          "sha256": "c6e69c9a368663c7b82e3b98f71f8323e1a93ca4dfafe82cf5992c9d668c91cf"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-149/stress/bundle.json",
+          "sha256": "bc9941cc0686c3e9006614174fad60c2e1463f5eff84082f51ae5a8d3fbd07c3"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "ggridges": "0.5.7",
+          "jsonlite": "2.0.0",
+          "patchwork": "1.3.2",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-075",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery/04_patient_swimmer.png": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
+        "benchmark/library/scidraw/sources/swimmer_02.png": "5558094eca371bdb1885fa0bec7a54deb83def3fa1991d25869ceb9622f42124",
+        "benchmark/library/scidraw/evidence/comparison/04_patient_swimmer.png": "432cfb619dfd25275d7f496d99646446a46c6ea06e99a831fcf5b9c1cc550733",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/code_01.R": "6f300d129e07e07de406ef76817b8bafb9805360f41a792835080e2b3e18ebf1",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/code_02.R": "103ff576f92b56119cd69f059381660ca7b510808b656edcf726cbdf320a75a0",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/metadata.json": "27136a6a34c8b80c193e0ccce73d976d8f92dc9d7d545d7ffad0e77afbd9504f"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/compact-v4/SCICASE-075/new-input/bundle.json",
+          "sha256": "7114e5b4481dd7495e02e7818f04e176f28a37f1b368164aca0d305a6cd7cf1c"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/compact-v4/SCICASE-075/repeat/bundle.json",
+          "sha256": "efd30c4df1c7f9d3cf53ad893e2b6eebdf92985cfd1f262c58551fedbcda587b"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/compact-v4/SCICASE-075/stress/bundle.json",
+          "sha256": "4dc4a19f554cb7993cdc9e6df47d67e0dd10480910e1c389a94e6525eaed4a7e"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "cowplot": "1.2.0",
+          "dplyr": "1.2.1",
+          "ggnewscale": "0.5.2",
+          "ggplot2": "4.0.3",
+          "gridExtra": "2.3.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-001",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/01_polygon_radar_fmsb.png": "7bbe3a4fb96dad41575a5e1421374b5221267fc8c7ccc224b3bb959837f7ae71",
+        "benchmark/library/scidraw/sources/01_polygon_radar_fmsb_source.jpg": "9bedef943a28bb8dcb42e36d6519f655c6a793f47428da2cb9b05b90230ec778",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-POLYGON-RADAR-001.png": "012e1e64d73dbacfb146063fccc592501baacb20daef47596352d0909c15e89b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/雷达图/多边形雷达图(fmsb包)/code_01.R": "0640f7e4649cd577ae941381386eaf4ffc996aae3b53e9d295e739d8221b0f52",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/雷达图/多边形雷达图(fmsb包)/code_02.R": "228dfc51cfc4872cbd09702fe4b8556d6dfb2db9ed9b8d24dc3cee9c70de1d7b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/雷达图/多边形雷达图(fmsb包)/code_03.R": "d0e025e0c8fca4592bc9980faaa6b74df8c93fae6de85102863c5f093b53b5f2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/雷达图/多边形雷达图(fmsb包)/metadata.json": "1ee5ef2844183965ce1fe980ab4419536855d8cda5721ad53c0ed572cffccac7"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-001/runs/parent-v3/new-input/bundle.json",
+          "sha256": "ddeeebc27b36aaf360b3a9fd47b433e54c13fd6e5db4b85bfafc843660c05539"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-001/runs/parent-v3/repeat/bundle.json",
+          "sha256": "5c1f7ab0571d0775e0c9fed1c5aeb23942c31aafc48b797e30c38c58875b0aaf"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-001/runs/parent-v3/stress/bundle.json",
+          "sha256": "dcb6b52c21bc846278a03c88a1436d569adae44e22ddc70a09297c7efc7ca786"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "fmsb": "0.7.6",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-008",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/07_violin_box_beeswarm.png": "c2a5d620049c930ff59f4a049bcfb1bd3fe30191de25880dc5f6e0913b86376e",
+        "benchmark/library/scidraw/sources/07_violin_box_beeswarm_source.jpg": "780d7df704cd06db7ed9dd8bb2682b653e44b9085527d41d09443c34aca95e08",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-BEESWARM-VIOLIN-001.png": "3882bcd5c5be2cfe87406f68ad4b7e328bfc7518fc1dd8bac59d95e8e4d5e699",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+蜂窝图/code_01.R": "40fb214b14ee2eca9064cb78ba442c4347646202fb6994d5454cec2fc91fbe4f",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+蜂窝图/code_02.R": "9bdee253294c7fa758d7da796b89cb5f2ab0c716f5115eaccb1b2fd04b888b0b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/小提琴图+箱式图+蜂窝图/metadata.json": "dda0221e0720d4475977480acf99bfefa6ce08f73452b15429a65c80ed01ec33"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-008/runs/parent-v3/new-input/bundle.json",
+          "sha256": "2480d02dcbb9914213b5174872d8c4fe4e431941c739fc6cd19f600243c5c603"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-008/runs/parent-v3/repeat/bundle.json",
+          "sha256": "7fec9fc7170c1f9fc6878cf5d2a26f05e497d0264d7c249423c3d9088ff9377e"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-008/runs/parent-v3/stress/bundle.json",
+          "sha256": "a2be6d0073765ce97e1b06722b05f2c2fe7117504b04bf141a099ebee0977fa4"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "gghalves": "0.1.4",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-011",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/10_raindrop_ggdist.png": "8d59036e418bd5275e1bb48791755d48d93052b21c412cbff9bac4ba6366635c",
+        "benchmark/library/scidraw/sources/10_raindrop_ggdist_source.jpg": "c06c1cdd22829a9a5ee992efef9f8bb8fa6cf16dcba98c095ccbe1cc45e0b103",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-RAINDROP-001.png": "6c8300a2cf55fbf4e8a3f017a818ca14a4cd94c334e4e912cefed45452c69897",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/差异云雨图+雨滴(ggdist包)/code_01.R": "9577816bc00693a26ee1508fa82a5f353969124fc9fe72230af1d8dbe0f7ff1d",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/差异云雨图+雨滴(ggdist包)/code_02.R": "a8c1f6f7e534daf6e01e166efff46af26fca5c1a9d80c9e445e3753a2abd7f0a",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/云雨图/差异云雨图+雨滴(ggdist包)/metadata.json": "0cf39d1fb21c6e807198b78734b463283cb1aa03649b5911b05e9564860130f9"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-011/runs/parent-v6/new-input/bundle.json",
+          "sha256": "45437c4d155b27545d1e0818cae0f7d739e389c43c093982b215e46726b0b388"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-011/runs/parent-v6/repeat/bundle.json",
+          "sha256": "599792f08287f6a72d6ea79e4a0869c11fbc6359f32c98ffa577a71db8fcee41"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-011/runs/parent-v6/stress/bundle.json",
+          "sha256": "e78276fb50c44f9e7d7ceb0e66515944c4555c81c6bfd02fc86783c1fe37f1aa"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggdist": "3.3.3",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "scales": "1.4.0",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-015",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/12_corrplot_with_sidebars.png": "e561e3c6baaf32800d60640d888c1c32ccf30b2e16f5f16044d9a49400575250",
+        "benchmark/library/scidraw/sources/12_corrplot_with_sidebars_source.jpg": "7bd6c5985fb7cb30b849eefbbc96a83202696e4bda9ae0ff3cf6c18f958c16f9",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-CORRBAR-001.png": "bad5b01b3f3de51dbea1ad9b2f7e062d308c1aa70ec063160152e799ff416935",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/code_01.R": "048a7dc99f7aa3a60087e0a2a2cd16be6c92e27cb099884d0a881a8694aac27c",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/code_02.R": "0014934cdee9baa4df1b7d32c20528f7cf7618fe5904d8fc1fff46f95742fd4b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/code_03.R": "ecac0239d872797243485e1ef3af4dcd3ffcd2ced4f85b6894b0b401e52945bd",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/code_04.R": "4d48fd2f4af79897dee5cc8705cabf335588d22664505e2aaa341aceb0d13c30",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/code_05.R": "e891172482d0b2db404abd8e3bb349c75e4d6762e4011cdb92a407a4155077b6",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(corrplot包)+柱形图/metadata.json": "c2fabf6a138f90f70db60d5cd50ea4ab941b93a43d700f8d45c2f057249c38f9"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-015/runs/parent-v3/new_input/bundle.json",
+          "sha256": "02e28339256b12bb281836d9cdd5d09f77c907467e695cd46f0a15fc54cc0dbf"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-015/runs/parent-v3/repeat/bundle.json",
+          "sha256": "d93b2476cd08f7f2b990d9474e1bbdbd450d5d66f576b10719956c926630ee2c"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-015/runs/parent-v3/stress/bundle.json",
+          "sha256": "05aabd8946cbc49d3f6dbe57922939b8df6e21df371f29fddcca0add590b9101"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "corrplot": "0.95",
+          "digest": "0.6.39",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-020",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/14_annotated_pheatmap.png": "edb82b74aa15c54b99cc8140b024dd8bbad54347049ae0fa0478eedf8d18c989",
+        "benchmark/library/scidraw/sources/14_annotated_pheatmap_source.jpg": "3a18dabec6803e71724eb347d01ea697bb003829372933816b9911e7ebc12d9e",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-PHEATMAP-001.png": "8e223dabcf3ee3a38f1da697437ef92ffc12307924e25f093a3641a2bb69bd26",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(pheatmap包)/code_01.R": "06716c37d02fd03cabc377e5b6a21ada7eb3fcca550b36255916660773d08d47",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(pheatmap包)/code_02.txt": "94de304120b9dd258f62df0d5604fb1c45c5341936a1c4cebe03e8b6239ac797",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(pheatmap包)/metadata.json": "5d86e1246a41f8232b06c71373cda5f90b4c735d8d24093647b7c01eb7408bb9"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-020/runs/parent-v5/new_input/bundle.json",
+          "sha256": "37a9297b6e9974990d9cd78a2a07dcf9bb978bc793cd7263ed804c4ffcb23303"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-020/runs/parent-v5/repeat/bundle.json",
+          "sha256": "108517e871a37b4f54ed1059ffdfac69b0ca0b7283811b71ef24af49d9c5525f"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-020/runs/parent-v5/stress/bundle.json",
+          "sha256": "f0aa36bfa9996396d84fcfa485f7a4a5836efcc399b780bf71f64f2c22cf2817"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "jsonlite": "2.0.0",
+          "pheatmap": "1.0.13",
+          "ragg": "1.5.2",
+          "scico": "1.5.0",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "viridis": "0.6.5"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-024",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/16_grouped_correlation_bubbles.png": "9ba082ff76f8f911d9218bdadaaf42781d6853a6a7cbfac53f62ffdfaf716d51",
+        "benchmark/library/scidraw/sources/16_grouped_correlation_bubbles_source.jpg": "05236effb2d953f29fa03f253ab05559aacb85cc9426ec0ec834740c1dcf49c7",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-GROUP-BUBBLE-001.png": "ea3edda7b5a04b741c5eb38782e0c529420ff3d19571f28bd67a6e6a9350ab5a",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(ggplot2包)+分组/code_01.R": "9c89eae52fa7c34eeeff017cd37324967fd7f46202f953d65aaaea7848a7eb3d",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(ggplot2包)+分组/code_02.R": "14cc2c7059d68803c1816fbfb712b84e1c8461ee1e870e4d03e20d3c883ef01f",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/二维变量(ggplot2包)+分组/metadata.json": "7c7088e834cbe883f9ff88493e8e30aa8610244557fd46b1d423e9a124ceeac4"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-024/runs/parent-v3/new_input/bundle.json",
+          "sha256": "777024c8f5345abbe78d855252d5dff3740ebc8fa94f6c4d440fa106e36826fa"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-024/runs/parent-v3/repeat/bundle.json",
+          "sha256": "64348658f54f2eeba3de6506928e578be407a3da654927d6640ee47e203e109b"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-024/runs/parent-v3/stress/bundle.json",
+          "sha256": "a3ddd3567d8fafa46ffa293ab53e9a2d08e58e2e2756ed8e6438c03fba731386"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-062",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery/01_pcoa_marginal.png": "d9d9cc66d0b2d2e7dc42637bf13aa06845de4b57576cb40e93dbe2cb3278630b",
+        "benchmark/library/scidraw/evidence/comparison/01_pcoa_marginal.png": "d3519b1f10885fe8f20b29d94358d6891e2d287370f69b31a2d83f0be8905e16",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_01.R": "7d3c4841cfe597ab551ccc1391303b02ddc7209bf62cd85066f9e86010f1cb2a",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_02.R": "0a791eb674dba57b92a4fd712bd5bec5c2f99909f96839c9ff65c8f0f9006022",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_03.R": "ab6eaac885cd94fbb716417c4005e970e0691eb90338276d38e389aa242fd7a3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_04.R": "1c9b54f050f5e95e2c54d704b50fdbc2b8b503de083a071afe097bc8ceb54539",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_05.R": "79dcf8f093f91198b9ec5512eb282c577f7809d77675b49b146dd951391ecbcf",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_06.R": "f82d94ef8b55681b294201eccd7c4632838916d5d0dc4eb76d2df332b73736b2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/code_07.R": "a8c51e25d7ddbee0a362b738061b11f8b30eab081034bc819711a1f84105348d",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/PCoA_NMDS_UMAP图/PCoA可视化+边缘箱式图/metadata.json": "baec0e1004e116c42d3183a2ebad97ec78b2eca7b030a418259febbb318fe60e"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-062/validation-v1/runs/parent-v9/new-input/bundle.json",
+          "sha256": "d433453638ec40aa43c8b215af13fa42465898b476a96e0fa56cac0c46e787a7"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-062/validation-v1/runs/parent-v9/repeat/bundle.json",
+          "sha256": "8dfb252c54a6cc12a9ac10bd833c2cbd6990bb87b92b6ce3ae99d9a97b2b5765"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-062/validation-v1/runs/parent-v9/stress/bundle.json",
+          "sha256": "fc07bade2d0bf254f579eaef4364be21143b9a48f1f756946aeb93170a83ed02"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "patchwork": "1.3.2",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "vegan": "2.7.5",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-071",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery/02_ternary_cell_state.png": "b38a107743a5618dd2602ceb23a898462fd1e19823d786a886032cda51d59e79",
+        "benchmark/library/scidraw/evidence/comparison/02_ternary_cell_state.png": "627a35fbd04c94f8530e17e929a19b381238ad9c92433d98fd023698b2746e2e",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/三元图(三个时间点的细胞)/code_01.R": "eceed02210ab044e9a6807a65448af7a1e10d2d33adc090935994161362a7d05",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/三元图(三个时间点的细胞)/metadata.json": "c952ff05e0dd7f4a9e3634b46e0adc4e36b5e86ad30010ccfd9e6a791ff1bf34"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-071/validation-v1/runs/parent-v7/new-input/bundle.json",
+          "sha256": "d09be0bb87fafe0f68288019a9baa73d8b454cb01b9d3b803758085998b246fa"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-071/validation-v1/runs/parent-v7/repeat/bundle.json",
+          "sha256": "3878316bcd1295924e8afa3918c6dddf66d105284ad187aee2c1492d411e765f"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-071/validation-v1/runs/parent-v7/stress/bundle.json",
+          "sha256": "513969dd845dca08bc0f26565695c8ced02f3a31cf8c5b52c7e2f805c0e05144"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "ggtern": "4.0.0",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-154",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery/05_chord_outer_track.png": "32749221bbeacad9378021e785e6b88d5e718bd2238f14e982b79eae520cf7c4",
+        "benchmark/library/scidraw/evidence/comparison/05_chord_outer_track.png": "98cb4cd1bb45acfa75315dd11e91a1e0b367b9c2389f093fcb4ec4fdd14a239c",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/其他未分类图/分组-和弦图+外围条形图/code_01.R": "52f36073b76d8d9473ba225edec74ae55f6a0d03984da9437f9229de10790f0a",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/其他未分类图/分组-和弦图+外围条形图/code_02.R": "68bddd227c9c173ad69acc74ff28b5cc1d3676f4868df6209cecfb6e07dc0fed",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/其他未分类图/分组-和弦图+外围条形图/code_03.R": "5fc689e381d3d13d9dc53deaf6ddf7710e0e0597a55944665f58a0a5c4597ab2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/其他未分类图/分组-和弦图+外围条形图/code_04.R": "df474dfa31f9f86234743ab955a122b270fc3140b264069172f5d941f6ee4769",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/其他未分类图/分组-和弦图+外围条形图/metadata.json": "34b487db4d0c3cceb1dba66e96969edb7fdd8045c3d7a45d7acc96fb71d5bd74"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-154/validation-v1/runs/parent-v11/new-input/bundle.json",
+          "sha256": "d47bf837bfa304982f7c7d66a118e939a7eaa2cda1b2efc7aa3f3867d72ae94f"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-154/validation-v1/runs/parent-v11/repeat/bundle.json",
+          "sha256": "a37d950fd5910def57576b667bebea470ce2d16d9e65cec8f25b0d389d7c7ab3"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-154/validation-v1/runs/parent-v11/stress/bundle.json",
+          "sha256": "df04c8e732304abc07181eb9c6a33bfdab5d79867a1594a34bbde0f7d9a60aa2"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "circlize": "0.4.18",
+          "digest": "0.6.39",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-019",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png": "0dd6da35eee254e1e67d295d865a8f433c18e9096e62178e4c20161b5d6827a8",
+        "benchmark/library/scidraw/sources/13_clustered_upper_triangle_source.jpg": "c1694884d908f7300c931412e078b7cd0dd6a6fdc9a0523e8ffc5a99e036e01c",
+        "benchmark/library/scidraw/evidence/comparison/SCIDRAW-CLUSTER-CORR-001.png": "959bc4a23128a8c93ae7dac7bd11d6328a0a10ac71474fe295d172f7a075e7a9",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_01.R": "66e7860011fe895b32cd842fecff355d8deaf05162f2a74a7bab87feae7bba84",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_02.R": "9c2280490a57dbdbe89ad5128511d7803597978fca7fa64e24b2661fe9d1f993",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_03.R": "a0da9a42b6c4d69580f8afc67453e8ffba6ce13e6fa1fe989d597412fdf009a9",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_04.R": "21d33a84cc39a46e7488fb6a1d98fed1be6b698d5e47ff3f16840977aed6fcf4",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_05.R": "473ab2a90df93c69140db9c5c6fb30dbddaf1672cef7c1c40e8a4a35f4e04e77",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_06.R": "9d2ec2a66b6695b8e7e492b7a9c126386950849832c41191fdb5f71516e276f8",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_07.R": "686b5d57219538f0dd63adccde793a59331498a0d8273360b4fed1df5ef36409",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_08.R": "141918ba93322f39c38a5cbaa6131a94d77cd589a6005a4a6935eb581717e55b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/metadata.json": "10e6c9c58b9d8d10891d550c1ea358d112a5294d48a6937f539e6b9d9e76c87e"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v8/new_input/bundle.json",
+          "sha256": "42307da4057a5e69ed4ac89eb2a7f2598566b22f9c8c6f35b65a236c7f887fec"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v8/repeat/bundle.json",
+          "sha256": "743c18b4493cd0a1d629d205fb55ea091237dcde3d9f9f40aa0b114449c6bf0e"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v8/stress/bundle.json",
+          "sha256": "37eb5ac79b3267eecd01bd20da2341a170500a3459dcd96cdc2405dff853ca28"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "factoextra": "2.2.0",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-079",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/双分组 HR 森林图/code_01.R": "aa5004552d01975c1189ee8fe265b5651fb6fe6cef04d3c93f258a36215a6739",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/双分组 HR 森林图/code_02.R": "82398bc3df82e2ba964ae9ab0c3db184c911a4c064f01931aa598585049552b4",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/双分组 HR 森林图/code_03.txt": "3fd69148f3a75a53c099ba8a4bc86ce5a3840bcddb86abd1bd4d48de6dfde853",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/双分组 HR 森林图/metadata.json": "a384342b2f630f95077d695505c2c07cd9d22c16e6e9acdcbeea6b70be6951fa",
+        "../data/reference/scidraw/SCICASE-079.png": "908a58d229b5193e3b951811e7f9ce0b61d807aa4b259f720dbd2c280d30cefe"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-079/runs/v10/new-input/bundle.json",
+          "sha256": "7ba24b5aa0a200dd5d84a8327c8df7233c31483aa5a34246d0d343e457dccd3c"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-079/runs/v10/qualification-repeat/bundle.json",
+          "sha256": "73e3df1e86240f6259eddf52b8e111536dbd469be71a775f3a070292e022e08d"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-079/runs/v10/stress/bundle.json",
+          "sha256": "1c363a8cabafb1662b7dcab2d5d43822837b4a1ffc4a269137d07912f8728250"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-099",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../data/reference/scidraw/SCICASE-099.png": "9d02aac3bf6d2f6da4048de7840f3e3085f9fb03923bafd6df29e94a2265f426",
+        "../scripts/learn_scidraw_ten.R": "cf49ba4637628291e105c748fe7a261e7612669489f5dfe13b9636fcbec175ca",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-堆积柱形图/code_01.R": "e84091ed564a144194eb9f18f502b93a6ca9aa596ac91ef546bc97ea3e3d4715",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-堆积柱形图/code_02.R": "c08298257917e40c4762cde6729070f8dee7db64d8e08b5333537d94cab371ec",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-堆积柱形图/code_03.R": "ac8be6cb3ff0728bf676ed0038d2930a2b432277e72c49a7fa631ba47ac3b766",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-堆积柱形图/code_04.R": "4920c2a031bf44ee6d1f4346c4e3860d8820cbb1d539f76b17c806fe53346ae1",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-堆积柱形图/metadata.json": "f3893e0e0dfa1e9260784239d3f056ede4156f7ff6b72a78ea18abf32a157be8"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-099/runs/v4/new-input/bundle.json",
+          "sha256": "1b62f2df70555e42517ebb3708f33fd6daf1224336bdc7f6ff6ba13c886d9ffe"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-099/runs/v4/repeat/bundle.json",
+          "sha256": "3a7bb595cac89f65f3e0e66a99dc3354dcff4b2ef964d2f60d6c6d2cc46c017f"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-099/runs/v4/stress/bundle.json",
+          "sha256": "79305ea720c7c05a77cf3943eb4b7c09f9d3c3157bccb0e4369c04834b076080"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-032",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_01.R": "e3d68f70994b9fc082eea061a13910cc24973fff585596da2c13683e5ce5fa78",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_02.txt": "f00c0ffb05d9ed3129716bc6cfb7aff83592a3b5c7aa70e463b3a37a7c5a7da6",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_03.R": "7046c9aa9dd83903e7bbf2ef07728ffa0a433668505dc5dad2e9696e29f7782f",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_04.txt": "e4cb8c9124996e55cbc767d05a8d0827f0ab746b1bc3830acfb9bb8b04391c64",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_05.R": "a5dd67e63ff2657136222c217b7db03eb76d67068f3770d82dbad0991ea415cd",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_06.R": "2cd01f09699475de00c880d28de775a2ab6823a40dc7eadeacb52b288cbab2f7",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_07.R": "c0266d8dfe67bca11a5b6b97649d44479bafbe2be48872d206c933150073e7ee",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_08.txt": "6e8adf410aad1a1da7b028c8d68933e31993a23750d7d614203780a9f341772e",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_09.R": "f407280df74c0c47ff19c19e99038b534e303d4888bc5e96197b909d1d6828bc",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_10.R": "f99825b8b7eea159460db854698b59f855e36698514e410138a3567c8357f610",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/metadata.json": "547e1dd956c8ba8d78df844aee6a0b5da1b90332729e446b5fb767af6a1f08c7",
+        "../data/reference/scidraw/SCICASE-032.png": "39815e529c158e7e1e995b15036861db3865a2a5a3dc65955affc67301bc21b4"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-032/runs/v12/new-input/bundle.json",
+          "sha256": "1dbc1de64c536b833187b8cb08fd3ac8e4e651232b9f989ed3f5c38b218ca025"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-032/runs/v12/qualification-repeat/bundle.json",
+          "sha256": "14d05d7bbf4dd7178af16148265fcd8f2ae78f5f0c4dc811cfcb14d3980b7135"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-032/runs/v12/stress/bundle.json",
+          "sha256": "fde6048a89a0523fed962b05585096956699d39d2dc01558905d3bd1d044dda4"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "UpSetR": "1.4.1",
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "gridExtra": "2.3.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "svglite": "2.2.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-101",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_01.R": "3eda6ecff7f546c5d943378060731c404f1fd66eb1ae76014a373c2168f8ae53",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_02.R": "c3fd2c6caa60198057bded008f1b56408f19111c6030f71195c00710bc14960b",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_03.R": "1b76ddfccc08fb6dd5cd9d3f31cf168948b516addded02724c55d782f2a577a1",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_04.R": "87722d42cef1da05a228ef0d6ec47f740b382f7a666b89a4320cea9c9d1500c3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_05.R": "da98c61987ad2fba095f2d82098383a617d11faa19b6e145ab806006bbf18938",
+        "../data/reference/scidraw/SCICASE-101.png": "d7735664a00e4b576f9c7b66f7a75caed6588277d468ba8a766b359752e18b22",
+        "../scripts/learn_scidraw_batch2_ten.R": "a694051b8079f493bae6caf0e2a7c48bf9b7fcf90d2f80e0f81814896d565ae8",
+        "../results/learning_validation/batch2/tables/SCICASE-101_isotype.csv": "68d1dd3622e4069b857b486e91182e0e750ad2cca001707a13b69def3c63d4a3",
+        "../results/learning_validation/batch2/tables/SCICASE-101_rate.csv": "62389c5d85637e9ab66f73e974aa6fe38f72c6eea028346297213b49e39d3608",
+        "../results/learning_validation/batch2/tables/SCICASE-101_shm.csv": "43d0bbe2c0eec12377edc39b6fef63e521d5cb8f0cbef357edbc5ce8395dea00",
+        "../results/learning_validation/batch2/figures/comparison-batch2-01.png": "11822db0e121d16a0892312486a86b55e2a1df5132282ffd244fe0b0e4c480d2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/metadata.json": "9c9337af7c5bf71e2a852236059885adb2126b81802cf27f4abebc01f81d5d80"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-101/runs/v6/new-input/bundle.json",
+          "sha256": "b0428f2caaa38c31c472c35a279b4c76ca190cf47b1900e0af64c708f090a5db"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-101/runs/v6/new-input-repeat/bundle.json",
+          "sha256": "01e6fda8ec9356831c842fd6d3d16f65945f46edb0f34de9a09dc7f293b06a67"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-101/runs/v6/stress/bundle.json",
+          "sha256": "f4a892c649fb15181555a79d065587487ef8a30f7a4392f2a97bf6a3ff219500"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-102",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_01.R": "9ec73a3e537eaaa13acb0199d8564574cc90330a4873308c39314633b7d12720",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_02.R": "1e054a7162d1dc7e67d76da93c56f1db7d3358d7651b2b061b9b644133d2dd46",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_03.R": "b44c8d3e050931c50f5ead22b3809aa3847a9938353c87aa109c54fdbd824164",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_04.R": "6326472fc1ad456658bcc0bbdd2b50fc8dfde831ee495c5e04fd01ba7ed6377f",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_05.R": "abf0b23ff5135e16bed01a7add06ff3eb8c4a1ce4ee824189aa13bb9195504a0",
+        "../data/reference/scidraw/SCICASE-102.png": "532a830f1fe0a65a126a8714b07cf46e31d641b0d374714d7b3c9da231e91a3c",
+        "../scripts/learn_scidraw_batch2_ten.R": "a694051b8079f493bae6caf0e2a7c48bf9b7fcf90d2f80e0f81814896d565ae8",
+        "../results/learning_validation/batch2/plot_data/SCICASE-102.csv": "96782b40a1904b1698a13821db70e4021b3936f71c87615cb0ad51281b6371de",
+        "../results/learning_validation/batch2/tables/SCICASE-102_pie.csv": "c25cff66070b18df80cc6dc8a3a0c367e9065fcd1d0e691f93792c96f5686a50",
+        "../results/learning_validation/batch2/figures/comparison-batch2-01.png": "11822db0e121d16a0892312486a86b55e2a1df5132282ffd244fe0b0e4c480d2",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/metadata.json": "906e0a95962e03d73625d8a444014a4292eb8d19f103f5e68e990c680b57dca5"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-102/runs/v6/new-input/bundle.json",
+          "sha256": "b968f6aef76cca7d2557ec3e511f07e50844eaccfd0c4e5d8394058bf8fbd574"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-102/runs/v6/new-input-repeat/bundle.json",
+          "sha256": "97e1ed7393b8bbad498a80e4b40fa1557e52655a00fa69d8cd5e2bd1f9916a7c"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-102/runs/v6/stress/bundle.json",
+          "sha256": "12210c5841af91a7260c4e0bccbd01e47e20f5a413da7c4d11275d39881a43a6"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-112",
+      "source_material": {
+        "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_01.R": "c34e8926789e7175e0ecab6a54705b83045232b3f4a137411ce0d2720fe68336",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_02.R": "77bb24b7f06bbe5b74f1cee1d5b2dda85181272cf7e4fc86e0b4b0e54bd42bef",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_03.R": "d1e59ec724de7e47c63c525d4a710b923047e3747adcb1d9427d7f7917b874f0",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_04.R": "c12a30e55898cb437375c138d9a9d10faf01020bed059f2142783dfcd99694ed",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_05.R": "e7988249442034df796f023a2fd9d47a75473610571ca06c8290f95917f06823",
+        "../data/reference/scidraw/SCICASE-112.png": "2e0df1cc6cb30109739545ef0a907116eb974f77bc49c268b3557e36902d2999",
+        "../scripts/learn_scidraw_batch2_ten.R": "a694051b8079f493bae6caf0e2a7c48bf9b7fcf90d2f80e0f81814896d565ae8",
+        "../results/learning_validation/batch2/plot_data/SCICASE-112.csv": "12278ecaf7fb072d819fdfa5e96e43a96d6d9403ba4cdfe1c4e82c2bc463e784",
+        "../results/learning_validation/batch2/figures/comparison-batch2-03.png": "c7acbc638760a1b556bc903b680471c7395b7c8f1e161e53eb9d621c49cdf11e",
+        "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/metadata.json": "94ded7ead516f84ae3b2c34318b8481861db863e73843fcb9e99498e180f3ade"
+      },
+      "bundles": {
+        "new_input": {
+          "path": "benchmark/library/learned-transfer/SCICASE-112/runs/v8/new-input/bundle.json",
+          "sha256": "141a947ac1dce1c08c31ef08b5beabbbb2a64dc4a1072a42aad98457707c4ca9"
+        },
+        "repeat": {
+          "path": "benchmark/library/learned-transfer/SCICASE-112/runs/v8/new-input-repeat/bundle.json",
+          "sha256": "a7335bb30fd728c445bddb1447d4d807d62eadb978fe8c8949467b4fe6dec094"
+        },
+        "stress": {
+          "path": "benchmark/library/learned-transfer/SCICASE-112/runs/v8/stress/bundle.json",
+          "sha256": "4457ed16b1bd9bac09316b5f9fda4d73b0038b198e91319f3b77b04dc4a921fa"
+        }
+      },
+      "runtime_environment": {
+        "r_version": "4.6.1",
+        "platform": "aarch64-apple-darwin23",
+        "system": [
+          "Darwin",
+          "25.6.0",
+          "arm64"
+        ],
+        "packages": {
+          "digest": "0.6.39",
+          "ggplot2": "4.0.3",
+          "grid": "4.6.1",
+          "jsonlite": "2.0.0",
+          "ragg": "1.5.2",
+          "systemfonts": "1.3.2",
+          "yaml": "2.3.12"
+        },
+        "fonts": {
+          "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+        }
+      }
+    }
+  ],
+  "boundary": "Per-method source-exposed new-input reuse; no fixed fixture, sibling method or source study inherits qualification.",
+  "revoked_history": [
+    {
+      "method_id": "SCICASE-075",
+      "revoked_at": "2026-10-04T14:56:29.253671+00:00",
+      "reason": "Root enlarged PNG review found rotated metadata headers clipped at panel top; old visual PASS withdrawn. Preserve previous record/bundles; repair and independently validate a new version.",
+      "record": {
+        "method_id": "SCICASE-075",
+        "source_material": {
+          "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+          "../docs/assets/scidraw-gallery/04_patient_swimmer.png": "7e7dfe69fc88038944be2947e9af3a4cab975ebd8871128e405fcddde911ce23",
+          "benchmark/library/scidraw/sources/swimmer_02.png": "5558094eca371bdb1885fa0bec7a54deb83def3fa1991d25869ceb9622f42124",
+          "benchmark/library/scidraw/evidence/comparison/04_patient_swimmer.png": "432cfb619dfd25275d7f496d99646446a46c6ea06e99a831fcf5b9c1cc550733",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/code_01.R": "6f300d129e07e07de406ef76817b8bafb9805360f41a792835080e2b3e18ebf1",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/code_02.R": "103ff576f92b56119cd69f059381660ca7b510808b656edcf726cbdf320a75a0",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/三元图/患者泳道图(R版)/metadata.json": "27136a6a34c8b80c193e0ccce73d976d8f92dc9d7d545d7ffad0e77afbd9504f"
+        },
+        "bundles": {
+          "new_input": {
+            "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-075/new-input/bundle.json",
+            "sha256": "0c897bec46c462be3fd1b63f415c5a11a6f01e0d4d8b3befa00d49d52aeb02d2"
+          },
+          "repeat": {
+            "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-075/repeat/bundle.json",
+            "sha256": "72857d519499dce1c004e303536006bb3d646b4f0da9625c44820f13a6e03e3c"
+          },
+          "stress": {
+            "path": "benchmark/library/learned-transfer/compact-v2/SCICASE-075/stress/bundle.json",
+            "sha256": "0285712590ebb6d725dbc5bc953b55125bdd0a6c3fe91ccc1a4ef77f9ea5a764"
+          }
+        },
+        "runtime_environment": {
+          "r_version": "4.6.1",
+          "platform": "aarch64-apple-darwin23",
+          "system": [
+            "Darwin",
+            "25.6.0",
+            "arm64"
+          ],
+          "packages": {
+            "cowplot": "1.2.0",
+            "dplyr": "1.2.1",
+            "ggnewscale": "0.5.2",
+            "ggplot2": "4.0.3",
+            "gridExtra": "2.3.1",
+            "jsonlite": "2.0.0",
+            "ragg": "1.5.2",
+            "scales": "1.4.0",
+            "svglite": "2.2.2",
+            "systemfonts": "1.3.2"
+          },
+          "fonts": {
+            "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+            "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+          }
+        }
+      }
+    },
+    {
+      "method_id": "SCICASE-019",
+      "revoked_at_utc": "2026-10-05T01:34:18.068244+00:00",
+      "reason": "User final-size visual rejection: right edge labels overlap matrix, source density and neatness not met; previous visual acceptance withdrawn.",
+      "previous_record": {
+        "method_id": "SCICASE-019",
+        "source_material": {
+          "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+          "../docs/assets/scidraw-gallery-batch2/13_clustered_upper_triangle.png": "0dd6da35eee254e1e67d295d865a8f433c18e9096e62178e4c20161b5d6827a8",
+          "benchmark/library/scidraw/sources/13_clustered_upper_triangle_source.jpg": "c1694884d908f7300c931412e078b7cd0dd6a6fdc9a0523e8ffc5a99e036e01c",
+          "benchmark/library/scidraw/evidence/comparison/SCIDRAW-CLUSTER-CORR-001.png": "959bc4a23128a8c93ae7dac7bd11d6328a0a10ac71474fe295d172f7a075e7a9",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_01.R": "66e7860011fe895b32cd842fecff355d8deaf05162f2a74a7bab87feae7bba84",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_02.R": "9c2280490a57dbdbe89ad5128511d7803597978fca7fa64e24b2661fe9d1f993",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_03.R": "a0da9a42b6c4d69580f8afc67453e8ffba6ce13e6fa1fe989d597412fdf009a9",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_04.R": "21d33a84cc39a46e7488fb6a1d98fed1be6b698d5e47ff3f16840977aed6fcf4",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_05.R": "473ab2a90df93c69140db9c5c6fb30dbddaf1672cef7c1c40e8a4a35f4e04e77",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_06.R": "9d2ec2a66b6695b8e7e492b7a9c126386950849832c41191fdb5f71516e276f8",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_07.R": "686b5d57219538f0dd63adccde793a59331498a0d8273360b4fed1df5ef36409",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/code_08.R": "141918ba93322f39c38a5cbaa6131a94d77cd589a6005a4a6935eb581717e55b",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/相关性图/一维变量(ggplot2包)+层次聚类/metadata.json": "10e6c9c58b9d8d10891d550c1ea358d112a5294d48a6937f539e6b9d9e76c87e"
+        },
+        "bundles": {
+          "new_input": {
+            "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v6/new_input/bundle.json",
+            "sha256": "f205eb16cd159bc203ea737e1b8009816b151ad6d4e1a56e6c713e57ed9a0ed2"
+          },
+          "repeat": {
+            "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v6/repeat/bundle.json",
+            "sha256": "5e7ce611e74e6b31ca14365f5df959f379d60c0a5e621b018d347244cfabbc9c"
+          },
+          "stress": {
+            "path": "benchmark/library/learned-transfer/SCICASE-019/runs/parent-v6/stress/bundle.json",
+            "sha256": "d2be1a68b22d9f7699b0a76e045322f7d7a3bf4bca709138305ab1af89bb267a"
+          }
+        },
+        "runtime_environment": {
+          "r_version": "4.6.1",
+          "platform": "aarch64-apple-darwin23",
+          "system": [
+            "Darwin",
+            "25.6.0",
+            "arm64"
+          ],
+          "packages": {
+            "digest": "0.6.39",
+            "factoextra": "2.2.0",
+            "ggplot2": "4.0.3",
+            "jsonlite": "2.0.0",
+            "ragg": "1.5.2",
+            "svglite": "2.2.2",
+            "systemfonts": "1.3.2"
+          },
+          "fonts": {
+            "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+            "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+          }
+        }
+      },
+      "previous_registry_sha256": "a17aac8660871679a577f61cde43ed4513a36d671607e6d5b2b80203b42c1870",
+      "preserved_evidence": true
+    },
+    {
+      "method_id": "SCICASE-032",
+      "reason": "Independent actual-PDF review: adjacent full two-line set labels have minimum inter-label gap 0.051 pt. No glyph collision alone does not satisfy readable row spacing. Re-render with larger stress height and measure gap >=1.5 pt.",
+      "evidence_path": "benchmark/library/learned-transfer/SCICASE-032/data/metadata/qualification-v2-revoked-density.json",
+      "previous_record": {
+        "method_id": "SCICASE-032",
+        "source_material": {
+          "atlas/scidraw-derived-corpus.json": "ce5273f736197bd54e65bf40b47cbe955d881dbb1a077dde6218178aa2f69bd3",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_01.R": "e3d68f70994b9fc082eea061a13910cc24973fff585596da2c13683e5ce5fa78",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_02.txt": "f00c0ffb05d9ed3129716bc6cfb7aff83592a3b5c7aa70e463b3a37a7c5a7da6",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_03.R": "7046c9aa9dd83903e7bbf2ef07728ffa0a433668505dc5dad2e9696e29f7782f",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_04.txt": "e4cb8c9124996e55cbc767d05a8d0827f0ab746b1bc3830acfb9bb8b04391c64",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_05.R": "a5dd67e63ff2657136222c217b7db03eb76d67068f3770d82dbad0991ea415cd",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_06.R": "2cd01f09699475de00c880d28de775a2ab6823a40dc7eadeacb52b288cbab2f7",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_07.R": "c0266d8dfe67bca11a5b6b97649d44479bafbe2be48872d206c933150073e7ee",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_08.txt": "6e8adf410aad1a1da7b028c8d68933e31993a23750d7d614203780a9f341772e",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_09.R": "f407280df74c0c47ff19c19e99038b534e303d4888bc5e96197b909d1d6828bc",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/code_10.R": "f99825b8b7eea159460db854698b59f855e36698514e410138a3567c8357f610",
+          "../../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/upset图_Venn图/upset图-无分组/metadata.json": "547e1dd956c8ba8d78df844aee6a0b5da1b90332729e446b5fb767af6a1f08c7",
+          "../data/reference/scidraw/SCICASE-032.png": "39815e529c158e7e1e995b15036861db3865a2a5a3dc65955affc67301bc21b4"
+        },
+        "bundles": {
+          "new_input": {
+            "path": "benchmark/library/learned-transfer/SCICASE-032/runs/qualification-v2/new-input/bundle.json",
+            "sha256": "f7008ebcc5f7fc9f9dd878539f2077402c1f37f6f62976fc4ca088c0f88a730d"
+          },
+          "repeat": {
+            "path": "benchmark/library/learned-transfer/SCICASE-032/runs/qualification-v2/repeat/bundle.json",
+            "sha256": "e1e1fd71b4c99e573ad805563dc803e9b0d88d40422c443016dcdb696cbcc321"
+          },
+          "stress": {
+            "path": "benchmark/library/learned-transfer/SCICASE-032/runs/qualification-v2/stress/bundle.json",
+            "sha256": "e02d606791e427bb8409299f29b596b79de0d3ee9a33d20cc23199e8bd6c6d5d"
+          }
+        },
+        "runtime_environment": {
+          "r_version": "4.6.1",
+          "platform": "aarch64-apple-darwin23",
+          "system": [
+            "Darwin",
+            "25.6.0",
+            "arm64"
+          ],
+          "packages": {
+            "UpSetR": "1.4.1",
+            "digest": "0.6.39",
+            "ggplot2": "4.0.3",
+            "grid": "4.6.1",
+            "gridExtra": "2.3.1",
+            "jsonlite": "2.0.0",
+            "ragg": "1.5.2",
+            "svglite": "2.2.2",
+            "systemfonts": "1.3.2",
+            "yaml": "2.3.12"
+          },
+          "fonts": {
+            "/System/Library/Fonts/Supplemental/Arial.ttf": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+            "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731"
+          }
+        }
+      }
+    }
+  ]
+}

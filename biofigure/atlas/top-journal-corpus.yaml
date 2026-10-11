@@ -1,265 +1,1267 @@
-schema_version: "1.0"
-purpose: figure-level evidence for design retrieval; observations are transferable grammar, not permission to copy artwork
-review_boundary: agent inspected the rendered publication figures; none are human-approved BioFigure outputs
+schema_version: '1.0'
+purpose: figure-level evidence for design retrieval; observations are transferable
+  grammar, not permission to copy artwork
+review_boundary: agent inspected the rendered publication figures; none are human-approved
+  BioFigure outputs
 entries:
-  - atlas_id: ATLAS-TJ-ARCHR-F1
-    journal: Nature Genetics
-    year: 2021
-    paper_url: https://www.nature.com/articles/s41588-021-00790-6
-    figure_locator: Figure 1
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig1_HTML.png
-    asset_sha256: 951612422390efe3140e3ff2da828eec5a84a777a3111d95aed44d6f5fb828c5
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/GreenleafLab/ArchR_2020
-    code_status: majority-analysis-code-available
-    code_revision: fe290efeecfa346552853c4ba24fe353b866a995
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [single-cell, chromatin]
-    patterns: [SC-UMAP-001, MULTI-EVIDENCE-001]
-    scientific_tasks: [workflow-overview, cell-embedding-structure, method-benchmark]
-    actual_figure_reviewed: true
-    visual_observations: [left-to-right workflow spine, repeated plot grammar, aligned panel edges, white field]
-    transferable_decisions: [reserve one dominant workflow column, align repeated benchmarks, keep panel letters outside data]
-    do_not_transfer: [software logo treatment, colored module boxes without semantic need, multipanel density for standalone plots]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-ARCHR-F3
-    journal: Nature Genetics
-    year: 2021
-    paper_url: https://www.nature.com/articles/s41588-021-00790-6
-    figure_locator: Figure 3
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig3_HTML.png
-    asset_sha256: 1d77d20ef081d0f9161ca10aa26921f0425a3d49de7f45720f4615ff24434228
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/GreenleafLab/ArchR_2020
-    code_status: majority-analysis-code-available
-    code_revision: fe290efeecfa346552853c4ba24fe353b866a995
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [single-cell, chromatin, genomics]
-    patterns: [SC-UMAP-001, MAT-EXPR-001, CHR-PROFILE-001, CHR-HEAT-001]
-    scientific_tasks: [cell-embedding-structure, marker-pattern, genomic-signal-track]
-    actual_figure_reviewed: true
-    visual_observations: [shared embedding geometry, heatmap as compact evidence block, genomic tracks aligned to one coordinate frame]
-    transferable_decisions: [reuse identical embedding limits, synchronize track x-ranges, use compact local scales beside their panel]
-    do_not_transfer: [rainbow-like continuous maps, tiny motif labels at single-column width, one legend for semantically different scales]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-HCL-F2
-    journal: Nature
-    year: 2020
-    paper_url: https://www.nature.com/articles/s41586-020-2157-4
-    figure_locator: Figure 2
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2157-4/MediaObjects/41586_2020_2157_Fig2_HTML.png
-    asset_sha256: a128d4c7ff4e3ae2d5f8b0a317444411e319011276e5a58d551573048d8652e3
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/ggjlab/HCL
-    code_status: detailed-figure-code-available
-    code_revision: 7e33ba7e9b3cfd1662fb80de09dec7b7e50c085d
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [single-cell, matrix]
-    patterns: [SC-UMAP-001, MAT-EXPR-001]
-    scientific_tasks: [cell-embedding-structure, annotated-expression, marker-expression-across-cell-types]
-    actual_figure_reviewed: true
-    visual_observations: [orthogonal evidence types, repeated embedding limits, annotation strips attached to matrices]
-    transferable_decisions: [pair discovery and validation evidence, keep matrix annotations flush, gray context cells behind highlights]
-    do_not_transfer: [very long tissue legend in narrow output, excessive categorical hues when direct grouping is possible, title repetition]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-HCL-F4
-    journal: Nature
-    year: 2020
-    paper_url: https://www.nature.com/articles/s41586-020-2157-4
-    figure_locator: Figure 4
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2157-4/MediaObjects/41586_2020_2157_Fig4_HTML.png
-    asset_sha256: 49cae3c5fae11d123e9d0e674d309ab19d9d566ca3add96348b9ccea31000341
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/ggjlab/HCL
-    code_status: detailed-figure-code-available
-    code_revision: 7e33ba7e9b3cfd1662fb80de09dec7b7e50c085d
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [single-cell, matrix, comparative-genomics]
-    patterns: [MAT-CORR-001, SC-UMAP-001, MULTI-EVIDENCE-001]
-    scientific_tasks: [cross-species-comparison, matrix-relationship, regulatory-module]
-    actual_figure_reviewed: true
-    visual_observations: [one dominant matrix, modules outlined on matrix, aligned motif evidence table, repeated species comparison geometry]
-    transferable_decisions: [give the matrix dominant area, align module metadata by row, use a neutral context layer for focal overlays]
-    do_not_transfer: [dense circular links without edge filtering, legends that exceed data width, colored labels without semantic dictionary]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-SV-F1
-    journal: Nature
-    year: 2020
-    paper_url: https://www.nature.com/articles/s41586-020-2371-0
-    figure_locator: Figure 1
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2371-0/MediaObjects/41586_2020_2371_Fig1_HTML.png
-    asset_sha256: 13548a3da863f4c09c7cc263dab5ee8ffef4c81f18d53188c36d95d02954f419
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/abelhj/long-read-validation
-    data_url: https://github.com/hall-lab/sv_paper_042020
-    code_status: validation-code-available-figure-code-not-verified
-    code_revision: 504203f4b2c8833f70889669f596137525a4ee4c
-    code_path: repository-root; figure-generation-code-not-claimed
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [structural-variation, distribution]
-    patterns: [DIST-BOX-001, DIST-BAR-RAW-001, MULTI-EVIDENCE-001]
-    scientific_tasks: [variant-landscape, group-distribution, frequency-spectrum]
-    actual_figure_reviewed: true
-    visual_observations: [SV type owns hue, frequency owns shade, axes and baselines align, large panels carry the main comparison]
-    transferable_decisions: [separate hue and lightness semantics, preserve log scale labels, size panels by evidential importance]
-    do_not_transfer: [pie chart when exact comparison matters, redundant legends per panel, identical visual weight for minor summaries]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-SV-F2
-    journal: Nature
-    year: 2020
-    paper_url: https://www.nature.com/articles/s41586-020-2371-0
-    figure_locator: Figure 2
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2371-0/MediaObjects/41586_2020_2371_Fig2_HTML.png
-    asset_sha256: 342953df9867b7cb8e47e6a0dcd089b4c172ed8f4c1efaf50ceb83a50c4fbddf
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/abelhj/long-read-validation
-    data_url: https://github.com/hall-lab/sv_paper_042020
-    code_status: validation-code-available-figure-code-not-verified
-    code_revision: 504203f4b2c8833f70889669f596137525a4ee4c
-    code_path: repository-root; figure-generation-code-not-claimed
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [structural-variation, distribution]
-    patterns: [MULTI-EVIDENCE-001]
-    scientific_tasks: [variant-class-composition, burden-comparison]
-    actual_figure_reviewed: true
-    visual_observations: [family-consistent sequential ramps, shared category order, wide evidence panel beneath compact summaries]
-    transferable_decisions: [use one hue family per SV class, align shared category order, reserve width for estimates with uncertainty]
-    do_not_transfer: [stacked bars when components cannot be compared, saturated colors for every subtype, rotated labels without reserve]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-FISH-F2
-    journal: Nature Communications
-    year: 2025
-    paper_url: https://www.nature.com/articles/s41467-025-62544-w
-    figure_locator: Figure 2
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-025-62544-w/MediaObjects/41467_2025_62544_Fig2_HTML.png
-    asset_sha256: a88ca24354d1f2caec39ad472efba5098e3e20a0a39ed665276f2cf1c94c184d
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: null
-    code_status: figure-code-not-identified
-    code_revision: null
-    code_path: null
-    article_license_status: verify-publisher-page
-    code_license_status: not-applicable
-    license_status: visual-reference-only
-    domains: [comparative-genomics, enrichment]
-    patterns: [GEN-SYNTENY-001, GEN-STRUCT-001, ENR-DOT-001]
-    scientific_tasks: [phylogeny-gene-family, functional-enrichment, local-synteny]
-    actual_figure_reviewed: true
-    visual_observations: [row-aligned phylogeny and metadata, restrained clade bands, local synteny on shared baselines, white background]
-    transferable_decisions: [lock taxa order across panels, keep clade bands pale, align ortholog positions and gene direction by row]
-    do_not_transfer: [decorative species silhouettes when space is tight, freehand enrichment enclosures, tiny labels below final size]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-OMICVERSE-F6
-    journal: Nature Communications
-    year: 2024
-    paper_url: https://www.nature.com/articles/s41467-024-50194-3
-    figure_locator: Figure 6
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-024-50194-3/MediaObjects/41467_2024_50194_Fig6_HTML.png
-    asset_sha256: 14b33556087db2585e06b3ac6dc5cc61904c92392c1b50642e8f1bb3057dcb19
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/Starlitnightly/omicverse
-    code_status: framework-code-available-figure-code-not-verified
-    code_revision: 44d5f49041b77c7644991b94bf85800f873f19fe
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [multi-omics, single-cell, matrix]
-    patterns: [MO-FACTOR-001, SC-UMAP-001, MAT-CORR-001]
-    scientific_tasks: [multiomics-integration, factor-association, modality-comparison, matrix-relationship]
-    actual_figure_reviewed: true
-    visual_observations: [workflow first, paired embeddings share geometry, compact factor matrices, consistent modality colors, compact association matrix with external continuous scale, factor columns retain explicit order]
-    transferable_decisions: [keep modality colors invariant, reuse embedding coordinates, separate variance and association scales, keep association matrix dominant and scale outside data, retain explicit factor order]
-    do_not_transfer: [code screenshot as scientific evidence, generic headings inside standalone plots, mismatched heatmap scale labels]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-MEFISTO-F1
-    journal: Nature Methods
-    year: 2022
-    paper_url: https://www.nature.com/articles/s41592-021-01343-9
-    figure_locator: Figure 1
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig1_HTML.png
-    asset_sha256: 63495c9578284674ca6f119db1070a8dbe3d36946f094efee237a0008241a534
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/bioFAM/MEFISTO_analyses
-    code_status: all-figure-code-available
-    code_revision: 3310b5f285e49672d07438ca4878aa5eef77816c
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [multi-omics, time-series]
-    patterns: [MO-FACTOR-001, MULTI-EVIDENCE-001]
-    scientific_tasks: [temporal-factor-model, method-overview, benchmark]
-    actual_figure_reviewed: true
-    visual_observations: [equation-like visual grammar, repeated aligned facets, sparse neutral containers, stable view colors]
-    transferable_decisions: [express model decomposition left-to-right, align repeated factor panels, keep supporting benchmark strips secondary]
-    do_not_transfer: [rounded cards in data figures, pictograms without explanatory value, large headings repeated in every panel]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
-
-  - atlas_id: ATLAS-TJ-MEFISTO-F3
-    journal: Nature Methods
-    year: 2022
-    paper_url: https://www.nature.com/articles/s41592-021-01343-9
-    figure_locator: Figure 3
-    figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig3_HTML.png
-    asset_sha256: 8983034b36f175895edb32026689e1e40c76186dd328f53c30dd497dac7d0682
-    reviewed_by: Codex-visual-inspection
-    review_method: opened-original-resolution-publication-PNG
-    code_url: https://github.com/bioFAM/MEFISTO_analyses
-    code_status: all-figure-code-available
-    code_revision: 3310b5f285e49672d07438ca4878aa5eef77816c
-    code_path: repository-root; exact-figure-script-mapping-pending
-    article_license_status: verify-publisher-page
-    code_license_status: verify-repository-license
-    license_status: verify-upstream-before-reuse
-    domains: [multi-omics, time-series, matrix]
-    patterns: [MO-FACTOR-001]
-    scientific_tasks: [temporal-factor-pattern, factor-association, taxonomic-association]
-    actual_figure_reviewed: true
-    visual_observations: [shared factor colors across plot types, direct condition encodings, radial taxonomic tree with factor-weight rings]
-    transferable_decisions: [carry factor identity across panels, combine raw points with summary trajectory, reserve radial layouts for true taxonomic hierarchy]
-    do_not_transfer: [radial layout for ordinary rectangular matrices, multiple encodings without legend budget, palette changes between factor panels]
-    review_status: source-and-visual-reviewed
-    reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-ARCHR-F1
+  journal: Nature Genetics
+  year: 2021
+  paper_url: https://www.nature.com/articles/s41588-021-00790-6
+  figure_locator: Figure 1
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig1_HTML.png
+  asset_sha256: 951612422390efe3140e3ff2da828eec5a84a777a3111d95aed44d6f5fb828c5
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/GreenleafLab/ArchR_2020
+  code_status: majority-analysis-code-available
+  code_revision: fe290efeecfa346552853c4ba24fe353b866a995
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - single-cell
+  - chromatin
+  patterns:
+  - SC-UMAP-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - workflow-overview
+  - cell-embedding-structure
+  - method-benchmark
+  actual_figure_reviewed: true
+  visual_observations:
+  - left-to-right workflow spine
+  - repeated plot grammar
+  - aligned panel edges
+  - white field
+  transferable_decisions:
+  - reserve one dominant workflow column
+  - align repeated benchmarks
+  - keep panel letters outside data
+  do_not_transfer:
+  - software logo treatment
+  - colored module boxes without semantic need
+  - multipanel density for standalone plots
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-ARCHR-F3
+  journal: Nature Genetics
+  year: 2021
+  paper_url: https://www.nature.com/articles/s41588-021-00790-6
+  figure_locator: Figure 3
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig3_HTML.png
+  asset_sha256: 1d77d20ef081d0f9161ca10aa26921f0425a3d49de7f45720f4615ff24434228
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/GreenleafLab/ArchR_2020
+  code_status: majority-analysis-code-available
+  code_revision: fe290efeecfa346552853c4ba24fe353b866a995
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - single-cell
+  - chromatin
+  - genomics
+  patterns:
+  - SC-UMAP-001
+  - MAT-EXPR-001
+  - CHR-PROFILE-001
+  - CHR-HEAT-001
+  scientific_tasks:
+  - cell-embedding-structure
+  - marker-pattern
+  - genomic-signal-track
+  actual_figure_reviewed: true
+  visual_observations:
+  - shared embedding geometry
+  - heatmap as compact evidence block
+  - genomic tracks aligned to one coordinate frame
+  transferable_decisions:
+  - reuse identical embedding limits
+  - synchronize track x-ranges
+  - use compact local scales beside their panel
+  do_not_transfer:
+  - rainbow-like continuous maps
+  - tiny motif labels at single-column width
+  - one legend for semantically different scales
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-HCL-F2
+  journal: Nature
+  year: 2020
+  paper_url: https://www.nature.com/articles/s41586-020-2157-4
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2157-4/MediaObjects/41586_2020_2157_Fig2_HTML.png
+  asset_sha256: a128d4c7ff4e3ae2d5f8b0a317444411e319011276e5a58d551573048d8652e3
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/ggjlab/HCL
+  code_status: detailed-figure-code-available
+  code_revision: 7e33ba7e9b3cfd1662fb80de09dec7b7e50c085d
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - single-cell
+  - matrix
+  patterns:
+  - SC-UMAP-001
+  - MAT-EXPR-001
+  scientific_tasks:
+  - cell-embedding-structure
+  - annotated-expression
+  - marker-expression-across-cell-types
+  actual_figure_reviewed: true
+  visual_observations:
+  - orthogonal evidence types
+  - repeated embedding limits
+  - annotation strips attached to matrices
+  transferable_decisions:
+  - pair discovery and validation evidence
+  - keep matrix annotations flush
+  - gray context cells behind highlights
+  do_not_transfer:
+  - very long tissue legend in narrow output
+  - excessive categorical hues when direct grouping is possible
+  - title repetition
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-HCL-F4
+  journal: Nature
+  year: 2020
+  paper_url: https://www.nature.com/articles/s41586-020-2157-4
+  figure_locator: Figure 4
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2157-4/MediaObjects/41586_2020_2157_Fig4_HTML.png
+  asset_sha256: 49cae3c5fae11d123e9d0e674d309ab19d9d566ca3add96348b9ccea31000341
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/ggjlab/HCL
+  code_status: detailed-figure-code-available
+  code_revision: 7e33ba7e9b3cfd1662fb80de09dec7b7e50c085d
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - single-cell
+  - matrix
+  - comparative-genomics
+  patterns:
+  - MAT-CORR-001
+  - SC-UMAP-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - cross-species-comparison
+  - matrix-relationship
+  - regulatory-module
+  actual_figure_reviewed: true
+  visual_observations:
+  - one dominant matrix
+  - modules outlined on matrix
+  - aligned motif evidence table
+  - repeated species comparison geometry
+  transferable_decisions:
+  - give the matrix dominant area
+  - align module metadata by row
+  - use a neutral context layer for focal overlays
+  do_not_transfer:
+  - dense circular links without edge filtering
+  - legends that exceed data width
+  - colored labels without semantic dictionary
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-SV-F1
+  journal: Nature
+  year: 2020
+  paper_url: https://www.nature.com/articles/s41586-020-2371-0
+  figure_locator: Figure 1
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2371-0/MediaObjects/41586_2020_2371_Fig1_HTML.png
+  asset_sha256: 13548a3da863f4c09c7cc263dab5ee8ffef4c81f18d53188c36d95d02954f419
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/abelhj/long-read-validation
+  data_url: https://github.com/hall-lab/sv_paper_042020
+  code_status: validation-code-available-figure-code-not-verified
+  code_revision: 504203f4b2c8833f70889669f596137525a4ee4c
+  code_path: repository-root; figure-generation-code-not-claimed
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - structural-variation
+  - distribution
+  patterns:
+  - DIST-BOX-001
+  - DIST-BAR-RAW-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - variant-landscape
+  - group-distribution
+  - frequency-spectrum
+  actual_figure_reviewed: true
+  visual_observations:
+  - SV type owns hue
+  - frequency owns shade
+  - axes and baselines align
+  - large panels carry the main comparison
+  transferable_decisions:
+  - separate hue and lightness semantics
+  - preserve log scale labels
+  - size panels by evidential importance
+  do_not_transfer:
+  - pie chart when exact comparison matters
+  - redundant legends per panel
+  - identical visual weight for minor summaries
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-SV-F2
+  journal: Nature
+  year: 2020
+  paper_url: https://www.nature.com/articles/s41586-020-2371-0
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41586-020-2371-0/MediaObjects/41586_2020_2371_Fig2_HTML.png
+  asset_sha256: 342953df9867b7cb8e47e6a0dcd089b4c172ed8f4c1efaf50ceb83a50c4fbddf
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/abelhj/long-read-validation
+  data_url: https://github.com/hall-lab/sv_paper_042020
+  code_status: validation-code-available-figure-code-not-verified
+  code_revision: 504203f4b2c8833f70889669f596137525a4ee4c
+  code_path: repository-root; figure-generation-code-not-claimed
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - structural-variation
+  - distribution
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - variant-class-composition
+  - burden-comparison
+  actual_figure_reviewed: true
+  visual_observations:
+  - family-consistent sequential ramps
+  - shared category order
+  - wide evidence panel beneath compact summaries
+  transferable_decisions:
+  - use one hue family per SV class
+  - align shared category order
+  - reserve width for estimates with uncertainty
+  do_not_transfer:
+  - stacked bars when components cannot be compared
+  - saturated colors for every subtype
+  - rotated labels without reserve
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-FISH-F2
+  journal: Nature Communications
+  year: 2025
+  paper_url: https://www.nature.com/articles/s41467-025-62544-w
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-025-62544-w/MediaObjects/41467_2025_62544_Fig2_HTML.png
+  asset_sha256: a88ca24354d1f2caec39ad472efba5098e3e20a0a39ed665276f2cf1c94c184d
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: null
+  code_status: figure-code-not-identified
+  code_revision: null
+  code_path: null
+  article_license_status: verify-publisher-page
+  code_license_status: not-applicable
+  license_status: visual-reference-only
+  domains:
+  - comparative-genomics
+  - enrichment
+  patterns:
+  - GEN-SYNTENY-001
+  - GEN-STRUCT-001
+  - ENR-DOT-001
+  scientific_tasks:
+  - phylogeny-gene-family
+  - functional-enrichment
+  - local-synteny
+  actual_figure_reviewed: true
+  visual_observations:
+  - row-aligned phylogeny and metadata
+  - restrained clade bands
+  - local synteny on shared baselines
+  - white background
+  transferable_decisions:
+  - lock taxa order across panels
+  - keep clade bands pale
+  - align ortholog positions and gene direction by row
+  do_not_transfer:
+  - decorative species silhouettes when space is tight
+  - freehand enrichment enclosures
+  - tiny labels below final size
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-OMICVERSE-F6
+  journal: Nature Communications
+  year: 2024
+  paper_url: https://www.nature.com/articles/s41467-024-50194-3
+  figure_locator: Figure 6
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-024-50194-3/MediaObjects/41467_2024_50194_Fig6_HTML.png
+  asset_sha256: 14b33556087db2585e06b3ac6dc5cc61904c92392c1b50642e8f1bb3057dcb19
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/Starlitnightly/omicverse
+  code_status: framework-code-available-figure-code-not-verified
+  code_revision: 44d5f49041b77c7644991b94bf85800f873f19fe
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - multi-omics
+  - single-cell
+  - matrix
+  patterns:
+  - MO-FACTOR-001
+  - SC-UMAP-001
+  - MAT-CORR-001
+  scientific_tasks:
+  - multiomics-integration
+  - factor-association
+  - modality-comparison
+  - matrix-relationship
+  actual_figure_reviewed: true
+  visual_observations:
+  - workflow first
+  - paired embeddings share geometry
+  - compact factor matrices
+  - consistent modality colors
+  - compact association matrix with external continuous scale
+  - factor columns retain explicit order
+  transferable_decisions:
+  - keep modality colors invariant
+  - reuse embedding coordinates
+  - separate variance and association scales
+  - keep association matrix dominant and scale outside data
+  - retain explicit factor order
+  do_not_transfer:
+  - code screenshot as scientific evidence
+  - generic headings inside standalone plots
+  - mismatched heatmap scale labels
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-MEFISTO-F1
+  journal: Nature Methods
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41592-021-01343-9
+  figure_locator: Figure 1
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig1_HTML.png
+  asset_sha256: 63495c9578284674ca6f119db1070a8dbe3d36946f094efee237a0008241a534
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/bioFAM/MEFISTO_analyses
+  code_status: all-figure-code-available
+  code_revision: 3310b5f285e49672d07438ca4878aa5eef77816c
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - multi-omics
+  - time-series
+  patterns:
+  - MO-FACTOR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - temporal-factor-model
+  - method-overview
+  - benchmark
+  actual_figure_reviewed: true
+  visual_observations:
+  - equation-like visual grammar
+  - repeated aligned facets
+  - sparse neutral containers
+  - stable view colors
+  transferable_decisions:
+  - express model decomposition left-to-right
+  - align repeated factor panels
+  - keep supporting benchmark strips secondary
+  do_not_transfer:
+  - rounded cards in data figures
+  - pictograms without explanatory value
+  - large headings repeated in every panel
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-MEFISTO-F3
+  journal: Nature Methods
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41592-021-01343-9
+  figure_locator: Figure 3
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig3_HTML.png
+  asset_sha256: 8983034b36f175895edb32026689e1e40c76186dd328f53c30dd497dac7d0682
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-PNG
+  code_url: https://github.com/bioFAM/MEFISTO_analyses
+  code_status: all-figure-code-available
+  code_revision: 3310b5f285e49672d07438ca4878aa5eef77816c
+  code_path: repository-root; exact-figure-script-mapping-pending
+  article_license_status: verify-publisher-page
+  code_license_status: verify-repository-license
+  license_status: verify-upstream-before-reuse
+  domains:
+  - multi-omics
+  - time-series
+  - matrix
+  patterns:
+  - MO-FACTOR-001
+  scientific_tasks:
+  - temporal-factor-pattern
+  - factor-association
+  - taxonomic-association
+  actual_figure_reviewed: true
+  visual_observations:
+  - shared factor colors across plot types
+  - direct condition encodings
+  - radial taxonomic tree with factor-weight rings
+  transferable_decisions:
+  - carry factor identity across panels
+  - combine raw points with summary trajectory
+  - reserve radial layouts for true taxonomic hierarchy
+  do_not_transfer:
+  - radial layout for ordinary rectangular matrices
+  - multiple encodings without legend budget
+  - palette changes between factor panels
+  review_status: source-and-visual-reviewed
+  reviewed_at: 2026-09-02
+- atlas_id: ATLAS-TJ-T2TY-F1
+  journal: Nature
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41586-023-06457-y
+  figure_locator: Figure 1
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06457-y/MediaObjects/41586_2023_6457_Fig1_HTML.png
+  asset_sha256: 23e63650aaa5e332612c9a955bfb64fa3f4678034e557f8eff4d2a3c95f435d1
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/T2T-F1.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/arangrhie/T2T-HG002Y
+  data_url: https://github.com/marbl/CHM13
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: bfac4fa60864dc101571dd1b6c91d9b5639b8553
+  code_path: igv_sessions/Fig1_Overview.xml
+  article_license_status: verify-publisher-rights; no-CC-link-in-reviewed-page
+  code_license_status: no-root-license-found; local-review-only
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - genomics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-structure
+  - repeat-landscape
+  actual_figure_reviewed: true
+  visual_observations:
+  - 全染色体结构注释轨道对齐；参考对齐带在顶部；序列相似性三角在底部；图例独立右列
+  transferable_decisions: &id001
+  - 固定基因组组装和窗口，结构与信号分层
+  - 甲基化比例/百分数显式换算；各技术量纲独立标注
+  do_not_transfer: &id002
+  - IGV会话不包含完整论文组图排版及StainedGlass图
+  - 同一供体的CpG不当独立供体重复
+  - 跨平台高相关不证明一致
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-001
+- atlas_id: ATLAS-TJ-T2TY-F3
+  journal: Nature
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41586-023-06457-y
+  figure_locator: Figure 3
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06457-y/MediaObjects/41586_2023_6457_Fig3_HTML.png
+  asset_sha256: 78a958829b0cfb72374fabe5ece3a3599b45fec29e4c1d028e468196aead3296
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/T2T-F3.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/arangrhie/T2T-HG002Y
+  data_url: https://github.com/marbl/CHM13
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: bfac4fa60864dc101571dd1b6c91d9b5639b8553
+  code_path: igv_sessions/Fig3_Centromere.xml; epigenetics/r_analysis/220712_methylation_analysis.Rmd
+  article_license_status: verify-publisher-rights; no-CC-link-in-reviewed-page
+  code_license_status: no-root-license-found; local-review-only
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - chromatin
+  - genomics
+  - epigenomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - signal-profile
+  - genomic-signal-track
+  - centromere-structure
+  - cross-platform-methylation
+  actual_figure_reviewed: true
+  visual_observations:
+  - 局部着丝粒结构、ONT/HiFi甲基化和CENP-A轨道共坐标；同一区域淡色背景贯穿轨道；右列图例与小树
+  transferable_decisions: *id001
+  do_not_transfer: *id002
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: partial_processed_track_panels_reproduced
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-001
+  reproduction_evidence: benchmark/library/nature-genomics-multiomics/data/metadata/reproduction-status.json
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-HPRC-F2
+  journal: Nature
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41586-023-05896-x
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-05896-x/MediaObjects/41586_2023_5896_Fig2_HTML.png
+  asset_sha256: d0692450fc563532b36de430dd840624465a7757afc0a3b39e307492874307a7
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/HPRC-F2.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/jonassibbesen/hprc-rnaseq-analyses-scripts
+  data_url: https://github.com/human-pangenomics/HPP_Year1_Data_Freeze_v1.0
+  code_status: related-code-reviewed; figure-script-not-bound
+  code_revision: 81141c419b948925d34f486187522b51675f3404
+  code_path: figure-script-not-bound; RNA-related code reviewed separately
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - genomics
+  - transcriptomics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - transcriptome-annotation
+  - gene-copy-number
+  actual_figure_reviewed: true
+  visual_observations:
+  - 注释百分比显示单个组装点；基因拷贝数频数与气泡/条组合；局部共线性单独成面板
+  transferable_decisions: &id003
+  - 区分基因、基因家族、组装和样本分母
+  - 方法用形状、参考用颜色；高密度读数采用分箱
+  do_not_transfer: &id004
+  - RNA仓库不能作为Fig.2全部源码证明
+  - ED10b资产是precision/recall点，图注提及分层曲线和1KG；对应差异待核对
+  - 缺失方法组合不要以零值造柱；比例与表达误差分开
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-002
+- atlas_id: ATLAS-TJ-HPRC-ED10
+  journal: Nature
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41586-023-05896-x
+  figure_locator: Extended Data Figure 10
+  figure_asset_url: https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41586-023-05896-x/MediaObjects/41586_2023_5896_Fig16_ESM.jpg
+  asset_sha256: 10feffd0099ed65b4f940410df09ab54adaeac52d3d3df5dcb93404378ee2269
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/HPRC-F16.jpg
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/jonassibbesen/hprc-rnaseq-analyses-scripts
+  data_url: https://github.com/human-pangenomics/HPP_Year1_Data_Freeze_v1.0
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 81141c419b948925d34f486187522b51675f3404
+  code_path: evaluation/mapping/simulation/plot_vg_sim_overlap_hprc_r1.R
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - genomics
+  - transcriptomics
+  - epigenomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  - MO-METRIC-001
+  scientific_tasks:
+  - pangenome-evaluation
+  - mapping-benchmark
+  - allelic-read-count
+  actual_figure_reviewed: true
+  visual_observations:
+  - RNA映射precision/recall点；ChIP/ATAC峰比例小提琴；等位计数六边形分箱与log刻度；样本分母分别标注
+  transferable_decisions: *id003
+  do_not_transfer: *id004
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: panel_b_author_table_metrics_reproduced
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-002
+  reproduction_evidence: benchmark/library/nature-genomics-multiomics/data/metadata/reproduction-status.json
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-SCENICPLUS-F2
+  journal: Nature Methods
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41592-023-01938-4
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-023-01938-4/MediaObjects/41592_2023_1938_Fig2_HTML.png
+  asset_sha256: c41e2ef665f57726900bdebb0ac2617f6f9e3483637a34ecc36cba54cb4c2317
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/SCENIC-F2.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/aertslab/scenicplus_analyses
+  data_url: https://scenicplus.readthedocs.io/
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 81c961927674fd4a15026247afbfc827b7646eeb
+  code_path: Figure_2.md; Figure_2.md
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: no-root-license-found; local-review-only
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - transcriptomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - regulatory-module
+  - regulatory-network
+  - genomic-signal-track
+  actual_figure_reviewed: true
+  visual_observations:
+  - 表达颜色与RSS点面积双编码；按行归一化的非对称区域重叠；TF网络、聚合ChIP和同坐标轨道互证
+  transferable_decisions: &id005
+  - 双指标给独立图例；细胞类型排序固定
+  - 网络选择主要TF与高变靶标；大图拆成可读子图
+  - 模拟箭头固定原始坐标并声明预测性质
+  do_not_transfer: &id006
+  - 源码Figure_5.md对应发表Figure 4；Figure_4.md是肝脏分析，不能按编号绑定
+  - 区域交集按行集合数除，不是对称相关矩阵
+  - 特征重要性、RSS和表达不是P值；模拟不当因果实验
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-003
+- atlas_id: ATLAS-TJ-SCENICPLUS-F4
+  journal: Nature Methods
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41592-023-01938-4
+  figure_locator: Figure 4
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-023-01938-4/MediaObjects/41592_2023_1938_Fig4_HTML.png
+  asset_sha256: c264702323ad8a03217dbbe486dfdcf322d4f4dd1b2c36a3ed04950dffbef27d
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/SCENIC-F4.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/aertslab/scenicplus_analyses
+  data_url: https://scenicplus.readthedocs.io/
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 81c961927674fd4a15026247afbfc827b7646eeb
+  code_path: Figure_5.md
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: no-root-license-found; local-review-only
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - transcriptomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - perturbation-simulation
+  - regulatory-module
+  actual_figure_reviewed: true
+  visual_observations:
+  - PCA标细胞系；模拟/实测logFC并列；扰动箭头和PC1 shift热图；预测与实测标签明确
+  transferable_decisions: *id005
+  do_not_transfer: *id006
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-003
+- atlas_id: ATLAS-TJ-GLUE-F3
+  journal: Nature Biotechnology
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41587-022-01284-4
+  figure_locator: Figure 3
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-022-01284-4/MediaObjects/41587_2022_1284_Fig3_HTML.png
+  asset_sha256: 67e7426d43ac0bd58700ec64dd273ed415abdcca2f606b2e7af9cb7ec2a3305e
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/GLUE-F3.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/gao-lab/GLUE
+  data_url: https://github.com/gao-lab/GLUE/tree/v0.2.0/data
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 38726c508909e62a83326d2a7fed93dce438c8cb
+  code_path: experiments/TripleOmics/s01_preprocessing.py; experiments/TripleOmics/s03_markers.py;
+    experiments/TripleOmics/s04_reg_contrib.py
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - epigenomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - triple-omics-integration
+  - marker-overlap
+  - multi-omics-regression
+  actual_figure_reviewed: true
+  visual_observations:
+  - 同一联合UMAP按RNA、甲基化、ATAC拆面板；模态混合单独显示；标记交集FDR和逐基因R²另列
+  transferable_decisions: &id007
+  - 联合嵌入保持坐标与类别字典；同时展示生物验证指标
+  - 共同可检测基因作三集合背景；单独记录各模态变换
+  - 推断调控边与pcHi-C/eQTL/ChIP实验证据分轨
+  do_not_transfer: &id008
+  - 整合混合不证明生物学正确
+  - 源码R²为fit与score同一X/y，不当留出集性能
+  - 负向甲基化标记和正向RNA/ATAC标记不可同向筛选
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-004
+- atlas_id: ATLAS-TJ-GLUE-F4
+  journal: Nature Biotechnology
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41587-022-01284-4
+  figure_locator: Figure 4
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-022-01284-4/MediaObjects/41587_2022_1284_Fig4_HTML.png
+  asset_sha256: 57b98bafd7fe8bf42c50aea8c35d0bd6752b17771a8e6d01caa78e99bd8c10e6
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/GLUE-F4.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/gao-lab/GLUE
+  data_url: https://github.com/gao-lab/GLUE/tree/v0.2.0/data
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 38726c508909e62a83326d2a7fed93dce438c8cb
+  code_path: experiments/RegInf/s06_genomic_tracks.py
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - regulatory-inference
+  - genomic-signal-track
+  - method-benchmark
+  actual_figure_reviewed: true
+  visual_observations:
+  - 距离分层箱图；score/相关联合分布；ROC；共享基因组窗口的推断和pcHi-C/eQTL/ChIP轨道分层
+  transferable_decisions: *id007
+  do_not_transfer: *id008
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-004
+- atlas_id: ATLAS-TJ-NUMBAT-F2
+  journal: Nature Biotechnology
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41587-022-01468-y
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-022-01468-y/MediaObjects/41587_2022_1468_Fig2_HTML.png
+  asset_sha256: fbbf96ed767f999722d8e634c7d378aa30fbfd52f80e1f34d1043d8e044af95a
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/Numbat-F2.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/kharchenkolab/NumbatAnalysis
+  data_url: https://github.com/kharchenkolab/NumbatAnalysis/tree/main/data
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: bf181ad60fd6e7e10e1b0cf9041ac43be9864c41
+  code_path: notebooks/benchmark_sc.ipynb; notebooks/phylogeny27522.ipynb
+  article_license_status: verify-publisher-rights; no-CC-link-in-reviewed-page
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - genomics
+  - transcriptomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  - MO-METRIC-001
+  scientific_tasks:
+  - copy-number-inference
+  - allelic-inference
+  - method-benchmark
+  - modality-validation
+  actual_figure_reviewed: true
+  visual_observations:
+  - DNA与scRNA表达/等位比例共坐标；复用tSNE呈后验；方法事件条带共享染色体边界；样本性能点与事件AUC另列
+  transferable_decisions:
+  - 保持CNV状态字典、基因组边界和后验0–1独立图例
+  - 性能点绑定样本或事件ID；参考DNA验证与RNA推断分层
+  do_not_transfer:
+  - 原论文RNA与等位/相位联合推断，不混入后来RNA+ATAC扩展
+  - 源码precision变量实际存specificity，ROC x=1-specificity
+  - posterior不是P值；克隆/事件不当独立供体
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-005
+- atlas_id: ATLAS-TJ-SCBASSET-F4
+  journal: Nature Methods
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41592-022-01562-8
+  figure_locator: Figure 4
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-022-01562-8/MediaObjects/41592_2022_1562_Fig4_HTML.png
+  asset_sha256: ad311f45fd39e43603b6c64bdf71822ef0f9661d3bad1b06767dc512e0c1e4c1
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/scBasset-F4.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/calico/scBasset
+  data_url: https://github.com/calico/scBasset
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: aed3a6f713091fd988196b297e9c06e092ff1d22
+  code_path: scripts_for_review/multiome_PBMC/snapatac/plot.ipynb
+  article_license_status: verify-publisher-rights; no-CC-link-in-reviewed-page
+  code_license_status: Apache-2.0
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - transcriptomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - denoising-benchmark
+  - paired-method-comparison
+  actual_figure_reviewed: true
+  visual_observations:
+  - 原始/去噪矩阵并列；配对方法指标恒等线散点并以深度着色；模态混合和配对距离另列
+  transferable_decisions: &id009
+  - 同一TF/细胞作为方法匹配键；表达/活性色标分别标单位
+  - ISM比较共用序列与位置；真实PWM与模型贡献分开
+  - 图区及图例留白按最终尺寸重验
+  do_not_transfer: &id010
+  - 原文单侧检验不能未经意向确认迁移
+  - TF表达不是活性真值；细胞间重复不当供体重复
+  - Fig.4完整成图脚本未定位；示例仅部分内容映射
+  - Dec2022 correction adds benchmark citations; check before reuse
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-006
+- atlas_id: ATLAS-TJ-SCBASSET-F5
+  journal: Nature Methods
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41592-022-01562-8
+  figure_locator: Figure 5
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-022-01562-8/MediaObjects/41592_2022_1562_Fig5_HTML.png
+  asset_sha256: ea1c6a4f360ad64501f3771d1ba43a3183c0369605792845d6efada60412feea
+  local_asset: library/nature-genomics-multiomics/sources/publication-figures/scBasset-F5.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/calico/scBasset
+  data_url: https://github.com/calico/scBasset
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: aed3a6f713091fd988196b297e9c06e092ff1d22
+  code_path: examples/PBMC_multiome/score_motif.ipynb; examples/ISM/ism.ipynb
+  article_license_status: verify-publisher-rights; no-CC-link-in-reviewed-page
+  code_license_status: Apache-2.0
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - transcriptomics
+  - multi-omics
+  patterns:
+  - MULTI-EVIDENCE-001
+  - MO-METRIC-001
+  scientific_tasks:
+  - tf-activity-validation
+  - motif-importance
+  - paired-method-comparison
+  actual_figure_reviewed: true
+  visual_observations:
+  - 同一UMAP中表达与两种TF活性分别色标；配对TF指标；PR曲线；ISM序列共位置；细胞群分布另列
+  transferable_decisions: *id009
+  do_not_transfer: *id010
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: panel_b_data_and_statistics_reproduced
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-006
+  reproduction_evidence: benchmark/library/nature-genomics-multiomics/data/metadata/reproduction-status.json
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-GLUE-F2
+  journal: Nature Biotechnology
+  year: 2022
+  paper_url: https://www.nature.com/articles/s41587-022-01284-4
+  figure_locator: Figure 2
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41587-022-01284-4/MediaObjects/41587_2022_1284_Fig2_HTML.png
+  asset_sha256: 365cd0ae70e33c3e72615b882fc34a06c5c3a9b811291c1b84ae97b75169207a
+  local_asset: benchmark/library/nature-genomics-multiomics/data/metadata/source-figures/GLUE-Fig2.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/gao-lab/GLUE
+  data_url: https://github.com/gao-lab/GLUE/tree/v0.2.0/data
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 38726c508909e62a83326d2a7fed93dce438c8cb
+  code_path: evaluation/workflow/scripts/benchmark.R
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: MIT
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - epigenomics
+  - multi-omics
+  - distribution
+  patterns:
+  - DIST-BAR-RAW-001
+  scientific_tasks:
+  - group-distribution
+  - method-benchmark
+  actual_figure_reviewed: true
+  visual_observations:
+  - 方法指标按数据集或验证任务分组，显示原始评价点和分布/均值误差；方法颜色固定
+  transferable_decisions:
+  - 固定指标定义、ID和分母，区分随机种子、扰动和生物供体；原始点与汇总共同显示
+  do_not_transfer:
+  - 作者处理结果复算不等于从原始读段重训练；缺失不补零；不把不同方法基因集合当相同总体
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: panel_c_author_table_metrics_reproduced
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-004
+  reproduction_evidence: benchmark/library/nature-genomics-multiomics/data/metadata/reproduction-status.json
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-SCENICPLUS-F3
+  journal: Nature Methods
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41592-023-01938-4
+  figure_locator: Figure 3
+  figure_asset_url: https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41592-023-01938-4/MediaObjects/41592_2023_1938_Fig3_HTML.png
+  asset_sha256: a94db4995b175448edb410e12527128c9916201b672a71a5956e4646289fc465
+  local_asset: benchmark/library/nature-genomics-multiomics/data/metadata/source-figures/SCENIC-Fig3.png
+  reviewed_by: Codex-visual-and-selected-code-inspection
+  review_method: opened-publisher-original-asset; tool-display-may-resize
+  code_url: https://github.com/aertslab/scenicplus_analyses
+  data_url: https://scenicplus.readthedocs.io/
+  code_status: selected-analysis-code-reviewed; partial-panel-binding
+  code_revision: 81c961927674fd4a15026247afbfc827b7646eeb
+  code_path: Benchmarks/SCENIC+/Methods_benchmark.Rmd
+  article_license_status: CC-BY-4.0-link-present; check third-party assets
+  code_license_status: no-root-license-found; local-review-only
+  license_status: local-reference-only; verify-rights-before-redistribution
+  domains:
+  - single-cell
+  - chromatin
+  - transcriptomics
+  - multi-omics
+  - distribution
+  patterns:
+  - DIST-BOX-001
+  scientific_tasks:
+  - group-distribution
+  - method-benchmark
+  actual_figure_reviewed: true
+  visual_observations:
+  - 方法指标按数据集或验证任务分组，显示原始评价点和分布/均值误差；方法颜色固定
+  transferable_decisions:
+  - 固定指标定义、ID和分母，区分随机种子、扰动和生物供体；原始点与汇总共同显示
+  do_not_transfer:
+  - 作者处理结果复算不等于从原始读段重训练；缺失不补零；不把不同方法基因集合当相同总体
+  review_status: source-visual-and-selected-code-reviewed
+  reviewed_at: '2026-09-28'
+  evidence_level: candidate
+  reproduction_status: not_run
+  learning_case: library/nature-genomics-multiomics/data/metadata/cases.json#NATURE-OMICS-003
+- atlas_id: ATLAS-TJ-TOMATO-F2-CURVE
+  journal: Nature Genetics
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41588-023-01340-y
+  figure_locator: Fig. 2a
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_Fig2_HTML.png
+  asset_sha256: 2e98ef7f7928f7fb0701fea38fd712d3fb71f34c6f9f6d34550f4bfb59eb0a12
+  local_asset: library/pangenome/tomato-superpangenome/evidence/Fig2.png
+  code_url: https://github.com/HongboDoll/TomatoSuperPanGenome
+  code_status: analysis-code-reviewed; original Fig2 renderer absent
+  data_url: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_MOESM6_ESM.xlsx
+  code_revision: f31cab43d03de1508b9ed917a17854ba9c2a6765
+  code_path: Pan-genome/pan_genome.sh
+  article_license_status: check article licence and third party assets
+  code_license_status: no root LICENSE observed; local study only
+  license_status: local-reference-only
+  domains:
+  - genomics
+  - comparative-genomics
+  patterns:
+  - GEN-PAN-CURVE-001
+  scientific_tasks:
+  - pangenome-accumulation
+  actual_figure_reviewed: true
+  reviewed_by: Codex
+  review_method: publisher Fig2 opened; source worksheet and code audited
+  reviewed_at: '2026-09-29'
+  review_status: source-visual-and-selected-code-reviewed
+  visual_observations:
+  - Pan/Core用两种颜色；横轴为新增基因组数；组合差异与趋势分层。
+  transferable_decisions:
+  - 全部子集的均值与范围；保留家族分母，不生成生物学置信区间。
+  do_not_transfer:
+  - 不迁移饼图；不把组合当独立重复或凭曲线判定开放性。
+  evidence_level: candidate
+  reproduction_status: processed_source_data_replot
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-TOMATO-F2-SV
+  journal: Nature Genetics
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41588-023-01340-y
+  figure_locator: Fig. 2b
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_Fig2_HTML.png
+  asset_sha256: 2e98ef7f7928f7fb0701fea38fd712d3fb71f34c6f9f6d34550f4bfb59eb0a12
+  local_asset: library/pangenome/tomato-superpangenome/evidence/Fig2.png
+  code_url: https://github.com/HongboDoll/TomatoSuperPanGenome
+  code_status: analysis-code-reviewed; original Fig2 renderer absent
+  data_url: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_MOESM6_ESM.xlsx
+  code_revision: f31cab43d03de1508b9ed917a17854ba9c2a6765
+  code_path: Structural variation
+  article_license_status: check article licence and third party assets
+  code_license_status: no root LICENSE observed; local study only
+  license_status: local-reference-only
+  domains:
+  - genomics
+  - comparative-genomics
+  patterns:
+  - GEN-PAN-SV-001
+  scientific_tasks:
+  - pangenome-sv-composition
+  actual_figure_reviewed: true
+  reviewed_by: Codex
+  review_method: publisher Fig2 opened; source worksheet and code audited
+  reviewed_at: '2026-09-29'
+  review_status: source-visual-and-selected-code-reviewed
+  visual_observations:
+  - 12材料同参考SV类型堆积条形；类型颜色固定，总量保留。
+  transferable_decisions:
+  - 保持材料顺序和绝对计数；横置条形预留完整标签，固定类型色。
+  do_not_transfer:
+  - 堆积条形不代表跨材料唯一事件总数；不把CNV/TRANS全部纳入图基因组。
+  evidence_level: candidate
+  reproduction_status: processed_source_data_replot
+  human_acceptance: pending
+- atlas_id: ATLAS-TJ-TOMATO-F2-DENSITY
+  journal: Nature Genetics
+  year: 2023
+  paper_url: https://www.nature.com/articles/s41588-023-01340-y
+  figure_locator: Fig. 2c
+  figure_asset_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_Fig2_HTML.png
+  asset_sha256: 2e98ef7f7928f7fb0701fea38fd712d3fb71f34c6f9f6d34550f4bfb59eb0a12
+  local_asset: library/pangenome/tomato-superpangenome/evidence/Fig2.png
+  code_url: https://github.com/HongboDoll/TomatoSuperPanGenome
+  code_status: analysis-code-reviewed; original Fig2 renderer absent
+  data_url: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41588-023-01340-y/MediaObjects/41588_2023_1340_MOESM6_ESM.xlsx
+  code_revision: f31cab43d03de1508b9ed917a17854ba9c2a6765
+  code_path: Structural variation
+  article_license_status: check article licence and third party assets
+  code_license_status: no root LICENSE observed; local study only
+  license_status: local-reference-only
+  domains:
+  - genomics
+  - comparative-genomics
+  patterns:
+  - GEN-PAN-DENSITY-001
+  scientific_tasks:
+  - pangenome-window-density
+  actual_figure_reviewed: true
+  reviewed_by: Codex
+  review_method: publisher Fig2 opened; source worksheet and code audited
+  reviewed_at: '2026-09-29'
+  review_status: source-visual-and-selected-code-reviewed
+  visual_observations:
+  - 12染色体共享位置；基因/重复及四类SV分层；每轨道为作者归一化量。
+  transferable_decisions:
+  - 按染色体分面显示作者归一化密度；空窗口留空，各层不比较绝对事件量。
+  do_not_transfer:
+  - 不冒充Circos完全复现；不把归一化色值当绝对密度，不填补缺失窗口。
+  evidence_level: candidate
+  reproduction_status: processed_source_data_replot
+  human_acceptance: pending
+- atlas_id: ATLAS-MBE-MSAD040-F1
+  journal: Molecular Biology and Evolution
+  year: 2023
+  paper_url: https://academic.oup.com/mbe/article/40/3/msad040/7048473
+  figure_locator: Figure 1
+  figure_asset_url: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/69b9/10036996/a7462c7ae554/msad040f1.jpg
+  asset_sha256: 42620107b0edefc2f4325d8ab960d24d0f71bfd01cce05cef9e49ad96520ad7f
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-JPG
+  code_url: null
+  code_status: Not identified in article links or DOI-specific GitHub web search;
+    upstream software is not author plotting code
+  code_revision: null
+  code_path: null
+  article_license_status: CC BY-NC 4.0
+  code_license_status: not-identified
+  license_status: noncommercial-attributed-source-learning
+  domains:
+  - genomics
+  - multi-omics
+  - comparative-genomics
+  patterns:
+  - GEN-SUMMARY-BAR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-summary
+  - integrated-evidence
+  actual_figure_reviewed: true
+  visual_observations: &id011
+  - 模块并列整合基因组、表达与代谢证据；不同量纲各设色标
+  - 机制箭头与定量证据分开；重复序列总量不能替代窗口轨道
+  transferable_decisions: &id012
+  - 源表汇总仅画实际数值；不虚构原始重复或误差
+  - 固定物种色，横向条形保留长类别与明确单位
+  do_not_transfer: &id013
+  - 未提供逐样本数据时不反推表达量或显著性
+  - 不把软件链接称为作者绘图源码，不把高omega直接称为正选择
+  review_status: source-and-visual-reviewed
+  reviewed_at: '2026-09-29'
+- atlas_id: ATLAS-MBE-MSAD040-F2
+  journal: Molecular Biology and Evolution
+  year: 2023
+  paper_url: https://academic.oup.com/mbe/article/40/3/msad040/7048473
+  figure_locator: Figure 2
+  figure_asset_url: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/69b9/10036996/9e2a82bd4d70/msad040f2.jpg
+  asset_sha256: 7a49d773989fd0d98d6186ca7c3c6894356c08a55190a2797df7c9631185dd82
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-JPG
+  code_url: null
+  code_status: Not identified in article links or DOI-specific GitHub web search;
+    upstream software is not author plotting code
+  code_revision: null
+  code_path: null
+  article_license_status: CC BY-NC 4.0
+  code_license_status: not-identified
+  license_status: noncommercial-attributed-source-learning
+  domains:
+  - genomics
+  - multi-omics
+  - comparative-genomics
+  patterns:
+  - GEN-SUMMARY-BAR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-summary
+  - integrated-evidence
+  actual_figure_reviewed: true
+  visual_observations: *id011
+  transferable_decisions: *id012
+  do_not_transfer: *id013
+  review_status: source-and-visual-reviewed
+  reviewed_at: '2026-09-29'
+- atlas_id: ATLAS-MBE-MSAD040-F3
+  journal: Molecular Biology and Evolution
+  year: 2023
+  paper_url: https://academic.oup.com/mbe/article/40/3/msad040/7048473
+  figure_locator: Figure 3
+  figure_asset_url: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/69b9/10036996/9a473d6cef61/msad040f3.jpg
+  asset_sha256: d5bd5c33a1ff5d407c0ce609f00fe5ea1df134027ac2b533565ecafc7840fe53
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-JPG
+  code_url: null
+  code_status: Not identified in article links or DOI-specific GitHub web search;
+    upstream software is not author plotting code
+  code_revision: null
+  code_path: null
+  article_license_status: CC BY-NC 4.0
+  code_license_status: not-identified
+  license_status: noncommercial-attributed-source-learning
+  domains:
+  - genomics
+  - multi-omics
+  - comparative-genomics
+  patterns:
+  - GEN-SUMMARY-BAR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-summary
+  - integrated-evidence
+  actual_figure_reviewed: true
+  visual_observations: *id011
+  transferable_decisions: *id012
+  do_not_transfer: *id013
+  review_status: source-and-visual-reviewed
+  reviewed_at: '2026-09-29'
+- atlas_id: ATLAS-MBE-MSAD040-F4
+  journal: Molecular Biology and Evolution
+  year: 2023
+  paper_url: https://academic.oup.com/mbe/article/40/3/msad040/7048473
+  figure_locator: Figure 4
+  figure_asset_url: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/69b9/10036996/04c79c217c8b/msad040f4.jpg
+  asset_sha256: c2be5da281ab7233a008bbc2cff52499278af96bfa4737383fd3c60c2d71b1e0
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-JPG
+  code_url: null
+  code_status: Not identified in article links or DOI-specific GitHub web search;
+    upstream software is not author plotting code
+  code_revision: null
+  code_path: null
+  article_license_status: CC BY-NC 4.0
+  code_license_status: not-identified
+  license_status: noncommercial-attributed-source-learning
+  domains:
+  - genomics
+  - multi-omics
+  - comparative-genomics
+  patterns:
+  - GEN-SUMMARY-BAR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-summary
+  - integrated-evidence
+  actual_figure_reviewed: true
+  visual_observations: *id011
+  transferable_decisions: *id012
+  do_not_transfer: *id013
+  review_status: source-and-visual-reviewed
+  reviewed_at: '2026-09-29'
+- atlas_id: ATLAS-MBE-MSAD040-F5
+  journal: Molecular Biology and Evolution
+  year: 2023
+  paper_url: https://academic.oup.com/mbe/article/40/3/msad040/7048473
+  figure_locator: Figure 5
+  figure_asset_url: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/69b9/10036996/57d151186c67/msad040f5.jpg
+  asset_sha256: 05dfd3867e5cc72be5b4af3cc1ecded5451bfaa2e803c1ce0b421c55d7128d17
+  reviewed_by: Codex-visual-inspection
+  review_method: opened-original-resolution-publication-JPG
+  code_url: null
+  code_status: Not identified in article links or DOI-specific GitHub web search;
+    upstream software is not author plotting code
+  code_revision: null
+  code_path: null
+  article_license_status: CC BY-NC 4.0
+  code_license_status: not-identified
+  license_status: noncommercial-attributed-source-learning
+  domains:
+  - genomics
+  - multi-omics
+  - comparative-genomics
+  patterns:
+  - GEN-SUMMARY-BAR-001
+  - MULTI-EVIDENCE-001
+  scientific_tasks:
+  - genome-summary
+  - integrated-evidence
+  actual_figure_reviewed: true
+  visual_observations: *id011
+  transferable_decisions: *id012
+  do_not_transfer: *id013
+  review_status: source-and-visual-reviewed
+  reviewed_at: '2026-09-29'

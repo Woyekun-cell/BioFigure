@@ -1,0 +1,2 @@
+Allowed synthetic author-material fixture for distribution.
+The supplied source example shows grouped raw points and a compact comparison layout.

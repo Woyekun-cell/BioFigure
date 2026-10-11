@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "batch": "scidraw-learning-20260925-02",
+  "reviewed_at": "2026-09-25",
+  "study_policy": {
+    "source_code_and_image_read": true,
+    "new_implementation": true,
+    "synthetic_data_except_source_visible_values_used_for_layout": true,
+    "model_weights_changed": false,
+    "user_visual_approval": "pending"
+  },
+  "batch_status": "source-compared-needs-revision",
+  "high_fidelity_pass": 0,
+  "cases": [
+    {
+      "case_id": "SCICASE-101",
+      "source_title": "堆积柱形图+散点图",
+      "source_url": "https://mp.weixin.qq.com/s/13HZqQU5AhK3-Ib2UKt4YQ",
+      "source_code": {
+        "archive_file_count": 5,
+        "combined_sha256": "e0962c681b6c2a132ec90d22470dfa48aff68b7eb19fcba7272429e762981aa4",
+        "packages": [
+          "cowplot",
+          "dplyr",
+          "forcats",
+          "ggplot2",
+          "gridExtra"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_01.R",
+            "sha256": "3eda6ecff7f546c5d943378060731c404f1fd66eb1ae76014a373c2168f8ae53"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_02.R",
+            "sha256": "c3fd2c6caa60198057bded008f1b56408f19111c6030f71195c00710bc14960b"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_03.R",
+            "sha256": "1b76ddfccc08fb6dd5cd9d3f31cf168948b516addded02724c55d782f2a577a1"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_04.R",
+            "sha256": "87722d42cef1da05a228ef0d6ec47f740b382f7a666b89a4320cea9c9d1500c3"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积柱形图+散点图/code_05.R",
+            "sha256": "da98c61987ad2fba095f2d82098383a617d11faa19b6e145ab806006bbf18938"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-101.png",
+        "sha256": "d7735664a00e4b576f9c7b66f7a75caed6588277d468ba8a766b359752e18b22",
+        "pixels": [
+          800,
+          533
+        ],
+        "visual_id": "SCIVIS-103"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "cowplot",
+          "gridExtra",
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-101_isotype.csv",
+            "sha256": "68d1dd3622e4069b857b486e91182e0e750ad2cca001707a13b69def3c63d4a3"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-101_rate.csv",
+            "sha256": "62389c5d85637e9ab66f73e974aa6fe38f72c6eea028346297213b49e39d3608"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-101_shm.csv",
+            "sha256": "43d0bbe2c0eec12377edc39b6fef63e521d5cb8f0cbef357edbc5ce8395dea00"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-101.png",
+        "png_sha256": "b42acb7ae94694f9b1bc95553badb2a52e971eeb6ae3d8902aa63ed1420ab94c",
+        "pixels": [
+          2173,
+          1322
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-01.png",
+        "sha256": "11822db0e121d16a0892312486a86b55e2a1df5132282ffd244fe0b0e4c480d2"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "三列共用细胞顺序，分别抽取图例；SHM点按源码shape 16/size 2.5/stroke 0保留实心无描边。比例结构按模拟样本复核；类别名与字体/列间距仍需人工比较。"
+      }
+    },
+    {
+      "case_id": "SCICASE-102",
+      "source_title": "堆积点图 + 内嵌饼图",
+      "source_url": "https://mp.weixin.qq.com/s/4ambuuw1fI07X0PoipIGsA",
+      "source_code": {
+        "archive_file_count": 5,
+        "combined_sha256": "191e023564048b2c6839c1ff9d4a40ad00019a814da48552ebde44154eebc013",
+        "packages": [
+          "ggrepel",
+          "patchwork",
+          "tidyverse"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_01.R",
+            "sha256": "9ec73a3e537eaaa13acb0199d8564574cc90330a4873308c39314633b7d12720"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_02.R",
+            "sha256": "1e054a7162d1dc7e67d76da93c56f1db7d3358d7651b2b061b9b644133d2dd46"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_03.R",
+            "sha256": "b44c8d3e050931c50f5ead22b3809aa3847a9938353c87aa109c54fdbd824164"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_04.R",
+            "sha256": "6326472fc1ad456658bcc0bbdd2b50fc8dfde831ee495c5e04fd01ba7ed6377f"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/堆积点图 + 内嵌饼图/code_05.R",
+            "sha256": "abf0b23ff5135e16bed01a7add06ff3eb8c4a1ce4ee824189aa13bb9195504a0"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-102.png",
+        "sha256": "532a830f1fe0a65a126a8714b07cf46e31d641b0d374714d7b3c9da231e91a3c",
+        "pixels": [
+          800,
+          742
+        ],
+        "visual_id": "SCIVIS-104"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "patchwork",
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-102.csv",
+            "sha256": "96782b40a1904b1698a13821db70e4021b3936f71c87615cb0ad51281b6371de"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-102_pie.csv",
+            "sha256": "c25cff66070b18df80cc6dc8a3a0c367e9065fcd1d0e691f93792c96f5686a50"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-102.png",
+        "png_sha256": "65dae879700f60e31ce5c53038465ae1aa2b6964569ca127503b85d11578b9ee",
+        "pixels": [
+          1889,
+          1653
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-01.png",
+        "sha256": "11822db0e121d16a0892312486a86b55e2a1df5132282ffd244fe0b0e4c480d2"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "阶梯点阵点按源码shape 21/size 4.5/stroke 0.8绘制；已校正三类颜色与图例（红/白/桃）。嵌入饼图计数据原图可见值，其余输入模拟；嵌图布局仍需细节修订。"
+      }
+    },
+    {
+      "case_id": "SCICASE-108",
+      "source_title": "分组-环状柱形图",
+      "source_url": "https://mp.weixin.qq.com/s/15YaYQ8sKLOXf37odotKYA",
+      "source_code": {
+        "archive_file_count": 3,
+        "combined_sha256": "0cfea6dd8a8045d25e560645e473a3e29e9c21b162e25bea5256a54859a6b2b6",
+        "packages": [
+          "circlize",
+          "dplyr",
+          "readxl"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-环状柱形图/code_01.R",
+            "sha256": "6840780954a6686a009baa7712940ee29b402ca4cd80c0822b0ded3794a82e9a"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-环状柱形图/code_02.R",
+            "sha256": "19356ee3307d9b42c97b125664d628e028cb3472b6239b5edb7132f243ceb3c6"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/分组-环状柱形图/code_03.R",
+            "sha256": "5fc046dedbe916d86735ab98182cada8cd8726ad923d5dffc4b8b5acd356e697"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-108.png",
+        "sha256": "6bbf52a2f5704f326f403fcf0ecfcd39ee63198cfaa21c1409225e8b58fb6eb4",
+        "pixels": [
+          800,
+          800
+        ],
+        "visual_id": "SCIVIS-110"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "circlize"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-108.csv",
+            "sha256": "5ff193207cae57b8d447e8bf232faad4edad5878ca6c09bb15174b9f85afdd19"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-108.png",
+        "png_sha256": "ad895921580b6dba5d0b4a3d7ea7797da3c0f0489d957b4ab432c86b97b54ce0",
+        "pixels": [
+          1700,
+          1700
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-02.png",
+        "sha256": "2ce2c9c4c58175c6e59dec1fb14dca3b07005cdb7ba8d2e8b4c45ade1426d03a"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "两组扇区、组间间隔、组内排序、首扇区径向轴及内圈弯曲组名按源码结构重建。标签和值为模拟，轴附近及高密度类别文字仍有局部拥挤。"
+      }
+    },
+    {
+      "case_id": "SCICASE-109",
+      "source_title": "单组-渐变-环状柱形图",
+      "source_url": "https://mp.weixin.qq.com/s/15YaYQ8sKLOXf37odotKYA",
+      "source_code": {
+        "archive_file_count": 3,
+        "combined_sha256": "c59e340661deafb4a0d2d4a50ec1efd99c27fbfba1cd408df2b22b95e7a78086",
+        "packages": [
+          "RColorBrewer",
+          "circlize",
+          "dplyr",
+          "readxl"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/单组-渐变-环状柱形图/code_01.R",
+            "sha256": "06a88a99568b2a297c822fad73c8c3c70c22a3af09e4ee7a850a3f5fc998008e"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/单组-渐变-环状柱形图/code_02.R",
+            "sha256": "cece307a197e159213c1297310a62d551143185df99be417a8763b9a7524fa48"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-109.png",
+        "sha256": "93f9aae91f9d03bccaa8ad6fad25511edb94d2451438c0ffeff61965dcaf6954",
+        "pixels": [
+          800,
+          800
+        ],
+        "visual_id": "SCIVIS-111"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "circlize",
+          "RColorBrewer"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-109.csv",
+            "sha256": "c520a45ea39de51be4ed9fc91e88a0724d837983cb3fa23c85e7c6d49f87753d"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-109.png",
+        "png_sha256": "79eb5c10148f7fc9c832a4227812e1ab6d0e917f4895aa71fd65a58ce1362c04",
+        "pixels": [
+          1700,
+          1700
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-02.png",
+        "sha256": "2ce2c9c4c58175c6e59dec1fb14dca3b07005cdb7ba8d2e8b4c45ade1426d03a"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "circlize渐变环柱、零基线、城市标签及中心连续色标；标签取自原图可见城市类型但并非完整逐字清单，数值模拟。标签密度和色域方向仍需对照。"
+      }
+    },
+    {
+      "case_id": "SCICASE-111",
+      "source_title": "环状柱形图+饼图",
+      "source_url": "https://mp.weixin.qq.com/s/vizpuhFSYiKTm6cdvaxoZQ",
+      "source_code": {
+        "archive_file_count": 3,
+        "combined_sha256": "d13896c153eff90f7d19ff06347f629c9af4c1710e324600be516e069186cc22",
+        "packages": [
+          "circlize",
+          "dplyr",
+          "grid",
+          "readxl"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/环状柱形图+饼图/code_01.R",
+            "sha256": "864cd4e65a6da1dc15542518e55f0022c507d11041a0baca64fdac63e5dd2745"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/环状柱形图+饼图/code_02.R",
+            "sha256": "deeb60cc362166248a99785c272cdf3da91c3c040328d1578f0bfe960f0e883d"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/环状柱形图+饼图/code_03.R",
+            "sha256": "6bb3b6ec93fe6e8981d245d28fa8f6570f0d1e68927a7fe95f83b765f016c65b"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-111.png",
+        "sha256": "4d66fe9ad4f1fdbedd85d711f45193055e74e741019a489a576b0fd51b7ca6d1",
+        "pixels": [
+          800,
+          800
+        ],
+        "visual_id": "SCIVIS-113"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "circlize",
+          "graphics"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-111.csv",
+            "sha256": "5fa52bdf884d65c6817110b3df1c0af98784e10d232e33d3aa079d3c91fe6381"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-111_pie.csv",
+            "sha256": "b1e7e0ebf41b148bd9cee4131af3796f246013a953cd782b8d4c104dd70a7a2c"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-111.png",
+        "png_sha256": "bafd77498fcd265e17ae891388ffc396ee837bf381239700713123250875274b",
+        "pixels": [
+          1700,
+          1700
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-03.png",
+        "sha256": "c7acbc638760a1b556bc903b680471c7395b7c8f1e161e53eb9d621c49cdf11e"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "环形柱层与中心六区饼图重建；中心百分比依原图可见标注，外圈国家名单和数值为模拟。结构已补齐，尚需核对内外层字号比例。"
+      }
+    },
+    {
+      "case_id": "SCICASE-112",
+      "source_title": "柱形图+点折线图",
+      "source_url": "https://mp.weixin.qq.com/s/2FDViuydPNLybOrfM9eW9w",
+      "source_code": {
+        "archive_file_count": 5,
+        "combined_sha256": "502063b385f574cb02a6530f7f564076ad1eef1a1ecb22ed07b1688eeeceaf61",
+        "packages": [
+          "tidyverse"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_01.R",
+            "sha256": "c34e8926789e7175e0ecab6a54705b83045232b3f4a137411ce0d2720fe68336"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_02.R",
+            "sha256": "77bb24b7f06bbe5b74f1cee1d5b2dda85181272cf7e4fc86e0b4b0e54bd42bef"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_03.R",
+            "sha256": "d1e59ec724de7e47c63c525d4a710b923047e3747adcb1d9427d7f7917b874f0"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_04.R",
+            "sha256": "c12a30e55898cb437375c138d9a9d10faf01020bed059f2142783dfcd99694ed"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/柱形图+点折线图/code_05.R",
+            "sha256": "e7988249442034df796f023a2fd9d47a75473610571ca06c8290f95917f06823"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-112.png",
+        "sha256": "2e0df1cc6cb30109739545ef0a907116eb974f77bc49c268b3557e36902d2999",
+        "pixels": [
+          800,
+          622
+        ],
+        "visual_id": "SCIVIS-114"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-112.csv",
+            "sha256": "12278ecaf7fb072d819fdfa5e96e43a96d6d9403ba4cdfe1c4e82c2bc463e784"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-112.png",
+        "png_sha256": "caab3de7cf0a548193e8263e1838d74e4385a268204ad4101a87f2dfb1d78b0c",
+        "pixels": [
+          1984,
+          1322
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-03.png",
+        "sha256": "c7acbc638760a1b556bc903b680471c7395b7c8f1e161e53eb9d621c49cdf11e"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "柱形与点折线共享类别轴；圆点黑边绿芯size 3.5，虚线line type 3/linewidth .6；副轴按原代码4.2比例反变换。类别和数值模拟；字号、底部标签仍需调整。"
+      }
+    },
+    {
+      "case_id": "SCICASE-113",
+      "source_title": "嵌套柱形图",
+      "source_url": "https://mp.weixin.qq.com/s/2FDViuydPNLybOrfM9eW9w",
+      "source_code": {
+        "archive_file_count": 4,
+        "combined_sha256": "779878df0ce8c01062962fbdff32ff643247382038665473a046ab4b6ff6876f",
+        "packages": [
+          "readxl",
+          "scales",
+          "tidyverse"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/嵌套柱形图/code_01.R",
+            "sha256": "d6e70f9ea88e67fc6071b7840ef4fbbf31cc69817b37801fd996b136d2d51a70"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/嵌套柱形图/code_02.R",
+            "sha256": "6ea84fc1c77abae8dbb3169fde4eeb0de061ee1c916fd883b6ed389ecddd5396"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/嵌套柱形图/code_03.R",
+            "sha256": "128a6ba850d198c9720618cb5fd250c65c5d1cd9227ab410a0dae58fbe8ff946"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/柱形图/嵌套柱形图/code_04.R",
+            "sha256": "97d853f7f3b030923d54fa9b53aeb2adcd3dcab5a613953663a50bb75094c5ea"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-113.png",
+        "sha256": "f60f3365678086dd78e75b1fe5469f46d2750d8c5911b1990461dbad88b830bf",
+        "pixels": [
+          800,
+          400
+        ],
+        "visual_id": "SCIVIS-115"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-113.csv",
+            "sha256": "7c4cf0586dc2600c4ea75b6fabc88b8e5eb959648753b375c2da6b99a4c06c97"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-113_summary.csv",
+            "sha256": "4fe50a2a6f63d78a3f8a1a863828e4cdef3a922c33a99f26654f3f1788619554"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-113.png",
+        "png_sha256": "037a73afd1b9442ad95d4dc593328417c012b58d48a044998338a3c6dc6141ca",
+        "pixels": [
+          1984,
+          1275
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-04.png",
+        "sha256": "219b648cfbab9768a422178a5e4e50f684211889ddf3f615c5e227e199ad88f6"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "双指标嵌套柱、误差线、size 1黑色原始点、黑色柱边linewidth .3、双轴颜色及阈线重建；已把过大的轴字号恢复到最终画布比例。数据模拟，轴范围/图例仍需逐项核对。"
+      }
+    },
+    {
+      "case_id": "SCICASE-116",
+      "source_title": "分面-小提琴图",
+      "source_url": "https://mp.weixin.qq.com/s/Rr5VIMvWEnOCSabPP32gWw",
+      "source_code": {
+        "archive_file_count": 2,
+        "combined_sha256": "b09a8184fac26152bacaad799eb2609b71bf4a71dfddfe7ef9010c41accea367",
+        "packages": [
+          "dplyr",
+          "ggplot2",
+          "ggsignif",
+          "readxl"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/分面-小提琴图/code_01.R",
+            "sha256": "deb2eec2a1257a651274a49b519122fe946efb8b473ba6b55594603198c36441"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/分面-小提琴图/code_02.R",
+            "sha256": "40b6cfd6ad02af2ea63e73959856e0290733411d493ef382c0d2c7b0818b7179"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-116.png",
+        "sha256": "70b2b885888f2af5dfa17ea32d944dac1dd67c6dae28b3a00a2fb47b3f5529b4",
+        "pixels": [
+          800,
+          733
+        ],
+        "visual_id": "SCIVIS-118"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "ggsignif",
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-116.csv",
+            "sha256": "3445ab42e897a4f731522779eb1387941c5f609717ea0a3b885fe74765586799"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-116_annotations.csv",
+            "sha256": "96903c9edd7f6b4500e433defb554b37d27752d2b927d7b89ed23b8ac814e6d5"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-116.png",
+        "png_sha256": "4952db2dfe6ec33ea708c9b7f59e112967a67cd42c8abe39fa242aef4c4be490",
+        "pixels": [
+          1984,
+          1086
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-04.png",
+        "sha256": "219b648cfbab9768a422178a5e4e50f684211889ddf3f615c5e227e199ad88f6"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "三组FDR面板含小提琴、size 2.5/alpha .1样本点、中位数与IQR（分层线宽）及比较。样本值模拟，注释位置仍需调整。"
+      }
+    },
+    {
+      "case_id": "SCICASE-117",
+      "source_title": "比较小提琴图（一）",
+      "source_url": "https://mp.weixin.qq.com/s/HVDv4c_DPHzLhVoDVdLQcg",
+      "source_code": {
+        "archive_file_count": 2,
+        "combined_sha256": "a5d371fc210eef5825827a3186a3142eed6a7683c572ea729d352edc7ddc3049",
+        "packages": [
+          "ggh4x",
+          "ggpubr",
+          "readxl",
+          "tidyverse"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/比较小提琴图（一）/code_01.R",
+            "sha256": "f50a18ee495f492a4fae7db575bf398ddf934deffc1471dd71392a6381fa584a"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/比较小提琴图（一）/code_02.R",
+            "sha256": "ee1b51e4df9a9b3c03f0d894e50fc224526e65510c123cf8709b36e62d2445b5"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-117.png",
+        "sha256": "068bfcc443f0907f42180f91210d45562b254a0b993638ba073265bf4b980f12",
+        "pixels": [
+          800,
+          514
+        ],
+        "visual_id": "SCIVIS-119"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "ggh4x",
+          "ggpubr",
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-117.csv",
+            "sha256": "78b0e3cfc858e7ae7f51974f326bfd55ddd97cf650a0f2ef5cb8eb9b712b46fc"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-117_statistics.csv",
+            "sha256": "0d7a6155f571cf6ddf0a9833e8a6a8d47ecc76ca94173c776c500bf6a9c6b9fd"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-117.png",
+        "png_sha256": "9321da0c19de1195073d751d7541194d8817dc5d2960c1492a3f035fa9c6c12c",
+        "pixels": [
+          1984,
+          944
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-05.png",
+        "sha256": "7a5cae396150081cc8a998d46b7fcc1507f8105fa744bebdae4e9767898c2c12"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "七面板含彩色标题条、Active/Repressive小提琴、白色IQR线宽.6和size 3中位数点；按源码未添加原图没有的散点云。P值位置和图例间距仍需调整。"
+      }
+    },
+    {
+      "case_id": "SCICASE-118",
+      "source_title": "比较小提琴图（二）",
+      "source_url": "https://mp.weixin.qq.com/s/HVDv4c_DPHzLhVoDVdLQcg",
+      "source_code": {
+        "archive_file_count": 2,
+        "combined_sha256": "729903a8ff3cf9f3084b5e76c8ab1b9840b509ea0c8a119858c60ad581b9334c",
+        "packages": [
+          "ggpubr",
+          "grid",
+          "readxl",
+          "rstatix",
+          "tidyverse"
+        ],
+        "files": [
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/比较小提琴图（二）/code_01.R",
+            "sha256": "76b789798f7052fc784e01e7b4f6cf7f8a0930d976ac2884c87d712cc6773327"
+          },
+          {
+            "path": "../Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型/小提琴_箱线图/比较小提琴图（二）/code_02.R",
+            "sha256": "0ad29fce51a5fd50b55fce53976bd3ca5d8c97f0ca6a56cf4f4bfcd11a548b12"
+          }
+        ]
+      },
+      "reference_image": {
+        "path": "data/reference/scidraw/SCICASE-118.png",
+        "sha256": "038a3898f8ecae29eb4829dc3f2cecb9bbcf4663a9c6d4271da805867f3b86b5",
+        "pixels": [
+          800,
+          280
+        ],
+        "visual_id": "SCIVIS-120"
+      },
+      "new_implementation": {
+        "script": "scripts/learn_scidraw_batch2_ten.R",
+        "mode": "source-exposed-independent-reimplementation",
+        "executes_archived_source": false,
+        "reimplementation_packages": [
+          "rstatix",
+          "ggplot2"
+        ],
+        "plot_data_and_statistics": [
+          {
+            "path": "results/learning_validation/batch2/plot_data/SCICASE-118.csv",
+            "sha256": "af6cc3947b6179d8bb12903a2324d5ae782352b8132326aeda66d269cb831cdf"
+          },
+          {
+            "path": "results/learning_validation/batch2/tables/SCICASE-118_statistics.csv",
+            "sha256": "3ffa8e5175560bd0bc9843f2281846a8db960295b57ab99132f8a8b986faa733"
+          }
+        ],
+        "png": "results/learning_validation/batch2/figures/SCICASE-118.png",
+        "png_sha256": "06cab274aec4e5ff16dd2493033801108ed83e1f70a57ef11dd46aa017ae8480",
+        "pixels": [
+          2551,
+          897
+        ]
+      },
+      "comparison_sheet": {
+        "path": "results/learning_validation/batch2/figures/comparison-batch2-05.png",
+        "sha256": "7a5cae396150081cc8a998d46b7fcc1507f8105fa744bebdae4e9767898c2c12"
+      },
+      "review": {
+        "status": "source-compared-needs-revision",
+        "user_review": "pending",
+        "high_fidelity_pass": false,
+        "independent_transfer": "not-tested",
+        "full_size_png_inspection": "performed",
+        "notes": "按原顺序组织CD4/Treg/CD8及10状态；点size .5/alpha .7/抖动宽.2，小提琴宽.5/alpha .6/线宽.5，逐状态检验。数据模拟；括号字号与位置仍需调整。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+pattern_id: GEN-PAN-DENSITY-001
+version: '1.0'
+domain:
+- genomics
+- comparative-genomics
+scientific_task:
+- pangenome-window-density
+message_type: distribution
+data_contract:
+  required:
+  - chrom
+  - start
+  - end
+  - value
+  - track
+  assumptions:
+  - source_units_preserved
+  - missing_not_zero
+geometry:
+  primary: genome
+encoding:
+  color: declared_semantic_dictionary
+renderer_options:
+- ggplot2
+references:
+- atlas://ATLAS-TJ-TOMATO-F2-DENSITY
+status: candidate
+validation:
+  scientific: source_audited
+  visual: candidate
+  benchmark: pending_user_acceptance

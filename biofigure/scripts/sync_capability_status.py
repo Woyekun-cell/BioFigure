@@ -18,15 +18,26 @@ SCIDRAW_NODE_MAP={
  'SCIDRAW-VOLCANO-GSEA-001':'scidraw-f749086eb5',
 }
 
+def expected_topjournal_state(node, by_issue):
+ match=re.fullmatch(r'topfigure-(\d+)-[0-9a-f]+',node.get('id',''))
+ if not match:return None
+ method=by_issue.get(int(match.group(1)))
+ if method is not None:
+  visual=method.get('runtime_status','not-run');review=method.get('review_status','missing')
+  return visual,review,visual=='source-compared-png' and review=='pass'
+ # Current fixed-data bundles retain their own scope; they do not inherit
+ # legacy source-comparison or new-input qualification.
+ from benchmark_core import registry_results
+ track=registry_results(ROOT).get(node['id'],{}).get('tracks',{}).get('reproduction',{})
+ return ('source-structure-simulation','pass',False) if track.get('status')=='PASS' else ('not-run','missing',False)
+
 def synchronize(graph,methods,scidraw_methods,scidraw_batch2_methods):
  by_issue={x['issue']:x for x in methods['cases']}
  for node in graph['nodes']:
   match=re.fullmatch(r'topfigure-(\d+)-[0-9a-f]+',node.get('id',''))
   if not match: continue
-  method=by_issue.get(int(match.group(1)),{})
-  node['visual_status']=method.get('runtime_status','not-run')
-  node['review_status']=method.get('review_status','missing')
-  node['high_fidelity_eligible']=node['visual_status']=='source-compared-png' and node['review_status']=='pass'
+  visual,review,eligible=expected_topjournal_state(node,by_issue)
+  node.update(visual_status=visual,review_status=review,high_fidelity_eligible=eligible)
  by_node={node['id']:node for node in graph['nodes']}
  for method in scidraw_methods['cases']:
   node_id=SCIDRAW_NODE_MAP[method['id']]
@@ -47,6 +58,7 @@ def synchronize(graph,methods,scidraw_methods,scidraw_batch2_methods):
  graph['summary']['source_compared_cases']=len(source_compared)
  graph['summary']['source_compared_pass']=len(passed)
  graph['summary']['source_compared_needs_revision']=len(source_compared)-len(passed)
+ graph['summary']['status_boundary']='Source review: only review_status=pass means historical fidelity accepted. Fixed-data reproduction, source-exposed new-input reuse, stress and user acceptance are separate; no old PASS certifies new output.'
  return graph
 
 def main():

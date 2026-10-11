@@ -1,0 +1,10 @@
+schema_version: 1
+kind: cross-model-independent-run-manifest
+required: [run_id, run_key, blind_id, case_id, repeat, input_sha256, evidence]
+run_id: unique_independent_session_id
+run_key: {blind_id: preregistered_blind_id, case_id: preregistered_case_id, repeat: integer}
+input_sha256: frozen_case_input_hash
+evidence: exact_report_row_references_excluding_run_manifest_plus_reviews
+run_unique_paths: [renderer_source, design_spec, preparation_receipt, png, render_receipt, checkpoint_ledger, inspection_evidence, review_files, run_manifest]
+preparation_receipt_policy: independent_per_run_path; deterministic contents may match, but do not reuse the file path
+png_policy: content_hash_may_match_other_runs_only_if_file_path_and_render_receipt_are_independent

@@ -1,0 +1,14 @@
+figure_task: matched-omics-state-alluvial
+figure_family: composition
+data_shape: 1800 matched simulated features across DNA copy-number,RNA expression,protein
+  abundance;27 complete paths;3 states per stage
+primary_domain: transcriptomics-metabolomics-multiomics
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: draw
+statistics_required: false
+learned_method_id: BENCH-gallery-multiomics-alluvial-2026
+pattern_id: LEARNED-BENCH-gallery-multiomics-alluvial-2026
+claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.

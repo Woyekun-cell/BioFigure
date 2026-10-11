@@ -1,0 +1,19 @@
+case_id: matrix-transfer
+family: matrix
+exposure: transfer
+input_path: inputs/matrix.csv
+input_sha256: 9c5c8fdb2d0159ced02d2be68ec62ddb60c63cae35414adf4b912bd6ec576e7f
+seed: 20260926
+canvas_mm:
+- 180
+- 120
+dpi: 300
+task: Render the supplied feature-by-sample matrix with a fixed, readable legend.
+synthetic_smoke_only: true
+available_materials:
+- path: materials/matrix-derived-method-card.md
+  sha256: dc960b93d6b80411d80a12d93be93e0beff08b838cbe3d296716ec5f6b73ae76
+  role: derived-method-card
+forbidden_materials:
+- source figure
+- author source code
