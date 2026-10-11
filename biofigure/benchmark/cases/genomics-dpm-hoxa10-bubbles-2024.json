@@ -285,5 +285,50 @@
     "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/data/metadata/source-learning.json",
     "sha256": "ed81a25115faf4fe7b4f392b537f22090bcf8da749c4ef8accf02bcfd942d1ac"
   },
-  "validation_evidence_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json"
+  "validation_evidence_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json",
+  "original_source_learning_stage_status": "AUTHOR_PROCESSED_DATA_AND_SOURCE_LEARNED_RENDER_NOT_STARTED",
+  "latest_scoped_review": {
+    "date": "2026-10-11",
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "scope": "真实作者处理数据；37/23基因、120个单元。保留raw P与效应，通路标签为FWER；缺失原星号依据，未补造。",
+    "gallery_id": "BF-0219",
+    "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+    "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json",
+    "local_bundle_sha256": "f53d0b36ee0ae2c1e7c8432b7f2ca8c5fff97b12c620b0465d12ae45a1a85c64",
+    "public_recipe": "examples/genomics-gallery-20261011/dpm-bubbles/provenance.json",
+    "original_full_figure_fidelity": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_REQUESTED",
+    "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+  },
+  "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
+  "original_archival_learning_source": {},
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+    "source_asset": "examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf",
+    "public_renderer": "scripts/public-render.R",
+    "archival_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables",
+    "simulation": false
+  },
+  "learning_source": {
+    "read_paths": [
+      "examples/genomics-gallery-20261011/dpm-bubbles/data/metadata/design-template.yaml",
+      "examples/genomics-gallery-20261011/dpm-bubbles/data/metadata/project-style.yaml",
+      "examples/genomics-gallery-20261011/dpm-bubbles/data/metadata/public-replay.json",
+      "examples/genomics-gallery-20261011/dpm-bubbles/data/metadata/request.yaml",
+      "examples/genomics-gallery-20261011/dpm-bubbles/data/metadata/source-learning.json",
+      "examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf",
+      "examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv",
+      "examples/genomics-gallery-20261011/dpm-bubbles/scripts/archive-source-reproduce.py",
+      "examples/genomics-gallery-20261011/dpm-bubbles/scripts/audit_inputs.R",
+      "examples/genomics-gallery-20261011/dpm-bubbles/scripts/public-render.R",
+      "examples/genomics-gallery-20261011/dpm-bubbles/scripts/render.R",
+      "examples/genomics-gallery-20261011/dpm-bubbles/scripts/reproduce.py"
+    ],
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification."
+  }
 }

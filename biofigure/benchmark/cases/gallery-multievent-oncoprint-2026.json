@@ -1,0 +1,158 @@
+{
+  "example_id": "gallery-oncoprint-simulated-20261011",
+  "scope": "Self-authored simulated data and original implementation. Teaching example only; not paper-data or original-figure reproduction. Historical records remain unchanged.",
+  "official_method": {
+    "url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html",
+    "sections": [
+      "7.1.1 input formats",
+      "7.1.2 multi-event alter_fun",
+      "7.1.6 annotation and percent settings"
+    ],
+    "reviewed_on": "2026-10-11",
+    "principles": [
+      "Cell values may encode multiple alteration types; retain each type.",
+      "Input and metadata must share sample keys and display order.",
+      "Annotation barplots and legends require separate space from the event matrix."
+    ]
+  },
+  "local_learning": {
+    "method_id": "REPRO-008",
+    "gallery_id": "BF-0146",
+    "source_asset": "biofigure/library/topjournal-corpus/results/figures/issue_008/image_001.png",
+    "sha256": "9d89e4b07c2c19de426f73ce1c1083b81e3cedc1f6b75c47c8ac0593610210a3",
+    "viewed_original_size": true,
+    "old_gallery_asset": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
+    "old_gallery_sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
+    "original_data_available": false,
+    "original_figure_fidelity": "NOT_VERIFIED",
+    "source_is_tutorial_composite": true
+  },
+  "original_code_findings": [
+    "Original MAF and clinical tables require external GDC downloads; no original table copied.",
+    "Old preprocessing collapses coexisting classes to Multi_Hit; new example preserves every type.",
+    "Original clinical unknowns must not be converted to Never smoker; synthetic Unknown is explicit.",
+    "Historic gallery legend overlaps two bottom gene rows; new example reserves independent bottom legend slot."
+  ],
+  "data_contract": {
+    "origin": "explicitly simulated",
+    "seed": 2026101108,
+    "tumours": 144,
+    "genes": 12,
+    "event_classes": [
+      "Missense",
+      "Frameshift",
+      "Nonsense",
+      "Splice",
+      "In_frame"
+    ],
+    "all_genes_assayed": true,
+    "empty_cell_meaning": "No simulated event detected, not missing assay",
+    "clinical_metadata": "Synthetic categorical illustration; no real clinical interpretation"
+  },
+  "layout_contract": {
+    "native_package": "ComplexHeatmap::oncoPrint",
+    "canvas_mm": [
+      180,
+      118
+    ],
+    "native_matrix_mm": [
+      124,
+      66
+    ],
+    "legend": "Separate bottom band with alteration/sex/smoking groups",
+    "frequency_denominator": "144 distinct synthetic tumours, independent of multi-event counts",
+    "sample_sort": "A/B/C cohorts, within-cohort binary lexicographic sort in ranked gene order",
+    "source_fidelity_claim": false,
+    "minimum_font_pt": 7.5
+  },
+  "public_content_policy": "Only original code, self-generated data and figures; no third-party code blocks or original images copied into this package.",
+  "schema_version": 1,
+  "case_id": "gallery-multievent-oncoprint-2026",
+  "learned_method_id": "BENCH-gallery-multievent-oncoprint-2026",
+  "title": "144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction",
+  "domain": [
+    "genome-sequence-variation"
+  ],
+  "status": "EXPLICIT_SIMULATED_INPUT_SCOPED_PASS_AT_DELIVERY",
+  "claim_boundary": "Current explicitly simulated-input layout correction; original study fidelity, patient inference and new-input qualification NOT_VERIFIED",
+  "prior_method_id": "REPRO-008",
+  "known_failures": [
+    "Historical legend masks bottom gene rows",
+    "Do not count multiple events as multiple altered tumours",
+    "Keep all assayed and zero-event tumour columns in the denominator",
+    "Fresh source/data/environment requires new CP2 and actual final review"
+  ],
+  "source_assets": [
+    {
+      "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
+      "sha256": "920353f00ad1ce546b70bf10e9829c9795c3bc1f0ebe31a2aba85d122c7fd8d1",
+      "role": "immutable-source-method-card"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+      "sha256": "3dbf39698291aa9c2e455bb5f524bd083a813eb06d73682ddfb51cdb1177f4a3",
+      "role": "independently-authored-native-renderer"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
+      "sha256": "1511565b79431b5ae72c5f1c7411c9d1e4f98d8784e905b37a857dbae2b830b8",
+      "role": "explicit-simulation-preparation"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+      "sha256": "0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497",
+      "role": "independent-count-audit"
+    }
+  ],
+  "original_source_learning_stage_status": "EXPLICIT_SIMULATED_INPUT_SCOPED_PASS_AT_DELIVERY",
+  "latest_scoped_review": {
+    "date": "2026-10-11",
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "scope": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
+    "gallery_id": "BF-0146",
+    "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+    "local_bundle": "examples/genomics-gallery-20261011/oncoprint/evidence/bundle.json",
+    "local_bundle_sha256": "8955144e3c67e6610605f35db03704274480649449d5381ac032a1c7136546e6",
+    "public_recipe": "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+    "original_full_figure_fidelity": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_REQUESTED",
+    "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+  },
+  "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
+  "original_archival_learning_source": {},
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+    "source_asset": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+    "public_renderer": "scripts/public-render.R",
+    "archival_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables",
+    "simulation": true
+  },
+  "learning_source": {
+    "read_paths": [
+      "examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
+      "examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
+      "examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
+      "examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
+      "examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
+      "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_events.csv",
+      "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_sample_metadata.csv",
+      "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+      "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+      "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+      "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+      "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv",
+      "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+      "examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
+      "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+      "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+      "examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+      "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png"
+    ],
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification."
+  }
+}

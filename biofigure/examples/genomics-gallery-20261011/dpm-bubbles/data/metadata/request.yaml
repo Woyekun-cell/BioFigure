@@ -1,0 +1,14 @@
+figure_task: hoxa10-pathway-gene-evidence-bubbles
+figure_family: matrix
+data_shape: two gene x OE/KD matrices,37 and23 genes,120 raw-P/effect cells,5 CGC
+  labels
+primary_domain: transcriptomics-metabolomics-multiomics
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: reproduce
+statistics_required: true
+learned_method_id: BENCH-genomics-dpm-hoxa10-bubbles-2024
+pattern_id: LEARNED-BENCH-genomics-dpm-hoxa10-bubbles-2024
+claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.

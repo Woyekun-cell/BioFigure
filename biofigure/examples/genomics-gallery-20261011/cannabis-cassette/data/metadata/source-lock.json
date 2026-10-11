@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+  "native_package_commit": "d4f793988ce89279cf44294ceb8017756e181b0b",
+  "case_kind": "cannabis-cassette",
+  "scope": "Published currentplotCSV/nativecurrentlayout replay only; not authorraw/fullfigurefidelity",
+  "assets": [
+    {
+      "path": "results/plot_data/busco-coordinates.csv",
+      "sha256": "d004798b7d9bc2dac97c22340016cf3b2d1930fd3e4c1f75aaaae28133be7a10",
+      "role": "published-current-plot-table"
+    },
+    {
+      "path": "results/plot_data/busco-palette.csv",
+      "sha256": "5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2",
+      "role": "published-current-plot-table"
+    },
+    {
+      "path": "results/plot_data/sample-order.csv",
+      "sha256": "8e77f31afbafb90e341e900e3f7c10b7167e7c5ad74fcc337960983c76130109",
+      "role": "published-current-plot-table"
+    },
+    {
+      "path": "results/plot_data/synthase-markers.csv",
+      "sha256": "b3615afe7a75bf84fb6be05c77eee832d22cea28bd365ec5f750d7236704b006",
+      "role": "published-current-plot-table"
+    },
+    {
+      "path": "data/metadata/project-style.yaml",
+      "sha256": "05ec94e612588e3faa5328b849e2090bde92ff17c2547e76fed18f9a2e51a13d",
+      "role": "current-public-style"
+    },
+    {
+      "path": "data/metadata/native-acquisition.json",
+      "sha256": "1540bd953383d590d7d194eb7b9fdea593660c9e8922075f03ceea584be211be",
+      "role": "fixed-native-source-acquisition-contract"
+    },
+    {
+      "path": "scripts/audit_inputs.R",
+      "sha256": "0e5978725829ed9b4c1e3e76314425f2cee4290b4fcf5d00fbd9efa9dfef5897",
+      "role": "public-table-reconstruction-contract"
+    }
+  ]
+}

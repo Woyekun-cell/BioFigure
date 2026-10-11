@@ -1,0 +1,361 @@
+schema_version: '3.4'
+figure_task: chromatin-epigenome
+scientific_message: Public own-layout native HiContacts replay using one SHA-pinned
+  author processed RDS and compare all3output CSV hashes with the sealed public tables.
+  No raw NGS/loop calling/full author-paper panel/new-input qualification.
+data_contract_summary:
+  input: SHA-pinned processed in-memory HiCExperiment RDS,200bins19667contacts31visibleloops;
+    compare3publicCSV
+  unit: One HFFc6 processed Micro-C sample
+  source_level: Public own derived tables + separately acquired pinned processed RDS
+  exclusions: No new exclusions or sampling; original full-input selection is archival
+    metadata only
+  statistical_boundary: Descriptive saved values; no raw NGS/statistics or biological
+    replicate reconstruction
+biology_contract:
+  primary_domain: chromatin-epigenome
+  entities:
+  - genomic5kb bins
+  - binned contacts
+  - authorcalled chromatinloops
+  relationships:
+  - contact intensity between genomic bins
+  - loop annotations overlap same matrix coordinates
+  experimental_unit: One HFFc6 processed Micro-C sample
+  statistical_unit: Binned contact / upstream loop record; descriptive
+  replicate_unit: No inferential biological replicates in this target
+  evidence_level: Published author companion-book processed plotting object
+  claim_boundary: Public own-layout native HiContacts replay using one SHA-pinned
+    author processed RDS and compare all3output CSV hashes with the sealed public
+    tables. No raw NGS/loop calling/full author-paper panel/new-input qualification.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock: {}
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-genomics-ohca-microc-loops-2024
+selected_pattern: LEARNED-BENCH-genomics-ohca-microc-loops-2024
+selection_reason: Replay the own sealed public layout with its real supplied values
+  and native R; no original-paper fidelity claim.
+reference_evidence:
+  preparation_id: FRESH_RECEIPT_REQUIRED
+  selected_method_case_id: BENCH-genomics-ohca-microc-loops-2024
+  retrieval_query:
+    domain: chromatin-epigenome
+    task: chromatin-epigenome
+    pattern: LEARNED-BENCH-genomics-ohca-microc-loops-2024
+  selected_atlas_ids: []
+  observed_principles:
+  - Current own public180x158mm native200bin square matrix,31filtered loop circles,
+    right continuous score legend
+  transfer_decisions:
+  - Public own-layout native HiContacts replay using one SHA-pinned author processed
+    RDS and compare all3output CSV hashes with the sealed public tables. No raw NGS/loop
+    calling/full author-paper panel/new-input qualification.
+  rejected_elements:
+  - Old receipt/authorization/PASS inheritance
+  - Author full-paper fidelity or new-input qualification
+  - Raw NGS and new inferential claims
+  evidence_status: source-and-visual-reviewed
+  source_density_contract:
+    source: exact author-book selected matrix plot
+    original_pixels:
+    - 1344
+    - 960
+    observed_data_bbox_pixels:
+    - 231
+    - 73
+    - 1103
+    - 945
+    bbox_status: visually observed approximate plotting rectangle, validated against
+      axes and square tiles
+    data_aspect: 1.0
+    observations:
+    - Square symmetric dense200x200 grid; top chr17 Mb coordinates and descending
+      left axis
+    - Black empty loop circles on lower triangle and one boundary circle; compact
+      vertical score legend at right
+    - Warm sequential source score colormap with strong diagonal and localized off-diagonal
+      blocks; no Scc1 or border layer
+    target_canvas_mm:
+    - 180
+    - 158
+    target_font_pt: 7
+    adaptation: Standalone author-book selected complex matrix/loop panel; source
+      data aspect retained within5%; clearer log10 balanced frequency legend and explicit
+      filtered-loop key
+    recolor_proposal:
+      balanced_log10: monotonic light-to-dark pale blue/teal/navy sequential map;
+        same score limits
+      loops: warm rust outline distinguishes author filtered annotation from quantitative
+        score color
+      missing_or_absent_tiles: white; do not impute absent contacts
+    source_image_sha256: 6adbdfc194947f1b30596a7b4a66045957ff44ff9cb7e9d24d411218259e58a4
+    source_plot_aspect_approx: 1.0
+    aspect_tolerance_relative: 0.05
+    difference_reason: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+reference_analysis:
+  figure_family: matrix
+  semantic_purpose: Selected author-book current processed-object contact-map+loop
+    recolor only. Formal paper panel NOT_VERIFIED; no rawNGS/loopcalling, wholepaperfigure,
+    newinputtransfer or stabletemplate claim.
+  panels:
+  - id: author-book-microc-loops
+    role: Binnedcontact map plus authorloop annotations
+    position: single standalonecomplex panel
+  elements:
+  - id: matrix
+    role: balanced contact frequency
+    geometry: NativeHiContacts rasterizedtile heatmap
+    position: square genomic dataregion
+    data_mapping: author bin-paircoordinates and log10balanced scores
+    required: true
+  - id: loops
+    role: Filteredauthor chromosight annotations
+    geometry: Native emptyloop circles
+    position: exactsame genomiccoordinate system
+    data_mapping: score>=.4/q<=1e-6 then bothanchor overlap
+    required: true
+  - id: axes
+    role: Genomicposition andchromosome identity
+    geometry: topchr17/leftdescendingMb axes
+    position: topandleft nativeaxis
+    data_mapping: chr17:62500001-63500000
+    required: true
+  - id: legends
+    role: Continuousscore andannotation meaning
+    geometry: continuousbar plus loop-circle key
+    position: outside_right
+    data_mapping: fixedsourceclamp and authorfilter
+    required: true
+  relationships:
+  - from: matrix
+    to: loops
+    type: shares-coordinate
+    shared_key: chr17bp anchor coordinates
+  spatial_topology:
+    coordinate_system: nativeupper/lower genomicmatrix with reversey
+    reading_order:
+    - chr17axes and matrix
+    - localoffdiagonal loops
+    - rightquantitative legend and key
+    alignment_keys:
+    - source5kb genomic bins
+    - chr17bp
+    layer_order:
+    - balancedmatrix
+    - authorloopcircles
+    - axes/key/text
+  required_structures:
+  - allsource-selected coordinates/records
+  - native1:1 matrix symmetry
+  - 31truefilteredvisible loops
+  - log10balancedlimitpreservation
+  forbidden_substitutions:
+  - rawpipeline
+  - simulateddata
+  - pretendpaperpanel
+  - inventedborders/Scc1
+  - baseheatmap replacement for nativeHiContacts
+visual_hierarchy:
+  primary: Contactmatrix diagonal/offdiagonal structure
+  secondary: 31author selected loop annotations
+  tertiary: Compactscore/loop key and provenance
+encoding:
+  x: Nativechr17bp bin-centers
+  y: Nativechr17bp bin-centers reversed
+  color: log10existing balanced frequency, continuoussequential palette; loopoutline
+    rust categorical
+annotation:
+  method: Onlyauthor upstreamscore/qfilter; no newinferentialstatistics
+legend:
+  place: outside_right
+  shared: false
+palette_semantics:
+  balanced_log10: '#F4F8FC,#CBDDE8,#7CAFC0,#37828A,#22465B'
+  filtered_loops: '#9E4F32'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: a150865f3651022e3edd13c530a319ed56500146fdaa743f0b4260c637f38d82
+  project_id: BENCH-genomics-ohca-microc-loops-2024-public-replay
+  palette_id: ohca-blue-teal-rust-v1
+  semantic_colors:
+    balanced_log10: '#F4F8FC,#CBDDE8,#7CAFC0,#37828A,#22465B'
+    filtered_loops: '#9E4F32'
+  reuse_policy: exact_semantic_mapping
+  exception_basis: Current public own-layout replay uses its sealed semantic palette
+    and physical dimensions; no private task configuration or old PASS.
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - HiContacts
+  - HiCExperiment
+  - InteractionSet
+  - GenomicRanges
+  - ggplot2
+  - ggrastr
+  - ragg
+  - yaml
+  - jsonlite
+  - digest
+  - svglite
+  - systemfonts
+  input_parser: readRDS of SHA-pinned public processed object; HiContacts::plotMatrix;
+    verify3derived CSV against sealed public tables
+output_size:
+  width_mm: 180
+  height_mm: 158
+  formats:
+  - pdf
+  - svg
+  - png
+  size_class: double-column
+  size_basis: final_physical_output
+  size_rationale:
+    panel_count: 1
+    density: high
+    longest_label_chars: 26
+    recommended_class: double-column
+    selection_reason: Retain source200x200 dense square bins/31circles; approximately138mm
+      squaredata plus compactrightlegend; actual7pt labels, finalPDF withworkPNG/SVGQA.
+    override_basis: ''
+layout_contract:
+  canvas: 180x158mm
+  data_bbox: nativegtable innerregion measuredafterrender; target138x138mm, physicalaspect1.0
+    +/-5%
+  annotation_bbox: short8pt identityheader; no unsupportedpaperpanelnumber
+  legend_bbox: reservedright continuousscorebar plus emptycircle annotation key
+  label_reserve: left15mm/top8mm/bottom5mm; rightcompactlegend
+  collision_policy: fail_and_redraw
+  text_extent_method: ActualRgrob physicalmetrics + PNG/PDF finalsizeview
+  preflight_collision_check: required
+  coordinate_policy: Nativeexactloaded bincoordinates, symmetryand loopselected positions
+font_contract:
+  family: Arial
+  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: png_visual_plus_vector_metadata
+  minimum_final_text_pt: 7
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7
+    axis_title: 7
+    legend_text: 7
+    strip_text: 7
+    annotation_text: 7
+    panel_label: 8
+design_target:
+  hierarchy:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  geometry:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  palette:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  typography:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  marks:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  annotation:
+    observation: Square200x200 dense contact matrix with top chr17 Mb ticks, reversed
+      y-coordinate and31 selected lower-triangle loop circles; right continuous score
+      legend.
+    implementation: Preserve all19667 author records and exact5kb bins/countsum2103634,
+      source log10balanced score clamp[-4,-1.2], filtered1639 loops with31visible
+      circles,1:1 data aspect. Change only semantic sequential palette/loop outline
+      and physical7pt typography/clear legend.
+    difference_reason: Userauthorized newsemanticcolor andstandalonepanel; score/filter/coordinate
+      semanticsretained
+  reference: https://github.com/js2264/OHCA/blob/08abf8aa7a2f30e1e16b0e4a492f4a5fe67b8592/docs/devel/pages/topological-features.html#visualizing-chromatin-loops
+  reference_opened: true
+text_contract:
+  allowed_text:
+  - HFFc6 | Micro-C
+  - chr17
+  - Genomic position (Mb)
+  - 'Balanced frequency
+
+    (log10)'
+  - Filtered loops
+  - score >= 0.4
+  - q <= 1e-6
+  - 62.50 M
+  - 62.75 M
+  - 63.00 M
+  - 63.25 M
+  - 63.50 M
+  - '-4'
+  - '-3'
+  - '-2'
+  - '-1.2'
+  allow_headings: true
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false

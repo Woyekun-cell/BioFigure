@@ -283,5 +283,54 @@
     "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/data/metadata/source-learning.json",
     "sha256": "a39677ea82bf0e86cc01cc7485be1daf05a5a360d377e71d386a2848a9960802"
   },
-  "validation_evidence_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json"
+  "validation_evidence_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json",
+  "original_source_learning_stage_status": "AUTHOR_PROCESSED_DATA_AND_SOURCE_LEARNED_RENDER_NOT_STARTED",
+  "latest_scoped_review": {
+    "date": "2026-10-11",
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "scope": "225条作者通路；明确新设OC≥0.5、2183边及布局。半饼只编码OE/KD二元证据；原Cytoscape布局、阈值和主题组装未公开。",
+    "gallery_id": "BF-0220",
+    "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+    "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json",
+    "local_bundle_sha256": "78aeff5189f847a715572807563133691bffced3da23f6a3b49ec4b80637f4a8",
+    "public_recipe": "examples/genomics-gallery-20261011/dpm-network/provenance.json",
+    "original_full_figure_fidelity": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_REQUESTED",
+    "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+  },
+  "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
+  "original_archival_learning_source": {},
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+    "source_asset": "examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+    "public_renderer": "scripts/public-render.R",
+    "archival_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables",
+    "simulation": false
+  },
+  "learning_source": {
+    "read_paths": [
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/design-template.yaml",
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/label-plan.json",
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/project-style.yaml",
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/public-replay.json",
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/request.yaml",
+      "examples/genomics-gallery-20261011/dpm-network/data/metadata/source-learning.json",
+      "examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+      "examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_edges.csv",
+      "examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_layout.csv",
+      "examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_memberships.csv",
+      "examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv",
+      "examples/genomics-gallery-20261011/dpm-network/scripts/archive-source-reproduce.py",
+      "examples/genomics-gallery-20261011/dpm-network/scripts/audit_inputs.R",
+      "examples/genomics-gallery-20261011/dpm-network/scripts/public-render.R",
+      "examples/genomics-gallery-20261011/dpm-network/scripts/render.R",
+      "examples/genomics-gallery-20261011/dpm-network/scripts/reproduce.py"
+    ],
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification."
+  }
 }

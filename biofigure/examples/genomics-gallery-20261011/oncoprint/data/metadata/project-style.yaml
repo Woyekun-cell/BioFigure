@@ -1,0 +1,28 @@
+project_id: genomics-gallery-20261011-oncoprint
+palette:
+  palette_id: oncoprint-five-events-v1
+  semantic_colors:
+    Missense: '#31748F'
+    Frameshift: '#D6A24C'
+    Nonsense: '#C26356'
+    Splice: '#8571A7'
+    In_frame: '#68B6AD'
+    Female: '#9B759A'
+    Male: '#5B8D9C'
+    Unknown: '#C7CDD1'
+    Ever: '#9C886D'
+    Never: '#AEC5AB'
+    background: '#F1F2F3'
+    outline: '#30343B'
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 7.5
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 7.5
+size_system:
+  allowed_classes:
+  - double-column

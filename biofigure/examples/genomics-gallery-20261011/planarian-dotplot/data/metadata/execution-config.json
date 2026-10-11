@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "mode": "planarian-public-csv",
+  "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+  "scope": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification.",
+  "opened_reference": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+  "reference_scope": "own sealed public layout, not the unavailable author-paper panel",
+  "required_R_packages": [
+    "ggplot2",
+    "data.table",
+    "grid",
+    "ragg",
+    "systemfonts",
+    "yaml",
+    "jsonlite",
+    "digest",
+    "svglite"
+  ],
+  "plot_data": [
+    {
+      "path": "results/plot_data/planarian_haplotype_recolored_alignments.csv",
+      "sha256": "45e98272a6b9bd5a72a26d0b61279bec6587c5ebe830044e95ed664339ae9668"
+    },
+    {
+      "path": "results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+      "sha256": "55b3715e32c54e3af8c2a48115abc0c28d8b759a22c91e32f743c5756384d3ff"
+    },
+    {
+      "path": "results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+      "sha256": "06cc60f9ef30743e7c56b4bdc598ba68662eb6f1334aa3e4f72621da43bb194c"
+    }
+  ],
+  "final_pdf": "results/figures/planarian_haplotype_recolored.pdf",
+  "preview_png": "planarian_haplotype_recolored.png",
+  "limitations": [
+    "Public CSV excludes1744source-rejected alignments; their original full-input filter is not rerun",
+    "Boundary coordinates are retained sealed values; do not recompute boundaries from selected rows",
+    "Final author-paper panel mapping and new-input transfer NOT_VERIFIED",
+    "Old authorization and historical PASS are never replayed"
+  ],
+  "platform": "macOS: native Quartz PDF and Arial; Python PyYAML and existing R dependencies; no automatic installation",
+  "fresh_source_view_required": true
+}

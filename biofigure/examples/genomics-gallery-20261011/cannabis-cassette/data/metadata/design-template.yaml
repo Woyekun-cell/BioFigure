@@ -1,0 +1,396 @@
+schema_version: '3.4'
+figure_task: phylogeny-synteny-gene-family
+scientific_message: Replay published source-derived BUSCO coordinate tables with native
+  BUSCOplot and current own gallery layout.
+data_contract_summary:
+  input: '147BUSCOx76samples,173visibleBUSCOpoints/2600low/106highsynthasepointmarkers;source-derived
+    anchoradjustedbp and76orderedchemotypecolumns. Current packaged CSV: results/plot_data/busco-coordinates.csv
+    sha256=d004798b7d9bc2dac97c22340016cf3b2d1930fd3e4c1f75aaaae28133be7a10; results/plot_data/busco-palette.csv
+    sha256=5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2; results/plot_data/sample-order.csv
+    sha256=8e77f31afbafb90e341e900e3f7c10b7167e7c5ad74fcc337960983c76130109; results/plot_data/synthase-markers.csv
+    sha256=b3615afe7a75bf84fb6be05c77eee832d22cea28bd365ec5f750d7236704b006'
+  unit: Original supplied bp; plotted Mb
+  source_level: Published derived plotCSV, not originalraw acquisition
+  exclusions: Retain allsourceCSV rows/NA/order/visibleflags; no newfilters or anchorrecalculation
+  source_assets: All4CSV hashes inpublicsource-lock.json
+biology_contract:
+  primary_domain: phylogeny-synteny-gene-family
+  entities:
+  - BUSCO orthologs
+  - assembled chr7 haplotypes/public references
+  - synthase query hits
+  relationships:
+  - same BUSCO ID across ordered samples
+  - shared coordinate by sample
+  experimental_unit: Assembled haplotype/reference chromosome
+  statistical_unit: Ortholog coordinate or BLAST hit; descriptive
+  replicate_unit: No inferential replicates
+  evidence_level: Fixed published author-derivedplotCSV
+  claim_boundary: Public packaged currentplotCSV/nativecurrentlayout replay only.
+    No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+    newinputtransfer or stabletemplate claim.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock: {}
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-genomics-cannabis-busco-chr7-2025
+selected_pattern: LEARNED-BENCH-genomics-cannabis-busco-chr7-2025
+selection_reason: Native learned BUSCO point-line method matches exact author matrices
+  and marker overlays.
+reference_evidence:
+  preparation_id: FRESH_REQUIRED
+  preparation_request: {}
+  selected_method_case_id: BENCH-genomics-cannabis-busco-chr7-2025
+  retrieval_query:
+    method_id: BENCH-genomics-cannabis-busco-chr7-2025
+    scope: public-execution-profile-current-tables
+  selected_atlas_ids: []
+  observed_principles:
+  - 'Current own gallery layout: exact sampleordering, full native NA/line semantics,
+    synthasepoints and functional keys; only this fixedtable/layout replay is tested.'
+  transfer_decisions:
+  - Reconstruct native BUSCO matrix frompublishedCSV, preserve allstored bp/NA/order/markers;
+    call genuine BUSCOplot::gg_line_map. No authorraw recomputation or inherited authorgate.
+  rejected_elements:
+  - Historical authorization/CP PASS
+  - Fullauthorraw processing/fidelity
+  - Wholepaperfigure
+  - Arbitrarynewinput/stabletemplate
+  evidence_status: source-and-visual-reviewed
+  learned_source_reference:
+    method_id: BENCH-genomics-cannabis-busco-chr7-2025
+    opened_source_asset:
+      path: docs/assets/genomics-gallery-20261011/cannabis-cassette.png
+      sha256: 8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514
+      original_size_viewed: true
+  learned_method_reuse:
+    adopted:
+    - BENCH-genomics-cannabis-busco-chr7-2025
+    rejected: []
+    data_adaptation: Reconstruct native BUSCO matrix frompublishedCSV, preserve allstored
+      bp/NA/order/markers; call genuine BUSCOplot::gg_line_map. No authorraw recomputation
+      or inherited authorgate.
+    known_failures_addressed:
+    - Directory name Fig5D is historical; official panel is Fig4d. Do not label the
+      delivered standalone panel as complete Fig4.
+    - NLv1b anchor imputed from mean; disclose in source methods/QC and preserve author
+      policy when reproducing, not promote to generic alignment method.
+    - Rmd caption line172 misidentifies CBCAS accession as AB292682.1; executable
+      query is LY658671.1. Executable >=98 is inclusive, although caption says greater
+      than98.
+    - Source native gg_line_map uses processed matrix with check_table=FALSE; manual
+      schema/finite-ID checks are required.
+    - Scale limits discard out-of-window points before line geometry; localview excludes10571
+      finite BUSCO coordinates by design.
+    - PAG2024 source PNG has a different haplotype order from current author Rmd;
+      use final official Fig4d for geometry, source Rmd for current executable order.
+    - Native package is development version0.0.0.9000, pinned by commit; later package
+      version or ggplot2 may change behavior and needs fresh review.
+    adapter_decisions:
+    - method_id: BENCH-genomics-cannabis-busco-chr7-2025
+      decision: adapt
+      data_contract_difference: Public packaged currentplotCSV/nativecurrentlayout
+        replay only. No authorraw processing, completepaperfigurefidelity, historicalgate
+        inheritance, newinputtransfer or stabletemplate claim.
+      new_validation_required: true
+    source_issue_resolutions: []
+  source_density_contract:
+    source: Current own public gallery layout; not original publication fidelity
+    observation: Current own gallery has identical source-derived table order, native
+      BUSCO points/lines and synthase overlays; formal uses 76 columns, chemotype
+      headers and right key; public uses 31 rotated labels and genuine large reference
+      crossings.
+    adaptation: Replay packaged fixed tables and current own gallery geometry; original-paper/full
+      raw fidelity not tested.
+    recolor_proposal:
+      chemotype_header:
+      - '#5B7FA3'
+      - '#AF8756'
+      - '#AC7084'
+      - '#769184'
+      high_markers:
+        THCAS: '#AC526C'
+        CBDAS: '#407FA2'
+        CBCAS: '#B58D3F'
+      low_markers: neutral translucent grey
+      BUSCO: subdued cyclic categorical palette; no abundance or functional interpretation
+    source_image_sha256: 8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514
+    source_plot_aspect_approx: 1.4781
+    aspect_tolerance_relative: 0.05
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+    data_aspect: 1.4781
+reference_analysis:
+  figure_family: genome
+  semantic_purpose: Public packaged currentplotCSV/nativecurrentlayout replay only.
+    No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+    newinputtransfer or stabletemplate claim.
+  panels:
+  - id: Fig4d
+    role: BUSCO ortholog coordinate map + synthase overlays
+    position: single standalone main panel
+  elements:
+  - id: busco
+    role: Ortholog coordinates and homologous connections
+    geometry: Native BUSCOplot points and polylines
+    position: main data region
+    data_mapping: BUSCO row key, ordered sample columns, position bp
+    required: true
+  - id: synthase
+    role: Sequence-match locations
+    geometry: Outlined filled triangle markers
+    position: author sstart in same coordinate system
+    data_mapping: query accession/percent identity/gaps and sample key
+    required: true
+  - id: labels
+    role: Coordinate and sample-group identity
+    geometry: Typography and axis ticks
+    position: left axis/top or bottom labels
+    data_mapping: author sample order and named classes
+    required: true
+  - id: key
+    role: Explicit marker meaning
+    geometry: Triangle key and text
+    position: right column
+    data_mapping: synthase category/author vs public sample identifiers
+    required: true
+  relationships:
+  - from: busco
+    to: synthase
+    type: shares-coordinate
+    shared_key: sample and bp
+  spatial_topology:
+    coordinate_system: ordered sample x;author bp y
+    reading_order:
+    - ordered samples
+    - named overlay/key
+    alignment_keys:
+    - BUSCO id
+    - sample
+    - bp
+    layer_order:
+    - BUSCO connections and points
+    - low-stringency triangle background
+    - high-stringency triangles
+    - axes/key/labels
+  required_structures:
+  - all source-selected coordinates
+  - native line grouping and NA behavior
+  - outlined coloured triangles
+  - original ordering and public-reference crossings
+  forbidden_substitutions:
+  - simulated data
+  - drop source-selected coordinates
+  - flip or reanchor unrequested coordinates
+  - wholeoriginal figure claim
+visual_hierarchy:
+  primary: Coordinate/ortholog correspondence and synthase positions
+  secondary: Author sample ordering and source axis scale
+  tertiary: Explicit key and selected-panel provenance
+encoding:
+  x: Author ordered samples
+  y: Original source bp minus author anchor
+  color: Categorical BUSCO hue cycle and named synthase category; no quantitative
+    rank
+annotation:
+  method: Source-selected marker positions; no inferential statistics
+legend:
+  place: outside_right
+  shared: false
+palette_semantics: &id001
+  THCAS: '#AC526C'
+  CBDAS: '#407FA2'
+  CBCAS: '#B58D3F'
+  low_stringency: '#8E9398'
+  BUSCO_cycle: '#738D9C,#AA7C89,#91A58B,#B49B75,#827DA1,#6D9F9A,#A98670,#A1A1A1'
+  Chemotype I: '#5B7FA3'
+  Chemotype II: '#AF8756'
+  Chemotype III: '#AC7084'
+  Chemotype IV: '#769184'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: 05ec94e612588e3faa5328b849e2090bde92ff17c2547e76fed18f9a2e51a13d
+  project_id: BENCH-genomics-cannabis-busco-chr7-2025-public-current-table
+  palette_id: cannabis-busco-muted-v1
+  semantic_colors: *id001
+  reuse_policy: exact_semantic_mapping
+  exception_basis: Portable public packaged-current-table layout replay; historical
+    author-raw gates/authorization are not inherited.
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - BUSCOplot
+  - ggplot2
+  - cowplot
+  - ragg
+  - yaml
+  - jsonlite
+  - systemfonts
+  - digest
+  - svglite
+  input_parser: Strictfixed currentCSV/hash/NA/order/count audit; nativeBUSCOplot
+    matrix builder
+output_size:
+  width_mm: 180
+  height_mm: 116
+  formats:
+  - pdf
+  - svg
+  - png
+  size_class: double-column
+  size_basis: final_physical_output
+  size_rationale:
+    panel_count: 1
+    density: high
+    longest_label_chars: 24
+    recommended_class: double-column
+    selection_reason: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data. Arial7pt labels; temporary previews in work,
+      PDF permanent.
+    override_basis: ''
+layout_contract:
+  canvas: 180x116mm
+  data_bbox: Native gtable innerregion measured after render; aim152x101mm
+  annotation_bbox: Top selected-panel identifier and source chemotype annotations
+  legend_bbox: Reserved right18mm column
+  label_reserve: Left9mm;bottom6mm;right18mm key
+  collision_policy: fail_and_redraw
+  text_extent_method: Actual Rgrob physical metrics + PNG/PDF final-size view
+  preflight_collision_check: required
+  coordinate_policy: Preserve exact source processed coordinates, ordering, view selection
+    and nativeNA-line behavior
+font_contract:
+  family: Arial
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: png_visual_plus_vector_metadata
+  minimum_final_text_pt: 7
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7
+    axis_title: 7
+    legend_text: 7
+    strip_text: 7
+    annotation_text: 7
+    panel_label: 8
+design_target:
+  hierarchy:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  geometry:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  palette:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  typography:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  marks:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  annotation:
+    observation: Wide scatter-line map, top I-IV labels, left0–4 Mb axis, bottom anchor
+      annotation, right vertical four-triangle key. Final paper omits crowded haplotype
+      tick labels.
+    implementation: Preserve formal Fig4d data-region aspect≈1.5,76 ordered columns,
+      top four chemotype labels, left0-4Mb ticks, anchor note and right four-triangle
+      key; current-source selected data.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  reference: public-own-layout://cannabis-cassette
+  reference_opened: true
+text_contract:
+  allowed_text:
+  - Position (Mb)
+  - THCAS
+  - CBDAS
+  - CBCAS
+  - Low-stringency
+  - Chemotype I
+  - Chemotype II
+  - Chemotype III
+  - Chemotype IV
+  - BUSCO:127689at71240
+  - Fig.4d | Author data
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - 'THCAS
+
+    Chemotype I'
+  - 'THCAS:CBDAS
+
+    Chemotype II'
+  - 'CBDAS
+
+    Chemotype III'
+  allow_headings: true
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false

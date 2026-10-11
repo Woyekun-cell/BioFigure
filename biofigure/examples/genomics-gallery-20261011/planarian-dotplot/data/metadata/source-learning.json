@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-planarian-haplotype-dotplot-2026",
+  "learned_method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+  "recipe_id": "BENCH-genomics-planarian-haplotype-dotplot-2026-PUBLIC-NATIVE-REPLAY",
+  "title": "planarian-dotplot public native own-layout replay",
+  "scope": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification.",
+  "claim_boundary": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification.",
+  "execution_mode": "planarian-public-csv",
+  "status": "PUBLIC_EXECUTION_CONFIGURATION; NEW_RUNTIME_NOT_YET_VALIDATED",
+  "opened_reference": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+  "source_assets": [
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/audit_inputs.R",
+      "sha256": "587e3b7c6325c5c9fdf3e3579ed20641639559ecf9ae2b59c11acc6efd0c208d",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
+      "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
+      "sha256": "326c9edab8387ba7b234965d49d3ea625ba9e99fb27f3640ec1a7fc34b6f5915",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
+      "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
+      "sha256": "383c7e4d7768fad382438639f308cb30ed427cb141087e17ca26baad8001f25e",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
+      "sha256": "52b66ef4f0889431400a187700fd6f135ed0c9e0e9c5ab8b47282341b7cf1906",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/figure-request.yaml",
+      "sha256": "fde1f98dcd3690bf8481a285692a62c3fbe67262c39abc74a5ce16d5d37e1ecf",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/project-style.yaml",
+      "sha256": "fb0541eb52a6e8304b97d28eb65ea1e1ec3dc1b6d20047c8f4d576bc79e997ed",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
+      "sha256": "45e98272a6b9bd5a72a26d0b61279bec6587c5ebe830044e95ed664339ae9668",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+      "sha256": "55b3715e32c54e3af8c2a48115abc0c28d8b759a22c91e32f743c5756384d3ff",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+      "sha256": "06cc60f9ef30743e7c56b4bdc598ba68662eb6f1334aa3e4f72621da43bb194c",
+      "role": "own-public-native-execution-material"
+    },
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+      "sha256": "35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8",
+      "role": "own-public-native-execution-material"
+    }
+  ],
+  "read_paths": [
+    "examples/genomics-gallery-20261011/planarian-dotplot/scripts/audit_inputs.R",
+    "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
+    "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
+    "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
+    "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
+    "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
+    "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/figure-request.yaml",
+    "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/project-style.yaml",
+    "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
+    "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+    "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+    "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf"
+  ],
+  "code_locators": [
+    {
+      "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
+      "start": 1,
+      "end": 68,
+      "purpose": "Own native R renderer; public replay scope, not full author pipeline"
+    }
+  ],
+  "packages": [
+    "ggplot2",
+    "data.table",
+    "grid",
+    "ragg",
+    "systemfonts",
+    "yaml",
+    "jsonlite",
+    "digest",
+    "svglite"
+  ],
+  "input_contract": {
+    "files": [
+      "results/plot_data/planarian_haplotype_recolored_alignments.csv",
+      "results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+      "results/plot_data/planarian_haplotype_recolored_boundaries.csv"
+    ],
+    "mode": "planarian-public-csv",
+    "pinned_external_processed_input": null,
+    "raw_ngs": false
+  },
+  "layout_constraints": {
+    "source": "sealed own public PDF",
+    "physical_mm": [
+      180,
+      180
+    ],
+    "palette": {
+      "identity_50": "#E7C468",
+      "identity_75": "#57AFA8",
+      "identity_100": "#173F5F",
+      "boundary": "#6D737A"
+    },
+    "new_sampling": false
+  },
+  "gaps": [
+    {
+      "id": "PUBLIC-REPLAY-0",
+      "status": "DECLARED",
+      "detail": "Public CSV excludes1744source-rejected alignments; their original full-input filter is not rerun"
+    },
+    {
+      "id": "PUBLIC-REPLAY-1",
+      "status": "DECLARED",
+      "detail": "Boundary coordinates are retained sealed values; do not recompute boundaries from selected rows"
+    },
+    {
+      "id": "PUBLIC-REPLAY-2",
+      "status": "DECLARED",
+      "detail": "Final author-paper panel mapping and new-input transfer NOT_VERIFIED"
+    },
+    {
+      "id": "PUBLIC-REPLAY-3",
+      "status": "DECLARED",
+      "detail": "Old authorization and historical PASS are never replayed"
+    }
+  ],
+  "mandatory_revalidation": [
+    "fresh_source_view",
+    "current_read_hashes",
+    "fresh_prepare",
+    "fresh_CP2",
+    "single_use_render_authorization",
+    "new_output_visual_review"
+  ]
+}

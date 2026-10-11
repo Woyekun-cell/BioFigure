@@ -958,26 +958,42 @@
     },
     {
       "id": "BF-0109",
-      "title": "渐变桑基图",
+      "title": "DNA–RNA–Protein 状态桑基图",
       "category": "composition",
       "image": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
-      "sha256": "1272eba2042b59049a645b89e980617073c990d99854f5e910aaf718a98d4e82",
-      "pixel_sha256": "4ca202d361b83899b33da238b0dd88b10fc091199112c9771be340a5bdb708ad",
+      "sha256": "5d11f7971f45aa1507ad8e11444ba1299a0c170600b52b05fa187eee711fe62e",
       "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/scidraw-next20/results/figures/36_gradient_sankey.png"
+        "biofigure/examples/genomics-gallery-20261011/sankey"
       ],
-      "collection": "scidraw-001-065",
+      "collection": "genomics-gallery-20261011",
       "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
+      "note": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。",
       "scripts": [
-        "biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_36_45.R"
+        "biofigure/examples/genomics-gallery-20261011/sankey/scripts/prepare_data.R",
+        "biofigure/examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
+        "biofigure/examples/genomics-gallery-20261011/sankey/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/sankey/scripts/reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
+        "biofigure/examples/genomics-gallery-20261011/replay_public.py"
       ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
+      "validation": "scoped-simulated-layout-pass",
       "historical": false,
-      "source_url": "https://mp.weixin.qq.com/s/iDi21LdR2_V3fVRMos0LqQ",
-      "historical_review_status": "needs-revision",
-      "historical_review_hash_matches": true,
-      "subtype": "桑基图"
+      "source_url": "https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "subtype": "桑基图",
+      "pdf": "biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_native_strata.csv",
+        "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_nodes.csv",
+        "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_paths.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/sankey/provenance.json",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        3212,
+        2716
+      ]
     },
     {
       "id": "BF-0112",
@@ -1119,25 +1135,43 @@
     },
     {
       "id": "BF-0146",
-      "title": "OncoPrint 突变景观",
+      "title": "OncoPrint 多事件突变景观",
       "category": "heatmaps",
       "image": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
-      "sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
-      "pixel_sha256": "a6ea93167a16aac279e61d29f5f031f0fc609b7189eab5fb7bca44d1173d918d",
+      "sha256": "29f4c1fc3b70e509818b0638d6588ac5f1703c392407cdb9054177ffe89f7e2e",
       "origin_paths": [
-        "Project_001_生物科研绘图Skill/work/benchmark-v2/topjournal-001-010/results/figures/08_oncoprint_landscape.png"
+        "biofigure/examples/genomics-gallery-20261011/oncoprint"
       ],
-      "collection": "topjournal-001-010",
+      "collection": "genomics-gallery-20261011",
       "data_origin": "simulated",
-      "note": "模拟数据／方法展示；非原论文数据复现。",
+      "note": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
       "scripts": [
-        "biofigure/examples/archive-gallery/topjournal-001-010/scripts/render_topjournal_001_010.R"
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/replay_public.py"
       ],
-      "validation": "needs-revision; full-CP0-CP4-not-passed",
+      "validation": "scoped-simulated-layout-pass",
       "historical": false,
-      "historical_review_status": "source-compared-needs-revision",
-      "historical_review_hash_matches": true,
-      "subtype": "OncoPrint"
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "subtype": "OncoPrint",
+      "pdf": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+        "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/oncoprint/provenance.json",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        4251,
+        2787
+      ],
+      "source_url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html"
     },
     {
       "id": "BF-0151",
@@ -1619,6 +1653,239 @@
       "validation": "gallery-file-verified; full-CP0-CP4-not-asserted",
       "historical": false,
       "subtype": "线性散点与置信带"
+    },
+    {
+      "id": "BF-0217",
+      "category": "genomes",
+      "subtype": "BUSCO锚定基因区域图",
+      "title": "BUSCO 锚定合酶区域对照",
+      "image": "docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
+      "sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "真实作者处理坐标；147个BUSCO、76个基因组。Fig4d选定面板换色重绘，保留锚定、样本顺序、有限窗口与原NA。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/acquire_sources.py",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/audit_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/install_native.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/busco-coordinates.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/busco-palette.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/sample-order.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/synthase-markers.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        2125,
+        1370
+      ],
+      "source_url": "https://www.nature.com/articles/s41586-025-09065-0"
+    },
+    {
+      "id": "BF-0218",
+      "category": "genomes",
+      "subtype": "跨基因组BUSCO路径与基因位点",
+      "title": "整条染色体 BUSCO 与 CBDAS 定位",
+      "image": "docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
+      "sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "真实作者处理坐标；147个BUSCO、31个基因组、31个CBDAS位点。作者公开图重绘，正式补图编号未验证。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/acquire_sources.py",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/audit_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/install_native.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-coordinates.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-palette.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/sample-order.csv",
+        "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/synthase-markers.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        2125,
+        1417
+      ],
+      "source_url": "https://www.nature.com/articles/s41586-025-09065-0"
+    },
+    {
+      "id": "BF-0219",
+      "category": "heatmaps",
+      "subtype": "通路双矩阵基因气泡图",
+      "title": "双通路 OE/KD 气泡矩阵",
+      "image": "docs/assets/genomics-gallery-20261011/dpm-bubbles.png",
+      "sha256": "9bb943cb914d9e1128113932effbefc1c5abb183c0ceeb78c35f222267b4171c",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "真实作者处理数据；37/23基因、120个单元。保留raw P与效应，通路标签为FWER；缺失原星号依据，未补造。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/archive-source-reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/audit_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/public-render.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/replay_public.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        3212,
+        3897
+      ],
+      "source_url": "https://www.nature.com/articles/s41467-024-49986-4"
+    },
+    {
+      "id": "BF-0220",
+      "category": "networks",
+      "subtype": "通路证据饼图网络",
+      "title": "方向性通路证据网络",
+      "image": "docs/assets/genomics-gallery-20261011/dpm-network.png",
+      "sha256": "a01d225450689b8bc513b4779df5bef2c8461ef48b279d9ec4f0c7aa9224cfaf",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "225条作者通路；明确新设OC≥0.5、2183边及布局。半饼只编码OE/KD二元证据；原Cytoscape布局、阈值和主题组装未公开。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/archive-source-reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/audit_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/public-render.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/reproduce.py",
+        "biofigure/examples/genomics-gallery-20261011/replay_public.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_edges.csv",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_layout.csv",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_memberships.csv",
+        "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/dpm-network/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        4251,
+        3897
+      ],
+      "source_url": "https://www.nature.com/articles/s41467-024-49986-4"
+    },
+    {
+      "id": "BF-0221",
+      "category": "genomes",
+      "subtype": "染色质接触矩阵与环标记",
+      "title": "Micro-C 联系矩阵与 loops",
+      "image": "docs/assets/genomics-gallery-20261011/ohca-microc.png",
+      "sha256": "de9250e5bb86e9e846c6beb3076fd3dd7ef37fd09d358f4bbbb1b5ab9c5a18bb",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "真实作者book处理RDS；5kb、200bins、19667联系记录、31个可见环。原生HiContacts；仅对应book案例，正式论文面板未验证。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/audit_source_input.R",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/contact-bin-pairs.csv",
+        "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/loop-annotations.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        2125,
+        1866
+      ],
+      "source_url": "https://www.nature.com/articles/s41467-024-44761-x"
+    },
+    {
+      "id": "BF-0222",
+      "category": "genomes",
+      "subtype": "全基因组单倍型端点比对",
+      "title": "四染色体单倍型比对",
+      "image": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
+      "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46",
+      "origin_paths": [
+        "biofigure/benchmark/library/genomics/planarian-genome"
+      ],
+      "collection": "genomics-gallery-20261011",
+      "data_origin": "public-author-processed",
+      "note": "真实作者已翻向、拼接的处理坐标；19637条比对、39274端点。保留作者4×4顺序和maxEnd边界，按单条比对identity换色；正式面板未验证。",
+      "scripts": [
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/audit_inputs.R",
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py"
+      ],
+      "validation": "scoped-author-processed-replot-pass",
+      "historical": false,
+      "pdf": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+      "plot_data": [
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+        "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_endpoints.csv"
+      ],
+      "provenance": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/provenance.json",
+      "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
+      "original_full_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "pixels": [
+        4251,
+        4251
+      ],
+      "source_url": "https://www.nature.com/articles/s41467-026-74605-9"
     }
   ],
   "collections": {

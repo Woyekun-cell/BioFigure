@@ -1,0 +1,690 @@
+schema_version: '3.4'
+figure_task: simulated-tumour-multievent-oncoprint-gallery-revision
+scientific_message: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.
+data_contract_summary:
+  input: 144 synthetic tumours x12 genes;424 events in368 altered cells,56 multi-event
+    cells;all1728 assays present
+  unit: synthetic tumour and gene
+  origin: self-generated seed2026101108
+  exclusions: none;13 zero-event tumours retained
+  statistics: descriptive frequency only; no inferential test
+biology_contract:
+  primary_domain: genome-sequence-variation
+  entities:
+  - tumour
+  - gene
+  - event_type
+  relationships:
+  - event presence per simulated gene/tumour
+  - synthetic cohort/sex/smoking categories
+  experimental_unit: simulated tumour; no biological experiment
+  statistical_unit: distinct tumour for frequency numerator/denominator
+  replicate_unit: none;simulation only
+  evidence_level: synthetic descriptive data
+  claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+    not original paper-data/full-figure fidelity or new-input qualification.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock:
+  backend: R
+  lock_id: oncoprint-simulated-20261011
+  locked: true
+  preview_export_qa_same_backend: true
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-gallery-multievent-oncoprint-2026
+selected_pattern: LEARNED-BENCH-gallery-multievent-oncoprint-2026
+selection_reason: Native oncoPrint matches multi-event matrix and aligned annotation/frequency
+  semantics; new simulated example addresses historical legend overlap.
+reference_evidence:
+  preparation_id: FRESH_REQUIRED
+  preparation_request: {}
+  selected_method_case_id: BENCH-gallery-multievent-oncoprint-2026
+  retrieval_query:
+    domain: genome-sequence-variation
+    task: simulated-tumour-multievent-oncoprint-gallery-revision
+    pattern: LEARNED-BENCH-gallery-multievent-oncoprint-2026
+  selected_atlas_ids: []
+  observed_principles:
+  - Native multi-event oncoPrint cells preserve all classes.
+  - All144 columns, sample burden and metadata share sample keys/order.
+  - Right distinct-tumour frequencies use the fixed144 assayed denominator.
+  - Legends occupy a reserved bottom band.
+  transfer_decisions:
+  - Native multi-event oncoPrint cells preserve all classes.
+  - All144 columns, sample burden and metadata share sample keys/order.
+  - Right distinct-tumour frequencies use the fixed144 assayed denominator.
+  - Legends occupy a reserved bottom band.
+  rejected_elements:
+  - No original GDC table download or original-image copying.
+  - Do not collapse multi-events to an undifferentiated Multi_Hit.
+  - Do not reuse crowded historic legend coordinates.
+  - No substitution spectrum without simulated nucleotide-level records.
+  evidence_status: source-and-visual-reviewed
+  learned_source_reference:
+    method_id: BENCH-gallery-multievent-oncoprint-2026
+    source_record_sha256: FRESH_REQUIRED
+    read_hashes: {}
+    opened_source_asset:
+      path: examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf
+      sha256: 61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361
+      original_size_viewed: true
+      scope: Current own published figure PDF, not original publication reference.
+  learned_method_reuse:
+    adopted:
+    - BENCH-gallery-multievent-oncoprint-2026
+    rejected: []
+    data_adaptation: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    known_failures_addressed: Published plotting tables and explicit simulation labels;
+      retain raw effects/NA/IDs and native layout; never borrow source-fidelity or
+      earlier gate PASS.
+    source_issue_resolutions: []
+  review_scope: Current own output viewed and numerically audited locally; fresh public-directory
+    replay requires independent final review.
+reference_analysis:
+  figure_family: matrix
+  semantic_purpose: OncoPrint describing synthetic gene-event presence and aligned
+    sample annotations.
+  panels:
+  - id: main
+    role: native matrix with keyed top/right annotations
+    position: central above reserved legends
+  elements:
+  - id: matrix
+    role: event landscape
+    geometry: 12x144 native event matrix,124x66mm
+    position: central
+    data_mapping: gene/sample/event_type
+    required: true
+  - id: annotations
+    role: synthetic sample metadata and burden
+    geometry: native top barplot and two category strips
+    position: above matrix
+    data_mapping: sample_id
+    required: true
+  - id: frequency
+    role: distinct-tumour frequency
+    geometry: native percentages and right horizontal bars
+    position: right of matrix
+    data_mapping: gene distinct-sample numerator/144
+    required: true
+  - id: labels
+    role: row/column group names
+    geometry: Arial keyed labels
+    position: left gene names/top three cohort names
+    data_mapping: gene/sample cohort
+    required: true
+  - id: legend
+    role: event/metadata decoding
+    geometry: packed native categorical legends
+    position: separate bottom band
+    data_mapping: exact semantic colors
+    required: true
+  - id: note
+    role: simulation declaration
+    geometry: single7.5pt footer
+    position: bottom outside legends
+    data_mapping: synthetic input provenance
+    required: true
+  relationships:
+  - from: matrix
+    to: annotations
+    type: shares-order
+    shared_key: sample_id
+  - from: matrix
+    to: frequency
+    type: shares-order
+    shared_key: gene
+  - from: matrix
+    to: labels
+    type: shares-order
+    shared_key: gene/sample_id
+  - from: matrix
+    to: legend
+    type: reading-order
+    shared_key: event_type/category
+  - from: legend
+    to: note
+    type: reading-order
+    shared_key: simulation provenance
+  spatial_topology:
+    coordinate_system: Cartesian native heatmap grid
+    reading_order:
+    - top annotations
+    - event matrix
+    - right frequency
+    - bottom legends
+    - simulation declaration
+    alignment_keys:
+    - gene
+    - sample_id
+    layer_order:
+    - neutral background
+    - nonoverlapping event-class stripes
+    - annotations
+    - legends
+  required_structures:
+  - Native multi-event oncoPrint cells preserve all classes.
+  - All144 columns, sample burden and metadata share sample keys/order.
+  - Right distinct-tumour frequencies use the fixed144 assayed denominator.
+  - Legends occupy a reserved bottom band.
+  forbidden_substitutions:
+  - No ordinary geom_tile replacement for native oncoPrint.
+  - No event pruning,empty-column filtering or independent annotation sorting.
+visual_hierarchy:
+  primary: Color event cells and aligned synthetic metadata.
+  secondary: Gene labels,frequency axis and separate bottom legends.
+encoding:
+  color: Five event-class colors; separate metadata semantic mappings.
+  cell: Each coexisting type retains a nonoverlapping colored stripe.
+  bar: Top altered-gene count;right distinct-tumour frequency percent.
+  blank: No simulated event detected;every assay measured.
+annotation:
+  metadata: Synthetic Sex/Smoking with explicit Unknown.
+  cohort: Three named48-tumour column groups.
+  simulation: Visible provenance footer.
+legend:
+  place: outside_bottom
+  shared: true
+  policy: Native packed legends outside all data rows.
+palette_semantics:
+  Missense: '#31748F'
+  Frameshift: '#D6A24C'
+  Nonsense: '#C26356'
+  Splice: '#8571A7'
+  In_frame: '#68B6AD'
+  Female: '#9B759A'
+  Male: '#5B8D9C'
+  Unknown: '#C7CDD1'
+  Ever: '#9C886D'
+  Never: '#AEC5AB'
+  background: '#F1F2F3'
+  outline: '#30343B'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: FRESH_REQUIRED
+  project_id: genomics-gallery-20261011-oncoprint
+  palette_id: oncoprint-five-events-v1
+  semantic_colors:
+    Missense: '#31748F'
+    Frameshift: '#D6A24C'
+    Nonsense: '#C26356'
+    Splice: '#8571A7'
+    In_frame: '#68B6AD'
+    Female: '#9B759A'
+    Male: '#5B8D9C'
+    Unknown: '#C7CDD1'
+    Ever: '#9C886D'
+    Never: '#AEC5AB'
+    background: '#F1F2F3'
+    outline: '#30343B'
+  reuse_policy: exact_semantic_mapping
+  exception_basis: New explicit synthetic gallery project;no journal-fidelity claim.
+renderer:
+  backend: ComplexHeatmap
+  language: R
+  packages:
+  - ComplexHeatmap
+  - grid
+  - cowplot
+  - ggplot2
+  - ragg
+  - svglite
+  - jsonlite
+  - yaml
+  function_adaptation: Native oncoPrint/draw captured as grid grob; cowplot wrapper
+    only assembles for the authorized R export, without replacement of the event matrix.
+output_size:
+  width_mm: 180
+  height_mm: 118
+  formats:
+  - pdf
+  - svg
+  - png
+  size_class: double-column
+  size_basis: final_physical_output
+  size_rationale:
+    panel_count: 1
+    density: high
+    longest_label_chars: 58
+    recommended_class: double-column
+    selection_reason: 144 columns require sub-mm event columns;124x66mm body plus
+      aligned annotation and independent legend band.
+    override_basis: ''
+layout_contract:
+  canvas: 180x118mm white
+  data_bbox: Planned native body124x66mm,measured after draw.
+  annotation_bbox: Top burden10mm plus metadata3mm strips;right frequency18mm.
+  legend_bbox: Separate bottom band,minimum4mm clear of gene rows; measured native
+    packed legend bbox.
+  label_reserve: Left longest gene name and percentage/axis text measured in Arial.
+  collision_policy: Fail on any native bbox collision,clipping or insufficient legend
+    reserve.
+  text_extent_method: grid grob metrics on exact Arial PDF measurement device.
+  preflight_collision_check: bf_check_boxes plus native grid measurements and actual
+    PNG/PDF review.
+  coordinate_policy: Native matrix and annotations share keyed orders;no image stretching.
+font_contract:
+  family: Arial
+  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: PNG plus editablePDF font/text metadata
+  minimum_final_text_pt: 7.5
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7.5
+    axis_title: 7.5
+    legend_text: 7.5
+    strip_text: 7.5
+    annotation_text: 7.5
+    panel_label: 7.5
+design_target:
+  hierarchy:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  geometry:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  palette:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  typography:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  marks:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  annotation:
+    observation: Historical gallery puts legends over the bottom event rows. Source
+      tutorial shows dense ordered native matrix plus top metadata/right frequency.
+    implementation: Independent native144x12 example;explicit simulation,multi-event
+      preservation,all sample keys,and reserved legend band.
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  reference: examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf
+  reference_opened: true
+text_contract:
+  allowed_text:
+  - TP53
+  - KRAS
+  - STK11
+  - KEAP1
+  - EGFR
+  - NF1
+  - BRAF
+  - SETD2
+  - RBM10
+  - PIK3CA
+  - MGA
+  - ARID1A
+  - Altered genes
+  - Sex
+  - Smoking
+  - Tumours (%)
+  - Alteration
+  - Missense
+  - Frameshift
+  - Nonsense
+  - Splice
+  - In_frame
+  - Female
+  - Male
+  - Unknown
+  - Ever
+  - Never
+  - A (48)
+  - B (48)
+  - C (48)
+  - Simulated data | 144 tumours, 12 genes | all genes assayed
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '10'
+  - '11'
+  - '12'
+  - '13'
+  - '14'
+  - '15'
+  - '16'
+  - '17'
+  - '18'
+  - '19'
+  - '20'
+  - '21'
+  - '22'
+  - '23'
+  - '24'
+  - '25'
+  - '26'
+  - '27'
+  - '28'
+  - '29'
+  - '30'
+  - '31'
+  - '32'
+  - '33'
+  - '34'
+  - '35'
+  - '36'
+  - '37'
+  - '38'
+  - '39'
+  - '40'
+  - '41'
+  - '42'
+  - '43'
+  - '44'
+  - '45'
+  - '46'
+  - '47'
+  - '48'
+  - '49'
+  - '50'
+  - '51'
+  - '52'
+  - '53'
+  - '54'
+  - '55'
+  - '56'
+  - '57'
+  - '58'
+  - '59'
+  - '60'
+  - '61'
+  - '62'
+  - '63'
+  - '64'
+  - '65'
+  - '66'
+  - '67'
+  - '68'
+  - '69'
+  - '70'
+  - '71'
+  - '72'
+  - '73'
+  - '74'
+  - '75'
+  - '76'
+  - '77'
+  - '78'
+  - '79'
+  - '80'
+  - '81'
+  - '82'
+  - '83'
+  - '84'
+  - '85'
+  - '86'
+  - '87'
+  - '88'
+  - '89'
+  - '90'
+  - '91'
+  - '92'
+  - '93'
+  - '94'
+  - '95'
+  - '96'
+  - '97'
+  - '98'
+  - '99'
+  - '100'
+  - '101'
+  - '102'
+  - '103'
+  - '104'
+  - '105'
+  - '106'
+  - '107'
+  - '108'
+  - '109'
+  - '110'
+  - '111'
+  - '112'
+  - '113'
+  - '114'
+  - '115'
+  - '116'
+  - '117'
+  - '118'
+  - '119'
+  - '120'
+  - '121'
+  - '122'
+  - '123'
+  - '124'
+  - '125'
+  - '126'
+  - '127'
+  - '128'
+  - '129'
+  - '130'
+  - '131'
+  - '132'
+  - '133'
+  - '134'
+  - '135'
+  - '136'
+  - '137'
+  - '138'
+  - '139'
+  - '140'
+  - '141'
+  - '142'
+  - '143'
+  - '144'
+  - '145'
+  - '146'
+  - '147'
+  - '148'
+  - '149'
+  - '150'
+  - '151'
+  - '152'
+  - '153'
+  - '154'
+  - '155'
+  - '156'
+  - '157'
+  - '158'
+  - '159'
+  - '160'
+  - '161'
+  - '162'
+  - '163'
+  - '164'
+  - '165'
+  - '166'
+  - '167'
+  - '168'
+  - '169'
+  - '170'
+  - '171'
+  - '172'
+  - '173'
+  - '174'
+  - '175'
+  - '176'
+  - '177'
+  - '178'
+  - '179'
+  - '180'
+  - '181'
+  - '182'
+  - '183'
+  - '184'
+  - '185'
+  - '186'
+  - '187'
+  - '188'
+  - '189'
+  - '190'
+  - '191'
+  - '192'
+  - '193'
+  - '194'
+  - '195'
+  - '196'
+  - '197'
+  - '198'
+  - '199'
+  - '200'
+  - 0%
+  - 1%
+  - 2%
+  - 3%
+  - 4%
+  - 5%
+  - 6%
+  - 7%
+  - 8%
+  - 9%
+  - 10%
+  - 11%
+  - 12%
+  - 13%
+  - 14%
+  - 15%
+  - 16%
+  - 17%
+  - 18%
+  - 19%
+  - 20%
+  - 21%
+  - 22%
+  - 23%
+  - 24%
+  - 25%
+  - 26%
+  - 27%
+  - 28%
+  - 29%
+  - 30%
+  - 31%
+  - 32%
+  - 33%
+  - 34%
+  - 35%
+  - 36%
+  - 37%
+  - 38%
+  - 39%
+  - 40%
+  - 41%
+  - 42%
+  - 43%
+  - 44%
+  - 45%
+  - 46%
+  - 47%
+  - 48%
+  - 49%
+  - 50%
+  - 51%
+  - 52%
+  - 53%
+  - 54%
+  - 55%
+  - 56%
+  - 57%
+  - 58%
+  - 59%
+  - 60%
+  - 61%
+  - 62%
+  - 63%
+  - 64%
+  - 65%
+  - 66%
+  - 67%
+  - 68%
+  - 69%
+  - 70%
+  - 71%
+  - 72%
+  - 73%
+  - 74%
+  - 75%
+  - 76%
+  - 77%
+  - 78%
+  - 79%
+  - 80%
+  - 81%
+  - 82%
+  - 83%
+  - 84%
+  - 85%
+  - 86%
+  - 87%
+  - 88%
+  - 89%
+  - 90%
+  - 91%
+  - 92%
+  - 93%
+  - 94%
+  - 95%
+  - 96%
+  - 97%
+  - 98%
+  - 99%
+  - 100%
+  allow_headings: true
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false

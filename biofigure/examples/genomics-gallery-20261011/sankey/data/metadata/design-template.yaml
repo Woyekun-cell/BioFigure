@@ -1,0 +1,380 @@
+schema_version: '3.4'
+figure_task: matched-omics-state-alluvial
+scientific_message: Public plotting-table native replay of the current BioFigure layout;
+  not original paper-data/full-figure fidelity or new-input qualification.
+data_contract_summary:
+  input: 1800 distinct simulated matched features;27 complete paths
+  unit: matched feature count
+  source_level: explicit R simulation seed20261011
+  exclusions: none
+  statistical_boundary: description only, no inference
+biology_contract:
+  primary_domain: transcriptomics-metabolomics-multiomics
+  entities:
+  - DNA copy-number state
+  - RNA expression state
+  - protein abundance state
+  relationships:
+  - same feature ID observed at3 modalities
+  experimental_unit: simulated matched feature; no experimental samples
+  statistical_unit: feature count
+  replicate_unit: none
+  evidence_level: artificial categorical transition table
+  claim_boundary: Public plotting-table native replay of the current BioFigure layout;
+    not original paper-data/full-figure fidelity or new-input qualification.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock:
+  backend: R
+  exclusive: true
+  lock_id: e73fc052c0177688
+  preview_export_qa_same_backend: true
+  prior_evidence_invalidated: false
+  rerender_required: false
+  locked: true
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-gallery-multiomics-alluvial-2026
+selected_pattern: LEARNED-BENCH-gallery-multiomics-alluvial-2026
+selection_reason: Native alluvial path topology for matched three-stage data with
+  transparent simulation origin
+reference_evidence:
+  preparation_id: FRESH_REQUIRED
+  preparation_request: {}
+  selected_method_case_id: BENCH-gallery-multiomics-alluvial-2026
+  retrieval_query:
+    domain: transcriptomics-metabolomics-multiomics
+    task: matched-omics-state-alluvial
+    pattern: LEARNED-BENCH-gallery-multiomics-alluvial-2026
+  selected_atlas_ids: []
+  observed_principles:
+  - 3 equally spaced modality columns
+  - 9 count-scaled outlined state strata
+  - 27 uninterrupted matched-feature paths
+  - direct state/count labels inside strata
+  - common feature-count vertical scale
+  - outside stage headings and simulation caption
+  transfer_decisions:
+  - native ggalluvial uninterrupted paths, conserved1800 counts, explicit stage order
+  rejected_elements:
+  - old right-label ribbon collisions
+  - missing source data2.xlsx
+  - oversized whitespace
+  - non-stage-aware node identity
+  evidence_status: source-and-visual-reviewed
+  learned_source_reference:
+    method_id: BENCH-gallery-multiomics-alluvial-2026
+    source_record_sha256: FRESH_REQUIRED
+    read_hashes: {}
+    opened_source_asset:
+      path: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+      sha256: 56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1
+      original_size_viewed: true
+      scope: Current own published figure PDF, not original publication reference.
+  learned_method_reuse:
+    adopted:
+    - BENCH-gallery-multiomics-alluvial-2026
+    rejected: []
+    data_adaptation: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    known_failures_addressed: Published plotting tables and explicit simulation labels;
+      retain raw effects/NA/IDs and native layout; never borrow source-fidelity or
+      earlier gate PASS.
+    source_issue_resolutions: []
+  review_scope: Current own output viewed and numerically audited locally; fresh public-directory
+    replay requires independent final review.
+reference_analysis:
+  figure_family: composition
+  semantic_purpose: matched-feature categorical states across3 modalities
+  panels:
+  - id: A
+    role: one3stage alluvial
+    position: center
+  elements:
+  - id: e0
+    role: 3 equally spaced modality columns
+    geometry: 3 equally spaced modality columns
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  - id: e1
+    role: 9 count-scaled outlined state strata
+    geometry: 9 count-scaled outlined state strata
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  - id: e2
+    role: 27 uninterrupted matched-feature paths
+    geometry: 27 uninterrupted matched-feature paths
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  - id: e3
+    role: direct state/count labels inside strata
+    geometry: direct state/count labels inside strata
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  - id: e4
+    role: common feature-count vertical scale
+    geometry: common feature-count vertical scale
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  - id: e5
+    role: outside stage headings and simulation caption
+    geometry: outside stage headings and simulation caption
+    position: 3 native modality strata with outside captions
+    data_mapping: sourceID paths and integer feature counts
+    required: true
+  relationships:
+  - from: e0
+    to: e1
+    type: contains
+    shared_key: modality stage
+  - from: e1
+    to: e2
+    type: connects-to
+    shared_key: featureID path
+  spatial_topology:
+    coordinate_system: x=modality, y=matched feature count
+    reading_order:
+    - DNA
+    - RNA
+    - Protein
+    alignment_keys:
+    - state factor order Low Neutral High
+    - shared count total1800
+    layer_order:
+    - flows
+    - outlined nodes
+    - direct labels
+    - outside headings
+  required_structures:
+  - 3 equally spaced modality columns
+  - 9 count-scaled outlined state strata
+  - 27 uninterrupted matched-feature paths
+  - direct state/count labels inside strata
+  - common feature-count vertical scale
+  - outside stage headings and simulation caption
+  forbidden_substitutions:
+  - flows without count conservation
+  - causal interpretation
+  - generic curves unbound to rows
+visual_hierarchy:
+  primary: count-scaled3stage paths
+  secondary: state names and direct counts
+  tertiary: modality headings and simulation caption
+encoding:
+  position: ordered modality and state strata
+  width: integer matched-feature count
+  color: DNA starting state on paths, matching qualitative state colors on each node
+annotation:
+  method: native stat_stratum centers; state labels and n counts within large node
+    bodies
+legend:
+  place: direct
+  shared: true
+palette_semantics:
+  Low: '#426E9B'
+  Neutral: '#358A83'
+  High: '#C18545'
+  outline: '#30343B'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: FRESH_REQUIRED
+  project_id: genomics-gallery-20261011-sankey
+  palette_id: low-blue-neutral-teal-high-ochre
+  semantic_colors:
+    Low: '#426E9B'
+    Neutral: '#358A83'
+    High: '#C18545'
+    outline: '#30343B'
+  reuse_policy: exact_semantic_mapping
+  exception_basis: User-authorized replacement palette and explicit simulated-input
+    gallery layout correction; no source study data or original-figure fidelity claim
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - ggplot2
+  - ggalluvial
+  - grid
+  - cowplot
+  - ragg
+  - svglite
+  - yaml
+  - jsonlite
+  - digest
+  - systemfonts
+  input_parser: CSV complete-path integer counts with explicit factor levels
+  function_adaptation: ggalluvial::geom_alluvium keeps each27 path contiguous; geom_stratum/stat_stratum
+    native stacking and direct center labels
+output_size:
+  width_mm: 136
+  height_mm: 115
+  size_class: one-and-half-column
+  size_basis: final_physical_output
+  formats:
+  - pdf
+  - svg
+  - png
+  size_rationale:
+    panel_count: 1
+    density: medium
+    longest_label_chars: 39
+    recommended_class: one-and-half-column
+    selection_reason: 27 curves and9 directly labeled strata across3 stages fit136mm
+      with8pt labels
+    override_basis: none
+layout_contract:
+  canvas: 136x115mm white
+  data_bbox: x8,y15,w120,h83mm;shared1800 count scale
+  annotation_bbox: headings y8..13;footer y101..109; native node labels inside node
+    bands
+  legend_bbox: direct labels, no detached legend
+  label_reserve: 8pt labels; node counts minimum470 so each node>17mm tall
+  collision_policy: fail_and_redraw
+  text_extent_method: Arial grid/systemfonts physicalmm metrics and actual PDF metadata
+  preflight_collision_check: exclusive data/headings/footer envelopes before render;
+    actual native strata text widths/heights checked
+  coordinate_policy: DNA RNA Protein fixed;Low Neutral High state order fixed
+font_contract:
+  family: Arial
+  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: embeddedArialPDF and openedPNG
+  minimum_final_text_pt: 8
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 8
+    axis_title: 8.5
+    legend_text: 8
+    strip_text: 8.5
+    annotation_text: 8
+    panel_label: 8.5
+design_target:
+  reference: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+  reference_opened: true
+  hierarchy:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  geometry:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  palette:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  typography:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  marks:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+  annotation:
+    observation: Three-stage native Sankey width encoding; historical output labels
+      cross right ribbons and leaves oversized white margins
+    implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
+      explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
+      names/counts,136x115mm with outside headings/footer
+    difference_reason: Public plotting-table native replay of the current BioFigure
+      layout; not original paper-data/full-figure fidelity or new-input qualification.
+text_contract:
+  allowed_text:
+  - DNA copy number
+  - RNA expression
+  - Protein abundance
+  - Low
+  - Neutral
+  - High
+  - Loss
+  - Diploid
+  - Gain
+  - Down
+  - Stable
+  - Up
+  - Simulated matched features (n = 1,800)
+  - Band width = number of matched features
+  - Flows colored by DNA starting state
+  - n = 512
+  - n = 799
+  - n = 489
+  - n = 509
+  - n = 821
+  - n = 470
+  - n = 513
+  - n = 799
+  - n = 488
+  allow_headings: true
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false
+source_density_contract:
+  source_asset:
+    path: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+    sha256: 56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1
+  source_observation: 'Own historical3stage output: right node names across ribbon
+    bands, excessive right/bottom whitespace'
+  adaptation: new true simulated matched-feature inputs; labels inside9 large nodes,
+    compact3equal columns, counts shared, no original-data claim
+  metrics_required:
+  - 1800 features
+  - 27 full paths
+  - 9 nodes
+  - node sums1800 every stage
+  - 8pt actualPDF text
+  final_metrics_required:
+  - 1800 features
+  - 27 full paths
+  - 9 nodes
+  - node sums1800 every stage
+  - 8pt actualPDF text

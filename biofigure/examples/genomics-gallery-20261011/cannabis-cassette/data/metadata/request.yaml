@@ -1,0 +1,20 @@
+figure_task: phylogeny-synteny-gene-family
+figure_family: genome
+data_shape: '147BUSCOx76samples,173visibleBUSCOpoints/2600low/106highsynthasepointmarkers;source-derived
+  anchoradjustedbp and76orderedchemotypecolumns. Current packaged CSV: results/plot_data/busco-coordinates.csv
+  sha256=d004798b7d9bc2dac97c22340016cf3b2d1930fd3e4c1f75aaaae28133be7a10; results/plot_data/busco-palette.csv
+  sha256=5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2; results/plot_data/sample-order.csv
+  sha256=8e77f31afbafb90e341e900e3f7c10b7167e7c5ad74fcc337960983c76130109; results/plot_data/synthase-markers.csv
+  sha256=b3615afe7a75bf84fb6be05c77eee832d22cea28bd365ec5f750d7236704b006'
+primary_domain: phylogeny-synteny-gene-family
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: reproduce
+pattern_id: LEARNED-BENCH-genomics-cannabis-busco-chr7-2025
+learned_method_id: BENCH-genomics-cannabis-busco-chr7-2025
+statistics_required: false
+primary_source: public-own-layout://cannabis-cassette
+claim_boundary: Public packaged currentplotCSV/nativecurrentlayout replay only. No
+  authorraw processing, completepaperfigurefidelity, historicalgate inheritance, newinputtransfer
+  or stabletemplate claim.

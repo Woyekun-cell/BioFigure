@@ -3,7 +3,7 @@ name: biofigure
 description: Use when choosing a suitable chart from biological data, designing, drawing, reproducing, reviewing, or revising research figures; 根据生物数据判断适合的图型、按数据选图、设计、绘制、复现、审查或修订科研图。
 ---
 
-# BioFigure 3.7.0
+# BioFigure 3.7.1
 
 根据数据、实验设计和科学问题选择图型、实现并核验科研图。用户只问选图时给首选、备选和理由，不渲染。
 

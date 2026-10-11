@@ -48,8 +48,12 @@ class ReferenceSearchCliTests(unittest.TestCase):
 
     def test_type_directory_counts_cover_all_original_ids(self):
         result = self.m.list_types(refresh=True)
-        self.assertEqual(result['indexed_records'], 425)
-        self.assertEqual(sum(x['primary_count'] for x in result['types']), 425)
+        expected_ids = {e['method_id'] for e in json.loads(self.m.INDEX.read_text())['entries']}
+        self.assertEqual(result['indexed_records'], len(expected_ids))
+        self.assertEqual(sum(x['primary_count'] for x in result['types']), len(expected_ids))
+        catalog_ids = [c['method_id'] for c in self.m.load_catalog()['cards']]
+        self.assertEqual(set(catalog_ids), expected_ids)
+        self.assertEqual(len(catalog_ids), len(expected_ids))
         self.assertIn('classifier_sha256', self.m.load_catalog())
 
     def test_type_filter_excludes_old_wrong_ternary_tags(self):

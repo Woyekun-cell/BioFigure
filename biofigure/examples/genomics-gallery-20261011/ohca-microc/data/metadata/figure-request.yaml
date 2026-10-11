@@ -1,0 +1,15 @@
+figure_task: chromatin-epigenome
+figure_family: matrix
+data_shape: SHA-pinned processed in-memory HiCExperiment RDS,200bins19667contacts31visibleloops;
+  compare3publicCSV
+primary_domain: chromatin-epigenome
+primary_role: comparison
+backend: R
+deliverable: paper-composite
+operation: reproduce
+pattern_id: LEARNED-BENCH-genomics-ohca-microc-loops-2024
+learned_method_id: BENCH-genomics-ohca-microc-loops-2024
+statistics_required: false
+claim_boundary: Public own-layout native HiContacts replay using one SHA-pinned author
+  processed RDS and compare all3output CSV hashes with the sealed public tables. No
+  raw NGS/loop calling/full author-paper panel/new-input qualification.

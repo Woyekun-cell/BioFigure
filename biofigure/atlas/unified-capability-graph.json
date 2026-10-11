@@ -2,12 +2,29 @@
   "schema_version": 2,
   "summary": {
     "schema_version": 2,
-    "case_count": 256,
+    "case_count": 260,
     "source_counts": {
       "scidraw": 152,
-      "topjournal": 87,
-      "single-cell": 7,
-      "genomics": 6
+      "topjournal": 83,
+      "library/single-cell/han-foregut/data/metadata/source-manifest.json": 1,
+      "library/single-cell/wahle-retinal/data/metadata/source-manifest.json": 1,
+      "library/single-cell/hochgerner-dentate/data/metadata/source-manifest.json": 1,
+      "library/single-cell/trevino-cortex/data/metadata/source-manifest.json": 1,
+      "library/single-cell/yu-interneuron/data/metadata/source-manifest.json": 1,
+      "library/single-cell/ma-primate-pfc/data/metadata/source-manifest.json": 1,
+      "library/single-cell/fleck-organoid/data/metadata/source-manifest.json": 1,
+      "library/genomics/ape-t2t/data/metadata/source-manifest.json": 1,
+      "library/genomics/arabidopsis-27/data/metadata/source-manifest.json": 1,
+      "library/genomics/barley-pantranscriptome/data/metadata/source-manifest.json": 1,
+      "library/genomics/rpe1-reference/data/metadata/source-manifest.json": 1,
+      "benchmark/library/topjournal/issue_086/manifest.json": 1,
+      "benchmark/library/topjournal/issue_089/manifest.json": 1,
+      "benchmark/library/topjournal/issue_097/manifest.json": 1,
+      "benchmark/library/topjournal/issue_098/manifest.json": 1,
+      "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json": 1,
+      "library/genomics/dpm-multiomics/data/metadata/source-manifest.json": 1,
+      "genomics": 6,
+      "gallery-simulation": 2
     },
     "code_file_count": 1015,
     "r_file_count": 853,
@@ -120,6 +137,16 @@
           ]
         }
       ]
+    },
+    "scoped_gallery_delivery_2026_10_11": {
+      "author_processed_panels": 6,
+      "explicit_simulated_revisions": 2,
+      "scoped_reviewed_examples": 8,
+      "bound_file_checks": 499,
+      "protected_old_files_unchanged": 147,
+      "original_whole_figure_new_input_stress": "NOT_VERIFIED",
+      "historical_freeze": "../work/2026-10-11-complex-panels/training-index-freeze.json",
+      "status": "PASS_AT_DELIVERY; subsequent metadata updates invalidate old preparation for new rendering"
     }
   },
   "nodes": [
@@ -4298,12 +4325,27 @@
       "label": "Cannabis Fig4d：BUSCO锚定共线点线图、合酶位点三角、化学型分组",
       "source": "genomics",
       "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
-      "status": "author-source-code-learned",
-      "visual_status": "scoped-author-processed-data-replot",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
       "review_status": "scoped-pass",
       "high_fidelity_eligible": false,
       "new_input_transfer": "NOT_VERIFIED",
-      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理坐标；147个BUSCO、76个基因组。Fig4d选定面板换色重绘，保留锚定、样本顺序、有限窗口与原NA。",
+        "gallery_id": "BF-0217",
+        "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+        "local_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette/evidence/bundle.json",
+        "local_bundle_sha256": "97133bb2adf73d18b234777b1e0e27fb81cbc4afdc2edf8c8fa318db2446ac7a",
+        "public_recipe": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
     },
     {
       "id": "genomics-cannabis-public-chr7-2025",
@@ -4311,12 +4353,27 @@
       "label": "Cannabis 公共chr7：BUSCO多基因组点连线图、CBDAS定位路径",
       "source": "genomics",
       "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
-      "status": "author-source-code-learned",
-      "visual_status": "scoped-author-processed-data-replot",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
       "review_status": "scoped-pass",
       "high_fidelity_eligible": false,
       "new_input_transfer": "NOT_VERIFIED",
-      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理坐标；147个BUSCO、31个基因组、31个CBDAS位点。作者公开图重绘，正式补图编号未验证。",
+        "gallery_id": "BF-0218",
+        "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+        "local_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json",
+        "local_bundle_sha256": "76cb19e6fd9db7e4c852e914f365743e87e33b5562bbdbcf1cdba33e4bebd187",
+        "public_recipe": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
     },
     {
       "id": "genomics-dpm-hoxa10-bubbles-2024",
@@ -4324,12 +4381,27 @@
       "label": "DPM Fig3F：双通路基因×OE/KD气泡矩阵、原始P及log2FC",
       "source": "genomics",
       "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
-      "status": "author-source-code-learned",
-      "visual_status": "scoped-author-processed-data-replot",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
       "review_status": "scoped-pass",
       "high_fidelity_eligible": false,
       "new_input_transfer": "NOT_VERIFIED",
-      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED."
+      "validation_scope": "Bounded selected-panel author-data replot; fresh CP2, numerical input/output QC and actual final-size image review required. Whole original figure, new-input transfer and stress NOT_VERIFIED.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者处理数据；37/23基因、120个单元。保留raw P与效应，通路标签为FWER；缺失原星号依据，未补造。",
+        "gallery_id": "BF-0219",
+        "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+        "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/evidence/bundle.json",
+        "local_bundle_sha256": "f53d0b36ee0ae2c1e7c8432b7f2ca8c5fff97b12c620b0465d12ae45a1a85c64",
+        "public_recipe": "examples/genomics-gallery-20261011/dpm-bubbles/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
     },
     {
       "id": "genomics-dpm-hoxa10-network-2024",
@@ -4337,12 +4409,131 @@
       "label": "DPM Fig3E：225通路证据饼图网络、新overlap连边与布局",
       "source": "genomics",
       "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
-      "status": "author-source-code-learned",
-      "visual_status": "scoped-author-processed-data-replot",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
       "review_status": "scoped-pass",
       "high_fidelity_eligible": false,
       "new_input_transfer": "NOT_VERIFIED",
-      "validation_scope": "Real author pathway attributes with declared new OC>=0.5 graph and seed3302024 layout. Original edges/coordinates/node-area map/manual themes NOT_VERIFIED; all225 nodes retained. Source study is not original network reproduction."
+      "validation_scope": "Real author pathway attributes with declared new OC>=0.5 graph and seed3302024 layout. Original edges/coordinates/node-area map/manual themes NOT_VERIFIED; all225 nodes retained. Source study is not original network reproduction.",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "225条作者通路；明确新设OC≥0.5、2183边及布局。半饼只编码OE/KD二元证据；原Cytoscape布局、阈值和主题组装未公开。",
+        "gallery_id": "BF-0220",
+        "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+        "local_bundle": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3e-network/evidence/bundle.json",
+        "local_bundle_sha256": "78aeff5189f847a715572807563133691bffced3da23f6a3b49ec4b80637f4a8",
+        "public_recipe": "examples/genomics-gallery-20261011/dpm-network/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-ohca-microc-loops-2024",
+      "kind": "case",
+      "label": "OHCA作者书例：原生Micro-C接触矩阵及过滤loop叠加",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者book处理RDS；5kb、200bins、19667联系记录、31个可见环。原生HiContacts；仅对应book案例，正式论文面板未验证。",
+        "gallery_id": "BF-0221",
+        "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+        "local_bundle": "benchmark/library/genomics/ohca-hiccontacts/additional-panels/microc-loops/evidence/bundle.json",
+        "local_bundle_sha256": "c9d1083989dc3e9e56c85ebfa68fc38af01e1e7e9379365076011cf6b1a2cabb",
+        "public_recipe": "examples/genomics-gallery-20261011/ohca-microc/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "genomics-planarian-haplotype-dotplot-2026",
+      "kind": "case",
+      "label": "Planarian真实processed双单倍型整染色体alignment dotplot",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "真实作者已翻向、拼接的处理坐标；19637条比对、39274端点。保留作者4×4顺序和maxEnd边界，按单条比对identity换色；正式面板未验证。",
+        "gallery_id": "BF-0222",
+        "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+        "local_bundle": "benchmark/library/genomics/planarian-genome/evidence/bundle.json",
+        "local_bundle_sha256": "7349e7bf00b0dd2deb2c42587a2753e8fc2b6a255b00491e4fbfb1e978a325b7",
+        "public_recipe": "examples/genomics-gallery-20261011/planarian-dotplot/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "gallery-multiomics-alluvial-2026",
+      "kind": "case",
+      "label": "模拟匹配DNA RNA蛋白状态的原生三层alluvial修订示例",
+      "source": "gallery-simulation",
+      "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。",
+        "gallery_id": "BF-0109",
+        "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+        "local_bundle": "examples/genomics-gallery-20261011/sankey/evidence/bundle.json",
+        "local_bundle_sha256": "3156cc3dd6693fc3fdc2f8cc010f77a6e2677456ea24242350826cf203896a32",
+        "public_recipe": "examples/genomics-gallery-20261011/sankey/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
+    },
+    {
+      "id": "gallery-multievent-oncoprint-2026",
+      "kind": "case",
+      "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+      "source": "gallery-simulation",
+      "label": "144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction",
+      "high_fidelity_eligible": false,
+      "status": "scoped-reviewed-current-input",
+      "visual_status": "scoped-current-input-png-pdf-reviewed",
+      "review_status": "scoped-pass",
+      "latest_scoped_review": {
+        "date": "2026-10-11",
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "scope": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
+        "gallery_id": "BF-0146",
+        "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+        "local_bundle": "examples/genomics-gallery-20261011/oncoprint/evidence/bundle.json",
+        "local_bundle_sha256": "8955144e3c67e6610605f35db03704274480649449d5381ac032a1c7136546e6",
+        "public_recipe": "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+        "original_full_figure_fidelity": "NOT_VERIFIED",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "user_acceptance": "NOT_REQUESTED",
+        "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+      }
     }
   ],
   "edges": [
@@ -13405,6 +13596,21 @@
       "from": "genomics-dpm-hoxa10-network-2024",
       "to": "package:ggplot2",
       "relation": "uses-package"
+    },
+    {
+      "from": "genomics-ohca-microc-loops-2024",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-planarian-haplotype-dotplot-2026",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "gallery-multiomics-alluvial-2026",
+      "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
     }
   ],
   "visual_evidence": [

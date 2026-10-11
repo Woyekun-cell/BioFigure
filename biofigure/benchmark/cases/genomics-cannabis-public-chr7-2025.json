@@ -632,5 +632,54 @@
     "path": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/data/metadata/source-learning.json",
     "sha256": "612c1db5fafb016592659515c9d9b02464227c2884469730186c09b1df7d877c"
   },
-  "validation_evidence_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json"
+  "validation_evidence_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json",
+  "original_source_learning_stage_status": "SOURCE_CODE_AND_INPUTS_AUDITED_ORIGINAL_IMAGES_OPENED",
+  "latest_scoped_review": {
+    "date": "2026-10-11",
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "scope": "真实作者处理坐标；147个BUSCO、31个基因组、31个CBDAS位点。作者公开图重绘，正式补图编号未验证。",
+    "gallery_id": "BF-0218",
+    "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+    "local_bundle": "benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7/evidence/bundle.json",
+    "local_bundle_sha256": "76cb19e6fd9db7e4c852e914f365743e87e33b5562bbdbcf1cdba33e4bebd187",
+    "public_recipe": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
+    "original_full_figure_fidelity": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_REQUESTED",
+    "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+  },
+  "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
+  "original_archival_learning_source": {},
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+    "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED.",
+    "source_asset": "../docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
+    "public_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables"
+  },
+  "learning_source": {
+    "read_paths": [
+      "../docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/design-template.yaml",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/native-acquisition.json",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/project-style.yaml",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/public-replay.json",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/request.yaml",
+      "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/source-lock.json",
+      "examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
+      "examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-coordinates.csv",
+      "examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-palette.csv",
+      "examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/sample-order.csv",
+      "examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/synthase-markers.csv",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/acquire_sources.py",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/audit_inputs.R",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/install_native.R",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
+      "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py"
+    ],
+    "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED."
+  }
 }

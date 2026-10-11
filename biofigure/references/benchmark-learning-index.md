@@ -33,3 +33,5 @@ python3 scripts/retrieve_learned_methods.py --case-id SCICASE-024
 读[全量迁移](all-learning-transfer.md)、[缺陷](all-learning-audit-defects.md)及[固定样例重复](stable-template-reuse.md)。源码与历史PASS只是证据；每条方法通过新输入、压力、独立复跑和终尺寸验收后，登记持久验证表。每次调用重新验哈希，不靠对话记忆。
 
 问题/单位 → 检索/选定方法 → CP2 → 编码 → 终尺寸成图审查 → 归档原主题。保留原始输入、脚本、终图、环境及QC；唯一work证据迁移并验哈希前禁止清理。
+
+复杂基因组作者数据图与图库修订：见[八例来源与方法索引](genomics-source-gallery-learning-20261011.md)。

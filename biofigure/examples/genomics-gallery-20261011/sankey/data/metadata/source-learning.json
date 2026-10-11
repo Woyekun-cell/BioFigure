@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "case_id": "gallery-multiomics-alluvial-2026",
+  "learned_method_id": "BENCH-gallery-multiomics-alluvial-2026",
+  "title": "Matched DNA RNA protein state alluvial: simulated data, native ggalluvial layout correction",
+  "domain": [
+    "transcriptomics-metabolomics-multiomics"
+  ],
+  "status": "SIMULATED_INPUT_AND_REFERENCE_LAYOUT_REVIEWED_NOT_RENDERED",
+  "source_assets": [
+    {
+      "path": "examples/genomics-gallery-20261011/sankey/sources/previous-gallery.png",
+      "role": "historical-own-output-layout-counterexample",
+      "sha256": "1272eba2042b59049a645b89e980617073c990d99854f5e910aaf718a98d4e82"
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/raw/sankey_features.csv",
+      "role": "explicit-simulated-matched-features",
+      "sha256": "3357284915786b69c0b92b69672af9689c074f2a341057879142daf159c5b6d0"
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/prepare_data.R",
+      "role": "independently-authored-data-preparation",
+      "sha256": "ffa00d4aa4d14e5f9dc2db409607b0e17ac2e707c125fdca0da70c4e7ed202da"
+    }
+  ],
+  "source_urls": {
+    "original_method": "https://mp.weixin.qq.com/s/iDi21LdR2_V3fVRMos0LqQ",
+    "native_method": "https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html"
+  },
+  "prior_method": "SCICASE-036",
+  "code_learning": {
+    "original_functions": [
+      "readxl::read_xlsx",
+      "networkD3::sankeyNetwork",
+      "match(nodes)-1"
+    ],
+    "original_processing": "stage-specific categorical node lists; grouped adjacent stage link totals; explicit zero-based networkD3 indices",
+    "adopted": "each stage total conserved, link width encodes feature counts, stage-aware identity and explicit order",
+    "native_current_functions": [
+      "ggalluvial::geom_alluvium",
+      "ggalluvial::geom_stratum",
+      "ggalluvial::stat_stratum"
+    ],
+    "rejected": "missing data2.xlsx, source node names interpreted as same across modalities, embedded right labels on flows, oversized raster-only web export"
+  },
+  "reference_analysis": {
+    "viewed": true,
+    "image_role": "Own historical simulation, not original article figure",
+    "observed": "Three unequal categorical lanes, count-scaled curves and outlined nodes; right labels cross curves and right/bottom whitespace large",
+    "correction": "3 stages x3 states, uninterrupted27 paths; labels inside sufficiently large nodes, counts direct, shared vertical scale, reserved heading/caption outside flow panel"
+  },
+  "input_contract": {
+    "units": "1800 distinct simulated matched features,not biological replicates",
+    "seed": 20261011,
+    "flow_table": "27 complete 3-state paths with integer counts",
+    "inference": "none",
+    "causality": "none"
+  },
+  "package_roles": {
+    "ggalluvial": "native alluvial path geometry and stratum stacking",
+    "ggplot2": "semantic color, coordinates and typography",
+    "grid": "final grob export only"
+  },
+  "palette_semantics": {
+    "Low": "blue",
+    "Neutral": "teal",
+    "High": "ochre",
+    "flows": "DNA starting state; direct labels state coding in each modality"
+  },
+  "claim_boundary": "Independent simulated-input layout correction; previous source-data and original-figure fidelity NOT_VERIFIED; not a research result or learned-model parameter training",
+  "failure_modes": [
+    "do not treat flows as causal effects",
+    "do not change denominators or drop paths",
+    "stage-aware state identity",
+    "no labels over ribbons",
+    "check full 1800 conservation at every stage",
+    "fresh actual final-size PNG/PDF review required"
+  ],
+  "public_path_migration": "Historical image bytes retain their delivery SHA; public historical image now lives at sources/previous-gallery.png."
+}

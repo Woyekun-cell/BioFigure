@@ -1,0 +1,588 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-planarian-haplotype-dotplot-2026",
+  "learned_method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+  "recipe_id": "GEN-PLANARIAN-HAPLOTYPE-DOTPLOT-001",
+  "title": "Planarian haplotype chromosome alignment endpoint dotplot",
+  "paper": {
+    "title": "Stepwise emergence of recombination suppression precedes fissiparous asexuality in the planarian Schmidtea mediterranea",
+    "journal": "Nature Communications",
+    "year": 2026,
+    "volume": 17,
+    "article": 5588,
+    "doi": "10.1038/s41467-026-74605-9",
+    "url": "https://www.nature.com/articles/s41467-026-74605-9",
+    "source": "official downloaded22page article.pdf; Code availability section names this GitHub repository and Zenodo18433485",
+    "license": "CC BY4.0"
+  },
+  "repository": {
+    "url": "https://github.com/Jeremias-Brand/SmedAsex",
+    "commit": "876ac87b09e27ce2f81a581e35196d65ea78d040",
+    "license": "GPL-3.0; exact source LICENSE preserved",
+    "tree_entries": 324,
+    "tree_truncated": false,
+    "tree_recovery": "API403 rate limit; prior successful pinned GitHub-connector JSON copied unchanged, no bypass"
+  },
+  "status": "SOURCE_LEARNING_AND_PROCESSED_INPUT_QC_COMPLETE; NEW_RENDER_NOT_STARTED",
+  "claim_boundary": "Learn and redraw public author whole-chromosome haplotype endpoint alignment from real processed coordinates. Published final panel/supplement figure mapping not confirmed; no claim of official Fig2b reproduction or raw genome analysis.",
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/planarian-genome/sources/author/dotplots.R",
+      "relative_path": "sources/author/dotplots.R",
+      "role": "author plotting and preprocessing code",
+      "source_url": "https://raw.githubusercontent.com/Jeremias-Brand/SmedAsex/876ac87b09e27ce2f81a581e35196d65ea78d040/analysis/heterozygosity/dotplots.R",
+      "sha256": "3a34bc3fe38525ce90729a9a0ea38cba8e78b07331bd07ac3bb4781581f9bb7e",
+      "bytes": 13822,
+      "git_blob_sha": "d566ff19406f14df12b00c71d4cd92f94badc319",
+      "commit": "876ac87b09e27ce2f81a581e35196d65ea78d040"
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/data/raw/schMedA2h1__schMedA2h2_aln.tsv",
+      "relative_path": "data/raw/schMedA2h1__schMedA2h2_aln.tsv",
+      "role": "author processed coordinate alignment",
+      "source_url": "https://raw.githubusercontent.com/Jeremias-Brand/SmedAsex/876ac87b09e27ce2f81a581e35196d65ea78d040/analysis/synteny/dotplots/schMedA2h1__schMedA2h2_aln.tsv",
+      "sha256": "565fb3b5664df77f25b7cac690e4899f074a4a6a84e4caeebf37369744de58c3",
+      "bytes": 30132672,
+      "git_blob_sha": "87a99b740d4e669bca8323b5f49b2ba1923b54d2",
+      "commit": "876ac87b09e27ce2f81a581e35196d65ea78d040"
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/sources/author-haplotype-alignment.pdf",
+      "relative_path": "sources/author-haplotype-alignment.pdf",
+      "role": "actual author public original plot",
+      "source_url": "https://raw.githubusercontent.com/Jeremias-Brand/SmedAsex/876ac87b09e27ce2f81a581e35196d65ea78d040/analysis/synteny/dotplots/schMedA2h1__schMedA2h2_dotplot.pdf",
+      "sha256": "46a71038aaaf1c1a35c0d61ef73de01136d04a1416d2c0698dd76d26eb89a3cd",
+      "bytes": 1466906,
+      "git_blob_sha": "f0b13739d949a3e90857ce9a226f6dedd09d5c45",
+      "commit": "876ac87b09e27ce2f81a581e35196d65ea78d040"
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/sources/LICENSE",
+      "relative_path": "sources/LICENSE",
+      "role": "author GPL3 license",
+      "source_url": "https://raw.githubusercontent.com/Jeremias-Brand/SmedAsex/876ac87b09e27ce2f81a581e35196d65ea78d040/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/sources/article.pdf",
+      "relative_path": "sources/article.pdf",
+      "role": "official primary paper",
+      "source_url": "https://www.nature.com/articles/s41467-026-74605-9.pdf",
+      "sha256": "49fad1607e4e7f7f1c6a3fc9f6babb883c991a62403c907f6d09d4ba5c4f2846",
+      "bytes": 6122746
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/sources/repository-tree.json",
+      "relative_path": "sources/repository-tree.json",
+      "role": "pinned repository complete tree",
+      "source_url": "https://api.github.com/repos/Jeremias-Brand/SmedAsex/git/trees/876ac87b09e27ce2f81a581e35196d65ea78d040?recursive=1",
+      "sha256": "928c8e11bbd7fa3c5c07580d4685fae63cb95c21222fa6a87868ecd0e68c40a2",
+      "bytes": 105194
+    },
+    {
+      "path": "benchmark/library/genomics/planarian-genome/data/metadata/source-learning.json",
+      "role": "immutable-source-learning-contract",
+      "sha256": "8dbfdfd98e8237662cdff5308ee98e454a7967ce6424f14b1bd3f6d94506c752"
+    }
+  ],
+  "original_figure_review": {
+    "asset": "sources/author-haplotype-alignment.pdf",
+    "opened": true,
+    "viewer": "Rscript system2 native pdftoppm120dpi then functions.view_image; exact PDF chromosome-label text also extracted",
+    "physical_mm": [
+      203.2,
+      203.2
+    ],
+    "structure": "Single4x4concatenated-chromosome alignment point matrix; two endpoints per retained alignment, chromosome boundary lines, reference/query boundary labels, square large data area; no visible colour legend because source colour aesthetic unmapped.",
+    "reference_order": [
+      "Chr1_h1",
+      "Chr2_h1",
+      "Chr3_h1",
+      "Chr4_h1"
+    ],
+    "query_order": [
+      "Chr1_h2",
+      "Chr3_h2",
+      "Chr2_h2",
+      "Chr4_h2"
+    ],
+    "label_verification": "Actual PDF text confirms Chr1_h2,Chr3_h2,Chr2_h2,Chr4_h2 matches processed coordinate offsets; no proven label mismatch. Source boundary=max(queryEnd2) retained despite not maximum of both query endpoints.",
+    "marks": "source geom_point twice, size0.009mm, black; geometric points rather than new interpolated segments",
+    "type": "author-public figure, not confirmed final journal panel"
+  },
+  "panel": "author-public schMedA2h1__schMedA2h2 whole-chromosome alignment",
+  "input_contract": {
+    "file": "data/raw/schMedA2h1__schMedA2h2_aln.tsv",
+    "raw_processed_rows": 21381,
+    "columns": 31,
+    "experimental_unit": "genomic alignment record; not biological replicate",
+    "reference_haplotype": "schMedA2h1",
+    "query_haplotype": "schMedA2h2",
+    "required_columns": [
+      "queryID",
+      "refID",
+      "refStart2",
+      "refEnd2",
+      "queryStart2",
+      "queryEnd2",
+      "lenAln",
+      "mapQ",
+      "percentID",
+      "numResidueMatches",
+      "strand"
+    ],
+    "coordinate_units": "saved already-directed, trimmed/concatenated alignment-coordinate bp; linear bp→Mb display only",
+    "coordinate_guards": "Do not repeat original negative-strand flips, query reorientation, min-shifts or concatenation. Source order reconstructed from stable saved offsets, original max(refEnd2)/max(queryEnd2) boundaries, not assembly refLen/queryLen.",
+    "source_filter": "lenAln>1000 & percentID>0.50 & mapQ==60",
+    "selected_rows": 19637,
+    "endpoint_marks": 39274,
+    "excluded_by_exact_source_predicate": 1744,
+    "missing_relevant_numeric": 0,
+    "new_colour_field": "per-alignment percentID=numResidueMatches/lenAln, finite0..1, display50..100percent",
+    "not_used": "percentIDmean has2588missing filtered rows from on-target-only means; raw original strand differs from displayed orientation, so neither is substituted silently for color"
+  },
+  "author_data_audit": {
+    "status": "PASS",
+    "processed_rows": 21381,
+    "columns": [
+      "queryID",
+      "queryLen",
+      "queryStart",
+      "queryEnd",
+      "strand",
+      "refID",
+      "refLen",
+      "refStart",
+      "refEnd",
+      "numResidueMatches",
+      "lenAln",
+      "mapQ",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "percentID",
+      "refStart2",
+      "refEnd2",
+      "queryStart2",
+      "queryEnd2",
+      "queryTarget",
+      "percentIDmean"
+    ],
+    "plotted_alignments": 19637,
+    "endpoint_marks": 39274,
+    "exclusions": 1744,
+    "predicate": "lenAln > 1000 & percentID > 0.50 & mapQ ==60",
+    "rule_failure_counts": {
+      "lenAln": 0,
+      "percentID": 1502,
+      "mapQ": 408
+    },
+    "input_duplicate_rows": 0,
+    "input_relevant_na": 0,
+    "identity_ratio_max_error": 5.551115123125783e-16,
+    "identity_range": [
+      0.500232018561485,
+      1
+    ],
+    "identity_quantiles": [
+      0.500232018561485,
+      0.668306529723742,
+      0.813574081188372,
+      0.932478141553386,
+      0.968789983549625,
+      0.9812287030595526,
+      1
+    ],
+    "original_minus": 7565,
+    "display_negative": 1732,
+    "mean_identity_na": 2588,
+    "mean_identity_not_used_for_new_colour": true,
+    "reference_order": [
+      "Chr1_h1",
+      "Chr2_h1",
+      "Chr3_h1",
+      "Chr4_h1"
+    ],
+    "query_order": [
+      "Chr1_h2",
+      "Chr3_h2",
+      "Chr2_h2",
+      "Chr4_h2"
+    ],
+    "reference_boundaries": [
+      {
+        "refID": "Chr1_h1",
+        "n": 10870,
+        "axis_boundary_bp": 327420891,
+        "offset_bp": 0,
+        "nominal_length_bp": 327432606
+      },
+      {
+        "refID": "Chr2_h1",
+        "n": 7595,
+        "axis_boundary_bp": 599719742,
+        "offset_bp": 327420891,
+        "nominal_length_bp": 272298851
+      },
+      {
+        "refID": "Chr3_h1",
+        "n": 2709,
+        "axis_boundary_bp": 718812687,
+        "offset_bp": 599719742,
+        "nominal_length_bp": 119429788
+      },
+      {
+        "refID": "Chr4_h1",
+        "n": 207,
+        "axis_boundary_bp": 764943622,
+        "offset_bp": 718812687,
+        "nominal_length_bp": 46130935
+      }
+    ],
+    "query_boundaries": [
+      {
+        "queryID": "Chr1_h2",
+        "n": 7216,
+        "axis_boundary_bp": 218353489,
+        "offset_bp": 0,
+        "maximum_both_endpoints_bp": 219210030,
+        "nominal_length_bp": 219263528
+      },
+      {
+        "queryID": "Chr3_h2",
+        "n": 6314,
+        "axis_boundary_bp": 440331194,
+        "offset_bp": 219210030,
+        "maximum_both_endpoints_bp": 440331194,
+        "nominal_length_bp": 224520763
+      },
+      {
+        "queryID": "Chr2_h2",
+        "n": 7609,
+        "axis_boundary_bp": 708248419,
+        "offset_bp": 440331194,
+        "maximum_both_endpoints_bp": 708282867,
+        "nominal_length_bp": 267951672
+      },
+      {
+        "queryID": "Chr4_h2",
+        "n": 242,
+        "axis_boundary_bp": 754928366,
+        "offset_bp": 708282867,
+        "maximum_both_endpoints_bp": 754928366,
+        "nominal_length_bp": 46645998
+      }
+    ],
+    "coordinate_contract": "Saved refStart2/refEnd2/queryStart2/queryEnd2 are already transformed; consume directly. Do not repeat strand flipping or concatenation. Source boundaries max(refEnd2)/max(queryEnd2), not nominal assembly lengths or maximum both query endpoints.",
+    "source_data_preserved": true,
+    "source_r_parsed": true,
+    "source_r_executed": false,
+    "packages": [
+      {
+        "package": "data.table",
+        "available": true,
+        "version": "1.18.6.1"
+      },
+      {
+        "package": "ggplot2",
+        "available": true,
+        "version": "4.0.3"
+      },
+      {
+        "package": "dplyr",
+        "available": true,
+        "version": "1.2.1"
+      },
+      {
+        "package": "ragg",
+        "available": true,
+        "version": "1.5.2"
+      },
+      {
+        "package": "systemfonts",
+        "available": true,
+        "version": "1.3.2"
+      },
+      {
+        "package": "svglite",
+        "available": true,
+        "version": "2.2.2"
+      },
+      {
+        "package": "yaml",
+        "available": true,
+        "version": "2.3.12"
+      },
+      {
+        "package": "jsonlite",
+        "available": true,
+        "version": "2.0.0"
+      },
+      {
+        "package": "digest",
+        "available": true,
+        "version": "0.6.39"
+      },
+      {
+        "package": "optparse",
+        "available": false,
+        "version": null
+      },
+      {
+        "package": "plotly",
+        "available": true,
+        "version": "4.12.1"
+      },
+      {
+        "package": "htmlwidgets",
+        "available": true,
+        "version": "1.6.4"
+      }
+    ]
+  },
+  "processing": [
+    {
+      "step": 1,
+      "operation": "fread exact author processed31column TSV; preserve full immutable input; no PAF or raw NGS pipeline",
+      "source": "dotplots.R:18,295"
+    },
+    {
+      "step": 2,
+      "operation": "select exact source predicate, retaining19637/21381records; no visual downsampling",
+      "source": "dotplots.R:240-242"
+    },
+    {
+      "step": 3,
+      "operation": "use saved refStart2/queryStart2 and refEnd2/queryEnd2 without reorientation; two endpoint marks per alignment",
+      "source": "dotplots.R:244-251"
+    },
+    {
+      "step": 4,
+      "operation": "derive4reference/query boundary coordinates from full processedtable via max(refEnd2),max(queryEnd2), maintain saved-offset order",
+      "source": "dotplots.R:223,252-264"
+    },
+    {
+      "step": 5,
+      "operation": "map actual per-alignment identity to new sequential colour; source scale_color_fermenter had no mappedcolour aesthetics",
+      "source": "dotplots.R:37,266,282",
+      "adaptation": "numeric colour encodes actual alignment identity rather than undefined source mean-colour legend"
+    }
+  ],
+  "functions": [
+    "data.table::fread",
+    "dplyr::filter",
+    "ggplot2::ggplot",
+    "ggplot2::geom_point twice",
+    "ggplot2::scale_x_continuous/scale_y_continuous",
+    "ggplot2::geom_hline/geom_vline",
+    "ggplot2::scale_colour_gradientn adaptation",
+    "ggplot2::theme_bw",
+    "native R PDF/ragg PNG export"
+  ],
+  "packages": {
+    "source": [
+      "optparse",
+      "ggplot2",
+      "plotly",
+      "dplyr",
+      "data.table",
+      "htmlwidgets"
+    ],
+    "planned_native_render": [
+      "ggplot2",
+      "data.table",
+      "grid",
+      "ragg",
+      "systemfonts",
+      "yaml",
+      "jsonlite",
+      "digest",
+      "svglite"
+    ],
+    "optional_source_interactive": "plotly/htmlwidgets not needed for static selected-panel replot",
+    "source_script_executed": false,
+    "runtime_availability_checked": [
+      {
+        "package": "data.table",
+        "available": true,
+        "version": "1.18.6.1"
+      },
+      {
+        "package": "ggplot2",
+        "available": true,
+        "version": "4.0.3"
+      },
+      {
+        "package": "dplyr",
+        "available": true,
+        "version": "1.2.1"
+      },
+      {
+        "package": "ragg",
+        "available": true,
+        "version": "1.5.2"
+      },
+      {
+        "package": "systemfonts",
+        "available": true,
+        "version": "1.3.2"
+      },
+      {
+        "package": "svglite",
+        "available": true,
+        "version": "2.2.2"
+      },
+      {
+        "package": "yaml",
+        "available": true,
+        "version": "2.3.12"
+      },
+      {
+        "package": "jsonlite",
+        "available": true,
+        "version": "2.0.0"
+      },
+      {
+        "package": "digest",
+        "available": true,
+        "version": "0.6.39"
+      },
+      {
+        "package": "optparse",
+        "available": false,
+        "version": null
+      },
+      {
+        "package": "plotly",
+        "available": true,
+        "version": "4.12.1"
+      },
+      {
+        "package": "htmlwidgets",
+        "available": true,
+        "version": "1.6.4"
+      }
+    ]
+  },
+  "newpalette": {
+    "quantity": "per-alignment sequence identity, continuous monotone score; no inference from pointcolour",
+    "low_50percent": "#E7C468",
+    "mid_75percent": "#57AFA8",
+    "high_100percent": "#173F5F",
+    "boundary": "#6D737A",
+    "background": "#FFFFFF",
+    "contrast_or_CVD_certification": "NOT_VERIFIED until actual render review; no false certificate"
+  },
+  "layout_constraints": {
+    "source": "203.2mm square with4x4boundary matrix and tiny4ptquery labels, verbose2line diagnostic title",
+    "new_target_mm": [
+      180,
+      180
+    ],
+    "size_basis": "Analyst-selected double-column source-square geometry; no user physical-size request",
+    "font": "Arial≥7.5pt final, chromosome IDs and actual identity ticks; no Helvetica fallback",
+    "source_order": "fixed4reference and4query IDs per saveddisplay offsets, checked against actual authorPDF",
+    "data_bbox_plan": "square full4x4data matrix, sufficient left/right/bottom reserves for7.5ptIDs; shared sequential identity legend below",
+    "boundary_mapping": "source maxEnd boundaries maintained; original aligned-coordinate span, not full assembly length claim",
+    "mark_mapping": "all39274endpoint marks; increase original0.009mm mark only if required for colored final-size legibility and disclose actual size in CP2; no thinning or interpolation",
+    "title_discipline": "remove verbose diagnostic title; count/filter stays QC/figure caption, no unrequested scientific conclusion",
+    "source_statistics": "not inferential replicate data; no ANOVA/enrichment/correlation test or significance annotations"
+  },
+  "gaps": [
+    {
+      "id": "PLANARIAN-FINAL-PANEL-MAPPING",
+      "status": "NOT_VERIFIED",
+      "detail": "Exact public author PDF available; link to specific final publication/supplement panel unconfirmed. OfficialFig2b uses a different gggenomes composite with unavailable preparation RData; do not conflate."
+    },
+    {
+      "id": "PLANARIAN-COLOUR-AES",
+      "status": "SOURCE_MAPPING_ADAPTATION",
+      "detail": "R hasscale_color_fermenter but no aescolour mapping; sourcePDFblack. New per-alignment percentID colour is explicit numeric adaptation, not recovery of original color."
+    },
+    {
+      "id": "PLANARIAN-PREFILTER-TITLE",
+      "status": "RESOLVED_BY_SCOPE",
+      "detail": "Author title21381counts pre-plot-filter processedtable; actual geom predicate retains19637. Newcaption/QC records actual plot19637/39274, no diagnostic headline."
+    },
+    {
+      "id": "PLANARIAN-COORDINATE-SCOPE",
+      "status": "DECLARED",
+      "detail": "Already transformed displaycoordinates; rawstrand7565minus vs1732displaynegative. Do not flip saved coordinates again or call original strand displayorientation."
+    },
+    {
+      "id": "PLANARIAN-PDF-FONT",
+      "status": "SOURCE_ADAPTATION_REQUIRED",
+      "detail": "Originalqueryaxis4ptand angled; plannedArial≥7.5. AuthorPDFviewer emittedFontconfigcache warnings, actualallIDtext independently verified; future authoredPDF nativeArial editability independently audited."
+    }
+  ],
+  "code_locators": [
+    {
+      "path": "sources/author/dotplots.R",
+      "start": 16,
+      "end": 297,
+      "purpose": "full author preprocessing/input→savedcoordinate contract; read/parse only, not execute source workflow"
+    },
+    {
+      "path": "sources/author/dotplots.R",
+      "start": 215,
+      "end": 295,
+      "purpose": "author source plotted filter, endpoint marks, boundaries, labels/style/export"
+    }
+  ],
+  "label": "Planarian真实processed双单倍型整染色体alignment dotplot",
+  "learning_source": {
+    "read_paths": [
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/figure-request.yaml",
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/project-style.yaml",
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/public-replay.json",
+      "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/source-learning.json",
+      "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+      "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
+      "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+      "examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+      "examples/genomics-gallery-20261011/planarian-dotplot/scripts/audit_inputs.R",
+      "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
+      "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
+      "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py"
+    ],
+    "scope": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification."
+  },
+  "original_source_learning_stage_status": "SOURCE_LEARNING_AND_PROCESSED_INPUT_QC_COMPLETE; NEW_RENDER_NOT_STARTED",
+  "latest_scoped_review": {
+    "date": "2026-10-11",
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "scope": "真实作者已翻向、拼接的处理坐标；19637条比对、39274端点。保留作者4×4顺序和maxEnd边界，按单条比对identity换色；正式面板未验证。",
+    "gallery_id": "BF-0222",
+    "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+    "local_bundle": "benchmark/library/genomics/planarian-genome/evidence/bundle.json",
+    "local_bundle_sha256": "7349e7bf00b0dd2deb2c42587a2753e8fc2b6a255b00491e4fbfb1e978a325b7",
+    "public_recipe": "examples/genomics-gallery-20261011/planarian-dotplot/provenance.json",
+    "original_full_figure_fidelity": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_REQUESTED",
+    "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
+  },
+  "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
+  "original_archival_learning_source": "benchmark/library/genomics/planarian-genome/data/metadata/source-learning.json",
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+    "scope": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification.",
+    "source_asset": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+    "public_renderer": "scripts/render.R",
+    "input_mode": "planarian-public-csv"
+  }
+}

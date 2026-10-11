@@ -1,0 +1,402 @@
+schema_version: '3.4'
+figure_task: phylogeny-synteny-gene-family
+scientific_message: Replay published source-derived BUSCO coordinate tables with native
+  BUSCOplot and current own gallery layout.
+data_contract_summary:
+  input: '147BUSCOx31samples/4254finite/303NA BUSCOcells;31CBDASmarkers,fullchr7 originalorderedcolumns.
+    Current packaged CSV: results/plot_data/busco-coordinates.csv sha256=929f0b1bbdd43b372bbf77a7e02048aade54687eeec33f81758681fa96dce41a;
+    results/plot_data/busco-palette.csv sha256=5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2;
+    results/plot_data/sample-order.csv sha256=e563f93a0fa8303177e8fc69a6d63cec60582125d5abb2ea0589725980126dce;
+    results/plot_data/synthase-markers.csv sha256=a14b4d7ee68066e0a9a53326e4f2af076365da78840c98c487857caf78746071'
+  unit: Original supplied bp; plotted Mb
+  source_level: Published derived plotCSV, not originalraw acquisition
+  exclusions: Retain allsourceCSV rows/NA/order/visibleflags; no newfilters or anchorrecalculation
+  source_assets: All4CSV hashes inpublicsource-lock.json
+biology_contract:
+  primary_domain: phylogeny-synteny-gene-family
+  entities:
+  - BUSCO orthologs
+  - assembled chr7 haplotypes/public references
+  - synthase query hits
+  relationships:
+  - same BUSCO ID across ordered samples
+  - shared coordinate by sample
+  experimental_unit: Assembled haplotype/reference chromosome
+  statistical_unit: Ortholog coordinate or BLAST hit; descriptive
+  replicate_unit: No inferential replicates
+  evidence_level: Fixed published author-derivedplotCSV
+  claim_boundary: Public packaged currentplotCSV/nativecurrentlayout replay only.
+    No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+    newinputtransfer or stabletemplate claim.
+role_contract:
+  primary_role: comparison
+  secondary_roles: []
+backend_lock: {}
+deliverable_contract:
+  target: paper-composite
+  required_formats:
+  - pdf
+  - svg
+  - png
+integrity_contract:
+  source_data_preserved: true
+  exclusions_declared: true
+  uncertainty_declared: true
+candidate_patterns:
+- LEARNED-BENCH-genomics-cannabis-public-chr7-2025
+selected_pattern: LEARNED-BENCH-genomics-cannabis-public-chr7-2025
+selection_reason: Native learned BUSCO point-line method matches exact author matrices
+  and marker overlays.
+reference_evidence:
+  preparation_id: FRESH_REQUIRED
+  preparation_request: {}
+  selected_method_case_id: BENCH-genomics-cannabis-public-chr7-2025
+  retrieval_query:
+    method_id: BENCH-genomics-cannabis-public-chr7-2025
+    scope: public-execution-profile-current-tables
+  selected_atlas_ids: []
+  observed_principles:
+  - 'Current own gallery layout: exact sampleordering, full native NA/line semantics,
+    synthasepoints and functional keys; only this fixedtable/layout replay is tested.'
+  transfer_decisions:
+  - Reconstruct native BUSCO matrix frompublishedCSV, preserve allstored bp/NA/order/markers;
+    call genuine BUSCOplot::gg_line_map. No authorraw recomputation or inherited authorgate.
+  rejected_elements:
+  - Historical authorization/CP PASS
+  - Fullauthorraw processing/fidelity
+  - Wholepaperfigure
+  - Arbitrarynewinput/stabletemplate
+  evidence_status: source-and-visual-reviewed
+  learned_source_reference:
+    method_id: BENCH-genomics-cannabis-public-chr7-2025
+    opened_source_asset:
+      path: docs/assets/genomics-gallery-20261011/cannabis-chr7.png
+      sha256: 87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5
+      original_size_viewed: true
+  learned_method_reuse:
+    adopted:
+    - BENCH-genomics-cannabis-public-chr7-2025
+    rejected: []
+    data_adaptation: Reconstruct native BUSCO matrix frompublishedCSV, preserve allstored
+      bp/NA/order/markers; call genuine BUSCOplot::gg_line_map. No authorraw recomputation
+      or inherited authorgate.
+    known_failures_addressed:
+    - Author directory says Supplemental_Figure23, but final supplement mapping is
+      unverified. Label author-public-chr7 and do not fabricate a formal final figure
+      number.
+    - Caption pidentity>=0.98 uses fractional notation while data and executable filter
+      use percent>=98.
+    - Caption says zero gaps but executable code applies no gaps filter. In current
+      retained data all31 hits nevertheless havegaps0; preserve actual predicate,
+      do not claim filter guarantees new inputs.
+    - 23 CBDAS hits have reverse BLAST sstart>send; source uses sstart for point position.
+      Preserve this point convention and do not swap endpoints or flip entire chromosome.
+    - Native line_na_rm removes missing rows, which may connect orthologs across nonadjacent
+      retained samples; preserve and describe native behavior.
+    - Development package pinned by commit; new environment/data requires fresh preparation,
+      source comparison and actual PDF review.
+    adapter_decisions:
+    - method_id: BENCH-genomics-cannabis-public-chr7-2025
+      decision: adapt
+      data_contract_difference: Public packaged currentplotCSV/nativecurrentlayout
+        replay only. No authorraw processing, completepaperfigurefidelity, historicalgate
+        inheritance, newinputtransfer or stabletemplate claim.
+      new_validation_required: true
+    source_issue_resolutions: []
+  source_density_contract:
+    source: Current own public gallery layout; not original publication fidelity
+    source_pixels:
+    - 1950
+    - 1350
+    observation: Current own gallery has identical source-derived table order, native
+      BUSCO points/lines and synthase overlays; formal uses 76 columns, chemotype
+      headers and right key; public uses 31 rotated labels and genuine large reference
+      crossings.
+    adaptation: Replay packaged fixed tables and current own gallery geometry; original-paper/full
+      raw fidelity not tested.
+    recolor_proposal:
+      BUSCO: eight muted categorical hues replacing source magma cycle
+      CBDAS: contrasting deep teal-blue, outlined triangles
+      sample_role: author vs public reference labels/key without inventing chemotype
+        classes
+    source_image_sha256: 87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5
+    source_plot_aspect_approx: 1.7168
+    aspect_tolerance_relative: 0.05
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+    data_aspect: 1.7168
+reference_analysis:
+  figure_family: genome
+  semantic_purpose: Public packaged currentplotCSV/nativecurrentlayout replay only.
+    No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+    newinputtransfer or stabletemplate claim.
+  panels:
+  - id: author-public-chr7
+    role: BUSCO ortholog coordinate map + synthase overlays
+    position: single standalone main panel
+  elements:
+  - id: busco
+    role: Ortholog coordinates and homologous connections
+    geometry: Native BUSCOplot points and polylines
+    position: main data region
+    data_mapping: BUSCO row key, ordered sample columns, position bp
+    required: true
+  - id: synthase
+    role: Sequence-match locations
+    geometry: Outlined filled triangle markers and comparative CBDAS path
+    position: author sstart in same coordinate system
+    data_mapping: query accession/percent identity/gaps and sample key
+    required: true
+  - id: labels
+    role: Coordinate and sample-group identity
+    geometry: Typography and axis ticks
+    position: left axis/top or bottom labels
+    data_mapping: author sample order and named classes
+    required: true
+  - id: key
+    role: Explicit marker meaning
+    geometry: Triangle key and text
+    position: reserved top band
+    data_mapping: synthase category/author vs public sample identifiers
+    required: true
+  relationships:
+  - from: busco
+    to: synthase
+    type: shares-coordinate
+    shared_key: sample and bp
+  spatial_topology:
+    coordinate_system: ordered sample x;author bp y
+    reading_order:
+    - ordered samples
+    - named overlay/key
+    alignment_keys:
+    - BUSCO id
+    - sample
+    - bp
+    layer_order:
+    - BUSCO connections and points
+    - CBDAS path
+    - high-stringency triangles
+    - axes/key/labels
+  required_structures:
+  - all source-selected coordinates
+  - native line grouping and NA behavior
+  - outlined coloured triangles
+  - original ordering and public-reference crossings
+  forbidden_substitutions:
+  - simulated data
+  - drop source-selected coordinates
+  - flip or reanchor unrequested coordinates
+  - wholeoriginal figure claim
+visual_hierarchy:
+  primary: Coordinate/ortholog correspondence and synthase positions
+  secondary: Author sample ordering and source axis scale
+  tertiary: Explicit key and selected-panel provenance
+encoding:
+  x: Author ordered samples
+  y: Original fullchr7 bp
+  color: Categorical BUSCO hue cycle and named synthase category; no quantitative
+    rank
+annotation:
+  method: Source-selected marker positions; no inferential statistics
+legend:
+  place: outside_top
+  shared: false
+palette_semantics: &id001
+  CBDAS: '#237C92'
+  BUSCO_cycle: '#738D9C,#AA7C89,#91A58B,#B49B75,#827DA1,#6D9F9A,#A98670,#A1A1A1'
+  public_reference: '#407FA2'
+project_style_contract:
+  registry_path: project-style.yaml
+  registry_sha256: 30307a75f5485b4d2445d19883aaf2e87a63d64cd7fa4d99c36308ce96ed8668
+  project_id: BENCH-genomics-cannabis-public-chr7-2025-public-current-table
+  palette_id: cannabis-busco-muted-v1
+  semantic_colors: *id001
+  reuse_policy: exact_semantic_mapping
+  exception_basis: Portable public packaged-current-table layout replay; historical
+    author-raw gates/authorization are not inherited.
+renderer:
+  language: R
+  backend: ggplot2
+  packages:
+  - BUSCOplot
+  - ggplot2
+  - cowplot
+  - ragg
+  - yaml
+  - jsonlite
+  - systemfonts
+  - digest
+  - svglite
+  input_parser: Strictfixed currentCSV/hash/NA/order/count audit; nativeBUSCOplot
+    matrix builder
+output_size:
+  width_mm: 180
+  height_mm: 120
+  formats:
+  - pdf
+  - svg
+  - png
+  size_class: double-column
+  size_basis: final_physical_output
+  size_rationale:
+    panel_count: 1
+    density: high
+    longest_label_chars: 32
+    recommended_class: double-column
+    selection_reason: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost. Arial7pt labels; temporary previews in work, PDF permanent.
+    override_basis: ''
+layout_contract:
+  canvas: 180x120mm
+  data_bbox: Native gtable innerregion measured after render; aim164x99mm
+  annotation_bbox: Top selected-panel identifier and CBDAS key
+  legend_bbox: Reserved top band within plot margin
+  label_reserve: Left9mm;bottom18mm angled31sample labels
+  collision_policy: fail_and_redraw
+  text_extent_method: Actual Rgrob physical metrics + PNG/PDF final-size view
+  preflight_collision_check: required
+  coordinate_policy: Preserve exact source processed coordinates, ordering, view selection
+    and nativeNA-line behavior
+font_contract:
+  family: Arial
+  fallback_policy: fail
+  warning_policy: fail
+  all_layers_inherit_policy: fail_if_any_layer_unverified
+  rendered_face_check: png_visual_plus_vector_metadata
+  minimum_final_text_pt: 7
+  size_basis: final_output_size
+  size_roles_pt:
+    axis_text: 7
+    axis_title: 7
+    legend_text: 7
+    strip_text: 7
+    annotation_text: 7
+    panel_label: 8
+design_target:
+  hierarchy:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  geometry:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  palette:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  typography:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  marks:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  annotation:
+    observation: Wide wholechr7 point-line map, pale grid,31 dense angled sample labels,
+      bp-to-Mbp axis0–80, strong CBDAS path and large outlined triangles; three public
+      references rightmost.
+    implementation: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
+      labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
+      public samples rightmost.
+    difference_reason: Public packaged currentplotCSV/nativecurrentlayout replay only.
+      No authorraw processing, completepaperfigurefidelity, historicalgate inheritance,
+      newinputtransfer or stabletemplate claim.
+  reference: public-own-layout://cannabis-chr7
+  reference_opened: true
+text_contract:
+  allowed_text:
+  - Position (Mb)
+  - CBDAS
+  - BUSCO orthologs
+  - Author public chr7 | Author data
+  - '0'
+  - '10'
+  - '20'
+  - '30'
+  - '40'
+  - '50'
+  - '60'
+  - '70'
+  - '80'
+  - BCMa
+  - BCMb
+  - BOAXa
+  - BOAXb
+  - COSVb
+  - DPSVb
+  - EH23b
+  - GERv1a
+  - GERv1b
+  - GRMa
+  - GRMb
+  - KCDv1a
+  - KCDv1b
+  - KOMPa
+  - KOMPb
+  - MBSVb
+  - MM3v1a
+  - MM3v1b
+  - S8Ha
+  - SHH5a
+  - STHa
+  - SVA12a
+  - SVA12b
+  - SVA6a
+  - SVA6b
+  - TWSVb
+  - YMv2a
+  - YMv2b
+  - CBDRx
+  - Abacus
+  - Finola
+  allow_headings: true
+background_contract:
+  canvas: '#FFFFFF'
+  panel: '#FFFFFF'
+  export: '#FFFFFF'
+inspection_plan:
+  open_png: true
+  target_size_check: true
+  bbox_check: true
+  font_face_check: true
+critic_targets:
+  scientific: required
+  visual: required
+  publication: required
+  anti_ai: required
+statistics_required: false

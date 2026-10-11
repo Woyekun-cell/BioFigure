@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+  "scope": "Public own-layout native HiContacts replay using one SHA-pinned author processed RDS and compare all3output CSV hashes with the sealed public tables. No raw NGS/loop calling/full author-paper panel/new-input qualification.",
+  "source_asset": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+  "public_renderer": "scripts/render.R",
+  "input_mode": "ohca-native-rds"
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Directional integration and pathway enrichment analysis for multi-omics data",
+    "journal": "Nature Communications",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-49986-4",
+    "url": "https://www.nature.com/articles/s41467-024-49986-4",
+    "pmcid": "PMC11227559",
+    "publication_assets_license": "CC BY 4.0"
+  },
+  "repository": {
+    "url": "https://github.com/reimandlab/DPM_publication_code",
+    "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3",
+    "code_license": "No LICENSE found in pinned recursive tree; do not infer author-code license."
+  },
+  "status": "AUTHOR_PROCESSED_DATA_AND_SOURCE_LEARNED_RENDER_NOT_STARTED",
+  "claim_boundary": {
+    "new_input_transfer": "NOT_VERIFIED",
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "prior_first_panel_pass_inherited": false
+  },
+  "original_figure_review": {
+    "figure": "Fig3",
+    "opened": true,
+    "observation_basis": "actual local official figure3.png viewed; article.xml caption cross-checked",
+    "caption": "Directional integration of transcriptomics data from functional experiments of HOXA10-AS lncRNA in GBM cells.A We integrated differential gene expression data from HOXA10-AS knockdown (KD) and overexpression (OE) experiments from a previous study27 that compared sets of three replicates. DPM prioritised genes that showed different fold-change (FC) directions in KD and OE experiments and penalised genes with matching directions using the constraints vector (CV) [KD = −1, OE = +1]. B Scatter plot of merged P-values from directional analysis (DPM, Y-axis) and non-directional analysis (the Brown method, X-axis). Prioritised genes with directionally consistent changes are shown on the diagonal or closely below it (blue), while directionally penalised genes with conflicting directional changes are further below the diagonal (red). Unadjusted P-values are shown. C Examples of prioritised genes (top) and penalised genes (bottom). D Venn diagram of enriched pathways found with directional and non-directional analyses (family-wise error rate (FWER) < 0.05). E Enrichment map of pathways and processes from directional and non-directional analyses (FWER < 0.05). Pathways are shown as node in the network that are connected by edges if the pathways share many genes. Subnetworks represent functional themes. Node colours indicate dataset contributions (KD, OE, both, or combined-only). Node size reflects number of genes per pathway. Node outlines show directionally prioritised pathways (spiky edges), directionally penalised pathways (dotted edges), or pathways found using both approaches (solid edges). Major groups of directionally prioritised or penalised pathways are grouped on the right. F Dot plots of significant genes involved in cell migration and oxygen response processes visualised with P-values and fold-change values from the HOXA10-AS transcriptomics study27. Genes penalised in the non-directional analysis are indicated with asterisks. Carets show known cancer genes from the COSMIC Cancer Gene Census database53."
+  },
+  "author_data_audit": {
+    "scope": "base R load and pure inspections only; no upstream RNA analysis, enrichment, merge_p_values, or plotting code executed",
+    "R": "4.6.1",
+    "ap_background_genes": 19864,
+    "df_oe_kd_shape": [
+      12996,
+      7
+    ],
+    "duplicate_gene_count": 0,
+    "NA_count_in_df_oe_kd": 0,
+    "raw_P_zero_count": 0,
+    "Brown_pathways": 219,
+    "DPM_pathways": 138,
+    "union_pathways": 225,
+    "shared_pathways": 132,
+    "Brown_only_pathways": 87,
+    "DPM_only_pathways": 6,
+    "shared_evidence_disagreements": 0
+  },
+  "case_id": "genomics-dpm-hoxa10-bubbles-2024",
+  "learned_method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+  "recipe_id": "GEN-DPM-HOXA10-PATHWAY-GENE-BUBBLES-004",
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/author/005_dot_plot_panel_f.R",
+      "relative_path": "sources/author/005_dot_plot_panel_f.R",
+      "role": "original-author-plot-code",
+      "sha256": "e24d3c2c0faebe53c994a5b6bda44150049b5a3de81c9c9974d5dcd20187fa9f",
+      "bytes": 3939,
+      "repository_path": "Figure_3/005_dot_plot_panel_f.R",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/005_dot_plot_panel_f.R",
+      "git_blob_sha": "9c455202b664a3ec1ce59555cf8495a313ba7436",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/author/001_gene_scatterplot_panel_b.R",
+      "relative_path": "sources/author/001_gene_scatterplot_panel_b.R",
+      "role": "original-author-star-gap-code",
+      "sha256": "06f25e531658ee21ac9521cd5f28bcf53ce81633ee3da9b0d128b9c9dde26626",
+      "bytes": 2379,
+      "repository_path": "Figure_3/001_gene_scatterplot_panel_b.R",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/001_gene_scatterplot_panel_b.R",
+      "git_blob_sha": "4faebf3a69123d8aac2968b3b570edc046656bad",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/data/raw/panelE_Rdata.Rdata",
+      "relative_path": "data/raw/panelE_Rdata.Rdata",
+      "role": "author-processed-results",
+      "sha256": "b8d7309500dfa9b8a394c05c569c392080494fc7b69776733a2ec4bae2839f7f",
+      "bytes": 732824,
+      "repository_path": "Figure_3/input_data/panelE_Rdata.Rdata",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/input_data/panelE_Rdata.Rdata",
+      "git_blob_sha": "59db99669a39d88707ad9c72d11afa836700e198",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/data/raw/cancer_gene_census_2023-01-18.tsv",
+      "relative_path": "data/raw/cancer_gene_census_2023-01-18.tsv",
+      "role": "author-cancer-gene-annotations",
+      "sha256": "9e579ce73d77c30910f6a3f929a55f0bdbe0f68934b137be223e89bc4ae5274b",
+      "bytes": 155703,
+      "repository_path": "Figure_3/input_data/Census_allWed Jan 18 16_45_05 2023.tsv",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/input_data/Census_allWed%20Jan%2018%2016_45_05%202023.tsv",
+      "git_blob_sha": "5fb30311d04b4c9ac3f1e7f009779c31704e886d",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/data/raw/060821_hoxa10as_merged_oe_kd.rsav",
+      "relative_path": "data/raw/060821_hoxa10as_merged_oe_kd.rsav",
+      "role": "author-processed-star-gap-input",
+      "sha256": "e2c9be84ada3a63b77b7972dbfcf9dcce816e71510e3ba12ae0c66fe87cedb71",
+      "bytes": 872373,
+      "repository_path": "Figure_3/input_data/060821_hoxa10as_merged_oe_kd.rsav",
+      "source_url": "https://raw.githubusercontent.com/reimandlab/DPM_publication_code/fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3/Figure_3/input_data/060821_hoxa10as_merged_oe_kd.rsav",
+      "git_blob_sha": "3a51c5996de9e973840118b781d91d8446ed0af1",
+      "commit": "fd8f2bfdc9e090654eb44cc942d89ad2136c6ea3"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/figure3.png",
+      "relative_path": "sources/figure3.png",
+      "role": "original-publication-figure",
+      "sha256": "20bb3c73db519f1a0352c4d38757635e5e4e8a81a6ecc379df712e881266e7e3",
+      "bytes": 622886,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-024-49986-4/MediaObjects/41467_2024_49986_Fig3_HTML.png"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/article.xml",
+      "relative_path": "sources/article.xml",
+      "role": "official-article-and-caption",
+      "sha256": "ffdabc3775079ee96ffed8dbe6e1db316ba7899865fe33a624238e50e44ad11e",
+      "bytes": 227207,
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11227559/fullTextXML"
+    }
+  ],
+  "title": "DPM HOXA10-AS Fig3F: two-pathway gene-by-OE/KD evidence bubbles",
+  "panel": "Fig3F",
+  "input_contract": {
+    "primary_file": "data/raw/panelE_Rdata.Rdata",
+    "objects": [
+      "df_oe_kd",
+      "res_brown",
+      "res_dpm"
+    ],
+    "gene_key": "df_oe_kd$gene_name; explicit unique gene symbols",
+    "columns": [
+      "OE_P.Value",
+      "KD_P.Value",
+      "OE_logFC",
+      "KD_logFC"
+    ],
+    "terms": [
+      {
+        "term_id": "GO:0001667",
+        "term_name": "ameboidal-type cell migration",
+        "author_FWER": 0.0007270686,
+        "author_term_size_background_genes": 428,
+        "overlap_genes": 37,
+        "raw_P_cells": 74
+      },
+      {
+        "term_id": "GO:0070482",
+        "term_name": "response to oxygen levels",
+        "author_FWER": 0.001240323,
+        "author_term_size_background_genes": 323,
+        "overlap_genes": 23,
+        "raw_P_cells": 46
+      }
+    ],
+    "retain_all_120_cells": true,
+    "order": "author res_brown overlap vector order; observed 37 and 23 gene sequences match original displayed top-to-bottom sequences",
+    "CGC_source": "author January18 2023 Census table, 736 rows; selected genes KIT/PTEN and COL1A1/SDHD/FAS"
+  },
+  "processing": [
+    {
+      "operation": "select exact two term_id records from saved author Brown results; verify they are absent from DPM",
+      "source": "005 lines22-27; source selection narrowed to the two published Fig3F terms"
+    },
+    {
+      "operation": "gene-keyed extraction of raw OE/KD P and log2FC, retaining all observations",
+      "source": "005 lines33-48"
+    },
+    {
+      "operation": "retain original uncapped effect; plot fill capped to [-2,+2], size score -log10(raw P)",
+      "source": "005 lines47-62"
+    },
+    {
+      "operation": "CGC annotation from original author table; parse Gene Symbol or R check.names-normalized Gene.Symbol explicitly",
+      "source": "005 lines11-12,64-65"
+    },
+    {
+      "operation": "replace source size limits1..9 which drop38 cells by an explicit full-data affine-area mapping with a minimum visible diameter; no P-value changes",
+      "source": "005 line70 reviewed limitation"
+    }
+  ],
+  "functions": {
+    "author": [
+      "load",
+      "merge_p_values (source dependency; not executed in this replot)",
+      "ggplot",
+      "geom_point(shape21)",
+      "scale_size",
+      "scale_fill_gradient2",
+      "factor",
+      "sym"
+    ],
+    "selected_replot": [
+      "base R load/match",
+      "ggplot2::geom_point(shape21)",
+      "ggplot2::scale_fill_gradient2",
+      "grid physical panel assembly"
+    ]
+  },
+  "packages": {
+    "original": [
+      "ggplot2",
+      "dplyr",
+      "ActivePathways implicit merge_p_values dependency"
+    ],
+    "planned": [
+      "ggplot2",
+      "grid",
+      "cowplot",
+      "ragg",
+      "systemfonts",
+      "yaml",
+      "jsonlite",
+      "digest"
+    ],
+    "available": {
+      "ggplot2": "4.0.3",
+      "dplyr": "1.2.1"
+    },
+    "ActivePathways": "not installed; no installation or recomputation required"
+  },
+  "newpalette": {
+    "palette_id": "dpm-hoxa10-negative-teal-positive-ochre",
+    "negative_log2FC": "#1F6F8B",
+    "zero_log2FC": "#FBF8F1",
+    "positive_log2FC": "#C27032",
+    "midpoint": 0,
+    "effect_limits": [
+      -2,
+      2
+    ],
+    "point_outline": "#30343B",
+    "CGC_text": "#4D3E67"
+  },
+  "layout_constraints": {
+    "source_publication": "two adjacent vertical gene lists, left37/right23 rows; paired OE/KD columns; italic gene labels; black thin point outlines; titles and FWER above; shared effect and P score legends below",
+    "source_script": "horizontal genes and 2 dataset rows in multi-page14x1.8in PDF; final publication assembly absent",
+    "selected_adaptation": "vertical publication orientation, both full gene lists, original author order and explicit OE/KD columns; shared legends; do not turn missing/low-score cells into absent observations",
+    "planned_size_mm": [
+      136,
+      165
+    ],
+    "planned_font": "Arial7.5pt minimum; titles8pt",
+    "final_size_basis": "analyst selection for two dense vertical matrices, not a user-specified physical size"
+  },
+  "gaps": [
+    {
+      "id": "DPM-F3F-STAR-ANNOTATION",
+      "status": "MISSING_ORIGINAL_RULE_AND_MERGED_VALUES",
+      "detail": "005 has no star criterion; checked original rsav contains df12996x12 with only OE/KD differential results; 001 computes merged Brown/DPM P in memory and does not save them. Do not infer published stars from FC signs."
+    },
+    {
+      "id": "DPM-F3F-SIZE-LIMIT",
+      "status": "EXPLICIT_ADAPTATION_REQUIRED",
+      "detail": "Source scale_size(limits=c(1,9)) omits25/74 migration and13/46 oxygen cells; all120 cells retained by new size scale."
+    },
+    {
+      "id": "DPM-F3F-PATHWAY-Q-LABEL",
+      "status": "SOURCE_CODE_LABEL_CORRECTED",
+      "detail": "005 title says FDR; article caption and pathway methodology specify FWER. Display saved author adjusted_p_val as FWER; no recalculation."
+    },
+    {
+      "id": "DPM-F3F-FINAL-ASSEMBLY",
+      "status": "NOT_VERIFIED",
+      "detail": "Original vertical final assembly, final point-size transformation and physical panel dimensions are not saved."
+    }
+  ],
+  "code_locators": [
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/author/005_dot_plot_panel_f.R",
+      "lines": "8-27,33-83",
+      "purpose": "processed input, lost-pathway selection, raw P and effect extraction, bubble encoding, source export"
+    },
+    {
+      "path": "benchmark/library/genomics/dpm-multiomics/additional-panels/fig3f-bubbles/sources/author/001_gene_scatterplot_panel_b.R",
+      "lines": "30-36",
+      "purpose": "merged P-values computed but not saved; star evidence gap cross-check"
+    }
+  ]
+}

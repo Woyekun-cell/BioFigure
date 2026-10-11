@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+  "scope": "Public sealed derived CSV-to-native-R own-layout replay only:19637alignments39274endpoints, unchanged chromosome order and saved coordinates. No author full-TSV filtering/raw NGS/full-paper fidelity/new-input qualification.",
+  "source_asset": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+  "public_renderer": "scripts/render.R",
+  "input_mode": "planarian-public-csv"
+}

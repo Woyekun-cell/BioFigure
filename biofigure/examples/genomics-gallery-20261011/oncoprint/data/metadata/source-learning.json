@@ -1,0 +1,70 @@
+{
+  "example_id": "gallery-oncoprint-simulated-20261011",
+  "scope": "Self-authored simulated data and original implementation. Teaching example only; not paper-data or original-figure reproduction. Historical records remain unchanged.",
+  "official_method": {
+    "url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html",
+    "sections": [
+      "7.1.1 input formats",
+      "7.1.2 multi-event alter_fun",
+      "7.1.6 annotation and percent settings"
+    ],
+    "reviewed_on": "2026-10-11",
+    "principles": [
+      "Cell values may encode multiple alteration types; retain each type.",
+      "Input and metadata must share sample keys and display order.",
+      "Annotation barplots and legends require separate space from the event matrix."
+    ]
+  },
+  "local_learning": {
+    "method_id": "REPRO-008",
+    "gallery_id": "BF-0146",
+    "source_asset": "biofigure/library/topjournal-corpus/results/figures/issue_008/image_001.png",
+    "sha256": "9d89e4b07c2c19de426f73ce1c1083b81e3cedc1f6b75c47c8ac0593610210a3",
+    "viewed_original_size": true,
+    "old_gallery_asset": "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
+    "old_gallery_sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
+    "original_data_available": false,
+    "original_figure_fidelity": "NOT_VERIFIED",
+    "source_is_tutorial_composite": true
+  },
+  "original_code_findings": [
+    "Original MAF and clinical tables require external GDC downloads; no original table copied.",
+    "Old preprocessing collapses coexisting classes to Multi_Hit; new example preserves every type.",
+    "Original clinical unknowns must not be converted to Never smoker; synthetic Unknown is explicit.",
+    "Historic gallery legend overlaps two bottom gene rows; new example reserves independent bottom legend slot."
+  ],
+  "data_contract": {
+    "origin": "explicitly simulated",
+    "seed": 2026101108,
+    "tumours": 144,
+    "genes": 12,
+    "event_classes": [
+      "Missense",
+      "Frameshift",
+      "Nonsense",
+      "Splice",
+      "In_frame"
+    ],
+    "all_genes_assayed": true,
+    "empty_cell_meaning": "No simulated event detected, not missing assay",
+    "clinical_metadata": "Synthetic categorical illustration; no real clinical interpretation"
+  },
+  "layout_contract": {
+    "native_package": "ComplexHeatmap::oncoPrint",
+    "canvas_mm": [
+      180,
+      118
+    ],
+    "native_matrix_mm": [
+      124,
+      66
+    ],
+    "legend": "Separate bottom band with alteration/sex/smoking groups",
+    "frequency_denominator": "144 distinct synthetic tumours, independent of multi-event counts",
+    "sample_sort": "A/B/C cohorts, within-cohort binary lexicographic sort in ranked gene order",
+    "source_fidelity_claim": false,
+    "minimum_font_pt": 7.5
+  },
+  "public_content_policy": "Only original code, self-generated data and figures; no third-party code blocks or original images copied into this package.",
+  "public_path_migration": "Historical image bytes retain their delivery SHA; public historical image now lives at sources/previous-gallery.png."
+}

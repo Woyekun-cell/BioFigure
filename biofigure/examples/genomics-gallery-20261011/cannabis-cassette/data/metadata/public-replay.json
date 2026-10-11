@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+  "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED.",
+  "source_asset": "../docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
+  "public_renderer": "scripts/render.R",
+  "input_mode": "published-plot-tables"
+}

@@ -1,0 +1,30 @@
+schema_version: '1.0'
+project_id: BENCH-genomics-ohca-microc-loops-2024-public-replay
+palette:
+  palette_id: ohca-blue-teal-rust-v1
+  semantic_colors:
+    balanced_log10: '#F4F8FC,#CBDDE8,#7CAFC0,#37828A,#22465B'
+    filtered_loops: '#9E4F32'
+  user_requirement: Actual author processed-data panel with new semantic colour from
+    first render
+  sources:
+  - Author balanced log10 score scale and exact filtered loop annotations
+  - Sequential white-blue-teal-navy data scale; warm rust circles distinguish annotation
+    layer
+  cvd_status: Labels and circle shape separate annotation from quantitative matrix;
+    no blanket CVD claim
+  neutral_color_role: Absent matrix pixels/background white; axes/text charcoal
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 7
+    axis_title: 7
+    legend_text: 7
+    strip_text: 7
+    annotation_text: 7
+    panel_label: 8
+size_system:
+  allowed_classes:
+  - double-column
+deviation_basis: Current public own-layout replay uses its sealed semantic palette
+  and physical dimensions; no private task configuration or old PASS.

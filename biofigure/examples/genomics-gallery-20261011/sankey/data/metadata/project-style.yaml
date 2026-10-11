@@ -1,0 +1,20 @@
+project_id: genomics-gallery-20261011-sankey
+palette:
+  palette_id: low-blue-neutral-teal-high-ochre
+  semantic_colors:
+    Low: '#426E9B'
+    Neutral: '#358A83'
+    High: '#C18545'
+    outline: '#30343B'
+typography:
+  family: Arial
+  size_roles_pt:
+    axis_text: 8
+    axis_title: 8.5
+    legend_text: 8
+    strip_text: 8.5
+    annotation_text: 8
+    panel_label: 8.5
+size_system:
+  allowed_classes:
+  - one-and-half-column

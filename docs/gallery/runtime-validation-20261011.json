@@ -1,0 +1,760 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "scope": "selected-public-own-layout-native-replays",
+  "status": "8_CURRENT_INPUT_NATIVE_REPLAYS_SCOPED_PASS",
+  "environment": {
+    "platform": "macOS",
+    "R": "4.6.1",
+    "font": "Arial",
+    "native_renderers": [
+      "BUSCOplot",
+      "ggplot2",
+      "ggforce",
+      "igraph",
+      "HiContacts",
+      "ggalluvial",
+      "ComplexHeatmap"
+    ],
+    "other_platforms_fonts_package_versions": "NOT_VERIFIED"
+  },
+  "readset_binding_count": 140,
+  "readset_sha256": "d9da691673472f076eef73b906b65e3f45f0c78cf9084a5e05070ca509d00a3e",
+  "scientific_boundary": {
+    "original_whole_figure_fidelity": "NOT_VERIFIED",
+    "arbitrary_new_input_transfer": "NOT_VERIFIED",
+    "full_scientific_V2_corpus": "INCOMPLETE",
+    "raw_NGS_rerun": false,
+    "archived_PASS_inherited": false
+  },
+  "tests": {
+    "selected_functional_tests_passed": 127,
+    "public_packaging_mutation_tests_passed": 21,
+    "full_public_core_suite": {
+      "passed": 258,
+      "failed": 18,
+      "errors": 51,
+      "status": "NOT_FULL_PASS",
+      "limitation": "Archival/full-corpus tests require private source/evidence assets not bundled in the public selected release; stricter full auditor remains unchanged."
+    }
+  },
+  "records": [
+    {
+      "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+      "gallery_id": "BF-0217",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "a03dda9d4bb2421baf97f9ae3a37db13",
+        "receipt_sha256": "b572a74a1ce897c05b722ee3ec0fe3ae3b6b2b56a71d2ffde487dc9a6d1e6cc4",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "931d87b03039998a70c0c1657ec365d1051c732e4f94f27e936d7051e5c268ab",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/busco-coordinates.csv",
+          "sha256": "d004798b7d9bc2dac97c22340016cf3b2d1930fd3e4c1f75aaaae28133be7a10",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/busco-palette.csv",
+          "sha256": "5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/sample-order.csv",
+          "sha256": "8e77f31afbafb90e341e900e3f7c10b7167e7c5ad74fcc337960983c76130109",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/synthase-markers.csv",
+          "sha256": "b3615afe7a75bf84fb6be05c77eee832d22cea28bd365ec5f750d7236704b006",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "dbe041251e9ba050c387c8d5a6b0149ff3cdf82cd3519dfd1bc65c5c58076ee2",
+      "sealed_public_PDF_sha256": "365d2e0445006ed15344d9d52b703c70516d37fa37ed2dd0402ab1a43e1f56fa",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 116.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 155,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.0,
+          8.0
+        ],
+        "minimum_font_pt": 7.0,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/cannabis-cassette-actual-pdf-96dpi.png",
+            "sha256": "c65a966c297e1653a4709c395fd271e9b6b3faf601058e62443825a0dcfd25e1"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/cannabis-cassette-actual-pdf-120dpi.png",
+            "sha256": "08804b1545b1066e6ad23c782198cbe26787bcfe9eb455246f32697e73d0478d"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+      "gallery_id": "BF-0218",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "3415205608fd4f04824695977cb5b02f",
+        "receipt_sha256": "93ead6cc9b30472b70d8307d128e6591291fafbcf4682cc0a10cc73396e04639",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "0eaf6653d70075b3971d65bbb4738968d52882d7c4163348098b0ebc624d4172",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-coordinates.csv",
+          "sha256": "929f0b1bbdd43b372bbf77a7e02048aade54687eeec33f81758681fa96dce41a",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-palette.csv",
+          "sha256": "5fc8626d0e3e15dc0a0d268c92e0d8921f2e5a107c8dc5a98f5ef4d094979de2",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/sample-order.csv",
+          "sha256": "e563f93a0fa8303177e8fc69a6d63cec60582125d5abb2ea0589725980126dce",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/synthase-markers.csv",
+          "sha256": "a14b4d7ee68066e0a9a53326e4f2af076365da78840c98c487857caf78746071",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "d09e35f8fa8be3f7b1fc1fbc589f40d7b5ef91b627ca75629ae995d0a1912809",
+      "sealed_public_PDF_sha256": "5e4c2e67b7ff9fda52f5d8094628e3eae4275fb652e3d5b34a557888ccf75e6f",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 120.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 226,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.0,
+          8.0
+        ],
+        "minimum_font_pt": 7.0,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/cannabis-chr7-actual-pdf-96dpi.png",
+            "sha256": "5d46b388b624f644c38ce2cfd119d084702fceb0300236fd557cd18463faef6d"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/cannabis-chr7-actual-pdf-120dpi.png",
+            "sha256": "ddbe5af24783b6976f5f83cc411f162e235fc4932131b2ab1f2820b9359984ca"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED"
+    },
+    {
+      "method_id": "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+      "gallery_id": "BF-0219",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "46bd0841554649b994be570c9ae4b9a5",
+        "receipt_sha256": "6c7e6efc7b6fb09a9c8b561bbe0dfbe6cc936e80772078c94248824304c727e0",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "0a986ca76a8e55a6813fa32a7d509ada14edd0086e67f994621ba81610842934",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "1db222872bdd0ef20679d4b667bdc547fc3fc27bd1a18390b819592a63e96a54",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv",
+          "sha256": "2f510290caed40468736a85fe037b581087b75aa1ef3e56b593443d7abb0c822",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "9bb943cb914d9e1128113932effbefc1c5abb183c0ceeb78c35f222267b4171c",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "ff9092104784ec68572c46ff8bb99a74885d89e57e01475886f1b21a7580b896",
+      "sealed_public_PDF_sha256": "bedb55aa32702d18ffd30d7813901d575745225a1fa3a0dc103db445908e7445",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 136.0,
+            "height_mm": 165.0,
+            "font_names": [
+              "AAAAAB+Arial-ItalicMT",
+              "AAAAAC+ArialMT",
+              "AAAAAD+ArialMT"
+            ],
+            "character_count": 412,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.5,
+          8.0
+        ],
+        "minimum_font_pt": 7.5,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/dpm-bubbles-actual-pdf-96dpi.png",
+            "sha256": "b3bfe201bb001b8c74a381b4e9c60601dbbe2a82b0d7a3a38d82481cc2814aac"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/dpm-bubbles-actual-pdf-120dpi.png",
+            "sha256": "104d87cec0e905ee15eec0c4b9a5723e9431f6fe9468667582dd3cb2380f6b39"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "shared_entry_sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+      "execution_record_sha256": "8e0f901237c3987ab47ff6eddb42d7685a856f4a0699f0f43bb5b5fbd8539403"
+    },
+    {
+      "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+      "gallery_id": "BF-0220",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/dpm-network/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "3c2d47c315414ae39949ad8bb50bb52c",
+        "receipt_sha256": "846087a7d0d52b5986af1506d61a0ba5918d84b29ea92095f9677de79c37d4de",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "5bfb7cbed8a007201f32744cc75844a876402fe2bd23a09de8200ba241413520",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "eb3097452f96b30458d4418a0546b39dfa2c8b2da6b12a995181d9453612a223",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_edges.csv",
+          "sha256": "f5de71e1da9be1f31905c340a95f66148cb1fa59fb5e942a6f1d4ce57c06c820",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_layout.csv",
+          "sha256": "9a6f29b84b4e37bc5453cbb134a9b6d1d5308c8c0df3e54082645cb150c3757a",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_memberships.csv",
+          "sha256": "3ec91bca2a81ef1d6394cff4aa8926d9dd1c4a9c3b26473ee1ff73f958f48dde",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv",
+          "sha256": "7d3b339bac5ae2e05ff32e5858d239b76e40f81014b52f44a5263327f7b21b11",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "a01d225450689b8bc513b4779df5bef2c8461ef48b279d9ec4f0c7aa9224cfaf",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "a954bfc5d1798942b1d756856bb22ed1f74036800efee6ae3d7c210481e01c0a",
+      "sealed_public_PDF_sha256": "9d1515288fc26ef51f87e23cd1c34093eca42d697cb30d788ffa5d8e463ceda9",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 165.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 954,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.5
+        ],
+        "minimum_font_pt": 7.5,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/dpm-network-actual-pdf-96dpi.png",
+            "sha256": "a1cabdbc5c0607f31400bc24bf4617ab3c44d3499ab056842dcf45d873d89978"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/dpm-network-actual-pdf-120dpi.png",
+            "sha256": "7ee1197515700d29768640fb7af8bb5a102bf24cd7e6c72812ce44a2646342bd"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "shared_entry_sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+      "execution_record_sha256": "c281ddb94eb7944f02eb7b97d32ff5a190a2604fa290156c197cb939f28020e7"
+    },
+    {
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "gallery_id": "BF-0221",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "a8ec9f5fd382431b9bb7d1f79894b9eb",
+        "receipt_sha256": "f64030d39d56f51a3fb444e16b81ad2799be00ed3b341432d622339e13373d74",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "1261e2f1be18438032208f882e40e54206c9bc0ca108449520daff04be0cae99",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
+          "sha256": "373fee452263469f38d7954c7a2cdb48746f31ff8b1e7c6e85aadd5983c5cbaf",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/contact-bin-pairs.csv",
+          "sha256": "64a5d886935b89e367e3238c8d11f1a42aa39abc9454d3331d77cd962b11b2d1",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/loop-annotations.csv",
+          "sha256": "26059004b12f800146aca6ed40d48e8a36c7b31ba78aee8cc998860b9e358835",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "de9250e5bb86e9e846c6beb3076fd3dd7ef37fd09d358f4bbbb1b5ab9c5a18bb",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "ec6a22d83c2ea053b6b0b135a4c295fed17bb272c538b5c7af83fa3c32650e24",
+      "sealed_public_PDF_sha256": "ff4dec7bfa29e53b1367d2e47ffcf3c8f6d625472aee5ad3f4c0af17b9a03b2d",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 158.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 160,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.0,
+          8.0
+        ],
+        "minimum_font_pt": 7.0,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/visual-qa/author-book-microc-loops-recolored-pdf-96dpi.png",
+            "sha256": "145f210b03d45763b6aa02e166df269b31461a4fbccb3821e067f6c9fd7d47c0"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/visual-qa/author-book-microc-loops-recolored-pdf-120dpi.png",
+            "sha256": "28bb0b91f66818df9b9edac262e9a120a7d532a1b2369fdc06c2902f03af458b"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "execution_record_sha256": "6667dfbdb78ebb47acb185eb8626a7cd41a601e578df2211e56811dc88255f8d"
+    },
+    {
+      "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+      "gallery_id": "BF-0222",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "author-processed-public-data",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "93b271bb4373430a9dfef8936d0a2ee7",
+        "receipt_sha256": "c7561327e0cf457367322ff44c8ad5669231e79b775c35da16708faae4819fbb",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "a9a759b99e25a6a9ed46a9d8f44f6da473df59d0eae0435dfc1beb909c203137",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
+          "sha256": "45e98272a6b9bd5a72a26d0b61279bec6587c5ebe830044e95ed664339ae9668",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_boundaries.csv",
+          "sha256": "06cc60f9ef30743e7c56b4bdc598ba68662eb6f1334aa3e4f72621da43bb194c",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_endpoints.csv",
+          "sha256": "55b3715e32c54e3af8c2a48115abc0c28d8b759a22c91e32f743c5756384d3ff",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "cd6268b0779013fec8739c4ea0d668ec51504124966319c054db1c21e08bede6",
+      "sealed_public_PDF_sha256": "35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 180.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 106,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.5,
+          8.0
+        ],
+        "minimum_font_pt": 7.5,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/visual-qa/planarian_haplotype_recolored-pdf-96dpi.png",
+            "sha256": "f56ca292a669f882784ff17ba84dceaa140c685481e3f233234a222b14509e12"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/visual-qa/planarian_haplotype_recolored-pdf-120dpi.png",
+            "sha256": "f43c6a5e19385046e2525975207240949d4c3316c0d14ae01bf54bea6f190ad9"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "execution_record_sha256": "c2f5b06a77693b5c7de74e912c963f98225b8f0762fabeebd4ceadb98a7b60d7"
+    },
+    {
+      "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+      "gallery_id": "BF-0109",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "explicit-simulation",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "9a41488e243a451b9601fc2854a2a017",
+        "receipt_sha256": "b04f3b00254c58409d539fc301717447310428e27bec0559e121d939d451662c",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "0e8c5418aa679b64303a045b97e1bc5cf57b052e3b3bb35d2ed97e128fc1cd1a",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "f1ddf899c0a28ea25aa7b44f64c392f3f36f58b109b6846af856dd528df6e2d0",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_native_strata.csv",
+          "sha256": "e3e1ab40831b18b40c9f1dcb5d3445eec24e4a917eb9ed235c26d134ea4f48b0",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_nodes.csv",
+          "sha256": "f6d82776efd834cd0c47136d295a4e5270309a4ebca9b385a9816ce84f19e16e",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_paths.csv",
+          "sha256": "b95fe83a27182457611d566ee59f23f5f4a9e3e18365c4287912008738b20fd0",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "5d11f7971f45aa1507ad8e11444ba1299a0c170600b52b05fa187eee711fe62e",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "2c1c097eeee6dbea1fe5945cd5c08cf038d826c438bc7b397f48416db8a2d375",
+      "sealed_public_PDF_sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 136.0,
+            "height_mm": 115.0,
+            "font_names": [
+              "AAAAAB+ArialMT"
+            ],
+            "character_count": 260,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          8.0,
+          8.5
+        ],
+        "minimum_font_pt": 8.0,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/sankey-actual-pdf-96dpi.png",
+            "sha256": "81d370fbe5a35dddf2656f326cae3985410ba4d3ee2c2eedad40cad24a2e3610"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/sankey-actual-pdf-120dpi.png",
+            "sha256": "6227bf2d020a315c51e6cfd909a531e014fd437ef5c8648d8671de6929cf59bc"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "shared_entry_sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+      "execution_record_sha256": "ba6a7c8319b5a1b3aeebb33aa79cee2ae62a80d05cc9576edc8e6fbdf2602c8c"
+    },
+    {
+      "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+      "gallery_id": "BF-0146",
+      "status": "NATIVE_EXECUTION_AND_SCOPED_CURRENT_LAYOUT_REVIEW_PASS",
+      "data_origin": "explicit-simulation",
+      "entrypoint": "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+      "fresh_preparation": {
+        "invocation_id": "7a47b65847db4fbb858e63b17c0b384e",
+        "receipt_sha256": "3f213ba3fbd51c949cd45177ba6a24dd562ed2692b1c3f782485e543b8b28a9f",
+        "status": "PREFLIGHT_COMPLETE"
+      },
+      "fresh_CP2_validated": true,
+      "single_use_authorization_consumed": true,
+      "authorization_record_sha256": "ad749ac5eaf365887558b6ce9f9bfc8106f2fe1f28847deea3ae031aea835ca4",
+      "historical_authorization_inherited": false,
+      "reference_scope": "Current own sealed gallery layout viewed before this execution; original article/source comparison is separately archived learning",
+      "source_view_confirmed_this_invocation": true,
+      "entrypoint_sha256": "6a6242966da52503908041118703bd41638c2bfba2fc44a2962e5a65bdb6ce46",
+      "plot_data": [
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+          "sha256": "6cd7e37231c26869c194cd22c99e976ac45d27578588c7e6b80c73612d22a88e",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+          "sha256": "17167456fe291d39b33e4dcfa1b8517b931b67a1ec7e4934d5cdce7658459cc1",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+          "sha256": "46582b797e28394535b8a1f2f457cff2cbf262c3682a092e7642d4be0b3a08d4",
+          "fresh_replay_equal": true
+        },
+        {
+          "public_path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv",
+          "sha256": "1ee3125d5c9fb314a015cd335b612227e5f893fce2bfa718f0b085a962c58c98",
+          "fresh_replay_equal": true
+        }
+      ],
+      "new_PNG_sha256": "29f4c1fc3b70e509818b0638d6588ac5f1703c392407cdb9054177ffe89f7e2e",
+      "new_PNG_byte_equal_to_gallery": true,
+      "new_PDF_sha256": "2f036818b380f1573f9c1c12d77b1e74c6dc22034d3a6e4c59fc25b5a69ef703",
+      "sealed_public_PDF_sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361",
+      "PDF_bytes_expected_identical": false,
+      "PDF_byte_note": "Native PDF metadata timestamps can differ; actual current PDF preview and text/geometry audited independently.",
+      "PDF_metadata": {
+        "status": "PASS",
+        "page_count": 1,
+        "pages": [
+          {
+            "width_mm": 180.0,
+            "height_mm": 118.0,
+            "font_names": [
+              "AAAAAB+ArialMT",
+              "AAAAAC+Arial-ItalicMT"
+            ],
+            "character_count": 302,
+            "text_outside_page_count": 0,
+            "outside_page_examples": []
+          }
+        ],
+        "effective_point_sizes": [
+          7.5
+        ],
+        "minimum_font_pt": 7.5,
+        "replacement_glyph_present": false,
+        "editable_text_present": true
+      },
+      "visual_review": {
+        "status": "SCOPED_CURRENT_OWN_LAYOUT_PASS",
+        "actual_PNG_opened": true,
+        "actual_PDF_96dpi_opened": true,
+        "actual_PDF_120dpi_opened": true,
+        "independent_reviewer": true,
+        "actual_PDF_preview_bindings": [
+          {
+            "dpi": 96,
+            "run_relative_path": "work/oncoprint-actual-pdf-96dpi.png",
+            "sha256": "3557222d9844585fc033fdb270e185d2d56298b4ee9ae05e4af2951644469dfb"
+          },
+          {
+            "dpi": 120,
+            "run_relative_path": "work/oncoprint-actual-pdf-120dpi.png",
+            "sha256": "1a1339d6597cb3fb323f64c4003c518e32099f1031f0863b78989f199c3ec5fb"
+          }
+        ]
+      },
+      "new_input_transfer": "NOT_VERIFIED",
+      "original_whole_paper_figure_fidelity": "NOT_VERIFIED",
+      "user_acceptance": "NOT_REQUESTED",
+      "shared_entry_sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+      "execution_record_sha256": "d4ce12083900294e07cfe38c3a838360f593ed9645a8d826115318825d0d6c43"
+    }
+  ]
+}
