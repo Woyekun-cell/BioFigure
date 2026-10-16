@@ -17,7 +17,7 @@ import zlib
 from pathlib import Path, PurePosixPath
 
 sys.dont_write_bytecode = True
-EXCLUDED_PARTS = {'.git', 'work', 'cache'}
+EXCLUDED_PARTS = {'.git', 'work', 'cache', '__pycache__', '.pytest_cache'}
 SHA256_RE = re.compile(r'^[0-9a-f]{64}$')
 SEMVER = r'(\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?)'
 PATH_PREFIXES = ('/' + 'Users/', '/' + 'home/', '/var/' + 'folders/')

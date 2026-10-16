@@ -39,7 +39,7 @@ def overlay_public_profiles(index, *, root=ROOT):
             'mandatory_read_set': entry.get('mandatory_read_set', []),
             'material_binding': entry.get('material_binding', {}),
             'scope': 'Historical author-source study; absent source assets are not public runtime dependencies.'})
-        if profile.get('status') == 'reference-only':
+        if profile.get('status') in {'reference-only', 'blocked'}:
             entry['public_execution_profile'] = profile
             entry['learned_contract']['public_execution_profile'] = profile
             entry['mandatory_read_set'] = entry['archival_source_dependencies']['mandatory_read_set']

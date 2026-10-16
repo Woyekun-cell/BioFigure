@@ -84,6 +84,9 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertEqual(self.run_audit()['status'],'PASS')
     def test_public_cache_and_platform_junk_are_rejected(self):
         self.put('tools/__pycache__/x.pyc',b'x');self.put('docs/.DS_Store',b'x');self.assert_error('public_file_hygiene')
+    def test_running_python_does_not_invalidate_public_distribution(self):
+        self.put('tools/__pycache__/temporary.pyc',b'generated local cache')
+        self.assertEqual(self.run_audit()['status'],'PASS')
     def test_registry_graph_id_mismatch_is_rejected(self):
         self.write_json('biofigure/atlas/unified-capability-graph.json',{'nodes':[{'id':'unrelated','kind':'case'}]});self.assert_error('registry_graph_case_ids')
     def test_refresh_all_references_must_be_hash_bound(self):

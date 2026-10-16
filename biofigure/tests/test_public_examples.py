@@ -41,6 +41,7 @@ class PublicExampleTests(unittest.TestCase):
             stats = audit / 'statistics.csv'
             stats.write_text('comparison,estimate,p_value\nTreatment - Control,1.0,0.001\n')
             analysis = {'allowed_text': ['Control', 'Treatment', 'Expression (a.u.)', 'p = 0.001'],
+                        'input_binding': {'path': str(Path(input_path).resolve()), 'sha256': hashlib.sha256(Path(input_path).read_bytes()).hexdigest()},
                         'width_mm': 90, 'height_mm': 85, 'font_family': 'Arial',
                         'renderer': {'language': 'R', 'backend': 'ggplot2', 'packages': ['ggplot2']},
                         'statistics': {'path': str(stats), 'sha256': hashlib.sha256(stats.read_bytes()).hexdigest(),
@@ -70,7 +71,7 @@ class PublicExampleTests(unittest.TestCase):
         for declarations in ({}, {'experimental_unit': 'biological-sample'}, {'independence': 'independent'}):
             with self.subTest(declarations=declarations), patch.object(module, 'run_r') as r_process:
                 with self.assertRaisesRegex(ValueError, 'experimental.unit|independence'):
-                    module.run_example('boxplot', self.directory / 'out', input_path=self.input_csv(), formats=['png'], **declarations)
+                    module.run_example('boxplot', self.directory / 'out', input_path=self.input_csv(), value_unit='a.u.', formats=['png'], **declarations)
                 r_process.assert_not_called()
 
     def test_external_boxplot_preserves_user_rows_and_png_only_formats(self):
@@ -79,7 +80,7 @@ class PublicExampleTests(unittest.TestCase):
         original_hash = hashlib.sha256(source.read_bytes()).hexdigest()
         output = self.directory / 'out'
         with patch.object(module, 'run_r', side_effect=self.r_stub):
-            result = module.run_example('boxplot', output, input_path=source, experimental_unit='biological-sample', independence='independent', formats=['png'])
+            result = module.run_example('boxplot', output, input_path=source, experimental_unit='biological-sample', independence='independent', value_unit='a.u.', formats=['png'])
         self.assertEqual(result['status'], 'RENDERED_PENDING_VISUAL_REVIEW')
         self.assertEqual(result['visual_review'], 'NOT_RUN')
         self.assertTrue((output / 'boxplot.png').is_file())
@@ -95,6 +96,60 @@ class PublicExampleTests(unittest.TestCase):
         self.assertEqual(style['project_id'], 'biofigure-portable-boxplot-standalone')
         self.assertEqual(style['experiment_scope'], 'Standalone example; cases are not one biological experiment.')
         self.assertEqual(style['palette']['semantic_colors']['Control'], '#38658B')
+
+    def test_external_measurement_unit_is_required_and_separate_from_experimental_unit(self):
+        module = self.module()
+        source = self.input_csv()
+        with patch.object(module, 'run_r') as r_process:
+            with self.assertRaisesRegex(ValueError, 'value.unit|measurement unit'):
+                module.run_example('boxplot', self.directory / 'missing-unit', input_path=source,
+                                   experimental_unit='fish', independence='independent', formats=['png'])
+            r_process.assert_not_called()
+        for unit in ('a.u.', 'mg/L'):
+            with self.subTest(unit=unit):
+                metadata = module.external_metadata(source, 'fish', 'independent', value_unit=unit)
+                self.assertEqual(metadata['value_unit'], unit)
+                self.assertEqual(metadata['experimental_unit'], 'fish')
+                audit = self.directory / unit.replace('/', '-')
+                audit.mkdir()
+                stats = audit / 'stats.csv'
+                stats.write_text('comparison,p_value\nTreatment - Control,0.1\n')
+                analysis = {'allowed_text': ['Control', 'Treatment', f'Expression ({unit})'],
+                    'width_mm': 90, 'height_mm': 75, 'renderer': 'ggplot2', 'statistics': None, 'heatmap_cells': None}
+                receipt = {'preparation_id': 'fixture', 'request': {}, 'selected_reference_candidates': {'planner_selected': 'fixture'}}
+                spec = module.make_spec('boxplot', metadata, analysis, receipt, audit, ['png'])
+                self.assertEqual(spec['data_contract_summary']['unit'], unit)
+                self.assertEqual(spec['data_contract_summary']['experimental_unit'], 'fish')
+
+    def test_input_changed_after_analysis_cannot_receive_authorization(self):
+        module = self.module()
+        source = self.input_csv()
+        output = self.directory / 'mutated-after-analysis'
+        def mutate_after_analyze(stage, *args):
+            result = self.r_stub(stage, *args)
+            if stage == 'analyze':
+                source.write_text(source.read_text().replace('1.2', '9.2', 1))
+            return result
+        with patch.object(module, 'run_r', side_effect=mutate_after_analyze):
+            with self.assertRaisesRegex(ValueError, 'input.*chang|input.*binding|analysis.*input'):
+                module.run_example('boxplot', output, input_path=source, experimental_unit='fish',
+                                   independence='independent', value_unit='a.u.', formats=['png'])
+        self.assertFalse(list(output.glob('_audit/authorization*.json')))
+
+    def test_input_changed_during_cp2_cannot_receive_authorization(self):
+        module = self.module()
+        source = self.input_csv()
+        output = self.directory / 'mutated-during-cp2'
+        original_make_spec = module.make_spec
+        def mutate_during_cp2(*args, **kwargs):
+            spec = original_make_spec(*args, **kwargs)
+            source.write_text(source.read_text().replace('1.2', '9.2', 1))
+            return spec
+        with patch.object(module, 'run_r', side_effect=self.r_stub), patch.object(module, 'make_spec', side_effect=mutate_during_cp2):
+            with self.assertRaisesRegex(ValueError, 'input.*chang|input.*binding|analysis.*input'):
+                module.run_example('boxplot', output, input_path=source, experimental_unit='fish',
+                                   independence='independent', value_unit='mg/L', formats=['png'])
+        self.assertFalse(list(output.glob('_audit/authorization*.json')))
 
     def test_failed_analysis_never_issues_authorization(self):
         module = self.module()

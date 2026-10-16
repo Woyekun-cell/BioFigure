@@ -10,6 +10,40 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_SIZE = 8
+PORTABLE_CASES = [
+    ('boxplot', '分组箱线图', 'Grouped box plot'),
+    ('heatmap', '方格热图', 'Square-cell heatmap'),
+    ('dense-heatmap', '密集矩阵概览', 'Dense matrix overview'),
+    ('bubble', '气泡图', 'Bubble plot'),
+    ('volcano', '火山图', 'Volcano plot'),
+    ('synteny', '共线性图', 'Synteny plot'),
+    ('phylogeny', '系统树', 'Phylogenetic tree'),
+]
+
+
+def portable_section(english=False):
+    heading = 'Portable examples' if english else '便携案例'
+    intro = ('Seven first-party synthetic examples bundle the current PNG/PDF, input, metadata and provenance. '
+             'Simulation and interpretation limits are recorded outside the figures. These examples do not certify new inputs or another platform.'
+             if english else
+             '7 个一方模拟例提供当前 PNG/PDF、输入、元数据与来源记录。模拟身份与解释边界写在图外；这些示例不认证新数据或其他平台。')
+    code_label = 'Shared rendering code' if english else '共用绘图代码'
+    input_label = 'Input generator' if english else '输入生成脚本'
+    lines = [f'## {heading}\n', intro + '\n',
+             f'[{code_label}](biofigure/examples/portable/render.R) · [{input_label}](biofigure/examples/portable/generate_inputs.py)\n']
+    for ident, title_zh, title_en in PORTABLE_CASES:
+        title = title_en if english else title_zh
+        base = f'biofigure/examples/portable/{ident}'
+        paths = [f'{base}/figures/{ident}.{ext}' for ext in ('png', 'pdf')]
+        paths += [f'{base}/{name}' for name in ('data.csv', 'metadata.json', 'provenance.json')]
+        for path in paths:
+            assert (ROOT / path).is_file(), f'Missing portable example material: {path}'
+        lines += [f'### {title}\n', f'![{title}]({paths[0]})\n',
+                  f'[PDF]({paths[1]}) · [{"Data" if english else "数据"}]({paths[2]}) · '
+                  f'[{"Metadata" if english else "元数据"}]({paths[3]}) · '
+                  f'[{"Provenance" if english else "来源与边界"}]({paths[4]}) · '
+                  f'[{"Code" if english else "代码"}](biofigure/examples/portable/render.R)\n']
+    return '\n'.join(lines) + '\n'
 
 
 def page_name(slug, number):
@@ -111,7 +145,7 @@ def generate():
     for cat, count, _ in nav_rows:
         section.append(f'| [{cat["title"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。\n\n')
-    files['README.md'] = readme[:start] + '\n'.join(section) + readme[end:]
+    files['README.md'] = readme[:start] + '\n'.join(section) + portable_section() + readme[end:]
     english = (ROOT / 'README.en.md').read_text()
     start, end = english.index('## Gallery by plot type'), english.index('## Methods and quality checks')
     section_en = ['## Gallery by plot type\n',
@@ -121,7 +155,7 @@ def generate():
     for cat, count, _ in nav_rows:
         section_en.append(f'| [{cat["english"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section_en.append('\nSee the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.\n\n')
-    files['README.en.md'] = english[:start] + '\n'.join(section_en) + english[end:]
+    files['README.en.md'] = english[:start] + '\n'.join(section_en) + portable_section(english=True) + english[end:]
     fields = ['id', 'category', 'subtype', 'title', 'image', 'pdf', 'sha256', 'data_origin', 'historical', 'validation', 'note', 'origin_paths', 'scripts', 'plot_data', 'provenance']
     out = io.StringIO(newline='')
     writer = csv.DictWriter(out, fieldnames=fields, lineterminator="\n")

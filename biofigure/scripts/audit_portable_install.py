@@ -48,6 +48,9 @@ def file_inside(root: Path, value, errors: list[str], label: str) -> Path | None
     if relative.is_absolute() or '..' in relative.parts or '\\' in value or ':' in value:
         errors.append(f'{label}: path-escape {value!r}')
         return None
+    if any(part in EXCLUDED for part in relative.parts):
+        errors.append(f'{label}: excluded-runtime-path {value!r}')
+        return None
     path = root / value
     if not path.resolve().is_relative_to(root.resolve()):
         errors.append(f'{label}: symlink-escape {value!r}')
@@ -145,6 +148,16 @@ def audit_case(root: Path, case: dict, errors: list[str]) -> dict:
         errors.append(f'{label}: provenance-not-bound')
     if not {'code', 'input', 'provenance'}.issubset(roles):
         errors.append(f'{label}: runtime-readset-must-bind-code-input-provenance')
+    for preview in case.get('preview_files', []):
+        path = file_inside(root, preview, errors, label + ' preview')
+        if preview not in declared:
+            errors.append(f'{label}: preview-not-bound {preview}')
+        if path and path.suffix.lower() not in {'.png', '.pdf'}:
+            errors.append(f'{label}: invalid-preview-format {preview}')
+    expected_formats = case.get('expected_preview_formats', [])
+    actual_formats = {Path(p).suffix.lower().lstrip('.') for p in case.get('preview_files', [])}
+    if not set(expected_formats).issubset(actual_formats):
+        errors.append(f'{label}: missing-required-preview')
     command = case.get('command')
     if not isinstance(command, list) or not command or not all(isinstance(x, str) and x for x in command):
         errors.append(f'{label}: missing-command')
@@ -195,6 +208,9 @@ def audit(root: Path, *, distribution_root: Path | None = None) -> dict:
         errors.append('manifest: missing-or-duplicate-case-id')
     if not cases:
         errors.append('manifest: no-public-cases')
+    expected_ids = manifest.get('expected_case_ids', ids)
+    if not isinstance(expected_ids, list) or set(expected_ids) != set(ids):
+        errors.append('manifest: expected-case-id-mismatch')
     for material in manifest.get('shared_runtime_files', []):
         path = file_inside(root, material.get('path'), errors, 'shared-runtime')
         if not SHA.fullmatch(str(material.get('sha256', ''))):

@@ -965,6 +965,7 @@
     "reference_sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
     "origin": "Byte-identical copy of the already-public BioFigure gallery replot, bundled inside the Skill.",
     "parent_repository_required": false,
-    "runtime_revalidation": "Required after current release bindings freeze; not inferred from historical PASS."
+    "runtime_revalidation": "Required after current release bindings freeze; not inferred from historical PASS.",
+    "text_cleanup": "Author-data and figure-number provenance header removed from the current figure interior; provenance remains outside the figure. All source IDs, values, plotted marks, source-exposed scope and scientific labels remain unchanged."
   }
 }

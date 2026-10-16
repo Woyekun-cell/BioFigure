@@ -1,15 +1,15 @@
 # 来源与权利说明 / Provenance and rights notice
 
-BioFigure 自有代码、文档及完全使用自有模拟数据生成的示例图按 MIT License 发布。示例中的名称与数值均为演示用途。  
+BioFigure 自有代码、文档及完全使用自有模拟数据生成的示例图按 MIT License 发布。示例中的名称与数值均为演示用途。
 BioFigure-owned code, documentation, and figures generated entirely from first-party synthetic data are released under the MIT License. Names and values in the examples are illustrative.
 
-仓库引用的软件包、论文、网站与外部项目保留各自权利和许可证。链接与方法说明不构成第三方材料的再授权。  
+仓库引用的软件包、论文、网站与外部项目保留各自权利和许可证。链接与方法说明不构成第三方材料的再授权。
 Referenced packages, papers, websites, and external projects retain their own rights and licenses. Links and method notes do not relicense third-party material.
 
-SciDraw 学习材料仅保留经过蒸馏的图形特征、来源索引和适用边界；BioFigure 不把上游原始代码或图片声明为自有资产。使用者复制第三方代码或图形前应核对原始来源与许可。  
+SciDraw 学习材料仅保留经过蒸馏的图形特征、来源索引和适用边界；BioFigure 不把上游原始代码或图片声明为自有资产。使用者复制第三方代码或图形前应核对原始来源与许可。
 SciDraw learning material is retained only as distilled visual features, source indexes, and scope boundaries. BioFigure does not claim upstream code or images as its own. Users should verify the original source and license before copying third-party code or graphics.
 
-Nature 及其他期刊名称用于描述排版与审稿目标，不表示合作、认可或投稿结果保证。  
+Nature 及其他期刊名称用于描述排版与审稿目标，不表示合作、认可或投稿结果保证。
 Nature and other journal names describe layout and review targets and do not imply affiliation, endorsement, or guaranteed acceptance.
 
 精选图库另含公开数据分析与软件包示例，数据来源见[逐图清单](docs/gallery/catalog.csv)。第三方数据和软件包保留原许可；图中结果受已提供输入与分析范围限制。历史错误及重复修订版本不纳入精选图库，本地保留原始档案。

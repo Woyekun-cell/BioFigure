@@ -1,5 +1,11 @@
 # BioFigure 3.8.0 中文完整手册
 
+## 3.8.0 公开发行范围
+
+[公开案例清单](../biofigure/public-cases.json)区分 12 个可执行入口、2 个 DPM 仅参考档案和 1 个暂时阻断的 OncoPrint。可执行入口包括 7 个一方模拟例、Cannabis 两案、Planarian、OHCA 和桑基图。OncoPrint 实际显示 12×144，未满足当前方格几何契约，历史记录不迁移为当前通过。454 条学习档案是可检索方法记录，不代表来源材料全部分发或全部可运行。
+
+新增 7 例的依赖检查器不覆盖旧例专用 R 包。Cannabis 需固定 BUSCOplot 来源；OHCA 需既有 HiContacts/HiCExperiment 等 R 依赖及固定哈希 RDS，锁定提交和来源见 [README 安装说明](../README.md#安装与使用)及案例执行配置。macOS 已实跑；Linux、Windows 未验证。Python 新环境仍使用既有 R 包及 Arial，不等于全新操作系统安装验收。代码执行、材料审计、来源保真、当前 PNG/PDF 审阅和用户认可分别记录。
+
 ## 1. 定位
 
 BioFigure 是统一的生物科研图生产 Skill。目标是从研究问题生成科学可信、视觉克制、代码可复现、可实际审查的单图或组图。它不负责原始 NGS 流程，也不以“Nature 风格”替代具体数据语义和期刊要求。

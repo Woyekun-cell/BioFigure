@@ -33,7 +33,17 @@ pdf_embed<-function(path) {
     '-c','BFFile (r) file runpdfbegin pdfpagecount = quit')),stdout=TRUE,stderr=TRUE)
   if(!identical(tail(trimws(count),1),'1'))stop('standalone figure PDF must have exactly one page')
 }
-d<-read.csv(input,check.names=FALSE,stringsAsFactors=FALSE)
+# Never let read.csv coerce identifiers such as 01 and 1 into the same ID.
+input_binding<-bound(input)
+d<-read.csv(input,check.names=FALSE,stringsAsFactors=FALSE,colClasses='character')
+numeric_columns<-switch(case,boxplot='Expression',heatmap=names(d)[-1],`dense-heatmap`=names(d)[-1],
+  bubble=c('Average','Fraction'),volcano=c('log2FC','SE'),
+  synteny=c('AStart','AEnd','BStart','BEnd','ALength','BLength'),phylogeny=character())
+for(nm in numeric_columns) {
+  d[[nm]]<-suppressWarnings(as.numeric(d[[nm]]))
+  if(any(!is.finite(d[[nm]])))stop(paste('nonfinite numeric input:',nm))
+}
+if(!identical(input_binding,bound(input)))stop('input changed while reading; analyze and render must use one frozen input')
 group_colours<-c(Control='#38658B',Treatment='#B66E83',Low='#9FAFBD',Medium='#7C96AE',High='#86749E',Recovery='#C18C79')
 palette5<-c('#285C8D','#93B8D1','#FFFFFF','#BDABD4','#674788')
 analysis_path<-file.path(audit,'analysis.json')
@@ -55,7 +65,7 @@ make_ggplot<-function(a) {
       annotate('segment',x=1,xend=2,y=a$bracket_y,yend=a$bracket_y,linewidth=.25,alpha=1)+
       annotate('segment',x=c(1,2),xend=c(1,2),y=a$bracket_y,yend=a$bracket_y-a$bracket_tip,linewidth=.25,alpha=1)+
       annotate('text',x=1.5,y=a$p_y,label=a$p_label,family=font$family,size=7/ggplot2::.pt)+
-      labs(x=NULL,y='Expression (a.u.)')+base+theme(legend.position='none')
+      labs(x=NULL,y=a$y_label)+base+theme(legend.position='none')
     # Every actual point/line/fill data layer has a role and independently checked alpha.
     contracts<-list(list(layer=1,role='distribution-fill',fill_alpha=.32,edge_alpha=1),
       list(layer=2,role='replicate-point',fill_alpha=.70,edge_alpha=1),
@@ -74,14 +84,20 @@ make_ggplot<-function(a) {
   } else if(case=='volcano') {
     d<-read.csv(file.path(audit,'statistics.csv'),check.names=FALSE)
     d$State<-factor(d$State,levels=c('Other','Down','Up'))
+    d$LabelDown<-ifelse(d$State=='Down'&d$Gene %in% unlist(a$label_genes),d$Gene,'')
+    d$LabelUp<-ifelse(d$State=='Up'&d$Gene %in% unlist(a$label_genes),d$Gene,'')
     p<-ggplot(d,aes(log2FC,NegLog10FDR))+
       geom_point(data=d[d$State=='Other',],colour='#B6BEC6',alpha=.22,size=.43)+
       geom_point(data=d[d$State!='Other',],aes(colour=State),alpha=.45,size=.65)+
       geom_hline(yintercept=-log10(.05),colour='#8B929B',linewidth=.25,linetype='dashed')+
       geom_vline(xintercept=c(-1,1),colour='#8B929B',linewidth=.25,linetype='dashed')+
-      ggrepel::geom_text_repel(data=d[d$Gene %in% unlist(a$label_genes),],aes(label=Gene),
+      ggrepel::geom_text_repel(data=d,aes(label=LabelDown),xlim=c(-4.6,-1.6),nudge_x=-.35,
         family=font$family,size=6.5/ggplot2::.pt,colour='#252A30',seed=61,
-        box.padding=.4,point.padding=.15,min.segment.length=0,segment.size=.22,
+        box.padding=.4,point.padding=.25,min.segment.length=0,segment.size=.22,
+        max.overlaps=Inf,max.iter=20000)+
+      ggrepel::geom_text_repel(data=d,aes(label=LabelUp),xlim=c(1.6,4.6),nudge_x=.35,
+        family=font$family,size=6.5/ggplot2::.pt,colour='#252A30',seed=62,
+        box.padding=.4,point.padding=.25,min.segment.length=0,segment.size=.22,
         max.overlaps=Inf,max.iter=20000)+
       scale_colour_manual(values=c(Down='#376B95',Up='#BB6D7C'),breaks=c('Down','Up'),drop=TRUE)+
       scale_x_continuous(breaks=unlist(a$x_ticks),labels=unlist(a$x_labels),limits=unlist(a$xlim),expand=expansion(0))+
@@ -123,17 +139,21 @@ make_ggplot<-function(a) {
 }
 
 if(phase=='analyze') {
-  a<-list(schema_version=1,case=case,font_family='Arial',width_mm=90,height_mm=75,renderer='ggplot2',
+  a<-list(schema_version=1,case=case,font_family='Arial',width_mm=90,height_mm=75,renderer='ggplot2',input_binding=input_binding,
     statistics=NULL,heatmap_cells=NULL,semantic_colors=list())
   if(case=='boxplot') {
     groups<-unique(d$Group);stopifnot(length(groups)==2,all(is.finite(d$Expression)),!anyDuplicated(d$Sample))
     values<-lapply(groups,function(g)d$Expression[d$Group==g]);stopifnot(all(lengths(values)>=2))
     test<-t.test(values[[2]],values[[1]],alternative='two.sided',var.equal=FALSE)
+    value_unit<-metadata$value_unit
+    if(is.null(value_unit)&&isTRUE(metadata$synthetic)&&identical(metadata$units,'arbitrary units'))value_unit<-'a.u.'
+    if(is.null(value_unit)||!is.character(value_unit)||!nzchar(trimws(value_unit)))stop('NEEDS_SPEC: measurement value_unit must be explicit')
+    a$value_unit<-value_unit;a$y_label<-paste0('Expression (',value_unit,')')
     stats<-data.frame(comparison=paste(groups[2],'-',groups[1]),method='Welch two-sample t-test',
       n_reference=length(values[[1]]),n_treatment=length(values[[2]]),mean_difference=mean(values[[2]])-mean(values[[1]]),
       ci_low=test$conf.int[1],ci_high=test$conf.int[2],p_value=test$p.value,df=unname(test$parameter),
       adjustment='none: single prespecified contrast',experimental_unit=metadata$experimental_unit,
-      independence=metadata$independence)
+      independence=metadata$independence,measurement_unit=value_unit)
     write.csv(stats,file.path(audit,'statistics.csv'),row.names=FALSE)
     rr<-range(d$Expression);span<-diff(rr);stopifnot(span>0)
     a$groups<-groups;a$group_colours<-setNames(c('#38658B','#B66E83'),groups)
@@ -144,7 +164,7 @@ if(phase=='analyze') {
     a$bracket_y<-rr[2]+.14*span;a$bracket_tip<-.035*span;a$p_y<-rr[2]+.24*span
     a$p_label<-if(test$p.value<.001)'P < 0.001' else sprintf('P = %.3f',test$p.value)
     a$statistics<-c(bound(file.path(audit,'statistics.csv')),list(method=stats$method,comparison=stats$comparison,p_semantics='raw'))
-    a$allowed_text<-unique(c(groups,'Expression (a.u.)',a$tick_labels,a$p_label))
+    a$allowed_text<-unique(c(groups,a$y_label,a$tick_labels,a$p_label))
   } else if(case %in% c('heatmap','dense-heatmap')) {
     m<-as.matrix(d[,-1,drop=FALSE]);rownames(m)<-d$Gene;stopifnot(all(is.finite(m)),!anyDuplicated(d$Gene))
     z<-t(scale(t(m)));stopifnot(all(is.finite(z)))
@@ -196,6 +216,8 @@ if(phase=='analyze') {
 }
 
 a<-jsonlite::fromJSON(analysis_path,simplifyVector=FALSE)
+if(!is.list(a$input_binding)||!identical(a$input_binding$sha256,input_binding$sha256)||
+   !identical(a$input_binding$path,input_binding$path))stop('input differs from the analyzed bytes; fresh analysis is required')
 spec_path<-config$design_spec_path;auth_path<-config$authorization_path
 sources<-unlist(config$source_files);allowed<-unlist(a$allowed_text)
 spec<-yaml::read_yaml(spec_path)

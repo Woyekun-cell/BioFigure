@@ -77,4 +77,3 @@ python3 scripts/fresh_call.py <新工作目录>/R-lib <新输出目录>
 `fresh_call.py` 为每幅重新检索来源、prepare、绑定当前read hashes、核验CP2，再签发一次性授权并原生渲染；输出目录不得复用已消费授权。它不自动声明视觉PASS。每次变更数据、环境或布局后仍必须打开新PNG/PDF、重新做源图比对与终尺寸审查。原图哈希变化会中止，需先重新学习。
 
 稳定复用范围仅上述固定官方注释样例。数据、变换CSV在 `results/plot_data/`；原始输入 `data/raw/`；最终PDF在 `results/figures/`；技术/视觉证据在 `results/qa/`。来源差异记录在 `data/metadata/source-difference-review.json`。封存时索引更新后的最终fresh-call另有证据，不能沿用更新前的门禁回执。
-

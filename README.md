@@ -59,6 +59,54 @@ R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和
 
 [完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。
 
+## 便携案例
+
+7 个一方模拟例提供当前 PNG/PDF、输入、元数据与来源记录。模拟身份与解释边界写在图外；这些示例不认证新数据或其他平台。
+
+[共用绘图代码](biofigure/examples/portable/render.R) · [输入生成脚本](biofigure/examples/portable/generate_inputs.py)
+
+### 分组箱线图
+
+![分组箱线图](biofigure/examples/portable/boxplot/figures/boxplot.png)
+
+[PDF](biofigure/examples/portable/boxplot/figures/boxplot.pdf) · [数据](biofigure/examples/portable/boxplot/data.csv) · [元数据](biofigure/examples/portable/boxplot/metadata.json) · [来源与边界](biofigure/examples/portable/boxplot/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 方格热图
+
+![方格热图](biofigure/examples/portable/heatmap/figures/heatmap.png)
+
+[PDF](biofigure/examples/portable/heatmap/figures/heatmap.pdf) · [数据](biofigure/examples/portable/heatmap/data.csv) · [元数据](biofigure/examples/portable/heatmap/metadata.json) · [来源与边界](biofigure/examples/portable/heatmap/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 密集矩阵概览
+
+![密集矩阵概览](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.png)
+
+[PDF](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.pdf) · [数据](biofigure/examples/portable/dense-heatmap/data.csv) · [元数据](biofigure/examples/portable/dense-heatmap/metadata.json) · [来源与边界](biofigure/examples/portable/dense-heatmap/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 气泡图
+
+![气泡图](biofigure/examples/portable/bubble/figures/bubble.png)
+
+[PDF](biofigure/examples/portable/bubble/figures/bubble.pdf) · [数据](biofigure/examples/portable/bubble/data.csv) · [元数据](biofigure/examples/portable/bubble/metadata.json) · [来源与边界](biofigure/examples/portable/bubble/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 火山图
+
+![火山图](biofigure/examples/portable/volcano/figures/volcano.png)
+
+[PDF](biofigure/examples/portable/volcano/figures/volcano.pdf) · [数据](biofigure/examples/portable/volcano/data.csv) · [元数据](biofigure/examples/portable/volcano/metadata.json) · [来源与边界](biofigure/examples/portable/volcano/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 共线性图
+
+![共线性图](biofigure/examples/portable/synteny/figures/synteny.png)
+
+[PDF](biofigure/examples/portable/synteny/figures/synteny.pdf) · [数据](biofigure/examples/portable/synteny/data.csv) · [元数据](biofigure/examples/portable/synteny/metadata.json) · [来源与边界](biofigure/examples/portable/synteny/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
+### 系统树
+
+![系统树](biofigure/examples/portable/phylogeny/figures/phylogeny.png)
+
+[PDF](biofigure/examples/portable/phylogeny/figures/phylogeny.pdf) · [数据](biofigure/examples/portable/phylogeny/data.csv) · [元数据](biofigure/examples/portable/phylogeny/metadata.json) · [来源与边界](biofigure/examples/portable/phylogeny/provenance.json) · [代码](biofigure/examples/portable/render.R)
+
 ## 绘图方法与质量检查
 
 **按图型选择包。** 通用统计图采用 ggplot2，复杂矩阵注释采用 ComplexHeatmap，环形坐标采用 circlize，系统树采用 ggtree，基因组轨道与共线性采用 gggenomes，多面板采用 patchwork 或 cowplot。具体包和关键函数在编码前确定，避免用不合适的基础图层替代专用布局。
@@ -85,13 +133,13 @@ python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output
 Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library
 ```
 
-原生依赖为 ggplot2、ragg、systemfonts、jsonlite、yaml、digest、ComplexHeatmap、circlize、ape、ggrepel、scales、stringi。R 包遵守各自许可证，参考 [Bioconductor 安装说明](https://www.bioconductor.org/install/)。字体不随包分发；当前示例指定 Arial，缺失时返回 `NEEDS_FONT`，不静默换字体。可用 `--font Helvetica` 单独检查 Helvetica；更改出图字体仍须更新当前规格并重新核验。已实跑环境为 macOS；Linux、Windows 尚未完成运行和字体/设备验收。 PDF 导出还需免费 Ghostscript `gs` 嵌入字体；本脚本不自动安装系统软件。macOS 可用 `brew install ghostscript`，或从 [Ghostscript 官方](https://www.ghostscript.com/releases/gsdnld.html)获取。仅 PNG 可运行 `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png`，无需 Ghostscript。
+上述检查器仅覆盖新增 7 个模拟例，依赖为 ggplot2、ragg、systemfonts、jsonlite、yaml、digest、ComplexHeatmap、circlize、ape、ggrepel、scales、stringi。R 包遵守各自许可证，参考 [Bioconductor 安装说明](https://www.bioconductor.org/install/)。字体不随包分发；当前示例指定 Arial，缺失时返回 `NEEDS_FONT`，不静默换字体。可用 `--font Helvetica` 单独检查 Helvetica；更改出图字体仍须更新当前规格并重新核验。已实跑环境为 macOS；Linux、Windows 尚未完成运行和字体/设备验收。Python 新环境测试仍使用既有 R 包和系统 Arial，不等同在全新操作系统上安装验证。 PDF 导出还需免费 Ghostscript `gs` 嵌入字体；本脚本不自动安装系统软件。macOS 可用 `brew install ghostscript`，或从 [Ghostscript 官方](https://www.ghostscript.com/releases/gsdnld.html)获取。仅 PNG 可运行 `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png`，无需 Ghostscript。
 
 可执行的一方模拟例：
 
 ```bash
-python3 biofigure/scripts/run_public_example.py --case boxplot --output-dir work/boxplot-new
-python3 biofigure/scripts/run_public_example.py --case heatmap --output-dir work/heatmap-new --formats png
+python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/boxplot-new
+python3 biofigure/scripts/run_public_example.py heatmap --output-dir work/heatmap-new --formats png
 ```
 
 默认输出 PNG、PDF；`--formats png` 仅导出 PNG。输出目录须为新目录或空目录。使用独立 R library 时设置 `R_LIBS_USER` 指向该目录。其余入口为 dense-heatmap、bubble、volcano、synteny、phylogeny；每例明确模拟身份、输入、代码、统计/坐标语义及适用边界。
@@ -112,7 +160,9 @@ $biofigure 用 differential.csv 画火山图，横轴 log2FC，纵轴 -log10(pad
 
 3.8.0 将可检索学习档案与公开执行入口分开。454 条学习记录保留来源、方法、历史缺陷和资格边界；未分发的来源材料显示 `source-materials-unavailable`，不冒称可执行，也不阻断普通原创图。明确采用某个来源或要求复现时，仍须具备相应原图、代码、输入和新的 CP2 绑定。
 
-[公开案例清单](biofigure/public-cases.json)列出 13 个执行入口：7 个全一方模拟例，加 Cannabis 两案、Planarian、OHCA、桑基图和 OncoPrint 六个既有公开适配例。清单绑定代码、输入、来源、许可证和 SHA256。OHCA 需取得固定 SHA256 的作者处理 RDS；Cannabis 需固定版本 BUSCOplot 或核验过的来源缓存，所需网络与外部 R 包均明确列出。执行入口完整不代表任意新数据、跨平台、原论文整幅图或视觉验收已通过。
+[公开案例清单](biofigure/public-cases.json)列出 12 个可执行入口：7 个全一方模拟例，加 Cannabis 两案、Planarian、OHCA、桑基图五个既有公开适配例。OncoPrint 当前为 `blocked`：真实显示矩阵为 12×144，尚未满足当前方格几何契约；历史成图与记录保留，不计入本版可执行通过数。清单绑定代码、输入、来源、许可证和 SHA256。OHCA 需取得固定 SHA256 的作者处理 RDS；Cannabis 需固定版本 BUSCOplot 或核验过的来源缓存，所需网络与外部 R 包均明确列出。执行入口完整不代表任意新数据、跨平台、原论文整幅图或视觉验收已通过。
+
+旧 5 例不由上述新例依赖检查器安装。Cannabis 两案另需 cowplot、magick、svglite 等包；入口取得并校验 [BUSCOplot 固定提交](https://github.com/knausb/BUSCOplot/tree/d4f793988ce89279cf44294ceb8017756e181b0b)，也可传入已核验来源缓存。Planarian 另需 data.table、svglite；桑基图另需 ggalluvial、cowplot、svglite，完整依赖以各例脚本/执行配置为准。OHCA 要求既有 R library，含 [HiContacts 固定来源](https://github.com/js2264/HiContacts/tree/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d)、[HiCExperiment 固定来源](https://github.com/js2264/HiCExperiment/tree/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a)、InteractionSet、GenomeInfoDb、S4Vectors、rhdf5、Rhdf5lib、ggrastr、svglite 及常规绘图包；包与输入锁定见[执行配置](biofigure/examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json)。可参考 [Bioconductor](https://www.bioconductor.org/install/)准备依赖，公共入口不自动安装；当期 Bioconductor 版本不等于上述固定提交，也不构成当前适配例的兼容保证。
 
 DPM 气泡图与网络两案仅保留参考档案、第一方适配代码及[原论文链接](https://www.nature.com/articles/s41467-024-49986-4)。其独立 GitHub 输入未有明确再分发许可；本版撤下相关 CSV、PNG、PDF，未把论文学术 CC-BY 许可套用到该仓库。历史版本无法由本次撤回；[撤下清单](docs/gallery/rights-exclusions-3.8.0.json)记录具体路径与哈希。
 

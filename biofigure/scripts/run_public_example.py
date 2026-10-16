@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -37,17 +38,21 @@ def write_json(path, value):
 def run_r(stage, case, output_dir, skill_root, input_path, formats):
     command = ['Rscript', '--vanilla', str(Path(skill_root) / 'examples/portable/render.R'), stage, case,
                str(output_dir), str(skill_root), str(input_path), ','.join(formats)]
-    result = subprocess.run(command, text=True, capture_output=True)
+    environment = dict(os.environ, PYTHON=sys.executable)
+    result = subprocess.run(command, text=True, capture_output=True, env=environment)
     if result.returncode:
         raise RuntimeError(f'R {stage} failed ({result.returncode}): {result.stderr.strip()}\n{result.stdout.strip()}')
     return {'command': command, 'returncode': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
 
 
-def external_metadata(path, experimental_unit, independence):
+def external_metadata(path, experimental_unit, independence, *, value_unit=None):
     if not experimental_unit or not independence:
         raise ValueError('External input requires explicit --experimental-unit and --independence independent; rows are not automatically independent biological samples')
     if independence != 'independent':
         raise ValueError('This two-group example requires confirmed independent samples; paired/repeated data need a different analysis')
+    if not isinstance(value_unit, str) or not value_unit.strip():
+        raise ValueError('External input requires explicit --value-unit; the measurement unit is separate from the experimental unit')
+    value_unit = value_unit.strip()
     with path.open(newline='', encoding='utf-8-sig') as handle:
         reader = csv.DictReader(handle)
         if not {'Sample', 'Group', 'Expression'}.issubset(reader.fieldnames or []):
@@ -66,10 +71,24 @@ def external_metadata(path, experimental_unit, independence):
         raise ValueError('External boxplot requires exactly two groups with at least two confirmed independent samples each')
     return {'schema_version': 1, 'case_id': 'boxplot', 'synthetic': False, 'input_path': str(path), 'input_sha256': digest(path),
             'experimental_unit': experimental_unit, 'independence': independence, 'groups': groups, 'sample_counts': counts,
-            'comparison': f'{groups[1]} - {groups[0]}', 'units': 'user-supplied expression in arbitrary units',
+            'comparison': f'{groups[1]} - {groups[0]}', 'comparison_order': groups,
+            'reference_group': groups[0], 'comparison_group': groups[1],
+            'group_order_basis': 'First appearance in the supplied CSV; the second group minus the first is explicitly recorded.',
+            'units': value_unit, 'value_unit': value_unit,
             'technical_replicates': 'User declaration: each Sample is an independent experimental unit.',
             'limitations': ['Independence is explicitly declared by the user, not established from row count.',
                             'The example computes a two-sided Welch comparison with no covariates; suitability still requires scientific review.']}
+
+
+def validate_input_binding(input_path, expected_hash, analysis=None):
+    """Prevent new raw values from being paired with statistics from an older read."""
+    if digest(input_path) != expected_hash:
+        raise ValueError('input changed since the declared analysis input was bound; analyze the current data again')
+    if analysis is not None:
+        binding = analysis.get('input_binding')
+        if (not isinstance(binding, dict) or binding.get('sha256') != expected_hash
+                or Path(str(binding.get('path', ''))).expanduser().resolve() != Path(input_path).resolve()):
+            raise ValueError('analysis input binding is missing or differs from the current declared input')
 
 
 def make_spec(case, metadata, analysis, receipt, audit, formats):
@@ -93,6 +112,18 @@ def make_spec(case, metadata, analysis, receipt, audit, formats):
         renderer = {'language': 'R', 'backend': renderer, 'packages': packages[renderer] + (['ggrepel'] if case == 'volcano' else ['ape'] if case == 'phylogeny' else [])}
     stats = analysis.get('statistics')
     unit = metadata['experimental_unit']
+    value_unit = metadata.get('value_unit', metadata.get('units', 'not declared'))
+    if isinstance(value_unit, dict):
+        value_unit = json.dumps(value_unit, sort_keys=True)
+    biology = {
+        'boxplot': (['sample', 'group', 'expression_measurement'], ['sample belongs to a declared group', 'one expression measurement per independent sample']),
+        'heatmap': (['gene', 'sample', 'group', 'expression_measurement'], ['gene-by-sample expression matrix', 'sample has declared group membership', 'row-standardization within gene']),
+        'dense-heatmap': (['gene', 'sample', 'group', 'expression_measurement'], ['gene-by-sample expression matrix', 'sample has declared group membership', 'row-standardization within gene']),
+        'bubble': (['gene', 'group', 'mean_expression', 'expressing_percentage'], ['gene-by-group supplied mean expression', 'gene-by-group supplied expressing percentage']),
+        'volcano': (['gene', 'effect_estimate', 'standard_error', 'adjusted_p_value'], ['gene-indexed model effect estimate and standard error', 'normal Wald p value and BH adjustment across all supplied genes']),
+        'synteny': (['genome', 'chromosome', 'genomic_interval', 'paired_coordinate_block'], ['interval coordinates within a declared genome assembly', 'explicit coordinate-block pairing across two synthetic genomes']),
+        'phylogeny': (['taxon', 'tree_node', 'tree_branch', 'tip_group'], ['supplied Newick parent-child topology', 'input branch length attached to each edge', 'tip markers encode the declared clade split']),
+    }[case]
     doc.update(schema_version='3.4', reference_mode='original', figure_task=task,
                scientific_message={'boxplot': 'Compare the declared two independent groups using all observations and one Welch contrast.',
                    'heatmap': 'Show descriptive row-standardized expression patterns across the displayed samples.',
@@ -101,10 +132,10 @@ def make_spec(case, metadata, analysis, receipt, audit, formats):
                    'volcano': 'Show synthetic estimated effects with BH-adjusted model-based significance.',
                    'synteny': 'Show explicitly paired coordinate blocks between the supplied synthetic genomes.',
                    'phylogeny': 'Show the supplied synthetic topology and branch lengths.'}[case],
-               data_contract_summary={'unit': unit, 'input_kind': 'synthetic fixture' if metadata['synthetic'] else 'user-supplied CSV',
+               data_contract_summary={'unit': value_unit, 'experimental_unit': unit, 'input_kind': 'synthetic fixture' if metadata['synthetic'] else 'user-supplied CSV',
                                       'comparison': metadata.get('comparison') or 'descriptive, no group inference'},
-               biology_contract={'primary_domain': domain, 'entities': ['sample', 'gene'] if case in ('boxplot', 'heatmap', 'dense-heatmap') else ['synthetic_feature'],
-                    'relationships': ['declared_input_mapping'], 'experimental_unit': unit, 'statistical_unit': unit,
+               biology_contract={'primary_domain': domain, 'entities': biology[0],
+                    'relationships': biology[1], 'experimental_unit': unit, 'statistical_unit': unit,
                     'replicate_unit': unit, 'evidence_level': 'synthetic_demonstration' if metadata['synthetic'] else 'user_declared_design',
                     'claim_boundary': '; '.join(metadata['limitations'])},
                role_contract={'primary_role': role, 'secondary_roles': []},
@@ -170,7 +201,7 @@ def make_spec(case, metadata, analysis, receipt, audit, formats):
     return doc
 
 
-def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, independence=None, formats=None):
+def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, independence=None, value_unit=None, formats=None):
     if case not in CASES:
         raise ValueError('Unknown public example: ' + str(case))
     formats = formats or ['pdf', 'png']
@@ -183,7 +214,9 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
         raise ValueError('Input file missing: ' + str(input_path))
     if external and case != 'boxplot':
         raise ValueError('External --input is currently supported for boxplot only; other cases use their declared synthetic fixtures')
-    metadata = external_metadata(input_path, experimental_unit, independence) if external else json.loads((input_path.parent / 'metadata.json').read_text())
+    metadata = external_metadata(input_path, experimental_unit, independence, value_unit=value_unit) if external else json.loads((input_path.parent / 'metadata.json').read_text())
+    input_hash = metadata.get('input_sha256') or digest(input_path)
+    validate_input_binding(input_path, input_hash)
     output = Path(output_dir).expanduser().resolve()
     output.mkdir(parents=True, exist_ok=True)
     audit = output / '_audit'
@@ -192,7 +225,8 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     metadata_path = audit / 'input-metadata.json' if external else input_path.parent / 'metadata.json'
     if external:
         write_json(metadata_path, metadata)
-    config = {'case': case, 'input_path': str(input_path), 'metadata_path': str(metadata_path), 'experimental_unit': metadata['experimental_unit'],
+    config = {'case': case, 'input_path': str(input_path), 'input_binding': {'path': str(input_path), 'sha256': input_hash},
+              'metadata_path': str(metadata_path), 'experimental_unit': metadata['experimental_unit'],
               'independence': metadata['independence'], 'formats': formats, 'design_spec_path': str(audit / 'design-spec.yaml'),
               'authorization_path': str(audit / f'authorization-{invocation}.json'), 'source_files': []}
     config_path = audit / 'render-config.json'
@@ -200,6 +234,7 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     analysis_run = run_r('analyze', case, output, ROOT, input_path, formats)
     analysis_path = audit / 'analysis.json'
     analysis = json.loads(analysis_path.read_text())
+    validate_input_binding(input_path, input_hash, analysis)
     pattern, family, task, _, domain, role = CASES[case]
     from prepare_figure import prepare
     request = {'reference_mode': 'original', 'operation': 'draw', 'figure_task': task, 'figure_family': family, 'pattern_id': pattern,
@@ -234,6 +269,7 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     sources.extend([config_path, design_path])
     config['source_files'] = [str(path.resolve()) for path in sources]
     write_json(config_path, config)
+    validate_input_binding(input_path, input_hash, analysis)
     from authorize_render import issue
     authorization = issue(prep_path, design_path, [path for path in sources if path != design_path], Path(config['authorization_path']))
     render_run = run_r('render', case, output, ROOT, input_path, formats)
@@ -252,10 +288,10 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     return result
 
 
-def run_example(case, output_dir, *, input_path=None, experimental_unit=None, independence=None, formats=None):
+def run_example(case, output_dir, *, input_path=None, experimental_unit=None, independence=None, value_unit=None, formats=None):
     try:
         return _run_example(case, output_dir, input_path=input_path, experimental_unit=experimental_unit,
-                            independence=independence, formats=formats)
+                            independence=independence, value_unit=value_unit, formats=formats)
     except Exception as exc:
         audit = Path(output_dir).expanduser().resolve() / '_audit'
         if audit.is_dir():
@@ -272,6 +308,7 @@ def main():
     parser.add_argument('--input', dest='input_path', type=Path)
     parser.add_argument('--experimental-unit')
     parser.add_argument('--independence', choices=['independent'])
+    parser.add_argument('--value-unit', help='Required for external CSV input; preserve the actual measurement unit, e.g. a.u. or mg/L')
     parser.add_argument('--formats', nargs='+', choices=['png', 'pdf'], default=['pdf', 'png'])
     args = parser.parse_args()
     try:

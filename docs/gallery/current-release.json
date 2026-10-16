@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "release": "3.8.0",
+  "current_refresh_manifest": "docs/gallery/refresh-3.8.0.json",
+  "public_case_manifest": "biofigure/public-cases.json",
+  "rights_exclusions": "docs/gallery/rights-exclusions-3.8.0.json"
+}

@@ -97,9 +97,7 @@ bbox<-c(x=unname(main_slot["x"]+left),y=unname(main_slot["y"]+bottom),
 ratio<-bbox["w"]/bbox["h"];source_ratio<-design$reference_evidence$source_density_contract$data_aspect
 stopifnot(abs(ratio/source_ratio-1)<.05)
 composite<-ggdraw()+draw_plot(main,x=main_slot["x"]/width,y=main_slot["y"]/height,
- width=main_slot["w"]/width,height=main_slot["h"]/height)+
- draw_label(if(formal)"Fig.4d | Author data" else "Author public chr7 | Author data",
- x=bbox["x"]/width,y=(height-1)/height,hjust=0,vjust=1,fontfamily=font$family,size=8,fontface="plain")
+ width=main_slot["w"]/width,height=main_slot["h"]/height)
 if(formal){
  composite<-composite+draw_plot(key,x=legend_slot["x"]/width,y=legend_slot["y"]/height,
   width=legend_slot["w"]/width,height=legend_slot["h"]/height)

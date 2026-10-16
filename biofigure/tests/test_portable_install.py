@@ -82,6 +82,14 @@ class PortableInstallTests(unittest.TestCase):
         report = self.auditor().audit(self.root)
         self.assertTrue(any('path-escape' in e for e in report['errors']))
 
+    def test_declared_runtime_cannot_borrow_an_excluded_cache(self):
+        self.write('cache/private.csv', 'x\n1\n')
+        self.case['files'][1] = self.binding('cache/private.csv', 'input')
+        self.save()
+        report = self.auditor().audit(self.root)
+        self.assertEqual(report['status'], 'FAIL')
+        self.assertTrue(any('excluded-runtime-path' in e for e in report['errors']))
+
     def test_symlink_cannot_escape_skill(self):
         outside = self.root.parent / 'outside.csv'
         outside.write_text('x\n1\n')
@@ -121,6 +129,29 @@ class PortableInstallTests(unittest.TestCase):
         report = self.auditor().audit(self.root)
         self.assertEqual(report['status'], 'PASS', report['errors'])
         self.assertEqual(report['cases'][0]['status'], 'reference-only')
+
+    def test_blocked_case_keeps_truthful_failure_without_runtime_certification(self):
+        self.case.update(status='blocked', limitations=['Fresh square-cell geometry gate failed.'])
+        self.save()
+        report = self.auditor().audit(self.root)
+        self.assertEqual(report['status'], 'PASS', report['errors'])
+        self.assertEqual(report['case_counts'], {'blocked': 1})
+        self.assertFalse(report['cases'][0]['runtime_execution_verified'])
+
+    def test_expected_public_case_cannot_be_silently_dropped(self):
+        manifest = json.loads((self.root / 'public-cases.json').read_text())
+        manifest['expected_case_ids'] = ['demo', 'omitted']
+        self.write('public-cases.json', json.dumps(manifest))
+        report = self.auditor().audit(self.root)
+        self.assertTrue(any('expected-case-id-mismatch' in e for e in report['errors']))
+
+    def test_required_preview_must_exist_and_be_hash_bound(self):
+        self.case['preview_files'] = ['examples/demo/figures/demo.png']
+        self.case['expected_preview_formats'] = ['png', 'pdf']
+        self.save()
+        report = self.auditor().audit(self.root)
+        self.assertTrue(any('missing-required-preview' in e for e in report['errors']))
+        self.assertTrue(any('preview-not-bound' in e for e in report['errors']))
 
     def test_machine_path_in_any_distributed_file_fails_privacy_scan(self):
         self.write('atlas/leak.txt', '/' + 'Users/' + 'private-user/private-project/input.csv')

@@ -1,5 +1,11 @@
 # BioFigure 3.8.0 Full Handbook
 
+## 3.8.0 public distribution scope
+
+The [public case manifest](../biofigure/public-cases.json) separates 12 executable entries, two reference-only DPM records and one blocked OncoPrint case. Executable entries comprise seven first-party synthetic examples, two Cannabis cases, Planarian, OHCA and Sankey. OncoPrint displays a 12×144 matrix and does not yet meet the current square-cell geometry contract; its historical record is not a current pass. The 454 learning records form a searchable methods catalog, not a promise that all source materials are distributed or executable.
+
+The dependency checker for the seven new examples does not cover specialized R packages required by retained cases. Cannabis requires pinned BUSCOplot source; OHCA requires existing HiContacts/HiCExperiment dependencies and a hash-pinned RDS. Commit locks and sources are linked from the [README installation instructions](../README.en.md#installation-and-use) and case execution configuration. macOS has been executed; Linux and Windows remain unverified. A fresh Python environment still uses existing R packages and Arial, so it is not a fresh operating-system acceptance test. Execution, material audits, source fidelity, current PNG/PDF inspection and user approval remain separate states.
+
 ## 1. Scope
 
 BioFigure is a unified production skill for biological scientific figures. It turns a research question into a scientifically bounded, visually restrained, reproducible, and inspectable figure. It does not replace raw NGS analysis, and “Nature style” never overrides data semantics or journal-specific requirements.

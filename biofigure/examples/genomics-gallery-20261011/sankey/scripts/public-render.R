@@ -66,18 +66,13 @@ body <- body+
    inherit.aes=FALSE,family=font$family,size=8.000001/ggplot2::.pt,colour='#30343B')+
  ggplot2::geom_text(data=strata,ggplot2::aes(x=x,y=y-40,label=count_label),
    inherit.aes=FALSE,family=font$family,size=8.000001/ggplot2::.pt,colour='#30343B')
-width <- 136; height <- 115
-header <- data.frame(x=8+(c(1,2,3)-.72)/2.56*120,y=106,
+width <- 136; height <- 100
+header <- data.frame(x=8+(c(1,2,3)-.72)/2.56*120,y=91,
  label=c('DNA copy number','RNA expression','Protein abundance'))
-footer <- data.frame(x=68,y=c(11.2,7.2,3.2),label=c(
- 'Simulated matched features (n = 1,800)',
- 'Band width = number of matched features','Flows colored by DNA starting state'))
 plot <- ggplot2::ggplot()+
- ggplot2::annotation_custom(ggplot2::ggplotGrob(body),xmin=8,xmax=128,ymin=17,ymax=100)+
+ ggplot2::annotation_custom(ggplot2::ggplotGrob(body),xmin=8,xmax=128,ymin=2,ymax=85)+
  ggplot2::geom_text(data=header,ggplot2::aes(x=x,y=y,label=label),
    family=font$family,size=8.5/ggplot2::.pt,colour='#30343B')+
- ggplot2::geom_text(data=footer,ggplot2::aes(x=x,y=y,label=label),
-   family=font$family,size=8.000001/ggplot2::.pt,colour='#30343B')+
  ggplot2::coord_fixed(xlim=c(0,width),ylim=c(0,height),expand=FALSE,clip='off')+
  ggplot2::theme_void(base_family=font$family,base_size=8)+
  ggplot2::theme(plot.margin=ggplot2::margin(0,0,0,0,'mm'),
@@ -94,8 +89,8 @@ metrics <- lapply(texts,measure)
 stopifnot(max(vapply(metrics,`[[`,numeric(1),'w'))<.34/2.56*120-1,
  min(strata$count)/1800*83>2*max(vapply(metrics,`[[`,numeric(1),'h'))+4)
 grDevices::dev.off()
-boxes <- data.frame(id=c('data','labels','legend'),x=c(8,8,5),
- y=c(15,5,100),w=c(120,120,126),h=c(83,7,13.5))
+boxes <- data.frame(id=c('data','headings'),x=c(8,5),
+ y=c(2,87),w=c(120,126),h=c(83,9))
 bf_check_boxes(boxes,width,height)
 sources <- c(spec_path,file.path(root,'scripts/public-render.R'),file.path(skill,'scripts/figure_style.R'),
  sort(list.files(file.path(root,'results/plot_data'),pattern='[.]csv$',full.names=TRUE))[!basename(sort(list.files(file.path(root,'results/plot_data'),pattern='[.]csv$',full.names=TRUE))) %in% c('dpm_fig3e_recolored_layout.csv','sankey_native_strata.csv')],

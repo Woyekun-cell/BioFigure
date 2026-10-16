@@ -59,6 +59,54 @@ Each figure states whether it uses simulated, public or package-example data. In
 
 See the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.
 
+## Portable examples
+
+Seven first-party synthetic examples bundle the current PNG/PDF, input, metadata and provenance. Simulation and interpretation limits are recorded outside the figures. These examples do not certify new inputs or another platform.
+
+[Shared rendering code](biofigure/examples/portable/render.R) · [Input generator](biofigure/examples/portable/generate_inputs.py)
+
+### Grouped box plot
+
+![Grouped box plot](biofigure/examples/portable/boxplot/figures/boxplot.png)
+
+[PDF](biofigure/examples/portable/boxplot/figures/boxplot.pdf) · [Data](biofigure/examples/portable/boxplot/data.csv) · [Metadata](biofigure/examples/portable/boxplot/metadata.json) · [Provenance](biofigure/examples/portable/boxplot/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Square-cell heatmap
+
+![Square-cell heatmap](biofigure/examples/portable/heatmap/figures/heatmap.png)
+
+[PDF](biofigure/examples/portable/heatmap/figures/heatmap.pdf) · [Data](biofigure/examples/portable/heatmap/data.csv) · [Metadata](biofigure/examples/portable/heatmap/metadata.json) · [Provenance](biofigure/examples/portable/heatmap/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Dense matrix overview
+
+![Dense matrix overview](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.png)
+
+[PDF](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.pdf) · [Data](biofigure/examples/portable/dense-heatmap/data.csv) · [Metadata](biofigure/examples/portable/dense-heatmap/metadata.json) · [Provenance](biofigure/examples/portable/dense-heatmap/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Bubble plot
+
+![Bubble plot](biofigure/examples/portable/bubble/figures/bubble.png)
+
+[PDF](biofigure/examples/portable/bubble/figures/bubble.pdf) · [Data](biofigure/examples/portable/bubble/data.csv) · [Metadata](biofigure/examples/portable/bubble/metadata.json) · [Provenance](biofigure/examples/portable/bubble/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Volcano plot
+
+![Volcano plot](biofigure/examples/portable/volcano/figures/volcano.png)
+
+[PDF](biofigure/examples/portable/volcano/figures/volcano.pdf) · [Data](biofigure/examples/portable/volcano/data.csv) · [Metadata](biofigure/examples/portable/volcano/metadata.json) · [Provenance](biofigure/examples/portable/volcano/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Synteny plot
+
+![Synteny plot](biofigure/examples/portable/synteny/figures/synteny.png)
+
+[PDF](biofigure/examples/portable/synteny/figures/synteny.pdf) · [Data](biofigure/examples/portable/synteny/data.csv) · [Metadata](biofigure/examples/portable/synteny/metadata.json) · [Provenance](biofigure/examples/portable/synteny/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
+### Phylogenetic tree
+
+![Phylogenetic tree](biofigure/examples/portable/phylogeny/figures/phylogeny.png)
+
+[PDF](biofigure/examples/portable/phylogeny/figures/phylogeny.pdf) · [Data](biofigure/examples/portable/phylogeny/data.csv) · [Metadata](biofigure/examples/portable/phylogeny/metadata.json) · [Provenance](biofigure/examples/portable/phylogeny/provenance.json) · [Code](biofigure/examples/portable/render.R)
+
 ## Methods and quality checks
 
 **Choose packages by task.** Use ggplot2 for general statistics, ComplexHeatmap for annotated matrices, circlize for circular coordinates, ggtree for phylogenies, gggenomes for genomic tracks and synteny, and patchwork or cowplot for panel assembly. Select the package and key functions before coding.
@@ -85,13 +133,13 @@ python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output
 Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library
 ```
 
-The demonstration dependencies are ggplot2, ragg, systemfonts, jsonlite, yaml, digest, ComplexHeatmap, circlize, ape, ggrepel, scales and stringi. External packages retain their licenses; see the [Bioconductor installation instructions](https://www.bioconductor.org/install/). Fonts are not bundled. Current demonstrations require Arial and return `NEEDS_FONT` when it is missing. `--font Helvetica` checks that exact alternative family; changing a figure font still requires updating its specification and reviewing the new output. Execution has been tested on macOS; Linux and Windows runtime, font and device acceptance remain unverified. PDF export additionally requires the free Ghostscript `gs` executable for font embedding. This script never installs system software. On macOS use `brew install ghostscript`, or obtain it from [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html). PNG-only checks use `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png` and do not require Ghostscript.
+The checker covers only the seven new synthetic examples. Their dependencies are ggplot2, ragg, systemfonts, jsonlite, yaml, digest, ComplexHeatmap, circlize, ape, ggrepel, scales and stringi. External packages retain their licenses; see the [Bioconductor installation instructions](https://www.bioconductor.org/install/). Fonts are not bundled. Current demonstrations require Arial and return `NEEDS_FONT` when it is missing. `--font Helvetica` checks that exact alternative family; changing a figure font still requires updating its specification and reviewing the new output. Execution has been tested on macOS; Linux and Windows runtime, font and device acceptance remain unverified. A fresh Python environment still uses existing R packages and system Arial; this is not a fresh operating-system installation test. PDF export additionally requires the free Ghostscript `gs` executable for font embedding. This script never installs system software. On macOS use `brew install ghostscript`, or obtain it from [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html). PNG-only checks use `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png` and do not require Ghostscript.
 
 Run a first-party synthetic example:
 
 ```bash
-python3 biofigure/scripts/run_public_example.py --case boxplot --output-dir work/boxplot-new
-python3 biofigure/scripts/run_public_example.py --case heatmap --output-dir work/heatmap-new --formats png
+python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/boxplot-new
+python3 biofigure/scripts/run_public_example.py heatmap --output-dir work/heatmap-new --formats png
 ```
 
 PNG and PDF are the defaults; `--formats png` exports PNG only. Use a new or empty output directory. Set `R_LIBS_USER` to a separately installed R library when needed. Other cases are dense-heatmap, bubble, volcano, synteny and phylogeny. Each keeps its synthetic-data label, inputs, code, statistical or coordinate semantics, and scope boundaries.
@@ -112,7 +160,9 @@ See the [English handbook](docs/HANDBOOK.en.md) for fuller design and export gui
 
 Version 3.8.0 separates the searchable learning catalog from public executable cases. The 454 learning records retain sources, methods, historical defects and qualification boundaries. Unshipped source material is reported as `source-materials-unavailable`: it is not advertised as executable and does not block an ordinary original figure. Explicit source adoption or reproduction still requires the relevant source image, code, inputs and fresh CP2 binding.
 
-The [public case manifest](biofigure/public-cases.json) lists 13 executable entries: seven entirely first-party synthetic examples, plus two Cannabis cases, Planarian, OHCA, Sankey and OncoPrint. It binds code, input, provenance, licenses and SHA256. OHCA requires a SHA-pinned processed RDS; Cannabis requires pinned BUSCOplot source or a verified source cache. Network and external R dependencies are declared. Complete entrypoints do not certify arbitrary new data, another platform, full original-paper figures, or current visual acceptance.
+The [public case manifest](biofigure/public-cases.json) lists 12 executable entries: seven entirely first-party synthetic examples, plus two Cannabis cases, Planarian, OHCA and Sankey. OncoPrint is currently `blocked`: its displayed matrix is 12×144 and does not yet satisfy the current square-cell geometry contract. Historical figures and records remain, but do not count as an executable pass in this release. It binds code, input, provenance, licenses and SHA256. OHCA requires a SHA-pinned processed RDS; Cannabis requires pinned BUSCOplot source or a verified source cache. Network and external R dependencies are declared. Complete entrypoints do not certify arbitrary new data, another platform, full original-paper figures, or current visual acceptance.
+
+The checker above does not install dependencies for these five retained cases. The Cannabis cases also need packages including cowplot, magick and svglite; their entrypoints acquire and verify [pinned BUSCOplot source](https://github.com/knausb/BUSCOplot/tree/d4f793988ce89279cf44294ceb8017756e181b0b), or accept a verified source cache. Planarian additionally needs data.table and svglite; Sankey additionally needs ggalluvial, cowplot and svglite. Each case's script or execution configuration is the complete dependency authority. OHCA requires an existing R library containing [pinned HiContacts source](https://github.com/js2264/HiContacts/tree/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d), [pinned HiCExperiment source](https://github.com/js2264/HiCExperiment/tree/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a), InteractionSet, GenomeInfoDb, S4Vectors, rhdf5, Rhdf5lib, ggrastr, svglite and common plotting packages. Its [execution configuration](biofigure/examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json) records package and input locks. [Bioconductor installation guidance](https://www.bioconductor.org/install/) can help prepare dependencies; the public entrypoint does not install them. Current Bioconductor releases are not the pinned commits and are not a compatibility guarantee for this adapter.
 
 The two DPM cases remain reference-only, with first-party adapters and the [original paper](https://www.nature.com/articles/s41467-024-49986-4). Their separate GitHub input repository provides no explicit redistribution license. This release removes the derived CSV, PNG and PDF files rather than treating the article's CC-BY license as permission for that repository. Earlier Git history may still contain those files; the [withdrawal manifest](docs/gallery/rights-exclusions-3.8.0.json) records exact paths and hashes.
 
