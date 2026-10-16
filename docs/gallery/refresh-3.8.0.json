@@ -20,7 +20,7 @@
   ],
   "runtime_validation": {
     "path": "docs/gallery/runtime-validation-3.8.0.json",
-    "sha256": "27436b8efbdd3b4cf9b37257882ebd57a689c9c130d8105e84a608fdb5387f4d"
+    "sha256": "5e3265751324d88b90d3b88e82fe26adaa57834929ca6d8e2618e9d3631c74e0"
   },
   "release": "3.8.0",
   "inventory_date": "2026-10-16",
@@ -379,7 +379,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302"
+          "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
@@ -403,7 +403,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
-          "sha256": "315deb3ce12c94c1c5cb6f8b578971369fe2445138d33ff728f002f73b6239fb"
+          "sha256": "862b2760226efedf500bf653a83c98b22077331f724cc15377a51865dd9c25a2"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
@@ -411,7 +411,7 @@
         },
         {
           "path": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
-          "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46"
+          "sha256": "9751b2ac6df49e7f0198b89d6295bc97938ba3ce4314d3aee6d254f77b3cba0e"
         }
       ],
       "public_execution_status": "runnable",

@@ -78,7 +78,7 @@
     },
     {
       "path": "atlas/figure-reference-catalog.json",
-      "sha256": "f5d3e89026ffd3cc65a592ace6a49d7f81636ea74d7d5f9576d8c0671448fd1a",
+      "sha256": "bcdafcf43ccbaa263c6a2784ee50fd95025b1d8255e3dcc08aa897e2790f9671",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -92,7 +92,7 @@
     },
     {
       "path": "atlas/learned-method-index.json",
-      "sha256": "48a48f8c20f2ddb4f58cca74f907b7e61c55f4792a6c4bf9d6ecfee2b77b6409",
+      "sha256": "8acc4ac1017c6ecf76640838e0ec9d6883abd54573b861336977405eb8083e1b",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -3703,7 +3703,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
-          "sha256": "315deb3ce12c94c1c5cb6f8b578971369fe2445138d33ff728f002f73b6239fb",
+          "sha256": "862b2760226efedf500bf653a83c98b22077331f724cc15377a51865dd9c25a2",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3773,7 +3773,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
+          "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85",
           "role": "reference",
           "license": "GPL-3.0-only",
           "origin": "Derived author-processed data from a pinned GPL-3.0 repository; attribution and modifications are recorded in licenses/third-party-provenance.json"
@@ -3814,6 +3814,11 @@
         },
         {
           "name": "R:jsonlite",
+          "version": "record installed version for the current render",
+          "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+        },
+        {
+          "name": "R:scales",
           "version": "record installed version for the current render",
           "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
         },

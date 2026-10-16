@@ -4,7 +4,11 @@
 
 ## 中文
 
+[查看待启用的工作流源码](ci/windows-macos-parity.example.yml)。此文件位于 `docs/ci`，仅供审查，不会触发 GitHub Actions。
+
 当前发布状态：macOS 已实际执行并审看案例。Windows 工作流已编写，但当前 GitHub OAuth 缺少 `workflow` 权限，工作流尚未发布或执行。下述流程是待启用的验收方案，不能作为 Windows 已通过的证据。
+
+本轮 macOS 验证完成 15 次正向绘图和 4 次预期拒绝，覆盖 13 个公开案例及外部 CSV／仅 PNG。新 Python 环境、Skill-only 安装、第三工作目录均已实测，R 包和合法系统字体仍复用本机环境。15 张 PNG 和 14 个 PDF 页面逐张检查；其中 14 项来自完整冷安装批次，Planarian 色条修复后以独立单例重新验证。38 项私有／历史测试未运行，未升级为通过。
 
 跨平台验收区分“代码执行”“统计与导出检查”“实际看图”。绿色的 CI 只证明本次技术检查通过；最后的 PNG 和 PDF 仍须查看，才可登记 CP4。
 
@@ -18,13 +22,19 @@
 
 旧案例复跑须显式指定 `--include-replays --source-review-manifest FILE`。该文件记录维护者已实际查看的来源文件及 SHA-256。来源内容变化或缺少真实查看记录会拒绝，不能把“文件存在”写成已查看。来源查看记录只认证参考源；不认证新平台候选图，也不沿用历史 CP4。
 
+Windows 手动使用时，先确认 `python --version` 与 `Rscript --version` 可执行；若没有 `python3` 命令，用 `python` 或 `py -3` 运行同一脚本。Rscript 必须加入当前终端的 PATH。所有项目路径作为独立参数传递，无需修改源码中的本机目录。
+
 候选图和技术 JSON 作为 Actions artifact 保留 14 天；不上传系统字体、真实研究数据或完整运行环境。字体由机器合法安装的 Arial 提供，不随仓库分发。字体版本和抗锯齿可能产生细微像素差异；统计、语义颜色、布局、尺寸及稀疏方格门禁保留。
 
 运行记录需要逐次读取；本文不宣称任何尚未完成的 Windows 或 macOS 任务通过。
 
 ## English
 
+[Review the inactive workflow source](ci/windows-macos-parity.example.yml). This file is stored in `docs/ci` for inspection and does not activate GitHub Actions.
+
 Current release status: the cases were executed and inspected on macOS. The Windows workflow is prepared, but the current GitHub OAuth credential lacks the `workflow` scope. The workflow has not been published or executed. The protocol below is pending activation and is not evidence of a Windows pass.
+
+The macOS run completed 15 positive renders and four expected refusals, covering 13 public cases plus external CSV and PNG-only use. The Python environment, Skill-only installation and third working directory were fresh; R packages and legal system fonts were reused. All 15 PNGs and 14 PDF pages were inspected. Fourteen accepted outputs came from the complete cold-install batch, and Planarian was rerun independently after its colorbar repair. Thirty-eight private/archive tests were not run and are not recorded as passes.
 
 Platform acceptance separates execution, statistical/export checks, and actual figure inspection. Green CI establishes the current technical checks only. The generated PNG and PDF still require inspection before CP4 can be recorded.
 
@@ -37,6 +47,8 @@ A separately generated external synthetic CSV retains the distinct string group 
 The workflow first installs the `portable` dependencies and completes these figures and raster regression checks. It then installs `all-public` specialist dependencies and runs the retained cases. If that installation fails, the first phase's figures and `platform-smoke.original.json` remain available; the combined summary records the unexecuted replay scope and its cause rather than reporting an overall pass.
 
 Legacy fixed-input replays require `--include-replays --source-review-manifest FILE`. The manifest records the maintainer's actual inspection of exact reference-source bytes. Missing inspection or changed hashes are rejected. That review covers the reference only; candidate platform output receives no inherited CP4.
+
+For manual Windows use, first verify `python --version` and `Rscript --version`. If `python3` is unavailable, invoke the same script with `python` or `py -3`. Rscript must be on the terminal PATH. Project paths are separate command arguments; no developer-machine path needs editing.
 
 Actions artifacts retain candidate figures and technical JSON for 14 days. System fonts, research data, and the environment itself are not uploaded. Arial must be legally installed on the machine and is not redistributed. Font versions and antialiasing can vary slightly; scientific values, semantic colors, layout, physical dimensions, and sparse-cell gates remain required.
 

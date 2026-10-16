@@ -107068,7 +107068,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-            "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
+            "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
             "recorded_hash_verified": true
           },
@@ -107104,7 +107104,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
-            "sha256": "315deb3ce12c94c1c5cb6f8b578971369fe2445138d33ff728f002f73b6239fb",
+            "sha256": "862b2760226efedf500bf653a83c98b22077331f724cc15377a51865dd9c25a2",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
             "recorded_hash_verified": true
           },

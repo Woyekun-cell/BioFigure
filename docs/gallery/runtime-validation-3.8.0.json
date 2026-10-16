@@ -108,11 +108,11 @@
       "output_bindings": [
         {
           "path": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
-          "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46"
+          "sha256": "9751b2ac6df49e7f0198b89d6295bc97938ba3ce4314d3aee6d254f77b3cba0e"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302"
+          "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85"
         }
       ],
       "entrypoint": {
@@ -122,24 +122,42 @@
       "pdf_inspection": {
         "pages": 1,
         "canvas_mm": [
-          180.0,
-          180.0
+          180.001,
+          180.001
         ],
         "fonts": [
           {
-            "name": "/AAAAAB+ArialMT",
+            "name": "/IKEPKX+ArialMT",
             "embedded": true
           }
         ],
-        "minimum_text_pt": 7.499999705569194,
-        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
-        "all_fonts_embedded": true
+        "minimum_text_pt": 7.999782502990775,
+        "text_measurement": "PDF text-show font size multiplied by text-matrix and current-transformation-matrix effective axes; rotated text included",
+        "all_fonts_embedded": true,
+        "raster_images": [
+          {
+            "name": "~0~.png",
+            "width": 1024,
+            "height": 1
+          }
+        ]
       },
       "original_whole_figure_fidelity": "NOT_VERIFIED",
       "new_input_transfer": "NOT_VERIFIED",
       "stress": "NOT_VERIFIED",
       "cross_platform": "NOT_VERIFIED",
-      "user_acceptance": "NOT_VERIFIED"
+      "user_acceptance": "NOT_VERIFIED",
+      "colorbar_repair": {
+        "reviewed_at": "2026-10-16T10:24:19.226014+00:00",
+        "renderer_sha256": "862b2760226efedf500bf653a83c98b22077331f724cc15377a51865dd9c25a2",
+        "fresh_CP2": true,
+        "single_use_authorization_consumed": true,
+        "scoped_visual_review": "Actual PNG and full PDF page opened; 600 dpi manual-colorbar detail opened, seam defect repaired.",
+        "PNG_difference_scope": "Only pixels in the manual colorbar changed; all remaining pixels identical to prior public preview.",
+        "scientific_data": "All three sealed derived CSV SHA-256 unchanged; 19637 alignments and39274 endpoints retained.",
+        "vector_scope": "Only the continuous manual colorbar is a 1024-by-1 interpolated Lab raster; points, boundaries and text remain vector.",
+        "boundary": "Fixed-input macOS only; not full original-paper fidelity, new-input transfer, Windows execution or user acceptance."
+      }
     },
     {
       "id": "ohca-microc",
@@ -293,5 +311,6 @@
       "user_acceptance": "NOT_VERIFIED"
     }
   ],
-  "full_paper_reproduction_or_new_input_acceptance_inferred": false
+  "full_paper_reproduction_or_new_input_acceptance_inferred": false,
+  "snapshot_boundary": "These records bind the inspected published preview bytes and their recorded source versions. They are not a certificate for changed renderer code. The latest cold-install execution and separate corrected Planarian rerun are described in docs/PLATFORM-VALIDATION.md; Windows remains unexecuted."
 }

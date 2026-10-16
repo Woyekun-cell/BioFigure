@@ -4,7 +4,7 @@
 
 [公开案例清单](../biofigure/public-cases.json)区分 13 个可执行入口与 2 个 DPM 仅参考档案。可执行入口包括 7 个一方模拟例、Cannabis 两案、Planarian、OHCA、桑基图和 OncoPrint。OncoPrint 保留12×144全部单元，以3个12×48原生方格矩阵排布；当前固定输入、macOS执行与PNG/PDF另行核验，历史记录不迁移为当前通过。454 条学习档案是可检索方法记录，不代表来源材料全部分发或全部可运行。
 
-新增 7 例的依赖检查器不覆盖旧例专用 R 包。Cannabis 需固定 BUSCOplot 来源；OHCA 需既有 HiContacts/HiCExperiment 等 R 依赖及固定哈希 RDS，锁定提交和来源见 [README 安装说明](../README.md#安装与使用)及案例执行配置。macOS 已实跑；Linux、Windows 未验证。Python 新环境仍使用既有 R 包及 Arial，不等于全新操作系统安装验收。代码执行、材料审计、来源保真、当前 PNG/PDF 审阅和用户认可分别记录。
+依赖检查分为 `portable` 和 `all-public`：前者覆盖新增 7 例与 OncoPrint，后者补齐保留案例的专用 R 包。Cannabis 需固定 BUSCOplot 来源；OHCA 需既有 HiContacts/HiCExperiment 等 R 依赖及固定哈希 RDS，锁定提交和来源见 [README 安装说明](../README.md#安装与使用)及案例执行配置。macOS 已实跑；Linux、Windows 未验证。Python 新环境仍使用既有 R 包及 Arial，不等于全新操作系统安装验收。代码执行、材料审计、来源保真、当前 PNG/PDF 审阅和用户认可分别记录。
 
 
 `portable` 与 `all-public` 依赖检查遵守 R 4.6.1／Bioconductor 3.23 和固定顶层包版本；`all-public` 另安装并核验两项作者包源码及专用依赖。安装只写显式 R library；执行时设同一 `R_LIBS_USER`。公共 PDF 使用共享精确字体／Ghostscript 接口，Windows 与 macOS 的实际测试和终图审阅结果见[双系统验证说明](PLATFORM-VALIDATION.md)。不分发字体，也不因配置完成宣称两系统已经通过。

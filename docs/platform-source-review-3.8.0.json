@@ -32,11 +32,12 @@
       "files": [
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
+          "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85",
           "viewed": true
         }
       ],
-      "observations": "Alignment diagonals, chromosome boundaries, query/target labels and separated identity legend inspected."
+      "observations": "Alignment diagonals, chromosome boundaries, query/target labels and separated identity legend inspected. Current PDF uses one 1024-by-1 Lab colorbar raster with interpolation; 600 dpi detail actually opened with no tile-edge seams. Points, boundaries and text remain vector. This is source-reference inspection, not new-input or Windows approval.",
+      "reviewed_at": "2026-10-16T10:24:19.226014+00:00"
     },
     {
       "case_id": "ohca-microc",
