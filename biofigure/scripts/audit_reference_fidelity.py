@@ -13,13 +13,13 @@ def main():
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     try:
-        result = validate_bundle(json.loads(args.bundle.read_text()), args.root) if args.bundle else inventory(args.root)
+        result = validate_bundle(json.loads(args.bundle.read_text(encoding='utf-8')), args.root) if args.bundle else inventory(args.root)
     except (OSError, ValueError, TypeError, KeyError) as exc:
         result = {'status': 'FAIL', 'errors': [str(exc)]}
     payload = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(payload)
+        args.output.write_text(payload, encoding='utf-8')
     print(payload, end='')
     return int(bool(result.get('errors')))
 

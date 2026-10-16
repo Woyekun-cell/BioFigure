@@ -156,10 +156,7 @@ draw_native<-function() {
   native_sample_order=colnames(mat)[orders],native_gene_order=rownames(mat),native_cells_drawn=audit$cells,
   native_event_count=audit$events,native_event_type_counts=audit$event_types)
 }
-pdf_begin<-function(path) {
- if(!nzchar(Sys.which('gs')))stop('Ghostscript is required for embedded Arial PDF')
- grDevices::pdf(path,width=width/25.4,height=height/25.4,family=font$family,bg='white',useDingbats=FALSE,paper='special')
-}
+pdf_begin<-function(path)bf_pdf_open(path,width,height,font)
 run_device<-function(path,type) {
  if(type=='png')ragg::agg_png(path,width=width,height=height,units='mm',res=600,background='white')
  else if(type=='pdf')pdf_begin(path)
@@ -171,14 +168,7 @@ png_path<-file.path(work,'oncoprint-simulated.png')
 pdf_path<-file.path(root,'results/figures/oncoprint-simulated.pdf')
 svg_path<-file.path(work,'oncoprint-simulated-qa.svg')
 exported<-run_device(png_path,'png');pdf_export<-run_device(pdf_path,'pdf');svg_export<-run_device(svg_path,'svg')
-embedded<-tempfile(tmpdir=dirname(pdf_path),fileext='.pdf')
-grDevices::embedFonts(pdf_path,outfile=embedded,fontpaths=dirname(font$path),
- options=c(paste0('-dDEVICEWIDTHPOINTS=',width*72/25.4),
-  paste0('-dDEVICEHEIGHTPOINTS=',height*72/25.4),'-dFIXEDMEDIA'))
-stopifnot(file.exists(embedded),file.info(embedded)$size>0,file.copy(embedded,pdf_path,overwrite=TRUE));unlink(embedded)
-pages<-system2(Sys.which('gs'),shQuote(c('-q','-dNODISPLAY','-dNOSAFER',paste0('-sBFFile=',normalizePath(pdf_path)),
- '-c','BFFile (r) file runpdfbegin pdfpagecount = quit')),stdout=TRUE,stderr=TRUE)
-if(!identical(tail(trimws(pages),1),'1'))stop('standalone figure PDF must contain exactly one page')
+pdf_inspection<-bf_pdf_finalize(pdf_path,font,width,height)
 if(!identical(before,lapply(sources,bound)))stop('bound input changed during native render')
 auth<-jsonlite::fromJSON(authorization,simplifyVector=FALSE);marker<-paste0(authorization,'.consumed')
 if(!file.exists(marker)||trimws(readLines(marker,warn=FALSE)[1])!=auth$authorization_id)stop('missing authorization consumption')
@@ -190,7 +180,7 @@ receipt<-list(schema_version=1,status='PASS',backend='R',renderer='ComplexHeatma
  text_policy_id='scientific-content-only-v1',footer_policy_id='no-canvas-footer-v1',
  target_min_text_pt=min(exported$sizes),min_text_pt=6.5,target_width_mm=width,
  target_size=list(width_mm=width,height_mm=height,size_class='double-column',size_basis='final_physical_output'),
- device=list(width_mm=width,height_mm=height,dpi=600),boxes=exported$boxes,
+ device=list(width_mm=width,height_mm=height,dpi=600),pdf_inspection=pdf_inspection,boxes=exported$boxes,
  scope='Actual native final-device text/font/size/body measurements; separate final PNG/PDF review required.')
 write_json(receipt,paste0(png_path,'.render.json'))
 for(type in c('pdf','svg')) {

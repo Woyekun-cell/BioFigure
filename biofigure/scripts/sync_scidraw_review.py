@@ -62,10 +62,10 @@ def synchronize(methods: dict, evidence: dict) -> dict:
 
 
 def main() -> int:
-    methods = json.loads(METHODS.read_text())
-    evidence = json.loads(EVIDENCE.read_text())
+    methods = json.loads(METHODS.read_text(encoding='utf-8'))
+    evidence = json.loads(EVIDENCE.read_text(encoding='utf-8'))
     synchronized = synchronize(methods, evidence)
-    METHODS.write_text(json.dumps(synchronized, ensure_ascii=False, indent=2) + "\n")
+    METHODS.write_text(json.dumps(synchronized, ensure_ascii=False, indent=2) + "\n", encoding='utf-8')
     print(json.dumps({"cases": len(synchronized["cases"]), "pass": len(synchronized["cases"])}, ensure_ascii=False))
     return 0
 

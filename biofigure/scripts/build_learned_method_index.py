@@ -30,7 +30,7 @@ def overlay_public_profiles(index, *, root=ROOT):
     result = copy.deepcopy(index)
     by_id = {entry['method_id']: entry for entry in result['entries']}
     for path in sorted((root / 'examples').glob('**/data/metadata/public-replay.json')):
-        profile = json.loads(path.read_text())
+        profile = json.loads(path.read_text(encoding='utf-8'))
         entry = by_id.get(profile.get('method_id'))
         if not entry:
             continue
@@ -95,12 +95,12 @@ def build():
                         'claim_boundary': 'Source/code/visual study is reusable guidance; new-input rendering and final-size review are required.'})
     scidraw = ROOT / 'atlas/scidraw-derived-corpus.json'
     from retrieve_scidraw import learned_records, bound_pngs
-    scidraw_data = json.loads(scidraw.read_text())
+    scidraw_data = json.loads(scidraw.read_text(encoding='utf-8'))
     scidraw_resources = learned_records(scidraw_data)
     archive_root = PROJECT.parent / 'Project_003_SciDraw代码分类抓取器/output/SciDraw代码分类包/按图表类型'
     archive_by_case = {}
     for metadata in sorted(archive_root.rglob('metadata.json')):
-        record = json.loads(metadata.read_text())
+        record = json.loads(metadata.read_text(encoding='utf-8'))
         key = (record.get('图表类型'), record.get('图表命名'), record.get('原文URL'))
         if key in archive_by_case:
             raise ValueError('ambiguous original archive binding: ' + str(key))
@@ -109,7 +109,7 @@ def build():
     learning = {}
     for path in sorted((ROOT / 'atlas').glob('scidraw-learning-ten*.json')):
         sources[str(path.relative_to(ROOT))] = sha(path)
-        for case in json.loads(path.read_text())['cases']:
+        for case in json.loads(path.read_text(encoding='utf-8'))['cases']:
             learning.setdefault(case['case_id'], []).append({'record': str(path.relative_to(ROOT)), 'evidence': case})
     for case in scidraw_data['cases']:
         detail = dict(case, accumulated_implementation_evidence=learning.get(case['case_id'], []),
@@ -135,11 +135,11 @@ def build():
         add(scidraw, case['case_id'], 'scidraw', case['title'], detail,
             references=('references/scidraw-benchmark-index.md', 'references/scidraw-learning.md'))
     top = ROOT / 'benchmark/library/topjournal/metadata/case_method_catalog.json'
-    methods = json.loads((ROOT / 'atlas/reproduction-methods.json').read_text())['cases']
+    methods = json.loads((ROOT / 'atlas/reproduction-methods.json').read_text(encoding='utf-8'))['cases']
     by_issue = {c['issue']: c for c in methods}
-    candidates = json.loads((ROOT / 'library/topjournal-corpus/results/plot_data/biofigure_candidates.json').read_text())
+    candidates = json.loads((ROOT / 'library/topjournal-corpus/results/plot_data/biofigure_candidates.json').read_text(encoding='utf-8'))
     source_by_issue = {c['issue']: c for c in candidates}
-    for case in json.loads(top.read_text())['cases']:
+    for case in json.loads(top.read_text(encoding='utf-8'))['cases']:
         issue = case['issue']
         # Historical training numbers differ from article issue numbers. Do not
         # guess a one-page mapping from the numeric interval.
@@ -153,7 +153,7 @@ def build():
     # Manifest-level records remain available even when no per-panel recipe exists.
     for path in sorted((ROOT / 'library').glob('*/*/data/metadata/source-manifest.json')):
         case_root = path.parents[2]
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding='utf-8'))
         slug = case_root.name
         case_id = str(data.get('case_id') or data.get('case') or slug)
         ref = 'references/' + slug + ('-single-cell-learning.md' if 'single-cell' in path.parts else '-learning.md')
@@ -167,7 +167,7 @@ def build():
             add(path, recipe_id, path.parts[-5], str(recipe.get('question') or recipe.get('published_reference') or recipe_id), recipe,
                 parent=case_id, references=(ref,))
     path = ROOT / 'library/nature-genomics-multiomics/data/metadata/cases.json'
-    for case in json.loads(path.read_text())['cases']:
+    for case in json.loads(path.read_text(encoding='utf-8'))['cases']:
         add(path, case['case_id'], 'nature-genomics-multiomics', case['project'], case,
             references=('references/nature-genomics-multiomics-learning.md',))
         for n, figure in enumerate(case.get('figures', []), 1):
@@ -175,7 +175,7 @@ def build():
             add(path, case['case_id'] + f'-FIG-{n:02d}', 'nature-genomics-multiomics', case['project'] + ' ' + figure['figure_locator'], figure,
                 parent=case['case_id'], references=('references/nature-genomics-multiomics-learning.md',))
     path = ROOT / 'library/pangenome/tomato-superpangenome/data/metadata/paradigms.json'
-    for recipe in json.loads(path.read_text())['paradigms']:
+    for recipe in json.loads(path.read_text(encoding='utf-8'))['paradigms']:
         detail = dict(recipe, source_figures=[{'path': 'evidence/Fig' + str(i) + '.png'} for i in range(1, 5)])
         add(path, recipe['id'], 'pangenome', 'tomato pangenome ' + recipe['question'], detail, parent='TOMATO-SPG-2023',
             references=('references/pangenome-learning.md', 'library/pangenome/tomato-superpangenome/data/metadata/source-audit.json',
@@ -183,7 +183,7 @@ def build():
             material_roots=(ROOT / 'library/pangenome/tomato-superpangenome/sources/author-code',))
     for name in ('main-panel-contracts.json', 'supplement-panel-contracts.json'):
         path = ROOT / 'library/freeze-tolerance/msad040/data/metadata' / name
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding='utf-8'))
         sequence = data if isinstance(data, list) else data.get('figures', data.get('panels', data.get('contracts', [])))
         if isinstance(sequence, dict):
             sequence = [dict(value, id=key) for key, value in sequence.items()]
@@ -192,7 +192,7 @@ def build():
             add(path, 'MBE-' + name.split('-')[0].upper() + '-' + locator, 'freeze-tolerance', 'msad040 ' + locator,
                 recipe, parent='msad040', references=('references/msad040-visualization-learning.md',))
     path = ROOT / 'atlas/awesome-scientific-figure-visual-study.json'
-    for figure in json.loads(path.read_text())['entries']:
+    for figure in json.loads(path.read_text(encoding='utf-8'))['entries']:
         url = figure['source_image_url']
         relative = url.split('/figures/', 1)[-1] if '/figures/' in url else None
         image = PROJECT / 'work/2026-09-23-asf-study/source/figures' / relative if relative else PROJECT / 'work/2026-09-23-asf-study/external-Fig3.png'
@@ -200,8 +200,8 @@ def build():
         add(path, figure['id'], 'awesome-visual', figure['catalog_heading'] + ' ' + figure['figure_locator'], figure,
             references=('references/awesome-scientific-figure-learning.md',))
     path = ROOT / 'atlas/awesome-scientific-figure-layout-recipes.json'
-    for recipe in json.loads(path.read_text())['recipes']:
-        figures = json.loads((ROOT / 'atlas/awesome-scientific-figure-visual-study.json').read_text())['entries']
+    for recipe in json.loads(path.read_text(encoding='utf-8'))['recipes']:
+        figures = json.loads((ROOT / 'atlas/awesome-scientific-figure-visual-study.json').read_text(encoding='utf-8'))['entries']
         source_images = []
         for figure in figures:
             if figure['id'] in recipe['source_figure_ids']:
@@ -212,9 +212,9 @@ def build():
         add(path, 'ASF-RECIPE-' + recipe['id'], 'awesome-layout', recipe['id'], recipe,
             references=('references/awesome-scientific-figure-learning.md',))
     # Benchmark case records preserve the six-project and source-exposed additions.
-    registry = json.loads((ROOT / 'benchmark/registry.json').read_text())['cases']
+    registry = json.loads((ROOT / 'benchmark/registry.json').read_text(encoding='utf-8'))['cases']
     for path in sorted((ROOT / 'benchmark/cases').glob('*.json')):
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding='utf-8'))
         case_id = data.get('case_id')
         if case_id:
             roots = tuple((ROOT / r['bundles']['reproduction']).parent for r in registry
@@ -226,11 +226,11 @@ def build():
         if not relative:
             continue
         path = ROOT / relative
-        bundle = json.loads(path.read_text())
+        bundle = json.loads(path.read_text(encoding='utf-8'))
         add(path, 'EVIDENCE-' + record['case_id'], 'accepted-reproduction-contract', record['label'], bundle,
             references=('references/benchmark-case-method.md',), material_roots=(path.parent,))
     for path in sorted((ROOT / 'benchmark/library/core-examples').glob('**/design-spec.yaml')):
-        data = yaml.safe_load(path.read_text())
+        data = yaml.safe_load(path.read_text(encoding='utf-8'))
         relative = path.relative_to(ROOT / 'benchmark/library/core-examples').as_posix()
         add(path, 'CORE-' + relative.replace('/design-spec.yaml', '').replace('/', '-'), 'core-examples',
             str(data.get('figure_task') or data.get('figure_id') or relative), data,
@@ -245,7 +245,7 @@ def build():
         if not specs:
             continue
         path = specs[0]
-        data = yaml.safe_load(path.read_text())
+        data = yaml.safe_load(path.read_text(encoding='utf-8'))
         data['renderer_candidates'] = [str(p.relative_to(PROJECT)) for p in sorted(folder.glob('*.R'))]
         rel = str(path.relative_to(PROJECT))
         entries.append({'method_id': 'SIX-PROJECT-' + folder.name, 'collection': 'six-project',
@@ -260,7 +260,7 @@ def build():
         sources['../' + rel] = sha(path)
     path = ROOT / 'atlas/nature-figure-source-audit.json'
     if path.exists():
-        add(path, 'SIX-PROJECT-nature-figure-audit', 'six-project', 'nature-figure methods audit', json.loads(path.read_text()),
+        add(path, 'SIX-PROJECT-nature-figure-audit', 'six-project', 'nature-figure methods audit', json.loads(path.read_text(encoding='utf-8')),
             references=('references/six-project-benchmark-learning.md',))
     unique = {entry['method_id']: entry for entry in entries}
     if len(unique) != len(entries):
@@ -279,9 +279,9 @@ if __name__ == '__main__':
     parser.add_argument('--refresh-public-profiles', action='store_true',
                         help='Refresh only bundled public execution bindings while retaining the shipped historical catalog; no private archives required.')
     args = parser.parse_args()
-    result = overlay_public_profiles(json.loads(args.output.read_text())) if args.refresh_public_profiles else build()
+    result = overlay_public_profiles(json.loads(args.output.read_text(encoding='utf-8'))) if args.refresh_public_profiles else build()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if args.output.resolve() == (ROOT / 'atlas/learned-method-index.json').resolve():
         from find_figure_reference import load_catalog
         load_catalog(refresh=True)

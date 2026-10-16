@@ -3,5 +3,5 @@
 import json
 from pathlib import Path
 import sys
-profile = json.loads((Path(__file__).resolve().parents[1] / "data/metadata/public-replay.json").read_text())
+profile = json.loads((Path(__file__).resolve().parents[1] / "data/metadata/public-replay.json").read_text(encoding="utf-8"))
 sys.exit("REFERENCE_ONLY: " + profile["unavailable_reason"])

@@ -63,13 +63,13 @@ def infer_families(query,candidate):
 
 def candidate_rows(query):
  rows=[]
- contract_doc=yaml.safe_load((ROOT/'atlas/family-execution-contracts.yaml').read_text())
+ contract_doc=yaml.safe_load((ROOT/'atlas/family-execution-contracts.yaml').read_text(encoding='utf-8'))
  subtype=detect_subtype(query,contract_doc)
  subtype_aliases=contract_doc.get('subtypes',{}).get(subtype,{}).get('aliases',[])
  inferred=infer_families(query,{})
  family_terms=' '.join(FAMILY_QUERY_EXPANSIONS.get(x,'') for x in inferred)
  expanded=query+' '+' '.join(subtype_aliases)+' '+family_terms
- methods={x['issue']:x for x in json.loads((ROOT/'atlas/reproduction-methods.json').read_text())['cases']}
+ methods={x['issue']:x for x in json.loads((ROOT/'atlas/reproduction-methods.json').read_text(encoding='utf-8'))['cases']}
  for item in REPRO.retrieve(expanded,limit=10)['results']:
   issue=int(item['case_id'].split('-')[-1])
   method=(item.get('package_method',{}) or {})|{'figure_families':methods.get(issue,{}).get('figure_families',[])}
@@ -115,7 +115,7 @@ def compile_plan(query, primary_source=None, pangenome_context=None):
    return {'schema_version':1,'query':query,'planning_status':'NEEDS_REFERENCE','selected_case':None,'ready_to_render':False,'missing':['与请求图型一致的来源方法'],'claim_policy':'no unrelated fallback'}
   rows=compatible
   selected=rows[0]
- document=yaml.safe_load((ROOT/'atlas/family-execution-contracts.yaml').read_text()); contracts=document['families']
+ document=yaml.safe_load((ROOT/'atlas/family-execution-contracts.yaml').read_text(encoding='utf-8')); contracts=document['families']
  families=[x for x in requested if x in contracts] or ['general-statistical']; primary=families[0]
  subtype=detect_subtype(query,document); active=document.get('subtypes',{}).get(subtype,contracts[primary])
  method=selected.get('package_method',{}) or {}; analysis=selected.get('code_analysis',{}) or {}
@@ -148,5 +148,5 @@ def compile_plan(query, primary_source=None, pangenome_context=None):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--query',required=True);p.add_argument('--primary-source');p.add_argument('--output',type=Path);a=p.parse_args()
  payload=json.dumps(compile_plan(a.query,a.primary_source),ensure_ascii=False,indent=2)+'\n'
- a.output.write_text(payload) if a.output else print(payload,end=''); return 0
+ a.output.write_text(payload, encoding='utf-8') if a.output else print(payload,end=''); return 0
 if __name__=='__main__': raise SystemExit(main())

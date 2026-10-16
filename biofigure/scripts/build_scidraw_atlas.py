@@ -160,6 +160,6 @@ def build(zip_path: Path, website: str) -> dict:
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--zip",type=Path,required=True); p.add_argument("--website",default="https://scidraw.msttnote.cn/"); p.add_argument("--output",type=Path,default=ROOT/"atlas/scidraw-derived-corpus.json")
-    a=p.parse_args(); result=build(a.zip,a.website); a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
+    a=p.parse_args(); result=build(a.zip,a.website); a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n", encoding='utf-8')
     print(json.dumps(result["coverage"],ensure_ascii=False)); return 0
 if __name__=="__main__": raise SystemExit(main())

@@ -150,9 +150,9 @@ receipt<-bf_render_png(composite,preview,font,design$text_contract$allowed_text,
  authorization=auth,skill_root=skill,publication_size_class="double-column",min_text_pt=7,
  heading_authorization="User requested selected author-data panel recolor; panel identifier records scope only")
 pdf_path<-file.path(out,"results/figures",paste0(name,".pdf"))
-if(capabilities("aqua")){grDevices::quartz(type="pdf",file=pdf_path,width=width/25.4,height=height/25.4,family=font$family)
-}else{grDevices::cairo_pdf(filename=pdf_path,width=width/25.4,height=height/25.4,family=font$family)}
+bf_pdf_open(pdf_path,width,height,font)
 print(composite);invisible(dev.off())
+pdf_inspection<-bf_pdf_finalize(pdf_path,font,width,height)
 ggsave(file.path(work,paste0(name,".svg")),composite,device=svglite::svglite,width=width,height=height,units="mm",bg="white")
 file.copy(preview,file.path(work,"first-color-render.png"),overwrite=FALSE)
 file.copy(paste0(preview,".render.json"),file.path(out,"evidence/render-receipt.json"),overwrite=TRUE)

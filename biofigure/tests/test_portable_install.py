@@ -205,6 +205,15 @@ class PortableInstallTests(unittest.TestCase):
                 self.assertIn('--source-view-confirmed', result.stderr)
                 self.assertFalse(output.exists(), 'source view was inferred and render output was created')
 
+    def test_unavailable_archival_installer_fails_before_creating_library(self):
+        skill = AUDITOR.parents[1]
+        script = skill/'examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py'
+        library = Path(self.tmp.name)/'no-archival-source-library'
+        result = subprocess.run([sys.executable, str(script), str(library)], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('ARCHIVAL_HELPER_UNAVAILABLE', result.stderr)
+        self.assertFalse(library.exists())
+
     def test_public_profile_overlay_preserves_history_and_binds_bundled_files(self):
         skill = AUDITOR.parents[1]
         sys.path.insert(0, str(skill / 'scripts'))
@@ -247,6 +256,40 @@ class PortableInstallTests(unittest.TestCase):
         report = json.loads(result.stdout)
         self.assertIn(report['status'], ('READY', 'NEEDS_DEPENDENCIES', 'NEEDS_FONT', 'NEEDS_GHOSTSCRIPT'))
         self.assertFalse(library.exists(), 'read-only dependency check installed or created a library')
+
+    def test_dependency_check_rejects_wrong_r_version_without_installing(self):
+        if not shutil.which('Rscript'):
+            self.skipTest('Rscript unavailable')
+        fixture = Path(self.tmp.name)/'locked-runtime'
+        (fixture/'scripts').mkdir(parents=True)
+        (fixture/'static/core').mkdir(parents=True)
+        for name in ('install_public_dependencies.R', 'figure_style.R'):
+            shutil.copyfile(AUDITOR.parent/name, fixture/'scripts'/name)
+        lock = (AUDITOR.parents[1]/'static/core/public-runtime-versions.tsv').read_text(encoding='utf-8')
+        lock = '\n'.join('R\t99.0.0\t99.0.0\truntime' if line.startswith('R\t') else line
+                         for line in lock.splitlines())+'\n'
+        (fixture/'static/core/public-runtime-versions.tsv').write_text(lock,encoding='utf-8')
+        library = Path(self.tmp.name)/'wrong-version-no-library'
+        result = subprocess.run(['Rscript',str(fixture/'scripts/install_public_dependencies.R'),
+                                 '--check','--profile','portable','--library',str(library)],
+                                capture_output=True,text=True)
+        self.assertEqual(result.returncode,2,result.stderr)
+        self.assertEqual(json.loads(result.stdout)['status'],'NEEDS_R_VERSION')
+        self.assertFalse(library.exists())
+
+    def test_all_public_dependency_profile_declares_pinned_sources(self):
+        if not shutil.which('Rscript'):
+            self.skipTest('Rscript unavailable')
+        library = Path(self.tmp.name)/'all-public-read-only-library'
+        result = subprocess.run(['Rscript',str(AUDITOR.parent/'install_public_dependencies.R'),
+                                 '--check','--profile','all-public','--library',str(library)],
+                                capture_output=True,text=True)
+        self.assertIn(result.returncode,(0,2),result.stderr)
+        report = json.loads(result.stdout)
+        self.assertEqual(report['profile'],'all-public')
+        self.assertEqual({p['package'] for p in report['native_sources']},{'HiCExperiment','HiContacts'})
+        self.assertTrue(all(len(p['source_sha256'])==64 for p in report['native_sources']))
+        self.assertFalse(library.exists())
 
     def test_png_only_dependency_check_does_not_require_ghostscript(self):
         if not shutil.which('Rscript'):

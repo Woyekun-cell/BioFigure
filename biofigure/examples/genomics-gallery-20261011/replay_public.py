@@ -45,10 +45,10 @@ def main():
     for relative in ['work', 'evidence', 'results/figures', 'results/tables']:
         (root / relative).mkdir(parents=True, exist_ok=True)
     meta = root / 'data/metadata'
-    profile = json.loads((meta / 'public-replay.json').read_text())
+    profile = json.loads((meta / 'public-replay.json').read_text(encoding="utf-8"))
     request = meta / 'request.yaml'
     receipt = root / 'work/preparation-receipt.json'
-    env = dict(os.environ, BIOFIGURE_SKILL_ROOT=str(SKILL), PYTHONDONTWRITEBYTECODE='1')
+    env = dict(os.environ, BIOFIGURE_SKILL_ROOT=str(SKILL), PYTHONDONTWRITEBYTECODE='1', PYTHON=sys.executable, PYTHONUTF8='1')
     commands = []
 
     def run(command):
@@ -56,12 +56,12 @@ def main():
         subprocess.run(command, check=True, env=env)
 
     run([sys.executable, str(SKILL / 'scripts/prepare_figure.py'), str(request), '--output', str(receipt)])
-    preparation = json.loads(receipt.read_text())
+    preparation = json.loads(receipt.read_text(encoding="utf-8"))
     if preparation['status'] != 'PREFLIGHT_COMPLETE':
         raise RuntimeError('Fresh public preparation is incomplete; see work/preparation-receipt.json')
     mid = profile['method_id']
     adopted = next(item for item in preparation['learned_methods']['results'] if item['method_id'] == mid)
-    spec = yaml.safe_load((meta / 'design-template.yaml').read_text())
+    spec = yaml.safe_load((meta / 'design-template.yaml').read_text(encoding="utf-8"))
     reference = spec['reference_evidence']
     reference['preparation_id'] = preparation['preparation_id']
     reference['preparation_request'] = preparation['request']
@@ -81,7 +81,7 @@ def main():
     if 'source_density_contract' in spec:
         spec['source_density_contract']['source_asset'] = {'path': str(asset), 'sha256': sha(asset)}
     spec_path = meta / 'design-spec.yaml'
-    spec_path.write_text(yaml.safe_dump(spec, allow_unicode=True, sort_keys=False))
+    spec_path.write_text(yaml.safe_dump(spec, allow_unicode=True, sort_keys=False), encoding="utf-8")
     run([sys.executable, str(SKILL / 'scripts/validate_design_spec.py'), str(spec_path), '--preparation-receipt', str(receipt)])
     if args.prepare_only:
         print('PUBLIC_CP2_READY', root)
@@ -111,7 +111,7 @@ def main():
               'outputs': [{'path': str(path.relative_to(root)), 'sha256': sha(path)} for path in sorted((root / 'results/figures').glob('*.pdf'))],
               'generated_plot_tables': [{'path': str(path.relative_to(root)), 'sha256': sha(path)} for path in sorted((root / 'results/plot_data').glob('*.csv')) if path.name in generated_tables],
               'runtime_utc': datetime.datetime.now(datetime.timezone.utc).isoformat()}
-    (root / 'evidence/public-replay-execution.json').write_text(json.dumps(record, indent=2) + '\n')
+    (root / 'evidence/public-replay-execution.json').write_text(json.dumps(record, indent=2) + '\n', encoding="utf-8")
     print('PUBLIC_NATIVE_RENDER_EXECUTED', root)
 
 

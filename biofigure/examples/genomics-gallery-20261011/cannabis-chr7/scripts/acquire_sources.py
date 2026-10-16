@@ -3,7 +3,7 @@
 import argparse,hashlib,json,pathlib,urllib.request,concurrent.futures
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output-dir',required=True,type=pathlib.Path);p.add_argument('--check-only',action='store_true');a=p.parse_args();out=a.output_dir.resolve();lock=json.loads((ROOT/'data/metadata/native-acquisition.json').read_text())
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output-dir',required=True,type=pathlib.Path);p.add_argument('--check-only',action='store_true');a=p.parse_args();out=a.output_dir.resolve();lock=json.loads((ROOT/'data/metadata/native-acquisition.json').read_text(encoding="utf-8"))
  def get(e):
   f=(out/e['path']).resolve()
   if out not in f.parents:raise ValueError('Unsafe source path')
@@ -16,6 +16,6 @@ def main():
   if not f.exists():f.write_bytes(b)
   return {'path':str(f),'sha256':e['sha256'],'url':e['url'],'role':e['role']}
  with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:assets=list(pool.map(get,lock['assets']))
- out.mkdir(parents=True,exist_ok=True);(out/'acquired-assets.json').write_text(json.dumps({'schema_version':1,'commit':lock['commit'],'assets':assets},indent=2)+'\n')
+ out.mkdir(parents=True,exist_ok=True);(out/'acquired-assets.json').write_text(json.dumps({'schema_version':1,'commit':lock['commit'],'assets':assets},indent=2)+'\n', encoding="utf-8")
  print(json.dumps({'status':'PINNED_NATIVE_SOURCE_PASS','assets':len(assets),'source_directory':str(out)}))
 if __name__=='__main__':main()

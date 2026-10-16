@@ -16,7 +16,7 @@ from learning_materials import portable
 
 
 def audit(parse_code=False, work_root=None):
-    index = json.loads(INDEX.read_text())
+    index = json.loads(INDEX.read_text(encoding='utf-8'))
     rows, errors = [], []
     files = set()
     for entry in index['entries']:
@@ -54,11 +54,11 @@ def audit(parse_code=False, work_root=None):
         r_files = sorted((ROOT / p).resolve() for p in files if Path(p).suffix.lower() == '.r')
         with tempfile.TemporaryDirectory(dir=work_root) as temp:
             listing, output = Path(temp) / 'files.txt', Path(temp) / 'syntax.tsv'
-            listing.write_text('\n'.join(str(p) for p in r_files) + '\n')
+            listing.write_text('\n'.join(str(p) for p in r_files) + '\n', encoding='utf-8')
             code = ('a<-commandArgs(TRUE); z<-lapply(readLines(a[1]),function(p)tryCatch({parse(file=p);c(p,"PASS","")},'
                     'error=function(e)c(p,"FAIL",gsub("[\\t\\r\\n]+"," ",conditionMessage(e)))));'
                     'write.table(do.call(rbind,z),a[2],sep="\\t",quote=FALSE,row.names=FALSE,col.names=FALSE)')
-            subprocess.run(['Rscript', '-e', code, str(listing), str(output)], check=True, capture_output=True, text=True)
+            subprocess.run(['Rscript', '-e', code, str(listing), str(output)], check=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
             for path, status, message in csv.reader(output.open(), delimiter='\t'):
                 import os
                 syntax.append({'path': os.path.relpath(path, ROOT), 'sha256': sha(Path(path)),
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     result = audit(args.parse_code, args.work_root)
     if args.parse_code:
         (ROOT / 'atlas/source-syntax-audit.json').write_text(json.dumps({'schema_version': 1, 'scope': 'syntax only; not runtime',
-             'files': result['syntax']}, ensure_ascii=False, indent=2) + '\n')
+             'files': result['syntax']}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in result.items() if k not in ('records', 'syntax')}, ensure_ascii=False))

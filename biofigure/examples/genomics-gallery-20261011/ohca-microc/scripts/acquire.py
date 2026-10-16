@@ -8,7 +8,7 @@ import argparse, hashlib, json, urllib.request, concurrent.futures
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--check-only',action='store_true'); args=parser.parse_args()
     root=Path(__file__).resolve().parents[1]
-    manifest=json.loads((root/'data/metadata/acquisition-plan.json').read_text())
+    manifest=json.loads((root/'data/metadata/acquisition-plan.json').read_text(encoding="utf-8"))
     def acquire(entry):
         dest=root/entry['path']
         if dest.exists(): data=dest.read_bytes()
@@ -30,7 +30,7 @@ def main():
     value={'schema_version':1,'assets':acquired}
     encoded=json.dumps(value,indent=2,ensure_ascii=False)+'\n'
     if target.exists():
-        if target.read_text()!=encoded: raise ValueError('Refuse overwrite changed acquisition evidence')
-    else: target.write_text(encoded)
+        if target.read_text(encoding="utf-8")!=encoded: raise ValueError('Refuse overwrite changed acquisition evidence')
+    else: target.write_text(encoded, encoding="utf-8")
     print(json.dumps({'status':'PASS','assets':len(acquired),'bytes':sum(x['bytes'] for x in acquired),'manifest':str(target)},ensure_ascii=False))
 if __name__=='__main__': main()

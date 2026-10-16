@@ -14,11 +14,11 @@ def audit_outputs(root,task_ids):
   if missing:errors.append({'task':task,'missing':missing});continue
   try:
    with Image.open(png) as im: width,height=im.size;im.verify()
-   r=json.loads(receipt.read_text())
+   r=json.loads(receipt.read_text(encoding='utf-8'))
    if r.get('status')!='PASS' or r.get('artifact',{}).get('sha256')!=digest(png):raise ValueError('render receipt mismatch')
    items.append({'task':task,'png_sha256':digest(png),'plot_data_sha256':digest(csv),'pixels':[width,height]})
   except Exception as exc:errors.append({'task':task,'error':str(exc)})
  return {'status':'PASS' if not errors else 'FAIL','tasks_verified':len(items),'errors':errors,'items':items,
          'scope':'artifact integrity and render receipt; visual review recorded separately'}
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--tasks',nargs='+',required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();out=audit_outputs(a.root,a.tasks);a.output.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print(json.dumps(out,ensure_ascii=False,indent=2));raise SystemExit(0 if out['status']=='PASS' else 1)
+ p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--tasks',nargs='+',required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();out=audit_outputs(a.root,a.tasks);a.output.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n', encoding='utf-8');print(json.dumps(out,ensure_ascii=False,indent=2));raise SystemExit(0 if out['status']=='PASS' else 1)

@@ -31,10 +31,14 @@ d<-as.data.frame(gis);d$source_row<-seq_len(nrow(d));d$log10_balanced<-log10(d$b
 d$display_log10_balanced<-pmin(-1.2,pmax(-4,d$log10_balanced))
 d$x_center_bp<-floor(d$end1-(d$end1-d$start1)/2);d$y_center_bp<-floor(d$end2-(d$end2-d$start2)/2)
 for(folder in c("results/plot_data","results/figures","data/metadata","evidence"))dir.create(file.path(out,folder),recursive=TRUE,showWarnings=FALSE)
-write.csv(d,file.path(out,"results/plot_data/contact-bin-pairs.csv"),row.names=FALSE)
-write.csv(ld,file.path(out,"results/plot_data/loop-annotations.csv"),row.names=FALSE)
+write_portable_csv<-function(data,path){
+ connection<-file(path,open="wb");on.exit(close(connection))
+ write.csv(data,connection,row.names=FALSE,eol="\n")
+}
+write_portable_csv(d,file.path(out,"results/plot_data/contact-bin-pairs.csv"))
+write_portable_csv(ld,file.path(out,"results/plot_data/loop-annotations.csv"))
 bins<-as.data.frame(regions(gis));bins$source_bin_index<-seq_len(nrow(bins))
-write.csv(bins,file.path(out,"results/plot_data/bin-axis.csv"),row.names=FALSE)
+write_portable_csv(bins,file.path(out,"results/plot_data/bin-axis.csv"))
 palette<-strsplit(design$palette_semantics$balanced_log10,",",fixed=TRUE)[[1]]
 options(warn=2)
 p<-HiContacts::plotMatrix(x,loops=loops,limits=c(-4,-1.2),caption=FALSE,cmap=palette,rasterize=FALSE,dpi=600)
@@ -88,7 +92,8 @@ p_pdf<-p;p_pdf$layers[[1]]<-native_tile_layer
 p_pdf<-p_pdf+guides(fill=guide_colourbar(display="rectangles",order=1,title.position="top",theme=theme(legend.key.height=grid::unit(26,"mm"),legend.key.width=grid::unit(3,"mm"))))
 pdf_built<-ggplot_build(p_pdf)
 stopifnot(identical(built$data[[1]][c("x","y","fill")],pdf_built$data[[1]][c("x","y","fill")]),identical(built$data[[li]],pdf_built$data[[li]]))
-grDevices::quartz(type="pdf",file=pdf,width=width/25.4,height=height/25.4,family=font$family);print(p_pdf);invisible(dev.off())
+bf_pdf_open(pdf,width,height,font);print(p_pdf);invisible(dev.off())
+pdf_inspection<-bf_pdf_finalize(pdf,font,width,height)
 ggsave(file.path(work,paste0(name,".svg")),p,device=svglite::svglite,width=width,height=height,units="mm",bg="white")
 # Inspect the actual drawn panel viewport after authorized PNG; this is a QA-only colored redraw.
 ragg::agg_png(file.path(work,"layout-measurement.png"),width=width,height=height,units="mm",res=300)

@@ -39,7 +39,7 @@ def run_r(stage, case, output_dir, skill_root, input_path, formats):
     command = ['Rscript', '--vanilla', str(Path(skill_root) / 'examples/portable/render.R'), stage, case,
                str(output_dir), str(skill_root), str(input_path), ','.join(formats)]
     environment = dict(os.environ, PYTHON=sys.executable)
-    result = subprocess.run(command, text=True, capture_output=True, env=environment)
+    result = subprocess.run(command, text=True, capture_output=True, env=environment, encoding='utf-8', errors='replace')
     if result.returncode:
         raise RuntimeError(f'R {stage} failed ({result.returncode}): {result.stderr.strip()}\n{result.stdout.strip()}')
     return {'command': command, 'returncode': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
@@ -93,8 +93,8 @@ def validate_input_binding(input_path, expected_hash, analysis=None):
 
 def make_spec(case, metadata, analysis, receipt, audit, formats):
     pattern, family, task, pattern_domain, domain, role = CASES[case]
-    doc = yaml.safe_load((ROOT / 'schemas/examples/marker-dotplot.yaml').read_text())
-    style = yaml.safe_load((ROOT / 'examples/portable/metadata/project-style.yaml').read_text())
+    doc = yaml.safe_load((ROOT / 'schemas/examples/marker-dotplot.yaml').read_text(encoding='utf-8'))
+    style = yaml.safe_load((ROOT / 'examples/portable/metadata/project-style.yaml').read_text(encoding='utf-8'))
     style['project_id'] = f'biofigure-portable-{case}-standalone'
     style['experiment_scope'] = 'Standalone example; cases are not one biological experiment.'
     if analysis.get('semantic_colors'):
@@ -105,7 +105,7 @@ def make_spec(case, metadata, analysis, receipt, audit, formats):
         colours = analysis['group_colours']
         style['palette']['semantic_colors'].update(colours if isinstance(colours, dict) else dict(zip(analysis['groups'], colours)))
     style_path = audit / 'project-style.yaml'
-    style_path.write_text(yaml.safe_dump(style, sort_keys=False))
+    style_path.write_text(yaml.safe_dump(style, sort_keys=False), encoding='utf-8')
     renderer = analysis['renderer']
     if isinstance(renderer, str):
         packages = {'ComplexHeatmap': ['ComplexHeatmap', 'circlize'], 'circlize': ['circlize'], 'ggplot2': ['ggplot2']}
@@ -214,7 +214,7 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
         raise ValueError('Input file missing: ' + str(input_path))
     if external and case != 'boxplot':
         raise ValueError('External --input is currently supported for boxplot only; other cases use their declared synthetic fixtures')
-    metadata = external_metadata(input_path, experimental_unit, independence, value_unit=value_unit) if external else json.loads((input_path.parent / 'metadata.json').read_text())
+    metadata = external_metadata(input_path, experimental_unit, independence, value_unit=value_unit) if external else json.loads((input_path.parent / 'metadata.json').read_text(encoding='utf-8'))
     input_hash = metadata.get('input_sha256') or digest(input_path)
     validate_input_binding(input_path, input_hash)
     output = Path(output_dir).expanduser().resolve()
@@ -233,7 +233,7 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     write_json(config_path, config)
     analysis_run = run_r('analyze', case, output, ROOT, input_path, formats)
     analysis_path = audit / 'analysis.json'
-    analysis = json.loads(analysis_path.read_text())
+    analysis = json.loads(analysis_path.read_text(encoding='utf-8'))
     validate_input_binding(input_path, input_hash, analysis)
     pattern, family, task, _, domain, role = CASES[case]
     from prepare_figure import prepare
@@ -249,7 +249,7 @@ def _run_example(case, output_dir, *, input_path=None, experimental_unit=None, i
     write_json(audit / 'figure-request.json', request)
     spec = make_spec(case, metadata, analysis, receipt, audit, formats)
     design_path = Path(config['design_spec_path'])
-    design_path.write_text(yaml.safe_dump(spec, sort_keys=False))
+    design_path.write_text(yaml.safe_dump(spec, sort_keys=False), encoding='utf-8')
     from validate_design_spec import validate, load, SCHEMA
     from validate_checkpoints import validate_preparation_receipt
     errors = validate(spec, load(SCHEMA), spec_path=design_path)

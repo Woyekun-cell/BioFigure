@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "scope": "reference-source-inspection-only",
+  "reviewer": "model",
+  "reviewed_at": "2026-10-16T09:50:19.737958+00:00",
+  "boundary": "Actual source bytes opened in this task. This is not rendered-output approval, Windows verification, full-paper reproduction, or CP4. Reference defects explicitly excluded from output.",
+  "cases": [
+    {
+      "case_id": "cannabis-cassette",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/cannabis-cassette/sources/own-reference.png",
+          "sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+          "viewed": true
+        }
+      ],
+      "observations": "Position-by-chemotype cassette layout, Mb axis, translucent background and highlighted synthase triangles inspected. Legacy author-data header is reference-only and must be omitted from delivered output."
+    },
+    {
+      "case_id": "cannabis-chr7",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png",
+          "sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
+          "viewed": true
+        }
+      ],
+      "observations": "Chromosome-position lines with a highlighted CBDAS trace inspected. Legacy author-data header is reference-only and must be omitted from output."
+    },
+    {
+      "case_id": "planarian-dotplot",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
+          "viewed": true
+        }
+      ],
+      "observations": "Alignment diagonals, chromosome boundaries, query/target labels and separated identity legend inspected."
+    },
+    {
+      "case_id": "ohca-microc",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+          "sha256": "971c0f47822087c066564bed8c653da608d0b35b08b247f79eb3123138eba324",
+          "viewed": true
+        }
+      ],
+      "observations": "chr17 contact matrix, genomic axes, narrow square tiles and loop outlines with separate legends inspected."
+    },
+    {
+      "case_id": "sankey",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/sankey/sources/own-reference-20261011.pdf",
+          "sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1",
+          "viewed": true
+        }
+      ],
+      "observations": "Three matched-feature strata and connecting flows inspected. Legacy method/simulation footer is reference-only and must be removed from output."
+    },
+    {
+      "case_id": "oncoprint",
+      "files": [
+        {
+          "path": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+          "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361",
+          "viewed": true
+        }
+      ],
+      "observations": "Mutation events, top sample annotation, frequency bar and legends inspected. Legacy narrow rectangular matrix and simulation footer must not be copied; current output uses three stacked square-cell cohorts and no footer."
+    }
+  ]
+}

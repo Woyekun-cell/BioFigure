@@ -100603,7 +100603,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
-            "sha256": "0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497",
+            "sha256": "86aa3e191f57062df4098f0bdfaa8218e9ba07a55bb6601ae91bd39e69332c8b",
             "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
             "recorded_hash_verified": true
           },
@@ -100615,7 +100615,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
-            "sha256": "ba2f0738e885ae543f4e67029e5bc1f7e8ccf57fc2609067276cbbd7e99e6fa7",
+            "sha256": "6d1e1247497438677ef3e1c13ded45b3002c6d711ea37e0001a2b264327ffaf8",
             "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
             "recorded_hash_verified": true
           },
@@ -100645,7 +100645,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
@@ -100956,13 +100956,13 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
-            "sha256": "9ca46b0c0dbb62a6cd56f25eb4fea9356decaa2d2a15cc886f910664d61508a0",
+            "sha256": "31c8e0f4c60c307d87eb7309052474240cb7feef35bea5b0d259822a5713594f",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/sankey/scripts/render.R",
-            "sha256": "c4a1440318e657f3acedbe4eaa1cfa2ce093f46f4d0902dc4e549d3a87911fc3",
+            "sha256": "7d4f3e8c314fcd53c5e798daa9b76999529da590428c267a19998d24d6d9d3de",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/scripts/render.R",
             "recorded_hash_verified": true
           },
@@ -100974,7 +100974,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
-            "sha256": "ecd6b170557bb0a974086bcf423784a7e432d22d0ca0f8d7645c6f960c549472",
+            "sha256": "1b07b03b4e6190eff939fabe2b9edb72cda1d1ad2f256b55f2807de2294e53dd",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
             "recorded_hash_verified": true
           },
@@ -100992,7 +100992,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
@@ -101974,7 +101974,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/acquire_sources.py",
-            "sha256": "2578e2a12a1eb082b61264414715aee409bf0d1213ce9acf4585d3586c9737fb",
+            "sha256": "db6146a496181e93c309088ff48611a5e3917ce474fb3ac00d34507386237261",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/acquire_sources.py",
             "recorded_hash_verified": true
           },
@@ -101992,19 +101992,19 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
-            "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
+            "sha256": "3ade0e31de6dfd8e09e190c1fba3b091f0604429e223b657e6f79d572182b7bc",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
-            "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728",
+            "sha256": "01b4087cde30c92d46edbaea495078cc079684456f23a764f24c25758bd6d4f8",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
-            "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
+            "sha256": "18b2457f96d358bfff1c212bb4be6ab08ce2bc9eb6eac920748257137c82f24f",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
@@ -102016,7 +102016,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
@@ -103042,7 +103042,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/acquire_sources.py",
-            "sha256": "2578e2a12a1eb082b61264414715aee409bf0d1213ce9acf4585d3586c9737fb",
+            "sha256": "db6146a496181e93c309088ff48611a5e3917ce474fb3ac00d34507386237261",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/acquire_sources.py",
             "recorded_hash_verified": true
           },
@@ -103060,19 +103060,19 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
-            "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
+            "sha256": "3ade0e31de6dfd8e09e190c1fba3b091f0604429e223b657e6f79d572182b7bc",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
-            "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728",
+            "sha256": "01b4087cde30c92d46edbaea495078cc079684456f23a764f24c25758bd6d4f8",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
-            "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
+            "sha256": "18b2457f96d358bfff1c212bb4be6ab08ce2bc9eb6eac920748257137c82f24f",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
@@ -103084,7 +103084,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
@@ -105799,7 +105799,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
-            "sha256": "ccc156a8e2310fc29cb596d3c0c821bc4b291ed2fabd82f427112dfd6d37ab3e",
+            "sha256": "63bc0f374ed2d387b923b509cb81010b71c9ef3b2391b51a3f5343adc8b2d968",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
             "recorded_hash_verified": true
           },
@@ -105859,7 +105859,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
-            "sha256": "93e0cc9b51883a8aed40c5432deff5caaeab87d19296347fb865ce994a4be835",
+            "sha256": "ec5a07104740ba50509e843ba4c863e14f0998bac2f7130fef6fb1f50a4415f8",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
             "recorded_hash_verified": true
           },
@@ -105871,31 +105871,31 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
-            "sha256": "617320049f2d892f95e7e58e525c8e2595ae941662747b8b4d6466c5f05e3da1",
+            "sha256": "7ddcde9d396c3f6d4fb066f86f4fe96855285ffe3199c5625ac4a7c9d0999c52",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
-            "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+            "sha256": "a209af1081ffcfe45c9ca0df82fca618fbcc5cb615e077656e35e6c4daec462e",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
-            "sha256": "5872c894ed87ae0a8121ddb88c2ee1f8459c7fcdaef87bb483bc8350beebf9ba",
+            "sha256": "9553e3227318591e4ef8cd373c43d00fd14d701f9f9b91c0b2cf0b4f2d2a6b06",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
-            "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
+            "sha256": "2e57541022f02adc8859ac4afcd803af5a0578c399a0665d825d314097b61a27",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
@@ -107032,7 +107032,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
-            "sha256": "52b66ef4f0889431400a187700fd6f135ed0c9e0e9c5ab8b47282341b7cf1906",
+            "sha256": "29e92842e744a997d11b6992976c6f0f42990e9440c21141b54f365717784f16",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
             "recorded_hash_verified": true
           },
@@ -107098,25 +107098,25 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
-            "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+            "sha256": "a209af1081ffcfe45c9ca0df82fca618fbcc5cb615e077656e35e6c4daec462e",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
-            "sha256": "326c9edab8387ba7b234965d49d3ea625ba9e99fb27f3640ec1a7fc34b6f5915",
+            "sha256": "315deb3ce12c94c1c5cb6f8b578971369fe2445138d33ff728f002f73b6239fb",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
-            "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
+            "sha256": "2e57541022f02adc8859ac4afcd803af5a0578c399a0665d825d314097b61a27",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/replay_public.py",
-            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
             "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }

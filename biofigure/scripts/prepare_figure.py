@@ -63,7 +63,7 @@ def prepare_original(request: dict, routed: dict, request_id: str, query: str, m
             'request': request, 'request_id': request_id, 'code_gate': 'BLOCKED',
             'selected_reference_candidates': {'planner_selected': None}, 'method_plan': scientific_plan,
             'required_next_steps': ['resolve scientific intent, mapped fields, units, missingness and chart-family conflicts before design']})
-    index = yaml.safe_load((ROOT / 'patterns/index.yaml').read_text())['patterns']
+    index = yaml.safe_load((ROOT / 'patterns/index.yaml').read_text(encoding='utf-8'))['patterns']
     pattern = request.get('pattern_id')
     candidates = [item for item in index if item['pattern_id'] == pattern] if pattern else [
         item for item in index if item.get('task') == request['figure_task']]
@@ -77,7 +77,7 @@ def prepare_original(request: dict, routed: dict, request_id: str, query: str, m
             'required_next_steps': ['select a packaged Pattern compatible with the data and scientific question; unknown or ambiguous patterns never authorize code']})
     item = candidates[0]
     card_path = 'patterns/' + item['path']
-    card = yaml.safe_load((ROOT / card_path).read_text())
+    card = yaml.safe_load((ROOT / card_path).read_text(encoding='utf-8'))
     material = set(ORIGINAL_MATERIAL) | set(routed['modules']) | {card_path}
     missing = sorted(name for name in material if not (ROOT / name).is_file())
     selected = 'PATTERN-' + item['pattern_id']

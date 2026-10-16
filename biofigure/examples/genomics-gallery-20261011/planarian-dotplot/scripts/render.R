@@ -37,7 +37,7 @@ p<-p+ggplot2::geom_rect(data=gradient,ggplot2::aes(xmin=xmin,xmax=xmax,ymin=7.5,
  ggplot2::coord_fixed(xlim=c(0,width),ylim=c(0,height),expand=FALSE,clip='off')+
  ggplot2::theme_void(base_family=font$family,base_size=7.5)+
  ggplot2::theme(plot.margin=ggplot2::margin(0,0,0,0,'mm'),plot.background=ggplot2::element_rect(fill='white',colour=NA),panel.background=ggplot2::element_rect(fill='white',colour=NA))
-grDevices::pdf(NULL,width=width/25.4,height=height/25.4,family=font$family)
+bf_pdf_open(NULL,width,height,font)
 measure<-function(text,size=7.5){g<-grid::textGrob(text,gp=grid::gpar(fontfamily=font$family,fontsize=size));c(width_mm=grid::convertWidth(grid::grobWidth(g),'mm',valueOnly=TRUE),height_mm=grid::convertHeight(grid::grobHeight(g),'mm',valueOnly=TRUE))}
 text_metrics<-lapply(spec$text_contract$allowed_text,measure);names(text_metrics)<-spec$text_contract$allowed_text
 # On x-axis IDs, perpendicular separation of parallel40-degree labels exceeds text height.
@@ -55,7 +55,8 @@ bf_render_png(p,png,font=font,allowed_text=spec$text_contract$allowed_text,width
  dpi=600,min_text_pt=7.5,source_files=sources,boxes=macro,allowed_pairs='data:labels',authorization=authorization,skill_root=skill,
  publication_size_class='custom',size_override_basis=spec$output_size$size_rationale$override_basis)
 pdf<-file.path(root,'results/figures',paste0(prefix,'.pdf'));dir.create(dirname(pdf),recursive=TRUE,showWarnings=FALSE)
-grDevices::quartz(type='pdf',file=pdf,width=width/25.4,height=height/25.4,family=font$family,bg='white');print(p);grDevices::dev.off()
+bf_pdf_open(pdf,width,height,font);print(p);grDevices::dev.off()
+pdf_inspection<-bf_pdf_finalize(pdf,font,width,height)
 svg<-file.path(work,paste0(prefix,'-gate-qa.svg'));svglite::svglite(svg,width=width/25.4,height=height/25.4,bg='white',system_fonts=list(sans=font$family));print(p);grDevices::dev.off()
 bind<-function(z)list(path=normalizePath(z,mustWork=TRUE),sha256=digest::digest(file=z,algo='sha256'))
 metrics<-list(scope=spec$scientific_message,alignments=nrow(d),endpoints=nrow(points),chromosome_blocks=c(4,4),reference_order=ref$chromosome,query_order=query$chromosome,

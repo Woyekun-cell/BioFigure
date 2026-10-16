@@ -26,18 +26,18 @@ def learned_records(corpus):
     title_map = {}
     for c in corpus['cases']:
         title_map.setdefault(c['title'], []).append(c['case_id'])
-    for method in json.loads(METHODS.read_text())['cases']:
+    for method in json.loads(METHODS.read_text(encoding='utf-8'))['cases']:
         case_id = METHOD_CASES.get(method['id'])
         if case_id:
             by_case.setdefault(case_id, []).append(dict(method, record_source=str(METHODS.relative_to(ROOT)),
                 pairing_status='semantics-derived-needs-pairing-review' if method['id'] in {'SCIDRAW-TERNARY-001', 'SCIDRAW-CORRPLOT-001'} else 'explicit-semantic-binding'))
     path = ROOT / 'atlas/scidraw-batch2-methods.json'
-    for method in json.loads(path.read_text())['cases']:
+    for method in json.loads(path.read_text(encoding='utf-8'))['cases']:
         matches = title_map.get(method['label'], [])
         if len(matches) == 1:
             by_case.setdefault(matches[0], []).append(dict(method, record_source=str(path.relative_to(ROOT)), pairing_status='unique-source-title-binding'))
     for path in sorted((ROOT / 'atlas').glob('scidraw-learning-ten*.json')):
-        for case in json.loads(path.read_text())['cases']:
+        for case in json.loads(path.read_text(encoding='utf-8'))['cases']:
             by_case.setdefault(case['case_id'], []).append(dict(case, record_source=str(path.relative_to(ROOT))))
     return by_case
 

@@ -19,13 +19,13 @@ def role(p):
 def dependencies(files):
  namespaces=set()
  for p in files:
-  if p.suffix.lower()=='.r':namespaces.update(re.findall(r'\b([A-Za-z][A-Za-z0-9.]+)::',p.read_text()))
+  if p.suffix.lower()=='.r':namespaces.update(re.findall(r'\b([A-Za-z][A-Za-z0-9.]+)::',p.read_text(encoding='utf-8')))
  namespaces-=set(['grDevices','stats','utils','grid','graphics','methods','base','tools','datasets','parallel'])
  return [{'name':'Python 3','version':'3.10+','source':'https://www.python.org/'}, {'name':'PyYAML','version':'6.0.3','source':'https://pypi.org/project/PyYAML/6.0.3/'}]+[{'name':'R:'+n,'version':'record installed version for the current render','source':'R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance.'} for n in sorted(namespaces)]
 cases=[]
 for name in OLD:
  case=SKILL/'examples/genomics-gallery-20261011'/name
- profile=json.loads((case/'data/metadata/public-replay.json').read_text())
+ profile=json.loads((case/'data/metadata/public-replay.json').read_text(encoding='utf-8'))
  status=profile.get('status', 'reference-only' if name.startswith('dpm-') else 'runnable')
  files=[p for p in case.rglob('*') if usable(p)]
  materials=[]
@@ -65,16 +65,16 @@ for p in SKILL.rglob('*'):
  lic='GPL-3.0-only' if p.name=='GPL-3.0.txt' else 'MIT'
  origin='Upstream license text retained verbatim' if rel.parts[0]=='licenses' else 'BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies'
  common.append(binding(p,'code' if p.suffix.lower() in {'.py','.r'} else 'config',lic,origin))
-exclusions=json.loads((ROOT/'docs/gallery/rights-exclusions-3.8.0.json').read_text())['files']
+exclusions=json.loads((ROOT/'docs/gallery/rights-exclusions-3.8.0.json').read_text(encoding='utf-8'))['files']
 exclusions=[dict(x,path=x['path'].removeprefix('biofigure/')) for x in exclusions if x['path'].startswith('biofigure/')]
 # Check CLI flag spelling with --help only; this does not execute R or certify rendering.
 for c in cases:
  if c['status']!='runnable':continue
- help_result=subprocess.run([sys.executable,str(SKILL/c['entrypoint']),'--help'],capture_output=True,text=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'),timeout=30)
+ help_result=subprocess.run([sys.executable,str(SKILL/c['entrypoint']),'--help'],capture_output=True,text=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'),timeout=30, encoding='utf-8', errors='replace')
  if help_result.returncode:raise SystemExit('Entrypoint help failed: '+c['id']+' '+help_result.stderr)
  documented_options=set(re.findall(r'(?<![\w-])--[a-z][a-z0-9-]*',help_result.stdout))
  missing=[arg for arg in c['command'] if arg.startswith('--') and arg.split('=',1)[0] not in documented_options]
  if missing:raise SystemExit('Undocumented command flags: '+c['id']+' '+str(missing))
 manifest={'schema_version':1,'skill_version':'3.8.0','scope':'Declared public cases plus the complete first-party runtime. The historical learned catalog is searchable, not a runnable certification.','expected_case_ids':OLD+NEW,'shared_runtime_files':sorted(common,key=lambda x:x['path']),'distribution_exclusions':exclusions,'cases':cases}
-(SKILL/'public-cases.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+(SKILL/'public-cases.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
 print(json.dumps({'cases':len(cases),'status_counts':{s:sum(x['status']==s for x in cases) for s in ['runnable','reference-only','blocked']},'shared_files':len(common)}))

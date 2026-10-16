@@ -10,7 +10,7 @@ def applies(query,context=None):
 
 def compile_pangenome_plan(query,context=None,primary_source=None):
  if not applies(query,context):return None
- doc=json.loads((ROOT/LIBRARY).read_text());context={} if context is None else context
+ doc=json.loads((ROOT/LIBRARY).read_text(encoding='utf-8'));context={} if context is None else context
  def needs(missing,options=()):
   return {'schema_version':1,'query':query,'planning_status':'NEEDS_SPEC','ready_to_render':False,'selected_case':None,
           'missing':missing,'question':'请明确分析目标与数据字段：要看组成、共享/缺失、累积规律、变异分布还是性状关联？',

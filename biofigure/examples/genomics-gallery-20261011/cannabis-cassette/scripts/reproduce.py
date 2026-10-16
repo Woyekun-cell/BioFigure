@@ -16,8 +16,8 @@ def skill_root():
     return next(p for p in ROOT.parents if (p / "scripts/prepare_figure.py").is_file() and (p / "SKILL.md").is_file())
 
 def call(log, *args):
-    r = subprocess.run(list(map(str, args)), capture_output=True, text=True)
-    pathlib.Path(log).write_text(r.stdout + r.stderr)
+    r = subprocess.run(list(map(str, args)), capture_output=True, text=True, encoding="utf-8", env=dict(os.environ, PYTHON=sys.executable, PYTHONUTF8="1"), errors="replace")
+    pathlib.Path(log).write_text(r.stdout + r.stderr, encoding="utf-8")
     if r.returncode:
         raise RuntimeError("Command failed (" + str(r.returncode) + "); see " + str(log))
     return r
@@ -31,7 +31,7 @@ def main():
     p.add_argument("--rscript", default="Rscript")
     p.add_argument("--pdftoppm", default="pdftoppm", help="Poppler executable used only to inspect actual PDF")
     a = p.parse_args()
-    lock = json.loads((ROOT / "data/metadata/source-lock.json").read_text())
+    lock = json.loads((ROOT / "data/metadata/source-lock.json").read_text(encoding="utf-8"))
     for item in lock["assets"]:
         q = ROOT / item["path"]
         if not q.is_file() or sha(q) != item["sha256"]:
@@ -56,8 +56,8 @@ def main():
     call(out / "native-install.log", a.rscript, ROOT / "scripts/install_native.R", native, lib)
     call(out / "current-table-audit.log", a.rscript, ROOT / "scripts/audit_inputs.R", ROOT, out / "current-table-audit.json")
     call(out / "prepare-cp2.log", sys.executable, ROOT / "scripts/prepare_spec.py", "--output-dir", meta, "--rscript", a.rscript, "--source-view-confirmed")
-    spec = yaml.safe_load((meta / "design-spec.yaml").read_text())
-    acquisition = json.loads((ROOT / "data/metadata/native-acquisition.json").read_text())
+    spec = yaml.safe_load((meta / "design-spec.yaml").read_text(encoding="utf-8"))
+    acquisition = json.loads((ROOT / "data/metadata/native-acquisition.json").read_text(encoding="utf-8"))
     sources = [ROOT / "scripts/render.R", bf / "scripts/figure_style.R", ROOT / "data/metadata/source-lock.json"]
     sources += [ROOT / x["path"] for x in lock["assets"] if pathlib.Path(x["path"]).suffix.lower() not in {".yaml", ".yml"}]
     sources += [native / x["path"] for x in acquisition["assets"]]
@@ -79,8 +79,8 @@ def main():
     comparisons = [{"file": n, "sha256": sha(out / "results/plot_data" / n), "packaged_input_sha256": sha(ROOT / "results/plot_data" / n), "byte_equal": sha(out / "results/plot_data" / n) == sha(ROOT / "results/plot_data" / n)} for n in TABLES]
     if not all(x["byte_equal"] for x in comparisons) or sha(sealed_pdf) != sealed_sha:
         raise ValueError("Packaged table replay or sealed-output preservation failed")
-    report = {"schema_version": 1, "status": "FRESH_PUBLIC_TABLE_NATIVE_REPLAY_EXECUTED", "scope": "Public fixed packaged tables and current own gallery layout only", "method_id": lock["method_id"], "output_directory": str(out), "packaged_outputs_preserved": True, "packaged_pdf_sha256": sealed_sha, "native_package_commit": lock["native_package_commit"], "native_package_source_sha_verified": True, "isolated_native_library_installed": str(lib), "plot_data_comparison": comparisons, "rendered_pdf": {"path": str(pdf), "sha256": sha(pdf)}, "current_table_audit": json.loads((out / "current-table-audit.json").read_text()), "fresh_prepare_CP2_authorization": True, "PNG_PDF_visual_review": "PENDING", "author_raw_processing": False, "original_whole_figure_fidelity": "NOT_VERIFIED", "new_input_transfer": False, "stable_template": False}
-    (out / "replay-evidence.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    report = {"schema_version": 1, "status": "FRESH_PUBLIC_TABLE_NATIVE_REPLAY_EXECUTED", "scope": "Public fixed packaged tables and current own gallery layout only", "method_id": lock["method_id"], "output_directory": str(out), "packaged_outputs_preserved": True, "packaged_pdf_sha256": sealed_sha, "native_package_commit": lock["native_package_commit"], "native_package_source_sha_verified": True, "isolated_native_library_installed": str(lib), "plot_data_comparison": comparisons, "rendered_pdf": {"path": str(pdf), "sha256": sha(pdf)}, "current_table_audit": json.loads((out / "current-table-audit.json").read_text(encoding="utf-8")), "fresh_prepare_CP2_authorization": True, "PNG_PDF_visual_review": "PENDING", "author_raw_processing": False, "original_whole_figure_fidelity": "NOT_VERIFIED", "new_input_transfer": False, "stable_template": False}
+    (out / "replay-evidence.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output_directory": str(out), "plot_data_all_byte_equal": True, "status": report["status"]}, ensure_ascii=False))
 
 if __name__ == "__main__": main()

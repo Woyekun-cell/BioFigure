@@ -45,7 +45,7 @@ def load_catalog(refresh=False, *, index_path=INDEX, catalog_path=CATALOG):
     catalog = dict(build_catalog(data), **bindings)
     registered = set()
     if REGISTRY.is_file():
-        registered = {r['method_id'] for r in json.loads(REGISTRY.read_text())['records']}
+        registered = {r['method_id'] for r in json.loads(REGISTRY.read_text(encoding='utf-8'))['records']}
     for card in catalog['cards']:
         card['recorded_adapter_registration'] = card['method_id'] in registered
     catalog_path.parent.mkdir(parents=True, exist_ok=True)

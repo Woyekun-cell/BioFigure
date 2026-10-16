@@ -51,7 +51,7 @@ def page_name(slug, number):
 
 
 def generate():
-    catalog = json.loads((ROOT / 'docs/gallery/catalog.json').read_text())
+    catalog = json.loads((ROOT / 'docs/gallery/catalog.json').read_text(encoding='utf-8'))
     figures = catalog['figures']
     categories = catalog['categories']
     ids, images, subtypes = set(), set(), set()
@@ -136,7 +136,7 @@ def generate():
         index.append(f'| [{cat["title"]} / {cat["english"]}](gallery/{cat["slug"]}.md) | {count} |')
     index.append('\n[来源与权利](../NOTICE.md) · [脚本存档与复现边界](../biofigure/examples/archive-gallery/README.md) · [验收规则](../biofigure/references/benchmark-protocol.md)\n')
     files['docs/GALLERY.md'] = '\n'.join(index)
-    readme = (ROOT / 'README.md').read_text()
+    readme = (ROOT / 'README.md').read_text(encoding='utf-8')
     start, end = readme.index('## 分类图廊'), readme.index('## 绘图方法')
     section = ['## 分类图廊\n',
                f'现有成图中精选 {heading}。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。\n',
@@ -146,7 +146,7 @@ def generate():
         section.append(f'| [{cat["title"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。\n\n')
     files['README.md'] = readme[:start] + '\n'.join(section) + portable_section() + readme[end:]
-    english = (ROOT / 'README.en.md').read_text()
+    english = (ROOT / 'README.en.md').read_text(encoding='utf-8')
     start, end = english.index('## Gallery by plot type'), english.index('## Methods and quality checks')
     section_en = ['## Gallery by plot type\n',
                   f'The gallery selects **{total} figures in {len(categories)} categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.\n',

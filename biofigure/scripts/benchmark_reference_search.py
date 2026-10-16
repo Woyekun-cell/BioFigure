@@ -16,7 +16,7 @@ from find_figure_reference import ROOT, find, load_catalog
 def run():
     project = ROOT.parent
     baseline_path = project / 'results/tables/reference-search-baseline-2026-10-11.json'
-    baseline = json.loads(baseline_path.read_text())
+    baseline = json.loads(baseline_path.read_text(encoding='utf-8'))
     catalog = load_catalog(refresh=True)
     rows = []
     for old in baseline['rows']:
@@ -28,7 +28,7 @@ def run():
             times.append(time.perf_counter() - start)
         start = time.perf_counter()
         cold = subprocess.run([sys.executable, str(ROOT / 'scripts/find_figure_reference.py'),
-                               '--query', query], capture_output=True, text=True, check=False)
+                               '--query', query], capture_output=True, text=True, check=False, encoding='utf-8', errors='replace')
         cold_time = time.perf_counter() - start
         if cold.returncode not in (0, 1):
             raise RuntimeError(cold.stderr)
@@ -65,6 +65,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     report = run()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: report[k] for k in ('records', 'full_index_bytes', 'compact_catalog_bytes',
         'median_output_reduction_fraction', 'median_warm_seconds', 'median_cold_seconds')}, indent=2))

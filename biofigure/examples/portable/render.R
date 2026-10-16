@@ -16,26 +16,15 @@ font<-bf_font('Arial')
 bound<-function(p)list(path=normalizePath(p,mustWork=TRUE),sha256=digest::digest(file=p,algo='sha256'))
 write_json<-function(x,p)jsonlite::write_json(x,p,pretty=TRUE,auto_unbox=TRUE,digits=NA,null='null')
 pdf_begin<-function(path) {
-  # Exact Arial metrics + embedded outlines; do not silently use a substitute
-  # when a host's Cairo DLL is unavailable. Ghostscript is a declared dependency.
-  if(!nzchar(Sys.which('gs')))stop('NEEDS_PDF_DEVICE: Ghostscript gs is required for embedded-font PDF; PNG-only does not need it')
-  bf_complexheatmap_font(font)
-  grDevices::pdf(path,width=a$width_mm/25.4,height=a$height_mm/25.4,family=font$family,
-    bg='white',useDingbats=FALSE,paper='special',compress=TRUE)
+  bf_pdf_open(path,a$width_mm,a$height_mm,font)
 }
 pdf_embed<-function(path) {
-  embedded<-tempfile(tmpdir=dirname(path),fileext='.pdf')
-  on.exit(unlink(embedded),add=TRUE)
-  grDevices::embedFonts(path,outfile=embedded,fontpaths=dirname(font$path))
-  if(!file.exists(embedded)||file.info(embedded)$size==0)stop('PDF font embedding failed')
-  if(!file.copy(embedded,path,overwrite=TRUE))stop('cannot save embedded-font PDF')
-  count<-system2(Sys.which('gs'),shQuote(c('-q','-dNODISPLAY','-dNOSAFER',paste0('-sBFFile=',normalizePath(path)),
-    '-c','BFFile (r) file runpdfbegin pdfpagecount = quit')),stdout=TRUE,stderr=TRUE)
-  if(!identical(tail(trimws(count),1),'1'))stop('standalone figure PDF must have exactly one page')
+  result<-bf_pdf_finalize(path,font,a$width_mm,a$height_mm)
+  write_json(result,paste0(path,'.pdf-audit.json'))
 }
 # Never let read.csv coerce identifiers such as 01 and 1 into the same ID.
 input_binding<-bound(input)
-d<-read.csv(input,check.names=FALSE,stringsAsFactors=FALSE,colClasses='character')
+d<-read.csv(input,check.names=FALSE,stringsAsFactors=FALSE,colClasses='character',fileEncoding='UTF-8')
 numeric_columns<-switch(case,boxplot='Expression',heatmap=names(d)[-1],`dense-heatmap`=names(d)[-1],
   bubble=c('Average','Fraction'),volcano=c('log2FC','SE'),
   synteny=c('AStart','AEnd','BStart','BEnd','ALength','BLength'),phylogeny=character())

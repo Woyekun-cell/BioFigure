@@ -38,6 +38,6 @@
     "Final author-paper panel mapping and new-input transfer NOT_VERIFIED",
     "Old authorization and historical PASS are never replayed"
   ],
-  "platform": "macOS: native Quartz PDF and Arial; Python PyYAML and existing R dependencies; no automatic installation",
+  "platform": "Shared exact-font PDF/Ghostscript interface for macOS and Windows; actual per-platform execution and exported-output review remain required. Existing R dependencies and Arial are external runtime requirements.",
   "fresh_source_view_required": true
 }

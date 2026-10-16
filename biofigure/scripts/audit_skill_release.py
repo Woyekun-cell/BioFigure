@@ -31,16 +31,16 @@ def zh_count(text: str) -> int:
 
 
 def version_snapshot() -> dict[str, str]:
-    manifest = yaml.safe_load((ROOT / "manifest.yaml").read_text())
-    skill = re.search(r"BioFigure (\d+\.\d+\.\d+)", (ROOT / "SKILL.md").read_text()).group(1)
-    readme = re.search(r"BioFigure-(\d+\.\d+\.\d+)", (REPO / "README.md").read_text()).group(1)
-    zh = re.search(r"BioFigure (\d+\.\d+\.\d+)", (REPO / "docs/HANDBOOK.zh-CN.md").read_text()).group(1)
-    en = re.search(r"BioFigure (\d+\.\d+\.\d+)", (REPO / "docs/HANDBOOK.en.md").read_text()).group(1)
+    manifest = yaml.safe_load((ROOT / "manifest.yaml").read_text(encoding='utf-8'))
+    skill = re.search(r"BioFigure (\d+\.\d+\.\d+)", (ROOT / "SKILL.md").read_text(encoding='utf-8')).group(1)
+    readme = re.search(r"BioFigure-(\d+\.\d+\.\d+)", (REPO / "README.md").read_text(encoding='utf-8')).group(1)
+    zh = re.search(r"BioFigure (\d+\.\d+\.\d+)", (REPO / "docs/HANDBOOK.zh-CN.md").read_text(encoding='utf-8')).group(1)
+    en = re.search(r"BioFigure (\d+\.\d+\.\d+)", (REPO / "docs/HANDBOOK.en.md").read_text(encoding='utf-8')).group(1)
     return {"manifest": manifest["version"], "skill": skill, "readme": readme, "handbook_zh": zh, "handbook_en": en}
 
 
 def atlas_snapshot(path: Path) -> dict:
-    cases = json.loads(path.read_text())["cases"]
+    cases = json.loads(path.read_text(encoding='utf-8'))["cases"]
     eligible = [x for x in cases if x.get("runtime_status") == "source-compared-png" and x.get("review_status") == "pass"]
     incomplete = [x for x in cases if x.get("runtime_status") == "source-compared-needs-revision"]
     return {
@@ -132,31 +132,31 @@ def audit_legacy_source_archive() -> dict:
     sys.path.insert(0, str(ROOT / "scripts"))
     from benchmark_core import inventory
     benchmark = inventory(ROOT)
-    manifest = yaml.safe_load((ROOT / "manifest.yaml").read_text())
+    manifest = yaml.safe_load((ROOT / "manifest.yaml").read_text(encoding='utf-8'))
     hot = []
     for rel in ["SKILL.md", *manifest["common_dynamic_load"]]:
-        text = (ROOT / rel).read_text()
+        text = (ROOT / rel).read_text(encoding='utf-8')
         hot.append({"path": rel, "zh_chars": zh_count(text)})
     versions = version_snapshot()
     version_ok = versions["manifest"] == versions["skill"] and all(
         x == versions["manifest"]
         for x in (versions["readme"], versions["handbook_zh"], versions["handbook_en"])
     )
-    reproduction_data = json.loads((ROOT / "atlas/reproduction-methods.json").read_text())
-    scidraw_data = json.loads((ROOT / "atlas/scidraw-source-compared-methods.json").read_text())
-    scidraw_evidence = json.loads((ROOT / "atlas/scidraw-review-evidence.json").read_text())
-    scidraw_batch2_data = json.loads((ROOT / "atlas/scidraw-batch2-methods.json").read_text())
-    scidraw_batch2_evidence = json.loads((ROOT / "atlas/scidraw-batch2-review-evidence.json").read_text())
+    reproduction_data = json.loads((ROOT / "atlas/reproduction-methods.json").read_text(encoding='utf-8'))
+    scidraw_data = json.loads((ROOT / "atlas/scidraw-source-compared-methods.json").read_text(encoding='utf-8'))
+    scidraw_evidence = json.loads((ROOT / "atlas/scidraw-review-evidence.json").read_text(encoding='utf-8'))
+    scidraw_batch2_data = json.loads((ROOT / "atlas/scidraw-batch2-methods.json").read_text(encoding='utf-8'))
+    scidraw_batch2_evidence = json.loads((ROOT / "atlas/scidraw-batch2-review-evidence.json").read_text(encoding='utf-8'))
     reproduction = atlas_snapshot(ROOT / "atlas/reproduction-methods.json")
     scidraw = atlas_snapshot(ROOT / "atlas/scidraw-source-compared-methods.json")
     scidraw_batch2 = atlas_snapshot(ROOT / "atlas/scidraw-batch2-methods.json")
     assets = sorted((REPO / "docs/assets/reproduction-gallery").glob("*.png"))
     scidraw_assets = sorted((REPO / "docs/assets/scidraw-gallery").glob("*.png"))
     scidraw_batch2_assets = sorted((REPO / "docs/assets/scidraw-gallery-batch2").glob("*.png"))
-    method_contracts = yaml.safe_load((ROOT / "atlas/family-execution-contracts.yaml").read_text())
-    capability_graph = json.loads((ROOT / "atlas/unified-capability-graph.json").read_text())
+    method_contracts = yaml.safe_load((ROOT / "atlas/family-execution-contracts.yaml").read_text(encoding='utf-8'))
+    capability_graph = json.loads((ROOT / "atlas/unified-capability-graph.json").read_text(encoding='utf-8'))
     methods_by_issue = {
-        x["issue"]: x for x in json.loads((ROOT / "atlas/reproduction-methods.json").read_text())["cases"]
+        x["issue"]: x for x in json.loads((ROOT / "atlas/reproduction-methods.json").read_text(encoding='utf-8'))["cases"]
     }
     graph_status_mismatches = []
     from sync_capability_status import expected_topjournal_state
@@ -279,16 +279,16 @@ def audit() -> dict:
     public_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(public_module)
     public = public_module.audit_public_release(REPO)
-    manifest = yaml.safe_load((ROOT / 'manifest.yaml').read_text())
-    hot = [{'path': rel, 'zh_chars': zh_count((ROOT / rel).read_text())}
+    manifest = yaml.safe_load((ROOT / 'manifest.yaml').read_text(encoding='utf-8'))
+    hot = [{'path': rel, 'zh_chars': zh_count((ROOT / rel).read_text(encoding='utf-8'))}
            for rel in ['SKILL.md', *manifest['common_dynamic_load']]]
     errors = list(portable['errors']) + list(public['errors'])
     if sum(x['zh_chars'] for x in hot) > 8000 or any(x['zh_chars'] > 1200 for x in hot):
         errors.append('hot-load document budget exceeded')
     benchmark = inventory(ROOT)
     errors.extend(benchmark['errors'])
-    catalog = json.loads((REPO / 'docs/gallery/catalog.json').read_text())
-    graph = json.loads((ROOT / 'atlas/unified-capability-graph.json').read_text())
+    catalog = json.loads((REPO / 'docs/gallery/catalog.json').read_text(encoding='utf-8'))
+    graph = json.loads((ROOT / 'atlas/unified-capability-graph.json').read_text(encoding='utf-8'))
     return {'schema_version': 2, 'release': manifest['version'],
             'check_scope': 'public-package-portability-and-gallery',
             'status': 'FAIL' if errors else 'PASS', 'errors': errors,
@@ -322,7 +322,7 @@ def main() -> int:
     payload = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(payload)
+        args.output.write_text(payload, encoding='utf-8')
     print(payload, end="")
     return 0 if result["status"] == "PASS" else 1
 

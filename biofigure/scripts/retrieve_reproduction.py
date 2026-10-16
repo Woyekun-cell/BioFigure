@@ -29,12 +29,12 @@ def high_fidelity_eligible(method):
  return method.get('runtime_status') == 'source-compared-png' and method.get('review_status') == 'pass'
 def retrieve(query,limit=5,require_validated=False,require_benchmark=False):
  benchmark=registry_results(ROOT)
- graph=json.loads((ROOT/'atlas/unified-capability-graph.json').read_text())
+ graph=json.loads((ROOT/'atlas/unified-capability-graph.json').read_text(encoding='utf-8'))
  by_issue={int(n['id'].split('-')[1]):n['id'] for n in graph['nodes'] if n.get('id','').startswith('topfigure-')}
- corpus_cases=json.loads(CORPUS.read_text())['cases']
+ corpus_cases=json.loads(CORPUS.read_text(encoding='utf-8'))['cases']
  candidate_limit=len(corpus_cases) if require_validated else max(3,min(limit,5))
  out=rank_cases(corpus_cases,query,candidate_limit)
- methods={x['issue']:x for x in json.loads(METHODS.read_text())['cases']}
+ methods={x['issue']:x for x in json.loads(METHODS.read_text(encoding='utf-8'))['cases']}
  for item in out['results']:
   issue=int(item['case_id'].split('-')[-1]);m=methods.get(issue,{})
   item['package_method']={k:m.get(k) for k in ('core_packages','core_package_status','key_functions','runtime_status','review_status','validated_pngs','validation_date','validation_note')}
@@ -50,4 +50,4 @@ def retrieve(query,limit=5,require_validated=False,require_benchmark=False):
  out['schema_version']=1;out['corpus']={'path':str(CORPUS.resolve()),'sha256':hashlib.sha256(CORPUS.read_bytes()).hexdigest()}
  return out
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--query',required=True);p.add_argument('--limit',type=int,default=5);p.add_argument('--require-validated',action='store_true');p.add_argument('--require-benchmark',action='store_true');p.add_argument('--json',action='store_true');p.add_argument('--output',type=Path);a=p.parse_args();out=retrieve(a.query,a.limit,a.require_validated,a.require_benchmark);payload=json.dumps(out,ensure_ascii=False,indent=2)+'\n';a.output.write_text(payload) if a.output else print(payload,end='');minimum=1 if a.require_validated else 3;raise SystemExit(0 if len(out['results'])>=minimum else 1)
+ p=argparse.ArgumentParser();p.add_argument('--query',required=True);p.add_argument('--limit',type=int,default=5);p.add_argument('--require-validated',action='store_true');p.add_argument('--require-benchmark',action='store_true');p.add_argument('--json',action='store_true');p.add_argument('--output',type=Path);a=p.parse_args();out=retrieve(a.query,a.limit,a.require_validated,a.require_benchmark);payload=json.dumps(out,ensure_ascii=False,indent=2)+'\n';a.output.write_text(payload, encoding='utf-8') if a.output else print(payload,end='');minimum=1 if a.require_validated else 3;raise SystemExit(0 if len(out['results'])>=minimum else 1)

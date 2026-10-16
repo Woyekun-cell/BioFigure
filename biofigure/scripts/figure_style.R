@@ -452,19 +452,163 @@ bf_label_angle <- function(labels,font,size_pt,pitch_mm,gap_mm=.5) {
   widths<-systemfonts::string_width(labels,path=font$path,index=font$index,size=size_pt,res=72)*25.4/72
   if(max(widths)+gap_mm<=pitch_mm) 0 else 90
 }
-bf_complexheatmap_font <- function(font) {
-  # Some ComplexHeatmap versions measure anno_text on a temporary PDF device.
-  # Register only the same face's bundled metrics; never alias Arial to Helvetica.
-  ps_name<-systemfonts::font_info(path=font$path,index=font$index)$name[1]
-  registered<-grDevices::pdfFonts()
-  if(!font$family %in% names(registered)) {
-    if(!ps_name %in% names(registered) || registered[[ps_name]]$family!=ps_name)
-      stop('ComplexHeatmap PDF measurement metrics unavailable for exact font')
-    do.call(grDevices::pdfFonts,setNames(list(registered[[ps_name]]),font$family))
+bf_ghostscript_command <- function() {
+  # R_GSCMD is one executable path/name, never a shell command with arguments.
+  configured<-trimws(Sys.getenv('R_GSCMD',unset=''))
+  if(nchar(configured)>=2 && substr(configured,1,1)%in%c('"',"'") &&
+     substr(configured,nchar(configured),nchar(configured))==substr(configured,1,1))
+    configured<-substr(configured,2,nchar(configured)-1)
+  resolve<-function(value) {
+    candidate<-if(file.exists(value))value else unname(Sys.which(value))[1]
+    if(!length(candidate)||is.na(candidate)||!nzchar(candidate)||!file.exists(candidate)||dir.exists(candidate))return(NULL)
+    normalizePath(candidate,winslash='/',mustWork=TRUE)
   }
-  if(grDevices::pdfFonts()[[font$family]]$family!=ps_name)
-    stop('PDF measurement family differs from resolved PostScript font')
+  if(nzchar(configured)) {
+    command<-resolve(configured)
+    if(is.null(command))stop('NEEDS_PDF_DEVICE: R_GSCMD must identify an existing Ghostscript executable; no fallback is allowed')
+    return(command)
+  }
+  for(name in c('gs','gswin64c','gswin32c')) {
+    command<-resolve(name)
+    if(!is.null(command))return(command)
+  }
+  stop('NEEDS_PDF_DEVICE: install Ghostscript (gs/gswin64c/gswin32c) or set R_GSCMD to its executable')
+}
+
+.bf_pdf_font_faces <- function(font) {
+  if(!is.list(font)||!font$family%in%c('Arial','Helvetica')||!is.character(font$path)||
+     length(font$path)!=1||!file.exists(font$path))stop('NEEDS_PDF_FONT: resolved Arial/Helvetica font required')
+  matched<-systemfonts::match_fonts(rep(font$family,4),italic=c(FALSE,FALSE,TRUE,TRUE),
+    weight=c('normal','bold','normal','bold'))
+  info<-systemfonts::font_info(path=matched$path,index=matched$index)
+  if(nrow(info)!=4||any(info$family!=font$family)||any(!file.exists(matched$path))||
+     normalizePath(font$path)!=normalizePath(matched$path[1])||font$index!=matched$index[1])
+    stop('NEEDS_PDF_FONT: font file/faces differ from the exact resolved family; substitution is forbidden')
+  names<-if(font$family=='Arial')c('ArialMT','ArialMT-Bold','ArialMT-Italic','ArialMT-BoldItalic') else
+    c('Helvetica','Helvetica-Bold','Helvetica-Oblique','Helvetica-BoldOblique')
+  afm_dir<-file.path(R.home('library'),'grDevices','afm')
+  afm<-vapply(c(names,'Symbol'),function(name) {
+    files<-file.path(afm_dir,paste0(name,c('.afm','.afm.gz')))
+    found<-files[file.exists(files)]
+    if(!length(found))stop(paste('NEEDS_PDF_FONT: exact AFM metrics missing for',name))
+    found[1]
+  },character(1))
+  for(i in seq_len(4)) {
+    connection<-if(endsWith(afm[i],'.gz'))gzfile(afm[i],open='rt',encoding='latin1') else file(afm[i],open='rt',encoding='latin1')
+    header<-tryCatch(readLines(connection,n=32,warn=FALSE),finally=close(connection))
+    ps<-sub('^FontName[[:space:]]+','',header[grepl('^FontName[[:space:]]+',header)])
+    if(length(ps)!=1||ps!=info$name[i]||!grepl('^[A-Za-z0-9_.-]+$',ps))
+      stop('NEEDS_PDF_FONT: AFM PostScript face differs from the actual installed font; substitution is forbidden')
+  }
+  metrics<-grDevices::Type1Font(family=info$name[1],metrics=unname(afm),encoding='default')
+  registered<-grDevices::pdfFonts()[[font$family]]
+  same_metrics<-!is.null(registered)&&identical(registered$family,metrics$family)&&
+    identical(sub('[.]gz$','',basename(registered$metrics)),sub('[.]gz$','',basename(metrics$metrics)))
+  # R retains fonts after a device closes and forbids replacing one already
+  # used. Reuse only the exact validated AFM set; never overwrite a substitute.
+  if(!same_metrics)do.call(grDevices::pdfFonts,setNames(list(metrics),font$family))
+  lapply(seq_len(4),function(i)list(style=c('regular','bold','italic','bold-italic')[i],family=font$family,
+    postscript_name=info$name[i],path=normalizePath(matched$path[i],winslash='/',mustWork=TRUE),index=matched$index[i],
+    sha256=digest::digest(file=matched$path[i],algo='sha256'),afm_path=normalizePath(afm[i],winslash='/',mustWork=TRUE),
+    afm_sha256=digest::digest(file=afm[i],algo='sha256')))
+}
+
+bf_complexheatmap_font <- function(font) {
+  # Register exact AFMs even when a host has not pre-registered ArialMT.
+  # This also covers ComplexHeatmap's temporary pdf(NULL) measurement devices.
+  .bf_pdf_font_faces(font)
   invisible(font)
+}
+
+bf_pdf_open <- function(path,width_mm,height_mm,font,bg='#FFFFFF') {
+  if(!is.numeric(width_mm)||length(width_mm)!=1||!is.finite(width_mm)||width_mm<=0||
+     !is.numeric(height_mm)||length(height_mm)!=1||!is.finite(height_mm)||height_mm<=0)
+    stop('PDF width_mm and height_mm must be positive finite millimetres')
+  if(!is.character(bg)||length(bg)!=1||!toupper(bg)%in%c('WHITE','#FFFFFF'))stop('PDF background must be opaque white')
+  if(!is.null(path)&&(!is.character(path)||length(path)!=1||!nzchar(path)))stop('PDF path must be one filename or NULL for measurement')
+  faces<-.bf_pdf_font_faces(font)
+  if(!is.null(path))bf_ghostscript_command()
+  grDevices::pdf(file=path,width=width_mm/25.4,height=height_mm/25.4,family=font$family,
+    bg='#FFFFFF',useDingbats=FALSE,paper='special',compress=TRUE)
+  invisible(list(device=grDevices::dev.cur(),font_faces=faces,width_mm=width_mm,height_mm=height_mm))
+}
+
+.bf_gs_run <- function(command,args) {
+  output<-suppressWarnings(system2(command,args=shQuote(args),stdout=TRUE,stderr=TRUE))
+  status<-attr(output,'status');if(is.null(status))status<-0L
+  if(status!=0L)stop(paste('NEEDS_PDF_DEVICE: Ghostscript failed; close the PDF device and verify R_GSCMD/version:',paste(output,collapse='\n')))
+  if(any(grepl("substitut|can't find|cannot find|not found|cannot load|can't load|invalidfont|unknown font|failed to load",output,ignore.case=TRUE)))
+    stop(paste('NEEDS_PDF_FONT: Ghostscript reported font/resource substitution:',paste(output,collapse='\n')))
+  output
+}
+
+.bf_pdf_info <- function(path,command) {
+  # Query the actual PDF interpreter, including embedding flags, rather than
+  # assuming requested device settings survived export. Unsupported GS fails.
+  query<-paste('/BFCtx << >> .PDFInit def BFFile (r) file BFCtx .PDFStream',
+    'BFCtx .PDFInfo (BF_PAGES=) print /NumPages get =',
+    'BFCtx 0 .PDFPageInfoExt dup /MediaBox get (BF_BOX=) print ==',
+    'dup /Fonts known { /Fonts get { (BF_FONT=) print dup /BaseFont get',
+    '256 string cvs print (|) print /Embedded get == } forall } { pop } ifelse',
+    'BFCtx .PDFClose quit')
+  output<-.bf_gs_run(command,c('-q','-dNODISPLAY','-dNOSAFER',paste0('-sBFFile=',path),'-c',query))
+  pages<-output[startsWith(output,'BF_PAGES=')];box<-output[startsWith(output,'BF_BOX=')]
+  if(length(pages)!=1||length(box)!=1)stop('NEEDS_PDF_DEVICE: Ghostscript cannot audit actual PDF pages and font resources')
+  pages<-suppressWarnings(as.integer(sub('BF_PAGES=','',pages,fixed=TRUE)))
+  values<-strsplit(chartr('[]','  ',sub('BF_BOX=','',box,fixed=TRUE)), '[[:space:]]+')[[1]]
+  values<-suppressWarnings(as.numeric(values[nzchar(values)]))
+  if(length(values)!=4||any(!is.finite(values))||length(pages)!=1||is.na(pages))stop('invalid actual PDF page metrics')
+  fonts<-lapply(output[startsWith(output,'BF_FONT=')],function(line) {
+    fields<-strsplit(sub('BF_FONT=','',line,fixed=TRUE),'|',fixed=TRUE)[[1]]
+    if(length(fields)!=2||!fields[2]%in%c('true','false'))stop('invalid actual PDF font embedding audit')
+    list(name=fields[1],embedded=fields[2]=='true')
+  })
+  list(page_count=pages,width_mm=(values[3]-values[1])*25.4/72,
+    height_mm=(values[4]-values[2])*25.4/72,fonts=fonts,inspection_log=output)
+}
+
+bf_pdf_finalize <- function(path,font,width_mm,height_mm) {
+  if(!is.character(path)||length(path)!=1||!file.exists(path))stop('PDF file required; close its device before finalization')
+  if(!is.numeric(width_mm)||length(width_mm)!=1||!is.finite(width_mm)||width_mm<=0||
+     !is.numeric(height_mm)||length(height_mm)!=1||!is.finite(height_mm)||height_mm<=0)
+    stop('PDF width_mm and height_mm must be positive finite millimetres')
+  path<-normalizePath(path,winslash='/',mustWork=TRUE);command<-bf_ghostscript_command()
+  faces<-.bf_pdf_font_faces(font);input_hash<-digest::digest(file=path,algo='sha256')
+  initial<-.bf_pdf_info(path,command)
+  if(initial$page_count!=1)stop('standalone figure PDF must contain exactly one page')
+  # Base R writes whole-point page edges. Only repair that quantization;
+  # never crop an arbitrary input PDF into a different declared figure size.
+  initial_error_pt<-c(width=(initial$width_mm-width_mm)*72/25.4,height=(initial$height_mm-height_mm)*72/25.4)
+  if(any(abs(initial_error_pt)>1.0001))stop('input PDF size differs from requested size beyond base-R whole-point quantization')
+  embedded<-tempfile('bf-embedded-',tmpdir=dirname(path),fileext='.pdf')
+  fontmap<-tempfile('bf-fontmap-',tmpdir=dirname(path))
+  on.exit(unlink(c(embedded,fontmap)),add=TRUE)
+  # Hex strings preserve parentheses, backslashes, Unicode and spaces in paths.
+  hex<-function(value)paste(sprintf('%02x',as.integer(charToRaw(enc2utf8(value)))),collapse='')
+  writeLines(vapply(faces,function(face)paste0('/',face$postscript_name,' <',hex(face$path),'> ;'),character(1)),fontmap,useBytes=TRUE)
+  execution<-.bf_gs_run(command,c('-q','-dNOPAUSE','-dBATCH','-dNOSAFER','-dNOPLATFONTS',
+    '-sDEVICE=pdfwrite','-dAutoRotatePages=/None','-dEmbedAllFonts=true','-dSubsetFonts=true',
+    paste0('-sFONTMAP=',normalizePath(fontmap,winslash='/',mustWork=TRUE)),
+    paste0('-sFONTPATH=',paste(unique(vapply(faces,function(x)dirname(x$path),character(1))),collapse=.Platform$path.sep)),
+    paste0('-dDEVICEWIDTHPOINTS=',format(width_mm*72/25.4,digits=16,scientific=FALSE,trim=TRUE)),
+    paste0('-dDEVICEHEIGHTPOINTS=',format(height_mm*72/25.4,digits=16,scientific=FALSE,trim=TRUE)),'-dFIXEDMEDIA',
+    paste0('-sOutputFile=',embedded),'-c','<< /NeverEmbed [] >> setdistillerparams','-f',path))
+  if(!file.exists(embedded)||file.info(embedded)$size<=0)stop('PDF font embedding produced no artifact')
+  actual<-.bf_pdf_info(normalizePath(embedded,winslash='/',mustWork=TRUE),command)
+  if(actual$page_count!=1)stop('standalone figure PDF must contain exactly one page')
+  # pdfwrite serializes these edges to0.01pt. Bound the error to one half
+  # serialization unit plus0.0001pt for the PDF interpreter's float output.
+  error_pt<-c(width=(actual$width_mm-width_mm)*72/25.4,height=(actual$height_mm-height_mm)*72/25.4)
+  if(any(abs(error_pt)>.0051))stop('actual PDF MediaBox differs beyond half of the0.01pt serialization unit')
+  allowed<-vapply(faces,`[[`,'','postscript_name')
+  if(!length(actual$fonts)||any(!vapply(actual$fonts,function(x)isTRUE(x$embedded),logical(1)))||
+     any(!vapply(actual$fonts,function(x)sub('^[A-Z]{6}[+]','',x$name)%in%allowed,logical(1))))
+    stop('NEEDS_PDF_FONT: every actual PDF font must be an embedded exact Arial/Helvetica face')
+  if(digest::digest(file=path,algo='sha256')!=input_hash)stop('PDF changed during finalization; original file retained')
+  if(!file.copy(embedded,path,overwrite=TRUE))stop('cannot save verified embedded-font PDF')
+  invisible(c(actual,list(path=path,sha256=digest::digest(file=path,algo='sha256'),ghostscript=command,
+    font_faces=faces,mediabox_error_pt=as.list(error_pt),max_mediabox_error_pt=.0051,
+    execution_log=execution,scope='Actual PDF technical audit; separate final visual inspection required.')))
 }
 
 # One call prepares and exports the same object, then binds the result to its inputs.

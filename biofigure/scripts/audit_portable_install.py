@@ -112,7 +112,7 @@ def audit_case(root: Path, case: dict, errors: list[str]) -> dict:
     provenance = file_inside(root, case.get('provenance'), errors, label + ' provenance')
     if provenance:
         try:
-            if not isinstance(json.loads(provenance.read_text()), dict):
+            if not isinstance(json.loads(provenance.read_text(encoding='utf-8')), dict):
                 raise ValueError('object required')
         except (UnicodeError, ValueError):
             errors.append(f'{label}: invalid-provenance')
@@ -140,7 +140,7 @@ def audit_case(root: Path, case: dict, errors: list[str]) -> dict:
         if not material.get('origin'):
             errors.append(f'{label}: missing-origin {relative}')
         if path and material.get('role') == 'code' and path.suffix == '.py':
-            if PARENT_RUNTIME.search(path.read_text()):
+            if PARENT_RUNTIME.search(path.read_text(encoding='utf-8')):
                 errors.append(f'{label}: parent-runtime-dependency {relative}')
     if entry and case['entrypoint'] not in declared:
         errors.append(f'{label}: entrypoint-not-bound')
@@ -196,7 +196,7 @@ def audit(root: Path, *, distribution_root: Path | None = None) -> dict:
     for relative in ('SKILL.md', 'manifest.yaml', 'public-cases.json'):
         file_inside(root, relative, errors, 'skill')
     try:
-        manifest = json.loads((root / 'public-cases.json').read_text())
+        manifest = json.loads((root / 'public-cases.json').read_text(encoding='utf-8'))
     except (OSError, ValueError):
         manifest = {}
         errors.append('manifest: missing-or-invalid-public-cases')
@@ -236,7 +236,7 @@ def audit(root: Path, *, distribution_root: Path | None = None) -> dict:
         if path.relative_to(root).as_posix() not in declared_provenance:
             errors.append(f'manifest: unlisted-public-case {path.relative_to(root)}')
     try:
-        entries = json.loads((root / 'atlas/learned-method-index.json').read_text())['entries']
+        entries = json.loads((root / 'atlas/learned-method-index.json').read_text(encoding='utf-8'))['entries']
         unavailable = [e['method_id'] for e in entries if any(
             not (root / rel).is_file() or not (root / rel).resolve().is_relative_to(root)
             for rel in e.get('mandatory_read_set', []))]
@@ -277,7 +277,7 @@ def main() -> int:
     payload = json.dumps(report, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(payload)
+        args.output.write_text(payload, encoding='utf-8')
         print(json.dumps({k: report.get(k) for k in ('status', 'scope', 'case_counts', 'errors')}, ensure_ascii=False))
     else:
         print(payload, end='')

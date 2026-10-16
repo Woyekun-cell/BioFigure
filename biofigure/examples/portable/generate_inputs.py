@@ -89,8 +89,8 @@ def generate(output_root):
                       'license': 'MIT', 'synthetic': True, 'seed': seed, 'generator': 'examples/portable/generate_inputs.py',
                       'input_sha256': hashlib.sha256(target.read_bytes()).hexdigest(), 'third_party_materials': [],
                       'scope': 'First-party demonstration input; rendering does not imply scientific or visual acceptance.'}
-        (folder / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
-        (folder / 'provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
+        (folder / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
+        (folder / 'provenance.json').write_text(json.dumps(provenance, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

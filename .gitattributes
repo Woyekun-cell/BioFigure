@@ -1,0 +1,21 @@
+# Stable bytes for cross-platform provenance and source/input SHA256 bindings.
+* text=auto eol=lf
+*.R text eol=lf
+*.r text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+*.md text eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.pdf -text
+*.rds -text
+*.RDS -text
+*.h5 -text
+*.hdf5 -text
+*.zip -text
+*.gz -text

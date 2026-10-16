@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "packages": [
+    {
+      "package": "HiCExperiment",
+      "version": "1.13.1",
+      "repository": "https://github.com/js2264/HiCExperiment",
+      "commit": "0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a",
+      "url": "https://codeload.github.com/js2264/HiCExperiment/tar.gz/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a",
+      "sha256": "0d6c4a9601dab63f230f85ab5fe072fb8f7b65d53e4b32c40db5bda1e82f43bd",
+      "bytes": 592486,
+      "license": "MIT",
+      "license_evidence": "https://github.com/js2264/HiCExperiment/blob/0f56f30b12466fd79f3500ebd0e4d7c8aa64a59a/DESCRIPTION",
+      "license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "7203e861179dd5e7d7aa1d3ca45b7b91f7c5e8a86df3cc1a1a7129a2a72a5bc6"
+        },
+        {
+          "name": "LICENSE.md",
+          "sha256": "4d4dea83108977acee2bcb200c4c0ee638471b3127889aa88a11f6915ec98be2"
+        }
+      ],
+      "runtime_only": true,
+      "distribution_boundary": "Downloaded by an explicit dependency install into a selected R library; no author data or source archive is bundled by BioFigure."
+    },
+    {
+      "package": "HiContacts",
+      "version": "1.15.3",
+      "repository": "https://github.com/js2264/HiContacts",
+      "commit": "dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d",
+      "url": "https://codeload.github.com/js2264/HiContacts/tar.gz/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d",
+      "sha256": "fd1161169c37766f49ed1b6109c46c9978093988da09fb0d0cb8b7c9041e2af0",
+      "bytes": 49416,
+      "license": "MIT",
+      "license_evidence": "https://github.com/js2264/HiContacts/blob/dfb588e11e0a76e3f68ba0ed2fca7633848c8d0d/DESCRIPTION",
+      "license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "89a4cacad705e7f4f94e0b877f9c6603309bfc8884657b2ce066ff4a297dc211"
+        },
+        {
+          "name": "LICENSE.md",
+          "sha256": "e6df19c0410e66ba9041d69dca474fad62052718e199e197bafacdf7d5405a80"
+        }
+      ],
+      "runtime_only": true,
+      "distribution_boundary": "Downloaded by an explicit dependency install into a selected R library; no author data or source archive is bundled by BioFigure."
+    }
+  ]
+}
