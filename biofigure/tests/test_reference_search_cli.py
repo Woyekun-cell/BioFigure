@@ -24,7 +24,7 @@ class ReferenceSearchCliTests(unittest.TestCase):
         self.assertTrue(all(x['validation_status'] == 'NOT_VERIFIED' for x in result['results']))
 
     def test_changed_index_invalidates_catalog(self):
-        with tempfile.TemporaryDirectory(dir=ROOT.parent / 'work') as temp:
+        with tempfile.TemporaryDirectory() as temp:
             index, catalog = Path(temp) / 'index.json', Path(temp) / 'catalog.json'
             index.write_text(json.dumps({'entries': [], 'coverage': {}}))
             first = self.m.load_catalog(index_path=index, catalog_path=catalog)

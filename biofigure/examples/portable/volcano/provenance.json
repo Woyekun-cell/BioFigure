@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "volcano",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101604,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "ffef3f4c49f5c87e56dffe8e0f230d2915284b142f3cbd967affa5d70e6b5c79",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

@@ -1,0 +1,766 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-augur-2021",
+  "learned_method_id": "BENCH-subjournal-augur-2021",
+  "title": "Cell type prioritization in single-cell data",
+  "label": "Augur AUC细胞数稳健性曲线、差异表达响应热图与ggplot2细胞类型排序棒棒糖图",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE_WITH_DOCUMENTED_INPUT_AND_CODE_GAPS",
+  "figure_family": "single-cell",
+  "domain": "single-cell",
+  "chart_type": "cell-count robustness curve with uncertainty; AUC response heatmap; two-condition neuronal expression dot plot",
+  "chart_types": [
+    "cell-count robustness curve with uncertainty",
+    "AUC response heatmap",
+    "two-condition neuronal expression dot plot"
+  ],
+  "paper": {
+    "title": "Cell type prioritization in single-cell data",
+    "journal": "Nature Biotechnology",
+    "year": 2021,
+    "doi": "10.1038/s41587-020-0605-1",
+    "url": "https://www.nature.com/articles/s41587-020-0605-1",
+    "online_year": 2020,
+    "official_html_archived": "benchmark/library/single-cell/augur-2021/sources/paper-page.html",
+    "primary_sources": [
+      "https://www.nature.com/articles/s41587-020-0605-1",
+      "https://github.com/neurorestore/Augur"
+    ],
+    "publication_asset_license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY",
+    "online_date": "2020-07-20",
+    "issue_date": "2021-01",
+    "correction": "2020-07-23 PDF ExtendedData1–8 replaced by3–10; official change history archived",
+    "supplementary_software": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/neurorestore/Augur",
+    "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+    "license": "MIT",
+    "source_type": "original publisher computation package + separately pinned current author plotting package"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/DESCRIPTION",
+      "sha256": "2b7b196f93c1f493fbe91466a84f57cd1313a11531f73fa12077d50dee8f2ed4",
+      "bytes": 1278,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/DESCRIPTION",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "DESCRIPTION"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/LICENSE",
+      "sha256": "07fd523a42efd9de7d9cefd7b138db4ca54964c6f1a1c7507ab397fd0ef3b347",
+      "bytes": 1073,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/LICENSE",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "LICENSE"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/calculate_auc.R",
+      "sha256": "e954da8caaafcec10acb1bac4d274f71857ef56536842a48a8d6e3b28174442a",
+      "bytes": 29022,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/calculate_auc.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/calculate_auc.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/calculate_differential_prioritization.R",
+      "sha256": "2c681d543d25451b50554f7245c111ff334bd0d907d33a731e7bb47652282eaf",
+      "bytes": 4623,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/calculate_differential_prioritization.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/calculate_differential_prioritization.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/custom_vfold_cv.R",
+      "sha256": "859fd21f21437d3f2fd6dbfabda15900bbd9c49987c86cc51698580a058fb250",
+      "bytes": 6236,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/custom_vfold_cv.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/custom_vfold_cv.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_differential_prioritization.R",
+      "sha256": "78a4e782941395cb4dbcd6dd2d516151b8b1ad837f11a029357528b6819dc44e",
+      "bytes": 2614,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_differential_prioritization.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_differential_prioritization.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_lollipop.R",
+      "sha256": "f11c3b9d9604f1c378d24ed7f23a01cbb9ea0cdc621ea3dcb5c54f2801c31835",
+      "bytes": 2284,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_lollipop.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_lollipop.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_scatterplot.R",
+      "sha256": "e41462b78877c569126f68d333abcfdeb0d5ddc8f83d47074edce18b2945a17c",
+      "bytes": 3016,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_scatterplot.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_scatterplot.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_umap.R",
+      "sha256": "17268c4c990c52d88e020c3f72d46b73d07ec452f7dc78754fb2649f76b6e78d",
+      "bytes": 8876,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_umap.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_umap.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/sc_sim.R",
+      "sha256": "cc979192dbf36a0c2a0102a42d74bee313614141344527ffb7d1d2a228db897b",
+      "bytes": 893,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/sc_sim.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/sc_sim.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/select_random.R",
+      "sha256": "9f0b2cae4af99403b1993a0843c4a73beaad2ff4aae8eca60c9e3999a053c407",
+      "bytes": 766,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/select_random.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/select_random.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/select_variance.R",
+      "sha256": "edbe0287b7b50d63dc50870a6dbf393a71242a24afd6a1ef65c5919a42583aa6",
+      "bytes": 2807,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/select_variance.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/select_variance.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/README.md",
+      "sha256": "3c6f1b0c54b390461065ec37a57b79c664b6aca88f08a86bf546e6b891477fd7",
+      "bytes": 6477,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/README.md",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "README.md"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/calculate_auc.Rd",
+      "sha256": "6a6d3eeaf1c08ad94b42abac9e03a860e8aa09390dfe80a346445d97cdb135cf",
+      "bytes": 6723,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/calculate_auc.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/calculate_auc.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/calculate_differential_prioritization.Rd",
+      "sha256": "65fa08a7be8f8414620e9b9bc5b22615f96dded14dbcf2592cf69328e2ad4d82",
+      "bytes": 2035,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/calculate_differential_prioritization.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/calculate_differential_prioritization.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/plot_differential_prioritization.Rd",
+      "sha256": "ad56d6a77c1f40b42356c5ee65eb1a4f87e15e9f013b37c5875d33e371734205",
+      "bytes": 796,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/plot_differential_prioritization.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/plot_differential_prioritization.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/plot_lollipop.Rd",
+      "sha256": "cb67202bb1d0e35fcb57efb4a739c37685ba8e888a31f1326292c8c588b6eab8",
+      "bytes": 779,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/plot_lollipop.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/plot_lollipop.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/plot_scatterplot.Rd",
+      "sha256": "bd790f43e98276c9d67c303d4dce835f4f10afa89a607ff2288fb84a33fb4f42",
+      "bytes": 1016,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/plot_scatterplot.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/plot_scatterplot.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/plot_umap.Rd",
+      "sha256": "ae6f3f3a54ce8e7c1acf9cdbece9949011690b365239837e9db08eefd704cf07",
+      "bytes": 2285,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/plot_umap.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/plot_umap.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/sc_sim.Rd",
+      "sha256": "094871f296d47eeca22953b663ecae89397790752e730e5d4f727b44297c8858",
+      "bytes": 1001,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/sc_sim.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/sc_sim.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/select_random.Rd",
+      "sha256": "42f29b87bf638acf760e8b7be46c94e01a34ff443646d9d5ce8a2d09197499c6",
+      "bytes": 680,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/select_random.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/select_random.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/man/select_variance.Rd",
+      "sha256": "f23dc4a3be5ec6050b99f4aadee06a5e7d215ee5c9b2014b13c5ad9721fdcbc4",
+      "bytes": 1100,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/man/select_variance.Rd",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "man/select_variance.Rd"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-repository-commit.json",
+      "sha256": "1064813b0d6f7f26e0ee56563fd2244c0bb2b5346d55e5a1c898c5626f2c24d6",
+      "bytes": 93,
+      "source_url": "https://github.com/neurorestore/Augur/tree/b252b84e4af687d9817813b1db409267eb44ec3f",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/local-checks/check_author_demo.R",
+      "sha256": "c1118fa4fd4a640bad1d33e3013e1c4ef9007d1c72212ff16f326107e2bf99ba",
+      "bytes": 1432,
+      "source_url": "local-derived-nonrender-verification",
+      "role": "local-check-script",
+      "license": "local"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/original-figures/Fig1.png",
+      "sha256": "e1d7523c8e97232256607cd124d84dbc8808e5593e4df146dbbd7b99b0324d88",
+      "bytes": 507771,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_Fig1_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY",
+      "figure": "Fig1",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/original-figures/Fig2.png",
+      "sha256": "cec9b2d305210a66e5445493ade65a4c73445bd91f9418888bb0ae6a03e7930a",
+      "bytes": 1092501,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_Fig2_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY",
+      "figure": "Fig2",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/paper-page.html",
+      "sha256": "bdf139ebb8decf5914bbadac89de634af36a8c1a4665f6184f3bb4ae9304aafe",
+      "bytes": 480525,
+      "source_url": "https://www.nature.com/articles/s41587-020-0605-1",
+      "role": "source-document",
+      "license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/41587_2020_605_MOESM3_ESM.zip",
+      "sha256": "3d7de7638b4d0975c19cad033890a6c6bc71ffc0e75ed553cac811ce800b0770",
+      "bytes": 1338517,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/DESCRIPTION",
+      "sha256": "0dff098860b5922727d31aae44a9fb8ca5e6d03376e86e47d45b5d137de53d74",
+      "bytes": 1117,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/DESCRIPTION",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/calculate_auc.R",
+      "sha256": "513bca6cb9a8cd8f9ec5f3bd1f19b9c77de54fc9f81cc1dce5df45e748c90b74",
+      "bytes": 26120,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/calculate_auc.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/custom_vfold_cv.R",
+      "sha256": "859fd21f21437d3f2fd6dbfabda15900bbd9c49987c86cc51698580a058fb250",
+      "bytes": 6236,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/custom_vfold_cv.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/select_random.R",
+      "sha256": "9f0b2cae4af99403b1993a0843c4a73beaad2ff4aae8eca60c9e3999a053c407",
+      "bytes": 766,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/select_random.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/select_variance.R",
+      "sha256": "edbe0287b7b50d63dc50870a6dbf393a71242a24afd6a1ef65c5919a42583aa6",
+      "bytes": 2807,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/select_variance.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/README.md",
+      "sha256": "69bbeae40f677171766c6a55b2528b14dfaf76eb227595498407009c51492d81",
+      "bytes": 5780,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/README.md",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/data/raw/sc_sim.rda",
+      "sha256": "823dec4d493014d7de70ded0c360038a1b59d4e44b52a1079392b777c39c8c4b",
+      "bytes": 612572,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-demo-data-not-Fig1-grid",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/calculate_auc.R",
+      "sha256": "e954da8caaafcec10acb1bac4d274f71857ef56536842a48a8d6e3b28174442a",
+      "bytes": 29022,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/calculate_auc.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/calculate_auc.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/calculate_differential_prioritization.R",
+      "sha256": "2c681d543d25451b50554f7245c111ff334bd0d907d33a731e7bb47652282eaf",
+      "bytes": 4623,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/calculate_differential_prioritization.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/calculate_differential_prioritization.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/custom_vfold_cv.R",
+      "sha256": "859fd21f21437d3f2fd6dbfabda15900bbd9c49987c86cc51698580a058fb250",
+      "bytes": 6236,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/custom_vfold_cv.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/custom_vfold_cv.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_differential_prioritization.R",
+      "sha256": "78a4e782941395cb4dbcd6dd2d516151b8b1ad837f11a029357528b6819dc44e",
+      "bytes": 2614,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_differential_prioritization.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_differential_prioritization.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_lollipop.R",
+      "sha256": "f11c3b9d9604f1c378d24ed7f23a01cbb9ea0cdc621ea3dcb5c54f2801c31835",
+      "bytes": 2284,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_lollipop.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_lollipop.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_scatterplot.R",
+      "sha256": "e41462b78877c569126f68d333abcfdeb0d5ddc8f83d47074edce18b2945a17c",
+      "bytes": 3016,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_scatterplot.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_scatterplot.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_umap.R",
+      "sha256": "17268c4c990c52d88e020c3f72d46b73d07ec452f7dc78754fb2649f76b6e78d",
+      "bytes": 8876,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/plot_umap.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/plot_umap.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/sc_sim.R",
+      "sha256": "cc979192dbf36a0c2a0102a42d74bee313614141344527ffb7d1d2a228db897b",
+      "bytes": 893,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/sc_sim.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/sc_sim.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/select_random.R",
+      "sha256": "9f0b2cae4af99403b1993a0843c4a73beaad2ff4aae8eca60c9e3999a053c407",
+      "bytes": 766,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/select_random.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/select_random.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/author-code/R/select_variance.R",
+      "sha256": "edbe0287b7b50d63dc50870a6dbf393a71242a24afd6a1ef65c5919a42583aa6",
+      "bytes": 2807,
+      "source_url": "https://raw.githubusercontent.com/neurorestore/Augur/b252b84e4af687d9817813b1db409267eb44ec3f/R/select_variance.R",
+      "role": "current-author-package-code",
+      "license": "MIT",
+      "commit": "b252b84e4af687d9817813b1db409267eb44ec3f",
+      "repository_path": "R/select_variance.R"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/calculate_auc.R",
+      "sha256": "513bca6cb9a8cd8f9ec5f3bd1f19b9c77de54fc9f81cc1dce5df45e748c90b74",
+      "bytes": 26120,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/calculate_auc.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/custom_vfold_cv.R",
+      "sha256": "859fd21f21437d3f2fd6dbfabda15900bbd9c49987c86cc51698580a058fb250",
+      "bytes": 6236,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/custom_vfold_cv.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/select_random.R",
+      "sha256": "9f0b2cae4af99403b1993a0843c4a73beaad2ff4aae8eca60c9e3999a053c407",
+      "bytes": 766,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/select_random.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/select_variance.R",
+      "sha256": "edbe0287b7b50d63dc50870a6dbf393a71242a24afd6a1ef65c5919a42583aa6",
+      "bytes": 2807,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_MOESM3_ESM.zip",
+      "role": "original-publisher-software",
+      "license": "MIT_DECLARED_IN_PACKAGE_DESCRIPTION",
+      "archive_member": "Supplementary Software 1/Augur/R/select_variance.R",
+      "embedded_commit": "12af771e3301b3af251b0320cde7961ee18c0565"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/original-figures/Fig1.png",
+      "sha256": "e1d7523c8e97232256607cd124d84dbc8808e5593e4df146dbbd7b99b0324d88",
+      "bytes": 507771,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_Fig1_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY",
+      "figure": "Fig1",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/sources/original-figures/Fig2.png",
+      "sha256": "cec9b2d305210a66e5445493ade65a4c73445bd91f9418888bb0ae6a03e7930a",
+      "bytes": 1092501,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-020-0605-1/MediaObjects/41587_2020_605_Fig2_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "NATURE_SUBSCRIPTION_PREVIEW_LOCAL_REFERENCE_ONLY",
+      "figure": "Fig2",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig1b",
+      "chart_type": "cell-count robustness curve with uncertainty",
+      "observed": true,
+      "color": "red Augur; gray naive random forest",
+      "values": "x number of cells; y classification AUC; points/vertical ranges and fitted trends compare subsampling sensitivity",
+      "axes": "cells~100-1000; AUC~0.6-1.0",
+      "order": "ascending number of cells",
+      "density": "two methods over roughly10 cell-count levels; error bars around each point",
+      "typography": "bold b; compact top legend; axis labels largest data text",
+      "legend": "method identities above plot; no quantitative colorbar",
+      "layers": "grid below faint gray fit ribbon and dashed trend; colored points/error ranges above",
+      "source_locator": "publisher SupplementarySoftware1 calculate_auc.R121-140,339-390,436-438,626-633 for AUC computation; exact Fig1b plotting script not found",
+      "pairing": "COMPUTATION_ONLY_ORIGINAL_PACKAGE; FIGURE_PLOTTING_CODE_GAP"
+    },
+    {
+      "panel": "Fig1d",
+      "chart_type": "AUC response heatmap",
+      "observed": true,
+      "color": "purple-low to pale-yellow-high sequential AUC, approximately0.5-0.9",
+      "values": "x simulated fraction DE genes0-100%; y DE effect size0.1-1.0; heat color AUC; simulation populations n=200 per paper caption",
+      "axes": "DE fraction ascending left to right; effect size increasing bottom to top",
+      "order": "numeric grid, not clustered",
+      "density": "10 effect sizes by11 DE fractions visible; fine labels rotated45deg",
+      "typography": "bold d; axis titles/legend title clear, ticks smaller; no cell text",
+      "legend": "continuous AUC bar at right",
+      "layers": "rectangular tiles above white background; legend separate",
+      "source_locator": "publisher calculate_auc.R provides classifier metric only; original simulation grid and exact ggplot heatmap script not supplied in ZIP/current package",
+      "pairing": "COMPUTATION_ONLY_ORIGINAL_PACKAGE; SIMULATION_AND_PLOTTING_CODE_GAP"
+    },
+    {
+      "panel": "Fig2h",
+      "chart_type": "two-condition neuronal expression dot plot",
+      "observed": true,
+      "color": "gray Paralyzed and blue TESS intensity encodes expression; size percentage cells",
+      "values": "gene expression support for prioritized neuron subsets; not AUC nor animal effect estimate",
+      "axes": "rows7 cell subtypes; columns Paralyzed,TESS",
+      "order": "rows V1/V2b/Nxph1,V1/V2b/Tenm2,Spp1,V2a/Etl4,V1/V2b/Stmn3,V1/Adam23,V1/V2b/Slit2",
+      "density": "7x2 sparse grid",
+      "typography": "row subtype labels; angled condition names; dual legends above",
+      "legend": "two expression ramps gray/blue plus percentage size0,2,4",
+      "layers": "points on a fixed small grid; dual legends outside",
+      "source_locator": "original Fig2 actually viewed; plot source not found in Augur software package",
+      "pairing": "FIGURE_ONLY; INPUT_AND_PLOTTING_CODE_GAP"
+    }
+  ],
+  "input_contract": {
+    "unit": "cells are classifier CV rows; animal/sample identifiers required separately for biological generalization",
+    "fields": [
+      "features×cells preprocessed matrix",
+      "metadata label",
+      "metadata cell_type",
+      "optional independent sample/animal ID for a separately designed grouped validation",
+      "AUC output cell_type,auc",
+      "differential output auc.x,auc.y,pval,z"
+    ],
+    "preprocessing": "prepared cell annotations/features; default50 subsamples,20 cells per label,3-fold stratified cell CV;variance feature selection quantile0.5 then feature_perc0.5;RF100 trees,mtry2",
+    "seed": "set.seed(subsample_idx) inside each subsample; RF engine seed1; cell CV does not group by animal; no classifier trained here"
+  },
+  "packages_by_role": {
+    "scientific_computation": [
+      "Augur",
+      "parsnip",
+      "rsample",
+      "yardstick",
+      "randomForest/ranger"
+    ],
+    "rendering": [
+      "ggplot2",
+      "ggrepel",
+      "pals"
+    ]
+  },
+  "gaps": [
+    "Publisher software is original computation R package, not the full manuscript figure analysis repository; Fig1b/d simulation tables and exact plotting scripts were not located.",
+    "Current lollipop/differential plotting functions are a separate evidence tier; ED7b pointer does not establish exact pairing with selected main-figure panels.",
+    "Supplement sc_sim is a small demonstration dataset, not the Fig1b/d simulation grid. It has positional metadata1..600 versus expression names Cell*_1; original row correspondence cannot be proved from matching IDs.",
+    "Legacy Seurat object has no images slot under the installed Seurat; direct slots can be inspected but dim(sc_sim) fails. No object upgrade or original bytes modification performed.",
+    "Cross-validation splits cells stratified by label, no animal holdout. AUC is separability/priority, not animal-level effect size or causality.",
+    "23July2020 correction concerns PDF ExtendedData1–8 being replaced by3–10; use corrected main figures and verify ED numbering before future ED7b pairing.",
+    "No original full-figure reproduction,render,transfer,stress test or user acceptance."
+  ],
+  "nonrender_checks": {
+    "path": "benchmark/library/single-cell/augur-2021/data/metadata/nonrender-checks.json",
+    "sha256": "eb966b77bdcd81c4d33cf8674243c6d244c49f2d96e569e6551268bdac3ca758"
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "source method retrieval",
+      "source-code inspection",
+      "input-contract design",
+      "panel grammar comparison"
+    ],
+    "not_verified": [
+      "original_full_figure_reproduction",
+      "new_input_transfer",
+      "stress_test",
+      "user_acceptance"
+    ],
+    "rendering_run": false,
+    "registration": "candidate only; root merges registry"
+  },
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_RUN",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_workflow_run": false
+  },
+  "method_reference": {
+    "path": "benchmark/library/single-cell/augur-2021/learning.md",
+    "sha256": "e9c2458ce254d3ed15aad59cfc2dd1bce69e6058341f6f125b2661940b3ef5ed"
+  },
+  "r_functions": [
+    {
+      "function_name": "calculate_auc",
+      "role": "cell-type-specific repeated-subsampling classifier and mean CV AUC",
+      "source": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/calculate_auc.R",
+      "lines": [
+        121,
+        649
+      ]
+    },
+    {
+      "function_name": "plot_lollipop",
+      "role": "rank auc by reorder(cell_type,auc), baseline0.5, labels3digits, flipped coordinates; current function docs explicitly point to ED7b, not Fig1b/d",
+      "source": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_lollipop.R",
+      "lines": [
+        20,
+        57
+      ]
+    },
+    {
+      "function_name": "plot_differential_prioritization",
+      "role": "auc.x versus auc.y with pval<0.05 and sign(z), dotted equality line; current package only, not asserted source for selected panels",
+      "source": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_differential_prioritization.R",
+      "lines": [
+        23,
+        64
+      ]
+    }
+  ],
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [
+    {
+      "function_name": "calculate_auc",
+      "role": "cell-type-specific repeated-subsampling classifier and mean CV AUC",
+      "source": "benchmark/library/single-cell/augur-2021/sources/publisher-supplement/paper-version-code/R/calculate_auc.R",
+      "lines": [
+        121,
+        649
+      ]
+    },
+    {
+      "function_name": "plot_lollipop",
+      "role": "rank auc by reorder(cell_type,auc), baseline0.5, labels3digits, flipped coordinates; current function docs explicitly point to ED7b, not Fig1b/d",
+      "source": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_lollipop.R",
+      "lines": [
+        20,
+        57
+      ]
+    },
+    {
+      "function_name": "plot_differential_prioritization",
+      "role": "auc.x versus auc.y with pval<0.05 and sign(z), dotted equality line; current package only, not asserted source for selected panels",
+      "source": "benchmark/library/single-cell/augur-2021/sources/author-code/R/plot_differential_prioritization.R",
+      "lines": [
+        23,
+        64
+      ]
+    }
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/single-cell/augur-2021/data/metadata/paper-source.json",
+      "sha256": "72a0c846bf403f78894055b0f1796247cb89e0fc7a5d3507365a035fcb8b1d06",
+      "bytes": 878,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/data/metadata/source-manifest.json",
+      "sha256": "fab43c16e5a6438c8590f9f33181fe41c42883813fa517faeb6e44cb2c5681bc",
+      "bytes": 19068,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/data/metadata/code-figure-mapping.json",
+      "sha256": "3b5a69748020647cdadfa72931da4248d091497465dec2d032bdad804672cf70",
+      "bytes": 6312,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/augur-2021/data/metadata/nonrender-checks.json",
+      "sha256": "eb966b77bdcd81c4d33cf8674243c6d244c49f2d96e569e6551268bdac3ca758",
+      "bytes": 1168,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "Augur",
+    "AUC",
+    "robustness curve",
+    "heatmap",
+    "lollipop",
+    "single-cell"
+  ]
+}

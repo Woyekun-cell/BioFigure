@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "case_id": "bubble",
+  "synthetic": true,
+  "seed": 2026101603,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic group summary",
+  "comparison": null,
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "groups": [
+    "Type_1",
+    "Type_2",
+    "Type_3",
+    "Type_4"
+  ],
+  "units": {
+    "Average": "arbitrary units",
+    "Fraction": "percentage from 0 to 100"
+  },
+  "generation": "Deterministic marker preference plus uniform noise; summaries are not reconstructed cell-level measurements.",
+  "statistics": "Descriptive summaries only; cell fractions do not establish cell abundance."
+}

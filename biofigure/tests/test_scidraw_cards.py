@@ -33,5 +33,6 @@ class CardTests(unittest.TestCase):
   skill=(root/'SKILL.md').read_text()
   self.assertIn('references/figure-execution-gates.md',skill)
   gates=(root/'references/figure-execution-gates.md').read_text()
-  self.assertIn('读图门，未通过禁止写绘图代码',gates)
+  self.assertIn('设计门，未通过禁止写绘图代码',gates)
+  self.assertIn('来源模式还须打开原尺寸参考',gates)
 if __name__=='__main__':unittest.main()

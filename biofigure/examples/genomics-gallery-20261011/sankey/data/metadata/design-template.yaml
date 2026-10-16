@@ -63,7 +63,7 @@ reference_evidence:
   - 27 uninterrupted matched-feature paths
   - direct state/count labels inside strata
   - common feature-count vertical scale
-  - outside stage headings and simulation caption
+  - outside stage headings
   transfer_decisions:
   - native ggalluvial uninterrupted paths, conserved1800 counts, explicit stage order
   rejected_elements:
@@ -77,7 +77,7 @@ reference_evidence:
     source_record_sha256: FRESH_REQUIRED
     read_hashes: {}
     opened_source_asset:
-      path: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+      path: examples/genomics-gallery-20261011/sankey/sources/own-reference-20261011.pdf
       sha256: 56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1
       original_size_viewed: true
       scope: Current own published figure PDF, not original publication reference.
@@ -132,8 +132,8 @@ reference_analysis:
     data_mapping: sourceID paths and integer feature counts
     required: true
   - id: e5
-    role: outside stage headings and simulation caption
-    geometry: outside stage headings and simulation caption
+    role: outside stage headings
+    geometry: outside stage headings
     position: 3 native modality strata with outside captions
     data_mapping: sourceID paths and integer feature counts
     required: true
@@ -166,7 +166,7 @@ reference_analysis:
   - 27 uninterrupted matched-feature paths
   - direct state/count labels inside strata
   - common feature-count vertical scale
-  - outside stage headings and simulation caption
+  - outside stage headings
   forbidden_substitutions:
   - flows without count conservation
   - causal interpretation
@@ -174,7 +174,7 @@ reference_analysis:
 visual_hierarchy:
   primary: count-scaled3stage paths
   secondary: state names and direct counts
-  tertiary: modality headings and simulation caption
+  tertiary: modality headings
 encoding:
   position: ordered modality and state strata
   width: integer matched-feature count
@@ -222,7 +222,7 @@ renderer:
     native stacking and direct center labels
 output_size:
   width_mm: 136
-  height_mm: 115
+  height_mm: 100
   size_class: one-and-half-column
   size_basis: final_physical_output
   formats:
@@ -232,26 +232,25 @@ output_size:
   size_rationale:
     panel_count: 1
     density: medium
-    longest_label_chars: 39
+    longest_label_chars: 17
     recommended_class: one-and-half-column
     selection_reason: 27 curves and9 directly labeled strata across3 stages fit136mm
       with8pt labels
     override_basis: none
 layout_contract:
-  canvas: 136x115mm white
-  data_bbox: x8,y15,w120,h83mm;shared1800 count scale
-  annotation_bbox: headings y8..13;footer y101..109; native node labels inside node
-    bands
+  canvas: 136x100mm white
+  data_bbox: x8,y2,w120,h83mm;shared1800 count scale
+  annotation_bbox: headings y88..96; native node labels inside node bands; explanatory caption outside figure
   legend_bbox: direct labels, no detached legend
   label_reserve: 8pt labels; node counts minimum470 so each node>17mm tall
   collision_policy: fail_and_redraw
   text_extent_method: Arial grid/systemfonts physicalmm metrics and actual PDF metadata
-  preflight_collision_check: exclusive data/headings/footer envelopes before render;
+  preflight_collision_check: exclusive data/headings envelopes before render;
     actual native strata text widths/heights checked
   coordinate_policy: DNA RNA Protein fixed;Low Neutral High state order fixed
 font_contract:
   family: Arial
-  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  resolved_font_file: runtime exact Arial resolution by bf_font and systemfonts; actual file recorded in the current render receipt
   fallback_policy: fail
   warning_policy: fail
   all_layers_inherit_policy: fail_if_any_layer_unverified
@@ -266,14 +265,14 @@ font_contract:
     annotation_text: 8
     panel_label: 8.5
 design_target:
-  reference: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+  reference: examples/genomics-gallery-20261011/sankey/sources/own-reference-20261011.pdf
   reference_opened: true
   hierarchy:
     observation: Three-stage native Sankey width encoding; historical output labels
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
   geometry:
@@ -281,7 +280,7 @@ design_target:
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
   palette:
@@ -289,7 +288,7 @@ design_target:
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
   typography:
@@ -297,7 +296,7 @@ design_target:
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
   marks:
@@ -305,7 +304,7 @@ design_target:
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
   annotation:
@@ -313,7 +312,7 @@ design_target:
       cross right ribbons and leaves oversized white margins
     implementation: 3equal modality columns,27 uninterrupted count-scaled paths,9
       explicitly ordered states,blue/teal/ochre palette,outlined nodes,8pt direct
-      names/counts,136x115mm with outside headings/footer
+      names/counts,136x100mm with outside headings; explanatory caption outside figure
     difference_reason: Public plotting-table native replay of the current BioFigure
       layout; not original paper-data/full-figure fidelity or new-input qualification.
 text_contract:
@@ -330,9 +329,6 @@ text_contract:
   - Down
   - Stable
   - Up
-  - Simulated matched features (n = 1,800)
-  - Band width = number of matched features
-  - Flows colored by DNA starting state
   - n = 512
   - n = 799
   - n = 489
@@ -360,7 +356,7 @@ critic_targets:
 statistics_required: false
 source_density_contract:
   source_asset:
-    path: examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf
+    path: examples/genomics-gallery-20261011/sankey/sources/own-reference-20261011.pdf
     sha256: 56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1
   source_observation: 'Own historical3stage output: right node names across ribbon
     bands, excessive right/bottom whitespace'

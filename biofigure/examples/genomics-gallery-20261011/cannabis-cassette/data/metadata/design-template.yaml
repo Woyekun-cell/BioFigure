@@ -71,7 +71,7 @@ reference_evidence:
   learned_source_reference:
     method_id: BENCH-genomics-cannabis-busco-chr7-2025
     opened_source_asset:
-      path: docs/assets/genomics-gallery-20261011/cannabis-cassette.png
+      path: examples/genomics-gallery-20261011/cannabis-cassette/sources/own-reference.png
       sha256: 8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514
       original_size_viewed: true
   learned_method_reuse:
@@ -363,7 +363,6 @@ text_contract:
   - Chemotype III
   - Chemotype IV
   - BUSCO:127689at71240
-  - Fig.4d | Author data
   - '0'
   - '1'
   - '2'

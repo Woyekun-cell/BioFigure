@@ -40,7 +40,7 @@
 
 ## BF-0109 · DNA–RNA–Protein 状态桑基图
 
-图型：桑基图。明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。
+图型：桑基图。明确模拟1800个匹配特征、27条完整路径；原生ggalluvial，9节点计数守恒。本轮移除图内方法/模拟脚注，说明在图外；仅固定模拟输入与当前版式复核。
 
 ![BF-0109 DNA–RNA–Protein 状态桑基图](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png)
 

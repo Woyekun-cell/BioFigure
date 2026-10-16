@@ -1,4 +1,4 @@
-version: 3.7.1
+version: 3.8.0
 architecture: reference-guided-biological-figure-designer
 runtime_dependencies:
   python: requirements.txt
@@ -8,7 +8,7 @@ execution_profiles:
     planner: scripts/plan_figure_method.py
     contracts: atlas/family-execution-contracts.yaml
     pangenome_planner: scripts/plan_pangenome_figure.py
-    pangenome_contracts: library/pangenome/tomato-superpangenome/data/metadata/paradigms.json
+    pangenome_contracts: static/core/pangenome-paradigms.json
     policy: same_evidence_gates_as_all_other_modes
 reference_discovery:
   entry: scripts/find_figure_reference.py
@@ -25,8 +25,10 @@ reference_discovery:
     registered_adapter: references/stable-template-reuse.md
   policy: discovery_first_selected_id_then_full_evidence_and_unchanged_CP2
 common_dynamic_load:
+- references/reference-modes.md
 - references/enforced-execution.md
 - references/visual-design-synthesis.md
+- references/mark-opacity.md
 - references/figure-execution-gates.md
 - references/benchmark-protocol.md
 - static/core/execution-contract.yaml
@@ -72,6 +74,9 @@ routing_axes:
     values:
       quick-png:
       - png
+      paper-pdf:
+      - pdf
+      - png
       paper-composite:
       - pdf
       - svg
@@ -90,6 +95,10 @@ specialty_critics:
   phylogeny-synteny-gene-family: critics/genome.md
   schematic-mechanism: critics/mechanism.md
 reference_evidence_layers:
+  mark_style_study:
+    corpus: atlas/mark-opacity-study-20261013.json
+    load: [references/mark-opacity.md, references/mark-opacity-sources.md]
+    policy: visual_grammar_and_separately_bound_author_code_not_figure_reproduction
   unified_capability_graph:
     graph: atlas/unified-capability-graph.json
     retriever: scripts/retrieve_capabilities.py

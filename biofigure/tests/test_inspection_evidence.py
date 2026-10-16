@@ -16,7 +16,7 @@ class InspectionEvidenceTests(unittest.TestCase):
             key: {'status': status, 'evidence': f'{key} checked on final-size PNG', 'colored_data_marks': True}
             for key in ('typography_size', 'typography_position', 'label_overlap',
                         'legend_overlap', 'clipping', 'panel_alignment',
-                        'figure_text_proportion', 'semantic_color')
+                        'figure_text_proportion', 'semantic_color', 'footer_absent')
         }}
 
     def test_monochrome_or_unchecked_color_cannot_receive_visual_pass(self):
@@ -38,6 +38,15 @@ class InspectionEvidenceTests(unittest.TestCase):
         errors = module.validate_inspection_evidence({})
         for phrase in ('first_render', 'target_size', 'reviewer_type', 'defect_coordinates', 'artifact_sha256'):
             self.assertTrue(any(phrase in error for error in errors), phrase)
+    def test_visual_pass_requires_an_actual_no_footer_observation(self):
+        evidence = {'artifact_sha256':'a'*64,'first_render_sha256':'a'*64,
+                    'artifact_path':'/tmp/final.png','first_render_path':'/tmp/final.png',
+                    'target_size':{'width_mm':90,'height_mm':70},'reviewer_type':'model',
+                    'reviewer_id':'reviewer-01','judgment':'PASS','defect_coordinates':[],
+                    'viewer_method':'direct-open','revision_count':0,
+                    'final_size_checks':self.final_size_checks()}
+        evidence['final_size_checks']['checks'].pop('footer_absent',None)
+        self.assertTrue(any('footer_absent' in error for error in module.validate_inspection_evidence(evidence)))
 
     def test_visual_pass_requires_named_human_or_model_reviewer_and_structured_coordinates(self):
         valid = {'artifact_sha256':'a'*64,'first_render_sha256':'b'*64,

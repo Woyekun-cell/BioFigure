@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "heatmap",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101601,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "952947180ada5699e0ceafe7516d292056a38f714a804458621c3f1f1f6c0db9",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-cellrank-2022",
+  "learned_method_id": "BENCH-subjournal-cellrank-2022",
+  "title": "CellRank for directed single-cell fate mapping",
+  "label": "CellRank 命运概率环形投影、伪时间概率散点与Scanpy标记基因气泡图",
+  "status": "PARTIAL_AUTHOR_METHOD_REANALYSIS_AND_FIXED_INPUT_RENDER_VERIFIED_WITH_SOURCE_DIFFERENCES",
+  "figure_family": "single-cell",
+  "domain": "single-cell",
+  "chart_type": "circular fate-probability projection; pseudotime versus fate-probability scatter with stage thresholds; 3 by 3 gene expression dot plot",
+  "chart_types": [
+    "circular fate-probability projection",
+    "pseudotime versus fate-probability scatter with stage thresholds",
+    "3 by 3 gene expression dot plot"
+  ],
+  "paper": {
+    "title": "CellRank for directed single-cell fate mapping",
+    "journal": "Nature Methods",
+    "year": 2022,
+    "doi": "10.1038/s41592-021-01346-6",
+    "url": "https://www.nature.com/articles/s41592-021-01346-6",
+    "online_year": 2022,
+    "official_html_archived": "benchmark/library/single-cell/cellrank-2022/sources/paper-page.html",
+    "primary_sources": [
+      "https://www.nature.com/articles/s41592-021-01346-6",
+      "https://github.com/theislab/cellrank_reproducibility"
+    ],
+    "publication_asset_license": "CC-BY-4.0",
+    "issue_date": "2022-02",
+    "online_date": "2022-01-13"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/theislab/cellrank_reproducibility",
+    "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+    "license": "BSD-3-Clause",
+    "source_type": "original author paper analysis"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/LICENSE",
+      "sha256": "0fb6ca72234706d67b966ac1e6e11ee5c4b66e97f7130461ffb9cb94c2b591de",
+      "bytes": 1517,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/LICENSE",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "LICENSE"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/README.rst",
+      "sha256": "532295c8db1aacae2d48bcb0300f661eb91a4a29237c11e96eabdc9e29b91553",
+      "bytes": 12292,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/README.rst",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "README.rst"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/data/benchmarking/robustness_analysis/one_sided.csv",
+      "sha256": "22d574821a3f73ea9b7fbf0814496fd9d3412a2e2c5d0e9ba6048f597b6f40f4",
+      "bytes": 788,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/data/benchmarking/robustness_analysis/one_sided.csv",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "data/benchmarking/robustness_analysis/one_sided.csv"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/data/benchmarking/robustness_analysis/two_sided.csv",
+      "sha256": "85de786eb0c719c1244d7bda0f653aed9a9a1644835e5d9c76b111105511c88d",
+      "bytes": 733,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/data/benchmarking/robustness_analysis/two_sided.csv",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "data/benchmarking/robustness_analysis/two_sided.csv"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/data/benchmarking_results/suppl_tab_time_benchmark/statistics.csv",
+      "sha256": "f69c1d282d7006989ae4ea614d99207cb494fb5556efb524ea71e26137cf475b",
+      "bytes": 947,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/data/benchmarking_results/suppl_tab_time_benchmark/statistics.csv",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "data/benchmarking_results/suppl_tab_time_benchmark/statistics.csv"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb",
+      "sha256": "c0a505478c06f4057700e903476fb0d728276d37d666acd252ee879f3849e1bd",
+      "bytes": 398920,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb",
+      "sha256": "e16ef2ad77305cf3a748bc40294b700c508c7b098cdb2b5211466d55b862d0bb",
+      "bytes": 8219266,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-repository-commit.json",
+      "sha256": "bc59426a40abdbb1fac91d5279b190112411e187e640d6649b4bd7eb79b21647",
+      "bytes": 5767,
+      "source_url": "https://github.com/theislab/cellrank_reproducibility/tree/c1b9232caacd15fdd16914007fab4890b136109f",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-repository-repo.json",
+      "sha256": "441194abee910909a1aac0b27a7afc35e80b9a2cd2b1b63457a456fd0a2ebc18",
+      "bytes": 7645,
+      "source_url": "https://github.com/theislab/cellrank_reproducibility/tree/c1b9232caacd15fdd16914007fab4890b136109f",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-repository-tree.json",
+      "sha256": "2fd02534cfd6ad81bf45690ca0dedbf97b54e07bce63a81444d8cee6fb4579d7",
+      "bytes": 80218,
+      "source_url": "https://github.com/theislab/cellrank_reproducibility/tree/c1b9232caacd15fdd16914007fab4890b136109f",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/LICENSE",
+      "sha256": "a9659c7acf5b5b67d37ddcb70ada3df510b6f084e30755478bbaf9edaa9166d4",
+      "bytes": 1517,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/LICENSE",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "LICENSE"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/docs/api/plotting.md",
+      "sha256": "168af18155d11cbf2866d715150e31c24df7cd5da36dc129b2be2c4cc6707a09",
+      "bytes": 455,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/docs/api/plotting.md",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "docs/api/plotting.md"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/docs/release_notes.md",
+      "sha256": "10bd94b533dfd54f1a4b85750065a672651ec4fc17185329171524d0e73c1296",
+      "bytes": 128,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/docs/release_notes.md",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "docs/release_notes.md"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/pyproject.toml",
+      "sha256": "cbac8792f41f8bd749f97e388a5205900247eb384cf929fc48c1a2a594719108",
+      "bytes": 6793,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/pyproject.toml",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "pyproject.toml"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/src/cellrank/pl/_circular_projection.py",
+      "sha256": "e257499e231858a71f186af7e2a837fe294541ac5d4caacb6156469542709192",
+      "bytes": 12407,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/src/cellrank/pl/_circular_projection.py",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "src/cellrank/pl/_circular_projection.py"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/local-checks/check_author_tables.py",
+      "sha256": "ce7a9d0fab3e8ae41a679df2eca60432551b4b05f914cfc63c74afdacf6ba45b",
+      "bytes": 418,
+      "source_url": "local-derived-nonrender-verification",
+      "role": "local-check-script",
+      "license": "local"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/original-figures/Fig6.png",
+      "sha256": "b69331fd8cc0c31168a321c6d8c9c0afe357392905a1d6b08296728919fd7e91",
+      "bytes": 1163834,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01346-6/MediaObjects/41592_2021_1346_Fig6_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "CC-BY-4.0",
+      "figure": "Fig6",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/paper-page.html",
+      "sha256": "c47b45391f4ba41d5a9c417cfa1ba2bdbb952496395b2e39d8ccb623f1844eb5",
+      "bytes": 799461,
+      "source_url": "https://www.nature.com/articles/s41592-021-01346-6",
+      "role": "source-document",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/raw/one_sided.csv",
+      "sha256": "22d574821a3f73ea9b7fbf0814496fd9d3412a2e2c5d0e9ba6048f597b6f40f4",
+      "bytes": 788,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/data/benchmarking/robustness_analysis/one_sided.csv",
+      "role": "author-processed-robustness-table-not-Fig6-input",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/raw/two_sided.csv",
+      "sha256": "85de786eb0c719c1244d7bda0f653aed9a9a1644835e5d9c76b111105511c88d",
+      "bytes": 733,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/data/benchmarking/robustness_analysis/two_sided.csv",
+      "role": "author-processed-robustness-table-not-Fig6-input",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/raw/lung.h5ad",
+      "sha256": "773bd90b17b103e1168e46aa5dab0e00df59cb6903d600ceae0043d73035c3a4",
+      "bytes": 172284906,
+      "role": "original deposited raw AnnData",
+      "source_url": "https://ndownloader.figshare.com/files/25038224",
+      "license": "public deposited study input"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/original-figures/paper.pdf",
+      "sha256": "86be2de60ecd0d2a66647e5dd886f986da596e1da0237f635b390170de6d813e",
+      "bytes": 11086018,
+      "role": "official full paper",
+      "source_url": "https://www.nature.com/articles/s41592-021-01346-6.pdf",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb",
+      "sha256": "c0a505478c06f4057700e903476fb0d728276d37d666acd252ee879f3849e1bd",
+      "bytes": 398920,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "notebooks/compute_time_benchmark/MK_2020-10-16_compute_time_benchmark.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/author-code/notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb",
+      "sha256": "e16ef2ad77305cf3a748bc40294b700c508c7b098cdb2b5211466d55b862d0bb",
+      "bytes": 8219266,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank_reproducibility/c1b9232caacd15fdd16914007fab4890b136109f/notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb",
+      "role": "original-author-analysis-code",
+      "license": "BSD-3-Clause",
+      "commit": "c1b9232caacd15fdd16914007fab4890b136109f",
+      "repository_path": "notebooks/fig_6_lung/ML_2021-09-24_fig_6_lung.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/current-package/src/cellrank/pl/_circular_projection.py",
+      "sha256": "e257499e231858a71f186af7e2a837fe294541ac5d4caacb6156469542709192",
+      "bytes": 12407,
+      "source_url": "https://raw.githubusercontent.com/theislab/cellrank/d7821af1ff2665712b8329f0752580342abf93e4/src/cellrank/pl/_circular_projection.py",
+      "role": "current-package-not-original-paper-script",
+      "license": "BSD-3-Clause",
+      "commit": "d7821af1ff2665712b8329f0752580342abf93e4",
+      "repository_path": "src/cellrank/pl/_circular_projection.py"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/sources/original-figures/Fig6.png",
+      "sha256": "b69331fd8cc0c31168a321c6d8c9c0afe357392905a1d6b08296728919fd7e91",
+      "bytes": 1163834,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01346-6/MediaObjects/41592_2021_1346_Fig6_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "CC-BY-4.0",
+      "figure": "Fig6",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "PARTIAL_SELECTED_COMPONENTS_REVIEWED_WITH_DIFFERENCES"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig6c",
+      "chart_type": "circular fate-probability projection",
+      "observed": true,
+      "color": "cell-type categories; Basal blue, Goblet orange, club/MHC-II categories distinct colors",
+      "values": "each point is a cell; projection uses normalize_by_mean=True for nine terminal fate probabilities. Current pinned implementation divides lineage columns by their means then renormalizes each row before summing circle-anchor weights; not raw transcriptomic distance or unadjusted probability geometry",
+      "axes": "no Cartesian biological axis; terminal names around a circle",
+      "order": "terminal-state order around circumference is package controlled; notebook does not supply an explicit order",
+      "density": "up to 24,882 cells; overplotting and terminal-label collision must be checked at final size",
+      "typography": "bold c; normal terminal-state labels rotated around circumference; small boxed i/ii/iii annotations are manuscript assembly",
+      "legend": "categorical colors follow Fig6a annotations; terminal labels on circumference",
+      "layers": "polygon/reference circumference below cell points; selected black boxes above points",
+      "source_locator": "ML_2021-09-24_fig_6_lung.ipynb cell76 (0-based), preprocessing cells33,35,38,40,55,62,65",
+      "pairing": "EXACT_AUTHOR_ANALYSIS_FUNCTION_CALL; final manuscript boxes and text assembly not present in this cell"
+    },
+    {
+      "panel": "Fig6e top",
+      "chart_type": "pseudotime versus fate-probability scatter with stage thresholds",
+      "observed": true,
+      "color": "Goblet orange / Basal blue categories",
+      "values": "x Palantir pseudotime [0,1]; y CellRank basal probability [0,1]",
+      "axes": "pseudotime increasing left to right; probability upward",
+      "order": "points retain cell order; stage boundaries x=1/3,2/3 and probability=0.66",
+      "density": "Goblet/Basal subset dense scatter; transparent/size rules not transferable from full UMAP",
+      "typography": "axis titles larger than tick values; Stage1/2/3 compact labels; no caption inside",
+      "legend": "cluster colors inherited; no quantitative colorbar",
+      "layers": "cells plus dashed threshold lines; stage text is manuscript assembly",
+      "source_locator": "notebook cells120,123,125,129,131",
+      "pairing": "EXACT_AUTHOR_ANALYSIS_FUNCTION_CALL; stage text final placement not in source cell"
+    },
+    {
+      "panel": "Fig6e bottom",
+      "chart_type": "3 by 3 gene expression dot plot",
+      "observed": true,
+      "color": "white-to-red mean expression in group",
+      "values": "dot area fraction of cells expressing a gene; color group mean expression; do not reinterpret either as cell abundance",
+      "axes": "rows Stage1,Stage2,Stage3; columns Bpifb1,Krt5,Trp63",
+      "order": "fixed var_names order; stage categorical order from stage labels",
+      "density": "3x3 sparse grid; square-cell/dot-grid geometry required on future transfer",
+      "typography": "rotated gene labels; two separate legends for percent and expression",
+      "legend": "size legend 20,40,60,80%; continuous mean-expression bar",
+      "layers": "dots in fixed grid; legends outside data body",
+      "source_locator": "notebook cell134; stage assignment cell131",
+      "pairing": "EXACT_AUTHOR_SCANPY_DOTPLOT_CALL; Scanpy1.8.1 defaults must be frozen to reproduce"
+    }
+  ],
+  "input_contract": {
+    "unit": "individual cells for descriptive mappings; lung sample/animal independence not created by cell count",
+    "fields": [
+      "AnnData.obs: clusters, day, identifier",
+      "obsm: to_terminal_states named lineages",
+      "Palantir pseudotime in obs",
+      "raw expression/var_names including Bpifb1,Krt5,Trp63"
+    ],
+    "preprocessing": "min_cells10 raw; normalize_per_cell+log1p; velocity filter min_shared_counts20,n_top_genes2000; KNN30; stochastic velocity connectivity weight0.2;9 macrostates,n_cells30; all macrostates treated terminal; GMRES absorption probabilities",
+    "seed": "NumPy0,PYTHONHASHSEED0; explicit random.seed(0) repair; original bug archived",
+    "raw_input_sha256": "773bd90b17b103e1168e46aa5dab0e00df59cb6903d600ceae0043d73035c3a4",
+    "subset": "Goblet/Basal1239; own15-neighbor graph/kernel/GPCCA/Palantir; never use global fate column"
+  },
+  "packages_by_role": {
+    "scientific_computation": [
+      "CellRank",
+      "scVelo",
+      "Palantir"
+    ],
+    "rendering": [
+      "Scanpy",
+      "scVelo",
+      "matplotlib"
+    ]
+  },
+  "gaps": [
+    "Full T.data max0.767995 vs author0.462522; available rounded summaries differ. Original arrays unpublished.",
+    "Subset summaries and several marker dots differ; native recomputed raw fractions/means retained, never altered for source appearance.",
+    "Fig6c ROI boxes and downstream selection panels omitted; manuscript hyphen/capitalization differs from notebook labels.",
+    "Fig6e legend horizontal extent wider; full figure and exact assembly not reproduced.",
+    "Python3.8.20 vs author3.8.12;63 installed packages in total;15 match explicit author scientific versions, the remainder are local compatibility selections.",
+    "Local analytic Hessian backend; scoped official PCCA rounding function; full Schur9; repaired random.seed; fixed formal circle orientation.",
+    "Successful executed analysis snapshot differs from final script only by export IO order; final script not refit from scratch.",
+    "Complete clean runtime rebuild and full model repeat not run. Retain work runtime plus manifest-listed04/07/coarse sidecars.",
+    "New-input transfer/stress/user acceptance/official PythonCP3 not verified."
+  ],
+  "nonrender_checks": {
+    "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/nonrender-checks.json",
+    "sha256": "4c39f2105658e8bb4f9d8e6940168c5a2e6423aa30a88577cc7c73c3e246f819",
+    "historical_source_only": true
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "source retrieval",
+      "same frozen-input native replay with fresh final QA",
+      "scientific code/data inspection"
+    ],
+    "rendering_run": true,
+    "raw_analysis_run": true,
+    "registration": "Scoped evidence only. reproduction/transfer/stress bundles remain null.",
+    "not_verified": [
+      "original_full_figure",
+      "original_numerical_identity",
+      "new_input_transfer",
+      "stress",
+      "user_acceptance",
+      "officialCP3"
+    ]
+  },
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "source_visual_fidelity": "PARTIAL_SELECTED_COMPONENTS_REVIEWED_DIFFERENCES_RETAINED",
+    "original_numerical_identity": "NOT_VERIFIABLE_AUTHOR_ARRAYS_UNPUBLISHED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "structural_stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "full_model_repeat": "NOT_RUN",
+    "official_CP3": "NOT_VERIFIED_PYTHON_ADAPTER_UNAVAILABLE",
+    "clean_environment_rebuild": "NOT_TESTED",
+    "raw_workflow_run": true
+  },
+  "method_reference": {
+    "path": "benchmark/library/single-cell/cellrank-2022/learning.md",
+    "sha256": "cbf72699bc23db92e1517db6dfcd4fb1f9904fcd9f7e6e7d7271cdb37a9db9d5",
+    "bytes": 8387,
+    "role": "artifact-bound evidence"
+  },
+  "python_functions": [
+    {
+      "function_name": "cellrank.pl.circular_projection",
+      "role": "native9-lineage mean-normalized projection with formal order",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "scvelo.pl.scatter",
+      "role": "native subset1239 probability/pseudotime",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "scanpy.pl.dotplot",
+      "role": "native raw float32 means/fractions, nonlinear shared scale",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "palantir.core.run_palantir",
+      "role": "recomputed subset pseudotime with explicit random.seed repair",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    }
+  ],
+  "original_reproduction": "PARTIAL_AUTHOR_METHOD_REANALYSIS_WITH_SOURCE_DIFFERENCES",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "CP2_VALID_NATIVE_PYTHON_RENDER_REVIEWED_OFFICIAL_CP3_NOT_VERIFIED",
+  "functions": [
+    {
+      "function_name": "cellrank.pl.circular_projection",
+      "role": "native9-lineage mean-normalized projection with formal order",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "scvelo.pl.scatter",
+      "role": "native subset1239 probability/pseudotime",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "scanpy.pl.dotplot",
+      "role": "native raw float32 means/fractions, nonlinear shared scale",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    },
+    {
+      "function_name": "palantir.core.run_palantir",
+      "role": "recomputed subset pseudotime with explicit random.seed repair",
+      "version_context": "Original CellRank65f/Scanpy1.8.1/scvelo0.2.4; source archive and notebook mapping preserved"
+    }
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/paper-source.json",
+      "sha256": "cdf17fc8184b9647a83c676e8513c32b6224b6ba49156e76d492b7008a9e1bbd",
+      "bytes": 582,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/source-manifest.json",
+      "sha256": "11157f56e02bd34b361ca6e73e1678d4a21cbd4ba152120eac20c64bfacec5ad",
+      "bytes": 10827,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/code-figure-mapping.json",
+      "sha256": "a2e6dde36ade3156e07791e00c8b89835697c196cc2c29b3b656de2e49518c0e",
+      "bytes": 6096,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/nonrender-checks.json",
+      "sha256": "4c39f2105658e8bb4f9d8e6940168c5a2e6423aa30a88577cc7c73c3e246f819",
+      "bytes": 1243,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "CellRank",
+    "circular projection",
+    "环形命运投影",
+    "圆形投影",
+    "pseudotime",
+    "trajectory",
+    "scatter",
+    "dotplot",
+    "marker expression",
+    "single-cell"
+  ],
+  "source_learning_status": "COMPLETE_WITH_HISTORICAL_SNAPSHOT",
+  "fixed_input_replay": "EXACT_PNG_PIXELS_AND_PDF_SVG_BYTES_IN_THIS_ENVIRONMENT",
+  "reanalysis_review": {
+    "path": "benchmark/library/single-cell/cellrank-2022/results/tables/final-scoped-review.json",
+    "sha256": "c8c836f37d33b7ed2419d63f29416483390af213571898a0e323680087eca624",
+    "bytes": 8375,
+    "role": "artifact-bound evidence"
+  },
+  "reanalysis_evidence_manifest": {
+    "path": "benchmark/library/single-cell/cellrank-2022/data/metadata/reanalysis-evidence-manifest.json",
+    "sha256": "da8b278404ac145e845333c00358519bfab025a6ee815271f94ba30c669147a6",
+    "bytes": 43335,
+    "role": "artifact-bound evidence"
+  },
+  "frozen_replay_inputs": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/goblet-basal-metadata.json",
+      "sha256": "7df2dc53e940350ddad7053442e19d3bf588f99ed68fd047dee282c112a5eb42",
+      "bytes": 825,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/goblet-basal-stage-expression.csv",
+      "sha256": "b043b262d736b80f1d09fa0c6bc21ad2c41a5d2b52c10bbd9d003a9d0dce3207",
+      "bytes": 129674,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/lung-fate-metadata.json",
+      "sha256": "c00a470f7406131258ab17892a04acf836596b00ddbb5eccc92f189013afa088",
+      "bytes": 3113,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/lung-fate.csv",
+      "sha256": "bb01fc9d1e4e6c245b50bd889452e4e99eb64c3a671e6097485b10e878d7aabf",
+      "bytes": 5308081,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/palantir-branch-probabilities.csv",
+      "sha256": "8d32f0b7631e8c870d02a494bda12869721705efe2cc17c1b45d42fc4ca8e21d",
+      "bytes": 69931,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/stage-counts.csv",
+      "sha256": "815cb0903fa87ba06313edb3d574923b90614673bb2b8dd08bb92a009bd3794e",
+      "bytes": 60,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/stage-dotplot-fraction.csv",
+      "sha256": "0ae1088847c0f4dff1debdba1e013ab5fd6ea17ef654af0b600eca39410ed550",
+      "bytes": 189,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/data/derived/stage-dotplot-mean.csv",
+      "sha256": "1e0577f22229eb6aecde845471325423c6317516a45e2d21cb4cdb2d3be1e948",
+      "bytes": 147,
+      "role": "artifact-bound evidence"
+    }
+  ],
+  "reanalysis_scripts": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/build_source_comparison.py",
+      "sha256": "a7dac805b66c4acc5605ab6ba95803eda5140cb29f3398fa77c3c6d58142eca9",
+      "bytes": 7305,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/cellrank_analytic_hessian_adapter.py",
+      "sha256": "c0ad491edd00669c671140ec700ba4513088da3ac40b7b6a4c5730ec352121d6",
+      "bytes": 4093,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/compare_transition_summaries.py",
+      "sha256": "18cd0c1cb9593ef47b20b10e1fdd5d6556bf73d8c853508c8e6cece64fffb66f",
+      "bytes": 2651,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/compute_original_jax_reference.py",
+      "sha256": "c231f6af3eb0149087c51464fea16ca9c83f4cdc454c2cea9875c0ebe09cb61f",
+      "bytes": 11503,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/pygpcca_roundoff_adapter.py",
+      "sha256": "1e2cb54e1ea1f76289cf8a7ef1497d8ac613babb423304995c9478d44425a86c",
+      "bytes": 2655,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/recompute_author_inputs.py",
+      "sha256": "8d30dc21780292acd4f2069278192dbfca79adefa45f3b5383ef4990c3ff1a9f",
+      "bytes": 24990,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/render_reproduction.py",
+      "sha256": "7a6c4fa97aa92b493b27c816cc57c699ea0bb7fb681f8758b1a3028d45edb774",
+      "bytes": 16432,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/replay.sh",
+      "sha256": "9d131632c66e9b15424af3b5afd88eac483f99b9037936bbe02d268ff487ca29",
+      "bytes": 953,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/setup_hessian_reference.sh",
+      "sha256": "059ae70256cb1d9cb9da2befd431965eec1547345fd07ec7cb6860b0b5f02305",
+      "bytes": 3673,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/setup_original_environment.sh",
+      "sha256": "13770d8c4744e01f48ecf86ecc4a5a66668e0287f70c351eafdaf37a8d79fa3a",
+      "bytes": 6703,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/scripts/verify_reproduction.py",
+      "sha256": "2036cb1f22957f7ba0c9c61b9e17a916db77afdf3e4fa6546842728ec1d261bb",
+      "bytes": 6050,
+      "role": "artifact-bound evidence"
+    }
+  ],
+  "reanalysis_outputs": [
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/results/figures/cellrank-fig6ce-native-reanalysis.pdf",
+      "sha256": "c6b46575cc9f24ac332f8d92f9c78c26e3c3249af849f89065f794ff33adcb29",
+      "bytes": 1040435,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/results/figures/cellrank-fig6ce-native-reanalysis.png",
+      "sha256": "de68d58e4fe61eaf931bb1b7f02ed5e4c49da97e98e2d72f0ffea14365ad77d4",
+      "bytes": 441750,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/results/figures/cellrank-fig6ce-native-reanalysis.svg",
+      "sha256": "a67089f0ab755e7c03f8c5403c889e7ef80ce93e2b43a944df03c770a005abd0",
+      "bytes": 521551,
+      "role": "artifact-bound evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/cellrank-2022/results/figures/cellrank-original-vs-reanalysis.pdf",
+      "sha256": "52ba189df3375139d3111039a88afee1a9dcd3c3720361c5ae454a3dc28b3d5f",
+      "bytes": 640675,
+      "role": "artifact-bound evidence"
+    }
+  ],
+  "historical_current_package_function_reference": [
+    {
+      "function_name": "cellrank.pl.circular_projection",
+      "role": "fate-probability barycentric/circular mapping, optional mean normalization and lineage ordering",
+      "source": "benchmark/library/single-cell/cellrank-2022/sources/current-package/src/cellrank/pl/_circular_projection.py",
+      "lines": [
+        69,
+        322
+      ],
+      "version_context": "current full commit is separate from notebook CellRank1.5.0+g65f1562"
+    },
+    {
+      "function_name": "scvelo.pl.scatter",
+      "role": "x/y obs scatter and cluster coloring; notebook cell129"
+    },
+    {
+      "function_name": "scanpy.pl.dotplot",
+      "role": "fraction-expressing size and mean-expression color; notebook cell134"
+    },
+    {
+      "function_name": "palantir.core.run_palantir",
+      "role": "pseudotime estimation; not renderer; notebook cell125"
+    }
+  ]
+}

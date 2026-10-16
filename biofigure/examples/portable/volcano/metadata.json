@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "case_id": "volcano",
+  "synthetic": true,
+  "seed": 2026101604,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic model estimate; no raw biological samples provided",
+  "comparison": "Treatment - Control",
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "units": {
+    "log2FC": "log2 ratio Treatment / Control",
+    "SE": "model standard error of log2FC"
+  },
+  "generation": "200 shifted and 1800 null-like Gaussian effect estimates, independent positive uniform standard errors.",
+  "statistics": "Two-sided normal Wald p values from log2FC/SE, BH adjustment over all 2000 features; simulated model outputs only.",
+  "thresholds": {
+    "absolute_log2FC": 1,
+    "BH_q": 0.05
+  }
+}

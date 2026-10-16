@@ -302,16 +302,6 @@
   },
   "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
   "original_archival_learning_source": {},
-  "public_execution_profile": {
-    "schema_version": 1,
-    "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
-    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
-    "source_asset": "examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
-    "public_renderer": "scripts/public-render.R",
-    "archival_renderer": "scripts/render.R",
-    "input_mode": "published-plot-tables",
-    "simulation": false
-  },
   "learning_source": {
     "read_paths": [
       "examples/genomics-gallery-20261011/dpm-network/data/metadata/design-template.yaml",
@@ -332,5 +322,17 @@
       "examples/genomics-gallery-20261011/dpm-network/scripts/reproduce.py"
     ],
     "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification."
+  },
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-dpm-hoxa10-network-2024",
+    "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
+    "source_asset": "examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+    "public_renderer": "scripts/public-render.R",
+    "archival_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables",
+    "simulation": false,
+    "status": "reference-only",
+    "unavailable_reason": "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code."
   }
 }

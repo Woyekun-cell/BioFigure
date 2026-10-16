@@ -20,6 +20,7 @@ checkpoint_spec.loader.exec_module(checkpoint_module)
 class PrepareFigureTests(unittest.TestCase):
     def setUp(self):
         self.request = {
+            'reference_mode': 'reference-guided',
             'primary_domain': 'genome-sequence-variation',
             'primary_role': 'comparison',
             'backend': 'R',

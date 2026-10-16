@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "synteny",
+  "synthetic": true,
+  "seed": 2026101605,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic genome pair",
+  "comparison": null,
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "units": "base pairs; 0-based half-open intervals",
+  "generation": "72 explicitly paired coordinate blocks on six 100 Mb chromosomes per genome.",
+  "statistics": "Coordinate relationships only; no sequence alignment or rearrangement inference.",
+  "assemblies": {
+    "A": "synthetic-A-v1",
+    "B": "synthetic-B-v1"
+  }
+}

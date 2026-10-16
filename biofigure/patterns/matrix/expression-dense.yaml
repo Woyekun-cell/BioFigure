@@ -9,7 +9,7 @@ not_recommended_when: [scale_unknown, sample_mismatch, full_row_count_unknown]
 visual_hierarchy: {primary: dense_matrix_pattern, secondary: sample_groups, tertiary: modules_and_selected_rows}
 geometry: {primary: rasterized_body, secondary: vector_annotation_strips}
 encoding: {x: sample, y: all_features, fill: transformed_value, split: declared_module_or_cluster}
-layout: {aspect_ratio: data_driven, density_strategy: dense_raster_overview, whitespace_strategy: fixed_annotation_and_legend_bboxes}
+layout: {aspect_ratio: explicit_dense_overview_or_square_cell_contract, density_strategy: dense_raster_overview, whitespace_strategy: fixed_annotation_and_legend_bboxes, cell_geometry: actual_final_slice_measurement_required}
 annotation_strategy: [sample_group_strip, module_strip, sparse_row_labels_by_rule]
 legend_strategy: {compact: true, place: outside_matrix, duplicate_group_legend: false}
 color_semantics: {continuous: parameterized, center: declared_zero_or_reference, na: explicit_neutral, unique_semantics: true}

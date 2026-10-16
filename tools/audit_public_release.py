@@ -17,7 +17,7 @@ import zlib
 from pathlib import Path, PurePosixPath
 
 sys.dont_write_bytecode = True
-EXCLUDED_PARTS = {'.git', 'work', 'cache'}
+EXCLUDED_PARTS = {'.git', 'work', 'cache', '__pycache__', '.pytest_cache'}
 SHA256_RE = re.compile(r'^[0-9a-f]{64}$')
 SEMVER = r'(\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?)'
 PATH_PREFIXES = ('/' + 'Users/', '/' + 'home/', '/var/' + 'folders/')
@@ -336,7 +336,16 @@ def audit_public_release(root: Path | str) -> dict:
     root, errors = Path(root).resolve(), []
     catalog = json_file(root, 'docs/gallery/catalog.json', 'gallery_catalog', errors)
     gallery, by_id = audit_gallery(root, catalog, errors)
-    refresh = json_file(root, 'docs/gallery/refresh-20261011.json', 'refresh_manifest', errors)
+    # New releases declare a new current inventory. Historical SHA records stay
+    # untouched instead of being rewritten to conceal withdrawn rights-limited files.
+    marker_path = root / 'docs/gallery/current-release.json'
+    current_refresh = 'docs/gallery/refresh-20261011.json'
+    if marker_path.is_file():
+        marker = json_file(root, 'docs/gallery/current-release.json', 'refresh_manifest', errors)
+        if marker.get('schema_version') != 1:
+            error(errors, 'refresh_manifest', 'invalid current release marker')
+        current_refresh = marker.get('current_refresh_manifest')
+    refresh = json_file(root, current_refresh, 'refresh_manifest', errors)
     refreshed = audit_refresh(root, refresh, by_id, errors)
     versions = audit_versions(root, errors)
     benchmark = audit_benchmark_ids(root, errors)

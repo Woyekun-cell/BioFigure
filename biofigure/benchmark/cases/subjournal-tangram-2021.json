@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-tangram-2021",
+  "learned_method_id": "BENCH-subjournal-tangram-2021",
+  "title": "Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram",
+  "label": "Tangram／Matplotlib：空间转录组概率图、基因预测对照与spot内解卷积",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "chart_type": "spatial-probability-array",
+  "chart_types": [
+    "spatial-probability-array",
+    "spatial-scatter",
+    "paired-spatial-expression",
+    "histology-overlay"
+  ],
+  "figure_family": "spatial-probability-array",
+  "domain": "spatial",
+  "paper": {
+    "title": "Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram",
+    "doi": "10.1038/s41592-021-01264-7",
+    "url": "https://www.nature.com/articles/s41592-021-01264-7",
+    "journal": "Nature Methods",
+    "year": 2021,
+    "online_publication_date": "2021-10-28",
+    "issue_date": "2021-11",
+    "volume": "18",
+    "pages": "1352–1362",
+    "figures": [
+      "Fig2a",
+      "Fig2c",
+      "Fig4a",
+      "Fig4b"
+    ],
+    "publication_assets_license": "CC-BY-4.0",
+    "official_page_saved": "benchmark/library/spatial/tangram-2021/sources/paper.html",
+    "code_availability_locator": "Official paper Code availability section",
+    "online_date": "2021-10-28"
+  },
+  "source_implementation": {
+    "repository": "https://github.com/broadinstitute/Tangram",
+    "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30",
+    "license": "BSD-3-Clause",
+    "source_type": "paper-era package source; exact final paper panel script not located",
+    "original_figure_script_status": "NOT_LOCATED_METHOD_ONLY",
+    "commit_selection": "latest repository commit before2021-10-29; not explicit paper release",
+    "commit_author_date": "2021-09-24T13:33:41-04:00",
+    "current_package_comparison_commit": "4c68995a418f41dc8caef567598c4d9b47781a13",
+    "repo": "https://github.com/broadinstitute/Tangram"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig1.png",
+      "sha256": "528ce5fa79ec3b500cff5a0fa1b5d6058ffbaa2cdf8749d95c2d7f6ee180cb0e",
+      "bytes": 1749451,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig1_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        1851,
+        2704
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig2.png",
+      "sha256": "14d4eb817d065c025b3c71a5b1f39e3c64ad859203407e57506c8bcd5dc8cda8",
+      "bytes": 1605848,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig2_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2120,
+        2148
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig4.png",
+      "sha256": "78036917461f1c1ee85ad4602b511461184a17b4a1c0ce15bd54f78edfa2086a",
+      "bytes": 1127610,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig4_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2115,
+        1517
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/LICENSE.md",
+      "sha256": "576da33f78a74fe966fdda80b6f8aaa2eafdc2ff0dd856b393e37f5ade1a98f6",
+      "bytes": 1523,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/LICENSE.md",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/README.md",
+      "sha256": "e39f004fac1efc7b94c9e9aea9c5f52cb884606e38c4797d6563f72ea7f36dbc",
+      "bytes": 9432,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/README.md",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/data/test_df.csv",
+      "sha256": "a75d7c0dad44c90817d73ff43dcb3445a80fa7e724f6bab5caedf86029fab606",
+      "bytes": 1482800,
+      "role": "package-test-data-not-original-panel-data",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/data/test_df.csv",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/mapping_optimizer.py",
+      "sha256": "eb6837258289f97919b7b7f597a20d1ffc984a71baa96d60bee5eb1445eebcf1",
+      "bytes": 27531,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/mapping_optimizer.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/mapping_utils.py",
+      "sha256": "3aaddf186006bdeed336bb013a2bfc152417872c9e1ebd9b7480a7708bdacdd1",
+      "bytes": 18164,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/mapping_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/plot_utils.py",
+      "sha256": "fd10fd5a9bee359797a54ca4d353c27515648b3caa58486b45d3a40ba32bf7a3",
+      "bytes": 24628,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/plot_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/utils.py",
+      "sha256": "e40316bea7e486e5bfae431fdc1207e1e38ec6119c6ce3381df74f9e1a0907ac",
+      "bytes": 32193,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tutorial_tangram_without_squidpy.ipynb",
+      "sha256": "ab36ee09896dea76ed087e6aaeb62c6660c78abaf3d73cd32e15b00c802c03bb",
+      "bytes": 2350262,
+      "role": "tutorial-not-original-figure-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tutorial_tangram_without_squidpy.ipynb",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/LICENSE.md",
+      "sha256": "576da33f78a74fe966fdda80b6f8aaa2eafdc2ff0dd856b393e37f5ade1a98f6",
+      "bytes": 1523,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/LICENSE.md",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/README.md",
+      "sha256": "8f1fbfdadab20ef399ad532739fe3a57b8df502fff3948bc829fde35166558a8",
+      "bytes": 8336,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/README.md",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/data/test_df.csv",
+      "sha256": "a75d7c0dad44c90817d73ff43dcb3445a80fa7e724f6bab5caedf86029fab606",
+      "bytes": 1482800,
+      "role": "package-test-data-not-original-panel-data",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/data/test_df.csv",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/environment.yml",
+      "sha256": "9d4594f8148a84a1a6cbdbd2198432adbe2cd4f7de657779a5c82489b07a3d2d",
+      "bytes": 261,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/environment.yml",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/mapping_optimizer.py",
+      "sha256": "cdef02e75f66e38c353a83a2153d9b6698978be2b77961106954640e164eed7b",
+      "bytes": 17168,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/mapping_optimizer.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/mapping_utils.py",
+      "sha256": "152b3455271422fc90165cd840d1d36a9cffa98cf9336a1bc666ac1b31f17d90",
+      "bytes": 15427,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/mapping_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/plot_utils.py",
+      "sha256": "801d2ed78577e26e96de86e278d3d1dffacae387b222b78b5ef868515dd192cc",
+      "bytes": 22617,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/plot_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+      "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc",
+      "bytes": 31426,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram_tutorial.ipynb",
+      "sha256": "65b8d54db377895a8aec6d23c6be9b8fe10cad5dcf8769a64fe264aee85123b7",
+      "bytes": 1709103,
+      "role": "paper-era-tutorial-not-original-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram_tutorial.ipynb",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper.html",
+      "sha256": "6622e00079da447dffd22b22d697e0b3a88435fdee36a19fd9cb5e1dfede2212",
+      "bytes": 533575,
+      "role": "official-paper-html",
+      "source_url": "https://www.nature.com/articles/s41592-021-01264-7?error=cookies_not_supported&code=1",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/mapping_optimizer.py",
+      "sha256": "eb6837258289f97919b7b7f597a20d1ffc984a71baa96d60bee5eb1445eebcf1",
+      "bytes": 27531,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/mapping_optimizer.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/mapping_utils.py",
+      "sha256": "3aaddf186006bdeed336bb013a2bfc152417872c9e1ebd9b7480a7708bdacdd1",
+      "bytes": 18164,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/mapping_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/plot_utils.py",
+      "sha256": "fd10fd5a9bee359797a54ca4d353c27515648b3caa58486b45d3a40ba32bf7a3",
+      "bytes": 24628,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/plot_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tangram/utils.py",
+      "sha256": "e40316bea7e486e5bfae431fdc1207e1e38ec6119c6ce3381df74f9e1a0907ac",
+      "bytes": 32193,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tangram/utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/author/tutorial_tangram_without_squidpy.ipynb",
+      "sha256": "ab36ee09896dea76ed087e6aaeb62c6660c78abaf3d73cd32e15b00c802c03bb",
+      "bytes": 2350262,
+      "role": "tutorial-not-original-figure-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/4c68995a418f41dc8caef567598c4d9b47781a13/tutorial_tangram_without_squidpy.ipynb",
+      "license": "BSD-3-Clause",
+      "commit": "4c68995a418f41dc8caef567598c4d9b47781a13"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/mapping_optimizer.py",
+      "sha256": "cdef02e75f66e38c353a83a2153d9b6698978be2b77961106954640e164eed7b",
+      "bytes": 17168,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/mapping_optimizer.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/mapping_utils.py",
+      "sha256": "152b3455271422fc90165cd840d1d36a9cffa98cf9336a1bc666ac1b31f17d90",
+      "bytes": 15427,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/mapping_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/plot_utils.py",
+      "sha256": "801d2ed78577e26e96de86e278d3d1dffacae387b222b78b5ef868515dd192cc",
+      "bytes": 22617,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/plot_utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+      "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc",
+      "bytes": 31426,
+      "role": "paper-era-package-method-not-final-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram/utils.py",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram_tutorial.ipynb",
+      "sha256": "65b8d54db377895a8aec6d23c6be9b8fe10cad5dcf8769a64fe264aee85123b7",
+      "bytes": 1709103,
+      "role": "paper-era-tutorial-not-original-panel-script",
+      "source_url": "https://raw.githubusercontent.com/broadinstitute/Tangram/2ce1df5e481c925bbde74311ad6af29a4a61dc30/tangram_tutorial.ipynb",
+      "license": "BSD-3-Clause",
+      "commit": "2ce1df5e481c925bbde74311ad6af29a4a61dc30"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig1.png",
+      "sha256": "528ce5fa79ec3b500cff5a0fa1b5d6058ffbaa2cdf8749d95c2d7f6ee180cb0e",
+      "bytes": 1749451,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig1_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        1851,
+        2704
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig2.png",
+      "sha256": "14d4eb817d065c025b3c71a5b1f39e3c64ad859203407e57506c8bcd5dc8cda8",
+      "bytes": 1605848,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig2_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2120,
+        2148
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/sources/Fig4.png",
+      "sha256": "78036917461f1c1ee85ad4602b511461184a17b4a1c0ce15bd54f78edfa2086a",
+      "bytes": 1127610,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01264-7/MediaObjects/41592_2021_1264_Fig4_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2115,
+        1517
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "Fig2a",
+      "chart": "cell-type spatial probability small-multiple arrays",
+      "scientific_question": "各细胞亚群映射到MERFISH切片哪些位置？",
+      "encoding": {
+        "xy": "same segmented MERFISH coordinates across panels, axes absent",
+        "panel_order": "Glutamatergic7, GABAergic7, Non-neuronal6; gray subtype header bars",
+        "fill": "viridis-like dark purple→yellow, label Probability0–1",
+        "point": "one reference spatial cell position, aggregate projected annotation score"
+      },
+      "data_unit": "predicted mapping/annotation probability field; not observed lineage/cell position",
+      "shared_keys": [
+        "spatial observation ID",
+        "snRNA cell/subclass label",
+        "reference x,y"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              129,
+              157
+            ]
+          ],
+          "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc"
+        },
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/plot_utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              132,
+              157
+            ],
+            [
+              192,
+              290
+            ]
+          ],
+          "sha256": "801d2ed78577e26e96de86e278d3d1dffacae387b222b78b5ef868515dd192cc"
+        }
+      ],
+      "source_table": "original learned mapping / MERFISH coordinates not downloaded",
+      "layout": "three wrapped rows; subtype identity separated from value color; equal aspect; source helper3in/panel with shared axes; original panel scripting/fonts not found"
+    },
+    {
+      "id": "Fig2c",
+      "chart": "measured-versus-predicted gene expression spatial array",
+      "scientific_question": "留一基因预测是否保留组织表达分布？",
+      "encoding": {
+        "columns": "Muc20,Nr4a2,Tcap,Rxfp2,Rxfp1,Rspo1,Sulf1,Npas1,Syt6 ordered by reported spatial correlation5→86%",
+        "rows": "MERFISH measured (fluorescence) top; Tangram normalized mRNA bottom",
+        "fill": "purple→yellow normalized0–1 visual scale; cross-modality raw units differ",
+        "xy": "same reference spatial coordinates per gene"
+      },
+      "data_unit": "one spatial observation × one gene; measurement modality-specific units before normalization",
+      "shared_keys": [
+        "gene ID",
+        "reference coordinate/order",
+        "train/test designation"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/plot_utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              392,
+              491
+            ]
+          ],
+          "sha256": "801d2ed78577e26e96de86e278d3d1dffacae387b222b78b5ef868515dd192cc"
+        },
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              341,
+              378
+            ],
+            [
+              380,
+              468
+            ]
+          ],
+          "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc"
+        }
+      ],
+      "source_table": "exact leave-one-out model predictions and measured arrays not archived here",
+      "layout": "9 columns×2 rows, gray gene strips, directional correlation annotation outside data cells"
+    },
+    {
+      "id": "Fig4a",
+      "chart": "histology overlay with spot-level cell-type deconvolution",
+      "scientific_question": "每个Visium spot预测包含哪些细胞类型？",
+      "encoding": {
+        "background": "H&E section1 image",
+        "large_circle": "Visium voxel/spot",
+        "small_dot": "assigned cell type color at segmented-cell coordinate",
+        "legend": "cell-type categorical palette, different meaning from probability heatmaps"
+      },
+      "data_unit": "cell-type counts per spot; within-spot assignment to segmented cell is arbitrary/random wrt biological identity",
+      "shared_keys": [
+        "spot ID",
+        "segmented cell centroid list",
+        "predicted cell type counts"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              159,
+              207
+            ],
+            [
+              208,
+              339
+            ],
+            [
+              793,
+              821
+            ]
+          ],
+          "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc"
+        }
+      ],
+      "source_table": "original histology, spot-cell segmentation, constrained mapping unavailable locally",
+      "layout": "histology left with side categorical legend; no claim of precise actual single-cell placement"
+    },
+    {
+      "id": "Fig4b",
+      "chart": "21 subtype Visium probability spatial arrays",
+      "scientific_question": "低分辨空间spot上细胞亚群分布怎样？",
+      "encoding": {
+        "panel_order": "7 glutamatergic,7 GABAergic,7 non-neuronal; shared shape",
+        "fill": "same nominal0–1 probability legend; verify normalization before reuse",
+        "xy": "reference Visium spot geometry; no arbitrary layout force"
+      },
+      "data_unit": "spot-level mapping-derived cell-type distribution",
+      "shared_keys": [
+        "spot ID",
+        "subclass",
+        "spatial coordinates"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              129,
+              157
+            ]
+          ],
+          "sha256": "1563747367c13e298c58acff45466a9122c90345de35005ad64f3e33cdf252bc"
+        },
+        {
+          "path": "benchmark/library/spatial/tangram-2021/sources/paper-era-package/tangram/plot_utils.py",
+          "role": "paper-era-package-method",
+          "mapping_status": "METHOD_ONLY_NOT_FINAL_FIGURE_SCRIPT",
+          "lines": [
+            [
+              192,
+              290
+            ]
+          ],
+          "sha256": "801d2ed78577e26e96de86e278d3d1dffacae387b222b78b5ef868515dd192cc"
+        }
+      ],
+      "source_table": "original mapping not available locally",
+      "layout": "3 grouped rows×7 maps; original final assembly is not bound to helper output"
+    }
+  ],
+  "input_contract": {
+    "required_fields": [
+      "same tissue/anatomical-region sc/snRNA and spatial expression",
+      "overlapping original gene IDs",
+      "training/test gene flags",
+      "cell IDs and cell-subclass annotations",
+      "spot/cell coordinate IDs and xy unit/orientation",
+      "cell×spot mapping matrix plus declared normalization",
+      "for deconvolution:spot segmentation centroids,cell count per spot,constrained mapping",
+      "display normalization per gene/type with clipping declared"
+    ],
+    "experimental_units": "reference cells/voxels are observational units; separate tissue sections/samples must remain separate; inferred cells are not independent biological replicates.",
+    "preprocessing": [
+      "paper-era pp_adatas lowercases gene names,makes unique,drops allzero genes,locks gene intersection,computes uniform andRNA-count density prior",
+      "paper MERFISH253 shared training genes;4234 segmented cells; paper Visium1237 marker genes fromtop100 per type and939 segmented cells inROI (original not rerun)",
+      "mapping softmax across spatial dimension; stochastic initialization; random_state defaultNone; seed0 caveat",
+      "project annotations via mapping transpose × onehot; project_genes via mapping transpose × expression",
+      "plot helper orders values ascending so strong points draw last;equal aspect andinverted y",
+      "helper robust quantile normalization can change scale semantics and must be rebound for reuse"
+    ],
+    "units": "probability or relative projected annotation intensity must be distinguished from0–1 normalized expression; fluorescence andmRNA counts have different raw units",
+    "missing_values": "do not align cells/genes by position alone; absent genes are not measuredzeros; zero-density/constant map range must be checked",
+    "seed": "paper final panel seeds not located; do not infer from tutorial defaults; spot-internal assignment is arbitrary/random with respect to segmented identity"
+  },
+  "packages_by_role": [
+    {
+      "name": "Tangram",
+      "version": "paper-era commit2ce1df5; final figure-specific script absent",
+      "role": "probabilistic mapping,annotation/gene projection,deconvolution",
+      "functions": [
+        "pp_adatas",
+        "map_cells_to_space",
+        "project_cell_annotations",
+        "project_genes",
+        "df_to_cell_types"
+      ]
+    },
+    {
+      "name": "PyTorch",
+      "role": "nonconvex optimization,softmax mapping,KL density and cosine objectives"
+    },
+    {
+      "name": "Scanpy/AnnData",
+      "role": "shared-gene alignment,spatial/cell input matrices,annotations"
+    },
+    {
+      "name": "numpy/pandas",
+      "role": "one-hot annotation projection,cell×spot matrix multiplication,cell count/centroid bookkeeping"
+    },
+    {
+      "name": "Matplotlib/seaborn",
+      "role": "equal-aspect scatter array,viridis,inverted y-axis,score/sparsity summaries"
+    }
+  ],
+  "core_functions": [
+    "df_to_cell_types",
+    "map_cells_to_space",
+    "pp_adatas",
+    "project_cell_annotations",
+    "project_genes"
+  ],
+  "gaps": [
+    "论文Code availability仅链接Tangram包及Fig1数据；paper-era tree没有Fig2/4专用终稿脚本。本案只能做原图观察＋同期包方法学习，不能宣称原图脚本已配对。",
+    "纸面同期commit为发表日前最近可见commit2ce1df5（2021-09-24），并非作者明确指定的paper release；另存当前commit作版本对照。",
+    "教程notebook与test_df.csv明确归为tutorial/package-test，不能替代原图来源。",
+    "原始概率矩阵、MERFISH/Visium输入、LOO模型与图像未下载；行和归一、空间坐标配准与原图score无法核验。",
+    "plot_cell_annotation helper每个亚群独立min/max而独立画0–1 legend；最终原图是否使用同样归一未知。迁移需锁定绝对概率或相对归一，不能混称。",
+    "compare_spatial_geneexp源码score为cosine similarity；原文称spatial correlation，不能自行改称Pearson。",
+    "spot内随机／任意分配不是精确物理单细胞身份；必须写在图外说明。",
+    "mapping_optimizer以if random_state做真值判断，seed0不会触发播种；未执行，仅源码观察，使用需显式非零seed并独立验证。"
+  ],
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_analysis": "NOT_RUN",
+    "scope": "source observation, source-code method learning and independent non-rendering table-contract checks only"
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "retrieve original visual encoding and source implementation roles",
+      "future input-contract design after freshCP2",
+      "non-rendering source-table audits"
+    ],
+    "prohibited": [
+      "inheriting original reproductionPASS",
+      "claiming new-input or stress validation",
+      "treating communication scores/prior edges/spatial predictions as established causality or physical cell identity"
+    ],
+    "original_figure_script_pairing": "NOT_LOCATED_METHOD_ONLY"
+  },
+  "method_reference": {
+    "path": "benchmark/library/spatial/tangram-2021/learning.md",
+    "sha256": "0aec07e1b6ac256daf48e3241c9a0a0b67cdfede9b4e6b5838a8b36bb76c2271"
+  },
+  "evidence_manifest": "benchmark/library/spatial/tangram-2021/data/metadata/source-manifest.json",
+  "nonrender_checks": "benchmark/library/spatial/tangram-2021/data/metadata/nonrender-checks.json",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [
+    "df_to_cell_types",
+    "map_cells_to_space",
+    "pp_adatas",
+    "project_cell_annotations",
+    "project_genes"
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/spatial/tangram-2021/data/metadata/paper-source.json",
+      "sha256": "a3bffa928164cc7767aaa9e54614c6b2de97126eb88a51fbaef983b1a2226252",
+      "bytes": 1895,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/data/metadata/source-manifest.json",
+      "sha256": "b210f1a5963baf2fa12627b0f606fc279dbd0e16198a4590b11aa648b36cd48f",
+      "bytes": 12493,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/data/metadata/code-figure-mapping.json",
+      "sha256": "f1e54ce0f80bfae560ecb51368a795207209bd9850e520d1fb00c1ae8bc2592a",
+      "bytes": 12195,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/tangram-2021/data/metadata/nonrender-checks.json",
+      "sha256": "aa48d082c8031cabaa8e92cc862d4064fbaeef1a43920b1104128c37589873c7",
+      "bytes": 1599,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "Tangram",
+    "空间概率小多图",
+    "spatial expression",
+    "small multiples",
+    "measured predicted expression",
+    "single-cell"
+  ]
+}

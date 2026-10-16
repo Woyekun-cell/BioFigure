@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "case_id": "ggtranscript-sod1-2026",
+  "learned_method_id": "BENCH-ggtranscript-sod1-2026",
+  "recipe_id": "TX-GGTRANSCRIPT-001",
+  "title": "Native ggtranscript SOD1 and PKNOX1 exon intron structure, gap shortening and isoform differences",
+  "label": "ggtranscript转录本结构、间隔压缩与异构体差异",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Official Ensembl105 GRCh38 annotation tutorial reconstruction; exact native function outputs for SOD1 four transcripts and PKNOX1 eleven transcripts. Source-complete structural reproduction with new palette/compact assembly, not a research-result figure or pixel-identical original. SOD1 gap-shortening is a declared within-package data transfer.",
+  "figure_family": "genome",
+  "chart_type": "genomic transcript structure tracks",
+  "chart_types": [
+    "genome",
+    "transcript-structure"
+  ],
+  "domain": "genomics",
+  "method_families": [
+    "genome",
+    "transcript-structure",
+    "isoform-comparison"
+  ],
+  "paper": {
+    "title": "ggtranscript: an R package for the visualization and interpretation of transcript isoforms using ggplot2",
+    "journal": "Bioinformatics",
+    "year": 2022,
+    "doi": "10.1093/bioinformatics/btac409",
+    "figure": "Official Getting started tutorial geom-range-intron, shorten-gaps, geom-half-range and to-diff",
+    "url": "https://dzhang32.github.io/ggtranscript/articles/ggtranscript.html"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/dzhang32/ggtranscript",
+    "commit": "682a0df688ad242fa262d0b0557bf973dc202787",
+    "license": "MIT",
+    "source_type": "author package tutorial with real reference annotation, not simulated measurement",
+    "repository_relative_path": "vignettes/ggtranscript.Rmd"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-range-intron-1.png",
+      "sha256": "d7e30faf22ba9a8556532f766a0c821194487e90f3eae93e5d5719ccd3e8eea2",
+      "bytes": 53386,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-range-intron-w-cds-1.png",
+      "sha256": "213764a04cee759ba85bdc0f417c11def39a17be644feb8e88874f9302337b45",
+      "bytes": 30641,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/transcript-diff-base-1.png",
+      "sha256": "f2ac1d5007dd183da27aef77ad4e364c9316cfea2bba311a8cd1cd8951e02ad7",
+      "bytes": 92356,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/shorten-gaps-1.png",
+      "sha256": "0460cb59d9acce3b55091e38f87970de5d4d938a807fcdc2a2ebb4a01535ecd0",
+      "bytes": 94632,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-half-range-1.png",
+      "sha256": "a3b51015353dd433c59f38e8b2fbc764dcc7f0e16cde56e17c7e2730a10fa7ab",
+      "bytes": 16659,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/to-diff-1.png",
+      "sha256": "35d2141553f4f063fbe23390f30590ed3e8824f991446768cb57177e7a00ed5c",
+      "bytes": 96183,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/ggtranscript.Rmd",
+      "sha256": "de040c9d0d8f5268dc2e997ee9d1ba56d0178fcab845ab9f68ed7d6397862472",
+      "bytes": 17458,
+      "role": "official author vignette source"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/README.Rmd",
+      "sha256": "1486e91a99c5f8c0fbb2d64887432604cdb8f1b64e0d6d041ede1962cb5c2b63",
+      "bytes": 8428,
+      "role": "official author README source"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_range.R",
+      "sha256": "a987932975cba424b0af5e2cca09ad190ae368ce808d7fc32253db2a4212f082",
+      "bytes": 7426,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_half_range.R",
+      "sha256": "2193e1e98ecc57344a595b4c549de49903493a01199b19e0ab23c011d1b0b9a0",
+      "bytes": 2629,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_intron.R",
+      "sha256": "718bba8ee8fc6089e72e615054343e585aa7116a425357c99d06ed3eff6e5436",
+      "bytes": 9970,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/shorten_gaps.R",
+      "sha256": "0f0eab522298266ed591e18cc8550b1cb6eaa8dbe896d1d1e67c7bc19efa7db5",
+      "bytes": 17394,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/to_intron.R",
+      "sha256": "ae6a33808133948fe1ce4b053491afe4d51596282c42cdbf675274c66abd8f51",
+      "bytes": 2512,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/to_diff.R",
+      "sha256": "9010a47dfd20934e882d9c5e4d118f90a8f64486b12bc731f01b2c5d1446f7dc",
+      "bytes": 5341,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/raw/sod1_annotation.rda",
+      "sha256": "869b892ebecfaf319e1a48e8246baf2e7498b4bb821bfb2bf778e117268ec170",
+      "bytes": 652,
+      "role": "packaged Ensembl105 GRCh38 annotation"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/raw/pknox1_annotation.rda",
+      "sha256": "024b6a462f5ce2946aff482fd31ffb46a1eb2d2b6bdf2718b0569a7e10f696e7",
+      "bytes": 954,
+      "role": "packaged Ensembl105 GRCh38 annotation"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/LICENSE.md",
+      "sha256": "dbe5e8b272982700fb4b942fa37ebfe4fe4fff8b2fd0b2c869a1a83223bd1517",
+      "bytes": 1079,
+      "role": "MIT license"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/data-raw/sod1_pknox1_annotation.R",
+      "sha256": "0ab8eeb5a20b8994a80d4a0f9b6beaafe9e06c69f8c59b858ce22bd36ee848d4",
+      "bytes": 1548,
+      "role": "Ensembl105 extraction provenance"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/ggtranscript.Rmd",
+      "sha256": "de040c9d0d8f5268dc2e997ee9d1ba56d0178fcab845ab9f68ed7d6397862472",
+      "bytes": 17458,
+      "role": "official author vignette source"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/README.Rmd",
+      "sha256": "1486e91a99c5f8c0fbb2d64887432604cdb8f1b64e0d6d041ede1962cb5c2b63",
+      "bytes": 8428,
+      "role": "official author README source"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_range.R",
+      "sha256": "a987932975cba424b0af5e2cca09ad190ae368ce808d7fc32253db2a4212f082",
+      "bytes": 7426,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_half_range.R",
+      "sha256": "2193e1e98ecc57344a595b4c549de49903493a01199b19e0ab23c011d1b0b9a0",
+      "bytes": 2629,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/geom_intron.R",
+      "sha256": "718bba8ee8fc6089e72e615054343e585aa7116a425357c99d06ed3eff6e5436",
+      "bytes": 9970,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/shorten_gaps.R",
+      "sha256": "0f0eab522298266ed591e18cc8550b1cb6eaa8dbe896d1d1e67c7bc19efa7db5",
+      "bytes": 17394,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/to_intron.R",
+      "sha256": "ae6a33808133948fe1ce4b053491afe4d51596282c42cdbf675274c66abd8f51",
+      "bytes": 2512,
+      "role": "native package implementation inspected"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/R/to_diff.R",
+      "sha256": "9010a47dfd20934e882d9c5e4d118f90a8f64486b12bc731f01b2c5d1446f7dc",
+      "bytes": 5341,
+      "role": "native package implementation inspected"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-range-intron-1.png",
+      "sha256": "d7e30faf22ba9a8556532f766a0c821194487e90f3eae93e5d5719ccd3e8eea2",
+      "bytes": 53386,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-range-intron-w-cds-1.png",
+      "sha256": "213764a04cee759ba85bdc0f417c11def39a17be644feb8e88874f9302337b45",
+      "bytes": 30641,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/transcript-diff-base-1.png",
+      "sha256": "f2ac1d5007dd183da27aef77ad4e364c9316cfea2bba311a8cd1cd8951e02ad7",
+      "bytes": 92356,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/shorten-gaps-1.png",
+      "sha256": "0460cb59d9acce3b55091e38f87970de5d4d938a807fcdc2a2ebb4a01535ecd0",
+      "bytes": 94632,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/geom-half-range-1.png",
+      "sha256": "a3b51015353dd433c59f38e8b2fbc764dcc7f0e16cde56e17c7e2730a10fa7ab",
+      "bytes": 16659,
+      "role": "official pkgdown tutorial original image opened"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/sources/to-diff-1.png",
+      "sha256": "35d2141553f4f063fbe23390f30590ed3e8824f991446768cb57177e7a00ed5c",
+      "bytes": 96183,
+      "role": "official pkgdown tutorial original image opened"
+    }
+  ],
+  "input_contract": {
+    "required_columns": [
+      "seqnames",
+      "start",
+      "end",
+      "strand",
+      "type",
+      "gene_name",
+      "transcript_name",
+      "transcript_biotype"
+    ],
+    "assembly": "GRCh38/hg38",
+    "annotation_release": "Ensembl105",
+    "SOD1": {
+      "transcripts": 4,
+      "exons": 20,
+      "introns": 16
+    },
+    "PKNOX1": {
+      "transcripts": 11,
+      "exons": 59,
+      "introns": 48
+    },
+    "coordinate_contract": "Input annotation is one-based closed. to_intron plotting ranges include adjacent exon boundaries. shorten_gaps output is synthetic visualization coordinate only, preserving exon lengths and cross-transcript alignment. No interpretation as genomic distance.",
+    "replicates": "none; reference annotation structures",
+    "statistics": "descriptive interval comparison; no expression or inference",
+    "sampling": false
+  },
+  "packages_by_role": {
+    "ggtranscript": "native geom_range, geom_intron, geom_half_range, to_intron, shorten_gaps, to_diff",
+    "GenomicRanges": "native set differences, interval gap detection",
+    "GenomeInfoDb": "native seqlevel pruning",
+    "ggplot2": "scales, coordinate labels, compact vector assembly",
+    "ragg": "authorized PNG"
+  },
+  "r_functions": [
+    "geom_range",
+    "geom_intron",
+    "geom_half_range",
+    "to_intron",
+    "shorten_gaps",
+    "to_diff"
+  ],
+  "visual_observations": {
+    "SOD1": "four ordered full gene transcript rows; exon rectangle colors encode biotype; intron arrows encode positive strand",
+    "PKNOX1": "eleven aligned rows, long introns shortened to100bp gaps, exon differences compared against201,201/203 half ranges share centerline"
+  },
+  "processing": {
+    "source": "unmodified packaged RDA inputs preserved",
+    "gap_width": 100,
+    "reference_transcript": "PKNOX1-201",
+    "native_function_smoke": "Executed native helpers; independent interval and actual current PNG/PDF checks completed. Final gate replay is recorded separately."
+  },
+  "gaps": [
+    {
+      "detail": "Official current pkgdown image generation commit is not recorded; package code locked to source commit, screenshot date recorded separately."
+    },
+    {
+      "detail": "Source annotation retains transcript names, not ENST IDs; do not invent missing identifiers."
+    },
+    {
+      "detail": "No junction/count/coverage panel included."
+    },
+    {
+      "detail": "Two native source examples reassembled and recolored; whole original paper and pixel fidelity remain unverified."
+    },
+    {
+      "detail": "New arbitrary-input transfer and environment generalization remain unverified."
+    }
+  ],
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "ggtranscript 转录本 外显子 内含子 CDS UTR",
+      "genomic transcript structure gap shortening isoform differences"
+    ],
+    "appropriate_data": "one-gene strand-specific reference annotation with transcript grouping",
+    "avoid_for": "expression abundance, clinical conclusions, inferred splicing proportions, unvalidated coordinate systems"
+  },
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "whole_original_figure": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "method_reference": {
+    "path": "references/ggtranscript-sod1-learning.md",
+    "sha256": "4a295e7cc7c5e03399e11a83aa822b3504aca3a772fdc1655032450e4a56f84d",
+    "bytes": 7248,
+    "role": "fixed-source learning, scientific contract and fresh replay entry"
+  },
+  "code_files": [
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/fresh_call.py",
+      "sha256": "8f8627a805fec423c46baa039e61a373c84553ec5cff365b25cdb84b4ecba702",
+      "bytes": 2809,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/install_dependencies.py",
+      "sha256": "50cd95af6a8092570f2c4f560854103c35f85f470b93ddc8b75e2e9c4484144e",
+      "bytes": 931,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/prepare_data.R",
+      "sha256": "309e786677326b97de4b1cb6c84c33956f7ea30e9516092e37d376e3ee73d032",
+      "bytes": 4627,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/render.R",
+      "sha256": "62a7133658e867a80f1fa32e046c4f5ee6de236fcf1212404f2bdd1f1ed17335",
+      "bytes": 9959,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/run_render.py",
+      "sha256": "446ae79acccff4895e0697beca9b0c9730e1ee0b2ead7658dc0af442a677cc18",
+      "bytes": 1427,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/validate_intervals.py",
+      "sha256": "55b2c52fca16ede8ebb44691005c6f66f69f2f1db11ee7e1bd1f838a95bfabce",
+      "bytes": 1695,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    }
+  ],
+  "implementation_configs": [
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/pknox1-comparison-design-spec.yaml",
+      "sha256": "a7e490fb840016566379069b9ccb0ba1fee9b1833038b1d404bfaa61197daa2c",
+      "bytes": 17935,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/pknox1-comparison-request.yaml",
+      "sha256": "2882ebec2e1bc0beaadf31761aae6dfef2c958a5662cd5cb3ecc35f1a42725a0",
+      "bytes": 669,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/project-style.yaml",
+      "sha256": "81e9ab8bd8475bce3d9de56133d48fcf01af399bda2d35f29948bce91fb89040",
+      "bytes": 825,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/sod1-structure-design-spec.yaml",
+      "sha256": "874cfdfb053eb5c734216a7e043c8e4b62ad7cac88b5b9eb068fc083f53b14f6",
+      "bytes": 17440,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/sod1-structure-request.yaml",
+      "sha256": "9dbe1eaa8716c2974d8e6f1e74145a6d5fb6a54924e9ee57a10a1d8e314390b9",
+      "bytes": 663,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    }
+  ],
+  "fixed_fixture_review": "Source/data algorithms and current renders reviewed. Final artifact-bound evidence is separately registered after final fresh invocation; never inherit this review for new data.",
+  "scientific_caveats": [
+    "GTF1-based closed; to_intron uses adjacent exon boundaries for drawing.",
+    "shorten_gaps output is display-only; all79exon widths preserved; no biological replicates or expression inference.",
+    "SOD1 extra shortened view and compact PKNOX1 assembly are declared adaptations."
+  ]
+}

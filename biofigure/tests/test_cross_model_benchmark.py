@@ -42,7 +42,7 @@ class CrossModelBenchmarkTests(unittest.TestCase):
                           key: {'status': 'PASS', 'evidence': f'{key} checked on final-size PNG', 'colored_data_marks': True}
                           for key in ('typography_size', 'typography_position', 'label_overlap',
                                       'legend_overlap', 'clipping', 'panel_alignment',
-                                      'figure_text_proportion', 'semantic_color')}}}
+                                      'figure_text_proportion', 'semantic_color', 'footer_absent')}}}
         if inspection_override:
             inspection_override(inspection)
         return reviews, inspection

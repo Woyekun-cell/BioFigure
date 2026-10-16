@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Public plotting-table replay; author-source archive recipe is separate."""
+"""Reference-only case: author input redistribution rights are unresolved."""
+import json
 from pathlib import Path
-import subprocess,sys
-p=Path(__file__).resolve().parents[2]/'replay_public.py'
-subprocess.run([sys.executable,str(p),'dpm-network',*sys.argv[1:]],check=True)
+import sys
+profile = json.loads((Path(__file__).resolve().parents[1] / "data/metadata/public-replay.json").read_text())
+sys.exit("REFERENCE_ONLY: " + profile["unavailable_reason"])

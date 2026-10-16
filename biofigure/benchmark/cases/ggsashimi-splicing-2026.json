@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "case_id": "ggsashimi-splicing-2026",
+  "learned_method_id": "BENCH-ggsashimi-splicing-2026",
+  "recipe_id": "RNA-SASHIMI-001",
+  "title": "ggsashimi native BAM coverage junction overlay shrink and mean",
+  "label": "原生BAM覆盖剪接弧线叠加与均值",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Fixed official ENCODE subset; native Python BAM computation and native generated R adaptation; no differential inference or new-input mastery; render and visual review pending",
+  "figure_family": "genome",
+  "chart_type": "sashimi genomic coverage junction tracks",
+  "chart_types": [
+    "genomic-track",
+    "sashimi"
+  ],
+  "domain": "transcriptomics",
+  "method_families": [
+    "RNA-splicing",
+    "genomic-coverage",
+    "junction-arcs"
+  ],
+  "paper": {
+    "title": "ggsashimi: Sashimi plot revised for browser- and annotation-independent splicing visualization",
+    "journal": "PLOS Computational Biology",
+    "year": 2018,
+    "doi": "10.1371/journal.pcbi.1006360",
+    "figure": "official repository examples",
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006360"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/guigolab/ggsashimi",
+    "commit": "a6d3c81a96831489fddc7de00aece92d301d0164",
+    "license": "MIT",
+    "source_type": "original author repository source and official real ENCODE BAM subset",
+    "repository_relative_path": "ggsashimi.py"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/ggsashimi.py",
+      "sha256": "b21d3f0c227a549a5c0134ab6b2589569aefaf12afbf1caf0bfba3713a910130",
+      "bytes": 51111,
+      "role": "official upstream ggsashimi.py"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/LICENSE",
+      "sha256": "6410d6c866cf6215acce8044aaa5445aaebcd75606bd923b3bbc51c77ebc1800",
+      "bytes": 1066,
+      "role": "official upstream LICENSE"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/requirements.txt",
+      "sha256": "73b986d47adb838fb073ec6cf2a5fefcd40ded9e4c525a4ccaeee5eb856d1ccd",
+      "bytes": 13,
+      "role": "official upstream requirements.txt"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/test_sashimi.py",
+      "sha256": "8777e30dcb5e4dcdd5d59e58bcd0cfeb8aea1150788bad6b24b810c25d2ac3ae",
+      "bytes": 3030,
+      "role": "official upstream test_sashimi.py"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/README.md",
+      "sha256": "30a8b517056626ca8249c551cc5c447392338b068053dc9338ef7ee03dffacb5",
+      "bytes": 5137,
+      "role": "official upstream README.md"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/sashimi.png",
+      "sha256": "b048220f90c3403f69a94303a137078296a47e04dff7c572b66bda0b18613bca",
+      "bytes": 492225,
+      "role": "official upstream sashimi.png"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/sashimi.tiff",
+      "sha256": "0419b15af9e2f303bbc64bb395cb33da567111f07598d6c4cfc89cdcf42e25fb",
+      "bytes": 313954,
+      "role": "official upstream examples/sashimi.tiff"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/palette.txt",
+      "sha256": "3c233e5dc03aaeb450cf55a9dc6e6d882e7590e90dd81b9a925cd2207847815b",
+      "bytes": 31,
+      "role": "official upstream examples/palette.txt"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/example_run.sh",
+      "sha256": "4f185b9536e787fb5cadcf6d259ee12ec6606b4f2eb8b5948793e991f7bc555e",
+      "bytes": 685,
+      "role": "official upstream examples/example_run.sh"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/sashimi_igv.png",
+      "sha256": "a79a460a607554ac2dbf7a87a56ec01a68febec4450b700ba7967a20dfdc52ca",
+      "bytes": 29225,
+      "role": "official upstream examples/sashimi_igv.png"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/annotation.gtf",
+      "sha256": "ee1f8fe0239d2ec17d0eb6c896a2f40a6d0d6ea66d81024829820fb8df40c6a1",
+      "bytes": 153884,
+      "role": "official upstream examples/annotation.gtf"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/input_bams.tsv",
+      "sha256": "2b69a7f46235e98be51c0c6f94e3e7bac367d10a2380250fb011c16c40aa4431",
+      "bytes": 824,
+      "role": "official upstream examples/input_bams.tsv"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/sashimi.pdf",
+      "sha256": "3be835e5fe1d3301f1399edb52fb68f1db36ebd18e44a773c628a396d8cccb42",
+      "bytes": 44264,
+      "role": "official upstream examples/sashimi.pdf"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF450AIU.chr10_27035000_27050000.bam.bai",
+      "sha256": "40793d79431b3a538dbfe2ca13cf7a5575e180dc09884264659b9a8014209490",
+      "bytes": 14536,
+      "role": "official upstream examples/bams/ENCFF450AIU.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF960BQV.chr10_27035000_27050000.bam.bai",
+      "sha256": "c66f978acb470c6e1276a35b1d01f9d5a58d06f29837b64c0369e96ad7023df0",
+      "bytes": 14448,
+      "role": "official upstream examples/bams/ENCFF960BQV.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF088HTJ.chr10_27035000_27050000.bam",
+      "sha256": "f1ba1a90f88bff58c8a59b7daacd57da59fd08c305507d61f2add7812b6281ea",
+      "bytes": 424110,
+      "role": "official upstream examples/bams/ENCFF088HTJ.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF603IAA.chr10_27035000_27050000.bam.bai",
+      "sha256": "25fbec681b00ff199f583bdcd122f0b931604b22c445e0ef0d98e9746d2b6ce4",
+      "bytes": 14424,
+      "role": "official upstream examples/bams/ENCFF603IAA.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF603IAA.chr10_27035000_27050000.bam",
+      "sha256": "ddb5a430c17d077bf7f26cca256ac46223bfa13abd8acff8dcb69b5d4f6be6c9",
+      "bytes": 308654,
+      "role": "official upstream examples/bams/ENCFF603IAA.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF756PUW.chr10_27035000_27050000.bam.bai",
+      "sha256": "101fc86f64139a6f62636730b1804cc3cef7d52143a6c7697c56ae1a9c3e697d",
+      "bytes": 14440,
+      "role": "official upstream examples/bams/ENCFF756PUW.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF871MPV.chr10_27035000_27050000.bam.bai",
+      "sha256": "c5a4c7096275620208dbd0f1a272bb01c19f1f982758a7bbd4e5398154989fa7",
+      "bytes": 14456,
+      "role": "official upstream examples/bams/ENCFF871MPV.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF088HTJ.chr10_27035000_27050000.bam.bai",
+      "sha256": "c1d768ee1ec4244e2b62be7b672b59595ede0043cf37894b33c336e5fd8a15f0",
+      "bytes": 14472,
+      "role": "official upstream examples/bams/ENCFF088HTJ.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF871MPV.chr10_27035000_27050000.bam",
+      "sha256": "eec7365289c202d49c11b27ed49f03afe82c5bc95bb68eb31b2c594ab47a115b",
+      "bytes": 236104,
+      "role": "official upstream examples/bams/ENCFF871MPV.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF839OMU.chr10_27035000_27050000.bam",
+      "sha256": "7623b6b79aa858090bb1202b2081621d11ae5706423997c458cad4f25d204d81",
+      "bytes": 262616,
+      "role": "official upstream examples/bams/ENCFF839OMU.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF960BQV.chr10_27035000_27050000.bam",
+      "sha256": "c43756cf73c182fb53bdcbb382efdd3f35138c01e7f3c974505264019b81c8e1",
+      "bytes": 1025924,
+      "role": "official upstream examples/bams/ENCFF960BQV.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF914GVK.chr10_27035000_27050000.bam",
+      "sha256": "f8e791698c6ef285450a98a023de9d2d3fc00fe0c1946b137124af6cf51cd94d",
+      "bytes": 390035,
+      "role": "official upstream examples/bams/ENCFF914GVK.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF325HFX.chr10_27035000_27050000.bam.bai",
+      "sha256": "1289265a60f2b0f89af28e25b185cf7c6df333b4fbc795da2b3cbb32620172df",
+      "bytes": 14376,
+      "role": "official upstream examples/bams/ENCFF325HFX.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF676QNL.chr10_27035000_27050000.bam.bai",
+      "sha256": "4e6c7e2e44a229fa98071696dbe553a3357a0f9c71eb7e968d16a00761ab6faa",
+      "bytes": 14400,
+      "role": "official upstream examples/bams/ENCFF676QNL.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF756PUW.chr10_27035000_27050000.bam",
+      "sha256": "88c470cd16115762e8fe8f0ebe3b2863b112c3cfab47cfa579fbe546aebd7187",
+      "bytes": 552663,
+      "role": "official upstream examples/bams/ENCFF756PUW.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF676QNL.chr10_27035000_27050000.bam",
+      "sha256": "f37a7ab5d5e8fd3e4c5e25af0c72804ef9132b3d6589b9ed23d9d12760546e43",
+      "bytes": 400835,
+      "role": "official upstream examples/bams/ENCFF676QNL.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF839OMU.chr10_27035000_27050000.bam.bai",
+      "sha256": "e452033eadc895121fd451eec0c6c3de9e5f3637a6f8fbc676ac821d98a73cfe",
+      "bytes": 14384,
+      "role": "official upstream examples/bams/ENCFF839OMU.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF960FZU.chr10_27035000_27050000.bam",
+      "sha256": "5a7a25fef67418a7a6bf3b432f32e1ae4fd6f29b63f004185f67772a443b513a",
+      "bytes": 617780,
+      "role": "official upstream examples/bams/ENCFF960FZU.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF841RJE.chr10_27035000_27050000.bam.bai",
+      "sha256": "605dc28ec6321e39e1ea4f5de363d9d5e7ed360e9f4fa8ad5fd3862de1c1b9ba",
+      "bytes": 14440,
+      "role": "official upstream examples/bams/ENCFF841RJE.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF960FZU.chr10_27035000_27050000.bam.bai",
+      "sha256": "e0f43c4b592c3a70404fc9d39d74c9eb5787783877800871b42cfaaf75dd70d3",
+      "bytes": 14440,
+      "role": "official upstream examples/bams/ENCFF960FZU.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF914GVK.chr10_27035000_27050000.bam.bai",
+      "sha256": "d30a8a73a96b0ecbd99a44e42bf10031b690a790eebcc82f10608d78df7957e6",
+      "bytes": 14376,
+      "role": "official upstream examples/bams/ENCFF914GVK.chr10_27035000_27050000.bam.bai"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF841RJE.chr10_27035000_27050000.bam",
+      "sha256": "3ccb03e6acfad4c4dad424a660ace09d628014e54401ad1976cea832a41d7bbf",
+      "bytes": 420501,
+      "role": "official upstream examples/bams/ENCFF841RJE.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF325HFX.chr10_27035000_27050000.bam",
+      "sha256": "3d4ee14d9d29a78790fa03582f630b6f68afd59de746b8ddd81c3f1c45e645f3",
+      "bytes": 443756,
+      "role": "official upstream examples/bams/ENCFF325HFX.chr10_27035000_27050000.bam"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/bams/ENCFF450AIU.chr10_27035000_27050000.bam",
+      "sha256": "dc4edaa37eecf8fadce2dca7bdc7dd15b2130d9c50b2e0082e46657ba65971b9",
+      "bytes": 496617,
+      "role": "official upstream examples/bams/ENCFF450AIU.chr10_27035000_27050000.bam"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/ggsashimi.py",
+      "sha256": "b21d3f0c227a549a5c0134ab6b2589569aefaf12afbf1caf0bfba3713a910130",
+      "bytes": 51111,
+      "role": "author native Python BAM extraction and generated R"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/example_run.sh",
+      "sha256": "4f185b9536e787fb5cadcf6d259ee12ec6606b4f2eb8b5948793e991f7bc555e",
+      "bytes": 685,
+      "role": "author commands"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/sashimi.pdf",
+      "sha256": "3be835e5fe1d3301f1399edb52fb68f1db36ebd18e44a773c628a396d8cccb42",
+      "bytes": 44264,
+      "role": "official example1 overlay shrink original PDF"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/sashimi.png",
+      "sha256": "b048220f90c3403f69a94303a137078296a47e04dff7c572b66bda0b18613bca",
+      "bytes": 492225,
+      "role": "repository overview original PNG"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/sources/upstream/examples/sashimi.tiff",
+      "sha256": "0419b15af9e2f303bbc64bb395cb33da567111f07598d6c4cfc89cdcf42e25fb",
+      "bytes": 313954,
+      "role": "official example2 mean fixed-scale original TIFF"
+    }
+  ],
+  "input_contract": {
+    "region": "chr10:27040584-27048100",
+    "BAMs": 12,
+    "groups": 3,
+    "libraries_per_group": 4,
+    "data_kind": "real ENCODE RNA-seq small-region BAM subsets; not simulated",
+    "inference": "none; independent biological replication not assumed",
+    "source_coordinate_caveat": "parse start-1 while read.reference_start+1; preserve upstream semantics",
+    "CIGAR": "M counted; N junction; I/S no reference advance; D advance; H/P/X/= skip whole alignment",
+    "junction_filter": "per-library >=10 before aggregate",
+    "assembly": "hg19; author BAM header male/female.hg19 and GencodeV19",
+    "gene": "ABI1 (ENSG00000136754.12), negative strand"
+  },
+  "packages_by_role": {
+    "pysam": "actual indexed BAM read extraction",
+    "ggplot2": "source coverage and labels",
+    "grid": "source xspline arc grobs",
+    "data.table": "junction aggregation",
+    "gridExtra/gtable": "aligned track arrangement",
+    "ragg": "BioFigure authorized PNG"
+  },
+  "r_functions": [
+    "geom_bar",
+    "xsplineGrob",
+    "annotation_custom",
+    "arrangeGrob"
+  ],
+  "gaps": [
+    {
+      "detail": "Source mixed coordinate convention preserved and reported; not generic pileup validation"
+    }
+  ],
+  "method_reference": {
+    "path": "references/ggsashimi-splicing-learning.md",
+    "sha256": "b260873afb45027ba7e9059b65ffdb0aa7142a483b33e68094d668f9179d98c4",
+    "bytes": 6227,
+    "role": "fixed-source learning, scientific contract and fresh replay entry"
+  },
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "RNA splicing sashimi BAM junction arc coverage ggsashimi"
+    ],
+    "appropriate_data": "coordinate-sorted indexed RNA BAM and optional GTF",
+    "avoid_for": "PSI or differential inference; independent biological n inferred from reads"
+  },
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "whole_original_figure": "NOT_VERIFIED",
+  "code_files": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/audit_coordinate_semantics.py",
+      "sha256": "96f4fa19a02a3f5be1d9fbc00e9150b062088a8fb91dbe6242bf65c4c39d5bd8",
+      "bytes": 2268,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/audit_outputs.py",
+      "sha256": "c8f578335b5b07d3eee4a2280437359042bf043844709b37f5bbd9280b0a4642",
+      "bytes": 3455,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/extract_data.py",
+      "sha256": "9bbb0a0ee0512df37cff19dca99bffc21548dac8c695b39743625cca2eba0cb6",
+      "bytes": 4430,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/fresh_replay.py",
+      "sha256": "3190fbc3ac15620b3500c66468facbbd18d0b7a209f08b5ea6043e7d96723b2a",
+      "bytes": 2758,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/generate_native.py",
+      "sha256": "dd5594a54f5ff443aaa5069f55f0e4b622043da645fbe8edc9cbe5e9bc65457e",
+      "bytes": 1493,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/render.R",
+      "sha256": "f7d38f511cebdfb994efb2e3330e80dd74d09f5411e9b5ea1227141370c8b0df",
+      "bytes": 6431,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/requirements-bam.txt",
+      "sha256": "30437b2118ae4d648c185ecc4d0e9f62669f74f8280b278920df955d72b7e607",
+      "bytes": 14,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    }
+  ],
+  "implementation_configs": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/mean_fixed-design-spec.yaml",
+      "sha256": "ebb66366fadb5d5d3e86c753b26080fa57fe1215fd37d68897282f180e438dcf",
+      "bytes": 31163,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/mean_fixed-request.yaml",
+      "sha256": "45a4b83055b4d91d127dc902448da742b80cc7474345877df042cd89fddc70de",
+      "bytes": 612,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/overlay_shrink-design-spec.yaml",
+      "sha256": "5158309258179c54f9d3aa627b5a7fdc137b9be4b61057ccbc857e8d4b92067c",
+      "bytes": 31282,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/overlay_shrink-request.yaml",
+      "sha256": "6a7286eaa246afe6dbeff1a086a7bf53db64560bb7e5fdbd4914179bb0187a78",
+      "bytes": 620,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/project-style.yaml",
+      "sha256": "0e9c1493df4297da6b730fcfbd3caca86b0a1da2975caa85dfa3bd5398209400",
+      "bytes": 604,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    }
+  ],
+  "fixed_fixture_review": "Source/data algorithms and current renders reviewed. Final artifact-bound evidence is separately registered after final fresh invocation; never inherit this review for new data.",
+  "user_acceptance": "NOT_VERIFIED",
+  "scientific_caveats": [
+    "Upstream count semantics retain843secondary and1600MAPQ<20 alignments, with1bp offset; no generic pileup correctness claim.",
+    "Explicit R compatibility patch: overlay sum(count) yields one arc/junction with four original labels; mean stays round(mean(count)). Stable panel alignment replaces obsolete gtable numeric slots."
+  ],
+  "scientific_audits": [
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/coordinate-filter-audit.json",
+      "sha256": "489695a6c6e974a6529140dd381cc4d2f7b2cc47ad5b186280882d2fdde0afc1",
+      "bytes": 7514,
+      "role": "independent source coordinate or display calculation audit"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/assembly-provenance.json",
+      "sha256": "a389c04738ded4b9360478a4e989f9cdb54f7a847489f193f5cedef0d7894b44",
+      "bytes": 2973,
+      "role": "independent source coordinate or display calculation audit"
+    },
+    {
+      "path": "benchmark/library/transcriptomics/ggsashimi-splicing/data/metadata/display-data-audit.json",
+      "sha256": "beac5705c2e6c47ca04aac3db2a7574b2c4705bc260bfa777118275892851257",
+      "bytes": 1020,
+      "role": "independent source coordinate or display calculation audit"
+    }
+  ]
+}

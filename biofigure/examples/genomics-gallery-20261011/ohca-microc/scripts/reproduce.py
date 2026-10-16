@@ -84,7 +84,7 @@ def main():
     if a.pdf_previews:
         for dpi in [96,120]:run(['pdftoppm','-png','-singlefile','-r',str(dpi),pdf,work/(pdf.stem+'-pdf-'+str(dpi)+'dpi')])
     record={'schema_version':1,'method_id':config['method_id'],'scope':config['scope'],'mode':config['mode'],
-        'fresh_CP2':True,'authorization_consumed':Path(str(auth)+'.consumed').is_file(),'old_PASS_copied':False,'raw_analysis_rerun':False,
+        'fresh_CP2':True,'authorization_consumed':json.loads(auth.read_text()).get('consumed') is True,'old_PASS_copied':False,'raw_analysis_rerun':False,
         'source_view':view,'commands':commands,'plot_data':[{'path':x['path'],'sha256':sha(root/x['path'])} for x in config['plot_data']],
         'final_pdf':{'path':config['final_pdf'],'sha256':sha(pdf)},'new_png_sha256':sha(png),
         'visual_review':'PENDING_ACTUAL_NEW_OUTPUT_REVIEW','formal_author_panel_fidelity':'NOT_VERIFIED','new_input_transfer':'NOT_VERIFIED'}

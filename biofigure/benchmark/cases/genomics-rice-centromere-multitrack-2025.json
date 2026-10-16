@@ -1,0 +1,976 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-rice-centromere-multitrack-2025",
+  "learned_method_id": "BENCH-genomics-rice-centromere-multitrack-2025",
+  "recipe_id": "GEN-RICE-CEN-MULTITRACK-2025",
+  "title": "Rice centromere synteny ribbons and CENH3 multi-track layout with source transformation audit",
+  "label": "水稻着丝粒四轨共线性、十材料ChIP五轨与嵌套重复",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE_WITH_DOCUMENTED_INPUT_AND_CODE_GAPS",
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_RUN",
+    "new_input_transfer": "NOT_VERIFIED",
+    "source_transform": "COMPLETED_WITH_REPORTED_ANOMALIES_AND_INPUT_GAPS",
+    "user_acceptance": "PENDING",
+    "raw_sequencing_analysis": false
+  },
+  "figure_family": "genomic-tracks",
+  "chart_type": "dense synteny ribbons and vertically aligned signal annotation tracks",
+  "chart_types": [
+    "synteny",
+    "genomic-tracks",
+    "multi-track",
+    "triangular-heatmap",
+    "network"
+  ],
+  "domain": "genomics",
+  "method_families": [
+    "centromere-synteny",
+    "physical-coordinate-tracks",
+    "CENH3-epigenomics",
+    "satellite-repeat-compression"
+  ],
+  "paper": {
+    "title": "Genetic diversity and evolution of rice centromeres",
+    "journal": "Nature Genetics",
+    "year": 2025,
+    "doi": "10.1038/s41588-025-02365-1",
+    "url": "https://www.nature.com/articles/s41588-025-02365-1",
+    "figure": "Fig5a and Fig6d method/layout learning; Fig4c/d annotation preparation; Fig2 inspected to reject wrong pairing",
+    "publication_assets_license": "REUSE_NOT_ESTABLISHED_SUBSCRIPTION_PREVIEW"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/Darlene1997/SynPan-CEN",
+    "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+    "license": "MIT",
+    "source_type": "original-author plotting and preprocessing code; separate CenTools source is unlicensed",
+    "secondary_repo": {
+      "repo": "https://github.com/dongyawu/CenTools",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "license": "NO_LICENSE_PRIVATE_LOCAL_ONLY"
+    }
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/MatchList_Pairs_12chr_EDColorRange.R",
+      "sha256": "d4b3a662c523ec52181355243e4c21b398a8ade8a68a074f9fe8a4e9e194da81",
+      "bytes": 4038,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/MatchList_Pairs_12chr_EDColorRange.R",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "MatchList_Pairs_12chr_EDColorRange.R",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "eee13569a5fc9b0a4f6f814a74230b20e865dd07",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/LICENSE",
+      "sha256": "636c52914997d15f67caf9f1242c7131d763b37e39072bbd02ece0d533db3483",
+      "bytes": 1069,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/LICENSE",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "LICENSE",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "ad5b5834f02971237a5c305b2ba85224976df82f",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/SL177_full_annotation.rmdup.txt",
+      "sha256": "2f75cc79b1dd0d3ba3b95f278cd904f02b4c0fb5f9848bfc7b9b23b51e4be294",
+      "bytes": 1597392,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/SL177_full_annotation.rmdup.txt",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "SL177_full_annotation.rmdup.txt",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "53009f566f010641bf72348cbaa4db76bb77421e",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/ED_ColorRange.py",
+      "sha256": "ab276c85e1d0591124d8b22411175f4c7d2050a118cc2b175146fcda5467a7b1",
+      "bytes": 9089,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/ED_ColorRange.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "ED_ColorRange.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "46e3bfe5297a657212b49a382b1909ae3f1e98fc",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/Chr01_NIP_SL177_group_pairED_order_all.dag_fortest",
+      "sha256": "d9669a0440f9e6361d7cb7d99dfe76eac784ac292256828bab0ad69a2c0e30fa",
+      "bytes": 183611,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Chr01_NIP_SL177_group_pairED_order_all.dag_fortest",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Chr01_NIP_SL177_group_pairED_order_all.dag_fortest",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "b2028572d415b0af283b4dca7ef9695467de8fa8",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/README.md",
+      "sha256": "3b2345ca8cb1d75adcfc706b86d1d29004bfec7043e1ba3057c563e6b81154b2",
+      "bytes": 13700,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/README.md",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "README.md",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "aa6ca698e3610b44b49f0348120a15f38e625dcc",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Merge_Tracks_Pairs.py",
+      "sha256": "84b76d94080d85ebe949b54af5ffa8664df81d2a7b774c93ede05924cce46a2b",
+      "bytes": 14232,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Merge_Tracks_Pairs.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Merge_Tracks_Pairs.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "e9f509c35e41734871811a805c7f86b8c426e501",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/NIP_full_annotation.rmdup.txt",
+      "sha256": "5d787b7b8568c5dd98d3e6cd0e5ba7ff89c9a4f0f4ff223d6d64426706af03fe",
+      "bytes": 1973908,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/NIP_full_annotation.rmdup.txt",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "NIP_full_annotation.rmdup.txt",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "d3ce5ebbd3b904fc94089c4770802457cb535c99",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Add_More_Details.py",
+      "sha256": "93d2511d76ed24b9d81c548292fcbca974edc12d2f7a04b7f989c073ffe3b376",
+      "bytes": 9591,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Add_More_Details.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Add_More_Details.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "09a0cb283c7931f786f5385685e0d619875d79cf",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/SynPan-CEN/Chr01_NIP_SL177_pairED15.sg_filter",
+      "sha256": "f63769b625d0e6a1544b494da6c130959cfde7a8a7481fa77efc785d603da3c9",
+      "bytes": 164476,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Chr01_NIP_SL177_pairED15.sg_filter",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Chr01_NIP_SL177_pairED15.sg_filter",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "699e79d8ef8a5ceaab731962805c1b2e8053c9f0",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_diHR.pl",
+      "sha256": "87c9e513fb686a921c85fd6fb3499cd7676f49893f77e2454d4955bd6ede0a58",
+      "bytes": 2291,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_diHR.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_diHR.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "0f1f34e6399429478b8b262b69bf12a696e6a663",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR1.pl",
+      "sha256": "26386e04a866adee0da935ba4c3decd0f9afe6b97e4bcd59dea687d2cdcb0472",
+      "bytes": 900,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_moHR1.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_moHR1.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "05bbc6ba0098e0403a741da7cba4f278b53e611e",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR2.pl",
+      "sha256": "da6993b4c01c2c4c2aad7bce3aee664c04b3f24245dc137fd1869be77281408b",
+      "bytes": 1011,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_moHR2.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_moHR2.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "fce2fff1a859aeb4d35320837a18df07421fa543",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "sha256": "b02ddcd04f567836b95f56696a28883363cfc5340a0dcabb0ec28cd1aaf6aa57",
+      "bytes": 4416,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "85d23fc1186991e8eec166ae884f149f3efb5f5b",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_win10k_ONTmet_ChIP.R",
+      "sha256": "9e0bf5632964188d9f2995ed65d1769fabb6bf81db247de41d587b91a6e9bd96",
+      "bytes": 8223,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_win10k_ONTmet_ChIP.R",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_win10k_ONTmet_ChIP.R",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "f0ef38728f0906c24c778b5e6f1dd4cb3d7cf8cf",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "sha256": "cb6fcc582be9d32b601fb4a0e86113e28a60165bd114324582fc9a38be76a095",
+      "bytes": 8087,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "b513cecc7ba0fa5476fdbd555e4f30388e253d83",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_win10k_metprop_ChIP.py",
+      "sha256": "7e172001d58a8dd980dac0ee66201b33098192a470d12f62fe215ff173b7de62",
+      "bytes": 2430,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_win10k_metprop_ChIP.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_win10k_metprop_ChIP.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "73d1637ae3fed3b6393f877c0851dcba029d80e2",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/HOR/HORdetect_rice.py",
+      "sha256": "f3259f03c55af5cc05e4bb5b5b2a4b4cba5bd8de1bc8d3df0a0f3e40840f32d1",
+      "bytes": 30703,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/HOR/HORdetect_rice.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "HOR/HORdetect_rice.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "70b632c3dd892443e8a7ee0c86144439bccc5b2c",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/HOR/README.md",
+      "sha256": "d03e3e3cdf72065f86cbac2186da92672e947edc349755c78e367b1fb9e2b26e",
+      "bytes": 1356,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/HOR/README.md",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "HOR/README.md",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "92ffe893f28efe666813df49531aab22424a6f55",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/HOR/data/all.anno2.cps.cps.cps_seq.fa",
+      "sha256": "3b73a4905b6d90c135b3de9e9e50957d253c425ebeb34d29ee876627c0b2708c",
+      "bytes": 148965,
+      "role": "author-processed-data-or-document",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/HOR/data/all.anno2.cps.cps.cps_seq.fa",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "HOR/data/all.anno2.cps.cps.cps_seq.fa",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "051823ab8a78edca14d2338e5c318ea53f836333",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig2.png",
+      "sha256": "29cfef2c0e33fe609073b3d4822050b37290a6f63a04c85a05da0212b68fbbc2",
+      "bytes": 220077,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig2_HTML.png",
+      "figure": "Fig2",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig4.png",
+      "sha256": "db75a1931f9cc172b18760785358fbb663d1a38b368984ee98395a9dd472b7ed",
+      "bytes": 900611,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig4_HTML.png",
+      "figure": "Fig4",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig5.png",
+      "sha256": "68bd15fecfc18e1128c764e209320fc3569dfb65df5002c7cb5242d8257bc98a",
+      "bytes": 449562,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig5_HTML.png",
+      "figure": "Fig5",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig6.png",
+      "sha256": "bed6248478370393e650b6fa0bfd0d243c228c4916f6861f2806b49b98b82935",
+      "bytes": 484155,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig6_HTML.png",
+      "figure": "Fig6",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/MatchList_Pairs_12chr_EDColorRange.R",
+      "sha256": "d4b3a662c523ec52181355243e4c21b398a8ade8a68a074f9fe8a4e9e194da81",
+      "bytes": 4038,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/MatchList_Pairs_12chr_EDColorRange.R",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "MatchList_Pairs_12chr_EDColorRange.R",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "eee13569a5fc9b0a4f6f814a74230b20e865dd07",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/ED_ColorRange.py",
+      "sha256": "ab276c85e1d0591124d8b22411175f4c7d2050a118cc2b175146fcda5467a7b1",
+      "bytes": 9089,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/ED_ColorRange.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "ED_ColorRange.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "46e3bfe5297a657212b49a382b1909ae3f1e98fc",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Merge_Tracks_Pairs.py",
+      "sha256": "84b76d94080d85ebe949b54af5ffa8664df81d2a7b774c93ede05924cce46a2b",
+      "bytes": 14232,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Merge_Tracks_Pairs.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Merge_Tracks_Pairs.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "e9f509c35e41734871811a805c7f86b8c426e501",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Add_More_Details.py",
+      "sha256": "93d2511d76ed24b9d81c548292fcbca974edc12d2f7a04b7f989c073ffe3b376",
+      "bytes": 9591,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/Darlene1997/SynPan-CEN/60d29cd4dc74b9ac19f2bf55132471d0de470a55/Add_More_Details.py",
+      "repository": "https://github.com/Darlene1997/SynPan-CEN",
+      "repository_path": "Add_More_Details.py",
+      "commit": "60d29cd4dc74b9ac19f2bf55132471d0de470a55",
+      "git_blob_sha1": "09a0cb283c7931f786f5385685e0d619875d79cf",
+      "git_blob_verified": true,
+      "license": "MIT",
+      "publishable": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_diHR.pl",
+      "sha256": "87c9e513fb686a921c85fd6fb3499cd7676f49893f77e2454d4955bd6ede0a58",
+      "bytes": 2291,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_diHR.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_diHR.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "0f1f34e6399429478b8b262b69bf12a696e6a663",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR1.pl",
+      "sha256": "26386e04a866adee0da935ba4c3decd0f9afe6b97e4bcd59dea687d2cdcb0472",
+      "bytes": 900,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_moHR1.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_moHR1.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "05bbc6ba0098e0403a741da7cba4f278b53e611e",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR2.pl",
+      "sha256": "da6993b4c01c2c4c2aad7bce3aee664c04b3f24245dc137fd1869be77281408b",
+      "bytes": 1011,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/PCS/PCS_moHR2.pl",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "PCS/PCS_moHR2.pl",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "fce2fff1a859aeb4d35320837a18df07421fa543",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "sha256": "b02ddcd04f567836b95f56696a28883363cfc5340a0dcabb0ec28cd1aaf6aa57",
+      "bytes": 4416,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "85d23fc1186991e8eec166ae884f149f3efb5f5b",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_win10k_ONTmet_ChIP.R",
+      "sha256": "9e0bf5632964188d9f2995ed65d1769fabb6bf81db247de41d587b91a6e9bd96",
+      "bytes": 8223,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_win10k_ONTmet_ChIP.R",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_win10k_ONTmet_ChIP.R",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "f0ef38728f0906c24c778b5e6f1dd4cb3d7cf8cf",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "sha256": "cb6fcc582be9d32b601fb4a0e86113e28a60165bd114324582fc9a38be76a095",
+      "bytes": 8087,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "b513cecc7ba0fa5476fdbd555e4f30388e253d83",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_win10k_metprop_ChIP.py",
+      "sha256": "7e172001d58a8dd980dac0ee66201b33098192a470d12f62fe215ff173b7de62",
+      "bytes": 2430,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP/union_win10k_metprop_ChIP.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "ChIP/union_win10k_metprop_ChIP.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "73d1637ae3fed3b6393f877c0851dcba029d80e2",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/HOR/HORdetect_rice.py",
+      "sha256": "f3259f03c55af5cc05e4bb5b5b2a4b4cba5bd8de1bc8d3df0a0f3e40840f32d1",
+      "bytes": 30703,
+      "role": "original-author-source",
+      "source_url": "https://raw.githubusercontent.com/dongyawu/CenTools/baa04cc51180ab526aeeb6a6c30e6165efd32404/HOR/HORdetect_rice.py",
+      "repository": "https://github.com/dongyawu/CenTools",
+      "repository_path": "HOR/HORdetect_rice.py",
+      "commit": "baa04cc51180ab526aeeb6a6c30e6165efd32404",
+      "git_blob_sha1": "70b632c3dd892443e8a7ee0c86144439bccc5b2c",
+      "git_blob_verified": true,
+      "license": "NO_LICENSE_LOCAL_REFERENCE_ONLY",
+      "publishable": false
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig2.png",
+      "sha256": "29cfef2c0e33fe609073b3d4822050b37290a6f63a04c85a05da0212b68fbbc2",
+      "bytes": 220077,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig2_HTML.png",
+      "figure": "Fig2",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig4.png",
+      "sha256": "db75a1931f9cc172b18760785358fbb663d1a38b368984ee98395a9dd472b7ed",
+      "bytes": 900611,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig4_HTML.png",
+      "figure": "Fig4",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig5.png",
+      "sha256": "68bd15fecfc18e1128c764e209320fc3569dfb65df5002c7cb5242d8257bc98a",
+      "bytes": 449562,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig5_HTML.png",
+      "figure": "Fig5",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/genome/originals/Fig6.png",
+      "sha256": "bed6248478370393e650b6fa0bfd0d243c228c4916f6861f2806b49b98b82935",
+      "bytes": 484155,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-025-02365-1/MediaObjects/41588_2025_2365_Fig6_HTML.png",
+      "figure": "Fig6",
+      "license": "SUBSCRIPTION_ARTICLE_IMAGE_LOCAL_REFERENCE_ONLY_REUSE_NOT_ESTABLISHED",
+      "publishable": false,
+      "actual_viewed": true
+    }
+  ],
+  "method_reference": {
+    "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/learning.md",
+    "sha256": "5e61193ba7b4e8e6654662a99e3e2eaa42990e15f7ec11d63d346ab9e68dfe77"
+  },
+  "code_line_map": [
+    {
+      "panel": "Fig5a",
+      "lines": [
+        [
+          8,
+          28
+        ],
+        [
+          37,
+          57
+        ],
+        [
+          67,
+          127
+        ]
+      ],
+      "concepts": [
+        "original-row-derived-LTR-ID",
+        "sequential-one-to-one-first-match",
+        "independent-local-origins",
+        "unmatched-interval-preservation"
+      ],
+      "pairing": "SAME_AUTHOR_METHOD_DIFFERENT_EXAMPLE_MATERIALS",
+      "repository_path": "Merge_Tracks_Pairs.py",
+      "source_files": [
+        {
+          "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Merge_Tracks_Pairs.py",
+          "sha256": "84b76d94080d85ebe949b54af5ffa8664df81d2a7b774c93ede05924cce46a2b",
+          "repository_path": "Merge_Tracks_Pairs.py"
+        }
+      ]
+    },
+    {
+      "panel": "Fig5a",
+      "lines": [
+        [
+          9,
+          13
+        ],
+        [
+          41,
+          64
+        ],
+        [
+          70,
+          114
+        ]
+      ],
+      "concepts": [
+        "reference-position-order",
+        "nonmonotonic-query-pair-split",
+        "ED-join-coverage",
+        "four-corner-ribbon-topology"
+      ],
+      "pairing": "SAME_AUTHOR_METHOD_DIFFERENT_EXAMPLE_MATERIALS",
+      "repository_path": "ED_ColorRange.py",
+      "source_files": [
+        {
+          "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/ED_ColorRange.py",
+          "sha256": "ab276c85e1d0591124d8b22411175f4c7d2050a118cc2b175146fcda5467a7b1",
+          "repository_path": "ED_ColorRange.py"
+        }
+      ]
+    },
+    {
+      "panel": "Fig5a",
+      "lines": [
+        [
+          45,
+          126
+        ]
+      ],
+      "concepts": [
+        "strand-track-y-5.9-1.1",
+        "TE-track-y-6.8-0.2",
+        "true-span-outline"
+      ],
+      "pairing": "SAME_AUTHOR_METHOD_DIFFERENT_EXAMPLE_MATERIALS",
+      "repository_path": "Add_More_Details.py",
+      "source_files": [
+        {
+          "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/Add_More_Details.py",
+          "sha256": "93d2511d76ed24b9d81c548292fcbca974edc12d2f7a04b7f989c073ffe3b376",
+          "repository_path": "Add_More_Details.py"
+        }
+      ]
+    },
+    {
+      "panel": "Fig5a",
+      "lines": [
+        [
+          12,
+          36
+        ]
+      ],
+      "concepts": [
+        "geom_rect",
+        "geom_polygon",
+        "factor-lock",
+        "fixed-xlim-crop-risk",
+        "CairoPDF"
+      ],
+      "pairing": "SOURCE_METHOD_NOT_FINAL_COMPOSITE",
+      "repository_path": "MatchList_Pairs_12chr_EDColorRange.R",
+      "source_files": [
+        {
+          "path": "benchmark/library/genomics/rice-centromere-multitrack-2025/sources/author-mit/MatchList_Pairs_12chr_EDColorRange.R",
+          "sha256": "d4b3a662c523ec52181355243e4c21b398a8ade8a68a074f9fe8a4e9e194da81",
+          "repository_path": "MatchList_Pairs_12chr_EDColorRange.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig6d",
+      "lines": [
+        [
+          13,
+          41
+        ],
+        [
+          59,
+          106
+        ]
+      ],
+      "concepts": [
+        "2kb-contained-window",
+        "flank-500kb",
+        "negative-log2-display-clamp",
+        "common-origin-five-tracks"
+      ],
+      "pairing": "SOURCE_METHOD_TARGET_CHR4_INPUT_MISSING",
+      "repository_path": "ChIP/union_chip_monomer_LTR_interval_f500k.py",
+      "source_files": [
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_chip_monomer_LTR_interval_f500k.py",
+          "sha256": "cb6fcc582be9d32b601fb4a0e86113e28a60165bd114324582fc9a38be76a095",
+          "repository_path": "ChIP/union_chip_monomer_LTR_interval_f500k.py"
+        }
+      ]
+    },
+    {
+      "panel": "Fig6d",
+      "lines": [
+        [
+          13,
+          22
+        ],
+        [
+          27,
+          38
+        ],
+        [
+          44,
+          48
+        ]
+      ],
+      "concepts": [
+        "explicit-material-order",
+        "rect-line-layer-alignment",
+        "shared-y-zero-to-eight",
+        "source-chr1-versus-final-chr4"
+      ],
+      "pairing": "SOURCE_METHOD_NOT_FINAL_CHR4_SCRIPT",
+      "repository_path": "ChIP/union_plots_monomer_LTR_INV_Chr.R",
+      "source_files": [
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/ChIP/union_plots_monomer_LTR_INV_Chr.R",
+          "sha256": "b02ddcd04f567836b95f56696a28883363cfc5340a0dcabb0ec28cd1aaf6aa57",
+          "repository_path": "ChIP/union_plots_monomer_LTR_INV_Chr.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig4c/d lower repeat annotation tracks",
+      "lines": [
+        [
+          12,
+          45
+        ],
+        [
+          13,
+          48
+        ],
+        [
+          13,
+          34
+        ],
+        [
+          76,
+          100
+        ],
+        [
+          28,
+          89
+        ],
+        [
+          92,
+          146
+        ]
+      ],
+      "concepts": [
+        "run-length-compression",
+        "canonical-dimers-original-orientation",
+        "transition-graph",
+        "terminal-flush-defect"
+      ],
+      "pairing": "PREPARATION_ONLY_TRIANGLE_AND_INSET_RENDERER_NOT_FOUND",
+      "repository_paths": [
+        "PCS/PCS_moHR1.pl",
+        "PCS/PCS_moHR2.pl",
+        "PCS/PCS_diHR.pl",
+        "HOR/HORdetect_rice.py"
+      ],
+      "source_files": [
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR1.pl",
+          "sha256": "26386e04a866adee0da935ba4c3decd0f9afe6b97e4bcd59dea687d2cdcb0472",
+          "repository_path": "PCS/PCS_moHR1.pl"
+        },
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_moHR2.pl",
+          "sha256": "da6993b4c01c2c4c2aad7bce3aee664c04b3f24245dc137fd1869be77281408b",
+          "repository_path": "PCS/PCS_moHR2.pl"
+        },
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/PCS/PCS_diHR.pl",
+          "sha256": "87c9e513fb686a921c85fd6fb3499cd7676f49893f77e2454d4955bd6ede0a58",
+          "repository_path": "PCS/PCS_diHR.pl"
+        },
+        {
+          "path": "../work/2026-10-13-deep-omics-learning/genome/sources/CenTools/HOR/HORdetect_rice.py",
+          "sha256": "f3259f03c55af5cc05e4bb5b5b2a4b4cba5bd8de1bc8d3df0a0f3e40840f32d1",
+          "repository_path": "HOR/HORdetect_rice.py"
+        }
+      ]
+    }
+  ],
+  "layout_rules": {
+    "fig5a": {
+      "material_order": [
+        [
+          "SL032",
+          "NIP",
+          "SL001"
+        ],
+        [
+          "CX20",
+          "NJ11",
+          "LK638S"
+        ]
+      ],
+      "region_chromosomes": [
+        "Chr02",
+        "Chr03"
+      ],
+      "geometry": "3 interval tracks per material plus ED link field between adjacent materials",
+      "scale": "physical bp after material-specific origin subtraction; no equal-width normalization",
+      "color_roles": {
+        "satellite": "15 discrete categories; F/SF share identity",
+        "strand": "binary direction",
+        "TE": "discrete class",
+        "ED": "ordered values0-15; unknown not zero"
+      },
+      "density_gate": "Require ED coverage before interpreting sparse connection field; current example8/1799 incomplete"
+    },
+    "fig6d": {
+      "sample_order": [
+        "NH265",
+        "CW03",
+        "CW15",
+        "SL177",
+        "SL170",
+        "NIP",
+        "CW11",
+        "CW06",
+        "SL121",
+        "NJ11"
+      ],
+      "geometry": "10 vertically stacked blocks, each two replicate lines and five annotation lanes",
+      "scale": "common physical kb, varying true interval length; common signal0-8",
+      "track_y": {
+        "family": -1,
+        "SZ-22": -2,
+        "CRM": -3,
+        "RIRE7": -4,
+        "Interval": -5
+      },
+      "density_gate": "2kb windows must retain within-sample order; no cross-chromosome or cross-type smoothing"
+    },
+    "fig4cd": {
+      "geometry": "2 triangle matrices,2identity histograms,5aligned annotation lanes,7 numbered inset pairs",
+      "pairing_gap": "Exact final matrix/triangle transform/render and inset composition not located",
+      "preserve": "physical interval endpoints, hierarchical annotation mapping, continuous identity versus discrete family colors"
+    }
+  },
+  "packages": [
+    {
+      "name": "pandas",
+      "role": "join, filter, coordinate shift, stable row-index IDs",
+      "executed": "2.2.3"
+    },
+    {
+      "name": "ggplot2",
+      "role": "rectangles, polygons, curves, facets",
+      "executed": false
+    },
+    {
+      "name": "Cairo",
+      "role": "vector PDF device",
+      "executed": false
+    },
+    {
+      "name": "zoo",
+      "role": "rolling mean; source grouping defect",
+      "executed": false
+    },
+    {
+      "name": "cowplot",
+      "role": "multi-track assembly; source syntax/undefined-object defect",
+      "executed": false
+    },
+    {
+      "name": "networkx/Graphviz",
+      "role": "compressed monomer transition graph/dot layout",
+      "executed": false
+    },
+    {
+      "name": "Perl",
+      "role": "author PCS boundary probe",
+      "executed": true
+    }
+  ],
+  "author_data_audit": {
+    "report": "benchmark/library/genomics/rice-centromere-multitrack-2025/evidence/source-transform-audit.json",
+    "status": "AUDIT_REVIEW_REQUIRED",
+    "checks": 16,
+    "passed": 14,
+    "failed": 2,
+    "annotations_all_rows": 56601,
+    "chr1_rows": 5900,
+    "sg_pairs": 1849,
+    "one_to_one_pairs": 1799,
+    "pairs_with_ED_in_provided_for_test_table": 8,
+    "reversed_intervals_all_chr": 25,
+    "HOR_records": 838,
+    "HOR_characters": 136086,
+    "native_merge_original_failed": true,
+    "independent_interval_aware_adapter_used": true
+  },
+  "required_inputs": [
+    {
+      "panel": "Fig5a",
+      "missing": "Exact Chr2/3 materials full ED/annotation/multi-material assembly tables and final layout",
+      "source_url": "https://doi.org/10.5281/zenodo.12702715"
+    },
+    {
+      "panel": "Fig6d",
+      "missing": "Exact Chr4 two-replicate2kb bedGraph, CENH3_position, mtype and TE tracks",
+      "source_url": "https://github.com/dongyawu/CenTools/tree/baa04cc51180ab526aeeb6a6c30e6165efd32404/ChIP"
+    },
+    {
+      "panel": "Fig4c/d",
+      "missing": "Exact StainedGlass matrix/render parameters and seven-inset assembly code",
+      "source_url": "https://doi.org/10.5281/zenodo.12702715"
+    }
+  ],
+  "failure_rules": [
+    "Reject ordinal indices as physical bp",
+    "Reject ED=0 imputation for missing matches",
+    "Preserve strand and Interval fields; do not silently repair reverse intervals",
+    "Check input factor IDs against metadata",
+    "Refuse cross-chromosome/type smoothing",
+    "Check terminal compression flush and first-row chomp",
+    "No full-figure claim without final sample-specific inputs and source comparison"
+  ],
+  "evidence_manifest": "benchmark/library/genomics/rice-centromere-multitrack-2025/source-manifest.json"
+}

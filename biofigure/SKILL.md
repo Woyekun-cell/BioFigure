@@ -3,54 +3,43 @@ name: biofigure
 description: Use when choosing a suitable chart from biological data, designing, drawing, reproducing, reviewing, or revising research figures; 根据生物数据判断适合的图型、按数据选图、设计、绘制、复现、审查或修订科研图。
 ---
 
-# BioFigure 3.7.1
+# BioFigure 3.8.0
 
-根据数据、实验设计和科学问题选择图型、实现并核验科研图。用户只问选图时给首选、备选和理由，不渲染。
+按数据、实验设计与问题选图、绘制、核验；选图咨询给首选、备选与理由。
 
-## 启动门
+## 启动与模式
 
-先定位Skill根，运行轻检索，不预读整套总览或遍历图库：
+先定位Skill根，读`static/core/execution-contract.yaml`与[绘图门禁](references/figure-execution-gates.md)。[证据模式](references/reference-modes.md)贯穿request、Spec、授权与CP4：
+- `original`：普通新画默认；按当前数据与包内Pattern原创，不以私有图库、原图、作者数据或DOI作前置。
+- `reference-guided`：采用来源/learned/reuse；绑定真实来源、采用/拒绝、适配与renderer哈希。
+- `reproduction`：`operation: reproduce`；保留原图、作者码、源数据与panel映射。模式冲突拒绝，缺材料不偷换原创。
+
+查已验模板或来源时轻检索，不预读图库：
 
 ```bash
 python3 <Skill根>/scripts/find_figure_reference.py --query "图型 + 数据含义 + 科研问题"
 ```
 
-默认前三条给图/码路径、命中理由及配对风险。`--list-types`列类别，`--type "森林图"`筛选；中文同名入口在`library/按图型检索/类别/{来源图,对应代码}`，代码回原路径运行。来源页候选需辨论文/教程/复现并核数据图层；选ID用`retrieve_learned_methods.py --case-id <ID>`读合同/核心代码/缺陷，request绑定`learned_method_id`再fresh prepare/CP2。选图咨询到此结束。零命中或不适配先改关键词，再查[总入口](references/benchmark-learning-index.md)。无文字图先描述结构；词法排名不当视觉相似度。
-
-正式绘图读`static/core/execution-contract.yaml`与[绘图门禁](references/figure-execution-gates.md)；已验适配器才读[复用规则](references/stable-template-reuse.md)。CP2仍绑定采用/拒绝、适配及renderer哈希。原图密度需对照；候选/needs-revision不继承PASS。
-
-领域页按需读：
-- 基因组/多组学：[Nature](references/nature-genomics-multiomics-learning.md)，核坐标、量纲、证据与源码版本。
-- 冻融：[MBE](references/msad040-visualization-learning.md)，缺重复仅源表汇总。
-- 泛基因组：[流程](references/pangenome-learning.md)，request声明pangenome_context。
-- 单细胞：[Han轨迹/投票树](references/han-foregut-single-cell-learning.md)、[Wahle空间](references/wahle-retinal-single-cell-learning.md)、[Hochgerner网络](references/hochgerner-dentate-single-cell-learning.md)、[Trevino多组学](references/trevino-cortex-single-cell-learning.md)。各自核类别/模态色、预处理、排序与辅助函数缺口。
-学习逐项记录预处理、函数/包、色义、布局和导出；区分源码证实、原图观察与脚本缺失。源码学习不等于原图复现；缺终稿组装仅迁移技法。
-
-请求与回执存现有项目 `work/<任务>/`；同一学习主题不按对话新建Project：
-
-```bash
-python3 <Skill根>/scripts/prepare_figure.py <项目>/work/<任务>/request.yaml --output <项目>/work/<任务>/preparation-receipt.json
-```
-
-关键科研字段缺失时返回 `NEEDS_SPEC`；未指定图型则按数据与问题选型。预检或CP2失败不得写图代码。`manifest.yaml`仅路由材料。
-
-## 统计决策
-
-统计/重分析读[流程](references/statistics-workflow.md)，按结局、因素、配对/重复及比较目标选方法；关键意向/设计缺失先问，答复后做依赖检验。咨询只给条件式建议。
-
-推断图声明 `statistics_required: true`、`statistics_plan`，运行 `validate_statistics_plan.py`并过CP2。诊断/统计表完成才映射效应、区间和显著性；已有P/q保留来源/校正，不为画图重算；描述图声明边界。
-
-首次成图即用有科学语义的彩色，禁止先黑白后补色；黑白数据图不能视觉PASS，见[配色规则](references/palette-system.md)。批量任务逐图验色并完整展示，不用单张代表整批。
-
-柱状图默认加可辨认的深色细描边（ggplot2 `colour="#30343B"`, `linewidth=0.35` mm），适用于普通、分组和堆积柱；最终尺寸检查边界，禁止粗边抢占数据。用户明确另指定时按新要求执行。
+前三卡只定位；`--list-types`/`--type`筛型。选ID再用`retrieve_learned_methods.py --case-id <ID>`读源码/合同/缺陷；request绑定`learned_method_id`再fresh prepare/CP2。零命中可原创，排名不作视觉相似证据。领域学习按需查[索引](references/benchmark-learning-index.md)；锁定模板按[复用规则](references/stable-template-reuse.md)执行。
 
 ## 统一执行
 
-1. 按路由读所需材料并执行 [绘图门禁](references/figure-execution-gates.md)。核对实验单位、重复、尺度、缺失、比较方向；候选不替代科学判断。
-2. 打开原尺寸来源图与方法/包材料，拆解面板、图层、映射、位置、层级和包职责。项目首图建立 `project-style.yaml`；后续图必须绑定其哈希、palette ID、语义色、字体角色及尺寸等级，偏离须写依据并重审。Design Spec同时锁定最终画布与字号：单栏89–90 mm、1.5栏120–136 mm或双栏180–183 mm，常规高度≤170 mm。
-3. 按[字号参考](references/layout.md)起步，依实际图文比例修正并更新Spec。编码前运行 `validate_design_spec.py <Spec> --preparation-receipt <回执>`；成功才可开始编码。编码后、渲染前签发一次性授权；R用 `bf_render_png()`消费。Python无官方授权入口，不得CP3 PASS。
-4. CP3打开最终PNG并绑定首版/终版、哈希和目标尺寸。CP4逐项检查字号、文字位置、标签/图例重叠、裁切、面板对齐及图文比例；大画布小字必须 `REVISE`。每次重绘使旧检查失效。
+请求、回执存现有项目`work/<任务>/`；同主题不另建Project。
 
-验收后将来源、脚本、plot data、终图、环境、QC及失败规则追加主题包，更新索引/分类入口。锁基线并独立复跑才登记稳定模板；清理仅可重建临时项。写入Skill/参考文档不覆盖旧证据。
+```bash
+python3 <Skill根>/scripts/prepare_figure.py request.yaml --output preparation-receipt.json
+```
 
-分别报告科学、技术、来源与用户验收。脚本PASS不等于视觉或复现PASS；未盲测的模型与环境不得声称等效。
+1. 核问题、实验单位、分组/方向、配对、尺度与缺失；技术重复非独立n。关键语义缺失返`NEEDS_SPEC`；未指定图型先选型，不猜显著性。
+2. 写完整`reference_analysis`：面板、元素、映射、拓扑、层级、包职责；原创按当前问题设计，来源模式还须查看原尺寸原图/方法。`design_target`保留六维；原创不虚填reference。首图建`project-style.yaml`，后续绑定其哈希、语义色、字体角色与尺寸。
+3. 按[布局](references/layout.md)锁最终画布/字号。运行`validate_design_spec.py <Spec> --preparation-receipt <回执>`，成功才可开始编码；预检或CP2失败禁写图代码。编码后、渲染前签发一次性授权，R用`bf_render_png()`消费。Python无官方授权入口，不得CP3 PASS。
+4. CP3打开当前PNG/PDF，核真实字体、终尺寸与哈希；CP4检查字号/位置、碰撞、裁切、对齐、配色与图文比例。原创`design-quality`、来源`reference-quality`均须hierarchy/geometry/palette/typography/marks/annotation六维实际观察。重绘使旧检查失效；自动检查不能替代human/model审图。
+
+## 专项硬门
+
+- 推断读[统计流程](references/statistics-workflow.md)，声明`statistics_required`与plan，先诊断/统计后标注；已有P/q保留来源，不为画图重算。
+- 首版即[语义彩色](references/palette-system.md)；柱图默认深细边`#30343B`、0.35mm。点/线/带按[图层透明度](references/mark-opacity.md)分控fill/edge。
+- [热图](references/heatmaps.md)：少量物理方格，密集例外须声明；CP3逐slice实测，CP4看当前图。
+- [文字](references/enforced-execution.md)：caption/footer/脚注、方法/阈值段落、AI备注移图外；标题授权/白名单不豁免。核到底边，缺`footer_absent`实际观察不交付。
+
+交付保留输入、plot data、脚本/配置、PDF、环境/QC；分别报告科学、执行、视觉、来源与用户验收。旧PASS不迁移；源码学习、固定复跑、原图复现和新输入迁移分别记录，不升级档案资格。

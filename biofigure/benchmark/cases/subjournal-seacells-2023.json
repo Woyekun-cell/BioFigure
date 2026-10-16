@@ -1,0 +1,860 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-seacells-2023",
+  "learned_method_id": "BENCH-subjournal-seacells-2023",
+  "title": "SEACells infers transcriptional and epigenomic cellular states from single-cell genomics data",
+  "label": "SEACells：基因峰相关散点、NFR覆盖弧、TF活动热图与基因协方差",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_RUN",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_sequencing_analysis": false
+  },
+  "figure_family": "gene-peak-correlation-scatter",
+  "chart_type": "SEACells：基因峰相关散点、NFR覆盖弧、TF活动热图与基因协方差",
+  "chart_types": [
+    "gene-peak-correlation-scatter",
+    "genomic-tracks",
+    "peak-gene-arcs",
+    "TF-activity-heatmap",
+    "gene-covariance-heatmap"
+  ],
+  "domain": "single-cell",
+  "paper": {
+    "schema_version": 1,
+    "accessed_on": "2026-10-15",
+    "title": "SEACells infers transcriptional and epigenomic cellular states from single-cell genomics data",
+    "journal": "Nature Biotechnology",
+    "year": 2023,
+    "doi": "10.1038/s41587-023-01716-9",
+    "url": "https://www.nature.com/articles/s41587-023-01716-9",
+    "article_license": "CC-BY-4.0",
+    "correction": null,
+    "code_availability": {
+      "paper_section": "Code availability",
+      "paper_page": "benchmark/library/single-cell/seacells-2023/sources/paper.html",
+      "author_paper_analysis_repo": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "license": "MIT",
+      "source_type": "original author paper analysis code; package/tutorial supplementary material kept distinct"
+    },
+    "full_figure_reproduction": "NOT_VERIFIED",
+    "viewed_figures": [
+      "Fig1",
+      "Fig3",
+      "Fig5"
+    ],
+    "data_availability": [
+      "h5ad raw/count layers",
+      "fragment files",
+      "metacell labels",
+      "DORC pickle correlation tables",
+      "TF-target FIMO matrix",
+      "exact covariance genes"
+    ],
+    "issue_date": "2023-12",
+    "online_date": "2023-03-27"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/dpeerlab/SEACellsReproducibility",
+    "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+    "license": "MIT",
+    "source_type": "original-author-paper-analysis",
+    "supplementary_package": null
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/raw/author-Fig1-cell85-celltype-counts.tsv",
+      "sha256": "406ed790772e832a28229f222bec2e8e4d87a09d9c50053276cf2de30de8a3c2",
+      "bytes": 153,
+      "source_url": null,
+      "role": "original-author-data-bytes-or-provenanced-extract",
+      "license": "CC-BY-4.0",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/raw/author-Fig3-cell62-correlations.tsv",
+      "sha256": "91a134f53958d66d23d41093329546fe5bcf9acbebfc20f0a013a4472ea8e72c",
+      "bytes": 173,
+      "source_url": null,
+      "role": "original-author-data-bytes-or-provenanced-extract",
+      "license": "CC-BY-4.0",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/results/plot_data/source-boundary-probes.tsv",
+      "sha256": "ecfae55256f2fe7583d05266cfef692866d1e74c27e3d7939185d6dc77dc43bd",
+      "bytes": 534,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/scripts/check_notebook_semantics.py",
+      "sha256": "ac7de46899914cd08ab3daf79701589b6ba863ce6493087f0f3382994e29dc12",
+      "bytes": 3962,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/LICENSE",
+      "sha256": "3900557af7a3f05434dc9bb9853deb369235fee408c5038e186cabbd6af72a54",
+      "bytes": 1071,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/LICENSE",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "LICENSE",
+      "git_blob_sha1": "074388a647a7acaeb04fa77095b3ba25f4681df7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/README.md",
+      "sha256": "852bfd1eb78d6d25c0dd8972bbaa97a9ad7b6f52fdb75a664e22e5640e7737d2",
+      "bytes": 984,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/README.md",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "README.md",
+      "git_blob_sha1": "48f5788d8b006355f5972e39b1c2161209e4862a",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.code.py",
+      "sha256": "bdd51c3029da5f7ef6eb7f91aa79425257d5ef11077cc20d4e51581e847f5d14",
+      "bytes": 7239,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-ATAC-preprocessing.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "sha256": "615e0540da03c7df45de433d05eabdaf4dcd2190b36b1890deb57bac5fd81a1c",
+      "bytes": 2756854,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "git_blob_sha1": "caebd0d60fd81bfa6f91fc5c0f2afbd446bb95e7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.code.py",
+      "sha256": "9a3fe51648c4d0a43f8270d9afc80f1d59699dcf62fc294d5bbce8af859b492b",
+      "bytes": 20124,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-RNA-preprocessing.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "sha256": "1b1daab9314d10efb808a94e7d26c976f30b37f4df0434939a4f75331eb8aa9c",
+      "bytes": 5837863,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "git_blob_sha1": "7bf7438257b5d67311daae2817cf3c7c0a1d5df7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.code.py",
+      "sha256": "2beef918a379345e68db3535a4038f5a0750e499feab54b2476b0c33fdbf0ab9",
+      "bytes": 48925,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig1.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb",
+      "sha256": "d906ece8097b923f3db0f6dafbcc9da9e87be3a55294b279278dc23da4ee03b5",
+      "bytes": 2586759,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig1.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig1.ipynb",
+      "git_blob_sha1": "e255239d749d6796b2c3e4d135cd8741d524ec42",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.code.py",
+      "sha256": "1d7a31bf3e81acbbb5540c680eecef617fcde415227069551235af25d6b76b00",
+      "bytes": 55667,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3AB_Fig4B.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+      "sha256": "9147ea1665404e64cefe7660ba030a1f312d4d7cfcaf9a9c15de3814d36a19d7",
+      "bytes": 3600911,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig3AB_Fig4B.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3AB_Fig4B.ipynb",
+      "git_blob_sha1": "f0542e89bec41e84c12f1395d6bce04bdce4c9d0",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.code.py",
+      "sha256": "5f6f6fb80c7433b823e8276c8a07581468ce78cde8ee5b0bedc1fa8a71c8ecdb",
+      "bytes": 20719,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3CD.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb",
+      "sha256": "faaca3cb3394da8d514c5f728a4304a4b345448e009e015c14a635c4b329e2cb",
+      "bytes": 649785,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig3CD.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3CD.ipynb",
+      "git_blob_sha1": "9ce2d95cae07256aa6c0107e77a5d79e77ce23ae",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.code.py",
+      "sha256": "68967f8f9534944913d0b43d25985f3b0e461e192d19cbbb2c06ebf9d23a1acf",
+      "bytes": 48135,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig5.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.ipynb",
+      "sha256": "4c14ab8ce7fd4348e6740327b81c44280007eff8d38b6f17062c11ac38fe2184",
+      "bytes": 1573324,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig5.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig5.ipynb",
+      "git_blob_sha1": "cd8f0ac723d378882a9bbc5730d6bf5a920f492f",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig1.png",
+      "sha256": "caad8c83aba1b837074c74f027b162a76671fea93b4a4eb154397a1b2cb2b8bf",
+      "bytes": 953635,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig1_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig1",
+      "width_px": 2168,
+      "height_px": 910,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig3.png",
+      "sha256": "a0932ac094cc87e7b5b19480aee5aedd6b8803be10ea02fdbcd8de4bada3279a",
+      "bytes": 416672,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig3",
+      "width_px": 2167,
+      "height_px": 1489,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig5.png",
+      "sha256": "956de3d03e421f0eecc2472fd2c0195fb704262ca9233008bc9e8d99736047b0",
+      "bytes": 1119631,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig5_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig5",
+      "width_px": 1434,
+      "height_px": 2623,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/paper.html",
+      "sha256": "d67057b91dfea936cb927fb2af916e4c2cf5be7afcb9c1dc2b43bdaf7140c53e",
+      "bytes": 625893,
+      "source_url": "https://www.nature.com/articles/10.1038/s41587-023-01716-9?error=cookies_not_supported",
+      "role": "official-paper-page-or-correction",
+      "license": "CC-BY-4.0",
+      "publishable": false
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.code.py",
+      "sha256": "bdd51c3029da5f7ef6eb7f91aa79425257d5ef11077cc20d4e51581e847f5d14",
+      "bytes": 7239,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-ATAC-preprocessing.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "sha256": "615e0540da03c7df45de433d05eabdaf4dcd2190b36b1890deb57bac5fd81a1c",
+      "bytes": 2756854,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-ATAC-preprocessing.ipynb",
+      "git_blob_sha1": "caebd0d60fd81bfa6f91fc5c0f2afbd446bb95e7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.code.py",
+      "sha256": "9a3fe51648c4d0a43f8270d9afc80f1d59699dcf62fc294d5bbce8af859b492b",
+      "bytes": 20124,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-RNA-preprocessing.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "sha256": "1b1daab9314d10efb808a94e7d26c976f30b37f4df0434939a4f75331eb8aa9c",
+      "bytes": 5837863,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/CD34-multiome-RNA-preprocessing.ipynb",
+      "git_blob_sha1": "7bf7438257b5d67311daae2817cf3c7c0a1d5df7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.code.py",
+      "sha256": "2beef918a379345e68db3535a4038f5a0750e499feab54b2476b0c33fdbf0ab9",
+      "bytes": 48925,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig1.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb",
+      "sha256": "d906ece8097b923f3db0f6dafbcc9da9e87be3a55294b279278dc23da4ee03b5",
+      "bytes": 2586759,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig1.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig1.ipynb",
+      "git_blob_sha1": "e255239d749d6796b2c3e4d135cd8741d524ec42",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.code.py",
+      "sha256": "1d7a31bf3e81acbbb5540c680eecef617fcde415227069551235af25d6b76b00",
+      "bytes": 55667,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3AB_Fig4B.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+      "sha256": "9147ea1665404e64cefe7660ba030a1f312d4d7cfcaf9a9c15de3814d36a19d7",
+      "bytes": 3600911,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig3AB_Fig4B.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3AB_Fig4B.ipynb",
+      "git_blob_sha1": "f0542e89bec41e84c12f1395d6bce04bdce4c9d0",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.code.py",
+      "sha256": "5f6f6fb80c7433b823e8276c8a07581468ce78cde8ee5b0bedc1fa8a71c8ecdb",
+      "bytes": 20719,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3CD.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb",
+      "sha256": "faaca3cb3394da8d514c5f728a4304a4b345448e009e015c14a635c4b329e2cb",
+      "bytes": 649785,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig3CD.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig3CD.ipynb",
+      "git_blob_sha1": "9ce2d95cae07256aa6c0107e77a5d79e77ce23ae",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.code.py",
+      "sha256": "68967f8f9534944913d0b43d25985f3b0e461e192d19cbbb2c06ebf9d23a1acf",
+      "bytes": 48135,
+      "source_url": null,
+      "role": "derived-notebook-code-index",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig5.code.py",
+      "derived_from": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.ipynb"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig5.ipynb",
+      "sha256": "4c14ab8ce7fd4348e6740327b81c44280007eff8d38b6f17062c11ac38fe2184",
+      "bytes": 1573324,
+      "source_url": "https://raw.githubusercontent.com/dpeerlab/SEACellsReproducibility/85787bd2f254d6f09b663dade835798778c367ea/notebooks/Fig5.ipynb",
+      "role": "original-author-paper-code-or-document",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/dpeerlab/SEACellsReproducibility",
+      "commit": "85787bd2f254d6f09b663dade835798778c367ea",
+      "repository_path": "notebooks/Fig5.ipynb",
+      "git_blob_sha1": "cd8f0ac723d378882a9bbc5730d6bf5a920f492f",
+      "git_blob_verified": true
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig1.png",
+      "sha256": "caad8c83aba1b837074c74f027b162a76671fea93b4a4eb154397a1b2cb2b8bf",
+      "bytes": 953635,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig1_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig1",
+      "width_px": 2168,
+      "height_px": 910,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig3.png",
+      "sha256": "a0932ac094cc87e7b5b19480aee5aedd6b8803be10ea02fdbcd8de4bada3279a",
+      "bytes": 416672,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig3",
+      "width_px": 2167,
+      "height_px": 1489,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/sources/figures/Fig5.png",
+      "sha256": "956de3d03e421f0eecc2472fd2c0195fb704262ca9233008bc9e8d99736047b0",
+      "bytes": 1119631,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41587-023-01716-9/MediaObjects/41587_2023_1716_Fig5_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig5",
+      "width_px": 1434,
+      "height_px": 2623,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig3a",
+      "chart_type": "three marker gene-peak scatterplots at metacell and single-cell level",
+      "data_bearing": true,
+      "encoding": {
+        "x": "RNA expression, cell/metacell grain retained",
+        "y": "accessibility of best-correlated peak separately selected per method",
+        "color": "shared9 celltype palette",
+        "annotation": "Spearman; association database Pearson differs"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+          "cells_zero_based": [
+            34,
+            35,
+            37,
+            40,
+            41,
+            43,
+            54,
+            55,
+            62,
+            63
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_FIGURE_NOTEBOOK; printed0.8274 versus final TAL10.82 revision unverified",
+          "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+          "sha256": "9147ea1665404e64cefe7660ba030a1f312d4d7cfcaf9a9c15de3814d36a19d7",
+          "repository_relative_locator": "notebooks/Fig3AB_Fig4B.ipynb"
+        }
+      ]
+    },
+    {
+      "panel": "Fig3b",
+      "chart_type": "GATA2 NFR/all-fragment coverage, highlighted peaks and correlation arcs",
+      "data_bearing": true,
+      "encoding": {
+        "x": "hg38 physical bp; source chr3:128432235-128585707",
+        "y": "HSC/MEP/Ery groups; separate NFR/all coverage scales",
+        "color": "cell type fill, viridis correlation arcs0-1; background highlights selected peaks"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+          "cells_zero_based": [
+            126,
+            131,
+            133,
+            147,
+            148,
+            149,
+            152,
+            153,
+            154,
+            155,
+            158,
+            159,
+            160,
+            161,
+            162
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_FIGURE_NOTEBOOK; NFR uses metacell associations, All uses single-cell associations",
+          "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3AB_Fig4B.ipynb",
+          "sha256": "9147ea1665404e64cefe7660ba030a1f312d4d7cfcaf9a9c15de3814d36a19d7",
+          "repository_relative_locator": "notebooks/Fig3AB_Fig4B.ipynb"
+        }
+      ]
+    },
+    {
+      "panel": "Fig3e",
+      "chart_type": "paired five-TF activity heatmaps along erythroid metacell pseudotime",
+      "data_bearing": true,
+      "encoding": {
+        "rows": [
+          "FLI1",
+          "ELF1",
+          "GATA1",
+          "GATA2",
+          "KLF1"
+        ],
+        "columns": "Palantir pseudotime ascending; same metacell IDs",
+        "color": "RdBu_r signed error-change activity, -.01 to.01; separate celltype/plasma pseudotime strips"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb",
+          "cells_zero_based": [
+            13,
+            27,
+            31,
+            34,
+            78,
+            81,
+            84,
+            85,
+            86,
+            87,
+            90
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_FIGURE_NOTEBOOK",
+          "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig3CD.ipynb",
+          "sha256": "faaca3cb3394da8d514c5f728a4304a4b345448e009e015c14a635c4b329e2cb",
+          "repository_relative_locator": "notebooks/Fig3CD.ipynb"
+        }
+      ]
+    },
+    {
+      "panel": "Fig1b covariance insets",
+      "chart_type": "gene-gene covariance from imputed expression; not cell-cell affinity",
+      "data_bearing": true,
+      "encoding": {
+        "rows/columns": "shared g1+g2 gene identities, no reclustering after first group order",
+        "color": "RdBu_r covariance; output limits+/-0.25 versus+/-0.025 differ10fold"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb",
+          "cells_zero_based": [
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            159,
+            160,
+            161
+          ],
+          "pairing": "ORIGINAL_AUTHOR_NOTEBOOK_COVARIANCE_OUTPUT; exact final inset crop and gene list not verified",
+          "path": "benchmark/library/single-cell/seacells-2023/sources/author/notebooks/Fig1.ipynb",
+          "sha256": "d906ece8097b923f3db0f6dafbcc9da9e87be3a55294b279278dc23da4ee03b5",
+          "repository_relative_locator": "notebooks/Fig1.ipynb"
+        }
+      ]
+    }
+  ],
+  "input_contract": {
+    "assembly": "hg38 GTF, source chromosome prefixes and strand retained",
+    "experimental_unit": "CD34 bone marrow from one healthy donor; rep1/rep2 file labels not independent donors; metacells are computational aggregates",
+    "required_keys": [
+      "original RNA/ATAC barcode with sample prefix",
+      "paired cell identity",
+      "celltype",
+      "Metacell assignment",
+      "peak chr:start-end",
+      "gene original ID/symbol",
+      "strand",
+      "palantir_pseudotime",
+      "gene_res/sc_gene_res peak key"
+    ],
+    "original_genes": [
+      "TAL1",
+      "MPO",
+      "IRF8",
+      "GATA2",
+      "FLI1",
+      "ELF1",
+      "GATA1",
+      "KLF1"
+    ],
+    "preprocessing": "raw retained; RNA2.5/99.5 count percentiles,FRIP>.4,mitochondrial<25%; min_cells50 then100; normalize_per_cell; log2(x+.1)-log2(.1); HVG2500 then1500; PCA50",
+    "normalization": "sum raw counts separately by same ATAC metacell; per-metacell totals normalized; coverage per-million group total fragments with75bp rolling mean",
+    "association_model": "Pearson +/-100kb,100 GC/accessibility matched background peaks, nominal p<.1; displayed marker scatter reports Spearman",
+    "display_thresholds": "NFR panel p<.1 and cor>.2; All panel p<.1 and cor>.02 with different peak/correlation source",
+    "seed": "Fig3CD model np.random.seed(11); other pipeline seeds not completely locked",
+    "source_discrepancies": [
+      "NFR coverage <=145bp versus manuscript peak-calling<147bp differ at length146 and are different stages",
+      "LassoCV(cv=5) source versus manuscript10fold",
+      "Printed TAL10.8274 versus final0.82",
+      "Fig1 grouping digitize maximum edge risk demonstrated on synthetic ranks; no demonstrated paper result change"
+    ],
+    "missing_data": [
+      "h5ad raw/count layers",
+      "fragment files",
+      "metacell labels",
+      "DORC pickle correlation tables",
+      "TF-target FIMO matrix",
+      "exact covariance genes"
+    ]
+  },
+  "packages_by_role": [
+    {
+      "package": "SEACells",
+      "version": "paper package version not exact-locked by figure notebook",
+      "role": "computational metacell assignment; author figure repo separate"
+    },
+    {
+      "package": "ArchR / MACS2 / bedtools",
+      "version": "author modified ArchR pipeline not fetched",
+      "role": "ATAC peak set and physical coverage; NFR filters stage-specific"
+    },
+    {
+      "package": "Scanpy / scipy / numpy / pandas",
+      "version": "source notebook outputs, not fully environment-locked",
+      "role": "normalization, sparse aggregation, Pearson/Spearman, covariance and tables"
+    },
+    {
+      "package": "Palantir / MAGIC",
+      "version": "not executed locally",
+      "role": "pseudotime and imputation; pseudotime not real time"
+    },
+    {
+      "package": "scikit-learn",
+      "version": "not executed locally",
+      "role": "StandardScaler,LassoCV,train_test_split and model-error activity"
+    },
+    {
+      "package": "matplotlib / seaborn",
+      "version": "source notebook, not executed",
+      "role": "scatter, coverage,Arc,clustermap and shared annotation strips"
+    }
+  ],
+  "native_functions": [
+    "compute_coverage",
+    "plot_coverage",
+    "_plot_coverage",
+    "_plot_links",
+    "pyranges_from_strings",
+    "spearmanr",
+    "np.cov",
+    "sns.clustermap",
+    "subset_ad",
+    "fit_model",
+    "find_error_change",
+    "plot_dependencies"
+  ],
+  "gaps": [
+    "Original matrices/fragments/pickles and exact dependency environment absent",
+    "Displayed TAL1 correlation differs from archived notebook printed output",
+    "Manuscript and source NFR/CV parameters differ by stage or revision; not silently reconciled",
+    "Synthetic digitize edge probe does not establish actual cell loss or altered paper result",
+    "Final covariance inset gene identities/crops and final graphic assembly not fully verified",
+    "No biological independence granted to metacells",
+    "No raw pipeline or renderer run"
+  ],
+  "benchmark_usage": {
+    "allowed": [
+      "reference selection",
+      "source-backed layer and parameter learning",
+      "design input contract for future fresh preparation"
+    ],
+    "not_established": [
+      "original-paper-reproduction",
+      "new-input-transfer",
+      "density-stress-test",
+      "cross-environment-reproduction",
+      "visual-pass",
+      "user-acceptance"
+    ],
+    "next_gate": "Future actual rendering requires independently specified inputs and fresh gates; source-learning status grants no rendering or statistical validation"
+  },
+  "method_reference": {
+    "path": "benchmark/library/single-cell/seacells-2023/learning.md",
+    "sha256": "7eaaf68225d55f4b05f45de06a47caf32165c057b597dc60204f3f5f7afaf652"
+  },
+  "evidence_manifest": {
+    "path": "benchmark/library/single-cell/seacells-2023/data/metadata/source-manifest.json",
+    "sha256": "b17574cadc90e84d75741241d322615de69d95f5abaa70d22c73aa8d321d62af"
+  },
+  "nonrender_checks": {
+    "path": "benchmark/library/single-cell/seacells-2023/data/metadata/nonrender-checks.json",
+    "sha256": "0e6f25ad49d22c463bbec6d27e9dc067a2e2b489c284c8e549040620d9c4f6c2"
+  },
+  "limitations": "See documented gaps. Exact final data/code pairing and rendering were not claimed.",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/metadata/paper-source.json",
+      "sha256": "ad5ff1bba54c400842008d491c8a609a38ca76dfecb78d07c9416c1100c5db6f",
+      "bytes": 1179,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/metadata/source-manifest.json",
+      "sha256": "b17574cadc90e84d75741241d322615de69d95f5abaa70d22c73aa8d321d62af",
+      "bytes": 14606,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/metadata/code-figure-mapping.json",
+      "sha256": "b3d0c66afdceb748f234b254da827d08c0a510ff5664523da5773d8c794de7f6",
+      "bytes": 8999,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/seacells-2023/data/metadata/nonrender-checks.json",
+      "sha256": "0e6f25ad49d22c463bbec6d27e9dc067a2e2b489c284c8e549040620d9c4f6c2",
+      "bytes": 1948,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "SEACells",
+    "expression accessibility correlation scatter",
+    "genomic coverage",
+    "gene covariance heatmap",
+    "TF activity heatmap",
+    "single-cell"
+  ]
+}

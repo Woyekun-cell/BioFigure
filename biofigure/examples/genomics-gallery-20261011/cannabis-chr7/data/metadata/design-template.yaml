@@ -70,7 +70,7 @@ reference_evidence:
   learned_source_reference:
     method_id: BENCH-genomics-cannabis-public-chr7-2025
     opened_source_asset:
-      path: docs/assets/genomics-gallery-20261011/cannabis-chr7.png
+      path: examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png
       sha256: 87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5
       original_size_viewed: true
   learned_method_reuse:
@@ -243,7 +243,7 @@ output_size:
   size_rationale:
     panel_count: 1
     density: high
-    longest_label_chars: 32
+    longest_label_chars: 15
     recommended_class: double-column
     selection_reason: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
       labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three
@@ -343,7 +343,6 @@ text_contract:
   - Position (Mb)
   - CBDAS
   - BUSCO orthologs
-  - Author public chr7 | Author data
   - '0'
   - '10'
   - '20'

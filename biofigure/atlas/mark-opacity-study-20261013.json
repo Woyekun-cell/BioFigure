@@ -1,0 +1,662 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-10-13",
+  "policy_id": "layer-role-opacity-v1",
+  "scope": "Ten original biological papers; currently viewed figure assets and separately qualified author-code parameters. Layout/mark grammar only.",
+  "paper_count": 10,
+  "evidence_status": "source-and-visual-reviewed-layout-only",
+  "parameter_policy": "Numeric defaults in bf_mark_style are BioFigure design starting values, not journal mandates or inferred published-panel measurements.",
+  "reproduction_status": "not_run_for_original_papers",
+  "human_approval": "not_recorded",
+  "technical_references": [
+    "https://ggplot2.tidyverse.org/reference/aes_colour_fill_alpha.html",
+    "https://ggplot2.tidyverse.org/reference/aes_eval.html",
+    "https://ggplot2.tidyverse.org/reference/geom_point.html",
+    "https://matplotlib.org/stable/gallery/color/set_alpha.html"
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "title": "SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks",
+        "authors": "Bravo González-Blas et al.",
+        "journal": "Nature Methods",
+        "year": 2023,
+        "doi": "10.1038/s41592-023-01938-4",
+        "paper_url": "https://www.nature.com/articles/s41592-023-01938-4",
+        "metadata_verification": "Official publisher article read via web; published 13 July 2023."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 2g",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/SCENIC-F2.png",
+          "sha256": "c41e2ef665f57726900bdebb0ac2617f6f9e3483637a34ecc36cba54cb4c2317",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2125x2157 to 1568x1591.",
+          "observations": [
+            "Thin colored vertical highlight bands span aligned genomic tracks. Black coverage traces remain visible through them.",
+            "Regional bands have lower visual weight than the evidence traces, while region-gene arcs use a separate blue score legend.",
+            "Track windows and x coordinates are shared; local labels and legends sit in reserved whitespace."
+          ],
+          "caption_support": "Official Figure 2 caption explicitly describes predicted target sites using colored ticks and semi-transparent boxes.",
+          "figure_page": "https://www.nature.com/articles/s41592-023-01938-4/figures/2"
+        },
+        {
+          "locator": "Figure 4e,f",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/SCENIC-F4.png",
+          "sha256": "c264702323ad8a03217dbbe486dfdcf322d4f4dd1b2c36a3ed04950dffbef27d",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2168x1745 to 1749x1408.",
+          "observations": [
+            "Distribution panel uses pale small observations under clearly outlined boxes and dark central summaries.",
+            "PCA perturbation panels use many pale short arrows as context with a few stronger arrows visible; colored cell clusters and labels retain identity.",
+            "Schematic, distributions, embeddings and heatmap use different visual weights according to role."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41592-023-01938-4/figures/4"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "additional_author_code": [
+          {
+            "alpha": 0.4,
+            "layer": "sns.stripplot dark observation points over violin",
+            "source_url": "https://github.com/aertslab/scenicplus_analyses/blob/81c961927674fd4a15026247afbfc827b7646eeb/Figure_2.md",
+            "local_source": "biofigure/library/nature-genomics-multiomics/sources/aertslab--scenicplus_analyses/Figure_2.md",
+            "line": 1789,
+            "snippet": "ax = ax, alpha = 0.4",
+            "mapping": "Author source proves this layer setting. Its historical file numbering differs from the inspected final main figures; exact final panel mapping is unverified."
+          }
+        ]
+      },
+      "unverified_boundaries": [
+        "Numeric alpha for Figure 2g bands and Figure 4e/f marks is unknown.",
+        "Arrow darkness in Figure 4f can encode distance traveled, as the official caption states; do not treat it as aesthetic alpha alone.",
+        "Gene-network and prediction outputs require their original biological/statistical contracts."
+      ],
+      "transfer_suggestion": [
+        "Use low-opacity regional fills behind aligned genomic evidence, preserving black track readability.",
+        "Give dense contextual observations less visual weight than outlines and summaries.",
+        "Declare whether arrow/edge darkness encodes a variable before applying aesthetic transparency."
+      ],
+      "study_id": "OPACITY-001"
+    },
+    {
+      "metadata": {
+        "title": "Multi-omics single-cell data integration and regulatory inference with graph-linked embedding",
+        "authors": "Zhi-Jie Cao and Ge Gao",
+        "journal": "Nature Biotechnology",
+        "year": 2022,
+        "doi": "10.1038/s41587-022-01284-4",
+        "paper_url": "https://www.nature.com/articles/s41587-022-01284-4",
+        "metadata_verification": "Official publisher article read via web; published 2 May 2022."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 3a-d,f",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/GLUE-F3.png",
+          "sha256": "67e7426d43ac0bd58700ec64dd273ed415abdcca2f606b2e7af9cb7ec2a3305e",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2117x1038 to 2048x1004.",
+          "observations": [
+            "Three modalities share embedding geometry; sparse marks can be larger while the denser RNA marks remain small.",
+            "Dashed cluster loops highlight groups without filling their interior.",
+            "Boxplots have clear black boundaries and white-centered black-outlined mean triangles."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41587-022-01284-4/figures/3"
+        },
+        {
+          "locator": "Figure 4a-c",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/GLUE-F4.png",
+          "sha256": "57b98bafd7fe8bf42c50aea8c35d0bd6752b17771a8e6d01caa78e99bd8c10e6",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2114x1474 to 1881x1312.",
+          "observations": [
+            "Dense joint scatter uses small visually quiet points under stronger unfilled density contours.",
+            "Marginal density plots use pale overlapping filled areas with clear colored boundary curves.",
+            "ROC curves remain clearly visible; a light dashed diagonal supports the interpretation.",
+            "Density panels occupy their own gutters and share axes with the central plot, preventing overlap."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41587-022-01284-4/figures/4"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_outline": {
+          "layer": "Figure 3f matching gene-expression R2 boxplot",
+          "source_url": "https://github.com/gao-lab/GLUE/blob/38726c508909e62a83326d2a7fed93dce438c8cb/experiments/TripleOmics/s04_reg_contrib.py#L288",
+          "local_source": "biofigure/library/nature-genomics-multiomics/sources/gao-lab--GLUE/experiments/TripleOmics/s04_reg_contrib.py",
+          "line": 288,
+          "snippet": "meanprops=dict(marker=\"^\", markerfacecolor=\"white\", markeredgecolor=\"black\")",
+          "mapping": "Matches Figure 3f plot variable, omics-layer order and ylabel. Final composite export not rerun."
+        },
+        "additional_author_code": [
+          {
+            "alpha": 0.5,
+            "layer": "pairplot off-diagonal dense correlation points",
+            "source_url": "https://github.com/gao-lab/GLUE/blob/38726c508909e62a83326d2a7fed93dce438c8cb/experiments/TripleOmics/s04_reg_contrib.py#L217",
+            "local_source": "biofigure/library/nature-genomics-multiomics/sources/gao-lab--GLUE/experiments/TripleOmics/s04_reg_contrib.py",
+            "line": 217,
+            "snippet": "plot_kws=dict(s=3, edgecolor=None, alpha=0.5, rasterized=True)",
+            "mapping": "Author correlation-comparison output corr_cmp.pdf; not proof of Figure 4b exact alpha."
+          }
+        ]
+      },
+      "unverified_boundaries": [
+        "Figure 4b marginal fill opacity is unknown; it may use package defaults or postprocessing.",
+        "White-centered mean markers are proven in source; they are mean summaries, not a mandate to outline every dense cell.",
+        "Draw order and alpha affect apparent category mixing in embeddings."
+      ],
+      "transfer_suggestion": [
+        "Use small translucent points for dense clouds, readable contour lines for distribution structure and low-opacity marginal fill.",
+        "Use fill and stroke independently for modest-sized highlighted or summary markers.",
+        "Reserve dedicated marginal/legend gutters; maintain consistent limits across matched embeddings."
+      ],
+      "study_id": "OPACITY-002"
+    },
+    {
+      "metadata": {
+        "title": "Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes",
+        "authors": "Teng Gao et al.",
+        "journal": "Nature Biotechnology",
+        "year": 2023,
+        "online_publication_year": 2022,
+        "doi": "10.1038/s41587-022-01468-y",
+        "paper_url": "https://www.nature.com/articles/s41587-022-01468-y",
+        "metadata_verification": "Official publisher search result confirms Nature Biotechnology 41, 417-426 (2023), online publication 26 September 2022."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 2a,d,e",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/Numbat-F2.png",
+          "sha256": "fbbf96ed767f999722d8e634c7d378aa30fbfd52f80e1f34d1043d8e044af95a",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2115x2663 to 1408x1772.",
+          "observations": [
+            "Dense neutral genomic observations appear as a quiet grey field behind strong black/blue segment estimates.",
+            "Genomic tracks are stacked with shared chromosome boundaries and coordinate extent; the legend is outside the data.",
+            "Precision-recall panel uses visible colored sample points; violin panel uses strong black individual points over colored distributions and a dark summary line.",
+            "This paper intentionally mixes weak background marks and opaque foreground observations."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41587-022-01468-y/figures/2"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "author_layers": [
+          {
+            "alpha": 0.02,
+            "layer": "WGS BAF background points in author plot_purple function",
+            "source_url": "https://github.com/kharchenkolab/NumbatAnalysis/blob/bf181ad60fd6e7e10e1b0cf9041ac43be9864c41/notebooks/benchmark_sc.ipynb",
+            "local_source": "biofigure/library/nature-genomics-multiomics/sources/kharchenkolab--NumbatAnalysis/notebooks/benchmark_sc.review.txt",
+            "line": 170,
+            "snippet": "size = 0.2, alpha = 0.02, pch = 16",
+            "mapping": "Function displays per-chromosome BAF data with overlaid opaque blue segment estimates, matching Figure 2a grammar. Exact final sample-specific export unverified."
+          },
+          {
+            "alpha": 1,
+            "layer": "CNV AUC per-sample jitter points over violin",
+            "source_url": "https://github.com/kharchenkolab/NumbatAnalysis/blob/bf181ad60fd6e7e10e1b0cf9041ac43be9864c41/notebooks/benchmark_sc.ipynb",
+            "local_source": "biofigure/library/nature-genomics-multiomics/sources/kharchenkolab--NumbatAnalysis/notebooks/benchmark_sc.review.txt",
+            "line": 795,
+            "snippet": "geom_jitter(size = 1, width = 0.2, alpha = 1, pch = 16)",
+            "mapping": "Matches Figure 2e AUC/method violin and individual-point grammar. Final composite export not rerun."
+          }
+        ],
+        "other_layer_alpha": "unknown"
+      },
+      "unverified_boundaries": [
+        "Background alpha=0.02 is an extreme high-density WGS setting, not a universal point default.",
+        "The plotting function includes subsampling sample_frac(0.2); density and alpha must be evaluated together.",
+        "Some genomic mark colors encode CNV state, so fading those layers indiscriminately could weaken state discrimination."
+      ],
+      "transfer_suggestion": [
+        "Use a low-contrast dense background cloud plus clear segment estimates in genomic plots.",
+        "Keep low-n observations identifiable; opaque points are appropriate when they are sparse and form primary evidence.",
+        "Make opacity conditional on local density, visual role and final physical size."
+      ],
+      "study_id": "OPACITY-003"
+    },
+    {
+      "metadata": {
+        "title": "scBasset: sequence-based modeling of single-cell ATAC-seq using convolutional neural networks",
+        "authors": "Han Yuan and David R. Kelley",
+        "journal": "Nature Methods",
+        "year": 2022,
+        "doi": "10.1038/s41592-022-01562-8",
+        "paper_url": "https://www.nature.com/articles/s41592-022-01562-8",
+        "metadata_verification": "Official publisher search result and PubMed 35941239 verify title/DOI and 2022 Sep;19(9):1088-1096. Publisher live open redirects to inaccessible cookie endpoint; no bypass attempted."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 4b-e",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/scBasset-F4.png",
+          "sha256": "ad311f45fd39e43603b6c64bdf71822ef0f9661d3bad1b06767dc512e0c1e4c1",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2119x1061 to 2048x1025.",
+          "observations": [
+            "Large dense single-cell plots use small marks; low-count method comparison points use explicit direct labels.",
+            "Matched UMAPs share a repeated panel grammar with separate compact legends.",
+            "Integration boxplots are white-filled with black outlines and strong central medians."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41592-022-01562-8/figures/4"
+        },
+        {
+          "locator": "Figure 5b,d,g",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/scBasset-F5.png",
+          "sha256": "ea1c6a4f360ad64501f3771d1ba43a3183c0369605792845d6efada60412feea",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2120x1705 to 1750x1408.",
+          "observations": [
+            "Neutral grey scatter points permit selected TF labels in red to stand out.",
+            "Precision-recall lines have crisp group colors and separate annotation space.",
+            "Small grouped violins combine colored bodies, dark outlines and visible individual observations; significance brackets occupy a planned upper lane."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41592-022-01562-8/figures/5"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "source_status": "Existing author motif/ISM notebooks and embedding examples inspected by text search; no verified numeric alpha binding to these selected panels."
+      },
+      "unverified_boundaries": [
+        "Pastel UMAP hues do not prove translucency; alpha remains unknown.",
+        "White-filled integration boxplots are hollow geometries; they need not be implemented by reducing alpha.",
+        "Source-gene labels, TF activity correlations and significance brackets retain their biological meanings."
+      ],
+      "transfer_suggestion": [
+        "Choose marker size/density first, then tune alpha if overplotting remains.",
+        "Use outlined distribution geometry or outlined focus markers to keep the light field readable.",
+        "Keep aggregate curves crisp and reserve bracket/legend lanes before rendering."
+      ],
+      "study_id": "OPACITY-004"
+    },
+    {
+      "metadata": {
+        "title": "A draft human pangenome reference",
+        "authors": "Wen-Wei Liao et al.",
+        "journal": "Nature",
+        "year": 2023,
+        "doi": "10.1038/s41586-023-05896-x",
+        "paper_url": "https://www.nature.com/articles/s41586-023-05896-x",
+        "metadata_verification": "Official publisher article and Figure 2 caption read via web."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 2a,d,e",
+          "asset": "biofigure/library/nature-genomics-multiomics/sources/publication-figures/HPRC-F2.png",
+          "sha256": "d0692450fc563532b36de430dd840624465a7757afc0a3b39e307492874307a7",
+          "method": "functions.view_image fresh inspection on 2026-10-13; tool displayed full figure, resized from 2161x1171 to 2048x1110.",
+          "observations": [
+            "Annotation percentages show separate assembly observations, with a small orange comparison-reference point.",
+            "Copy-number panels place pale grey bars behind stronger blue bubbles, producing a clear evidence hierarchy.",
+            "Blue bubble sizes have a count meaning; supporting bars and focal observations are distinct layers.",
+            "Legends, axis labels and panels use whitespace and aligned baselines; semantically comparable marks retain colors across panels."
+          ],
+          "figure_page": "https://www.nature.com/articles/s41586-023-05896-x/figures/2"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "source_status": "Associated RNA analysis repository does not bind Figure 2 generation; no numeric alpha inferred."
+      },
+      "unverified_boundaries": [
+        "Pale grey bars and light-colored point groups may use lighter base colors rather than alpha.",
+        "Point size is quantitative in panels d/e; do not change size for decoration.",
+        "The figure provides layout and hierarchy evidence, not numerical transparency evidence."
+      ],
+      "transfer_suggestion": [
+        "Use neutral, light supporting bars behind a stronger point layer when the two encodings have separate declared meanings.",
+        "Separate foreground/background color and opacity decisions.",
+        "Preserve quantitative point-size scale and clear legend while using restrained supportive fills."
+      ],
+      "study_id": "OPACITY-005"
+    },
+    {
+      "study_id": "OPACITY-006",
+      "metadata": {
+        "title": "Conserved properties of dentate gyrus neurogenesis across postnatal development revealed by single-cell RNA sequencing",
+        "authors": "Hochgerner et al.",
+        "journal": "Nature Neuroscience",
+        "year": 2018,
+        "doi": "10.1038/s41593-017-0056-2",
+        "paper_url": "https://www.nature.com/articles/s41593-017-0056-2",
+        "metadata_verification": "Current publisher search result confirms title, DOI, 21:290-299 and 15 January 2018 publication; local pinned source manifest agrees."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 2a,d,e; Figure 4a,c,d also inspected",
+          "asset": "biofigure/library/single-cell/hochgerner-dentate/sources/publication-figures/Fig2.jpg",
+          "sha256": "62f068ceb456429005227447947beb3b68c594bd2fd4b099303c21128d0fdc73",
+          "method": "functions.view_image; actual current visual inspection; tool resized the 2125x2264 source to 1531x1632 for display",
+          "observations": [
+            {
+              "panel": "2a",
+              "kind": "network-layering",
+              "observation": "Thin pale gray graph connections sit behind small, stronger categorical cell points; cell-type labels occupy open areas next to clusters."
+            },
+            {
+              "panel": "2d",
+              "kind": "context-highlight",
+              "observation": "Six gene views reuse one embedding; a light gray context cloud and gray graph scaffold allow red expression highlights to remain the focal layer."
+            },
+            {
+              "panel": "2e",
+              "kind": "context-highlight",
+              "observation": "Cyan and dark purple focal progenitor points are larger and stronger than the gray surrounding trajectory; an explicit black separator is used for a biological boundary."
+            },
+            {
+              "panel": "4c,d",
+              "kind": "embedding-consistency",
+              "observation": "Repeated age and gene embedding panels share geometry, with small black or red foreground points over subdued gray context."
+            }
+          ],
+          "figure_asset_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41593-017-0056-2/MediaObjects/41593_2017_56_Fig2_HTML.jpg",
+          "additional_asset": "biofigure/library/single-cell/hochgerner-dentate/sources/publication-figures/Fig4.jpg",
+          "additional_sha256": "520cd5b2e2d98e0789692753d0c6d1d059db41cec0932b0ebe5fc60eaa4bfe0c"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_layers": [
+          {
+            "repository": "https://github.com/linnarsson-lab/DG_paper_public",
+            "commit": "b0f7b531ec6d3a8fad3c705fa65ba9d6c8075887",
+            "path": "early_neurogenesis_merge_V1_V2_KNN_v1.m",
+            "source_url": "https://github.com/linnarsson-lab/DG_paper_public/blob/b0f7b531ec6d3a8fad3c705fa65ba9d6c8075887/early_neurogenesis_merge_V1_V2_KNN_v1.m#L270",
+            "lines": [
+              270,
+              274
+            ],
+            "exact_settings": {
+              "edgealpha": 0.8,
+              "edgecolor_rgb": [
+                0.8,
+                0.8,
+                0.8
+              ],
+              "linewidth": 0.1,
+              "graph_marker": "none",
+              "foreground_MarkerSize": 6
+            },
+            "binding": "Related early-neurogenesis graph renderer; same graph-and-cell visual grammar, exact final Figure 2 assembly not independently rerun or fully bound.",
+            "published_panel_point_alpha": null
+          }
+        ]
+      },
+      "unverified_boundaries": [
+        "Edge alpha 0.8 combines with a pale gray edge color; visual attenuation cannot be attributed to alpha alone.",
+        "Graph edges and node marks have separate roles; no numerical claim about published node opacity.",
+        "Do not require dark outlines on every tiny single-cell point: their summed edge area can dominate the density cloud."
+      ],
+      "transfer_suggestion": [
+        "Draw context connections first, pale and thin; then focal points and labels.",
+        "Reuse identical embedding coordinates, limits and point scale across gene/age views.",
+        "Use separate opacity controls for context, raw observations and highlights; evaluate crowding at final physical size."
+      ]
+    },
+    {
+      "study_id": "OPACITY-007",
+      "metadata": {
+        "title": "Single cell transcriptomics identifies a signaling network coordinating endoderm and mesoderm diversification during foregut organogenesis",
+        "authors": "Han et al.",
+        "journal": "Nature Communications",
+        "year": 2020,
+        "doi": "10.1038/s41467-020-17968-x",
+        "paper_url": "https://www.nature.com/articles/s41467-020-17968-x",
+        "metadata_verification": "Current original Nature PDF search result and local Europe PMC article XML confirm title, journal, 11:4158 and 27 August 2020."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 5c,d,h,i",
+          "asset": "biofigure/library/single-cell/han-foregut/sources/publication-figures/Fig5.png",
+          "sha256": "9641fa1f3e8bf35ac3d38e7522ad695aa4bc484bb08405f45f88900763cd5e75",
+          "method": "functions.view_image; actual current visual inspection; tool resized the 1946x2507 source to 1391x1792 for display",
+          "observations": [
+            {
+              "panel": "5c",
+              "kind": "edge-evidence-level",
+              "observation": "Predicted interactions use black arrows for strong signal and gray arrows for moderate signal, as explicitly stated by the legend; circular mark size encodes expressing-cell percentage and color encodes normalized expression."
+            },
+            {
+              "panel": "5d",
+              "kind": "network-layering",
+              "observation": "Fine gray connections lie under warm-colored expression points; the two embeddings are balanced in size and their gradient scale is compact."
+            },
+            {
+              "panel": "5h,i",
+              "kind": "trajectory-evidence-level",
+              "observation": "Black solid paths and gray dashed paths create a clear trajectory hierarchy; categorical stage-node circles have thin gray outlines and restrained fill."
+            }
+          ],
+          "figure_asset_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-020-17968-x/MediaObjects/41467_2020_17968_Fig5_HTML.png"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_layers": []
+      },
+      "unverified_boundaries": [
+        "Gray versus black interaction edges encode evidence strength; reducing edge opacity uniformly would erase that hierarchy.",
+        "Expression bubble hue has a numeric legend; arbitrary opacity scaling by group would change perceived expression.",
+        "The published expression ramp includes red/green and should not become a color-vision-safe BioFigure default."
+      ],
+      "transfer_suggestion": [
+        "Give predicted interaction confidence an explicit, stable line grammar.",
+        "Use thin circular outlines for moderately sized schematic or categorical nodes; keep them subordinate to data and labels.",
+        "Keep marker-size and expression-color keys outside the active network area."
+      ]
+    },
+    {
+      "study_id": "OPACITY-008",
+      "metadata": {
+        "title": "Multimodal spatiotemporal phenotyping of human retinal organoid development",
+        "authors": "Wahle et al.",
+        "journal": "Nature Biotechnology",
+        "year": 2023,
+        "doi": "10.1038/s41587-023-01747-2",
+        "paper_url": "https://www.nature.com/articles/s41587-023-01747-2",
+        "metadata_verification": "Current original publisher result confirms 8 May 2023, 41:1765-1775; local article XML agrees."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 6b,c,d,f,h",
+          "asset": "biofigure/library/single-cell/wahle-retinal/sources/publication-figures/Fig6.png",
+          "sha256": "2a7bdcf7ae7c322e6b070d44f96b929b18d84435bb7ddee70af6bd2fb557fd53",
+          "method": "functions.view_image; actual current visual inspection; tool resized the 2163x1017 source to 2048x963 for display",
+          "observations": [
+            {
+              "panel": "6c",
+              "kind": "network-layering",
+              "observation": "A dense pale gray GRN scaffold supports a small set of stronger red/blue nodes; the focal OTX2 node is larger and black, and a short label leader separates its text."
+            },
+            {
+              "panel": "6d",
+              "kind": "outline-and-summary",
+              "observation": "Categorical boxplot fills are bounded by thin black edges, with black medians and whiskers; those summary marks remain readable in compact panels."
+            },
+            {
+              "panel": "6f",
+              "kind": "context-highlight",
+              "observation": "Focal perturbation cells are small colored points over a pale gray embedding; foreground and background do not share the same visual strength."
+            },
+            {
+              "panel": "6h",
+              "kind": "dense-scatter",
+              "observation": "Many dark observation points accumulate around the origin; a thin fitted diagonal and unobtrusive dashed zero lines remain discernible, with selected labels moved into empty areas."
+            }
+          ],
+          "figure_asset_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-023-01747-2/MediaObjects/41587_2023_1747_Fig6_HTML.png"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_layers": [
+          {
+            "repository": "https://github.com/quadbio/spatial_multimodal_retinal_organoid",
+            "commit": "da0989865ad2c3aef0c8a9d40f226f4327ea0b73",
+            "path": "sc_rna_atac_analysis/ext/util.r",
+            "source_url": "https://github.com/quadbio/spatial_multimodal_retinal_organoid/blob/da0989865ad2c3aef0c8a9d40f226f4327ea0b73/sc_rna_atac_analysis/ext/util.r#L288",
+            "lines": [
+              288,
+              296
+            ],
+            "exact_settings": {
+              "adjustcolor_alpha": 0.8,
+              "zero_value_color": "#bdbdbd30"
+            },
+            "binding": "Author plotting utility verified; exact Fig. 6b/f call and final panel alpha not bound in this review.",
+            "published_panel_alpha": null
+          }
+        ]
+      },
+      "unverified_boundaries": [
+        "Alpha 0.8 is a repository utility parameter, not a confirmed opacity measurement for every inspected panel.",
+        "Zero-valued observations use a separate neutral context color in the utility; do not use opacity to suppress valid high or low observations selectively.",
+        "The strong black summary edges should stay visually distinct from attenuated context."
+      ],
+      "transfer_suggestion": [
+        "Separate pale context edges from colored focal nodes.",
+        "Keep medians, whiskers and box boundaries at stable visible opacity; use restrained fill for distribution shapes.",
+        "For moderate scatter size, offer partially transparent fill plus a thin edge, with edge thickness scaled to final physical point diameter."
+      ]
+    },
+    {
+      "study_id": "OPACITY-009",
+      "metadata": {
+        "title": "Elucidating Human Milk Oligosaccharide biosynthetic genes through network-based multi-omics integration",
+        "authors": "Kellman et al.",
+        "journal": "Nature Communications",
+        "year": 2022,
+        "doi": "10.1038/s41467-022-29867-4",
+        "paper_url": "https://www.nature.com/articles/s41467-022-29867-4",
+        "metadata_verification": "Current publisher and PMC original-article search results confirm title and DOI; local source manifest binds year 2022 and publisher Fig.5 asset."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 5A,B",
+          "asset": "biofigure/benchmark/library/multiomics/hmo-gene-reaction/sources/Figure5.png",
+          "sha256": "7c97a9f37210fd0242b93e476689bb615208ae6b1efa0a3943f17e62796d1ddb",
+          "method": "functions.view_image; actual current visual inspection of retained original Figure5.png; publisher URL cross-checked against locally preserved publisher article HTML",
+          "observations": [
+            {
+              "panel": "5A",
+              "kind": "sparse-line-comparison",
+              "observation": "Four colored profiles use solid versus dashed lines to distinguish cohorts; a shared legend is outside the plot, while the categorical x-axis compares three model metrics."
+            },
+            {
+              "panel": "5B",
+              "kind": "sparse-labeled-scatter",
+              "observation": "A low-density field of small dark points is directly labelled, with subdued grid lines and a strong reference baseline; an N.D. strip records unobserved candidates below the axis."
+            }
+          ],
+          "figure_asset_url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-022-29867-4/MediaObjects/41467_2022_29867_Fig5_HTML.png"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_layers": []
+      },
+      "unverified_boundaries": [
+        "The x-axis in 5A is a set of metrics, not time; the profile cannot be cited as a time-course example.",
+        "Low-density dark points and clear solid lines are compatible with a polished figure; transparency is not mandatory for every mark.",
+        "Locally pinned author code is a preprint revision; it is not proof of final published Fig.5 renderer or values."
+      ],
+      "transfer_suggestion": [
+        "Use full-strength primary curves when sparse; reserve fading for individual observations, uncertainty, or secondary context.",
+        "Combine color with line type when groups and cohorts are different variables.",
+        "Place uncertainty or missingness explicitly in labels/keys; do not fade missing values into invisibility."
+      ]
+    },
+    {
+      "study_id": "OPACITY-010",
+      "metadata": {
+        "title": "Chromatin and gene-regulatory dynamics of the developing human cerebral cortex at single-cell resolution",
+        "authors": "Trevino et al.",
+        "journal": "Cell",
+        "year": 2021,
+        "doi": "10.1016/j.cell.2021.07.039",
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S0092867421009429",
+        "metadata_verification": "Current PubMed original-article record confirms 184(19):5053-5069.e23, print 16 September 2021 and epub 13 August 2021. Author repository README binds publication DOI."
+      },
+      "figure_observation": [
+        {
+          "locator": "Figure 3A,B,D,E,I; author-hosted article-in-press PDF page 7 (one-based)",
+          "asset": "biofigure/library/single-cell/trevino-cortex/sources/author-paper.pdf",
+          "sha256": "d0472c7c6e197be18551b09b0ab6d38fb7a86eddb3d676af34406a678cbb45b4",
+          "method": "Read-only Poppler rendering using pdftoppm -f 7 -l 7 -r 130 -singlefile -png; rendered whole PDF page inspected with functions.view_image",
+          "observations": [
+            {
+              "panel": "3A,B",
+              "kind": "context-highlight",
+              "observation": "A strong red-to-blue focal pseudotime region sits inside a pale gray global embedding; the mapped version in B is lighter and less visually dense than A."
+            },
+            {
+              "panel": "3D,E",
+              "kind": "quantitative-bubbles",
+              "observation": "Compact dot matrices use size and color quantitatively; matching marker-size and color keys are positioned under the relevant matrices."
+            },
+            {
+              "panel": "3I",
+              "kind": "sparse-labeled-scatter",
+              "observation": "Small colored gene points use direct black labels and occupy an independent compact scatter, preserving readability without a cloud-wide dark stroke."
+            }
+          ],
+          "figure_asset_url": "https://static1.squarespace.com/static/61e14b3ce0a8b6050be3b8fb/t/61e8204a6d642d234730d5a0/1642602603623/Trevino%2Bet%2Bal%2B2021_main%2Bsmall.pdf",
+          "pdf_page_1_based": 7,
+          "viewed_preview_sha256": "d06acfc0e1f79ebf7a77c02b2436b3e47b85485685ab8ac58ed17791c7cb9865"
+        }
+      ],
+      "code_confirmed_alpha": {
+        "selected_panel_alpha": "unknown",
+        "author_layers": [
+          {
+            "repository": "https://github.com/GreenleafLab/brainchromatin",
+            "commit": "f8f509b5d811c9f0577f6c7c2ddbcb5ca8d68d14",
+            "path": "R/FCM_Workflows.R",
+            "source_url": "https://github.com/GreenleafLab/brainchromatin/blob/f8f509b5d811c9f0577f6c7c2ddbcb5ca8d68d14/R/FCM_Workflows.R#L302",
+            "lines": [
+              302,
+              312
+            ],
+            "exact_settings": {
+              "cluster_projection_alpha": 0.3,
+              "legend_override_alpha": 1,
+              "centroid_shape": 8,
+              "centroid_size": 3
+            },
+            "binding": "Author Louvain projection workflow verified; exact Figure 3A/B final assembly not bound.",
+            "published_panel_alpha": null
+          },
+          {
+            "repository": "https://github.com/GreenleafLab/brainchromatin",
+            "commit": "f8f509b5d811c9f0577f6c7c2ddbcb5ca8d68d14",
+            "path": "R/FCM_Functions.R",
+            "source_url": "https://github.com/GreenleafLab/brainchromatin/blob/f8f509b5d811c9f0577f6c7c2ddbcb5ca8d68d14/R/FCM_Functions.R#L1488",
+            "lines": [
+              1480,
+              1504
+            ],
+            "exact_settings": {
+              "projection_arrow_alpha": 0.5
+            },
+            "binding": "Related projection-transfer arrows, not claimed as Figure 3 rendered layers.",
+            "published_panel_alpha": null
+          }
+        ]
+      },
+      "unverified_boundaries": [
+        "Author-hosted PDF is labelled article-in-press and has provisional pagination; bibliography is verified against final PubMed record.",
+        "Do not report alpha 0.3 as the measured Figure 3 point alpha; it is confirmed for a related author workflow.",
+        "The dot-matrix quantitative color scale must be evaluated with its legend and consistent opacity."
+      ],
+      "transfer_suggestion": [
+        "Opacity can subordinate cluster points to centroid labels; override legend alpha to keep categorical keys readable.",
+        "Use pale global context around the focal lineage, without implying that light cells are less reliable.",
+        "Keep dense point layers light enough to expose overlap and strong enough to retain rare populations; avoid all-point heavy outlines."
+      ]
+    }
+  ],
+  "transfer_rules": [
+    "Choose opacity by visual role and overlap at final physical size.",
+    "Separate fill and edge opacity for moderate count observations.",
+    "Use thin or absent outlines for very dense cell clouds.",
+    "Keep summary lines, axes, text, and reference marks readable.",
+    "Use weaker interval or context fills below stronger foreground layers.",
+    "Match quantitative color semantics to the actual colorbar; retain alpha=1 by default.",
+    "Use clear categorical legend keys even when observations are translucent.",
+    "Preserve all observations, coordinate scales, sample identities and statistical meaning.",
+    "Distinguish pale RGB colors from actual transparency, and code utility settings from exact final-panel bindings."
+  ]
+}

@@ -5,6 +5,15 @@ components:
     hard_constraints: [filled_circle, fixed_near_black_outline, thin_stroke_checked_at_final_size, zero_size_remains_absent]
     compatible: [SC-DOT-001, ENR-DOT-001]
     renderer_guidance:
-      ggplot2: {shape: 21, fill: mapped_value, colour: "#1A1A1A", stroke: 0.2-0.35}
+      ggplot2: {shape: 21, fill: mapped_value, fill_alpha: 1, edge_alpha: 1, colour: "#1A1A1A", stroke: 0.2-0.35}
       matplotlib: {marker: o, facecolor: mapped_value, edgecolor: "#1A1A1A", linewidth: 0.3-0.5}
       scanpy: custom_or_postprocessed_dotplot_required_for_outline
+  role-opacity:
+    policy_id: layer-role-opacity-v1
+    reference: references/mark-opacity.md
+    provenance: atlas/mark-opacity-study-20261013.json
+    semantics: role_and_density_then_fill_edge_separation
+    implementation: scripts/figure_style.R::bf_mark_style
+    actual_layer_check: scripts/figure_style.R::bf_check_mark_layers
+    numerical_defaults_are: biofigure_starting_recommendations_not_journal_standards
+    avoid: [all_layers_same_alpha, dense_points_all_black_rings, continuous_fill_unmatched_colorbar, decorative_glow]

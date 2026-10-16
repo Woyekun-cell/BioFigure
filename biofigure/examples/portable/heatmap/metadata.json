@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "case_id": "heatmap",
+  "synthetic": true,
+  "seed": 2026101601,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic sample",
+  "comparison": null,
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "rows": 24,
+  "columns": 12,
+  "groups": [
+    "Control",
+    "Low",
+    "High",
+    "Recovery"
+  ],
+  "sample_groups": {
+    "S01": "Control",
+    "S02": "Control",
+    "S03": "Control",
+    "S04": "Low",
+    "S05": "Low",
+    "S06": "Low",
+    "S07": "High",
+    "S08": "High",
+    "S09": "High",
+    "S10": "Recovery",
+    "S11": "Recovery",
+    "S12": "Recovery"
+  },
+  "units": "synthetic standardized expression",
+  "generation": "Three sine-pattern modules plus independent Gaussian noise SD 0.3.",
+  "displayed_matrix": {
+    "rows": 24,
+    "columns": 12
+  },
+  "statistics": "Descriptive expression pattern only; no differential inference."
+}

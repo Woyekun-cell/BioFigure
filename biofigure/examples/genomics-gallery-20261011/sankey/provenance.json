@@ -126,5 +126,11 @@
       "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_paths.csv"
     ]
   },
-  "public_execution_profile": "data/metadata/public-replay.json"
+  "public_execution_profile": "data/metadata/public-replay.json",
+  "portable_release_3_8": {
+    "status": "CURRENT_RENDER_REVIEW_REQUIRED",
+    "caption": "Simulated matched features (n = 1,800). Band width encodes matched-feature count; flows are colored by DNA starting state. Descriptive simulation only; no biological inference.",
+    "layout_change": "Method/simulation footer removed from the figure interior; the 1,800 feature IDs, 27 paths, nine nodes, values, stage/state order and palettes are unchanged.",
+    "reference_scope": "Bundled previous first-party own-layout PDF; no original-paper fidelity is inferred."
+  }
 }

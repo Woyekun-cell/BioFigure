@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 from datetime import date
 from collections import Counter
@@ -14,7 +15,16 @@ import yaml
 from PIL import Image, ImageStat
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from reference_modes import design_reference_mode, DIMENSIONS
+_text_spec = importlib.util.spec_from_file_location('biofigure_critic_text_policy', ROOT / 'scripts/figure_text_policy.py')
+_text_module = importlib.util.module_from_spec(_text_spec)
+_text_spec.loader.exec_module(_text_module)
+_cell_spec = importlib.util.spec_from_file_location('biofigure_critic_cell_geometry', ROOT / 'scripts/heatmap_geometry.py')
+_cell_module = importlib.util.module_from_spec(_cell_spec)
+_cell_spec.loader.exec_module(_cell_module)
 MODE_CRITICS = {
+    "original": ["scientific", "visual", "publication", "anti-ai", "design-quality"],
     "standard": ["scientific"],
     "publication": ["scientific", "visual", "publication", "anti-ai", "reference-quality"],
     "reference-guided": ["scientific", "visual", "anti-ai", "reference-quality"],
@@ -39,6 +49,16 @@ def load(path: Path):
 
 def issue(name, evidence, proposed_fix):
     return {"issue": name, "evidence": evidence, "proposed_fix": proposed_fix}
+
+
+def figure_text_issues(labels, field):
+    if not isinstance(labels, list) or not all(isinstance(label, str) for label in labels):
+        return [issue('figure_text_evidence_invalid', field,
+                      'record an array of actual figure text strings')]
+    errors = _text_module.validate_figure_text(labels, field=field)
+    return [issue('prohibited_figure_text', error,
+                  'remove production/audit commentary from the figure; retain it outside and rerender')
+            for error in errors]
 
 
 def raster_metrics(path: Path) -> dict | None:
@@ -123,7 +143,7 @@ def validate_evidence(path: Path | None, artifact: Path, metrics: dict | None) -
     else:
         severe = {"clipping", "overlap", "missing_glyph", "legend_overlap", "non_white_background",
                   "font_fallback", "unrequested_text", "small_text", "text_position",
-                  "label_overlap", "panel_misalignment"}
+                  "label_overlap", "panel_misalignment", "footer_text"}
         for key in severe:
             if not isinstance(detected.get(key), bool):
                 hard.append(issue("inspection_check_missing", key, "record an explicit boolean after inspection"))
@@ -133,6 +153,7 @@ def validate_evidence(path: Path | None, artifact: Path, metrics: dict | None) -
         if evidence["image_metrics"].get("width_px") != metrics["width_px"] or evidence["image_metrics"].get("height_px") != metrics["height_px"]:
             hard.append(issue("artifact_dimensions_mismatch", evidence.get("image_metrics"), "regenerate evidence for this artifact"))
     evidence_issues = evidence.get("issues")
+    hard.extend(figure_text_issues(evidence.get('rendered_text'), 'inspection.rendered_text'))
     if not isinstance(evidence_issues, list):
         hard.append(issue("inspection_issues_invalid", evidence_issues, "issues must be a list"))
     else:
@@ -152,9 +173,19 @@ def run(args: argparse.Namespace) -> dict:
     hard, major, minor = [], [], []
     supplemental_reference_used = False
     native_source = False
+    design_spec = {'selected_pattern': args.pattern}
+    reference_mode = 'reference-guided'  # historical CLI-only reviews retain legacy scope
     if getattr(args, "design_spec", None):
         try:
             design_spec = load(Path(args.design_spec))
+            reference_mode = design_reference_mode(design_spec)
+            if reference_mode == 'original' and args.mode in {'reference-guided', 'reproduce'}:
+                hard.append(issue('reference_mode_conflict', args.mode, 'use the Spec evidence mode without silently relabelling source reproduction'))
+            text_contract = design_spec.get('text_contract', {})
+            for failure in _text_module.validate_footer_contract(text_contract):
+                hard.append(issue('canvas_footer_forbidden',failure,'move all caption/footer text outside the figure'))
+            if isinstance(text_contract, dict) and 'allowed_text' in text_contract:
+                hard.extend(figure_text_issues(text_contract['allowed_text'], 'text_contract.allowed_text'))
             if design_spec.get("selected_pattern") != args.pattern:
                 hard.append(issue("design_spec_pattern_mismatch", design_spec.get("selected_pattern"), "run the artifact against its selected Pattern"))
             supplemental_reference_used = bool(design_spec.get("reference_evidence", {}).get("supplemental_case_ids"))
@@ -173,18 +204,17 @@ def run(args: argparse.Namespace) -> dict:
             hard.append(issue("design_spec_invalid", str(exc), "provide a readable validated Figure Design Spec"))
     if args.pattern not in known and not native_source:
         hard.append({"issue": "unknown_pattern", "evidence": args.pattern, "proposed_fix": "select a Pattern ID from patterns/index.yaml"})
-    atlas = load(ROOT / "atlas/index.yaml")
-    reviewed_patterns = {
-        entry.get("pattern_id")
-        for entry in atlas.get("entries", [])
-        if entry.get("review_status") in {"source-reviewed", "human-approved"}
-    }
-    top_journal = load(ROOT / "atlas/top-journal-corpus.yaml")
-    for entry in top_journal.get("entries", []):
-        if entry.get("actual_figure_reviewed") is True and entry.get("review_status") == "source-and-visual-reviewed":
-            reviewed_patterns.update(entry.get("patterns", []))
-    if args.mode == "reference-guided" and args.pattern not in reviewed_patterns:
-        major.append({"issue": "reviewed_atlas_entry_missing", "evidence": args.pattern, "proposed_fix": "use a source-reviewed or human-approved Atlas entry, or switch mode"})
+    if reference_mode != 'original' and args.mode == 'reference-guided':
+        atlas = load(ROOT / "atlas/index.yaml")
+        reviewed_patterns = {entry.get('pattern_id') for entry in atlas.get('entries', [])
+                             if entry.get('review_status') in {'source-reviewed', 'human-approved'}}
+        top_journal = load(ROOT / "atlas/top-journal-corpus.yaml")
+        for entry in top_journal.get('entries', []):
+            if entry.get('actual_figure_reviewed') is True and entry.get('review_status') == 'source-and-visual-reviewed':
+                reviewed_patterns.update(entry.get('patterns', []))
+        if args.pattern not in reviewed_patterns and not design_spec.get('reference_evidence', {}).get('primary_source_lock') and not native_source:
+            major.append({'issue': 'reviewed_atlas_entry_missing', 'evidence': args.pattern,
+                          'proposed_fix': 'bind an actually viewed task source or a compatible reviewed Atlas entry'})
     if not artifact.exists():
         hard.append({"issue": "artifact_missing", "evidence": str(artifact), "proposed_fix": "render the artifact before running critics"})
     vector_text = raster_nodes = None
@@ -209,8 +239,21 @@ def run(args: argparse.Namespace) -> dict:
         hard.extend(evidence_hard)
         major.extend(evidence_major)
         minor.extend(evidence_minor)
+    if _cell_module.requires_cell_geometry(design_spec):
+        for failure in _cell_module.validate_cell_metrics((evidence or {}).get('heatmap_cells'), design_spec):
+            hard.append(issue('heatmap_cell_geometry_invalid', failure,
+                              'measure every actual final heatmap body/slice; small matrices require square cells'))
+        visual = (evidence or {}).get('visual_evidence', {})
+        observed = visual.get('cell_geometry', {}) if isinstance(visual, dict) else {}
+        if (not isinstance(observed, dict) or observed.get('status') != 'PASS'
+                or not isinstance(observed.get('observation'), str) or len(observed['observation'].strip()) < 24):
+            hard.append(issue('heatmap_cell_observation_missing', observed,
+                              'inspect the final PNG/PDF cells, not canvas shape; record square or explicit dense overview'))
     inspection_status = "evidence_valid" if evidence is not None and not evidence_hard else "failed"
-    critics_run = list(dict.fromkeys(MODE_CRITICS[args.mode] + specialty_critics(getattr(args, "domain", []) or [])))
+    review_names = MODE_CRITICS['original'] if reference_mode == 'original' else MODE_CRITICS[args.mode]
+    if args.mode == 'original' and reference_mode != 'original':
+        hard.append(issue('reference_mode_conflict', reference_mode, 'original review cannot replace source-based quality evidence'))
+    critics_run = list(dict.fromkeys(review_names + specialty_critics(getattr(args, "domain", []) or [])))
     if supplemental_reference_used:
         critics_run = list(dict.fromkeys(critics_run + ["reference-transfer"]))
     reviews = evidence.get("critic_reviews", {}) if isinstance(evidence, dict) else {}
@@ -221,14 +264,14 @@ def run(args: argparse.Namespace) -> dict:
         review = reviews.get(name)
         valid = (isinstance(review, dict) and review.get("status") in {"PASS", "REVISE", "FAIL"}
                  and isinstance(review.get("evidence"), str) and len(review["evidence"].strip()) >= 20)
-        if valid and name == "reference-quality":
+        if valid and name in {"reference-quality", "design-quality"}:
             dimensions = review.get("dimensions", {})
             valid = isinstance(dimensions, dict) and all(
                 isinstance(dimensions.get(k), dict)
                 and dimensions[k].get("status") in {"PASS", "REVISE", "FAIL"}
                 and isinstance(dimensions[k].get("evidence"), str)
                 and len(dimensions[k]["evidence"].strip()) >= 20
-                for k in ("hierarchy", "geometry", "palette", "typography", "marks", "annotation"))
+                for k in DIMENSIONS)
             if valid and review["status"] == "PASS" and any(v.get("status") != "PASS" for v in dimensions.values()):
                 valid = False
         if not valid:
@@ -250,10 +293,12 @@ def run(args: argparse.Namespace) -> dict:
         "genome": "assembly, coordinate, mapping and alignment contract",
         "mechanism": "edge evidence level, direction and no-fabrication contract",
         "reference-quality": "actual reference-to-render comparison of hierarchy, geometry, palette, typography, marks and annotation",
+        "design-quality": "actual final render versus original six-dimensional design contract: hierarchy, geometry, palette, typography, marks and annotation",
         "reference-transfer": "supplemental case provenance, transfer decisions, rejected elements and final-size inspection",
     }
     return {
         "schema_version": "1.1", "artifact": str(artifact), "pattern_id": args.pattern, "mode": args.mode,
+        "reference_mode": reference_mode,
         "critics_run": critics_run, "status": status, "hard_failures": hard,
         "major_issues": major, "minor_issues": minor,
         "scores": scores, "critic_requirements": {name: critic_basis[name] for name in critics_run},

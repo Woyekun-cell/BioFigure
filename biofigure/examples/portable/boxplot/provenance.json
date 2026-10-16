@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "boxplot",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101600,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "6bcdfa673030bb33e76091e352ef7968fd4557919a858e0d091d77d540012530",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

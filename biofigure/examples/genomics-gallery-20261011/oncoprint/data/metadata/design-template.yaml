@@ -77,7 +77,7 @@ reference_evidence:
     source_record_sha256: FRESH_REQUIRED
     read_hashes: {}
     opened_source_asset:
-      path: examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf
+      path: examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf
       sha256: 61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361
       original_size_viewed: true
       scope: Current own published figure PDF, not original publication reference.
@@ -98,13 +98,20 @@ reference_analysis:
   semantic_purpose: OncoPrint describing synthetic gene-event presence and aligned
     sample annotations.
   panels:
-  - id: main
-    role: native matrix with keyed top/right annotations
-    position: central above reserved legends
+  - id: cohort-A
+    role: consecutive 48-sample block of the same full 12 by 144 matrix
+    position: vertical block 1
+  - id: cohort-B
+    role: consecutive 48-sample block of the same full 12 by 144 matrix
+    position: vertical block 2
+  - id: cohort-C
+    role: consecutive 48-sample block of the same full 12 by 144 matrix
+    position: vertical block 3
   elements:
   - id: matrix
     role: event landscape
-    geometry: 12x144 native event matrix,124x66mm
+    geometry: Three native 12x48 bodies, each100.8x25.2mm; all144 columns retained
+      in original order
     position: central
     data_mapping: gene/sample/event_type
     required: true
@@ -116,14 +123,15 @@ reference_analysis:
     required: true
   - id: frequency
     role: distinct-tumour frequency
-    geometry: native percentages and right horizontal bars
+    geometry: All tumours (%) native right bar per block; repeated global frequencies
+      with denominator144
     position: right of matrix
     data_mapping: gene distinct-sample numerator/144
     required: true
   - id: labels
     role: row/column group names
     geometry: Arial keyed labels
-    position: left gene names/top three cohort names
+    position: Gene names left of every block; true cohort A/B/C (48) above each
     data_mapping: gene/sample cohort
     required: true
   - id: legend
@@ -131,12 +139,6 @@ reference_analysis:
     geometry: packed native categorical legends
     position: separate bottom band
     data_mapping: exact semantic colors
-    required: true
-  - id: note
-    role: simulation declaration
-    geometry: single7.5pt footer
-    position: bottom outside legends
-    data_mapping: synthetic input provenance
     required: true
   relationships:
   - from: matrix
@@ -155,18 +157,13 @@ reference_analysis:
     to: legend
     type: reading-order
     shared_key: event_type/category
-  - from: legend
-    to: note
-    type: reading-order
-    shared_key: simulation provenance
   spatial_topology:
     coordinate_system: Cartesian native heatmap grid
     reading_order:
-    - top annotations
-    - event matrix
-    - right frequency
-    - bottom legends
-    - simulation declaration
+    - cohort A annotations/matrix/global frequency
+    - cohort B annotations/matrix/global frequency
+    - cohort C annotations/matrix/global frequency
+    - shared bottom legends
     alignment_keys:
     - gene
     - sample_id
@@ -180,6 +177,8 @@ reference_analysis:
   - All144 columns, sample burden and metadata share sample keys/order.
   - Right distinct-tumour frequencies use the fixed144 assayed denominator.
   - Legends occupy a reserved bottom band.
+  - Three consecutive48-sample bodies retain the complete original sample order.
+  - Measure every final device body; physical cells2.1x2.1mm; global matrix12x144.
   forbidden_substitutions:
   - No ordinary geom_tile replacement for native oncoPrint.
   - No event pruning,empty-column filtering or independent annotation sorting.
@@ -194,7 +193,9 @@ encoding:
 annotation:
   metadata: Synthetic Sex/Smoking with explicit Unknown.
   cohort: Three named48-tumour column groups.
-  simulation: Visible provenance footer.
+  simulation: Recorded in data metadata and outside-figure provenance; no canvas footer.
+  frequency: All tumours (%) repeats the same distinct-tumour numerator/144; never
+    a cohort denominator.
 legend:
   place: outside_bottom
   shared: true
@@ -238,17 +239,17 @@ renderer:
   packages:
   - ComplexHeatmap
   - grid
-  - cowplot
-  - ggplot2
   - ragg
   - svglite
   - jsonlite
   - yaml
-  function_adaptation: Native oncoPrint/draw captured as grid grob; cowplot wrapper
-    only assembles for the authorized R export, without replacement of the event matrix.
+  - digest
+  - systemfonts
+  function_adaptation: Native oncoPrint/draw directly on each final device in three
+    consecutive 48-sample viewports; no captured/scaled grob or cowplot wrapper.
 output_size:
-  width_mm: 180
-  height_mm: 118
+  width_mm: 183
+  height_mm: 166
   formats:
   - pdf
   - svg
@@ -256,86 +257,93 @@ output_size:
   size_class: double-column
   size_basis: final_physical_output
   size_rationale:
-    panel_count: 1
+    panel_count: 3
     density: high
-    longest_label_chars: 58
+    longest_label_chars: 15
     recommended_class: double-column
-    selection_reason: 144 columns require sub-mm event columns;124x66mm body plus
-      aligned annotation and independent legend band.
+    selection_reason: Three originalcohort48 blocks permit2.1mm square cells without
+      changing144 sample IDs,12 genes,424 events or frequency denominator144.
     override_basis: ''
 layout_contract:
-  canvas: 180x118mm white
-  data_bbox: Planned native body124x66mm,measured after draw.
-  annotation_bbox: Top burden10mm plus metadata3mm strips;right frequency18mm.
-  legend_bbox: Separate bottom band,minimum4mm clear of gene rows; measured native
-    packed legend bbox.
+  canvas: 183x166mm white
+  data_bbox: Three native100.8x25.2mm bodies; measured on each final device.
+  annotation_bbox: Per-block top burden7mm and2.3mm category strips; right globalfrequency22mm.
+  legend_bbox: One native shared bottom band, separate from all three sampleblocks.
   label_reserve: Left longest gene name and percentage/axis text measured in Arial.
   collision_policy: Fail on any native bbox collision,clipping or insufficient legend
     reserve.
   text_extent_method: grid grob metrics on exact Arial PDF measurement device.
   preflight_collision_check: bf_check_boxes plus native grid measurements and actual
     PNG/PDF review.
-  coordinate_policy: Native matrix and annotations share keyed orders;no image stretching.
+  coordinate_policy: Top-to-bottom A/B/C blocks preserve original keyed order; no
+    matrix image capture or stretching.
 font_contract:
   family: Arial
-  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  resolved_font_file: Runtime bf_font(Arial) exact installed family and hash; fail
+    on missing or substitute font
   fallback_policy: fail
   warning_policy: fail
   all_layers_inherit_policy: fail_if_any_layer_unverified
   rendered_face_check: PNG plus editablePDF font/text metadata
-  minimum_final_text_pt: 7.5
+  minimum_final_text_pt: 6.5
   size_basis: final_output_size
   size_roles_pt:
-    axis_text: 7.5
-    axis_title: 7.5
-    legend_text: 7.5
-    strip_text: 7.5
-    annotation_text: 7.5
-    panel_label: 7.5
+    axis_text: 6.5
+    axis_title: 6.5
+    legend_text: 6.5
+    strip_text: 6.5
+    annotation_text: 6.5
+    panel_label: 6.5
 design_target:
   hierarchy:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
   geometry:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
   palette:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
   typography:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
   marks:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
   annotation:
     observation: Historical gallery puts legends over the bottom event rows. Source
       tutorial shows dense ordered native matrix plus top metadata/right frequency.
-    implementation: Independent native144x12 example;explicit simulation,multi-event
-      preservation,all sample keys,and reserved legend band.
-    difference_reason: Public plotting-table native replay of the current BioFigure
-      layout; not original paper-data/full-figure fidelity or new-input qualification.
-  reference: examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf
+    implementation: Three consecutive originalcohort48 blocks;2.1mm square native
+      cells, complete eventstripes, repeated global144-denominator frequencies and
+      one shared legend.
+    difference_reason: Source-guided own-layout reflow for current physical square-cell/readability
+      rules; no claim to reproduce historical aspect ratio or original study.
+  reference: examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf
   reference_opened: true
 text_contract:
   allowed_text:
@@ -354,7 +362,6 @@ text_contract:
   - Altered genes
   - Sex
   - Smoking
-  - Tumours (%)
   - Alteration
   - Missense
   - Frameshift
@@ -369,7 +376,6 @@ text_contract:
   - A (48)
   - B (48)
   - C (48)
-  - Simulated data | 144 tumours, 12 genes | all genes assayed
   - '0'
   - '1'
   - '2'
@@ -672,7 +678,12 @@ text_contract:
   - 98%
   - 99%
   - 100%
-  allow_headings: true
+  - All tumours (%)
+  allow_headings: false
+  allow_caption: false
+  allow_footer: false
+  allow_footnotes: false
+  footer_policy: outside-only
 background_contract:
   canvas: '#FFFFFF'
   panel: '#FFFFFF'
@@ -688,3 +699,30 @@ critic_targets:
   publication: required
   anti_ai: required
 statistics_required: false
+reference_mode: reference-guided
+heatmap_cell_contract:
+  policy_id: heatmap-cells-v1
+  shape: square
+  rows: 12
+  columns: 144
+  measurement_basis: final_body_viewports_mm
+  max_relative_error: 0.01
+sample_block_contract:
+- cohort: A
+  first_column: 1
+  last_column: 48
+  rows: 12
+  columns: 48
+  cell_mm: 2.1
+- cohort: B
+  first_column: 49
+  last_column: 96
+  rows: 12
+  columns: 48
+  cell_mm: 2.1
+- cohort: C
+  first_column: 97
+  last_column: 144
+  rows: 12
+  columns: 48
+  cell_mm: 2.1

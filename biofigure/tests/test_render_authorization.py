@@ -25,7 +25,7 @@ class RenderAuthorizationTests(unittest.TestCase):
         self.receipt = self.root / 'receipt.json'
         self.design = self.root / 'design.yaml'
         self.source = self.root / 'plot.R'
-        request = {'primary_domain': 'single-cell-spatial', 'primary_role': 'discovery',
+        request = {'reference_mode': 'reference-guided', 'primary_domain': 'single-cell-spatial', 'primary_role': 'discovery',
                    'backend': 'R', 'deliverable': 'quick-png',
                    'figure_task': 'marker-expression-across-cell-types',
                    'data_shape': 'genes by cells with pct and average expression', 'figure_family': 'single-cell'}

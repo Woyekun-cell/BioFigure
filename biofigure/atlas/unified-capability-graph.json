@@ -2,7 +2,7 @@
   "schema_version": 2,
   "summary": {
     "schema_version": 2,
-    "case_count": 260,
+    "case_count": 281,
     "source_counts": {
       "scidraw": 152,
       "topjournal": 83,
@@ -23,8 +23,14 @@
       "benchmark/library/topjournal/issue_098/manifest.json": 1,
       "library/genomics/cannabis-pangenome/data/metadata/source-manifest.json": 1,
       "library/genomics/dpm-multiomics/data/metadata/source-manifest.json": 1,
-      "genomics": 6,
-      "gallery-simulation": 2
+      "genomics": 8,
+      "gallery-simulation": 2,
+      "single-cell": 1,
+      "epigenomics": 2,
+      "multiomics": 3,
+      "comparative-genomics": 1,
+      "transcriptomics": 2,
+      "nature-subjournal-author-source-learning": 10
     },
     "code_file_count": 1015,
     "r_file_count": 853,
@@ -74,8 +80,8 @@
     "existing_namespaced_functions": 100,
     "method_family_count": 23,
     "visual_evidence_pending": 0,
-    "source_compared_cases": 145,
-    "source_compared_pass": 35,
+    "source_compared_cases": 141,
+    "source_compared_pass": 31,
     "source_compared_needs_revision": 110,
     "status_boundary": "Source review: only review_status=pass means historical fidelity accepted. Fixed-data reproduction, source-exposed new-input reuse, stress and user acceptance are separate; no old PASS certifies new output.",
     "unverified_packages": [
@@ -147,6 +153,25 @@
       "original_whole_figure_new_input_stress": "NOT_VERIFIED",
       "historical_freeze": "../work/2026-10-11-complex-panels/training-index-freeze.json",
       "status": "PASS_AT_DELIVERY; subsequent metadata updates invalidate old preparation for new rendering"
+    },
+    "circular_embedding_scoped_delivery": {
+      "case_id": "singlecell-circular-embedding-plot1cell",
+      "status": "SCOPED_PASS_AT_DELIVERY",
+      "bundle": "benchmark/library/single-cell/circular-embedding-plot1cell/evidence/bundle.json",
+      "historical_count_boundary": "Historical code/package audit totals remain scoped to their original audits; added case dependencies are per-case."
+    },
+    "source_learning_2026_10_13": {
+      "case_ids": [
+        "genomics-rice-centromere-multitrack-2025",
+        "epigenomics-chromafold-multiresolution-contact-atlas",
+        "multiomics-mofacll-proliferative-drive"
+      ],
+      "scope": "Three complex omics source learning packages; no rendering or visual qualification"
+    },
+    "historical_source_review_summary": {
+      "source_compared_cases": 145,
+      "source_compared_pass": 35,
+      "source_compared_needs_revision": 110
     }
   },
   "nodes": [
@@ -3655,10 +3680,17 @@
       "label": "Populus Fig. 2b A/B compartment composition",
       "source": "topjournal",
       "status": "source-compared-png",
-      "visual_status": "source-compared-png",
-      "review_status": "pass",
-      "high_fidelity_eligible": true,
-      "generation_mode": "source-exposed-independent"
+      "visual_status": "source-materials-unavailable",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "generation_mode": "source-exposed-independent",
+      "historical_source_review": {
+        "visual_status": "source-compared-png",
+        "review_status": "pass",
+        "high_fidelity_eligible": true,
+        "generation_mode": "source-exposed-independent"
+      },
+      "current_public_bundle_status": "NOT_DISTRIBUTED_OR_NOT_VERIFIED"
     },
     {
       "id": "toomanycells-fig2-001",
@@ -3666,10 +3698,17 @@
       "label": "TooManyCells Fig. 2a/c/d/e single-cell clade tree",
       "source": "topjournal",
       "status": "source-compared-png",
-      "visual_status": "source-compared-png",
-      "review_status": "pass",
-      "high_fidelity_eligible": true,
-      "generation_mode": "source-exposed-independent-structural"
+      "visual_status": "source-materials-unavailable",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "generation_mode": "source-exposed-independent-structural",
+      "historical_source_review": {
+        "visual_status": "source-compared-png",
+        "review_status": "pass",
+        "high_fidelity_eligible": true,
+        "generation_mode": "source-exposed-independent-structural"
+      },
+      "current_public_bundle_status": "NOT_DISTRIBUTED_OR_NOT_VERIFIED"
     },
     {
       "id": "populus-synteny-edfig1a-001",
@@ -3677,10 +3716,17 @@
       "label": "Populus Extended Data Fig. 1a whole-genome synteny",
       "source": "topjournal",
       "status": "source-compared-png",
-      "visual_status": "source-compared-png",
-      "review_status": "pass",
-      "high_fidelity_eligible": true,
-      "generation_mode": "source-exposed-independent-structural"
+      "visual_status": "source-materials-unavailable",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "generation_mode": "source-exposed-independent-structural",
+      "historical_source_review": {
+        "visual_status": "source-compared-png",
+        "review_status": "pass",
+        "high_fidelity_eligible": true,
+        "generation_mode": "source-exposed-independent-structural"
+      },
+      "current_public_bundle_status": "NOT_DISTRIBUTED_OR_NOT_VERIFIED"
     },
     {
       "id": "populus-compartment-edfig1b-001",
@@ -3688,10 +3734,17 @@
       "label": "Populus Extended Data Fig. 1b circular A/B compartment tracks",
       "source": "topjournal",
       "status": "source-compared-png",
-      "visual_status": "source-compared-png",
-      "review_status": "pass",
-      "high_fidelity_eligible": true,
-      "generation_mode": "source-exposed-independent-structural"
+      "visual_status": "source-materials-unavailable",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "generation_mode": "source-exposed-independent-structural",
+      "historical_source_review": {
+        "visual_status": "source-compared-png",
+        "review_status": "pass",
+        "high_fidelity_eligible": true,
+        "generation_mode": "source-exposed-independent-structural"
+      },
+      "current_public_bundle_status": "NOT_DISTRIBUTED_OR_NOT_VERIFIED"
     },
     {
       "id": "single-cell-han-foregut",
@@ -4534,6 +4587,326 @@
         "user_acceptance": "NOT_REQUESTED",
         "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
       }
+    },
+    {
+      "id": "genomics-lepidoptera-merian-paints-2024",
+      "kind": "case",
+      "label": "鳞翅目染色体演化 Fig.4b：系统树与120条真实染色体涂色",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-lepidoptera-merian-paints-2024",
+      "status": "fixed-input-source-and-final-figure-reviewed",
+      "high_fidelity_eligible": false,
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "date": "2026-10-11",
+        "scope": "Fixed author-processed formal Fig.4b only; intentionally recolored and single-panel legend reflowed",
+        "local_bundle": "benchmark/library/genomics/lepidoptera-chromosome-evolution/evidence/bundle.json",
+        "sha256": "6aaf47721a912f2efd05fb1dc9f3112d8baaa062f7111f73639f0b9c7ead5289",
+        "final_pdf": "benchmark/library/genomics/lepidoptera-chromosome-evolution/results/figures/fig4b_merian_recolored.pdf",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "whole_Fig4": "NOT_VERIFIED",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "id": "singlecell-circular-embedding-plot1cell",
+      "kind": "case",
+      "label": "环形UMAP外圈注释 plot1cell：15类102710真实细胞",
+      "source": "single-cell",
+      "method_id": "BENCH-singlecell-circular-embedding-plot1cell",
+      "status": "scoped-fixed-method-transfer-pass-at-delivery",
+      "high_fidelity_eligible": false,
+      "title": "环形UMAP外圈注释 plot1cell：15类102710真实细胞",
+      "validation_status": "scoped-fixed-method-transfer-pass-at-delivery",
+      "visual_status": "actual-source-final-PNG-PDF-reviewed",
+      "review_status": "scoped-pass",
+      "method_families": [
+        "embedding",
+        "circular-annotation"
+      ],
+      "packages": [
+        "circlize",
+        "MASS",
+        "gridGraphics",
+        "ggplot2",
+        "ragg",
+        "svglite"
+      ],
+      "benchmark_eligible": false,
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "date": "2026-10-11",
+        "scope": "Fixed102710cell/15type/13donor processed UMAP native circular method transfer only",
+        "local_bundle": "benchmark/library/single-cell/circular-embedding-plot1cell/evidence/bundle.json",
+        "sha256": "776474a38998328ff6ff2ab05cf0983921e932b5651fda443a6f985eb9360af6",
+        "final_pdf": "benchmark/library/single-cell/circular-embedding-plot1cell/results/figures/circular_embedding_adpkd_recolored.pdf",
+        "renderer": "benchmark/library/single-cell/circular-embedding-plot1cell/scripts/render.R",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "whole_original_figure": "NOT_VERIFIED",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "id": "package:MASS",
+      "kind": "package",
+      "label": "MASS",
+      "verification_scope": "current fixed circular-embedding render environment"
+    },
+    {
+      "id": "package:gridGraphics",
+      "kind": "package",
+      "label": "gridGraphics",
+      "verification_scope": "current fixed circular-embedding render environment"
+    },
+    {
+      "id": "package:svglite",
+      "kind": "package",
+      "label": "svglite",
+      "verification_scope": "current fixed circular-embedding render environment"
+    },
+    {
+      "id": "epigenomics-te-tf-motif-atlas",
+      "kind": "case",
+      "label": "转座子TF-motif14×35聚类热图及双对数散点",
+      "source": "epigenomics",
+      "method_id": "BENCH-epigenomics-te-tf-motif-atlas",
+      "status": "scoped-fixed-Fig3a-b-pass",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "actual-source-final-PNG-PDF-reviewed",
+      "review_status": "scoped-pass",
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_FIXED_FIG3A_B",
+        "date": "2026-10-12",
+        "scope": "Formal Figure3a two scatters+Figure3b complete14x35/3slices/4trees;558source rows;no originalc/d/newinput/stress certification",
+        "local_bundle": "benchmark/library/epigenomics/te-tf-motif-atlas/evidence/bundle.json",
+        "sha256": "490c26ba7b11ecfb2b3ab20b507c7fdb2ad4d67c4454ff80c5f4bf5f66dca851",
+        "final_pdf": "benchmark/library/epigenomics/te-tf-motif-atlas/results/figures/te_tf_motif_atlas_recolored.pdf",
+        "renderer": "benchmark/library/epigenomics/te-tf-motif-atlas/scripts/render.R",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "id": "multiomics-hmo-gene-reaction",
+      "kind": "case",
+      "label": "糖组学–转录组HMO：43节点58反应网络＋27结构共现热图",
+      "source": "multiomics",
+      "method_id": "BENCH-multiomics-hmo-gene-reaction",
+      "status": "source-code-learning-only-visual-rejected",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "USER_REJECTED_SOURCE_LAYOUT",
+      "review_status": "REVISE"
+    },
+    {
+      "id": "multiomics-hmo-snfg-fig4",
+      "kind": "case",
+      "label": "HMO正式Fig4：SNFG糖链网络31节点40反应＋3异构体",
+      "source": "multiomics",
+      "method_id": "BENCH-multiomics-hmo-snfg-fig4",
+      "status": "scoped-source-layout-native-structure-fixed-input-pass",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "actual-source-final-PNG-PDF-reviewed-with-differences",
+      "review_status": "scoped-pass",
+      "qualification": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/evidence/scoped-qualification.json"
+    },
+    {
+      "id": "genomics-rice-centromere-multitrack-2025",
+      "kind": "case",
+      "label": "水稻着丝粒：共线性多边形与十材料多轨注释",
+      "source": "genomics",
+      "method_id": "BENCH-genomics-rice-centromere-multitrack-2025",
+      "status": "source-code-learning-and-nonrendering-audit",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "not-run",
+      "review_status": "not-run",
+      "learning_source": "benchmark/library/genomics/rice-centromere-multitrack-2025/case-card.draft.json"
+    },
+    {
+      "id": "epigenomics-chromafold-multiresolution-contact-atlas",
+      "kind": "case",
+      "label": "ChromaFold：多分辨率接触三角图与共享基因组轨道",
+      "source": "epigenomics",
+      "method_id": "BENCH-epigenomics-chromafold-multiresolution-contact-atlas",
+      "status": "source-code-learning-and-nonrendering-audit",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "not-run",
+      "review_status": "not-run",
+      "learning_source": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/machine-card.draft.json"
+    },
+    {
+      "id": "multiomics-mofacll-proliferative-drive",
+      "kind": "case",
+      "label": "mofaCLL：连续因子排序热图与通路归属网络",
+      "source": "multiomics",
+      "method_id": "BENCH-multiomics-mofacll-proliferative-drive",
+      "status": "source-code-learning-and-nonrendering-audit",
+      "high_fidelity_eligible": false,
+      "benchmark_eligible": false,
+      "visual_status": "not-run",
+      "review_status": "not-run",
+      "learning_source": "benchmark/library/multiomics/mofacll-proliferative-drive/data/metadata/source-learning.json"
+    },
+    {
+      "id": "gggenomes-emales-2026",
+      "kind": "case",
+      "label": "六病毒基因组：基因箭头、蛋白共线带、TIR、NGARO与GC轨道",
+      "source": "comparative-genomics",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": "benchmark/cases/gggenomes-emales-2026.json",
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "ggtranscript-sod1-2026",
+      "kind": "case",
+      "label": "ggtranscript转录本结构、间隔压缩与异构体差异",
+      "source": "transcriptomics",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": "benchmark/cases/ggtranscript-sod1-2026.json",
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "ggsashimi-splicing-2026",
+      "kind": "case",
+      "label": "原生BAM覆盖剪接弧线叠加与均值",
+      "source": "transcriptomics",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": "benchmark/cases/ggsashimi-splicing-2026.json",
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-cellrank-2022",
+      "kind": "case",
+      "label": "CellRank 命运概率环形投影、伪时间概率散点与Scanpy标记基因气泡图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-mefisto-2022",
+      "kind": "case",
+      "label": "MEFISTO/MOFA2解释方差柱形热图、时间因子不确定性轨迹与物种相关核热图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-augur-2021",
+      "kind": "case",
+      "label": "Augur AUC细胞数稳健性曲线、差异表达响应热图与ggplot2细胞类型排序棒棒糖图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-liana-plus-2024",
+      "kind": "case",
+      "label": "LIANA+／Squidpy／seaborn：NMF因子富集热图、空间转录组表达图与配体受体差异热图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-nichenet-2020",
+      "kind": "case",
+      "label": "NicheNet／ggplot2／cowplot：20配体活性排序、20×31调控潜力与10肿瘤共享键热图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-tangram-2021",
+      "kind": "case",
+      "label": "Tangram／Matplotlib：空间转录组概率图、基因预测对照与spot内解卷积",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-archr-2021",
+      "kind": "case",
+      "label": "ArchR：B细胞伪时间双热图、三模态TF热图与基因组峰弧轨道",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-signac-2021",
+      "kind": "case",
+      "label": "Signac：注释一致性与标签转移热图、基因组coverage轨道、峰基因弧与TF足迹",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-seacells-2023",
+      "kind": "case",
+      "label": "SEACells：基因峰相关散点、NFR覆盖弧、TF活动热图与基因协方差",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
+    },
+    {
+      "id": "subjournal-milo-2022",
+      "kind": "case",
+      "label": "Milo miloR 邻域网络 差异丰度 分面蜂群图 logFC排序表达热图",
+      "source": "nature-subjournal-author-source-learning",
+      "status": "source-learning-registered",
+      "visual_status": "NOT_VERIFIED",
+      "review_status": "NOT_VERIFIED",
+      "high_fidelity_eligible": false,
+      "learning_source": null,
+      "scope": "Registered source learning only; no current execution or visual qualification inferred."
     }
   ],
   "edges": [
@@ -13610,6 +13983,191 @@
     {
       "from": "gallery-multiomics-alluvial-2026",
       "to": "family:alluvial-sankey",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "family:ordination",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:MASS",
+      "relation": "uses-package"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:gridGraphics",
+      "relation": "uses-package"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:ragg",
+      "relation": "uses-package"
+    },
+    {
+      "from": "singlecell-circular-embedding-plot1cell",
+      "to": "package:svglite",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "family:scatter-bubble",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "family:enrichment",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:ComplexHeatmap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:ggrepel",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:patchwork",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:ragg",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:svglite",
+      "relation": "uses-package"
+    },
+    {
+      "from": "epigenomics-te-tf-motif-atlas",
+      "to": "package:readxl",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:igraph",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:gplots",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:ComplexHeatmap",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:circlize",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:ggplot2",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:gridGraphics",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:ggplotify",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:ragg",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:svglite",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-gene-reaction",
+      "to": "package:readxl",
+      "relation": "uses-package"
+    },
+    {
+      "from": "multiomics-hmo-snfg-fig4",
+      "to": "family:network",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-rice-centromere-multitrack-2025",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "genomics-rice-centromere-multitrack-2025",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "epigenomics-chromafold-multiresolution-contact-atlas",
+      "to": "family:genome-track",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "epigenomics-chromafold-multiresolution-contact-atlas",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "multiomics-mofacll-proliferative-drive",
+      "to": "family:heatmap",
+      "relation": "uses-method-family"
+    },
+    {
+      "from": "multiomics-mofacll-proliferative-drive",
+      "to": "family:network",
       "relation": "uses-method-family"
     }
   ],

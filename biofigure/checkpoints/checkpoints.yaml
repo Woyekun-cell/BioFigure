@@ -43,8 +43,9 @@ checkpoints:
   - design_spec_validation
   - renderer_available
   - layout_slots_reserved
-  - reference_method_receipt
   - preparation_receipt
+  source_modes_required_evidence: [reference_method_receipt]
+  original_mode: design_analysis_and_full_six_dimension_review_required
   fail_action: revise_spec_before_code
 - id: CP3
   phase: rendered-figure-inspection
@@ -79,3 +80,11 @@ visual_color_policy:
   CP4_check: semantic_color
   colored_data_marks_required_for_PASS: true
   decorative_color_only: REVISE
+canvas_text_policy:
+  footer_policy_id: no-canvas-footer-v1
+  caption_footer_footnote_methods_prose: forbidden
+  heading_or_allowlist_exemption: false
+  CP3_rendered_text_required: all_renderers
+  CP4_check: footer_absent
+  footer_detected: REVISE
+  missing_actual_footer_observation: withhold_PASS

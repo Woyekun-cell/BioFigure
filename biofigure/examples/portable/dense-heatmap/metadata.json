@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "case_id": "dense-heatmap",
+  "synthetic": true,
+  "seed": 2026101602,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic sample",
+  "comparison": null,
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "rows": 5000,
+  "columns": 20,
+  "groups": [
+    "Control",
+    "Low",
+    "High",
+    "Recovery"
+  ],
+  "sample_groups": {
+    "S01": "Control",
+    "S02": "Control",
+    "S03": "Control",
+    "S04": "Control",
+    "S05": "Control",
+    "S06": "Low",
+    "S07": "Low",
+    "S08": "Low",
+    "S09": "Low",
+    "S10": "Low",
+    "S11": "High",
+    "S12": "High",
+    "S13": "High",
+    "S14": "High",
+    "S15": "High",
+    "S16": "Recovery",
+    "S17": "Recovery",
+    "S18": "Recovery",
+    "S19": "Recovery",
+    "S20": "Recovery"
+  },
+  "units": "synthetic standardized expression",
+  "generation": "Three sine-pattern modules plus independent Gaussian noise SD 0.3.",
+  "displayed_matrix": {
+    "rows": 5000,
+    "columns": 20
+  },
+  "statistics": "Descriptive expression pattern only; no differential inference."
+}

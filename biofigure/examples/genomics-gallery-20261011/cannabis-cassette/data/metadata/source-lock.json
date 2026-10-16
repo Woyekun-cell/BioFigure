@@ -39,6 +39,11 @@
       "path": "scripts/audit_inputs.R",
       "sha256": "0e5978725829ed9b4c1e3e76314425f2cee4290b4fcf5d00fbd9efa9dfef5897",
       "role": "public-table-reconstruction-contract"
+    },
+    {
+      "path": "sources/own-reference.png",
+      "sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+      "role": "bundled-current-own-gallery-reference"
     }
   ]
 }

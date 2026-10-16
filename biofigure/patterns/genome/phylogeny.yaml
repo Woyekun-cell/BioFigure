@@ -1,0 +1,35 @@
+pattern_id: PHYLO-TREE-001
+version: '1.0'
+domain: [comparative-genomics]
+scientific_task: [phylogenetic-relationships]
+message_type: evolutionary-tree-structure
+data_contract:
+  required: [tree, tip_ids, branch_length_semantics, rooting]
+  optional: [clade_membership, support_values]
+  assumptions: [tip_ids_unique, positive_finite_branch_lengths, no_invented_support]
+applicable_when:
+  data_profile: {n_tips: 4-100}
+  message: phylogenetic_relationships
+not_recommended_when: [no_tree_inference_or_supplied_tree, unsupported_species_identity]
+visual_hierarchy: {primary: topology_and_branch_lengths, secondary: tip_labels, tertiary: clade_membership}
+geometry: {primary: rectangular_phylogram, secondary: thin_tip_symbols}
+encoding: {x: cumulative_branch_length, y: tree_topology, color: declared_clade_membership}
+layout: {aspect_ratio: label_and_tip_count_dependent, density_strategy: reserve_tip_label_column, whitespace_strategy: separate_legend_and_scale}
+annotation_strategy: [declare_branch_length_units, preserve_tip_ids, show_support_only_when_supplied]
+legend_strategy: {compact: true, place: outside_tree}
+color_semantics: {branches: neutral, tip_membership: categorical}
+optional_components: [scale_bar, clade_strip]
+avoid: [invented_bootstrap, arbitrary_branch_stretching, unrequested_title, overlapping_tip_labels]
+scientific_risks: [rooting_as_causal_direction, synthetic_tree_as_inferred_evolution, duplicate_tip_ids]
+renderer_options: [ggplot2, ggtree]
+references: [source-index://ggplot2]
+provenance:
+  created_from: [first-party-portable-example]
+  reviewed_by: BioFigure-maintainer
+  reviewed_at: '2026-10-16'
+confidence: medium
+validation:
+  scientific: Supplied topology, tip uniqueness and branch-length semantics checked for each input.
+  visual: Fresh final-size review required; this Pattern is not a historical visual PASS.
+  benchmark: First-party synthetic input only; no phylogenetic inference or author reproduction claimed.
+status: approved

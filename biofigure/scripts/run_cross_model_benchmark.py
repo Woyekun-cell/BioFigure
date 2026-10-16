@@ -560,7 +560,7 @@ def run_smoke_cases() -> list[dict]:
     domains = {'distribution': 'imaging-assay', 'matrix': 'single-cell-spatial'}
     rows = []
     for case in cases:
-        request = {'figure_task': case['task'], 'figure_family': case['family'],
+        request = {'reference_mode': 'reference-guided', 'figure_task': case['task'], 'figure_family': case['family'],
                    'data_shape': case.get('data_semantics') or f"synthetic fixture {case['input_path']}",
                    'primary_domain': domains[case['family']], 'primary_role': 'comparison',
                    'backend': 'Python', 'deliverable': 'quick-png'}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "case_id": "boxplot",
+  "synthetic": true,
+  "seed": 2026101600,
+  "independence": "independent",
+  "experimental_unit": "independent synthetic biological sample",
+  "comparison": "Treatment - Control",
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "groups": [
+    "Control",
+    "Treatment"
+  ],
+  "sample_counts": {
+    "Control": 12,
+    "Treatment": 12
+  },
+  "units": "arbitrary units",
+  "generation": "Independent Gaussian draws: Control mean 5.0, Treatment mean 6.3, SD 0.8.",
+  "technical_replicates": "none",
+  "statistics": "Two-sided Welch two-sample t-test; one prespecified comparison."
+}

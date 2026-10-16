@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "case_id": "TOMATO-SPG-2023",
+  "doi": "10.1038/s41588-023-01340-y",
+  "repository": "https://github.com/HongboDoll/TomatoSuperPanGenome",
+  "commit": "f31cab43d03de1508b9ed917a17854ba9c2a6765",
+  "license_status": "No root LICENSE observed; source snapshot for local audit only; no assumed redistribution grant. Preserve embedded third-party notices.",
+  "source_file_count": 195,
+  "pipeline_status": "source_audited_not_executed",
+  "paradigms": [
+    {
+      "id": "PAN-ANNOT",
+      "data_type": "annotation_qc",
+      "intent": "quality",
+      "question": "注释完整度是否可比？",
+      "required_fields": [
+        "accession",
+        "metric",
+        "value"
+      ],
+      "unit": "accession_by_metric",
+      "family": "distribution",
+      "chart": "annotation-quality",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_point"
+      ],
+      "statistics": "Descriptive accession-level QC; one assembly per accession does not create replicated treatments.",
+      "guards": "BUSCO use same lineage/version/mode; complete=single+duplicated, do not stack complete twice; gene counts do not prove accuracy.",
+      "figure": "Supplementary Tables 10,15",
+      "source_path": "Genome annotation/gene prediction/ReadMe",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-GENE",
+      "data_type": "gene_models",
+      "intent": "structure",
+      "question": "候选位点的结构与缺失证据？",
+      "required_fields": [
+        "accession",
+        "chrom",
+        "start",
+        "end",
+        "strand",
+        "feature",
+        "gene_id"
+      ],
+      "unit": "genomic_feature_by_accession",
+      "family": "genome",
+      "chart": "gene-structure-tracks",
+      "packages": [
+        "gggenes",
+        "ggplot2"
+      ],
+      "functions": [
+        "gggenes::geom_gene_arrow"
+      ],
+      "statistics": "Descriptive structural evidence; require independent genomic support for absence.",
+      "guards": "GFF3 1-based inclusive; BED start-1. Preserve UTR/CDS/exon differences, strand and intron compression labels.",
+      "figure": "Fig. 2d; Fig. 3a",
+      "source_path": "Genome annotation/gene prediction/05_evm.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-CLASS",
+      "data_type": "family_presence",
+      "intent": "composition",
+      "question": "核心、可变、特异家族各多少？",
+      "required_fields": [
+        "family_id",
+        "accession",
+        "presence"
+      ],
+      "unit": "gene_family_by_accession",
+      "family": "composition",
+      "chart": "family-class-counts",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_col"
+      ],
+      "statistics": "Descriptive family counts; no automatic t-test.",
+      "guards": "For fixed N: core N, specific 1, dispensable 2..N-1. Count families, not genes or transcript isoforms; exclude all-zero artifacts.",
+      "figure": "Fig. 2a inset",
+      "source_path": "Pan-genome/convert_orthogroup_2_pan_matrix.py",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-FREQ",
+      "data_type": "family_presence",
+      "intent": "prevalence",
+      "question": "家族在多少个基因组存在？",
+      "required_fields": [
+        "family_id",
+        "accession",
+        "presence"
+      ],
+      "unit": "gene_family_by_accession",
+      "family": "distribution",
+      "chart": "family-prevalence",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_col"
+      ],
+      "statistics": "Descriptive occupancy distribution; genomes are phylogenetically related.",
+      "guards": "Binary PAV after resolving gene ID lists; copy-number matrix must be separate. Unknown != zero; state sampling denominator.",
+      "figure": "Derived from Fig. 2a logic; not an original plotted panel",
+      "source_path": "Pan-genome/pan_genome.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-CURVE",
+      "data_type": "family_presence",
+      "intent": "accumulation",
+      "question": "增添基因组时泛/核心家族如何变化？",
+      "required_fields": [
+        "family_id",
+        "accession",
+        "presence"
+      ],
+      "unit": "gene_family_by_accession",
+      "family": "time-series",
+      "chart": "pan-core-accumulation",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_line",
+        "ggplot2::geom_ribbon"
+      ],
+      "statistics": "Subset combinations are not biological replicates; spread across subsets is not a population CI.",
+      "guards": "Union/intersection per subset; enumerate or declare sampling/seed. Do not infer an open pangenome from a curve without model and sampling checks.",
+      "figure": "Fig. 2a",
+      "source_path": "Pan-genome/pan_genome.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-PAV",
+      "data_type": "family_presence",
+      "intent": "patterns",
+      "question": "哪些家族在谱系或材料间共享/缺失？",
+      "required_fields": [
+        "family_id",
+        "accession",
+        "presence"
+      ],
+      "unit": "gene_family_by_accession",
+      "family": "matrix",
+      "chart": "presence-absence-heatmap",
+      "packages": [
+        "ComplexHeatmap"
+      ],
+      "functions": [
+        "ComplexHeatmap::Heatmap"
+      ],
+      "statistics": "Exploratory patterns; lineage-confounded enrichment needs phylogenetic/population control.",
+      "guards": "Order genomes by verified tree/metadata; presence/absence/unknown separate. Large matrix use occupancy bands; no unreported aesthetic filtering.",
+      "figure": "Derived matrix paradigm; not an original plotted panel",
+      "source_path": "Pan-genome/convert_orthogroup_2_pan_matrix.py",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-SUBSETS",
+      "data_type": "subset_counts",
+      "intent": "accumulation",
+      "question": "已有子集计数如何展示累积规律？",
+      "required_fields": [
+        "subset_id",
+        "n_genomes",
+        "pan",
+        "core"
+      ],
+      "unit": "genome_subset",
+      "family": "time-series",
+      "chart": "pan-core-accumulation",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_line",
+        "ggplot2::geom_ribbon"
+      ],
+      "statistics": "Subset combinations are not biological replicates; descriptive mean and range, not biological CI.",
+      "guards": "Validate unique subset IDs and membership; core<=pan; pair same subset. Source Data enumerates all C(13,k), k=2..13.",
+      "figure": "Fig. 2a",
+      "source_path": "Pan-genome/pan_genome.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-SVCOUNT",
+      "data_type": "sv_counts",
+      "intent": "composition",
+      "question": "每个基因组有哪些类型的SV？",
+      "required_fields": [
+        "accession",
+        "sv_type",
+        "count"
+      ],
+      "unit": "accession_vs_reference",
+      "family": "composition",
+      "chart": "sv-type-counts",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_col"
+      ],
+      "statistics": "Descriptive call counts; not independent populations.",
+      "guards": "Same reference, filter and merge definition; stacked counts do not imply unique non-overlapping events across accessions. Graph includes INS/DEL and INV<1Mb, not all SV classes.",
+      "figure": "Fig. 2b",
+      "source_path": "Structural variation/SV identification/ReadMe",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-TRACK",
+      "data_type": "genomic_windows",
+      "intent": "distribution",
+      "question": "SV、基因、重复分布在哪里？",
+      "required_fields": [
+        "chrom",
+        "start",
+        "end",
+        "value",
+        "track"
+      ],
+      "unit": "genomic_window",
+      "family": "genome",
+      "chart": "genomic-density-tracks",
+      "packages": [
+        "ggplot2",
+        "circlize"
+      ],
+      "functions": [
+        "ggplot2::geom_tile",
+        "circlize::circos.genomicTrackPlotRegion"
+      ],
+      "statistics": "Descriptive windows; adjacent windows not independent replicates.",
+      "guards": "Shared assembly, chromosome lengths and bins; preserve per-track units. Normalized density 0..1 is not absolute event density. Missing window != zero.",
+      "figure": "Fig. 2c",
+      "source_path": "Structural variation/SV identification/ReadMe",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-ALIGN",
+      "data_type": "alignment_blocks",
+      "intent": "rearrangement",
+      "question": "倒位或共线性断点在哪里？",
+      "required_fields": [
+        "ref_chrom",
+        "ref_start",
+        "ref_end",
+        "query_chrom",
+        "query_start",
+        "query_end",
+        "orientation"
+      ],
+      "unit": "alignment_block",
+      "family": "genome",
+      "chart": "synteny-dotplot",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_segment"
+      ],
+      "statistics": "Descriptive alignment with orthogonal breakpoint validation.",
+      "guards": "Forward/reverse separate colors; shared lengths; one-to-many explicit; large inversion validate with Hi-C/read evidence.",
+      "figure": "Fig. 2e",
+      "source_path": "Structural variation/SV identification/01_SyRI SV.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-HIC",
+      "data_type": "hic_contacts",
+      "intent": "validation",
+      "question": "组装/倒位的接触证据是否支持？",
+      "required_fields": [
+        "bin_x",
+        "bin_y",
+        "contact"
+      ],
+      "unit": "genomic_bin_pair",
+      "family": "matrix",
+      "chart": "hic-contact-map",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_tile"
+      ],
+      "statistics": "Descriptive contact map, not proof of rearrangement alone.",
+      "guards": "Same resolution and normalization; paired maps common scale; label log1p transform. Breakpoints from independent alignment.",
+      "figure": "Fig. 2e",
+      "source_path": "Genome assembly/hi-c integration/heatmap.MWAH.R",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-TREE",
+      "data_type": "phylogeny",
+      "intent": "relationships",
+      "question": "基因组的谱系关系是什么？",
+      "required_fields": [
+        "tip_id",
+        "newick"
+      ],
+      "unit": "accession_tip",
+      "family": "tree",
+      "chart": "phylogeny-with-metadata",
+      "packages": [
+        "ggtree"
+      ],
+      "functions": [
+        "ggtree::ggtree"
+      ],
+      "statistics": "Bootstrap support not P-value; topology not causal mechanism.",
+      "guards": "13 tomato genomes plus potato outgroup in code; align metadata to tip IDs; branch substitutions/site vs dated Ma distinct. Paper/code settings differ, preserve both.",
+      "figure": "Fig. 1b",
+      "source_path": "Phylogenetic analyses/phylogeny reconstruction/phylogeny.sh",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-GWAS",
+      "data_type": "gwas_results",
+      "intent": "association",
+      "question": "哪些SNP/SV与性状关联且是否校准？",
+      "required_fields": [
+        "SNP",
+        "CHR",
+        "BP",
+        "P",
+        "trait",
+        "marker_type"
+      ],
+      "unit": "variant_by_trait",
+      "family": "association",
+      "chart": "manhattan-qq",
+      "packages": [
+        "qqman",
+        "ggplot2"
+      ],
+      "functions": [
+        "qqman::manhattan",
+        "qqman::qq"
+      ],
+      "statistics": "Source EMMAX kinship+PC covariates; new analysis confirm intent and population structure. Adjust across variants and traits as intended.",
+      "guards": "0<P<=1; threshold source 7.58e-7 from 1/effective markers, not generic 0.05. QQ requires ALL tested markers, not significant hits; association is not causality.",
+      "figure": "Fig. 4c-f; author Manhattan/QQ scripts",
+      "source_path": "Genome-wide association studies/Zhu et al. 2018 GWAS/manhattan_qq.R",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-GO",
+      "data_type": "enrichment_results",
+      "intent": "enrichment",
+      "question": "SV受影响基因富集哪些功能？",
+      "required_fields": [
+        "term",
+        "foreground_hits",
+        "background_hits",
+        "p_value",
+        "q_value"
+      ],
+      "unit": "ontology_term",
+      "family": "enrichment",
+      "chart": "go-enrichment-dotplot",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_point"
+      ],
+      "statistics": "Source classic Fisher topGO BP nodeSize=5; recompute BH over ALL tested eligible terms before selecting display top K.",
+      "guards": "Universe must match testable annotated genes, not entire genome by habit; source adjusts only displayed top100 formatted P strings, cannot reuse as valid global FDR. Preserve source output but flag correction scope.",
+      "figure": "Supplementary enrichment tables",
+      "source_path": "Structural variation/SV merge with Alonge et al./enrichment analysis/go.R",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    },
+    {
+      "id": "PAN-ALLELE",
+      "data_type": "individual_traits",
+      "intent": "allele_effect",
+      "question": "不同等位基因材料的表型如何分布？",
+      "required_fields": [
+        "accession",
+        "genotype",
+        "trait",
+        "value"
+      ],
+      "unit": "individual_accession",
+      "family": "distribution",
+      "chart": "genotype-trait-boxpoints",
+      "packages": [
+        "ggplot2"
+      ],
+      "functions": [
+        "ggplot2::geom_boxplot",
+        "ggplot2::geom_point"
+      ],
+      "statistics": "Source two-sided Student t; new intent: two independent groups consider Welch, multi-factor model interactions, repeated fruit per plant use plant random effect; GWAS selection needs independent validation.",
+      "guards": "Raw independent accessions, dosage labels and unequal n; paper REF/ALT is S.galapagense orientation, not wild vs cultivated by definition. Do not reconstruct raw dots from mean SD.",
+      "figure": "Fig. 4c-f right; Fig. 3e-i experimental-unit caution",
+      "source_path": "Genome-wide association studies/ReadMe",
+      "evidence_status": "source-audited-candidate",
+      "visual_status": "not_validated"
+    }
+  ],
+  "contract_provenance": "BioFigure first-party derived scientific metadata contract; contains no third-party source code, source figures or measurements. Source-audit metadata is historical and confers no executable or visual qualification."
+}

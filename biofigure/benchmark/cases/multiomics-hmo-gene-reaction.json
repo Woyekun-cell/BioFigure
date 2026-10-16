@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "case_id": "multiomics-hmo-gene-reaction",
+  "learned_method_id": "BENCH-multiomics-hmo-gene-reaction",
+  "recipe_id": "MULTIOMICS-HMO-NETWORK-001",
+  "title": "HMO glycomics-transcriptomics directed reaction network and structure Jaccard heatmap native R source study",
+  "label": "糖组学–转录组HMO：43节点58反应网络＋27结构共现热图",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Source-exposed native-R method transfer from formal author Dataset3:43selected nodes/58directed reactions and full27x27 structure co-occurrence Jaccard matrix. Original Fig4 SNFG/manual composition not reproduced. No flux/MILP/raw sequencing, model reanalysis, new inference, or preprint values presented as final2022 Fig5.",
+  "figure_family": "network",
+  "chart_type": "layered directed reaction network and annotated Jaccard heatmap",
+  "chart_types": [
+    "network",
+    "heatmap"
+  ],
+  "domain": "multi-omics",
+  "method_families": [
+    "directed-network",
+    "annotated-heatmap"
+  ],
+  "paper": {
+    "title": "Elucidating Human Milk Oligosaccharide biosynthetic genes through network-based multi-omics integration",
+    "journal": "Nature Communications",
+    "year": 2022,
+    "doi": "10.1038/s41467-022-29867-4",
+    "figure": "Formal Fig4B network layout study; Supplementary Fig15 structure co-occurrence; method-transfer pair not whole original composition",
+    "url": "https://www.nature.com/articles/s41467-022-29867-4"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/LewisLabUCSD/HMO_GeneReaction_pred",
+    "commit": "bab5107ec0cb6df41f0b6c33c47915d60a58bfe6",
+    "license": "fixed repo LICENSE Apache-2.0; formal paper claims CC-BY-4.0, discrepancy retained",
+    "source_type": "actual original author R code; preprint revision fixed; formal Dataset3 independent baseline"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure4.png",
+      "sha256": "90af58a7d04dae011e116dbb69e90dc417b8d7ca8c692ab8a683d7f2c27841b1",
+      "bytes": 256873
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure5.png",
+      "sha256": "7c97a9f37210fd0242b93e476689bb615208ae6b1efa0a3943f17e62796d1ddb",
+      "bytes": 157348
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/SupplementaryFigure15.png",
+      "sha256": "b5d9a68fab4f3c6ab4cfc5ff196fd31fada2d0824123832a50d55845602d1197",
+      "bytes": 87950
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/SupplementaryInformation.pdf",
+      "sha256": "b01545112e988dc2d29881edc8a70d15b4bbf8bddadff7afa5fbc01f7a1a0381",
+      "bytes": 5307455
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/article.html",
+      "sha256": "2dcf951288ece169aebb9c8ab0dfa790dfe7bcacee0de75cf4acfe2b886fad14",
+      "bytes": 759597
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/B_largeModel_code_par.r",
+      "sha256": "8cca4abcb95cb1e50f00da3e6009ace11b8f89430db2c5d9fd60854ee8f2c643",
+      "bytes": 134153
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/C_GCagg.ipynb",
+      "sha256": "f18f8d2ef7f3e7943c9430f46ff99a91ea5408ec5d15ed94e3930b00d0f32bbe",
+      "bytes": 272638
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/Gene_Choice_aggstats-preprint.rda",
+      "sha256": "ca5e8c67edffb7c04f8ca635ba7dfa3ce3cd46b1ce43cc9f8e64e2aa09988545",
+      "bytes": 5141
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/R.env",
+      "sha256": "04f47061ce697abbb2778a6cc65a5ca5de02e5ec6da6faeb5da8b75ae9b66507",
+      "bytes": 2858
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/README.md",
+      "sha256": "69ca419e29204d1cb69ab3ffa33146672610c795bd2725f4f03af4dfd5be2997",
+      "bytes": 6532
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/functions.R",
+      "sha256": "3273ddcaa08a5d8a8f5209e30ba3a4dbfd7f0fddea1a526918a702cef45254d9",
+      "bytes": 12308
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/networks.prob.enrich.sel.pdf",
+      "sha256": "e369ee838e84a2b21cd430bca03c39541c979bf9f84a3427e016b5eb97009af5",
+      "bytes": 14428
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/pooled_gene_choice-preprint.pdf",
+      "sha256": "88ac1472134a8519427e932ed3ca659eca2dd77d72c0d8b2b1aae50e3cc15d61",
+      "bytes": 8736
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/data/raw/41467_2022_29867_MOESM7_ESM.xlsx",
+      "sha256": "08ae63d1571c9a94021622a6b2a4ef760af88f22673a315d766f1df447f4775a",
+      "bytes": 82534
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/B_largeModel_code_par.r",
+      "sha256": "8cca4abcb95cb1e50f00da3e6009ace11b8f89430db2c5d9fd60854ee8f2c643",
+      "bytes": 134153
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/C_GCagg.ipynb",
+      "sha256": "f18f8d2ef7f3e7943c9430f46ff99a91ea5408ec5d15ed94e3930b00d0f32bbe",
+      "bytes": 272638
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/functions.R",
+      "sha256": "3273ddcaa08a5d8a8f5209e30ba3a4dbfd7f0fddea1a526918a702cef45254d9",
+      "bytes": 12308
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure4.png",
+      "sha256": "90af58a7d04dae011e116dbb69e90dc417b8d7ca8c692ab8a683d7f2c27841b1",
+      "bytes": 256873,
+      "scope": "actual viewed original formal figure or supplementary figure"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure5.png",
+      "sha256": "7c97a9f37210fd0242b93e476689bb615208ae6b1efa0a3943f17e62796d1ddb",
+      "bytes": 157348,
+      "scope": "actual viewed original formal figure or supplementary figure"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/SupplementaryFigure15.png",
+      "sha256": "b5d9a68fab4f3c6ab4cfc5ff196fd31fada2d0824123832a50d55845602d1197",
+      "bytes": 87950,
+      "scope": "actual viewed original formal figure or supplementary figure"
+    }
+  ],
+  "input_contract": {
+    "source_data": "formal MOESM7 Dataset3",
+    "nodes": 101,
+    "edges": 204,
+    "selected_nodes": 43,
+    "selected_edges": 58,
+    "node_key": "original integer id; label and linear IUPAC retained",
+    "edge_keys": [
+      "reactant_id",
+      "product_id",
+      "reaction"
+    ],
+    "root": {
+      "id": 1,
+      "label": "Lactose"
+    },
+    "selection": "in_percentile_95th_path TRUE then induced graph",
+    "matrix": "27x27 complete supplied Jaccard, original order and diagonal0 preserved",
+    "statistical_unit": "descriptive model-summary structures/reactions, not independent biological samples"
+  },
+  "code_learning": {
+    "packages": {
+      "igraph": "true directed graph construction, rooted layout, induced subgraph, degree/strength",
+      "gplots": "source heatmap.2 with fixed ordering/family strips",
+      "ComplexHeatmap/circlize": "adapter complete annotated heatmap and continuous color mapping",
+      "grid/ggplotify/ggplot2": "physical composition and vector objects",
+      "ragg/svglite": "same native R export"
+    },
+    "entrypoints": [
+      "graph_from_edgelist",
+      "layout_as_tree",
+      "induced_subgraph",
+      "all_simple_paths",
+      "coocur_par",
+      "jaccard",
+      "heatmap.2"
+    ],
+    "processing": "formal101nodes/204edges retained; flag43nodes/58inducededges; complete27x27 values and fixed source IDs/order; preserve supplied weights/no p-value recomputation"
+  },
+  "gaps": [
+    {
+      "detail": "Original Fig4 final SNFG sugar glyphs/manual assembly source not located; method transfer only"
+    },
+    {
+      "detail": "GitHub 2020 Gene Choice summaries differ from formal2022 Fig5 values and candidates; excluded from render"
+    },
+    {
+      "detail": "jaccard missing return in self-comparison branch; preserve supplied0 diagonal without standard self-similarity interpretation"
+    },
+    {
+      "detail": "95th paths are rank selection, not confidence interval; induced subgraph includes all inner edges"
+    },
+    {
+      "detail": "Fixed repoApache2.0 vs articleCC-BY4.0 discrepancy retained"
+    }
+  ],
+  "method_reference": {
+    "path": "references/hmo-gene-reaction-learning.md",
+    "sha256": "e9a965c379becb4d23da5abf9aedcbd4d4d22209b7b0e019c996ab51f4e5be35"
+  },
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "HMO 糖组学 转录组 反应网络 Jaccard 热图",
+      "glycomics directed reaction network structure cooccurrence"
+    ],
+    "appropriate_data": "directed reaction tables with stable entity IDs, explicit source importance and model Jaccard matrix; existing processed results only",
+    "avoid_for": "causal gene validation from correlation, raw flux generation, biological replicate inferential testing"
+  },
+  "new_input_transfer": "NOT_VERIFIED",
+  "whole_original_figure": "NOT_VERIFIED"
+}

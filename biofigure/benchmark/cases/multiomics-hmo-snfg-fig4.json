@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "case_id": "multiomics-hmo-snfg-fig4",
+  "learned_method_id": "BENCH-multiomics-hmo-snfg-fig4",
+  "recipe_id": "HMO-SNFG-FIG4-001",
+  "title": "HMO Fig4 SNFG glycan reaction network source layout and full A B reconstruction",
+  "label": "HMO正式Fig4：SNFG糖链网络31节点40反应＋3异构体",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE_SCOPED_FIG4_LAYOUT_REVIEWED",
+  "claim_boundary": "Source-exposed Figure4A/B structural/layout reconstruction: originalA3isomers IDs28/29/39 and originalB31labels40formalreactions, true196visibleSNFGresidueglyphs/parentbonds,TypeI/II,zoom/carboninset/legends. Formalnumericimportance retained; sourcepixelwidths not invented. Manual source positions approx3-6px; authorfinalSNFGassemblycode unavailable. No rawsequencing ormodelreanalysis; wholeexactpixels/newinput/stressnotqualified.",
+  "figure_family": "network",
+  "chart_type": "SNFG glycan reaction network with isomer panels and annotations",
+  "chart_types": [
+    "network",
+    "glycan",
+    "multipanel"
+  ],
+  "domain": "transcriptomics-metabolomics-multiomics",
+  "method_families": [
+    "glycan-symbols",
+    "directed-network",
+    "source-layout-reconstruction"
+  ],
+  "paper": {
+    "title": "Elucidating Human Milk Oligosaccharide biosynthetic genes through network-based multi-omics integration",
+    "journal": "Nature Communications",
+    "year": 2022,
+    "doi": "10.1038/s41467-022-29867-4",
+    "figure": "FullFig4A/B structure andlayout",
+    "url": "https://www.nature.com/articles/s41467-022-29867-4/figures/4"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/LICENSE",
+      "sha256": "9801e6655341da25c12448c2f8f90c3db6dd2e5b474bec94eaf5f05e92baba3a",
+      "bytes": 1070
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/biosynthesis.py",
+      "sha256": "5bab2f4f5648a3338f8c0b9f2abd50863bf31013cbb70a8e3f8a3b967bc895f4",
+      "bytes": 103555
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/draw.py",
+      "sha256": "aa4effe71bcc72de84b4158789de13372f17ddcbdb2a2b7079f540c940c0f503",
+      "bytes": 120771
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/processing.py",
+      "sha256": "2adba6bd54d6ead14c804368901e08db5daa1071533c781c1723036c8827b160",
+      "bytes": 104385
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glypy/LICENSE",
+      "sha256": "c95bae1d1ce0235ecccd3560b772ec1efb97f348a79f0fbe0a634f0c2ccefe2c",
+      "bytes": 11358
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glypy/linear_code.py",
+      "sha256": "b733a62016525366fe5e69dd76d5d485ed5f9867c7cb42640712cdcd9ea76a27",
+      "bytes": 12369
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/source-code-learning.md",
+      "sha256": "f63e98b0e439219c3a371ab5c33fc3561d017ed0d02a7d8a89cee2e1038c0600",
+      "bytes": 4890
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/source_manifest.json",
+      "sha256": "c3e87044c1b6d46b436bf2be4f6a3af4be8cd6a842ba2ef435da943b1366279d",
+      "bytes": 7013
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/figure4_glycan_bonds.csv",
+      "sha256": "3f0c73b4d90d3c9c742097de0fa1cac5dbc3bdbeb2d35d43d78a5c828b5b97da",
+      "bytes": 5582
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/figure4_glycan_residues.csv",
+      "sha256": "44cf8de2b5f18b49937a7dede362df48e124f69b4ee2786a892a298499ff7750",
+      "bytes": 12306
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/figure4_glycan_summary.csv",
+      "sha256": "b38706b36d6d889c1e165fb19dc75f6124bf860ac95dcb63587394697bc87720",
+      "bytes": 3373
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/formal-weight-source-linewidth-conflicts.csv",
+      "sha256": "176f5e68177b8ae5d8ba3db0917435204d73f285336b9953bdddc407db66e597",
+      "bytes": 762
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/original_fig4a_atoms.csv",
+      "sha256": "33bee22a0b1571dcdd63d4e7b5d2ea48e76a01b584702420b4df714e9239c161",
+      "bytes": 3285
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/original_fig4b_edges.csv",
+      "sha256": "c85baa2c699069df42cbcb8c78b0a3cf822c82836c9a601b3c316922537df266",
+      "bytes": 20733
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/original_fig4b_glycan_atom_geometry.csv",
+      "sha256": "910b6e1d803c76f06e37b831bbe161fbbd455d6a64ac7cafd22756e659674855",
+      "bytes": 42652
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/original_fig4b_glycan_atoms.csv",
+      "sha256": "fec9c7a7d100464c9b57e739709655f0ecb06d0e294a6196152f952607ab8704",
+      "bytes": 16824
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/plot_data/original_fig4b_nodes.csv",
+      "sha256": "c1781fc81093d87f978bb7cd9743508115c6abdec0a2c01fcd51f2864b4477aa",
+      "bytes": 9082
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure4.png",
+      "sha256": "90af58a7d04dae011e116dbb69e90dc417b8d7ca8c692ab8a683d7f2c27841b1",
+      "bytes": 256873
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/data/raw/41467_2022_29867_MOESM7_ESM.xlsx",
+      "sha256": "08ae63d1571c9a94021622a6b2a4ef760af88f22673a315d766f1df447f4775a",
+      "bytes": 82534
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/B_largeModel_code_par.r",
+      "sha256": "8cca4abcb95cb1e50f00da3e6009ace11b8f89430db2c5d9fd60854ee8f2c643",
+      "bytes": 134153
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/scripts/parse_hmo_linearcode.py",
+      "sha256": "53d02619eb3d7b450c28eed8e2827f0bee3ebcd6b05020e46ea8f752862a6cf8",
+      "bytes": 13485
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/Figure4.png",
+      "sha256": "90af58a7d04dae011e116dbb69e90dc417b8d7ca8c692ab8a683d7f2c27841b1",
+      "bytes": 256873
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/biosynthesis.py",
+      "sha256": "5bab2f4f5648a3338f8c0b9f2abd50863bf31013cbb70a8e3f8a3b967bc895f4",
+      "bytes": 103555
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/draw.py",
+      "sha256": "aa4effe71bcc72de84b4158789de13372f17ddcbdb2a2b7079f540c940c0f503",
+      "bytes": 120771
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glycowork/processing.py",
+      "sha256": "2adba6bd54d6ead14c804368901e08db5daa1071533c781c1723036c8827b160",
+      "bytes": 104385
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/sources/snfg/glypy/linear_code.py",
+      "sha256": "b733a62016525366fe5e69dd76d5d485ed5f9867c7cb42640712cdcd9ea76a27",
+      "bytes": 12369
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/sources/author/B_largeModel_code_par.r",
+      "sha256": "8cca4abcb95cb1e50f00da3e6009ace11b8f89430db2c5d9fd60854ee8f2c643",
+      "bytes": 134153
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/scripts/parse_hmo_linearcode.py",
+      "sha256": "53d02619eb3d7b450c28eed8e2827f0bee3ebcd6b05020e46ea8f752862a6cf8",
+      "bytes": 13485
+    }
+  ],
+  "input_contract": {
+    "official_metabolite_count": 101,
+    "official_reaction_count": 204,
+    "original_visible_B_nodes": 31,
+    "original_B_edges": 40,
+    "A_isomer_ids": [
+      28,
+      29,
+      39
+    ],
+    "visible_SNFG_atoms": 196,
+    "original_data": "benchmark/library/multiomics/hmo-gene-reaction/data/raw/41467_2022_29867_MOESM7_ESM.xlsx",
+    "coordinate_semantics": "manual tracedsourcepixelpositions +/-3..6px; whole x/y commonpublication scaling;glycanparent topology fromformalstrings",
+    "width_semantics": "formalprovidedimportance encoded; originalsource numeric taperNOTRECOVERED",
+    "star_semantics": "source mostprevalentisomer markings, notnewstatisticalsignificance"
+  },
+  "code_learning": {
+    "packages": {
+      "glycowork source": "glyphshape/colors andcoordinates/networkglycan study; exactASTconverterrunonly",
+      "glypy source": "righttoleftbranch-stack parsing study; fullpackagenotinstalled",
+      "R grid": "editablecircle/square/triangle/diamond andparentbonds",
+      "ggplot2/ragg/svglite": "authorizednativeRassembly/export"
+    },
+    "entrypoints": [
+      "linearcode_to_iupac",
+      "GlycoDraw",
+      "draw_shape",
+      "get_coordinates_and_labels",
+      "plot_network(draw_glycans=True)",
+      "circleGrob",
+      "segmentsGrob"
+    ],
+    "processing": "formalstrings→strict33targetglycan topology;B31sourcevisibleID/40edges;A28/29/39truecenters;rootLactoselabelonly;SNFGidentitycolorsfixed"
+  },
+  "gaps": [
+    {
+      "detail": "AuthorfinalSNFGassemblysource unavailable; use opensourceglyphmethods+source manual layout"
+    },
+    {
+      "detail": "Suppliedimportance conflicts with sourcepixelwidth; keepformalvalues anddisclose widthdifference"
+    },
+    {
+      "detail": "Source A/Bcyan vs legendblue replaced consistently byofficialSNFGblue, onlyedge/textpalettechanged"
+    },
+    {
+      "detail": "Manualcoordinate precision3..6px; wholepixelidentitynotclaimed"
+    },
+    {
+      "detail": "Parent textualnetwork USER_REJECTED; newvariantcannot inherit itsvisualPASS"
+    }
+  ],
+  "method_reference": {
+    "path": "references/hmo-snfg-fig4-learning.md",
+    "sha256": "7d70e0b1619265feb50441cdee8ca49c71d459adbe0ef49ce40340855d6b521c"
+  },
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "HMO Fig4 SNFG 糖链网络 原图 异构体",
+      "glycan reaction network SNFG originalfigure TypeI TypeII"
+    ],
+    "appropriate_data": "processedglycanstrings withparent/linkage,formalreactiontables andsourcefigurelayout",
+    "avoid_for": "ordinary text-onlynetwork asoriginalSNFGreproduction,rawmodelanalysis,fictionalwidth/importance"
+  },
+  "whole_exact_pixels": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "stress_qualification": "NOT_VERIFIED",
+  "latest_scoped_qualification": {
+    "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/evidence/scoped-qualification.json",
+    "sha256": "e326cefa1959251c3293460eb5c850172932e14aa8388617064e1ce9be603230",
+    "scope": "Current fixed source/table, renderer, manual layout and environment only. Actual source review is separate from identical independent replay. New data/environment require fresh CP2 and final source/PNG/PDF review. User acceptance pending.",
+    "new_input_transfer": "NOT_VERIFIED",
+    "user_acceptance": "PENDING"
+  },
+  "reconstruction_assets": [
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/scripts/render.R",
+      "sha256": "1a56cafd07610ba473a83f505ccf50b24755f7500907d98628ab1db016e2151e",
+      "role": "current independently implemented reconstruction; source learning and source fidelity separated"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/scripts/prepare_glyph_geometry.py",
+      "sha256": "1071dad0909970752a7c4e9f79fbb6093174a2bc4e4efbd6f39263805a4d8b08",
+      "role": "current independently implemented reconstruction; source learning and source fidelity separated"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/results/figures/hmo_fig4_ab_snfg_recolored.pdf",
+      "sha256": "e4714300dced2f61df172b876c0dc39afc915343ffb7ad11f72d043fb190680b",
+      "role": "current independently implemented reconstruction; source learning and source fidelity separated"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/results/figures/source-comparison.pdf",
+      "sha256": "71e9593b386eb3aedb7477f0edac88d38ebb396d4f2d4b59a21b67e61284e20b",
+      "role": "current independently implemented reconstruction; source learning and source fidelity separated"
+    },
+    {
+      "path": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/evidence/manifest.json",
+      "sha256": "c2af9597f44e185853d551f331a87ce5170afb8ba6fc02a8b30eeeed3734a3c5",
+      "role": "current independently implemented reconstruction; source learning and source fidelity separated"
+    }
+  ]
+}

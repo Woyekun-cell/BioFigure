@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, hashlib, json
+import argparse, hashlib, json, sys
 from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from reference_modes import resolve_request_mode, code_gate
 
 def load_manifest():
     return yaml.safe_load((ROOT / "manifest.yaml").read_text(encoding="utf-8"))
 
 def route(request: dict, previous_lock: dict | None = None) -> dict:
+    reference_mode = resolve_request_mode(request)
     manifest = load_manifest(); axes = manifest["routing_axes"]
     for key in ("primary_domain", "primary_role", "backend", "deliverable"):
         if key not in request: raise ValueError(f"missing {key}")
@@ -30,9 +33,9 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
     secondary_roles = sorted(set(secondary_roles))
     bad = [x for x in domains if x not in axes["domain"]["values"]]
     if bad: raise ValueError(f"unknown secondary domains: {bad}")
-    required_reference_sources = {"reproduction", "top_journal", "scidraw"}
+    required_reference_sources = set() if reference_mode == 'original' else {"reproduction", "top_journal", "scidraw"}
     reference_sources = request.get("reference_sources", sorted(required_reference_sources))
-    if not isinstance(reference_sources, list) or not reference_sources or not all(isinstance(x, str) for x in reference_sources):
+    if not isinstance(reference_sources, list) or (not reference_sources and required_reference_sources) or not all(isinstance(x, str) for x in reference_sources):
         raise ValueError("reference_sources must be a non-empty list")
     unknown_sources = sorted(set(reference_sources) - set(manifest.get("reference_evidence_layers", {})))
     if unknown_sources:
@@ -65,7 +68,7 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
     modules += [axes["domain"]["values"][x] for x in domains]
     from plan_pangenome_figure import applies as pangenome_applies
     if pangenome_applies(str(request.get('figure_task','')),request.get('pangenome_context')):
-        modules += ['references/pangenome-learning.md','references/pangenome-statistics.md','library/pangenome/tomato-superpangenome/data/metadata/paradigms.json']
+        modules += ['references/pangenome-learning.md','references/pangenome-statistics.md','static/core/pangenome-paradigms.json']
     critics = [manifest["specialty_critics"][x] for x in domains if x in manifest["specialty_critics"]]
     selected_reference_layers = {}
     for source in reference_sources:
@@ -86,13 +89,17 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
                              "preview_export_qa_same_backend": True},
             "deliverable": delivery, "required_formats": axes["deliverable"]["values"][delivery],
             "modules": list(dict.fromkeys(modules)), "critics": list(dict.fromkeys(critics)),
-            "reference_evidence_layers": selected_reference_layers,
+            "reference_evidence_layers": selected_reference_layers, "reference_mode": reference_mode,
             "pre_code_gate": {
                 "mandatory": True,
-                "status": "BLOCKED_UNTIL_REFERENCE_ANALYSIS_AND_CP2",
+                "status": code_gate(reference_mode),
                 "preparation_command": "python3 scripts/prepare_figure.py request.yaml --output preparation-receipt.json",
                 "required_sources": sorted(required_reference_sources),
                 "must_complete_before_renderer_code": [
+                    "analyze current data, scientific question, local Pattern and all design dimensions",
+                    "decompose panels, layers, spatial relationships, typography and package responsibilities in reference_analysis",
+                    "validate the Design Spec and attach this preparation receipt to CP2",
+                ] if reference_mode == 'original' else [
                     "inspect retrieved original-size references and relevant method/package notes",
                     "decompose panels, layers, spatial relationships, typography and package responsibilities in reference_analysis",
                     "validate the Design Spec and attach this preparation receipt to CP2",

@@ -127,7 +127,7 @@ def machine_specific_references() -> list[str]:
     return sorted(hits)
 
 
-def audit() -> dict:
+def audit_legacy_source_archive() -> dict:
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
     from benchmark_core import inventory
@@ -261,11 +261,64 @@ def audit() -> dict:
     }
 
 
+def audit() -> dict:
+    """Audit current public bytes, retaining the separate historical archive audit.
+
+    The 3.5-era exact 8/8/20 source-gallery checks are not the distribution
+    inventory of 3.8. Public completeness now binds every declared executable
+    case and the full Skill/runtime, plus the current curated gallery.
+    """
+    import importlib.util
+    import sys
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from audit_portable_install import audit as portable_audit
+    from benchmark_core import inventory
+    portable = portable_audit(ROOT, distribution_root=REPO)
+    public_path = REPO / 'tools/audit_public_release.py'
+    spec = importlib.util.spec_from_file_location('current_public_release', public_path)
+    public_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(public_module)
+    public = public_module.audit_public_release(REPO)
+    manifest = yaml.safe_load((ROOT / 'manifest.yaml').read_text())
+    hot = [{'path': rel, 'zh_chars': zh_count((ROOT / rel).read_text())}
+           for rel in ['SKILL.md', *manifest['common_dynamic_load']]]
+    errors = list(portable['errors']) + list(public['errors'])
+    if sum(x['zh_chars'] for x in hot) > 8000 or any(x['zh_chars'] > 1200 for x in hot):
+        errors.append('hot-load document budget exceeded')
+    benchmark = inventory(ROOT)
+    errors.extend(benchmark['errors'])
+    catalog = json.loads((REPO / 'docs/gallery/catalog.json').read_text())
+    graph = json.loads((ROOT / 'atlas/unified-capability-graph.json').read_text())
+    return {'schema_version': 2, 'release': manifest['version'],
+            'check_scope': 'public-package-portability-and-gallery',
+            'status': 'FAIL' if errors else 'PASS', 'errors': errors,
+            'release_readiness': 'PUBLIC_PACKAGE_READY_FULL_BENCHMARK_INCOMPLETE' if not errors else 'BLOCKED',
+            'scientific_or_visual_pass_inferred': False,
+            'versions': version_snapshot(),
+            'hot_load': {'files': hot, 'total_zh_chars': sum(x['zh_chars'] for x in hot)},
+            'benchmark': benchmark,
+            'public_cases': {'case_counts': portable['case_counts'], 'cases': portable['cases']},
+            'learning_catalog': portable.get('learning_catalog'),
+            'distribution': {'file_count': portable['distribution']['file_count'],
+                             'text_files_scanned': portable['distribution']['text_files_scanned'],
+                             'privacy_and_containment_errors': [e for e in portable['errors'] if e.startswith('distribution:')]},
+            'current_gallery': public['gallery'],
+            'selected_public_gallery_pngs': [row['image'] for row in catalog['figures']],
+            'capability_graph': {'case_count': graph['summary']['case_count'],
+                                 'source_compared_pass': graph['summary']['source_compared_pass'],
+                                 'historical_source_review_summary': graph['summary'].get('historical_source_review_summary')},
+            'legacy_source_archive_audit': {'status': 'NOT_RUN',
+                'entrypoint': 'audit_legacy_source_archive()',
+                'scope': 'Full private/source archive and historical 8/8/20 audit; retained separately, not silently promoted by a public install.'},
+            'claim_boundary': 'Public package integrity only. Actual analysis, runtime execution, source fidelity, final-size visual review, new-input transfer and user acceptance remain separate.'}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path)
+    parser.add_argument('--legacy-source-archive', action='store_true', help='Run the retained historical full-source archive audit explicitly.')
     args = parser.parse_args()
-    result = audit()
+    result = audit_legacy_source_archive() if args.legacy_source_archive else audit()
     payload = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

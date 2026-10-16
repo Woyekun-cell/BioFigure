@@ -12,12 +12,14 @@ from retrieve_learned_methods import retrieve, validate_binding, validate_adapte
 
 class EarnedAdapterBindingTests(unittest.TestCase):
     def setUp(self):
-        self.learning = retrieve('', case_id='SCICASE-007')
-        entry = self.learning['results'][0]
-        self.renderer = {'path': 'scripts/retrieve_learned_methods.py', 'sha256': entry['source_sha256']}
+        # First-party protocol fixture, independent of any archived source or earned scientific qualification.
+        self.renderer = {'path': 'scripts/retrieve_learned_methods.py', 'sha256': sha(ROOT / 'scripts/retrieve_learned_methods.py')}
+        entry = {'method_id': 'TEST-PROTOCOL-ADAPTER', 'source_record_changed': False,
+                 'missing_material': [], 'changed_bound_material': [], 'known_source_syntax_issues': []}
+        self.learning = {'results': [entry]}
         entry['qualified_reuse'] = {'status': 'PASS', 'reuse_recipe': {'renderer': self.renderer}}
-        self.receipt = {'query': '', 'request': {'learned_method_id': 'SCICASE-007'}, 'learned_methods': self.learning}
-        self.spec = {'reference_evidence': {'learned_method_reuse': {'adopted': ['SCICASE-007'],
+        self.receipt = {'query': '', 'request': {'learned_method_id': 'TEST-PROTOCOL-ADAPTER'}, 'learned_methods': self.learning}
+        self.spec = {'reference_evidence': {'learned_method_reuse': {'adopted': ['TEST-PROTOCOL-ADAPTER'],
             'rejected': [], 'data_adaptation': 'CSV key mapping', 'known_failures_addressed': 'range/missing/key QA'}}}
 
     def check(self):
@@ -29,22 +31,31 @@ class EarnedAdapterBindingTests(unittest.TestCase):
 
     def test_exact_qualified_renderer_is_bound_before_reuse(self):
         self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'] = [
-            {'method_id': 'SCICASE-007', 'decision': 'reuse', 'renderer': self.renderer}]
+            {'method_id': 'TEST-PROTOCOL-ADAPTER', 'decision': 'reuse', 'renderer': self.renderer}]
         self.assertEqual(self.check(), [])
         self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'][0]['renderer'] = {'path': 'unrelated.R', 'sha256': '0' * 64}
         self.assertTrue(any('renderer' in e for e in self.check()))
 
     def test_adapter_change_requires_scientific_difference_and_new_validation(self):
-        choice = {'method_id': 'SCICASE-007', 'decision': 'adapt'}
+        choice = {'method_id': 'TEST-PROTOCOL-ADAPTER', 'decision': 'adapt'}
         self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'] = [choice]
         self.assertTrue(self.check())
         choice.update(data_contract_difference='Paired subject display requires different mark layout', new_validation_required=True)
         self.assertEqual(self.check(), [])
 
     def test_duplicate_decisions_cannot_hide_wrong_adapter(self):
-        choice = {'method_id': 'SCICASE-007', 'decision': 'reuse', 'renderer': self.renderer}
+        choice = {'method_id': 'TEST-PROTOCOL-ADAPTER', 'decision': 'reuse', 'renderer': self.renderer}
         self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'] = [choice, copy.deepcopy(choice)]
         self.assertTrue(self.check())
+
+    def test_known_source_defects_require_explicit_resolution_before_adoption(self):
+        self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'] = [
+            {'method_id': 'TEST-PROTOCOL-ADAPTER', 'decision': 'reuse', 'renderer': self.renderer}]
+        self.learning['results'][0]['known_source_syntax_issues'] = [{'path': 'fixture-only.R'}]
+        self.assertTrue(any('source syntax issue' in error for error in self.check()))
+        self.spec['reference_evidence']['learned_method_reuse']['source_issue_resolutions'] = [
+            {'source_path': 'fixture-only.R', 'resolution': 'Protocol fixture records the concrete corrected implementation.'}]
+        self.assertEqual(self.check(), [])
 
     def test_actual_sources_must_include_earned_bytes_even_when_copied(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -52,7 +63,7 @@ class EarnedAdapterBindingTests(unittest.TestCase):
             original.write_text('plot(1:3)\n')
             self.renderer['sha256'] = sha(original)
             self.spec['reference_evidence']['learned_method_reuse']['adapter_decisions'] = [
-                {'method_id': 'SCICASE-007', 'decision': 'reuse', 'renderer': self.renderer}]
+                {'method_id': 'TEST-PROTOCOL-ADAPTER', 'decision': 'reuse', 'renderer': self.renderer}]
             other = Path(directory) / 'other.R'
             other.write_text('plot(1:4)\n')
             self.assertTrue(validate_adapter_sources(self.receipt, self.spec, [other]))

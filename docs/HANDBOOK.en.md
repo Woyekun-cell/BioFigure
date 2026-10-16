@@ -1,4 +1,10 @@
-# BioFigure 3.7.1 Full Handbook
+# BioFigure 3.8.0 Full Handbook
+
+## 3.8.0 public distribution scope
+
+The [public case manifest](../biofigure/public-cases.json) separates 13 executable entries and two reference-only DPM records. Executable entries comprise seven first-party synthetic examples, two Cannabis cases, Planarian, OHCA, Sankey and OncoPrint. OncoPrint retains all 12×144 cells in three native 12×48 square-cell bodies; its current fixed-input macOS execution and PNG/PDF outputs were reviewed afresh. Historical qualification is not inherited. The 454 learning records form a searchable methods catalog, not a promise that all source materials are distributed or executable.
+
+The dependency checker for the seven new examples does not cover specialized R packages required by retained cases. Cannabis requires pinned BUSCOplot source; OHCA requires existing HiContacts/HiCExperiment dependencies and a hash-pinned RDS. Commit locks and sources are linked from the [README installation instructions](../README.en.md#installation-and-use) and case execution configuration. macOS has been executed; Linux and Windows remain unverified. A fresh Python environment still uses existing R packages and Arial, so it is not a fresh operating-system acceptance test. Execution, material audits, source fidelity, current PNG/PDF inspection and user approval remain separate states.
 
 ## 1. Scope
 

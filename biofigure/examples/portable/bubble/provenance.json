@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "bubble",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101603,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "6311e4abe14ed17d1fc80e2005fa357f08d9e357fee252e72bc872d9457c6278",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

@@ -23,6 +23,7 @@ from retrieve_scidraw import retrieve as retrieve_scidraw
 from retrieve_capabilities import retrieve as retrieve_capabilities
 from reuse_templates import retrieve as retrieve_templates
 from retrieve_learned_methods import retrieve as retrieve_learned
+from reference_modes import resolve_request_mode, code_gate, ORIGINAL_MATERIAL
 
 _ref_spec = importlib.util.spec_from_file_location('biofigure_references', ROOT / 'scripts/retrieve_references.py')
 _ref_module = importlib.util.module_from_spec(_ref_spec)
@@ -53,9 +54,65 @@ def finalize_receipt(result: dict) -> dict:
     return result
 
 
+def prepare_original(request: dict, routed: dict, request_id: str, query: str, mode_was_explicit: bool = False) -> dict:
+    """Plan from packaged Pattern contracts, without opening optional archives."""
+    from plan_pangenome_figure import compile_pangenome_plan
+    scientific_plan = compile_pangenome_plan(query, request.get('pangenome_context'))
+    if scientific_plan is not None and (scientific_plan['planning_status'] == 'NEEDS_SPEC' or request['figure_family'] != scientific_plan['families'][0]):
+        return finalize_receipt({'schema_version': 1, 'status': 'NEEDS_SPEC', 'reference_mode': 'original',
+            'request': request, 'request_id': request_id, 'code_gate': 'BLOCKED',
+            'selected_reference_candidates': {'planner_selected': None}, 'method_plan': scientific_plan,
+            'required_next_steps': ['resolve scientific intent, mapped fields, units, missingness and chart-family conflicts before design']})
+    index = yaml.safe_load((ROOT / 'patterns/index.yaml').read_text())['patterns']
+    pattern = request.get('pattern_id')
+    candidates = [item for item in index if item['pattern_id'] == pattern] if pattern else [
+        item for item in index if item.get('task') == request['figure_task']]
+    if len(candidates) != 1:
+        return finalize_receipt({'schema_version': 1, 'status': 'READY_FOR_CHART_SELECTION',
+            'reference_mode': 'original', 'request': request, 'request_id': request_id,
+            'code_gate': 'BLOCKED_UNTIL_CHART_SELECTION_AND_CP2',
+            'selected_reference_candidates': {'planner_selected': None},
+            'method_plan': {'planning_status': 'CHART_SELECTION_REQUIRED', 'selected_case': None},
+            'candidate_patterns': [item['pattern_id'] for item in candidates],
+            'required_next_steps': ['select a packaged Pattern compatible with the data and scientific question; unknown or ambiguous patterns never authorize code']})
+    item = candidates[0]
+    card_path = 'patterns/' + item['path']
+    card = yaml.safe_load((ROOT / card_path).read_text())
+    material = set(ORIGINAL_MATERIAL) | set(routed['modules']) | {card_path}
+    missing = sorted(name for name in material if not (ROOT / name).is_file())
+    selected = 'PATTERN-' + item['pattern_id']
+    plan = {'planning_status': 'ORIGINAL_DESIGN_CANDIDATE', 'ready_to_render': False,
+            'selected_case': {'case_id': selected, 'source': 'packaged-pattern', 'high_fidelity_eligible': False},
+            'families': [request['figure_family']], 'data_contract': card.get('data_contract', {}),
+            'renderer_options': card.get('renderer_options', []),
+            'claim_policy': 'original design; no source fidelity, archive qualification or visual acceptance inferred'}
+    return finalize_receipt({'schema_version': 1, 'reference_mode': 'original',
+        'mode_resolution': 'explicit' if mode_was_explicit else 'ordinary-draw-default',
+        'status': 'NEEDS_SPEC' if missing else 'PREFLIGHT_COMPLETE', 'request': request,
+        'request_id': request_id, 'query': query, 'route': routed, 'method_plan': plan,
+        'source_hashes': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in sorted(material) if (ROOT / name).is_file()},
+        'missing_material': missing,
+        'selected_reference_candidates': {'planner_selected': selected, 'reproduction': [], 'scidraw': [], 'top_journal': [], 'capability_graph': []},
+        'learned_methods': {'results': [], 'status': 'NOT_REQUESTED'},
+        'reusable_templates': {'results': [], 'status': 'NOT_REQUESTED'},
+        'retrievals': {}, 'code_gate': 'BLOCKED' if missing else code_gate('original'),
+        'pre_code_gate': routed['pre_code_gate'],
+        'required_next_steps': ['validate experimental units, input fields, scales and statistical intent',
+            'record original panels, elements, spatial topology and all six design decisions',
+            'validate the Design Spec with this receipt before writing renderer code',
+            'inspect actual final-size PNG/PDF with all scientific, typography, color, layout and design-quality gates'],
+        'claim_boundary': 'Original-design planning only; no rendering, visual acceptance or source reproduction is certified.'})
+
+
 def prepare(request: dict, *, fixture_replay_case_id: str | None = None) -> dict:
     if not isinstance(request, dict):
         raise ValueError('request must be a mapping')
+    request = dict(request)
+    if fixture_replay_case_id:
+        request.setdefault('reusable_case_id', fixture_replay_case_id)
+    mode_was_explicit = 'reference_mode' in request
+    reference_mode = resolve_request_mode(request)
+    request['reference_mode'] = reference_mode
     request_schema = yaml.safe_load((ROOT / 'schemas/figure-request.schema.yaml').read_text(encoding='utf-8'))
     missing = [key for key in request_schema['required'] if key not in request or request[key] is None]
     if missing:
@@ -119,6 +176,8 @@ def prepare(request: dict, *, fixture_replay_case_id: str | None = None) -> dict
                 'method_plan': {'planning_status': 'CHART_SELECTION_REQUIRED', 'selected_case': None},
                 'code_gate': 'BLOCKED_UNTIL_CHART_SELECTION_AND_CP2',
                 'required_next_steps': ['analyze the scientific question and data shape, then propose a preferred chart and alternatives; validate the selected chart Design Spec before code']})
+    if reference_mode == 'original':
+        return prepare_original(normalized_request, routed, request_id, query, mode_was_explicit)
     method_plan = compile_plan(query, request.get('primary_source'), request.get('pangenome_context'))
     if method_plan.get('learning_contract') and family != method_plan['families'][0]:
         method_plan['planning_status'] = 'NEEDS_SPEC'
@@ -173,10 +232,12 @@ def prepare(request: dict, *, fixture_replay_case_id: str | None = None) -> dict
         'scripts/build_learned_method_index.py', 'scripts/learning_materials.py',
         'scripts/figure_reference_search.py',
         'scripts/figure_library_categories.py',
+        'scripts/reference_modes.py', 'scripts/reference_paths.py',
         'references/all-learning-transfer.md', 'references/all-learning-audit-defects.md',
         'atlas/learned-method-validations.json', 'scripts/validate_learned_reuse.py',
         'atlas/source-syntax-audit.json',
-        *[rel for entry in learned_methods['results'] for rel in entry['mandatory_read_set'] if '..' not in Path(rel).parts],
+        *[rel for entry in learned_methods['results'] if entry['method_id'] == request.get('learned_method_id')
+          for rel in entry['mandatory_read_set'] if '..' not in Path(rel).parts],
         *routed['modules'],
     }
     source_hashes = {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
@@ -185,6 +246,8 @@ def prepare(request: dict, *, fixture_replay_case_id: str | None = None) -> dict
     preflight_complete = method_plan.get('planning_status') in {'METHOD_CANDIDATE', 'SOURCE_CANDIDATE'} and bool(query) and not missing_material
     result = {
         'schema_version': 1,
+        'reference_mode': reference_mode,
+        'mode_resolution': 'explicit' if mode_was_explicit else 'source-intent-inferred',
         'status': 'PREFLIGHT_COMPLETE' if preflight_complete else 'NEEDS_REFERENCE',
         'request': normalized_request,
         'query': query,

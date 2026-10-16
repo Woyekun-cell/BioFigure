@@ -18,6 +18,30 @@ SCIDRAW_NODE_MAP={
  'SCIDRAW-VOLCANO-GSEA-001':'scidraw-f749086eb5',
 }
 
+def synchronize_registered_cases(graph, registry, results):
+ by_id={node['id']:node for node in graph['nodes'] if node.get('kind')=='case'}
+ for record in registry['cases']:
+  cid=record['case_id']
+  if cid not in by_id:
+   node={'id':cid,'kind':'case','label':record.get('label',cid),
+         'source':record.get('source','registered-source-learning'),
+         'status':'source-learning-registered','visual_status':'NOT_VERIFIED',
+         'review_status':'NOT_VERIFIED','high_fidelity_eligible':False,
+         'learning_source':record.get('learning_source'),
+         'scope':'Registered source learning only; no current execution or visual qualification inferred.'}
+   graph['nodes'].append(node);by_id[cid]=node
+  node=by_id[cid]
+  # These scoped source-exposed cases require their own actual evidence bundle.
+  # Preserve the historical review, but do not advertise unavailable private
+  # bundles as current public high-fidelity capability.
+  if (str(node.get('generation_mode','')).startswith('source-exposed-independent')
+      and results.get(cid,{}).get('tracks',{}).get('reproduction',{}).get('status')!='PASS'):
+   node.setdefault('historical_source_review', {k:node.get(k) for k in
+       ('visual_status','review_status','high_fidelity_eligible','generation_mode')})
+   node.update(visual_status='source-materials-unavailable',review_status='NOT_VERIFIED',
+               high_fidelity_eligible=False,current_public_bundle_status='NOT_DISTRIBUTED_OR_NOT_VERIFIED')
+ return graph
+
 def expected_topjournal_state(node, by_issue):
  match=re.fullmatch(r'topfigure-(\d+)-[0-9a-f]+',node.get('id',''))
  if not match:return None
@@ -63,12 +87,21 @@ def synchronize(graph,methods,scidraw_methods,scidraw_batch2_methods):
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--output',default=str(GRAPH));a=p.parse_args()
+ from benchmark_core import registry_results
+ graph=json.loads(GRAPH.read_text())
+ graph['summary'].setdefault('historical_source_review_summary', {k:graph['summary'].get(k) for k in
+     ('source_compared_cases','source_compared_pass','source_compared_needs_revision')})
+ graph=synchronize_registered_cases(graph,json.loads((ROOT/'benchmark/registry.json').read_text()),registry_results(ROOT))
  graph=synchronize(
-  json.loads(GRAPH.read_text()),
+  graph,
   json.loads(METHODS.read_text()),
   json.loads(SCIDRAW_METHODS.read_text()),
   json.loads(SCIDRAW_BATCH2_METHODS.read_text()),
  )
+ from collections import Counter
+ cases=[n for n in graph['nodes'] if n.get('kind')=='case']
+ graph['summary']['case_count']=len(cases)
+ graph['summary']['source_counts']=dict(Counter(n.get('source','unknown') for n in cases))
  Path(a.output).write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(graph['summary'],ensure_ascii=False,indent=2)); return 0
 if __name__=='__main__': raise SystemExit(main())

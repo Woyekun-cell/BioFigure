@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-archr-2021",
+  "learned_method_id": "BENCH-subjournal-archr-2021",
+  "title": "ArchR is a scalable software package for integrative single-cell chromatin accessibility analysis",
+  "label": "ArchR：B细胞伪时间双热图、三模态TF热图与基因组峰弧轨道",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_RUN",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_sequencing_analysis": false
+  },
+  "figure_family": "trajectory-heatmap",
+  "chart_type": "ArchR：B细胞伪时间双热图、三模态TF热图与基因组峰弧轨道",
+  "chart_types": [
+    "trajectory-heatmap",
+    "multi-assay-heatmap",
+    "genomic-tracks",
+    "peak-gene-arcs",
+    "TF-footprint"
+  ],
+  "domain": "epigenomics",
+  "paper": {
+    "schema_version": 1,
+    "accessed_on": "2026-10-15",
+    "title": "ArchR is a scalable software package for integrative single-cell chromatin accessibility analysis",
+    "journal": "Nature Genetics",
+    "year": 2021,
+    "doi": "10.1038/s41588-021-00790-6",
+    "url": "https://www.nature.com/articles/s41588-021-00790-6",
+    "article_license": "CC-BY-4.0",
+    "correction": {
+      "doi": "10.1038/s41588-021-00850-x",
+      "date": "2021-03-31",
+      "verified_source": "benchmark/library/epigenomics/archr-2021/sources/correction.html",
+      "effect": "Switch to CC BY 4.0 and acknowledgement funding agency update; no reported data or selected figure correction"
+    },
+    "code_availability": {
+      "paper_section": "Code availability",
+      "paper_page": "benchmark/library/epigenomics/archr-2021/sources/paper.html",
+      "author_paper_analysis_repo": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "source_type": "original author paper analysis code; package/tutorial supplementary material kept distinct"
+    },
+    "full_figure_reproduction": "NOT_VERIFIED",
+    "viewed_figures": [
+      "Fig3",
+      "Fig4"
+    ],
+    "data_availability": [
+      "filtered ArchR project/Arrow files",
+      "RNA reference",
+      "11,999 trajectory matrix and full ordering",
+      "final browser track generation settings"
+    ],
+    "issue_date": "2021-03",
+    "online_date": "2021-02-25"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/GreenleafLab/ArchR_2020",
+    "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+    "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+    "source_type": "original-author-paper-analysis",
+    "supplementary_package": null
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/raw/author-table5-HMGA1-BLK-extract.tsv",
+      "sha256": "b954bd2682290c5f0383822bc159c6c7045ded792248dffe3bd8fa571bf20d55",
+      "bytes": 4723,
+      "source_url": null,
+      "role": "original-author-data-bytes-or-provenanced-extract",
+      "license": "CC-BY-4.0",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/raw/supplementary-tables.xlsx",
+      "sha256": "5ebe384427dd660a0feacd1f14472b34b33926606a5ef4c5d2189a4f0ce6a2c5",
+      "bytes": 5633892,
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_MOESM3_ESM.xlsx",
+      "role": "original-author-data-bytes-or-provenanced-extract",
+      "license": "CC-BY-4.0",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/results/plot_data/fig4fg-source-links.tsv",
+      "sha256": "b9bb501d8a48d75b07bb29c9341cdf8263b9771c7f5d24b03523b4ef50369e74",
+      "bytes": 4950,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/scripts/check_source_data.py",
+      "sha256": "1daf79a44c041a8b3454367119e28d6bc132381e4d04b68fd2d5e0737ca390a2",
+      "bytes": 3794,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+      "bytes": 25304,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "git_blob_sha1": "ff12849d0f8ebed6bfd65d9b48798450982e8e0a",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "sha256": "7af19224f9b8610892b778614d51f3b8bca5da177c19ba7e0edd656973af88ea",
+      "bytes": 2136,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "git_blob_sha1": "4a928bb10b6a3a7d61dc2c56a67124ca4774a931",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/Ex-Analyze-Trajectory.html",
+      "sha256": "e6db2ca69957adc51c6452659603b6551804bdb8527795556bab7aea27e0157f",
+      "bytes": 1687563,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/Ex-Analyze-Trajectory.html",
+      "role": "supplementary-author-tutorial-not-paper-figure-script",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "Ex-Analyze-Trajectory.html",
+      "git_blob_sha1": "993a262338e8ea51088ab421e6ae90634a955a1b",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/README.md",
+      "sha256": "45aaa5f3b04c3d827596ab457b0d9382d402f74076e6315f36851d95c4691f33",
+      "bytes": 3493,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/README.md",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "README.md",
+      "git_blob_sha1": "630fd765705f30990363a4d11701ae0bfe1d06db",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/correction.html",
+      "sha256": "d7ea5a0ecd18a9d5c751d9d7f92821b1debeae26e26c07a4a8a147c0d03be3ec",
+      "bytes": 229474,
+      "source_url": "https://www.nature.com/articles/10.1038/s41588-021-00850-x?error=cookies_not_supported",
+      "role": "official-paper-page-or-correction",
+      "license": "CC-BY-4.0",
+      "publishable": false
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/figures/Fig3.png",
+      "sha256": "968f2a15e9b4cc0361fbbb53a42953389f47fd31066e91dce187192e6279b65b",
+      "bytes": 1782657,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41588-021-00790-6/MediaObjects/41588_2021_790_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig3",
+      "width_px": 2117,
+      "height_px": 2170,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/figures/Fig4.png",
+      "sha256": "3fdb9d55e054c795a51b3d657844344524ca9cdc903c12b68cca822da286af8d",
+      "bytes": 1806092,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41588-021-00790-6/MediaObjects/41588_2021_790_Fig4_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig4",
+      "width_px": 2120,
+      "height_px": 2249,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/paper.html",
+      "sha256": "dad291359fff89133caab6d202d9d8f74730a6758d49cb4901d48a300231d882",
+      "bytes": 467337,
+      "source_url": "https://www.nature.com/articles/10.1038/s41588-021-00790-6?error=cookies_not_supported",
+      "role": "official-paper-page-or-correction",
+      "license": "CC-BY-4.0",
+      "publishable": false
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+      "bytes": 25304,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+      "git_blob_sha1": "ff12849d0f8ebed6bfd65d9b48798450982e8e0a",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "sha256": "7af19224f9b8610892b778614d51f3b8bca5da177c19ba7e0edd656973af88ea",
+      "bytes": 2136,
+      "source_url": "https://raw.githubusercontent.com/GreenleafLab/ArchR_2020/fe290efeecfa346552853c4ba24fe353b866a995/Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/GreenleafLab/ArchR_2020",
+      "commit": "fe290efeecfa346552853c4ba24fe353b866a995",
+      "repository_path": "Code/ArchR_PreProcess_Laptop_LargeHeme_220k.R",
+      "git_blob_sha1": "4a928bb10b6a3a7d61dc2c56a67124ca4774a931",
+      "git_blob_verified": true
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/figures/Fig3.png",
+      "sha256": "968f2a15e9b4cc0361fbbb53a42953389f47fd31066e91dce187192e6279b65b",
+      "bytes": 1782657,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41588-021-00790-6/MediaObjects/41588_2021_790_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig3",
+      "width_px": 2117,
+      "height_px": 2170,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/sources/figures/Fig4.png",
+      "sha256": "3fdb9d55e054c795a51b3d657844344524ca9cdc903c12b68cca822da286af8d",
+      "bytes": 1806092,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41588-021-00790-6/MediaObjects/41588_2021_790_Fig4_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "CC-BY-4.0",
+      "publishable": true,
+      "figure": "Fig4",
+      "width_px": 2120,
+      "height_px": 2249,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig4e",
+      "chart_type": "paired peak-accessibility and RNA row-Z-score trajectory heatmaps",
+      "data_bearing": true,
+      "encoding": {
+        "rows": "11,999 peak-to-gene links; matching key retained across panels",
+        "columns": "ordered B-cell pseudotime bins, not real time",
+        "color": "row Z score; separate accessibility and RNA palettes; -2 to 2",
+        "order": "one shared idxOrderP from source; exact raw matrix missing"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "lines": [
+            [
+              492,
+              515
+            ],
+            [
+              568,
+              603
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_ANALYSIS; full final assembly not executed",
+          "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+          "repository_relative_locator": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig4h",
+      "chart_type": "aligned motif-deviation / gene-score / RNA trajectory heatmaps",
+      "data_bearing": true,
+      "encoding": {
+        "rows": "matched TF/gene identities with final motif-derived order",
+        "columns": "same pseudotime direction",
+        "color": "separate row Z-score palettes, -1.5 to1.5"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "lines": [
+            [
+              520,
+              563
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_ANALYSIS",
+          "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+          "repository_relative_locator": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig4f/g",
+      "chart_type": "coverage, peak, peak-gene arcs, gene and RNA tracks",
+      "data_bearing": true,
+      "encoding": {
+        "x": "hg19 physical bp, per-locus true interval",
+        "y": "five ordered trajectory groups",
+        "color": "trajectory groups and independent Pearson arc score0.5-1"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "lines": [
+            [
+              480,
+              486
+            ],
+            [
+              608,
+              625
+            ],
+            [
+              643,
+              654
+            ]
+          ],
+          "pairing": "PARTIAL_COMPUTATION_AND_RNA; exact genome-browser final assembly not located",
+          "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+          "repository_relative_locator": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig3c/d,f-h",
+      "chart_type": "marker heatmap, motif-enrichment heatmap and bias-subtracted footprint",
+      "data_bearing": true,
+      "encoding": {
+        "key": "21 original ClustFinal categories and palHeme",
+        "color": "column Z score / -log10 enrichment P / cluster identity; distinct measures",
+        "x": "motif-center physical bp for footprint"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "lines": [
+            [
+              76,
+              136
+            ],
+            [
+              203,
+              218
+            ],
+            [
+              262,
+              271
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_PAPER_ANALYSIS",
+          "path": "benchmark/library/epigenomics/archr-2021/sources/author/Code/ArchR_PostAnalysis_Large_Heme_Analysis.R",
+          "sha256": "6355b0db82fe1419b70539b5f7b4fb5fb43db4a5d5dc4b6d094b8a82729b4d05",
+          "repository_relative_locator": "Code/ArchR_PostAnalysis_Large_Heme_Analysis.R"
+        }
+      ]
+    }
+  ],
+  "input_contract": {
+    "assembly": "hg19 for selected human figures; mm9 only for unrelated mouse atlas",
+    "experimental_unit": "49-sample cross-platform hematopoietic compendium; cells, pseudobulk and trajectory bins are not independent donors",
+    "required_keys": [
+      "Sample",
+      "cellNames",
+      "ClustFinal",
+      "peakATAC chr:start-end",
+      "geneRNA chr:TSS#symbol",
+      "motif original IDs",
+      "paired peak-gene row key",
+      "pseudotime"
+    ],
+    "trajectory_order": [
+      "C1_HSC",
+      "C2_CMP.LMPP",
+      "C7_CLP.1",
+      "C8_CLP.2",
+      "C9_PreB",
+      "C10_B"
+    ],
+    "preprocessing": "ArchR0.2.1; seed1; filterTSS4, fragments1000-50000; 25000 variable features/landmarks; upstream filtered RDS absent",
+    "transformations": "getTrajectory smoothWindow11; Motif log2NormFALSE; GS/RNA/ATAC TRUE; per-row or per-column Z score must retain panel semantics",
+    "thresholds": "marker FDR<=.01 and Log2FC>=1; motif correlation>.5/padj<.001 plus top-half maxDelta; trajectory pre/post filter quantile.8/.9",
+    "coordinate_convention": "Source interval strings preserved; table end-start=500; do not silently convert BED/IRanges endpoints",
+    "available_small_data": "Official original SupplementaryTable5 in raw xlsx;38 HMGA1/BLK extracted rows",
+    "missing_data": [
+      "filtered ArchR project/Arrow files",
+      "RNA reference",
+      "11,999 trajectory matrix and full ordering",
+      "final browser track generation settings"
+    ]
+  },
+  "packages_by_role": [
+    {
+      "package": "ArchR",
+      "version": "0.2.1 explicitly stated by author script",
+      "role": "QC, iterative LSI, integration, links, trajectory extraction, heatmap and footprint"
+    },
+    {
+      "package": "Seurat",
+      "version": "not locked locally",
+      "role": "cross-modality CCA integration underlying ArchR"
+    },
+    {
+      "package": "BSgenome/TxDb",
+      "version": "hg19 annotation identity",
+      "role": "physical genome coordinates and gene annotation"
+    },
+    {
+      "package": "ggplot2 / patchwork / grid",
+      "version": "not locally executed",
+      "role": "rendering/assembly through author APIs"
+    },
+    {
+      "package": "openpyxl",
+      "version": "3.1.5",
+      "role": "read-only independent source-table audit; not original plotting engine"
+    }
+  ],
+  "native_functions": [
+    "addGeneIntegrationMatrix",
+    "addPeak2GeneLinks",
+    "addCoAccessibility",
+    "addTrajectory",
+    "getTrajectory",
+    "correlateTrajectories",
+    "trajectoryHeatmap",
+    "markerHeatmap",
+    "enrichHeatmap",
+    "plotFootprints"
+  ],
+  "gaps": [
+    "Author paper repository has no LICENSE; local research reference only",
+    "Exact old ArchR package dependency lock absent",
+    "Full Figure4f/g browser assembly not located",
+    "Source562 motif/RNA/GS order differs from formalFig4h motif/GS/RNA; final assembly revision unverified",
+    "Source578 compound-rowname to peak-name match requires original matrix check",
+    "Table5 whole-hematopoiesis links cannot substitute11,999 B-trajectory links",
+    "No raw sequencing, rendering or new-input benchmark run"
+  ],
+  "benchmark_usage": {
+    "allowed": [
+      "reference selection",
+      "source-backed layer and parameter learning",
+      "design input contract for future fresh preparation"
+    ],
+    "not_established": [
+      "original-paper-reproduction",
+      "new-input-transfer",
+      "density-stress-test",
+      "cross-environment-reproduction",
+      "visual-pass",
+      "user-acceptance"
+    ],
+    "next_gate": "Future actual rendering requires independently specified inputs and fresh gates; source-learning status grants no rendering or statistical validation"
+  },
+  "method_reference": {
+    "path": "benchmark/library/epigenomics/archr-2021/learning.md",
+    "sha256": "c4186405634d8ca8a0578b6ab74d9634bee51cd764980702b9f06f3cb8d86a1a"
+  },
+  "evidence_manifest": {
+    "path": "benchmark/library/epigenomics/archr-2021/data/metadata/source-manifest.json",
+    "sha256": "63989f02fe7d2759f7d157d55796521012d4385b7d24190976333de8907382ed"
+  },
+  "nonrender_checks": {
+    "path": "benchmark/library/epigenomics/archr-2021/data/metadata/nonrender-checks.json",
+    "sha256": "eddb0419fa9777909e35f0df0bdec65f465d0e8fd0026d165a70dac34d14f71d"
+  },
+  "limitations": "See documented gaps. Exact final data/code pairing and rendering were not claimed.",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/metadata/paper-source.json",
+      "sha256": "43b7cb5ab15335aef8d2c1c46bd7829557d50d927a1dfcfea83e83209390377f",
+      "bytes": 1465,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/metadata/source-manifest.json",
+      "sha256": "63989f02fe7d2759f7d157d55796521012d4385b7d24190976333de8907382ed",
+      "bytes": 7501,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/metadata/code-figure-mapping.json",
+      "sha256": "f9a01ce134fc58e6fabac283c73c0e169663f91d72a5fa10c3e783eccf87c785",
+      "bytes": 7910,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/archr-2021/data/metadata/nonrender-checks.json",
+      "sha256": "eddb0419fa9777909e35f0df0bdec65f465d0e8fd0026d165a70dac34d14f71d",
+      "bytes": 1354,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "ArchR",
+    "trajectory heatmap",
+    "pseudotime",
+    "multi-modal heatmap",
+    "genome tracks",
+    "footprint",
+    "single-cell"
+  ]
+}
