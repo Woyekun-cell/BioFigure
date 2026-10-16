@@ -88,20 +88,20 @@ def synchronize(graph,methods,scidraw_methods,scidraw_batch2_methods):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--output',default=str(GRAPH));a=p.parse_args()
  from benchmark_core import registry_results
- graph=json.loads(GRAPH.read_text())
+ graph=json.loads(GRAPH.read_text(encoding='utf-8'))
  graph['summary'].setdefault('historical_source_review_summary', {k:graph['summary'].get(k) for k in
      ('source_compared_cases','source_compared_pass','source_compared_needs_revision')})
- graph=synchronize_registered_cases(graph,json.loads((ROOT/'benchmark/registry.json').read_text()),registry_results(ROOT))
+ graph=synchronize_registered_cases(graph,json.loads((ROOT/'benchmark/registry.json').read_text(encoding='utf-8')),registry_results(ROOT))
  graph=synchronize(
   graph,
-  json.loads(METHODS.read_text()),
-  json.loads(SCIDRAW_METHODS.read_text()),
-  json.loads(SCIDRAW_BATCH2_METHODS.read_text()),
+  json.loads(METHODS.read_text(encoding='utf-8')),
+  json.loads(SCIDRAW_METHODS.read_text(encoding='utf-8')),
+  json.loads(SCIDRAW_BATCH2_METHODS.read_text(encoding='utf-8')),
  )
  from collections import Counter
  cases=[n for n in graph['nodes'] if n.get('kind')=='case']
  graph['summary']['case_count']=len(cases)
  graph['summary']['source_counts']=dict(Counter(n.get('source','unknown') for n in cases))
- Path(a.output).write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n')
+ Path(a.output).write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
  print(json.dumps(graph['summary'],ensure_ascii=False,indent=2)); return 0
 if __name__=='__main__': raise SystemExit(main())

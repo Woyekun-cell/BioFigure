@@ -78,7 +78,7 @@
     },
     {
       "path": "atlas/figure-reference-catalog.json",
-      "sha256": "84b96a71768404ffedc7db07beb797c806d4a26cfb872e74fe6bfc8e3ae86c7d",
+      "sha256": "bcdafcf43ccbaa263c6a2784ee50fd95025b1d8255e3dcc08aa897e2790f9671",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -92,7 +92,7 @@
     },
     {
       "path": "atlas/learned-method-index.json",
-      "sha256": "79d1e3de31d81d2445173f95f461f23451f19955898a2fb4d0afbb990d493de8",
+      "sha256": "8acc4ac1017c6ecf76640838e0ec9d6883abd54573b861336977405eb8083e1b",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2080,28 +2080,28 @@
     },
     {
       "path": "scripts/audit_all_learning.py",
-      "sha256": "8b8b7a40a8d58ee85081e73ed2c9fb96f37874d85443244d4cd6391a66f29bfd",
+      "sha256": "2a426740fcf7455981a7f5729354bb4950abb51dc8746b9f9b0c382c0da50e25",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/audit_portable_install.py",
-      "sha256": "d023480832cc11a49e720b44bd5fb202ef122f0102b87739c8672c5350c21f2c",
+      "sha256": "b2379f90fcc34061723118896ce7f05e8f2b0acb6eb0fa4530882a57ee033e04",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/audit_reference_fidelity.py",
-      "sha256": "e7773be6d615808bc1a742fe29490466b8be2cbc582cbd45a0553dc2d59b6a42",
+      "sha256": "8e2ee94b53f317299fdaeca92c07bae2dc6a8806f77fbf7c93c44c80c580c317",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/audit_skill_release.py",
-      "sha256": "316acbd94de528a8fb2ba9a2acc911750ff5f10662f1566b6353990b485855e3",
+      "sha256": "d58cb8f97558e0d894771f992c8ac0e9519336813757f4a8a86c23b3b5c703e4",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2115,42 +2115,42 @@
     },
     {
       "path": "scripts/benchmark_core.py",
-      "sha256": "8ea1965e9492d029d9aac95eb43b9856fcdd511ad6866e84f8819b1116ea4027",
+      "sha256": "a3223de5c6edceee1878bd655cb24a2da4cfc92011c72f8d3e4a6c25ac715c34",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/benchmark_reference_search.py",
-      "sha256": "4089e9b9fcaa6b12497f628149c7be1316b12052213e862ba526c4436295f892",
+      "sha256": "4f598ff0484248da2da9e3b7293fbe9e041e3a23bc29d58f3733e79515d0ae92",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/build_capability_graph.py",
-      "sha256": "dd4e41d2bffabc102c209a0b85912f0409cb13ceff73476564e20383860318c2",
+      "sha256": "f813f5bcda55b21f3165953c80c35e252a30613d840fa1a23b50052e8e0a225b",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/build_learned_method_index.py",
-      "sha256": "ceb3e5024e3c598b7fd4d89c8a60551d69430ddf81a5fd4665bc21427c9a1080",
+      "sha256": "a5ac479fbf027dc0dbf31bcf135a828e1560829200b855d4edaadb82ac79cc4b",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/build_reproduction_atlas.py",
-      "sha256": "e9de33d3b749def1644bf2c273fbc0f205014e3698c060e7e1431003c6edc3b7",
+      "sha256": "7c701da93cb46158407f3829e21be599be046fb85508502c5fe5927fbc9bdb84",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/build_scidraw_atlas.py",
-      "sha256": "c244c7da6b289b332fea6be751f58efcfeeedf015258c216c79db4c747c58443",
+      "sha256": "964ab06a9148da2ea09741b1a83a74d0eb6acef49684d2bdc6eca4d79fc98168",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2171,7 +2171,7 @@
     },
     {
       "path": "scripts/figure_style.R",
-      "sha256": "e774efcbd799f8d43f3aa99492da12e0c4a59333b7fb3019150cd3f7644c3b6a",
+      "sha256": "6f091c6db4842d29a39de50013c77b6c180467ba4d38aa769453cac3af43e76e",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2185,7 +2185,7 @@
     },
     {
       "path": "scripts/find_figure_reference.py",
-      "sha256": "61e435974158378fa299cd94bd9132e4639694c6ab9811cd90e334047aca99a9",
+      "sha256": "612d5ff8b80d09bbb01c869afc5a273a5faddff91200195966053dc6f607cebe",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2199,7 +2199,7 @@
     },
     {
       "path": "scripts/install_public_dependencies.R",
-      "sha256": "1ce00464514f025e274770c6399d0f96249bf362d580a158aaffa019a9500153",
+      "sha256": "7d3e6b84795c6f7b3fb6b8b106571dc692aa596e97f78eddac472ed6f8d697c2",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2227,21 +2227,21 @@
     },
     {
       "path": "scripts/plan_figure_method.py",
-      "sha256": "11e8de975018e8f2d762e972551cc115f8bbc018864fd95167dc709e52b13071",
+      "sha256": "cf5c28998b26ec7610c032b56a1d965aaf4c3845cf93a8e4aa981d13c6be7eb3",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/plan_pangenome_figure.py",
-      "sha256": "0d98d43f526d94f43f6fc103281cde1cf920f7ae36ef240c07ee8a17534dbeee",
+      "sha256": "887774d875d744307c0bd8b90d54e4201270dc72a3c008bb67516f06f421daa1",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/prepare_figure.py",
-      "sha256": "c17f6e74a45b2e02582a0b406acaa1ce9776bb983cc6bbdfc4b220db35cfe701",
+      "sha256": "55811a678e6cf9f1b6db7f8ded8eb0b3a0fa74fe1d3fcfc50f0b6ecc67a19de0",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2276,14 +2276,14 @@
     },
     {
       "path": "scripts/retrieve_capabilities.py",
-      "sha256": "ba61edbba45e7fd8fd05d4bf6ba4fc8480865613ca2b8d87f58b1ee5640e0a91",
+      "sha256": "52f813ff73947bb1e94f253e259347ac2acdd9828232ae5c4bcf5bceec91f47f",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/retrieve_learned_methods.py",
-      "sha256": "9ed78e9615021975514acb9d598d9d1dcab6fa33b1978adb194d7c042dc34beb",
+      "sha256": "ec3229e3c7f403bda2e79f107736a86e37223ffa96baea5362abfc28020d86ee",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2304,35 +2304,35 @@
     },
     {
       "path": "scripts/retrieve_reproduction.py",
-      "sha256": "39421b119c1ee18d9d1f6efe6c820cfc04e7c32cdf22b31ca445a31d0a8c7991",
+      "sha256": "e33a3e8296955267e91f22c69219973cfc990398d452c5474303f7b5d43cd2b2",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/retrieve_scidraw.py",
-      "sha256": "7502b9ef54899b5549e5e234a21886225ec0abdbfb8a1dc6970a0e9a8d5bb0a3",
+      "sha256": "82519b33f0d722f35cd8bfd4ba015c5116e253d8f7a8e63d655808082076f304",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/reuse_templates.py",
-      "sha256": "10f210c98814ffefb98998b4744c06cb24522bfe18a80d3ab6d155004997664a",
+      "sha256": "f8416907d46b4289eed5b64c2cf3efa02bd189df86ccc8280f48b89b635500b5",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/route_figure.py",
-      "sha256": "9456f5a5f82d040a54282a1da69dfa58225b620e7e3eed9d2bf9cb06279d60b2",
+      "sha256": "2fcdcebb226a57b3617442bdc1ff5c693237f26cca48e80fea84c7918f93b5e7",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/run_benchmark_case.py",
-      "sha256": "1d5adb55ee59a1dbea85002a6bd136a985ace133af7bb102c4dd4eab322d0a5e",
+      "sha256": "12e860b1380379fe958db63bab7bbe01f40afac2dde0168e2bc2b7d0c2fd6fc1",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2346,35 +2346,35 @@
     },
     {
       "path": "scripts/run_cross_model_benchmark.py",
-      "sha256": "0c085bcced35495fdf3a0e3a468ce71d0fb36b6a7251820143266e3ccfbe439f",
+      "sha256": "422c44c2594824d8a1a851a61fa84bf39c20ee539739b6abcfc7360a146dc627",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/run_public_example.py",
-      "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+      "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/run_public_tests.py",
-      "sha256": "0b6c7a5e11c1cea22ea010d93eb1f1155f2d40085f6af4741382f965e64ab89a",
+      "sha256": "06e286cab6288b4e03fff188c0b58597d798dffd69bb2b7e3ae9322da37840aa",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/run_reproduction_benchmark.py",
-      "sha256": "9808e5763a3ab685f3bbdb57bb4547ac0efb2b29298d9cc1a7ee7b285190674c",
+      "sha256": "a055fb8816290832aa863d7776ff77ebe29e65cdf92eaf1b5dc613fc533a3ee2",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/run_template_replay.py",
-      "sha256": "7df316235f6f1de38ecbf29a99acf335f61c1a4800876a5a723690e7b185397f",
+      "sha256": "3b655a7761993f0856d7eeef832e7b236d5bd4abd05226e358f3b620c8fa2155",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2388,21 +2388,21 @@
     },
     {
       "path": "scripts/sync_capability_status.py",
-      "sha256": "20831b0a5c92401e816aad60157c0c91993c0866b7b145bb6c562b0996e688fa",
+      "sha256": "5d79dcda1189d2880d221fe72b807835d498b44189a3b6177aa372fab7f547ea",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/sync_scidraw_review.py",
-      "sha256": "d631363037fb272dd3f5b79de35ce7bb7b874ec83d039f5914534a2181a45d51",
+      "sha256": "af8f72c27b7f315c5282d79bf8cc71fe68178f716054155ce5d55d489331053c",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "scripts/validate_checkpoints.py",
-      "sha256": "b107ae687ce488d8d6360671f9f232e9b453dff146eb68bad97187d71f863f61",
+      "sha256": "6fda8905ef20502242e6983db54b9928ae3b1de98ef4b439126fd2802d96875d",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2416,7 +2416,7 @@
     },
     {
       "path": "scripts/validate_learned_reuse.py",
-      "sha256": "3730aaccb579f431ea23b52f9892c105fd7472577db4b06b9f6ba494b060e20d",
+      "sha256": "4edc7f826b42e3a900eb805f8c16bbc5ae8e3a01c58890f15f8fb43729de810c",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2459,6 +2459,20 @@
     {
       "path": "static/core/pangenome-paradigms.json",
       "sha256": "14d29169a0d4bf59cc3c8053d2a7a0ea32cce54b9f512dc2ae7e71300aa01793",
+      "role": "config",
+      "license": "MIT",
+      "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
+    },
+    {
+      "path": "static/core/public-native-packages.json",
+      "sha256": "765f23b098861be7a535eb7d7884572c038dab6a22c427cd843833146cd5f31e",
+      "role": "config",
+      "license": "MIT",
+      "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
+    },
+    {
+      "path": "static/core/public-runtime-versions.tsv",
+      "sha256": "41e375acb416b06768d615f9ab381ccdb0d86309a0eb6b9adcd7732ce8e8c8e6",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2553,28 +2567,28 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
-          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
+          "sha256": "18b2457f96d358bfff1c212bb4be6ab08ce2bc9eb6eac920748257137c82f24f",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/acquire_sources.py",
-          "sha256": "2578e2a12a1eb082b61264414715aee409bf0d1213ce9acf4585d3586c9737fb",
+          "sha256": "db6146a496181e93c309088ff48611a5e3917ce474fb3ac00d34507386237261",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
-          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
+          "sha256": "3ade0e31de6dfd8e09e190c1fba3b091f0604429e223b657e6f79d572182b7bc",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
-          "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728",
+          "sha256": "01b4087cde30c92d46edbaea495078cc079684456f23a764f24c25758bd6d4f8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2665,7 +2679,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -2756,28 +2770,28 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
-          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
+          "sha256": "18b2457f96d358bfff1c212bb4be6ab08ce2bc9eb6eac920748257137c82f24f",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/acquire_sources.py",
-          "sha256": "2578e2a12a1eb082b61264414715aee409bf0d1213ce9acf4585d3586c9737fb",
+          "sha256": "db6146a496181e93c309088ff48611a5e3917ce474fb3ac00d34507386237261",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
-          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
+          "sha256": "3ade0e31de6dfd8e09e190c1fba3b091f0604429e223b657e6f79d572182b7bc",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
-          "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728",
+          "sha256": "01b4087cde30c92d46edbaea495078cc079684456f23a764f24c25758bd6d4f8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2868,7 +2882,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -2952,14 +2966,14 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/dpm-bubbles/scripts/archive-source-reproduce.py",
-          "sha256": "96d0c7c2d94963285b5b4c49c0e53e488debd2b07d8da4319dd61d9e0b3206ef",
+          "sha256": "eec19c0272b11cbe563ad2fd5bd633fc93799d25f9d77f78157695ddd46b939b",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/dpm-bubbles/scripts/reproduce.py",
-          "sha256": "ea397b337a5a469e42ae55dd1a1a4bbbc4308fb63be549ef4d8f84e2e69b2e60",
+          "sha256": "2324af8c4330456b50454a30eb04aa16930ad6530f4fb2751799aff16fa49f10",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3015,7 +3029,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -3097,14 +3111,14 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/dpm-network/scripts/archive-source-reproduce.py",
-          "sha256": "2f16d2c52e26be9475a4292e41f9e6e29ddd1066cd200726960be3e13cb1d78a",
+          "sha256": "31c70f8f63ac6cac3529415aa15a34f152fcdee2756ca08416d0eb96777e7f7f",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/dpm-network/scripts/reproduce.py",
-          "sha256": "ea397b337a5a469e42ae55dd1a1a4bbbc4308fb63be549ef4d8f84e2e69b2e60",
+          "sha256": "2324af8c4330456b50454a30eb04aa16930ad6530f4fb2751799aff16fa49f10",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3167,7 +3181,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -3247,14 +3261,14 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/acquire.py",
-          "sha256": "93e0cc9b51883a8aed40c5432deff5caaeab87d19296347fb865ce994a4be835",
+          "sha256": "ec5a07104740ba50509e843ba4c863e14f0998bac2f7130fef6fb1f50a4415f8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
-          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
+          "sha256": "2e57541022f02adc8859ac4afcd803af5a0578c399a0665d825d314097b61a27",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3268,21 +3282,21 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/prepare_spec.py",
-          "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+          "sha256": "a209af1081ffcfe45c9ca0df82fca618fbcc5cb615e077656e35e6c4daec462e",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/install_native.py",
-          "sha256": "617320049f2d892f95e7e58e525c8e2595ae941662747b8b4d6466c5f05e3da1",
+          "sha256": "7ddcde9d396c3f6d4fb066f86f4fe96855285ffe3199c5625ac4a7c9d0999c52",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
-          "sha256": "5872c894ed87ae0a8121ddb88c2ee1f8459c7fcdaef87bb483bc8350beebf9ba",
+          "sha256": "9553e3227318591e4ef8cd373c43d00fd14d701f9f9b91c0b2cf0b4f2d2a6b06",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3317,7 +3331,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
-          "sha256": "ccc156a8e2310fc29cb596d3c0c821bc4b291ed2fabd82f427112dfd6d37ab3e",
+          "sha256": "63bc0f374ed2d387b923b509cb81010b71c9ef3b2391b51a3f5343adc8b2d968",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3359,7 +3373,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -3451,14 +3465,14 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
-          "sha256": "0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497",
+          "sha256": "86aa3e191f57062df4098f0bdfaa8218e9ba07a55bb6601ae91bd39e69332c8b",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
-          "sha256": "ba2f0738e885ae543f4e67029e5bc1f7e8ccf57fc2609067276cbbd7e99e6fa7",
+          "sha256": "6d1e1247497438677ef3e1c13ded45b3002c6d711ea37e0001a2b264327ffaf8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3577,7 +3591,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -3675,21 +3689,21 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
-          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
+          "sha256": "2e57541022f02adc8859ac4afcd803af5a0578c399a0665d825d314097b61a27",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/prepare_spec.py",
-          "sha256": "677863b52609677773bea36307d7cb9e27de8f983826a65f8667fef3a44247af",
+          "sha256": "a209af1081ffcfe45c9ca0df82fca618fbcc5cb615e077656e35e6c4daec462e",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
-          "sha256": "326c9edab8387ba7b234965d49d3ea625ba9e99fb27f3640ec1a7fc34b6f5915",
+          "sha256": "862b2760226efedf500bf653a83c98b22077331f724cc15377a51865dd9c25a2",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3724,7 +3738,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
-          "sha256": "52b66ef4f0889431400a187700fd6f135ed0c9e0e9c5ab8b47282341b7cf1906",
+          "sha256": "29e92842e744a997d11b6992976c6f0f42990e9440c21141b54f365717784f16",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3759,14 +3773,14 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
+          "sha256": "7dc64f1d050f3103a37fe26264949ae00c746dc29ea3bfe633ea0825d1ceec85",
           "role": "reference",
           "license": "GPL-3.0-only",
           "origin": "Derived author-processed data from a pinned GPL-3.0 repository; attribution and modifications are recorded in licenses/third-party-provenance.json"
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -3800,6 +3814,11 @@
         },
         {
           "name": "R:jsonlite",
+          "version": "record installed version for the current render",
+          "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+        },
+        {
+          "name": "R:scales",
           "version": "record installed version for the current render",
           "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
         },
@@ -3856,21 +3875,21 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
-          "sha256": "ecd6b170557bb0a974086bcf423784a7e432d22d0ca0f8d7645c6f960c549472",
+          "sha256": "1b07b03b4e6190eff939fabe2b9edb72cda1d1ad2f256b55f2807de2294e53dd",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
-          "sha256": "9ca46b0c0dbb62a6cd56f25eb4fea9356decaa2d2a15cc886f910664d61508a0",
+          "sha256": "31c8e0f4c60c307d87eb7309052474240cb7feef35bea5b0d259822a5713594f",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/scripts/render.R",
-          "sha256": "c4a1440318e657f3acedbe4eaa1cfa2ce093f46f4d0902dc4e549d3a87911fc3",
+          "sha256": "7d4f3e8c314fcd53c5e798daa9b76999529da590428c267a19998d24d6d9d3de",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3961,7 +3980,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/replay_public.py",
-          "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+          "sha256": "9a13d455028279eca4f5655b5f0299e5ba4e0832d4209652efafc40d718ed0ab",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned"
@@ -4045,7 +4064,7 @@
         },
         {
           "path": "examples/portable/boxplot/figures/boxplot.pdf",
-          "sha256": "a94a67cf37109f75290e0d45697e6401f2ea99f9289c9dc289dfff39e1fce358",
+          "sha256": "39381cb41f2c710b3a1fb6ac85bdfa610b9080965aed4ed36a6bec843461aca3",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4073,7 +4092,7 @@
         },
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4087,14 +4106,14 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4191,7 +4210,7 @@
       "files": [
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4205,7 +4224,7 @@
         },
         {
           "path": "examples/portable/heatmap/figures/heatmap.pdf",
-          "sha256": "9a8e83abc0d64a9f864007a5f178c5020a77b579000d9b3c41ddea771f535d3a",
+          "sha256": "a6f8a46094b975ceac97315f882d47e67f3979328ffb6929c07064dcb9cb0ab6",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4240,14 +4259,14 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4351,7 +4370,7 @@
         },
         {
           "path": "examples/portable/dense-heatmap/figures/dense-heatmap.pdf",
-          "sha256": "1b1dc05bdae68d222978743eca749ef93326f963d834254bc50cca7631d9ca13",
+          "sha256": "dc1df539c1dd3b61e9647967cc658e41b8663f377da8402c52ea495038f0181a",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4379,7 +4398,7 @@
         },
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4393,14 +4412,14 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4504,7 +4523,7 @@
         },
         {
           "path": "examples/portable/bubble/figures/bubble.pdf",
-          "sha256": "5daa28c06b7d6adec837963ad1f28b87289ebd4b4ee462f44b600f50bc395ae5",
+          "sha256": "ad78e9ca073237c0714663101976289909a51f10eb99025b9ec698c9962c53eb",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4532,7 +4551,7 @@
         },
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4546,14 +4565,14 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4650,7 +4669,7 @@
       "files": [
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4664,7 +4683,7 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4678,7 +4697,7 @@
         },
         {
           "path": "examples/portable/volcano/figures/volcano.pdf",
-          "sha256": "ffee2d6365b0c71213aa547a1ee4847436f517903f83b417228b9fa696e2284c",
+          "sha256": "fdfcb2d687d52b16cfc67dde8e76a6cc51d293924712e04c0f267a60664dee15",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4706,7 +4725,7 @@
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4803,7 +4822,7 @@
       "files": [
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4817,7 +4836,7 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4831,7 +4850,7 @@
         },
         {
           "path": "examples/portable/synteny/figures/synteny.pdf",
-          "sha256": "12cd38f04ec9cf67936b334fd6d97587b2e08f60d94b6ebaebce0c10aab85049",
+          "sha256": "d03b2e74233891df26e280e381a1f3ab08c535fe80802975909b7dfa2ba0f93f",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4859,7 +4878,7 @@
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4956,7 +4975,7 @@
       "files": [
         {
           "path": "examples/portable/generate_inputs.py",
-          "sha256": "fcb5b4feb0a54be940c777f99df3bda2add3f31baac5c867d66e3fbe5853a0d9",
+          "sha256": "4c618e2dbb394b2d7adec929bcc931bf24b731e815e180acf42c44bfd8bfc905",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -4977,7 +4996,7 @@
         },
         {
           "path": "examples/portable/phylogeny/figures/phylogeny.pdf",
-          "sha256": "2714612fcdd07ebcbf53c519eabe9f33015275230edc3dd57946359fdf31e835",
+          "sha256": "47f45abdb9521bdeddcdd3d11772b9208639b06d588cb79981bf6a2fa521c273",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
@@ -5005,14 +5024,14 @@
         },
         {
           "path": "examples/portable/render.R",
-          "sha256": "f2561cee4ef745c56aa92afd722f9389d4d215cba21118976fadc28c014c0167",
+          "sha256": "f418c78e8d02735a1b07037740cdce10b2f58227c5eb98ca10ed630349bc9119",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"
         },
         {
           "path": "scripts/run_public_example.py",
-          "sha256": "b3c532934dfe843fb72612a8800510b17187293709506460959483789b2145b2",
+          "sha256": "ced5f46bd86b595f73ad11b2bef1bc9a37d426d4a451deaa933bc349290ad1d8",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned synthetic data, code, configuration or demonstration output"

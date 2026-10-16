@@ -78,7 +78,7 @@ plot <- ggplot2::ggplot()+
  ggplot2::theme(plot.margin=ggplot2::margin(0,0,0,0,'mm'),
    plot.background=ggplot2::element_rect(fill='white',colour=NA))
 # Measure direct labels in the actual face; no ribbon-label approximations.
-grDevices::pdf(NULL,width=width/25.4,height=height/25.4,family=font$family)
+bf_pdf_open(NULL,width,height,font)
 measure <- function(s,pt=8) {
  g <- grid::textGrob(s,gp=grid::gpar(fontfamily=font$family,fontsize=pt))
  c(w=grid::convertWidth(grid::grobWidth(g),'mm',valueOnly=TRUE),
@@ -104,8 +104,9 @@ bf_render_png(plot,png,font=font,allowed_text=spec$text_contract$allowed_text,
  source_files=sources,boxes=boxes,allowed_pairs='data:legend',authorization=authorization,skill_root=skill,
  publication_size_class='one-and-half-column',size_override_basis='none')
 pdf <- file.path(root,'results/figures/sankey_simulated_repaired.pdf')
-grDevices::quartz(type='pdf',file=pdf,width=width/25.4,height=height/25.4,family=font$family,bg='white')
+bf_pdf_open(pdf,width,height,font)
 print(plot);grDevices::dev.off()
+pdf_inspection<-bf_pdf_finalize(pdf,font,width,height)
 svg <- file.path(work,'sankey-gate-qa.svg')
 svglite::svglite(svg,width=width/25.4,height=height/25.4,bg='white',system_fonts=list(sans=font$family))
 print(plot);grDevices::dev.off()

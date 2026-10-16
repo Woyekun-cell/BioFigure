@@ -52,7 +52,7 @@ def validate_bundle(bundle, root):
     cp = check_file(receipt.get('contract'), 'contract binding')
     if cp:
         try:
-            if json.loads(cp.read_text()) != contract:
+            if json.loads(cp.read_text(encoding='utf-8')) != contract:
                 errors.append('contract: in-memory/file mismatch')
         except (ValueError, UnicodeError):
             errors.append('contract: invalid JSON file')
@@ -136,7 +136,7 @@ def registry_results(root):
     """Revalidate each track separately. One reproduction cannot certify transfer."""
     root = Path(root).resolve()
     path = root / 'benchmark/registry.json'
-    data = json.loads(path.read_text()) if path.exists() else {'cases': []}
+    data = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'cases': []}
     results = {}
     for entry in data['cases']:
         case_id = entry['case_id']
@@ -155,7 +155,7 @@ def registry_results(root):
             if not path.is_relative_to(root) or not path.is_file():
                 tracks[mode] = {'status': 'FAIL', 'errors': ['registered bundle unavailable']}
                 continue
-            bundle = json.loads(path.read_text())
+            bundle = json.loads(path.read_text(encoding='utf-8'))
             result = validate_bundle(bundle, path.parent)
             if bundle.get('contract', {}).get('case_id') != entry.get('method_id', case_id):
                 result = {'status': 'FAIL', 'errors': ['registry/bundle case mismatch']}
@@ -170,7 +170,7 @@ def registry_results(root):
 
 def inventory(root):
     root = Path(root)
-    graph = json.loads((root / 'atlas/unified-capability-graph.json').read_text())
+    graph = json.loads((root / 'atlas/unified-capability-graph.json').read_text(encoding='utf-8'))
     cases = [n for n in graph['nodes'] if n.get('kind') == 'case']
     ids = [n['id'] for n in cases]
     errors = [] if len(ids) == len(set(ids)) else ['duplicate case IDs']

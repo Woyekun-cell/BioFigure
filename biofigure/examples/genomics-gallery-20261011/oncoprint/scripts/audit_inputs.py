@@ -87,5 +87,5 @@ record = {'status': 'PASS', 'scope': 'Independent numeric and table audit of exp
           'altered_cells': nonempty, 'multi_event_cells': multi, 'zero_event_tumours': zero},
           'checks': checks, 'sha256': {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(files)}}
 if not args.check_only:
-    (root / 'evidence/independent-input-audit.json').write_text(json.dumps(record, indent=2) + '\n')
+    (root / 'evidence/independent-input-audit.json').write_text(json.dumps(record, indent=2) + '\n', encoding="utf-8")
 print(json.dumps({key: record[key] for key in ('status', 'check_count', 'counts')}))

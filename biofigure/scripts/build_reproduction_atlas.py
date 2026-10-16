@@ -54,12 +54,12 @@ def visual_profile(path,text=''):
          'source_claim_tags':claims}
 
 def build(source_root,metadata,curation):
- records=json.loads(Path(metadata).read_text()); decisions={d['path']:d for d in json.loads(Path(curation).read_text())['decisions']}
+ records=json.loads(Path(metadata).read_text(encoding='utf-8')); decisions={d['path']:d for d in json.loads(Path(curation).read_text(encoding='utf-8'))['decisions']}
  cases=[]
  for r in records:
   parts=[]
   for item in r.get('code_files',[]):
-   p=Path(source_root)/item['path'];parts.append((item['path'],p.read_text(errors='replace')))
+   p=Path(source_root)/item['path'];parts.append((item['path'],p.read_text(errors='replace', encoding='utf-8')))
   visuals=[];claims=set()
   for item in r.get('image_files',[]):
    d=decisions.get(item['path'],{});v=visual_profile(Path(source_root)/item['path'],d.get('ocr_excerpt',''));v['source_path']=item['path'];visuals.append(v);claims.update(v['source_claim_tags'])
@@ -70,4 +70,4 @@ def build(source_root,metadata,curation):
 
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--source-root',type=Path,required=True);p.add_argument('--metadata',type=Path,required=True);p.add_argument('--curation',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
- result=build(a.source_root,a.metadata,a.curation);a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result['coverage'],ensure_ascii=False))
+ result=build(a.source_root,a.metadata,a.curation);a.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n', encoding='utf-8');print(json.dumps(result['coverage'],ensure_ascii=False))

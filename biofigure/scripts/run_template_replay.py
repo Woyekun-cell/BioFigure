@@ -27,7 +27,7 @@ def run(case_id, preparation_path, output, work_root=None):
     errors = check_case(case)
     if errors:
         raise ValueError('; '.join(errors))
-    task_receipt = json.loads(Path(preparation_path).read_text())
+    task_receipt = json.loads(Path(preparation_path).read_text(encoding='utf-8'))
     if not any(c['case_id'] == case_id for c in task_receipt.get('reusable_templates', {}).get('candidates', [])):
         raise ValueError('template is not a candidate for this preparation')
     verifier_path = ROOT / 'benchmark/library/topjournal/scripts/verify_simulation.py'
@@ -37,7 +37,7 @@ def run(case_id, preparation_path, output, work_root=None):
     verifier.check_environment()
     verifier.verify(case['issue'])
     base = ROOT / case['template_root']
-    baseline = json.loads((ROOT / case['baseline']).read_text())
+    baseline = json.loads((ROOT / case['baseline']).read_text(encoding='utf-8'))
     work_root = Path(work_root or ROOT.parent / 'work/current/template-replay')
     work_root = work_root.resolve()
     if (ROOT.parent / 'work').resolve() not in work_root.parents and work_root != (ROOT.parent / 'work').resolve():
@@ -52,17 +52,17 @@ def run(case_id, preparation_path, output, work_root=None):
     (staged_skill / 'scripts').symlink_to(ROOT / 'scripts', target_is_directory=True)
     (staged_skill / 'static').symlink_to(ROOT / 'static', target_is_directory=True)
     shutil.copytree(base.parent / 'scripts', staged_base / 'scripts')
-    request = yaml.safe_load((ROOT / case['request']).read_text())
+    request = yaml.safe_load((ROOT / case['request']).read_text(encoding='utf-8'))
     receipt = prepare(request, fixture_replay_case_id=case_id)
     metadata = staged_case / 'data/metadata'
     receipt_path = metadata / 'preparation-receipt.json'
-    receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
+    receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     design_path = metadata / 'design-spec.yaml'
-    design = yaml.safe_load(design_path.read_text())
+    design = yaml.safe_load(design_path.read_text(encoding='utf-8'))
     evidence = design['reference_evidence']
     evidence.update(preparation_id=receipt['preparation_id'], preparation_request=receipt['request'],
                     selected_method_case_id=receipt['selected_reference_candidates']['planner_selected'])
-    design_path.write_text(yaml.safe_dump(design, allow_unicode=True, sort_keys=False))
+    design_path.write_text(yaml.safe_dump(design, allow_unicode=True, sort_keys=False), encoding='utf-8')
     inputs = {86: ['pathways.csv'], 89: ['genes.csv'], 97: ['MAG_tree.nwk', 'arg_samples.csv', 'mag_abundance.csv'], 98: ['fungi.csv', 'prokaryotes.csv']}[case['issue']]
     sources = [staged_case / 'scripts/render.R', ROOT / 'scripts/figure_style.R', staged_base / 'scripts/render_simulation_common.R', *[staged_case / 'results/plot_data' / n for n in inputs]]
     if case['issue'] == 86:
@@ -76,18 +76,18 @@ def run(case_id, preparation_path, output, work_root=None):
         cmd = [sys.executable, str(ROOT / 'scripts/authorize_render.py'), '--receipt', str(receipt_path), '--design-spec', str(design_path), '--output', str(authorization)]
         for source in sources:
             cmd += ['--source', str(source)]
-        subprocess.run(cmd, check=True, capture_output=True, text=True)
-        rendered = subprocess.Popen(['Rscript', '--vanilla', str(staged_case / 'scripts/render.R'), str(workspace), str(authorization)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        subprocess.run(cmd, check=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
+        rendered = subprocess.Popen(['Rscript', '--vanilla', str(staged_case / 'scripts/render.R'), str(workspace), str(authorization)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8', errors='replace')
         stdout, stderr = rendered.communicate()
         log = workspace / f'render-{iteration}.log'
-        log.write_text(stdout + '\n' + stderr)
+        log.write_text(stdout + '\n' + stderr, encoding='utf-8')
         if rendered.returncode:
             raise RuntimeError(f'fixture renderer failed; see {workspace / f"render-{iteration}.log"}')
         png = staged_case / 'evidence/reproduction.png'
         pdf = staged_case / 'results/figures/reproduction.pdf'
         preview = workspace / f'pdf-{iteration}'
         subprocess.run(['pdftoppm', '-r', '120', '-png', '-singlefile', str(pdf), str(preview)], check=True, capture_output=True)
-        geometry = json.loads((staged_case / 'evidence/geometry-checks.json').read_text())
+        geometry = json.loads((staged_case / 'evidence/geometry-checks.json').read_text(encoding='utf-8'))
         match = pixels(png) == baseline['image'] and pixels(preview.with_suffix('.png')) == baseline['pdf_image'] and geometry == baseline['geometry']
         if not match:
             raise ValueError('fixed-fixture PNG/PDF pixels or semantic geometry differ; reviewed baseline was not changed')
@@ -119,7 +119,7 @@ def run(case_id, preparation_path, output, work_root=None):
               'bound_files': [{'path': str(p.resolve()), 'sha256': sha(p)} for p in bound],
               'scope': case['scope'], 'original_case_unchanged': True, 'user_acceptance': 'pending'}
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    Path(output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    Path(output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return report
 
 
@@ -136,7 +136,7 @@ def main():
         return 0
     except Exception as exc:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps({'status': 'REVISE', 'case_id': args.case_id, 'errors': [str(exc)]}, ensure_ascii=False, indent=2) + '\n')
+        args.output.write_text(json.dumps({'status': 'REVISE', 'case_id': args.case_id, 'errors': [str(exc)]}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(str(exc), file=sys.stderr)
         return 2
 

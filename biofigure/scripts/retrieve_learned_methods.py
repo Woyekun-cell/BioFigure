@@ -14,14 +14,14 @@ def sha(path):
 
 
 def retrieve(query, limit=5, case_id=None):
-    data = json.loads(INDEX.read_text())
+    data = json.loads(INDEX.read_text(encoding='utf-8'))
     from figure_reference_search import build_catalog, rank_catalog
     cards = rank_catalog(build_catalog(data), query, limit, case_id)
     by_id = {entry['method_id']: entry for entry in data['entries']}
     ranked = [(card['score'], by_id[card['method_id']], card) for card in cards]
     results = []
     syntax_path = ROOT / 'atlas/source-syntax-audit.json'
-    syntax = json.loads(syntax_path.read_text())['files'] if syntax_path.is_file() else []
+    syntax = json.loads(syntax_path.read_text(encoding='utf-8'))['files'] if syntax_path.is_file() else []
     for score, entry, card in ranked:
         item = dict(entry, score=score)
         item.pop('search_text')

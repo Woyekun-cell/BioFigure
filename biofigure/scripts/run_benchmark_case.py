@@ -22,7 +22,7 @@ def read_scientific_results(path):
     path = Path(path)
     if not path.exists():
         return {}
-    value = json.loads(path.read_text())
+    value = json.loads(path.read_text(encoding='utf-8'))
     if not isinstance(value, dict):
         raise ValueError('scientific_results.json must contain a JSON object')
     return value
@@ -33,7 +33,7 @@ def run(contract_path, script_path, output, inputs=(), timeout=180,
     generation_mode = validate_generation_mode(generation_mode)
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=False)
-    contract = json.loads(Path(contract_path).read_text())
+    contract = json.loads(Path(contract_path).read_text(encoding='utf-8'))
     shutil.copy2(contract_path, output / 'contract.json')
     shutil.copy2(script_path, output / 'render.R')
     staged = []
@@ -65,8 +65,8 @@ def run(contract_path, script_path, output, inputs=(), timeout=180,
     package_names = contract.get('packages', [])
     pkg_expr = ','.join(json.dumps(name) for name in package_names)
     probe = f'for(p in c({pkg_expr})) if(requireNamespace(p,quietly=TRUE)) cat(p,as.character(packageVersion(p)),sep="\\t",fill=TRUE); sessionInfo()'
-    environment = subprocess.run(['Rscript', '--vanilla', '-e', probe], cwd=output, capture_output=True, text=True, timeout=60)
-    (output / 'environment.txt').write_text(environment.stdout + environment.stderr)
+    environment = subprocess.run(['Rscript', '--vanilla', '-e', probe], cwd=output, capture_output=True, text=True, timeout=60, encoding='utf-8', errors='replace')
+    (output / 'environment.txt').write_text(environment.stdout + environment.stderr, encoding='utf-8')
     packages = {}
     for line in environment.stdout.splitlines():
         fields = line.split('\t')
@@ -81,7 +81,7 @@ def run(contract_path, script_path, output, inputs=(), timeout=180,
                'environment': record(output / 'environment.txt'), 'packages': packages,
                'artifacts': artifacts, 'scientific_results': scientific_results,
                'generation_mode': generation_mode, 'function_execution': 'not-instrumented'}
-    (output / 'receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
+    (output / 'receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     return receipt
 
 

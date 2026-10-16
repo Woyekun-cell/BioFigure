@@ -110,6 +110,6 @@ def route(request: dict, previous_lock: dict | None = None) -> dict:
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("request", type=Path); p.add_argument("--previous-lock", type=Path)
-    a=p.parse_args(); req=yaml.safe_load(a.request.read_text()); old=yaml.safe_load(a.previous_lock.read_text()) if a.previous_lock else None
+    a=p.parse_args(); req=yaml.safe_load(a.request.read_text(encoding='utf-8')); old=yaml.safe_load(a.previous_lock.read_text(encoding='utf-8')) if a.previous_lock else None
     print(json.dumps(route(req, old), ensure_ascii=False, indent=2)); return 0
 if __name__ == "__main__": raise SystemExit(main())

@@ -1784,7 +1784,7 @@
       "subtype": "全基因组单倍型端点比对",
       "title": "四染色体单倍型比对",
       "image": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
-      "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46",
+      "sha256": "9751b2ac6df49e7f0198b89d6295bc97938ba3ce4314d3aee6d254f77b3cba0e",
       "origin_paths": [
         "biofigure/benchmark/library/genomics/planarian-genome"
       ],

@@ -30,20 +30,20 @@ def main():
     for d in ['results/figures','results/tables','results/plot_data','evidence']: (root/d).mkdir(parents=True,exist_ok=True)
     commands=[];env=dict(os.environ,BIOFIGURE_SKILL_ROOT=str(skill))
     def run(cmd):
-        commands.append(cmd);r=subprocess.run(cmd,capture_output=True,text=True,env=env)
+        commands.append(cmd);r=subprocess.run(cmd,capture_output=True,text=True,env=env, encoding="utf-8", errors="replace")
         with (work/'runtime.log').open('a') as f:f.write(json.dumps(cmd,ensure_ascii=False)+'\n'+r.stdout+r.stderr)
         if r.returncode:raise RuntimeError(f'Command failed ({r.returncode}): '+r.stdout+r.stderr)
     run(['Rscript',str(root/'scripts/audit_inputs.R'),str(root)])
     request=root/'data/metadata/figure-request.yaml';receipt=work/'preparation-receipt.json'
     run([sys.executable,str(skill/'scripts/prepare_figure.py'),str(request),'--output',str(receipt)])
-    r=json.loads(receipt.read_text());adopted=next(x for x in r['learned_methods']['results'] if x['method_id']==method)
-    spec=root/'data/metadata/design-spec.yaml';d=yaml.safe_load(spec.read_text())
+    r=json.loads(receipt.read_text(encoding="utf-8"));adopted=next(x for x in r['learned_methods']['results'] if x['method_id']==method)
+    spec=root/'data/metadata/design-spec.yaml';d=yaml.safe_load(spec.read_text(encoding="utf-8"))
     d['backend_lock']=dict(r['route']['backend_lock'],locked=True)
     d['reference_evidence']['preparation_id']=r['preparation_id'];d['reference_evidence']['preparation_request']=r['request']
     ref=d['reference_evidence']['learned_source_reference'];ref['source_record_sha256']=adopted['source_sha256'];ref['read_hashes']=adopted['current_read_hashes']
     ref['opened_source_asset']['sha256']=sha(skill/ref['opened_source_asset']['path'])
     d['project_style_contract']['registry_path']=str(root/'data/metadata/project-style.yaml');d['project_style_contract']['registry_sha256']=sha(root/'data/metadata/project-style.yaml')
-    spec.write_text(yaml.safe_dump(d,allow_unicode=True,sort_keys=False))
+    spec.write_text(yaml.safe_dump(d,allow_unicode=True,sort_keys=False), encoding="utf-8")
     run([sys.executable,str(skill/'scripts/validate_design_spec.py'),str(spec),'--preparation-receipt',str(receipt)])
     prefix=f'dpm_fig3{panel}_recolored'
     sources=[root/'scripts/render.R',skill/'scripts/figure_style.R']
@@ -59,6 +59,6 @@ def main():
       'source_package':str(ROOT),'inputs':[{'path':str(p),'sha256':sha(p)} for p in [spec,request,*sources]],
       'plot_data':[{'path':str(p),'sha256':sha(p)} for p in sorted((root/'results/plot_data').glob('*.csv'))],
       'final_pdf':{'path':str(pdf),'sha256':sha(pdf)},'CP4':'PENDING_ACTUAL_NEW_OUTPUT_REVIEW'}
-    (root/'data/metadata/reproduction-audit.json').write_text(json.dumps(record,indent=2,ensure_ascii=False))
+    (root/'data/metadata/reproduction-audit.json').write_text(json.dumps(record,indent=2,ensure_ascii=False), encoding="utf-8")
     print(json.dumps({'status':'RENDER_OK','method':method,'output_root':str(root),'pdf':record['final_pdf'],'workdir':str(work)},ensure_ascii=False))
 if __name__=='__main__':main()

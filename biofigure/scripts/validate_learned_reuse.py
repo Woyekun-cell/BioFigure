@@ -30,7 +30,7 @@ def current_runtime(packages):
         'system=unname(Sys.info()[c("sysname","release","machine")]),'
         'packages=v,font_files=f),auto_unbox=TRUE))')
     probe = subprocess.run(['Rscript', '--vanilla', '-e', expression], check=True,
-                           capture_output=True, text=True, timeout=30)
+                           capture_output=True, text=True, timeout=30, encoding='utf-8', errors='replace')
     value = json.loads(probe.stdout)
     paths = value.pop('font_files')
     paths = [paths] if isinstance(paths, str) else paths
@@ -45,7 +45,7 @@ def pdf_pixels(path, file_hash):
     """Compare actual PDF appearance; the hash is also the cache invalidator."""
     if digest(path) != file_hash:
         raise ValueError('PDF changed before visual repeat check')
-    info = subprocess.run(['pdfinfo', path], check=True, capture_output=True, text=True, timeout=30)
+    info = subprocess.run(['pdfinfo', path], check=True, capture_output=True, text=True, timeout=30, encoding='utf-8', errors='replace')
     if not any(line.startswith('Pages:') and line.split(':', 1)[1].strip() == '1' for line in info.stdout.splitlines()):
         raise ValueError('qualified figure PDF must contain exactly one page')
     work = ROOT.parent / 'work/current/learned-reuse-audit'
@@ -90,7 +90,7 @@ def source_review_evidence(review, method_id, source_sha256):
         label = key.replace('_', ' ')
         try:
             path, evidence[key] = project_binding(review[key], label)
-            value = json.loads(path.read_text())
+            value = json.loads(path.read_text(encoding='utf-8'))
             if not isinstance(value, dict) or value.get('method_id') != method_id:
                 raise ValueError(label + ': method binding differs')
             expected_status = 'status' if key == 'parent_review' else 'adapter_status'
@@ -124,7 +124,7 @@ def source_review_evidence(review, method_id, source_sha256):
         evidence['high_fidelity_status'] = high_fidelity
         if difference and 'density_benchmark' in difference:
             path, binding = project_binding(difference['density_benchmark'], 'source density benchmark')
-            density = json.loads(path.read_text())
+            density = json.loads(path.read_text(encoding='utf-8'))
             if (not isinstance(density, dict) or density.get('method_id') != method_id
                     or density.get('synthetic') is not True or density.get('status') != 'PASS'):
                 raise ValueError('source density benchmark: same method, synthetic input and PASS required')
@@ -138,7 +138,7 @@ def source_review_evidence(review, method_id, source_sha256):
             page = item.get('page')
             if path.suffix.lower() != '.pdf' or not isinstance(page, int) or isinstance(page, bool) or page < 1:
                 raise ValueError('source comparison document: PDF and positive integer page required')
-            info = subprocess.run(['pdfinfo', str(path)], check=True, capture_output=True, text=True, timeout=30)
+            info = subprocess.run(['pdfinfo', str(path)], check=True, capture_output=True, text=True, timeout=30, encoding='utf-8', errors='replace')
             counts = [int(line.split(':', 1)[1].strip()) for line in info.stdout.splitlines() if line.startswith('Pages:')]
             if len(counts) != 1 or page > counts[0]:
                 raise ValueError('source comparison document: page outside actual PDF')
@@ -207,7 +207,7 @@ def validate_triangle_layout_audit(contract, receipt, review, root):
         auditor = ROOT.parent / 'scripts/audit_triangle_layout.py'
         if not auditor.is_file():
             raise ValueError('triangle layout audit: current PROJECT auditor is missing')
-        return triangle_audit_metrics_errors(json.loads(report_path.read_text()),
+        return triangle_audit_metrics_errors(json.loads(report_path.read_text(encoding='utf-8')),
             digest(pdf_path), digest(geometry_path), digest(auditor))
     except (OSError, ValueError, TypeError, AttributeError) as exc:
         return [str(exc)]
@@ -239,7 +239,7 @@ def validate_layout_density(contract, receipt, review, root):
         if not path.is_relative_to(root) or path.suffix != '.json' or not path.is_file() or digest(path) != metric.get('sha256'):
             errors.append('layout: render metrics missing, outside bundle or stale')
         else:
-            value = json.loads(path.read_text())
+            value = json.loads(path.read_text(encoding='utf-8'))
             if not isinstance(value, dict) or not value:
                 errors.append('layout: actual render measurements empty')
     except (OSError, ValueError, TypeError) as exc:
@@ -271,7 +271,7 @@ def validate_typography(contract, receipt, review, root):
                     or not path.is_file() or digest(path) != record.get('sha256')):
                 errors.append('typography: unbound or stale ' + key)
                 continue
-            value = json.loads(path.read_text())
+            value = json.loads(path.read_text(encoding='utf-8'))
             if key == 'layout_density_metrics':
                 if value.get('font_sizes_pt') != roles:
                     errors.append('typography: actual renderer roles differ from declared adaptation')
@@ -293,7 +293,7 @@ def validate(record, entry):
     errors, bundles = [], {}
     try:
         if REGISTRY.is_file():
-            registry = json.loads(REGISTRY.read_text())
+            registry = json.loads(REGISTRY.read_text(encoding='utf-8'))
             for revoked in registry.get('revoked_history', []):
                 previous = revoked.get('previous_record', {})
                 if (revoked.get('method_id') == record.get('method_id')
@@ -313,7 +313,7 @@ def validate(record, entry):
         if not path.is_relative_to(ROOT / 'benchmark/library') or not path.is_file() or binding.get('sha256') != digest(path):
             errors.append(key + ': missing, stale or nonpermanent bundle')
             continue
-        bundle = json.loads(path.read_text())
+        bundle = json.loads(path.read_text(encoding='utf-8'))
         result = validate_bundle(bundle, path.parent)
         errors.extend(key + ': ' + e for e in result['errors'])
         errors.extend(key + ': ' + e for e in validate_layout_density(
@@ -392,7 +392,7 @@ def validate(record, entry):
 
 
 def qualification(entry):
-    records = json.loads(REGISTRY.read_text())['records']
+    records = json.loads(REGISTRY.read_text(encoding='utf-8'))['records']
     matches = [r for r in records if r.get('method_id') == entry['method_id']]
     if not matches:
         return {'status': 'NOT_VERIFIED', 'errors': []}
@@ -402,7 +402,7 @@ def qualification(entry):
         result = validate(matches[0], entry)
         if result['status'] == 'PASS':
             first_path = ROOT / matches[0]['bundles']['new_input']['path']
-            bundle = json.loads(first_path.read_text())
+            bundle = json.loads(first_path.read_text(encoding='utf-8'))
             source_errors, source_evidence = source_review_evidence(bundle.get('review', {}), entry['method_id'],
                 bundle.get('contract', {}).get('reference', {}).get('sha256'))
             if source_errors:
@@ -425,21 +425,21 @@ def qualification(entry):
 
 
 def register(method_id, paths):
-    index = json.loads((ROOT / 'atlas/learned-method-index.json').read_text())
+    index = json.loads((ROOT / 'atlas/learned-method-index.json').read_text(encoding='utf-8'))
     entry = next(e for e in index['entries'] if e['method_id'] == method_id)
     record = {'method_id': method_id, 'source_material': material_hashes(entry),
               'bundles': {k: {'path': os.path.relpath(Path(p).resolve(), ROOT), 'sha256': digest(p)} for k, p in paths.items()}}
-    first = json.loads(Path(paths['new_input']).read_text())
+    first = json.loads(Path(paths['new_input']).read_text(encoding='utf-8'))
     record['runtime_environment'] = current_runtime(tuple(sorted(first.get('receipt', {}).get('packages', {}))))
     result = validate(record, entry)
     if result['status'] != 'PASS':
         raise ValueError('; '.join(result['errors']))
-    registry = json.loads(REGISTRY.read_text())
+    registry = json.loads(REGISTRY.read_text(encoding='utf-8'))
     if any(r['method_id'] == method_id for r in registry['records']):
         raise ValueError('existing qualification cannot be silently overwritten; preserve and audit previous evidence')
     registry['records'].append(record)
     temporary = REGISTRY.with_suffix('.json.tmp')
-    temporary.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + '\n')
+    temporary.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     temporary.replace(REGISTRY)
     return result
 

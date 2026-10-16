@@ -28,16 +28,17 @@ p<-ggplot2::ggplot()+
  ggplot2::geom_text(data=query,ggplot2::aes(x=24,y=y_mm,label=chromosome),hjust=1,family=font$family,size=7.5/ggplot2::.pt,colour='#30343B')+
  ggplot2::annotate('text',x=97,y=19,label='Target',family=font$family,size=8/ggplot2::.pt,colour='#30343B')+
  ggplot2::annotate('text',x=5,y=105,label='Query',angle=90,family=font$family,size=8/ggplot2::.pt,colour='#30343B')
-gradient<-data.frame(percentID=seq(.5,1,length.out=401))
-gradient$xmin<-47+100*(gradient$percentID-.5)/.5;gradient$xmax<-gradient$xmin+100/400
-p<-p+ggplot2::geom_rect(data=gradient,ggplot2::aes(xmin=xmin,xmax=xmax,ymin=7.5,ymax=10,fill=percentID),colour=NA)+
- ggplot2::scale_fill_gradientn(colours=c(pal$identity_50,pal$identity_75,pal$identity_100),values=c(0,.5,1),limits=c(.5,1),space='Lab',guide='none')+
+# Rasterize only the continuous manual legend to avoid PDF tile-edge seams.
+# The endpoint points retain the same Lab palette and remain vector objects.
+identity_colours<-scales::gradient_n_pal(c(pal$identity_50,pal$identity_75,pal$identity_100),values=c(0,.5,1),space='Lab')
+identity_bar<-as.raster(matrix(identity_colours(seq(0,1,length.out=1024)),nrow=1))
+p<-p+ggplot2::annotation_raster(identity_bar,xmin=47,xmax=147,ymin=7.5,ymax=10,interpolate=TRUE)+
  ggplot2::annotate('text',x=97,y=13.5,label='Per-alignment identity (%)',family=font$family,size=7.5/ggplot2::.pt,colour='#30343B')+
  ggplot2::geom_text(data=data.frame(x=seq(47,147,length.out=6),label=as.character(seq(50,100,10))),ggplot2::aes(x=x,y=4.3,label=label),family=font$family,size=7.5/ggplot2::.pt,colour='#30343B')+
  ggplot2::coord_fixed(xlim=c(0,width),ylim=c(0,height),expand=FALSE,clip='off')+
  ggplot2::theme_void(base_family=font$family,base_size=7.5)+
  ggplot2::theme(plot.margin=ggplot2::margin(0,0,0,0,'mm'),plot.background=ggplot2::element_rect(fill='white',colour=NA),panel.background=ggplot2::element_rect(fill='white',colour=NA))
-grDevices::pdf(NULL,width=width/25.4,height=height/25.4,family=font$family)
+bf_pdf_open(NULL,width,height,font)
 measure<-function(text,size=7.5){g<-grid::textGrob(text,gp=grid::gpar(fontfamily=font$family,fontsize=size));c(width_mm=grid::convertWidth(grid::grobWidth(g),'mm',valueOnly=TRUE),height_mm=grid::convertHeight(grid::grobHeight(g),'mm',valueOnly=TRUE))}
 text_metrics<-lapply(spec$text_contract$allowed_text,measure);names(text_metrics)<-spec$text_contract$allowed_text
 # On x-axis IDs, perpendicular separation of parallel40-degree labels exceeds text height.
@@ -55,7 +56,8 @@ bf_render_png(p,png,font=font,allowed_text=spec$text_contract$allowed_text,width
  dpi=600,min_text_pt=7.5,source_files=sources,boxes=macro,allowed_pairs='data:labels',authorization=authorization,skill_root=skill,
  publication_size_class='custom',size_override_basis=spec$output_size$size_rationale$override_basis)
 pdf<-file.path(root,'results/figures',paste0(prefix,'.pdf'));dir.create(dirname(pdf),recursive=TRUE,showWarnings=FALSE)
-grDevices::quartz(type='pdf',file=pdf,width=width/25.4,height=height/25.4,family=font$family,bg='white');print(p);grDevices::dev.off()
+bf_pdf_open(pdf,width,height,font);print(p);grDevices::dev.off()
+pdf_inspection<-bf_pdf_finalize(pdf,font,width,height)
 svg<-file.path(work,paste0(prefix,'-gate-qa.svg'));svglite::svglite(svg,width=width/25.4,height=height/25.4,bg='white',system_fonts=list(sans=font$family));print(p);grDevices::dev.off()
 bind<-function(z)list(path=normalizePath(z,mustWork=TRUE),sha256=digest::digest(file=z,algo='sha256'))
 metrics<-list(scope=spec$scientific_message,alignments=nrow(d),endpoints=nrow(points),chromosome_blocks=c(4,4),reference_order=ref$chromosome,query_order=query$chromosome,

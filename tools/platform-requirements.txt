@@ -1,0 +1,2 @@
+# PDF inspection is separate from the R renderer; it never repaints a figure.
+PyMuPDF==1.28.2

@@ -5,14 +5,16 @@ from pathlib import Path
 import argparse,hashlib,json,subprocess,urllib.request,tarfile,shutil
 ROOT=Path(__file__).resolve().parents[1]
 def main():
- parser=argparse.ArgumentParser(); parser.add_argument('library',type=Path); parser.add_argument('--cache',type=Path);parser.add_argument('--r',default='/usr/local/bin/R');args=parser.parse_args()
+ parser=argparse.ArgumentParser(); parser.add_argument('library',type=Path); parser.add_argument('--cache',type=Path);parser.add_argument('--r',default='R');parser.add_argument('--openssl-lib',type=Path);args=parser.parse_args()
+ if any(not (ROOT/'sources/package'/name/'DESCRIPTION').is_file() for name in ['HiCExperiment','HiContacts']):
+  parser.error('ARCHIVAL_HELPER_UNAVAILABLE: author package source trees are not bundled; use scripts/install_public_dependencies.R --profile all-public with an explicit --library instead')
  lib=args.library.resolve(); lib.mkdir(parents=True,exist_ok=True);cache=(args.cache or lib.parent/'package-cache').resolve();cache.mkdir(parents=True,exist_ok=True)
- lock=json.loads((ROOT/'data/metadata/native-dependency-lock.json').read_text())
+ lock=json.loads((ROOT/'data/metadata/native-dependency-lock.json').read_text(encoding="utf-8"))
  # Topological order is required; metadata contains only pinned URLs and SHA256 hashes.
  order=['dir.expiry','biocmake','BiocBaseUtils','BiocGenerics','UCSC.utils','Rhdf5lib','rhdf5filters','InteractionSet','BiocIO','rhdf5','strawr','GenomeInfoDb']
  entries={x['package']:x for x in lock['assets']}
  env=__import__('os').environ.copy();env['R_LIBS_USER']=str(lib)
- build=json.loads((ROOT/'data/metadata/build-tool-lock.json').read_text())
+ build=json.loads((ROOT/'data/metadata/build-tool-lock.json').read_text(encoding="utf-8"))
  build_cache=lib.parent/'build-cache'; build_cache.mkdir(parents=True,exist_ok=True)
  archive=build_cache/Path(build['url']).name
  if not archive.exists():
@@ -24,11 +26,12 @@ def main():
  if not cmake.exists():
   with tarfile.open(archive) as tar:tar.extractall(build_cache,filter='data')
  env['BIOCMAKE_FIND_OVERRIDE']=str(cmake);env['BIOCMAKE_CMAKE_CACHE_DIRECTORY']=str(build_cache)
- # Homebrew OpenSSL is detected by HDF5's CMake but not propagated as a link directory.
- # Makevars is local to this invocation; no global R/system configuration is changed.
- ssl=Path('/opt/homebrew/opt/openssl@3/lib')
- if ssl.joinpath('libssl.dylib').exists():
-  makevars=build_cache/'Makevars';makevars.write_text('LDFLAGS += -L'+str(ssl)+'\n')
+ # An optional caller-selected OpenSSL directory is local to this invocation.
+ # No machine-specific default or global R/system configuration is changed.
+ ssl=args.openssl_lib.resolve() if args.openssl_lib else None
+ if ssl is not None:
+  if not ssl.is_dir():parser.error('--openssl-lib must name an existing directory')
+  makevars=build_cache/'Makevars';makevars.write_text('LDFLAGS += -L'+str(ssl)+'\n', encoding="utf-8")
   env['R_MAKEVARS_USER']=str(makevars)
  for name in order:
   e=entries[name];tar=cache/(name+'_'+e['version']+'.tar.gz')
@@ -38,7 +41,7 @@ def main():
    tar.write_bytes(b)
   if hashlib.sha256(tar.read_bytes()).hexdigest()!=e['sha256']:raise ValueError('Dependency source mismatch:'+name)
   desc=lib/name/'DESCRIPTION'
-  if desc.exists() and ('Version: '+e['version']+'\n') in desc.read_text():continue
+  if desc.exists() and ('Version: '+e['version']+'\n') in desc.read_text(encoding="utf-8"):continue
   # These task-owned incomplete install directories are regenerable, never original data.
   for partial in (lib/('00LOCK-'+name),lib/name):
    if partial.exists():shutil.rmtree(partial)

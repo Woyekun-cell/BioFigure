@@ -1,0 +1,171 @@
+# Inactive review copy. GitHub does not execute workflows from docs/ci.
+# Publishing under .github/workflows requires the maintainer-authorized workflow scope.
+name: Windows and macOS figure parity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, 'codex/**']
+    paths:
+      - 'biofigure/**'
+      - 'tools/platform*'
+      - 'tools/compare_public_figures.py'
+      - 'docs/platform-source-review-3.8.0.json'
+      - '.gitattributes'
+      - '.github/workflows/windows-macos-parity.yml'
+  pull_request:
+    paths:
+      - 'biofigure/**'
+      - 'tools/platform*'
+      - 'tools/compare_public_figures.py'
+      - 'docs/platform-source-review-3.8.0.json'
+      - '.gitattributes'
+      - '.github/workflows/windows-macos-parity.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-parity-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: R 4.6.1 / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      R_LIBS_USER: ${{ runner.temp }}/biofigure-r-library
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.6.1'
+          use-public-rspm: true
+      - name: Install Ghostscript on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install ghostscript --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw 'Ghostscript installation failed' }
+          $gs = Get-ChildItem "$env:ProgramFiles\gs\gs*\bin\gswin64c.exe" | Sort-Object FullName | Select-Object -Last 1
+          if (-not $gs) { throw 'Exact PDF embedding requires gswin64c.exe' }
+          "R_GSCMD=$($gs.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "$($gs.DirectoryName)" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: Install Ghostscript on macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          brew list ghostscript >/dev/null 2>&1 || brew install ghostscript
+          command -v gs
+          echo "R_GSCMD=$(command -v gs)" >> "$GITHUB_ENV"
+      - name: Extract only the committed Skill and create a new Python environment
+        shell: python
+        run: |
+          import os, pathlib, subprocess, sys
+          work = pathlib.Path(os.environ['RUNNER_TEMP']) / 'BioFigure 便携 test'
+          subprocess.run([sys.executable, 'tools/platform_smoke.py', 'prepare',
+                          '--repository-root', '.', '--work-root', str(work),
+                          '--install-python-deps', '--write-github-env'], check=True)
+      - name: Install portable R dependencies into an explicit fresh library
+        shell: python
+        run: |
+          import json, os, pathlib, subprocess
+          installer = pathlib.Path(os.environ['BIOFIGURE_SKILL_ROOT']) / 'scripts/install_public_dependencies.R'
+          command = ['Rscript', '--vanilla', str(installer), '--install',
+                     '--library', os.environ['R_LIBS_USER'], '--profile', 'portable', '--formats', 'png,pdf']
+          result = subprocess.run(command, text=True, encoding='utf-8', errors='replace', capture_output=True)
+          log = pathlib.Path(os.environ['BIOFIGURE_PLATFORM_WORK']) / 'r-install-portable.json'
+          log.write_text(json.dumps({'command': command, 'returncode': result.returncode,
+                                     'stdout': result.stdout, 'stderr': result.stderr}, ensure_ascii=False, indent=2), encoding='utf-8')
+          print(result.stdout)
+          print(result.stderr)
+          result.check_returncode()
+      - name: Execute fresh original examples, external CSV and refusal tests
+        shell: python
+        run: |
+          import os, subprocess
+          subprocess.run([os.environ['BIOFIGURE_PYTHON'], 'tools/platform_smoke.py', 'run',
+                          '--work-root', os.environ['BIOFIGURE_PLATFORM_WORK']], check=True)
+      - name: Compare original example layout and colors with the reviewed references
+        shell: python
+        run: |
+          import os, pathlib, subprocess
+          work = pathlib.Path(os.environ['BIOFIGURE_PLATFORM_WORK'])
+          subprocess.run([os.environ['BIOFIGURE_PYTHON'], 'tools/compare_public_figures.py',
+                          '--reference-root', str(pathlib.Path(os.environ['BIOFIGURE_SKILL_ROOT']) / 'examples/portable'),
+                          '--candidate-root', str(work / 'projects'), '--report', str(work / 'visual-parity.json')], check=True)
+      - name: Install specialist dependencies after portable figures have been tested
+        shell: python
+        run: |
+          import json, os, pathlib, shutil, subprocess, sys
+          work = pathlib.Path(os.environ['BIOFIGURE_PLATFORM_WORK'])
+          tool_log = []
+          try:
+              if not shutil.which('pdftoppm'):
+                  command = ['choco', 'install', 'poppler', '--yes', '--no-progress'] if sys.platform == 'win32' else ['brew', 'install', 'poppler']
+                  tool = subprocess.run(command, text=True, encoding='utf-8', errors='replace', capture_output=True)
+                  tool_log.append({'command': command, 'returncode': tool.returncode, 'stdout': tool.stdout, 'stderr': tool.stderr})
+                  tool.check_returncode()
+                  if sys.platform == 'win32' and not shutil.which('pdftoppm'):
+                      chocolatey = pathlib.Path(os.environ.get('ChocolateyInstall', 'C:/ProgramData/chocolatey'))
+                      matches = sorted((chocolatey / 'lib' / 'poppler').rglob('pdftoppm.exe'))
+                      if matches:
+                          directory = str(matches[-1].parent)
+                          os.environ['PATH'] = directory + os.pathsep + os.environ['PATH']
+                          with open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8') as handle:
+                              handle.write(directory + '\n')
+              if not shutil.which('pdftoppm'):
+                  raise RuntimeError('Retained replays require the actual pdftoppm executable')
+          except Exception as exc:
+              (work / 'replay-tools.json').write_text(json.dumps({'status': 'FAIL', 'error': str(exc), 'commands': tool_log}, ensure_ascii=False, indent=2), encoding='utf-8')
+              subprocess.run([os.environ['BIOFIGURE_PYTHON'], 'tools/platform_smoke.py', 'run',
+                              '--work-root', str(work), '--only-replays', '--replay-dependency-error',
+                              'Replay PDF-inspection dependency installation failed; see replay-tools.json'], check=False)
+              raise
+          (work / 'replay-tools.json').write_text(json.dumps({'status': 'READY', 'pdftoppm': shutil.which('pdftoppm'), 'commands': tool_log}, ensure_ascii=False, indent=2), encoding='utf-8')
+          installer = pathlib.Path(os.environ['BIOFIGURE_SKILL_ROOT']) / 'scripts/install_public_dependencies.R'
+          command = ['Rscript', '--vanilla', str(installer), '--install',
+                     '--library', os.environ['R_LIBS_USER'], '--profile', 'all-public', '--formats', 'png,pdf']
+          result = subprocess.run(command, text=True, encoding='utf-8', errors='replace', capture_output=True)
+          (work / 'r-install-all-public.json').write_text(json.dumps({'command': command, 'returncode': result.returncode,
+                       'stdout': result.stdout, 'stderr': result.stderr}, ensure_ascii=False, indent=2), encoding='utf-8')
+          print(result.stdout)
+          print(result.stderr)
+          if result.returncode:
+              subprocess.run([os.environ['BIOFIGURE_PYTHON'], 'tools/platform_smoke.py', 'run',
+                              '--work-root', str(work), '--only-replays', '--replay-dependency-error',
+                              'all-public dependency installation failed; see r-install-all-public.json'], check=False)
+          result.check_returncode()
+      - name: Execute hash-bound retained replays and merge their evidence
+        shell: python
+        run: |
+          import os, subprocess
+          subprocess.run([os.environ['BIOFIGURE_PYTHON'], 'tools/platform_smoke.py', 'run',
+                          '--work-root', os.environ['BIOFIGURE_PLATFORM_WORK'], '--only-replays',
+                          '--source-review-manifest', 'docs/platform-source-review-3.8.0.json'], check=True)
+      - name: Upload synthetic candidate figures and technical evidence for actual visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biofigure-${{ matrix.os }}-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/BioFigure 便携 test/platform-smoke.json
+            ${{ runner.temp }}/BioFigure 便携 test/platform-smoke.original.json
+            ${{ runner.temp }}/BioFigure 便携 test/platform-smoke.replays.json
+            ${{ runner.temp }}/BioFigure 便携 test/visual-parity.json
+            ${{ runner.temp }}/BioFigure 便携 test/r-install-portable.json
+            ${{ runner.temp }}/BioFigure 便携 test/r-install-all-public.json
+            ${{ runner.temp }}/BioFigure 便携 test/replay-tools.json
+            ${{ runner.temp }}/BioFigure 便携 test/logs/
+            ${{ runner.temp }}/BioFigure 便携 test/inspection-artifacts/
+          if-no-files-found: warn
+          retention-days: 14

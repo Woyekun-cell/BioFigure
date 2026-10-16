@@ -71,7 +71,7 @@ def main(argv=None):
               'claim_boundary': 'Only this profile was executed. NOT_RUN archival tests do not certify source replay, transfer, or visual acceptance.'}
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
-        args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+        args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({key: report[key] for key in ('profile', 'status', 'tests_run', 'tests_passed')}, ensure_ascii=False))
     print('Archival tests NOT_RUN: ' + str(len(deferred)))
     return 0 if result.wasSuccessful() else 1

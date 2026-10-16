@@ -35,7 +35,7 @@ def check_case(case):
         if not path.is_file() or sha(path) != record['sha256']:
             errors.append('template record changed: ' + record['path'])
     base = ROOT / case['template_root']
-    baseline = json.loads((ROOT / case['baseline']).read_text())
+    baseline = json.loads((ROOT / case['baseline']).read_text(encoding='utf-8'))
     for record in baseline['bound_files']:
         path = base.parent / record['path']
         if not path.is_file() or sha(path) != record['sha256']:
@@ -98,7 +98,7 @@ def validate_report(path, case_id, preparation_id):
     if len(runs) != 2 or len({r.get('pid') for r in runs}) != 2 or any(not isinstance(r.get('pid'), int) for r in runs):
         errors.append('template replay omits two distinct process records')
         return errors + check_case(case)
-    baseline = json.loads((ROOT / case['baseline']).read_text())
+    baseline = json.loads((ROOT / case['baseline']).read_text(encoding='utf-8'))
     def actual_pixels(p):
         with Image.open(p) as im:
             rgb = im.convert('RGB')
@@ -111,18 +111,18 @@ def validate_report(path, case_id, preparation_id):
                 errors.append('template replay process evidence missing/changed: ' + role)
         if errors:
             continue
-        auth = json.loads(Path(run['authorization']['path']).read_text())
-        technical = json.loads(Path(run['render_receipt']['path']).read_text())
-        if auth.get('consumed') is not True or technical.get('status') != 'PASS' or Path(run['consumption_marker']['path']).read_text().strip() != auth.get('authorization_id'):
+        auth = json.loads(Path(run['authorization']['path']).read_text(encoding='utf-8'))
+        technical = json.loads(Path(run['render_receipt']['path']).read_text(encoding='utf-8'))
+        if auth.get('consumed') is not True or technical.get('status') != 'PASS' or Path(run['consumption_marker']['path']).read_text(encoding='utf-8').strip() != auth.get('authorization_id'):
             errors.append('template replay missing consumed authorization or technical PASS')
         if actual_pixels(run['png']['path']) != baseline['image'] or actual_pixels(run['pdf_preview']['path']) != baseline['pdf_image']:
             errors.append('template replay pixels differ from reviewed baseline')
-        if json.loads(Path(run['geometry']['path']).read_text()) != baseline['geometry']:
+        if json.loads(Path(run['geometry']['path']).read_text(encoding='utf-8')) != baseline['geometry']:
             errors.append('template replay semantic geometry differs from reviewed baseline')
     # Recheck the actual runtime at CP2; a previous environment claim is insufficient.
     environment_path = base.parent / 'metadata/simulation-environment-lock.json'
-    expected = json.loads(environment_path.read_text())
-    actual = json.loads(subprocess.run(['Rscript', '--vanilla', str(base.parent / 'scripts/capture_environment.R')], check=True, capture_output=True, text=True).stdout)
+    expected = json.loads(environment_path.read_text(encoding='utf-8'))
+    actual = json.loads(subprocess.run(['Rscript', '--vanilla', str(base.parent / 'scripts/capture_environment.R')], check=True, capture_output=True, text=True, encoding='utf-8', errors='replace').stdout)
     actual['font_sha256'] = {p: sha(p) for p in actual['font_files']}
     if actual != expected:
         errors.append('current environment differs from reviewed lock')
@@ -143,14 +143,14 @@ def validate_binding(receipt, spec):
         return ['unknown reusable template execution mode']
     if reuse.get('mode') == 'fixed_fixture_replay':
         case = get_case(reuse['fixture_case_id'])
-        expected_request = yaml.safe_load((ROOT / case['request']).read_text())
+        expected_request = yaml.safe_load((ROOT / case['request']).read_text(encoding='utf-8'))
         from prepare_figure import prepare
         # Normalize without a fixture exemption to detect changed scientific/data fields.
         expected_id = prepare(expected_request)['request_id']
         actual_id = prepare(receipt.get('request', {}))['request_id']
         if receipt.get('request_id') != expected_id or actual_id != expected_id:
             errors.append('fixture replay request differs from locked fixture')
-        expected_spec = yaml.safe_load((ROOT / case['template_root'] / 'data/metadata/design-spec.yaml').read_text())
+        expected_spec = yaml.safe_load((ROOT / case['template_root'] / 'data/metadata/design-spec.yaml').read_text(encoding='utf-8'))
         if visual_spec(spec) != visual_spec(expected_spec):
             errors.append('fixture replay changed locked visual/scientific specification')
         return errors + check_case(case)
@@ -192,7 +192,7 @@ def validate_fixture_sources(receipt, sources):
 
 
 def audit():
-    registry = json.loads((ROOT / 'benchmark/registry.json').read_text())['cases']
+    registry = json.loads((ROOT / 'benchmark/registry.json').read_text(encoding='utf-8'))['cases']
     stable = {c['case_id']: c for c in records()}
     rows = []
     for entry in registry:

@@ -65,5 +65,5 @@ if __name__ == '__main__':
     result = audit(args.root)
     payload = json.dumps(result, indent=2) + '\n'
     if args.output:
-        args.output.write_text(payload)
+        args.output.write_text(payload, encoding="utf-8")
     print(json.dumps({k: v for k, v in result.items() if k != 'inputs'}))

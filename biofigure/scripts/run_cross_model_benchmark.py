@@ -611,7 +611,7 @@ def main():
                           'errors':errors,'blockers':blockers},indent=2))
         return 0 if not errors else 1
     if a.validate_report:
-        report = json.loads(a.validate_report.read_text())
+        report = json.loads(a.validate_report.read_text(encoding='utf-8'))
         errors = validate_report(report, a.validate_report.resolve().parent)
         blockers = execution_blockers()
         if any(item.startswith('INCOMPLETE:') for item in errors):

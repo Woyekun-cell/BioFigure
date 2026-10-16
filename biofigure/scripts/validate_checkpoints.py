@@ -133,7 +133,7 @@ def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS
     errors = []
     try:
         resolved_receipt = resolve_reference_path(receipt_path, document_path=document_path, project_root=root)
-        receipt = json.loads(resolved_receipt.read_text())
+        receipt = json.loads(resolved_receipt.read_text(encoding='utf-8'))
         if receipt.get('schema_version') != 1 or not str(receipt.get('query','')).strip():
             errors.append('reproduction receipt version/query invalid')
         if receipt.get('kind') == 'primary-source-lock':
@@ -338,7 +338,7 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
     """Check workflow bindings; this detects mistakes, not deliberate forgery."""
     errors = []
     try:
-        receipt = json.loads(Path(receipt_path).read_text())
+        receipt = json.loads(Path(receipt_path).read_text(encoding='utf-8'))
         if receipt.get('schema_version') != 1 or receipt.get('status') != 'PASS':
             errors.append('render receipt version/status invalid')
         if receipt.get('backend') not in {'R', 'Python'}:
@@ -597,7 +597,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             if not spec_path.is_file():
                 errors.append('CP2 design_spec file required')
             else:
-                result = subprocess.run([sys.executable, str(ROOT/'scripts/validate_design_spec.py'), str(spec_path)], capture_output=True, text=True)
+                result = subprocess.run([sys.executable, str(ROOT/'scripts/validate_design_spec.py'), str(spec_path)], capture_output=True, text=True, encoding='utf-8', errors='replace')
                 if result.returncode:
                     errors.append('CP2 actual design validation failed: ' + result.stdout.strip())
             if not isinstance(evidence.get("selected_pattern"), str) or not evidence["selected_pattern"].strip():
@@ -698,7 +698,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                 biology = spec_doc.get('biology_contract', {})
                 for key in ('primary_domain', 'secondary_domain'):
                     if biology.get(key): command.extend(['--domain', str(biology[key])])
-                result = subprocess.run(command, capture_output=True, text=True)
+                result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8', errors='replace')
                 if result.returncode:
                     errors.append('CP4 actual critic validation failed: ' + result.stdout.strip() + result.stderr.strip())
             except Exception as exc:
