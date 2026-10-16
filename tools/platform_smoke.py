@@ -601,10 +601,10 @@ def main():
             result = prepare(args.pop('repository_root'), args.pop('work_root'), **args)
         else:
             result = run(args.pop('work_root'), **args)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(json.dumps(result, ensure_ascii=True, indent=2))
         return 1 if result.get('errors') else 0
     except Exception as exc:
-        print(json.dumps({'status': 'FAIL', 'error': str(exc)}, ensure_ascii=False), file=sys.stderr)
+        print(json.dumps({'status': 'FAIL', 'error': str(exc)}, ensure_ascii=True), file=sys.stderr)
         return 1
 
 
