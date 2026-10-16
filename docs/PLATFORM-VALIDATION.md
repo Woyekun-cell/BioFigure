@@ -4,6 +4,8 @@
 
 ## 中文
 
+当前发布状态：macOS 已实际执行并审看案例。Windows 工作流已编写，但当前 GitHub OAuth 缺少 `workflow` 权限，工作流尚未发布或执行。下述流程是待启用的验收方案，不能作为 Windows 已通过的证据。
+
 跨平台验收区分“代码执行”“统计与导出检查”“实际看图”。绿色的 CI 只证明本次技术检查通过；最后的 PNG 和 PDF 仍须查看，才可登记 CP4。
 
 `Windows and macOS figure parity` 使用标准 Windows、macOS runner 和固定 R 4.6.1。每次从 GitHub 当前提交提取 `biofigure/`，仅安装 Skill，不复制仓库其余目录。Python 环境、R 包库、任务输出均新建；从含中文和空格的第三工作目录运行。
@@ -21,6 +23,8 @@
 运行记录需要逐次读取；本文不宣称任何尚未完成的 Windows 或 macOS 任务通过。
 
 ## English
+
+Current release status: the cases were executed and inspected on macOS. The Windows workflow is prepared, but the current GitHub OAuth credential lacks the `workflow` scope. The workflow has not been published or executed. The protocol below is pending activation and is not evidence of a Windows pass.
 
 Platform acceptance separates execution, statistical/export checks, and actual figure inspection. Green CI establishes the current technical checks only. The generated PNG and PDF still require inspection before CP4 can be recorded.
 

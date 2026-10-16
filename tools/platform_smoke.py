@@ -325,7 +325,8 @@ def curate_artifacts(work, results):
             shutil.copy2(path, destination)
         for relative in ('_audit/design-spec.yaml', '_audit/preparation.json', '_audit/statistics.csv',
                          '_audit/cp2-validation.json', 'data/metadata/design-spec.yaml',
-                         'data/metadata/preparation-receipt.json', 'work/preparation-receipt.json'):
+                         'data/metadata/preparation-receipt.json', 'work/preparation-receipt.json',
+                         'work/visual-qa/preparation-receipt.json'):
             path = project / relative
             if path.is_file():
                 destination = target / cid / 'technical' / relative
@@ -416,12 +417,43 @@ def external_cases(skill, projects, logs, cwd, python, environment):
     return results, errors
 
 
+def replay_preparation(output, receipt):
+    binding = receipt.get('authorization_consumption', {}).get('preparation_receipt', {})
+    value = binding.get('path')
+    if not isinstance(value, str) or not value:
+        raise ValueError('Native preparation receipt binding is missing')
+    path = Path(value).expanduser()
+    path = (path if path.is_absolute() else output / path).resolve()
+    if not path.is_relative_to(output.resolve()):
+        raise ValueError('Native preparation receipt is outside the candidate project')
+    if not path.is_file() or binding.get('sha256') != sha(path):
+        raise ValueError('Native preparation receipt is missing or changed')
+    return path
+
+
+def parse_case_libraries(options):
+    result = {}
+    for option in options or []:
+        if '=' not in option:
+            raise ValueError('--case-r-library requires CASE=PATH')
+        case, value = option.split('=', 1)
+        if case != 'ohca-microc':
+            raise ValueError('--case-r-library supports only ohca-microc; other public entrypoints do not accept --r-library')
+        if case in result:
+            raise ValueError('duplicate --case-r-library for ' + case)
+        path = Path(value).expanduser().resolve()
+        if not value or not path.is_dir():
+            raise ValueError('--case-r-library must identify an existing explicit R library')
+        result[case] = path
+    return result
+
+
 def verify_replay_output(skill, output, case):
     receipts = list((output / 'work').rglob('*.png.render.json'))
     if len(receipts) != 1:
         raise ValueError(f'Exactly one fresh candidate native receipt required: {case}')
     receipt = load_json(receipts[0])
-    preparation = output / ('data/metadata/preparation-receipt.json' if case.startswith('cannabis-') else 'work/preparation-receipt.json')
+    preparation = replay_preparation(output, receipt)
     verify_canonical_receipt(skill, receipts[0], Path(receipt['artifact']['path']),
                              output / 'data/metadata/design-spec.yaml', preparation)
     verify_native_receipt(receipt)
@@ -450,7 +482,7 @@ def verify_replay_output(skill, output, case):
             'artifacts': [{'path': str(p), 'sha256': sha(p)} for p in (png, pdfs[0])]}
 
 
-def run(work, include_replays=False, source_review_manifest=None, only_replays=False, replay_dependency_error=None):
+def run(work, include_replays=False, source_review_manifest=None, only_replays=False, replay_dependency_error=None, case_r_library=None):
     work = work.resolve()
     state = load_json(work / 'installation.json')
     previous = None
@@ -465,6 +497,7 @@ def run(work, include_replays=False, source_review_manifest=None, only_replays=F
     if replay_dependency_error and not only_replays:
         raise ValueError('--replay-dependency-error requires --only-replays')
     skill, python = Path(state['skill_root']), Path(state['python'])
+    case_libraries = parse_case_libraries(case_r_library)
     cwd = work / 'unrelated cwd 中文'
     logs, projects = work / 'logs', work / 'projects'
     logs.mkdir(exist_ok=True)
@@ -511,9 +544,13 @@ def run(work, include_replays=False, source_review_manifest=None, only_replays=F
                     output = projects / cid
                     command = [str(p).replace('{skill_root}', str(skill)).replace('{output_dir}', str(output)) for p in case['command']]
                     command[0] = str(python)
+                    if cid in case_libraries:
+                        command.extend(['--r-library', str(case_libraries[cid])])
                     execute(command, cwd, logs / f'{cid}.json', env=environment)
                     result = verify_replay_output(skill, output, cid)
                     result['source_review'] = binding
+                    if cid in case_libraries:
+                        result['explicit_case_r_library'] = str(case_libraries[cid])
                     results.append(result)
                 except Exception as exc:
                     errors.append(f'{case["id"]}: {exc}')
@@ -556,6 +593,7 @@ def main():
     p.add_argument('--source-review-manifest', type=Path)
     p.add_argument('--only-replays', '--skip-original', action='store_true', help='Run only retained replays and merge with this installation\'s existing original-phase evidence')
     p.add_argument('--replay-dependency-error', help='Record a failed specialist dependency installation without deleting successful original-phase evidence')
+    p.add_argument('--case-r-library', action='append', metavar='CASE=PATH', help='Explicit existing library for ohca-microc only; forwarded to that entrypoint without changing other cases')
     args = vars(parser.parse_args())
     action = args.pop('action')
     try:

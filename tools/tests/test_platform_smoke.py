@@ -131,6 +131,32 @@ class PlatformSmokeTests(unittest.TestCase):
                         for p in (self.root / 'inspection-artifacts').rglob('*') if p.is_file())
         self.assertEqual(copied, ['boxplot/boxplot.png'])
 
+    def test_replay_preparation_uses_actual_bound_path_in_both_work_layouts(self):
+        for relative in ('work/preparation-receipt.json', 'work/visual-qa/preparation-receipt.json'):
+            with self.subTest(relative=relative):
+                path = self.root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('{"status":"PREFLIGHT_COMPLETE"}', encoding='utf-8')
+                receipt = {'authorization_consumption': {'preparation_receipt': {'path': str(path), 'sha256': self.module.sha(path)}}}
+                self.assertEqual(self.module.replay_preparation(self.root, receipt), path.resolve())
+                receipt['authorization_consumption']['preparation_receipt']['sha256'] = '0' * 64
+                with self.assertRaisesRegex(ValueError, 'preparation'):
+                    self.module.replay_preparation(self.root, receipt)
+
+    def test_replay_preparation_cannot_escape_candidate_project(self):
+        path = self.root / 'reference.json'
+        path.write_text('{}', encoding='utf-8')
+        receipt = {'authorization_consumption': {'preparation_receipt': {'path': str(path), 'sha256': self.module.sha(path)}}}
+        with self.assertRaisesRegex(ValueError, 'project'):
+            self.module.replay_preparation(self.root / 'candidate-project', receipt)
+
+    def test_special_library_override_is_explicit_and_ohca_only(self):
+        self.assertEqual(self.module.parse_case_libraries([f'ohca-microc={self.root}']), {'ohca-microc': self.root.resolve()})
+        with self.assertRaisesRegex(ValueError, 'only ohca-microc'):
+            self.module.parse_case_libraries([f'oncoprint={self.root}'])
+        with self.assertRaisesRegex(ValueError, 'duplicate'):
+            self.module.parse_case_libraries([f'ohca-microc={self.root}', f'ohca-microc={self.root}'])
+
 
 if __name__ == '__main__':
     unittest.main()
