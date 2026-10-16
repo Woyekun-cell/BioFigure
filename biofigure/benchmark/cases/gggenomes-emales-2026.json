@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "case_id": "gggenomes-emales-2026",
+  "learned_method_id": "BENCH-gggenomes-emales-2026",
+  "recipe_id": "GGGENOMES-EMALE-001",
+  "title": "gggenomes EMales six viral genomes gene synteny GC and NGARO tracks",
+  "label": "六病毒基因组：基因箭头、蛋白共线带、TIR、NGARO与GC轨道",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Official processed-data visualization study and version-bound rendering; no raw-read analysis or new biological inference. Same-data orientation stress tests are not independent new biological input validation.",
+  "figure_family": "genome",
+  "chart_type": "comparative genome tracks",
+  "chart_types": [
+    "synteny",
+    "genome-track",
+    "gene-arrow",
+    "wiggle"
+  ],
+  "domain": "comparative-genomics",
+  "method_families": [
+    "comparative-genomics",
+    "gene-neighborhood",
+    "protein-synteny",
+    "strand-orientation"
+  ],
+  "source_implementation": {
+    "repo": "https://github.com/thackl/gggenomes",
+    "commit": "752e0e19da04b6813f0524d784843901ac64dcb2",
+    "version": "1.2.0",
+    "runtime_version": "1.2.0",
+    "license": "MIT",
+    "source_type": "official package homepage example with distributed author data",
+    "repository_relative_path": "README.md"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/official-emales.png",
+      "sha256": "ab288fb4976693f1de2bdb801d326f5cd30bfcb5de87266a28af4e57a4210542",
+      "bytes": 455895,
+      "role": "official six EMale source figure opened at original resolution"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/README.md",
+      "sha256": "d198932dacbf56859557c47cb12c7e67400c01877088bb9466427e8d2f6cfabc",
+      "bytes": 4333,
+      "role": "official main-figure R example"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-gggenomes.R",
+      "sha256": "5314385742056a7c9bfa00de4c895e82a1b2961c9322185166b23447548cc24f",
+      "bytes": 12303,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_gene.R",
+      "sha256": "67aef5c1548d1ef747f278861a542abe8f6ffdf32879567baacb11b0857270e1",
+      "bytes": 13427,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_link.R",
+      "sha256": "050083fe34890dc5c93c8d73d5a105cd4c4ddfae3199d8fad92d68d4d0b54bea",
+      "bytes": 6142,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_wiggle.R",
+      "sha256": "681c4bd5d484765571cab09fbf93e2c58a58e8627cc86ecbf2593f03eb96fe4a",
+      "bytes": 3462,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-flip.R",
+      "sha256": "cc4316d15b70ccf05b3b974492e50b6cb98bb155a8e12ec0f34aa968f928c391",
+      "bytes": 6639,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-sublinks.R",
+      "sha256": "472ecd49a0d55bd4e9ab2269ba0e1a9d4191b6fc78c2db3e1c86ce5a2a10b3c5",
+      "bytes": 7510,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_gene_text.R",
+      "sha256": "44bfbc05d70cacc705579e53be779aae9c4fbea40cea483da060f8357e8afa50",
+      "bytes": 9123,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-focus.R",
+      "sha256": "f18c9fedce24a451331ef787c1044e9b24d057d3ac3fd704dc1132d94c1ed869",
+      "bytes": 13402,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-coords.R",
+      "sha256": "c5c0dc6253510a29294b2ac36f7a8946cb157305adaea8e9fbc8331c861856b1",
+      "bytes": 768,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-layout.R",
+      "sha256": "9ff346a16079b8527994e1396ca27581dabc67c38376d3be48b6b813c9a87641",
+      "bytes": 3179,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-data.R",
+      "sha256": "2eacf3cfafa93e7d20806b85f2f73518bbffe050d950617f3a740a58cfefad58",
+      "bytes": 7515,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_seqs.rda",
+      "sha256": "5a87bf860705779ed75c900d8e181c402666221e1e37e9c623c5d27a54e36758",
+      "bytes": 512,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_genes.rda",
+      "sha256": "baf815e5915ad03dd45cb567a5e999682adf9202468b0f61484d8d8aa3e1c74f",
+      "bytes": 3122,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_tirs.rda",
+      "sha256": "504046efe13c187bb8c8697056f2c75160c2392990f952a094bc674e41cbb388",
+      "bytes": 644,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_ngaros.rda",
+      "sha256": "c1a1b95d683f8cf6a020df67ebc8cea70e8a85a869f6d58d61c1f6928a05cc1d",
+      "bytes": 393,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_gc.rda",
+      "sha256": "4fd304bc4b78c8150b50217b0fe7901b9fc1e29c16d2f9a6010b5f18cf5b1df7",
+      "bytes": 4510,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_ava.rda",
+      "sha256": "01d712da879c96ec94d5b7377aeb8f5be077a564bc85fa0a487d0d2a2e5fd719",
+      "bytes": 6170,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/raw/emale_prot_ava.rda",
+      "sha256": "7bdf771aa365c0f577ebbbf50887769529014dc303fc480ede6306d37c3a0ea9",
+      "bytes": 10411,
+      "role": "author distributed processed source table"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/LICENSE.md",
+      "sha256": "85f8ee294f95b5c023ce1bd1e085cc978adc4961671e05a1370c85eb9f8fe151",
+      "bytes": 1069,
+      "role": "MIT full license"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/LICENSE",
+      "sha256": "86b1ed73fc9b40b063c6ec3d423f3a071edc5bf2d132e2d26ec9556baca73353",
+      "bytes": 41,
+      "role": "copyright holder and year"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/README.md",
+      "sha256": "d198932dacbf56859557c47cb12c7e67400c01877088bb9466427e8d2f6cfabc",
+      "bytes": 4333,
+      "role": "official main-figure R example"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-gggenomes.R",
+      "sha256": "5314385742056a7c9bfa00de4c895e82a1b2961c9322185166b23447548cc24f",
+      "bytes": 12303,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_gene.R",
+      "sha256": "67aef5c1548d1ef747f278861a542abe8f6ffdf32879567baacb11b0857270e1",
+      "bytes": 13427,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_link.R",
+      "sha256": "050083fe34890dc5c93c8d73d5a105cd4c4ddfae3199d8fad92d68d4d0b54bea",
+      "bytes": 6142,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_wiggle.R",
+      "sha256": "681c4bd5d484765571cab09fbf93e2c58a58e8627cc86ecbf2593f03eb96fe4a",
+      "bytes": 3462,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-flip.R",
+      "sha256": "cc4316d15b70ccf05b3b974492e50b6cb98bb155a8e12ec0f34aa968f928c391",
+      "bytes": 6639,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-sublinks.R",
+      "sha256": "472ecd49a0d55bd4e9ab2269ba0e1a9d4191b6fc78c2db3e1c86ce5a2a10b3c5",
+      "bytes": 7510,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-geom_gene_text.R",
+      "sha256": "44bfbc05d70cacc705579e53be779aae9c4fbea40cea483da060f8357e8afa50",
+      "bytes": 9123,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-focus.R",
+      "sha256": "f18c9fedce24a451331ef787c1044e9b24d057d3ac3fd704dc1132d94c1ed869",
+      "bytes": 13402,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-coords.R",
+      "sha256": "c5c0dc6253510a29294b2ac36f7a8946cb157305adaea8e9fbc8331c861856b1",
+      "bytes": 768,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-layout.R",
+      "sha256": "9ff346a16079b8527994e1396ca27581dabc67c38376d3be48b6b813c9a87641",
+      "bytes": 3179,
+      "role": "gggenomes upstream function implementation"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/upstream-data.R",
+      "sha256": "2eacf3cfafa93e7d20806b85f2f73518bbffe050d950617f3a740a58cfefad58",
+      "bytes": 7515,
+      "role": "gggenomes upstream function implementation"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/sources/official-emales.png",
+      "sha256": "ab288fb4976693f1de2bdb801d326f5cd30bfcb5de87266a28af4e57a4210542",
+      "bytes": 455895,
+      "role": "official six EMale source figure opened at original resolution"
+    }
+  ],
+  "input_contract": {
+    "genomes": 6,
+    "genes": 143,
+    "TIRs": 12,
+    "NGARO_insertions": 3,
+    "GC_windows": 2856,
+    "nucleotide_links": 125,
+    "protein_links": 827,
+    "coordinate_unit": "bp for genome features, amino-acid positions for protein sublinks",
+    "keys": "seq_id and feat_id retained verbatim; author order retained",
+    "statistics": "descriptive only; no replicate or inferential statistics"
+  },
+  "packages_by_role": {
+    "gggenomes": "sequence layout, feature strand geometry, add_sublinks aa2nuc transforms, adjacent protein ribbons, direction sync, GC wiggle",
+    "ggplot2": "semantic scales and themed guides",
+    "ragg": "authorized raster QA",
+    "grDevices": "native vector PDF"
+  },
+  "r_functions": [
+    "gggenomes",
+    "geom_feat",
+    "geom_seq",
+    "geom_link",
+    "geom_gene",
+    "geom_gene_tag",
+    "geom_feat_note",
+    "geom_wiggle",
+    "add_sublinks",
+    "sync",
+    "flip",
+    "focus"
+  ],
+  "visual_observations": {
+    "panels": "six aligned genome rows, right gene and GC legends, bottom genomic axis",
+    "layers": "TIR blocks, black sequence baselines, pale protein ribbons, six named gene classes with unknown genes in cornsilk3, 45-degree gene tags, three NGARO shaded insertion intervals, per-row GC wiggle",
+    "density": "143 genes across six tracks, 12 terminal repeats, three interval insertions, dense adjacent-row links; source width:height=2:1"
+  },
+  "processing": {
+    "main": "gggenomes(genes,seqs,links=emale_ava,feats=list(TIR,ngaros,GC)); add_sublinks(protein); sync(default first nucleotide link track); draw links(2) protein alignments",
+    "orientation": "sync is a heuristic using adjacent-link nucleotide-width support; protein positions map to genomic coordinates via aa2nuc and source gene strand",
+    "GC": "relative wiggle uses pooled median and 2.5/97.5 percentiles; not a calibrated GC axis",
+    "version_drift": "Upstream1.2.0 fixed commit installed in task-only R library; shared1.1.3 not used. Shared1.1.3 nucleotide alignment starts differ by1bp; never mix silently."
+  },
+  "gaps": [
+    {
+      "detail": "Runtime1.2.0 is installed from locked source in isolated task library; shared1.1.3 is not used."
+    },
+    {
+      "detail": "Original PNG pixel identity not promised due final physical-size typography adaptation."
+    },
+    {
+      "detail": "Same-data strand transformations are bounded stress tests, not independent new biological data."
+    }
+  ],
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "gggenomes EMale 病毒 基因箭头 TIR NGARO GC 共线性",
+      "六基因组 蛋白比对 aa2nuc 方向 sync",
+      "comparative genomics gene tracks strand GC synteny"
+    ],
+    "appropriate_data": "processed sequence lengths, gene feature coordinates and names, genomic/protein alignment links, GC windows and interval annotations",
+    "avoid_for": "raw assembly validation, phylogeny inference, unverified gene functions or absolute GC inference from normalized wiggles"
+  },
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "whole_original_figure": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "method_reference": {
+    "path": "references/gggenomes-emales-learning.md",
+    "sha256": "54087eb4248849ef54ff76823a483d5ff6fb94b967cc3f4cef244d35ac488adf",
+    "bytes": 6748,
+    "role": "fixed-source learning, scientific contract and fresh replay entry"
+  },
+  "code_files": [
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/scripts/fresh_call.py",
+      "sha256": "8c2e2c43c1d6c3374e778898be5f22c8d040392b748a996bfd82ce90d71a07ae",
+      "bytes": 2140,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/scripts/prepare_data.R",
+      "sha256": "f4394991d6dbf4002af7ab68b4a2dd9477356086e3ac091e40de8df43358eaed",
+      "bytes": 2506,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/scripts/render.R",
+      "sha256": "4061051e4d9405c3df670545856f0592cf306e4dc3118de6931fa7d13edd839d",
+      "bytes": 9747,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/scripts/verify.py",
+      "sha256": "ead84bc41e9cff90adf185447d8b6a9e8e4d4099c68fe9ce5a0afdffd34f629e",
+      "bytes": 6607,
+      "role": "local native implementation or independent verification",
+      "mapping_status": "locally-reviewed-fixed-input-adapter"
+    }
+  ],
+  "implementation_configs": [
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/metadata/design-spec-direction.yaml",
+      "sha256": "fcca28df25e4826593f2774e9cd203222233f593771c6d10110d45a3ee073b8f",
+      "bytes": 17202,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/metadata/design-spec-main.yaml",
+      "sha256": "b367147334d0a32c00a2f79cc2cafe0622ac682d83e565ad5b14eb62edc59db4",
+      "bytes": 17120,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/metadata/figure-request.yaml",
+      "sha256": "d9082cc44d455af30197f899e1a4d81ecf8d2370d863355899439e12c01626db",
+      "bytes": 720,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    },
+    {
+      "path": "benchmark/library/comparative-genomics/gggenomes-emales/data/metadata/project-style.yaml",
+      "sha256": "bf399effdea04748bbe86c8d33a1d793860f5ad044af7e9b371f7eba81d6b37c",
+      "bytes": 723,
+      "role": "frozen request or design template; fresh invocation refreshes gate evidence"
+    }
+  ],
+  "fixed_fixture_review": "Source/data algorithms and current renders reviewed. Final artifact-bound evidence is separately registered after final fresh invocation; never inherit this review for new data.",
+  "scientific_caveats": [
+    "Author RDA sources are unchanged; derived RDS/CSV live in results/plot_data.",
+    "48 named genes yield38 actual PDF labels;10 redundant labels omitted by1000bp local midpoint clustering, all143 gene arrows retained.",
+    "marginal=keep retains all2856GC windows including6start0 windows; default1.2.0drops these6.",
+    "827protein alignments supplied;222adjacent protein ribbons drawn after native aa2nuc. Same-data orientation test only.",
+    "Native ggplot2 automatic guide order varied across independent processes; renderer now explicitly fixes Genes order1 and GC order2. Fixed-input stability requires independent-process checking."
+  ]
+}

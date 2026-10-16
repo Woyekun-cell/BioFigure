@@ -1,5 +1,6 @@
 import importlib.util
 import unittest
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,9 +16,14 @@ class ReleaseAuditTests(unittest.TestCase):
     def test_release_contract(self):
         result = module.audit()
         self.assertEqual(result["status"], "PASS", result["errors"])
+        self.assertEqual(result['check_scope'], 'public-package-portability-and-gallery')
         self.assertLessEqual(result["hot_load"]["total_zh_chars"], 8000)
         self.assertTrue(all(x["zh_chars"] <= 1200 for x in result["hot_load"]["files"]))
-        self.assertEqual(len(result["selected_public_gallery_pngs"]), 8)
+        catalog = json.loads((ROOT.parent/'docs/gallery/catalog.json').read_text())
+        self.assertEqual(set(result['selected_public_gallery_pngs']), {x['image'] for x in catalog['figures']})
+        self.assertEqual(result['public_cases']['case_counts'], {'runnable': 13, 'reference-only': 2})
+        self.assertEqual(result['learning_catalog']['indexed_records'], 454)
+        self.assertFalse(result['scientific_or_visual_pass_inferred'])
 
 
 if __name__ == "__main__":

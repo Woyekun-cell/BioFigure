@@ -1,5 +1,15 @@
 schema_version: 1
 name: biofigure-bootstrap-and-execution-contract
+reference_modes:
+  canonical: scripts/reference_modes.py
+  values: [original, reference-guided, reproduction]
+  ordinary_draw_default: original
+  explicit_source_reuse_or_reproduction_cannot_downgrade_to_original: true
+  original_private_archives: optional_and_not_required_for_rendering
+  all_modes_require: full_scientific_design_typography_color_layout_text_and_actual_final_size_visual_review
+  original_quality: six_dimension_design-quality
+  source_mode_quality: six_dimension_reference-quality
+  legacy_without_mode: preserve_prior_source_guided_contract_without_qualification_upgrade
 purpose: Canonical rules for BioFigure entry, evidence-bound planning, rendering gates,
   inspection, and claims. The SKILL entry repeats only the bootstrap hard gate.
 bootstrap:
@@ -20,16 +30,39 @@ renderer_authorization:
   enabled_backend: R
   python_cp3: BLOCKED_UNTIL_OFFICIAL_AUTHORIZED_RENDERER
   claim_boundary: workflow_consistency_only_not_anti_forgery_security
+figure_text:
+  policy: scientific-content-only-v1
+  footer_policy: no-canvas-footer-v1
+  canvas_caption_footer_footnote_and_methods_prose: forbidden
+  full_sample_design_and_filtering_criteria_location: outside_figure_only
+  compact_n_P_q_labels_location: evidence_bound_inside_panel_only
+  allowed: data_bound_labels_units_legends_ids_panels_statistics_sample_counts_scale_bars
+  forbidden: ai_commentary_generation_workflow_internal_audit_status_disclaimers
+  allowlist_or_heading_authorization_is_not_exemption: true
+  provenance_and_claim_boundaries_location: outside_figure
+  actual_rendered_text_receipt_required_for_all_renderers: true
+  final_footer_absent_observation_required: true
+  phrase_checks_do_not_replace_final_visual_review: true
 host_boundary:
   manifest_role: dynamic_module_routing_only
   can_force_host_loading: false
   can_guarantee_cross_model_quality: false
+heatmap_cells:
+  policy_id: heatmap-cells-v1
+  small_displayed_matrix: physical_square_cells_required
+  dense_displayed_matrix: explicit_dense_overview_may_use_rectangular_cells
+  density_basis: actual_displayed_rows_columns_not_raw_input
+  routing_default: dense_option_only_if_rows_or_columns_greater_than_200
+  CP2: heatmap_cell_contract_required
+  CP3: actual_final_device_per_panel_slice_mm_and_complete_slice_coverage_required
+  CP4: actual_PNG_PDF_cell_geometry_observation_required
+  whole_canvas_ratio_or_coord_fixed_alone_is_not_evidence: true
 workflow:
 - normalize_request_and_validate_schema
 - analyze_data_and_question_then_propose_chart_family_if_unspecified
 - resolve_statistical_intent_and_design_before_requested_inference
 - validate_declared_statistics_plan_before_cp2_and_bind_results_to_annotations
-- retrieve_all_learned_method_contracts_and_bind_adaptation_and_prior_failures
+- source_modes_retrieve_relevant_learned_method_contracts_and_bind_adopted_adaptation_and_prior_failures
 - retrieve_locked_template_and_bind_fresh_fixture_replay_before_reuse
 - inspect_bound_sources_and_hash_material
 - validate_cp2_spec_and_receipt_before_code
@@ -42,7 +75,7 @@ workflow:
 - reject_canvas_size_outside_declared_publication_column_class
 - reject_small_or_mispositioned_text_label_or_legend_overlap_and_panel_misalignment
 - reject_imbalanced_figure_text_proportion_at_final_size
-- compare_source_margins_row_or_cell_spacing_panel_gaps_and_legend_packing
+- compare_original_design_or_adopted_source_margins_spacing_panel_gaps_and_legend_packing
 - bind_actual_renderer_layout_metrics_to_visual_density_review
 - adapt_reference_font_presets_by_actual_final_size_text_panel_proportion
 - synchronize_font_roles_across_spec_style_renderer_input_and_actual_pdf

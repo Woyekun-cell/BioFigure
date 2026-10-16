@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "case_id": "phylogeny",
+  "synthetic": true,
+  "seed": 2026101606,
+  "independence": "not_applicable",
+  "experimental_unit": "synthetic taxon",
+  "comparison": null,
+  "limitations": [
+    "Entirely synthetic; no species, mechanism, pathway activity or biological conclusion is established."
+  ],
+  "units": "arbitrary units; synthetic branch lengths",
+  "generation": "Hand-constructed bifurcating 12-tip Newick tree; no alignment or tree estimation.",
+  "statistics": "Topology and branch lengths are input values; support is not provided.",
+  "tip_groups": {
+    "Taxon_A": "Clade 1",
+    "Taxon_B": "Clade 1",
+    "Taxon_C": "Clade 1",
+    "Taxon_D": "Clade 1",
+    "Taxon_E": "Clade 1",
+    "Taxon_F": "Clade 1",
+    "Taxon_G": "Clade 2",
+    "Taxon_H": "Clade 2",
+    "Taxon_I": "Clade 2",
+    "Taxon_J": "Clade 2",
+    "Taxon_K": "Clade 2",
+    "Taxon_L": "Clade 2"
+  }
+}

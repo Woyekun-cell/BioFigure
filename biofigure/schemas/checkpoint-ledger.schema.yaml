@@ -5,3 +5,6 @@ checkpoint_required: [id, status, evidence, failures, next_action]
 CP3_evidence_required: [artifact, artifact_sha256, first_render_sha256, target_size, render_receipt, artifact_opened, viewer_method]
 CP4_evidence_required: [inspection_evidence, critic_status, qa_status, deliverables]
 notes: PASS is evidence-bound; REVISE or STOP blocks all later checkpoints.
+reference_mode: optional_but_if_present_must_equal_validated_spec
+CP2_source_mode_evidence_required: [reference_method_receipt]
+CP4_original_quality: design-quality_six_dimensions_at_same_threshold_as_reference-quality

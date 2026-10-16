@@ -31,13 +31,15 @@ class TemplateReuseTests(unittest.TestCase):
         self.assertTrue(validate_binding(result, skipped))
 
     def test_fixture_mode_cannot_authorize_changed_visual_spec(self):
-        from reuse_templates import validate_binding
+        from reuse_templates import check_case, get_case, validate_binding
         result = prepare_figure.prepare(self.request(), fixture_replay_case_id='topfigure-097-19dfbfef')
         original = yaml.safe_load((ROOT / 'benchmark/library/topjournal/issue_097/data/metadata/design-spec.yaml').read_text())
-        self.assertEqual(validate_binding(result, original), [])
+        integrity_errors = check_case(get_case('topfigure-097-19dfbfef'))
+        self.assertEqual(validate_binding(result, original), integrity_errors)
         changed = copy.deepcopy(original)
         changed['output_size']['width_mm'] += 1
-        self.assertTrue(validate_binding(result, changed))
+        self.assertEqual(validate_binding(result, changed),
+                         ['fixture replay changed locked visual/scientific specification', *integrity_errors])
 
     def test_generic_tree_does_not_select_specific_track_template(self):
         result = prepare_figure.prepare(dict(self.request(), primary_source=None, figure_task='phylogenetic tree', data_shape='Newick tips'))

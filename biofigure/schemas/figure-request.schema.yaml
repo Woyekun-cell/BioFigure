@@ -1,11 +1,14 @@
 schema_version: "1.1"
 required: [figure_task, data_shape, primary_domain, primary_role, backend, deliverable]
-optional: [statistics_required,figure_family, operation, use_personal_style, pattern_id, primary_source, learned_method_id, reusable_case_id, secondary_domains, secondary_roles, reference_sources, declared_tools, declared_permissions, required_tools, available_tools, required_permissions, available_permissions]
+optional: [reference_mode, statistics_required,figure_family, operation, use_personal_style, pattern_id, primary_source, learned_method_id, reusable_case_id, secondary_domains, secondary_roles, reference_sources, declared_tools, declared_permissions, required_tools, available_tools, required_permissions, available_permissions]
+reference_mode: [original, reference-guided, reproduction]
+reference_mode_default: original_unless_explicit_source_reuse_or_reproduction
+reference_mode_conflict: reject_original_with_source_reuse_or_operation_reproduce
 backend: [R, Python]
-deliverable: [quick-png, paper-composite, editable-vector, tiff-submission]
+deliverable: [quick-png, paper-pdf, paper-composite, editable-vector, tiff-submission]
 reference_sources: [reproduction, top_journal, scidraw, awesome_scientific_figure]
-reference_sources_required: [reproduction, top_journal, scidraw]
-reference_sources_default: [reproduction, top_journal, scidraw]
+reference_sources_required: {original: [], reference-guided: [reproduction, top_journal, scidraw], reproduction: [reproduction, top_journal, scidraw]}
+reference_sources_default: {original: [], source_modes: [reproduction, top_journal, scidraw]}
 rule: exactly_one_backend_and_one_primary_domain_and_role
 figure_family: [distribution, matrix, composition, network, tree, genome, single-cell, enrichment, clinical, time-series, circular, map, schematic-mechanism, multipanel, other]
 field_types:

@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "case_id": "epigenomics-te-tf-motif-atlas",
+  "learned_method_id": "BENCH-epigenomics-te-tf-motif-atlas",
+  "recipe_id": "EPI-TE-TF-001",
+  "title": "TE TF motif atlas ComplexHeatmap14x35 and dual log-log enrichment scatters",
+  "label": "转座子TF-motif14×35聚类热图及双对数散点",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Native-R recolored reconstruction of formal Fig3a two log-log scatter panels and Fig3b full14x35 matrix, preserved existing statistics; no raw NGS, new testing or Fig3c/d signal reconstruction.",
+  "figure_family": "heatmap",
+  "chart_type": "split heatmap with dendrograms plus dual log scatter",
+  "chart_types": [
+    "heatmap",
+    "scatter"
+  ],
+  "domain": "multi-omics",
+  "method_families": [
+    "epigenomic-motif-enrichment",
+    "split-heatmap",
+    "scatter"
+  ],
+  "paper": {
+    "title": "Transposable elements as tissue-specific enhancers in cancers of endodermal lineage",
+    "journal": "Nature Communications",
+    "year": 2023,
+    "doi": "10.1038/s41467-023-41081-4",
+    "figure": "Fig3a two scatter panels and Fig3b only",
+    "url": "https://www.nature.com/articles/s41467-023-41081-4"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/Karttune/Karttunen_Patel_et_al",
+    "commit": "2220b9cf7304db38553fc0d36bb1bd97630543c3",
+    "license": "NO_LICENSE_PRIVATE_LOCAL_ONLY",
+    "source_type": "original paper author plot code explicitly linked by Code availability",
+    "repository_relative_path": "scripts/fig_3.Rmd"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/epigenomics/te-tf-motif-atlas/sources/41467_2023_41081_Fig3_HTML.png",
+      "sha256": "725d01ced18431cb4a1f66f1d689f0fa17b1480c95e91a70c29a339121fb813d",
+      "bytes": 827282,
+      "role": "formal Fig3 actual original-size viewed"
+    },
+    {
+      "path": "../work/2026-10-12-omics-benchmark/te-tf-motif-atlas/source-reading/fig_3.Rmd",
+      "sha256": "16a1ce599d375f5ad5db96c70ac019fae74dc2221af5647d3fd06817abe8cde4",
+      "bytes": 40701,
+      "role": "author original figure source private local only"
+    },
+    {
+      "path": "../work/2026-10-12-omics-benchmark/te-tf-motif-atlas/source-reading/utils.R",
+      "sha256": "e9669d0ee868711336a4a00c87f48780da241d18cb2119c8d80e6fc3fe13ba30",
+      "bytes": 8662,
+      "role": "author helper source private local only"
+    },
+    {
+      "path": "benchmark/library/epigenomics/te-tf-motif-atlas/data/raw/source_data.xlsx",
+      "sha256": "abbdbcb8b220394715f3f082da3aa92d2cdb74c4897b3bd94cd3f180f0d40ad7",
+      "bytes": 5421353,
+      "role": "published final source tables"
+    },
+    {
+      "path": "benchmark/library/epigenomics/te-tf-motif-atlas/data/raw/41467_2023_41081_MOESM4_ESM.xlsx",
+      "sha256": "f19d3ae0e6ab71c912b1f8eec169ca583a884deb9672a1b75962c7a70ab6129a",
+      "bytes": 7593600,
+      "role": "published AME8188 results"
+    },
+    {
+      "path": "benchmark/library/epigenomics/te-tf-motif-atlas/scripts/prepare_data.R",
+      "sha256": "ad11fbb20b1c3f7eb5fa15776292c174788f752ef6a65d0bf57a93e26be35258",
+      "bytes": 6148,
+      "role": "native R plotting-data adapter"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "../work/2026-10-12-omics-benchmark/te-tf-motif-atlas/source-reading/fig_3.Rmd",
+      "sha256": "16a1ce599d375f5ad5db96c70ac019fae74dc2221af5647d3fd06817abe8cde4",
+      "bytes": 40701,
+      "role": "author original figure source private local only"
+    },
+    {
+      "path": "../work/2026-10-12-omics-benchmark/te-tf-motif-atlas/source-reading/utils.R",
+      "sha256": "e9669d0ee868711336a4a00c87f48780da241d18cb2119c8d80e6fc3fe13ba30",
+      "bytes": 8662,
+      "role": "author helper source private local only"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/epigenomics/te-tf-motif-atlas/sources/41467_2023_41081_Fig3_HTML.png",
+      "sha256": "725d01ced18431cb4a1f66f1d689f0fa17b1480c95e91a70c29a339121fb813d",
+      "bytes": 827282,
+      "role": "formal Fig3 actual original-size viewed"
+    }
+  ],
+  "input_contract": {
+    "motif_rows": 14,
+    "TE_columns": 35,
+    "matrix_cells": 490,
+    "scatter_rows": 558,
+    "scatter_panel_counts": {
+      "left": 279,
+      "right": 279
+    },
+    "AME_rows": 8188,
+    "group_counts": {
+      "Common": 10,
+      "GP5d": 12,
+      "HepG2": 13
+    },
+    "matrix_missing": 0,
+    "sampling": false,
+    "matrix_unit": "published final scaled -log10(E-value) values retained unchanged; not newly computed centered Z-score",
+    "negative_values": 18,
+    "zero_ratio_records": 32,
+    "log_display_floor": 0.1,
+    "statistics": "existing source FDR and E-values preserved, no recomputation"
+  },
+  "packages_by_role": {
+    "ComplexHeatmap": "true sliced full matrix, Ward.D2 row and within-slice column dendrograms",
+    "circlize": "colorRamp2, scalar range with negative values",
+    "ggplot2": "source-complete dual-log scatter with equal scales and identity line",
+    "ggrepel": "source-family labels and point leaders",
+    "readxl": "processed source XLSX",
+    "grid/ragg/svglite": "native editable grid PDF and authorized PNG/SVG"
+  },
+  "r_functions": [
+    "Heatmap",
+    "HeatmapAnnotation",
+    "draw",
+    "row_order",
+    "column_order",
+    "colorRamp2",
+    "geom_point",
+    "geom_abline",
+    "geom_text_repel",
+    "grid.grabExpr"
+  ],
+  "visual_observations": {
+    "panels": "a two scatter views above b full14x35 heatmap; no c/d",
+    "layout": "threeCommon/GP5d/HepG2column slices;rowtree plus3column trees;TFfamilyright,TEverticalbottom,horizontalbar",
+    "semantic_links": "NFYA/LTR12 and TFAP2/MER11 use same category colors after recoloring"
+  },
+  "processing": {
+    "selection": "per subfamily and Vierstra motif cluster min(eval), top1 with adj_pval<1e-5",
+    "display": "mean(-log10(eval)) per motif cluster/subfamily; zero-fill; scale.default(center=FALSE) by column",
+    "paper_caption": "minimum E-value stated; final legend Z-score differs from code operation",
+    "resolution": "Reuse exact final Source Data Fig3b matrix; call legend Scaled -log10(E-value), preserve raw AME table for code audit; do not silently replace by min or center"
+  },
+  "gaps": [
+    {
+      "detail": "Caption minimum E-value differs from source final mean(-log10E) and noncentered RMS scale; preserve published final matrix and correct scale label."
+    },
+    {
+      "detail": "No LICENSE: keep author code private; do not publish."
+    },
+    {
+      "detail": "32zero ratio records: preserve raw zeros, indicate display-only lower log-boundary at0.1 via triangle key."
+    },
+    {
+      "detail": "Do not drop18negative cells, claim centeredZscores or reconstruct missingc/d."
+    }
+  ],
+  "method_reference": {
+    "path": "references/te-tf-motif-atlas-learning.md",
+    "sha256": "dd882ad6c45435a7622dc030b401571b3ea171d46616a505edf7dc811322b0f8"
+  },
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "转座子 TF motif ComplexHeatmap 表观组学",
+      "TE enrichment split heatmap14x35 log-log scatter"
+    ],
+    "appropriate_data": "processed motif x TE matrix and two-cell-line precomputed overlap ratios/FDR",
+    "avoid_for": "rawNGS,motifrediscovery,causalnetwork or replicated inference from matrixcolumns"
+  },
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "whole_original_figure": "NOT_VERIFIED"
+}

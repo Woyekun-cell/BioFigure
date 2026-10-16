@@ -13,9 +13,9 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 class OrganizeFigureLibraryTests(unittest.TestCase):
     def setUp(self):
         self.m = importlib.import_module('organize_figure_library')
-        self.temp = tempfile.TemporaryDirectory(dir=ROOT.parent / 'work')
+        self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.view = self.root / 'library' / '按图型检索'
         self.image = self.root / 'source.png'
         self.code = self.root / 'source.R'

@@ -1080,5 +1080,13 @@
       "data/metadata/native-acquisition.json",
       "data/metadata/public-replay.json"
     ]
+  },
+  "portable_release_3_8": {
+    "scope": "Current own-layout public replay only; historical scientific/source/visual qualifications unchanged.",
+    "reference_asset": "examples/genomics-gallery-20261011/cannabis-cassette/sources/own-reference.png",
+    "reference_sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+    "origin": "Byte-identical copy of the already-public BioFigure gallery replot, bundled inside the Skill.",
+    "parent_repository_required": false,
+    "runtime_revalidation": "Required after current release bindings freeze; not inferred from historical PASS."
   }
 }

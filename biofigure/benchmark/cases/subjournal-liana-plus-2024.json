@@ -1,0 +1,654 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-liana-plus-2024",
+  "learned_method_id": "BENCH-subjournal-liana-plus-2024",
+  "title": "LIANA+ provides an all-in-one framework for cell–cell communication inference",
+  "label": "LIANA+／Squidpy／seaborn：NMF因子富集热图、空间转录组表达图与配体受体差异热图",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "chart_type": "spatial-scatter",
+  "chart_types": [
+    "spatial-scatter",
+    "heatmap",
+    "ligand-receptor-heatmap",
+    "network"
+  ],
+  "figure_family": "spatial-scatter",
+  "domain": "spatial",
+  "paper": {
+    "title": "LIANA+ provides an all-in-one framework for cell–cell communication inference",
+    "doi": "10.1038/s41556-024-01469-w",
+    "url": "https://www.nature.com/articles/s41556-024-01469-w",
+    "journal": "Nature Cell Biology",
+    "year": 2024,
+    "online_publication_date": "2024-09-02",
+    "issue_date": "2024-09",
+    "volume": "26",
+    "pages": "1613–1622",
+    "figures": [
+      "Fig5c",
+      "Fig5d",
+      "Fig5e–g",
+      "Fig5l"
+    ],
+    "publication_assets_license": "CC-BY-4.0",
+    "official_page_saved": "benchmark/library/spatial/liana-plus-2024/sources/paper.html",
+    "code_availability_locator": "Official paper Code availability section",
+    "online_date": "2024-09-02"
+  },
+  "source_implementation": {
+    "repository": "https://github.com/saezlab/lianaplus_manuscript",
+    "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513",
+    "license": "GPL-3.0",
+    "source_type": "original author manuscript analysis notebooks + official paper package1.0.5",
+    "original_figure_script_status": "DIRECT_ANALYSIS_PANEL_MAPPING",
+    "paper_package_version": "1.0.5",
+    "paper_package_archive": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip",
+    "repo": "https://github.com/saezlab/lianaplus_manuscript"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/Fig5.png",
+      "sha256": "c19abd325b4cdd690b0811becd72e1919dd751fe85a891e91673aaad6e488063",
+      "bytes": 1038285,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41556-024-01469-w/MediaObjects/41556_2024_1469_Fig5_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2165,
+        2023
+      ]
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip",
+      "sha256": "8fd0520986e05a926fb0055226e82a2377d34c4e4ddd8b689a4aaa70acb0b8f3",
+      "bytes": 1282337,
+      "role": "official-paper-version-package-archive",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-024-01469-w/MediaObjects/41556_2024_1469_MOESM5_ESM.zip",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/MOESM8.xlsx",
+      "sha256": "28c76ab346295a19b5bccb49f86286c7646870657791dfe0fd20e1a12b5bd748",
+      "bytes": 26304176,
+      "role": "official-source-data",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41556-024-01469-w/MediaObjects/41556_2024_1469_MOESM8_ESM.xlsx",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/LICENSE",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/README.md",
+      "sha256": "07ca28948b5b0f74459fccad3b47cb39ce4d9f8639773f3934dc5b26215b0e70",
+      "bytes": 829,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/README.md",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/environments/env.yml",
+      "sha256": "70e9c872e70213fa4b429ee02ec41f08180c0fd1b9757e4e28ae22449a7c0087",
+      "bytes": 6656,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/environments/env.yml",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/README.md",
+      "sha256": "90aec6ddc3150fbe8aabcf7f402dd493c0345a9391a4bf47f8fbf022af01562c",
+      "bytes": 4950,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/README.md",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+      "sha256": "c0239e0d385759224d0de7c83ad429537c4b59f1b2e3177c9d324b6d1195a8fc",
+      "bytes": 2568818,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/5.LRdea.ipynb",
+      "sha256": "af6c7385ca083b9793857d87aeba96d5039cad5e3695322c8309373a6b3c96dc",
+      "bytes": 1499336,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/5.LRdea.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/6.CausalNet.ipynb",
+      "sha256": "433e45d407bdd99bbde8ee09180b65dec7a52e8faa59f6aec75d47366c74b0eb",
+      "bytes": 78715,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/6.CausalNet.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/7.Plots.ipynb",
+      "sha256": "b85526a1c336877d5a4652aa7f9acc664a1c64dd1f91700d9a26b112a2d633b0",
+      "bytes": 139241,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/7.Plots.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/README.md",
+      "sha256": "f19caa40296d703a98e8d63418835c74633df91db111fbe73f10a904064feab3",
+      "bytes": 458,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/README.md",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/plots.py",
+      "sha256": "726d1a24f3118378aa4e069b039d9b19710a4ad82fe865cd5d08efa9d5a156b0",
+      "bytes": 5943,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/plots.py",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/utils.py",
+      "sha256": "3d59a09f04fb0aa8d9ef8dfb786f48b3e99cc77ecb229a7b0235f0d6d41a3233",
+      "bytes": 5499,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/utils.py",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/LICENSE",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/method/sp/_bivariate_funs.py",
+      "sha256": "3c07a05fbcca2ee903bb09bcee18b84e43532041fb27218794a90a75926fb4b8",
+      "bytes": 7298,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/method/sp/_bivariate_funs.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/multi/_nmf.py",
+      "sha256": "f57a16b7334fbdc32e1586c97f8199c6f4afef54d08abdf9934b664705f09d01",
+      "bytes": 4032,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/multi/_nmf.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/plotting/_tileplot.py",
+      "sha256": "bd18d3572ece17b5ce3df480c0b858cf0e50f1fcb09abc3d4ffb52a04dbc1b64",
+      "bytes": 4667,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/plotting/_tileplot.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/utils/spatial_neighbors.py",
+      "sha256": "dd43095b44a2f951f53b6178426e72ea4e320f84634bfb329002f447d09eddfd",
+      "bytes": 5619,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/utils/spatial_neighbors.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper.html",
+      "sha256": "6a85ff19f1abafc19dcecdf1abcd28690904f17c1396aba216a313d25d8ddaff",
+      "bytes": 680576,
+      "role": "official-paper-html",
+      "source_url": "https://www.nature.com/articles/s41556-024-01469-w?error=cookies_not_supported&code=1",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+      "sha256": "c0239e0d385759224d0de7c83ad429537c4b59f1b2e3177c9d324b6d1195a8fc",
+      "bytes": 2568818,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/5.LRdea.ipynb",
+      "sha256": "af6c7385ca083b9793857d87aeba96d5039cad5e3695322c8309373a6b3c96dc",
+      "bytes": 1499336,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/5.LRdea.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/6.CausalNet.ipynb",
+      "sha256": "433e45d407bdd99bbde8ee09180b65dec7a52e8faa59f6aec75d47366c74b0eb",
+      "bytes": 78715,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/6.CausalNet.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/7.Plots.ipynb",
+      "sha256": "b85526a1c336877d5a4652aa7f9acc664a1c64dd1f91700d9a26b112a2d633b0",
+      "bytes": 139241,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/7.Plots.ipynb",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/plots.py",
+      "sha256": "726d1a24f3118378aa4e069b039d9b19710a4ad82fe865cd5d08efa9d5a156b0",
+      "bytes": 5943,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/plots.py",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/utils.py",
+      "sha256": "3d59a09f04fb0aa8d9ef8dfb786f48b3e99cc77ecb229a7b0235f0d6d41a3233",
+      "bytes": 5499,
+      "role": "original-author-analysis",
+      "source_url": "https://raw.githubusercontent.com/saezlab/lianaplus_manuscript/37c712d280ed4f6ef55cd17490366c2f062ee513/notebooks/kuppe/utils.py",
+      "license": "GPL-3.0",
+      "commit": "37c712d280ed4f6ef55cd17490366c2f062ee513"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/method/sp/_bivariate_funs.py",
+      "sha256": "3c07a05fbcca2ee903bb09bcee18b84e43532041fb27218794a90a75926fb4b8",
+      "bytes": 7298,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/method/sp/_bivariate_funs.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/multi/_nmf.py",
+      "sha256": "f57a16b7334fbdc32e1586c97f8199c6f4afef54d08abdf9934b664705f09d01",
+      "bytes": 4032,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/multi/_nmf.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/plotting/_tileplot.py",
+      "sha256": "bd18d3572ece17b5ce3df480c0b858cf0e50f1fcb09abc3d4ffb52a04dbc1b64",
+      "bytes": 4667,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/plotting/_tileplot.py",
+      "license": "GPL-3.0"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/utils/spatial_neighbors.py",
+      "sha256": "dd43095b44a2f951f53b6178426e72ea4e320f84634bfb329002f447d09eddfd",
+      "bytes": 5619,
+      "role": "official-paper-version-package-1.0.5",
+      "source_url": "benchmark/library/spatial/liana-plus-2024/sources/MOESM5.zip#liana-py-1.0.5/liana/utils/spatial_neighbors.py",
+      "license": "GPL-3.0"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/sources/Fig5.png",
+      "sha256": "c19abd325b4cdd690b0811becd72e1919dd751fe85a891e91673aaad6e488063",
+      "bytes": 1038285,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41556-024-01469-w/MediaObjects/41556_2024_1469_Fig5_HTML.png",
+      "license": "CC-BY-4.0",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2165,
+        2023
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "Fig5c",
+      "chart": "5 factors × 3 conditions enrichment heatmap",
+      "scientific_question": "哪些NMF空间交互模式更常见于不同组织区？",
+      "encoding": {
+        "x": "Fibrotic, Ischemic, Myogenic; alphabetical locked order",
+        "y": "Factor5 → Factor1 descending; no clustering",
+        "fill": "log2 odds ratio, coolwarm, clipped to ±4",
+        "label": "white * for global BH adj_pval<0.05",
+        "column_strip": "condition category: green #1b9e77 / orange #d95f02 / purple #7570b3"
+      },
+      "data_unit": "sample-averaged factor scores; top quartile versus remaining samples, not spots as independent samples",
+      "shared_keys": [
+        "factor",
+        "patient_group"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "cells_zero_based": [
+            55,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ],
+          "sha256": "c0239e0d385759224d0de7c83ad429537c4b59f1b2e3177c9d324b6d1195a8fc"
+        }
+      ],
+      "source_table": "MOESM8.xlsx:Fig5C",
+      "layout": "top right 5×3; source helper figsize3.5×4in, x/y labels15pt, white asterisk30pt; published physical size unknown"
+    },
+    {
+      "id": "Fig5d",
+      "chart": "5 factors × 8 displayed pathways enrichment heatmap",
+      "scientific_question": "NMF配体受体loadings与哪些先验pathway相关？",
+      "encoding": {
+        "x": "EGFR,Hypoxia,JAK-STAT,MAPK,NFkB,PI3K,TGFb,TNFa after any-FDR-significant filter",
+        "y": "Factor5 → Factor1",
+        "fill": "decoupler enrichment estimate; RdBu_r, author clamp ±5",
+        "label": "white * on adjusted p<0.05"
+      },
+      "data_unit": "factor × pathway model estimate; source 5×14 reduced to displayed5×8",
+      "shared_keys": [
+        "factor",
+        "pathway"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "cells_zero_based": [
+            6,
+            51,
+            52,
+            61,
+            77
+          ],
+          "sha256": "c0239e0d385759224d0de7c83ad429537c4b59f1b2e3177c9d324b6d1195a8fc"
+        }
+      ],
+      "source_table": "MOESM8.xlsx:Fig5D",
+      "layout": "left middle; 5×8 compact grid with vertical labels; source figsize5×3.5in, labels15pt; new sparse input requires square physical cells"
+    },
+    {
+      "id": "Fig5e–g",
+      "chart": "one tissue outline × 3 spatial score maps",
+      "scientific_question": "空间NMF模式与FN1/SPP1–ITGA5_ITGB1局部评分如何分布？",
+      "encoding": {
+        "xy": "same ACH0014 Visium coordinates; aspect tissue geometry retained; axes off",
+        "fill_e": "Factor1 continuous NMF scores, magma (dark low to light high)",
+        "fill_fg": "local spatially weighted cosine score, viridis, own color bars",
+        "point": "one spatial observation/spot; no cell-identity inference"
+      },
+      "data_unit": "spot-level continuous local score, not communication probability nor causal effect",
+      "shared_keys": [
+        "sample_id=ACH0014",
+        "spot barcode",
+        "interaction=FN1^ITGA5_ITGB1 / SPP1^ITGA5_ITGB1"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/utils.py",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              13,
+              28
+            ]
+          ],
+          "sha256": "3d59a09f04fb0aa8d9ef8dfb786f48b3e99cc77ecb229a7b0235f0d6d41a3233"
+        },
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/1.Pre_x_NMF.ipynb",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "cells_zero_based": [
+            11,
+            17,
+            18,
+            19,
+            21,
+            80,
+            81
+          ],
+          "sha256": "c0239e0d385759224d0de7c83ad429537c4b59f1b2e3177c9d324b6d1195a8fc"
+        }
+      ],
+      "source_table": "per-sample results/lr and results/nmf h5ad not downloaded",
+      "layout": "aligned three maps; source17×4in, titles18pt, panel letters35pt, point size1.55; independent color bars, no universal unit"
+    },
+    {
+      "id": "Fig5l",
+      "chart": "ligand/receptor faceted log2FC tile heatmap",
+      "scientific_question": "MY/FB配体受体分量在IZ相对Rest如何变化？",
+      "encoding": {
+        "x": "FB, MY cell types in each entity facet",
+        "y": "selected LR interaction string; do not collapse receptor complex",
+        "fill": "log2FoldChange, midpoint0, source limits±3.5; #1f77b4–lightgray–#c20019",
+        "label": "padj<0.05 converted to white *; component-specific label",
+        "facets": "Ligand / Receptor; retain distinct source/target entity fields"
+      },
+      "data_unit": "sample×celltype pseudobulk DE component estimates, not one LR effect",
+      "shared_keys": [
+        "interaction",
+        "cell_type",
+        "type(Ligand/Receptor)",
+        "complex"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/author/notebooks/kuppe/5.LRdea.ipynb",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "cells_zero_based": [
+            11,
+            22,
+            24,
+            25,
+            33,
+            34,
+            42
+          ],
+          "sha256": "af6c7385ca083b9793857d87aeba96d5039cad5e3695322c8309373a6b3c96dc"
+        },
+        {
+          "path": "benchmark/library/spatial/liana-plus-2024/sources/paper-version-package/liana/plotting/_tileplot.py",
+          "role": "paper-version-package-1.0.5",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              11,
+              35
+            ],
+            [
+              82,
+              118
+            ]
+          ],
+          "sha256": "bd18d3572ece17b5ce3df480c0b858cf0e50f1fcb09abc3d4ffb52a04dbc1b64"
+        }
+      ],
+      "source_table": "MOESM8.xlsx:Fig5L (60 source rows; panel is a selected subset)",
+      "layout": "bottom middle, two aligned entity panes, tiny cell count needs square cells on future re-render; source7.3×6in, axis/legend20pt, label_size25"
+    }
+  ],
+  "input_contract": {
+    "required_fields": [
+      "original spot barcode",
+      "sample_id",
+      "patient_group",
+      "x,y spatial coordinates with declared coordinate unit",
+      "counts or declared normalized log expression",
+      "ligand_complex/receptor_complex with component IDs",
+      "factor",
+      "pathway estimate/pval/adj_pval",
+      "cell_type and entity type",
+      "log2FoldChange and numeric padj or explicitly preformatted symbols"
+    ],
+    "experimental_units": "28 spatial samples and29 dissociated samples in source study; spatial observations are not independent patient replicates. Any new study must rebind patient/sample/tissue design.",
+    "preprocessing": [
+      "load_prep_slide:min_genes400,min_cells5,normalize_total1e4,log1p",
+      "spatial_neighbors:bandwidth150,cutoff0.1,set_diagTrue; coordinate units require original schema",
+      "lr_bivar:function cosine,expr_prop0.1,n_permsNone,use_rawFalse",
+      "retain LR features in≥5 samples; outer concatenation fill0; NMF random_state1337,max_iter400,k_range1..20",
+      "Fig5c:sample-average score top25% contingency; Fisher exact; BH15 rows; infinities replaced log2(1000) then displayclamp4",
+      "Fig5d:PROGENy human top5000; source70 records; display8 pathways with any adjustedp≤.05",
+      "Fig5L:pseudobulk sum sample×cell_type,min_cells10,min_counts10000,min_smpls3; IZ vs Rest; top5%NMF LR prior; expr_prop.05"
+    ],
+    "missing_values": "distinguish absent interactions,outer-join zeros,non-expressed components and not-tested DE; original symbol fields are not numeric p-values",
+    "units": "NMF scores/cosine/enrichment/log2OR/log2FC are separate scales; no universal colorbar"
+  },
+  "packages_by_role": [
+    {
+      "name": "LIANA+",
+      "version": "1.0.5 paper; archived official Supplementary Code1",
+      "role": "LR local cosine scoring, NMF wrapper, DE entity tile data transform",
+      "functions": [
+        "li.mt.lr_bivar",
+        "li.multi.nmf",
+        "li.multi.df_to_lr",
+        "li.pl.tileplot"
+      ]
+    },
+    {
+      "name": "Scanpy/AnnData",
+      "role": "count filtering,1e4 total normalization,log1p,shared barcode arrays"
+    },
+    {
+      "name": "Squidpy",
+      "role": "spatial_scatter preserving original physical xy geometry"
+    },
+    {
+      "name": "seaborn/Matplotlib",
+      "role": "clustermap no clustering,asterisk overlay,layout/export"
+    },
+    {
+      "name": "decoupler/scipy",
+      "role": "PROGENy enrichment,Fisher exact,global FDR correction"
+    },
+    {
+      "name": "PyDESeq2",
+      "role": "sample-celltype pseudobulk IZ vs Rest Wald test and LFC shrinkage"
+    },
+    {
+      "name": "plotnine",
+      "role": "tileplot grammar,entity facets,continuous diverging fill"
+    }
+  ],
+  "core_functions": [
+    "li.mt.lr_bivar",
+    "li.multi.df_to_lr",
+    "li.multi.nmf",
+    "li.pl.tileplot"
+  ],
+  "gaps": [
+    "未下载原始／处理后空间AnnData与所有NMF中间模型；未运行原始分析。",
+    "Fig5 m网络作者求解脚本可读，但Gurobi solver与100 seeds未运行；优化得到的sign-coherent先验子网不构成因果证实。",
+    "原图Fig5整体组装、发表终尺寸和精确最终字体没有独立复现；source notebook名Fig5E-F.pdf实际含E/F/G三个数据面板，应按cell内容对应。",
+    "Fig5L官方源表60行多于原图显示选择；不把全部60行当最终panel矩阵；保留type与complex分量。",
+    "图5d官方图例外观约±4，作者helper允许clip±5，记录差异且不把脚本默认等同终稿。"
+  ],
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_analysis": "NOT_RUN",
+    "scope": "source observation, source-code method learning and independent non-rendering table-contract checks only"
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "retrieve original visual encoding and source implementation roles",
+      "future input-contract design after freshCP2",
+      "non-rendering source-table audits"
+    ],
+    "prohibited": [
+      "inheriting original reproductionPASS",
+      "claiming new-input or stress validation",
+      "treating communication scores/prior edges/spatial predictions as established causality or physical cell identity"
+    ],
+    "original_figure_script_pairing": "DIRECT_ANALYSIS_PANEL_MAPPING"
+  },
+  "method_reference": {
+    "path": "benchmark/library/spatial/liana-plus-2024/learning.md",
+    "sha256": "b64b78605e7dd9783bc934d603d24191b8e470966e794e45711011932067c534"
+  },
+  "evidence_manifest": "benchmark/library/spatial/liana-plus-2024/data/metadata/source-manifest.json",
+  "nonrender_checks": "benchmark/library/spatial/liana-plus-2024/data/metadata/nonrender-checks.json",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [
+    "li.mt.lr_bivar",
+    "li.multi.df_to_lr",
+    "li.multi.nmf",
+    "li.pl.tileplot"
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/data/metadata/paper-source.json",
+      "sha256": "7ba752b2ded71f7c0f3bef0f854b81c36daa28b89dc820e4f9ad67b85238255d",
+      "bytes": 1811,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/data/metadata/source-manifest.json",
+      "sha256": "68a735e15fac06b46031fbe20c4bf27e3d6d7f3bfe4526d66df25fae47cbba1c",
+      "bytes": 10713,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/data/metadata/code-figure-mapping.json",
+      "sha256": "de78caf13bb5315b94ad98b27208428ac13eed4204edceb4c7043815a8eb3e2b",
+      "bytes": 10971,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/spatial/liana-plus-2024/data/metadata/nonrender-checks.json",
+      "sha256": "c31233d976634c33f99d32ec224a9a2b2564e57b0575b4566cd4eb5a3bce378b",
+      "bytes": 1414,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "LIANA+",
+    "factor enrichment heatmap",
+    "空间因子",
+    "spatial expression",
+    "ligand receptor",
+    "NMF",
+    "multi-omics"
+  ]
+}

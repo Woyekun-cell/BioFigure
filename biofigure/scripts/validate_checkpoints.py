@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import re
@@ -15,11 +16,22 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from reference_modes import (design_reference_mode, receipt_reference_mode,
+                             mode_binding_errors, code_gate, ORIGINAL_MATERIAL)
+from reference_paths import resolve_reference_path, resolve_project_root
+_text_spec = importlib.util.spec_from_file_location("biofigure_cp_text_policy", ROOT / "scripts/figure_text_policy.py")
+_text_module = importlib.util.module_from_spec(_text_spec)
+assert _text_spec and _text_spec.loader
+_text_spec.loader.exec_module(_text_module)
+_cell_spec = importlib.util.spec_from_file_location('biofigure_cp_cell_geometry', ROOT / 'scripts/heatmap_geometry.py')
+_cell_module = importlib.util.module_from_spec(_cell_spec)
+_cell_spec.loader.exec_module(_cell_module)
 DEFINITION = ROOT / "checkpoints/checkpoints.yaml"
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 DETECTED_KEYS = {"overlap", "clipping", "missing_glyph", "font_fallback", "legend_overlap",
                  "non_white_background", "unrequested_text", "small_text", "text_position",
-                 "label_overlap", "panel_misalignment", "figure_text_proportion"}
+                 "label_overlap", "panel_misalignment", "figure_text_proportion", "footer_text"}
 REPRO_CORPUS = ROOT / "atlas/reproduction-derived-corpus.json"
 
 
@@ -32,7 +44,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_inspection_evidence(document: dict) -> list[str]:
+def validate_inspection_evidence(document: dict, heatmap_design: dict | None = None) -> list[str]:
     """Validate artifact-bound CP3/CP4 inspection evidence fields."""
     errors = []
     required = ('artifact_sha256', 'first_render_sha256', 'target_size', 'reviewer_type',
@@ -85,7 +97,7 @@ def validate_inspection_evidence(document: dict) -> list[str]:
     final_checks = document.get('final_size_checks')
     required_checks = ('typography_size', 'typography_position', 'label_overlap',
                        'legend_overlap', 'clipping', 'panel_alignment',
-                       'figure_text_proportion', 'semantic_color')
+                       'figure_text_proportion', 'semantic_color', 'footer_absent')
     if not isinstance(final_checks, dict):
         errors.append('final_size_checks must be a mapping')
     else:
@@ -106,27 +118,55 @@ def validate_inspection_evidence(document: dict) -> list[str]:
         color = (final_checks.get('checks') or {}).get('semantic_color', {})
         if not isinstance(color, dict) or color.get('colored_data_marks') is not True:
             errors.append('semantic_color.colored_data_marks must be true: monochrome or decorative-only color cannot receive visual PASS')
+    if _cell_module.requires_cell_geometry(heatmap_design or {}):
+        errors.extend(_cell_module.validate_cell_metrics(document.get('heatmap_cells'), heatmap_design))
+        cell_check = ((final_checks or {}).get('checks') or {}).get('cell_geometry', {})
+        if (not isinstance(cell_check, dict) or cell_check.get('status') != 'PASS'
+                or not str(cell_check.get('evidence', '')).strip()):
+            errors.append('final_size_checks.cell_geometry requires actual final-size cell observation before PASS')
     return errors
 
 
-def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS, root: Path | None = None) -> list[str]:
+def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS, root: Path | None = None,
+                                  document_path: Path | None = None,
+                                  reference_mode: str | None = None) -> list[str]:
     errors = []
     try:
-        receipt = json.loads(Path(receipt_path).read_text())
+        resolved_receipt = resolve_reference_path(receipt_path, document_path=document_path, project_root=root)
+        receipt = json.loads(resolved_receipt.read_text())
         if receipt.get('schema_version') != 1 or not str(receipt.get('query','')).strip():
             errors.append('reproduction receipt version/query invalid')
         if receipt.get('kind') == 'primary-source-lock':
-            source_root = Path(root or receipt.get('project_root','')).expanduser().resolve()
-            if not source_root.is_dir() or Path(str(receipt.get('project_root',''))).expanduser().resolve() != source_root:
+            locked_mode = receipt.get('reference_mode')
+            if locked_mode is not None and locked_mode not in {'reference-guided', 'reproduction'}:
+                errors.append('primary-source lock reference_mode must be reference-guided or reproduction')
+            if reference_mode is not None and locked_mode is not None and reference_mode != locked_mode:
+                errors.append('reference_mode differs between source lock and Design Spec')
+            if reference_mode == 'original':
+                errors.append('reference_mode original cannot bind a source lock')
+            # Legacy unversioned locks retain their original three-role contract.
+            guided = locked_mode == 'reference-guided' and reference_mode in {None, 'reference-guided'}
+            source_root = resolve_project_root(receipt.get('project_root'), document_path=resolved_receipt)
+            if root is not None and Path(root).expanduser().resolve() != source_root:
                 errors.append('primary-source lock project root invalid')
             paper = receipt.get('primary_source', {})
-            for key in ('title','doi','url','figure','panel'):
+            kind = paper.get('kind', 'paper')
+            if kind not in {'paper', 'package-docs', 'tutorial', 'user-reference'}:
+                errors.append('primary-source lock primary_source.kind is unsupported')
+            metadata_keys = ('title', 'url') if guided else ('title', 'url', 'figure', 'panel')
+            if not guided and kind == 'paper':
+                metadata_keys += ('doi',)
+            if kind in {'package-docs', 'tutorial'}:
+                metadata_keys += ('version',)
+            if guided and kind == 'user-reference':
+                metadata_keys = ('title', 'attachment_name')
+            for key in metadata_keys:
                 if not isinstance(paper.get(key),str) or not paper[key].strip():
                     errors.append(f'primary-source lock missing primary_source.{key}')
             files = receipt.get('source_files')
             roles = set()
-            if not isinstance(files,list) or len(files)<3:
-                errors.append('primary-source lock requires at least three hashed source files')
+            if not isinstance(files,list) or len(files) < (1 if guided else 3):
+                errors.append('primary-source lock requires at least one hashed source file' if guided else 'primary-source lock requires at least three hashed source files')
                 files = []
             for item in files:
                 if not isinstance(item,dict):
@@ -142,12 +182,18 @@ def validate_reproduction_receipt(receipt_path: str, corpus: Path = REPRO_CORPUS
                     errors.append(f'primary-source lock path escapes project root: {rel}')
                 elif not path.is_file() or not SHA256.fullmatch(str(claimed or '')) or digest(path)!=claimed:
                     errors.append(f'primary-source lock file missing or hash changed: {rel}')
-            if not {'figure_asset','author_code','source_data'}.issubset(roles):
+            adopted = receipt.get('adopted_roles')
+            if guided:
+                if (not isinstance(adopted, list) or not adopted or not all(isinstance(role, str) for role in adopted)
+                        or len(set(adopted)) != len(adopted) or 'figure_asset' not in adopted or not set(adopted).issubset(roles)):
+                    errors.append('reference-guided source lock must hash every declared adopted_role including figure_asset')
+            elif not {'figure_asset','author_code','source_data'}.issubset(roles):
                 errors.append('primary-source lock must bind figure_asset, author_code and source_data')
             mappings = receipt.get('source_mapping')
-            if not isinstance(mappings,list) or not mappings:
+            mapping_required = not guided or (isinstance(adopted, list) and 'source_data' in adopted)
+            if mapping_required and (not isinstance(mappings,list) or not mappings):
                 errors.append('primary-source lock source_mapping required')
-            else:
+            elif mappings:
                 for mapping in mappings:
                     if not isinstance(mapping,dict) or not mapping.get('panel') or mapping.get('author_code') not in roles or mapping.get('source_data') not in roles:
                         errors.append('primary-source lock mapping must bind a panel to author code and source data')
@@ -181,10 +227,13 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
     errors = []
     try:
         receipt = json.loads(Path(receipt_path).expanduser().read_text(encoding='utf-8'))
-        from reuse_templates import validate_binding
-        errors.extend(validate_binding(receipt, design_spec))
-        from retrieve_learned_methods import validate_binding as validate_learning
-        errors.extend(validate_learning(receipt, design_spec))
+        reference_mode = receipt_reference_mode(receipt)
+        errors.extend(mode_binding_errors(receipt, design_spec))
+        if reference_mode != 'original':
+            from reuse_templates import validate_binding
+            errors.extend(validate_binding(receipt, design_spec))
+            from retrieve_learned_methods import validate_binding as validate_learning
+            errors.extend(validate_learning(receipt, design_spec))
         claimed_id = receipt.get('preparation_id')
         unsigned = dict(receipt)
         unsigned.pop('preparation_id', None)
@@ -195,7 +244,7 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
             errors.append('preparation receipt version or integrity hash invalid')
         if receipt.get('status') != 'PREFLIGHT_COMPLETE':
             errors.append('preparation receipt is not PREFLIGHT_COMPLETE')
-        if receipt.get('code_gate') != 'BLOCKED_UNTIL_REFERENCE_ANALYSIS_AND_CP2':
+        if receipt.get('code_gate') != code_gate(reference_mode):
             errors.append('preparation receipt code gate invalid')
         material = receipt.get('source_hashes', {})
         required_material = {
@@ -220,6 +269,10 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
             'atlas/learned-method-validations.json', 'scripts/validate_learned_reuse.py',
             'atlas/source-syntax-audit.json',
         }
+        if reference_mode == 'original':
+            required_material = ORIGINAL_MATERIAL
+        elif 'reference_mode' in receipt:
+            required_material.update({'scripts/reference_modes.py', 'scripts/reference_paths.py'})
         if not isinstance(material, dict) or receipt.get('missing_material') or not required_material.issubset(material):
             errors.append('preparation receipt has missing or malformed bound material')
         else:
@@ -231,7 +284,7 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
                     errors.append(f'preparation receipt source changed or missing: {name}')
             if not set(receipt.get('route', {}).get('modules', [])) <= set(material):
                 errors.append('preparation receipt does not hash every routed module')
-        expected_sources = {'reproduction', 'top_journal', 'scidraw'}
+        expected_sources = set() if reference_mode == 'original' else {'reproduction', 'top_journal', 'scidraw'}
         loaded_sources = set(receipt.get('route', {}).get('reference_evidence_layers', {}))
         if not expected_sources.issubset(loaded_sources):
             errors.append('preparation receipt omits mandatory reference sources')
@@ -243,6 +296,12 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
             errors.append('Design Spec preparation_request differs from complete CP2 request binding')
         if spec_reference.get('selected_method_case_id') != receipt.get('selected_reference_candidates', {}).get('planner_selected'):
             errors.append('Design Spec selected_method_case_id differs from deterministic planner candidate')
+        if reference_mode == 'original':
+            selected_pattern = design_spec.get('selected_pattern')
+            if receipt.get('selected_reference_candidates', {}).get('planner_selected') != 'PATTERN-' + str(selected_pattern):
+                errors.append('original Design Spec Pattern differs from the preflight-selected Pattern')
+            if request.get('pattern_id') and request['pattern_id'] != selected_pattern:
+                errors.append('original Design Spec selected_pattern differs from requested pattern_id')
         if re.sub(r'\s+', ' ', str(request.get('figure_task', '')).strip()).casefold() != re.sub(r'\s+', ' ', str(design_spec.get('figure_task', '')).strip()).casefold():
             errors.append('preparation receipt figure_task differs from Design Spec')
         biology = design_spec.get('biology_contract', {})
@@ -255,7 +314,7 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
             errors.append('preparation receipt primary_role differs from Design Spec')
         if request.get('figure_family') and request.get('figure_family') != design_spec.get('reference_analysis', {}).get('figure_family'):
             errors.append('preparation receipt figure_family differs from Design Spec reference analysis')
-        targets = {'quick-png': ['png'], 'paper-composite': ['pdf', 'svg', 'png'],
+        targets = {'quick-png': ['png'], 'paper-pdf': ['pdf', 'png'], 'paper-composite': ['pdf', 'svg', 'png'],
                    'editable-vector': ['svg', 'pdf', 'png'], 'tiff-submission': ['tiff', 'png']}
         requested_target = request.get('deliverable')
         contract = design_spec.get('deliverable_contract', {})
@@ -288,6 +347,7 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             errors.append('Python CP3 PASS blocked: official authorized Python renderer is not implemented')
         authorization = receipt.get('authorization_consumption', {})
         authorization = authorization if isinstance(authorization, dict) else {}
+        authorized_design_path = None
         marker = authorization.get('marker', {})
         marker_path = Path(str(marker.get('path', ''))).expanduser()
         if (authorization.get('consumed') is not True or not SHA256.fullmatch(str(authorization.get('authorization_id', '')))
@@ -344,6 +404,13 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
                         Path(str(consumed_prep.get('path', ''))).resolve() != preparation_receipt.resolve()):
                     errors.append('render authorization preparation receipt differs from CP2 ledger')
                 auth_design = bound_inputs.get('design_spec', {})
+                authorized_design_path = bound_path(auth_design)
+                if authorized_design_path is not None and bound(consumed_prep):
+                    current_preparation = json.loads(bound_path(consumed_prep).read_text(encoding='utf-8'))
+                    current_design = load(authorized_design_path)
+                    errors.extend(mode_binding_errors(current_preparation, current_design))
+                    if auth_doc.get('reference_mode', 'reference-guided') != receipt_reference_mode(current_preparation):
+                        errors.append('reference_mode differs between render authorization and bound inputs')
                 if design_spec is not None and Path(str(auth_design.get('path', ''))).resolve() != design_spec.resolve():
                     errors.append('render authorization Design Spec differs from CP2 ledger')
                 render_sources = receipt.get('sources', [])
@@ -371,6 +438,11 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
             names = [Path(str(x.get('path', ''))).name for x in sources if isinstance(x, dict)] if isinstance(sources, list) else []
             if 'figure_style.R' not in names or not any(n.lower().endswith('.r') and n != 'figure_style.R' for n in names):
                 errors.append('ggplot2 receipt must bind plot source and figure_style.R')
+            current_style = ROOT / 'scripts/figure_style.R'
+            style_sources = [bound_path(x) for x in sources if isinstance(x, dict)
+                             and Path(str(x.get('path', ''))).name == 'figure_style.R'] if isinstance(sources, list) else []
+            if not any(path is not None and digest(path) == digest(current_style) for path in style_sources):
+                errors.append('ggplot2 receipt must bind the current canonical figure_style.R or an identical copy')
         if design_spec is not None and (not isinstance(sources, list) or not any(
                 bound_path(x) == design_spec.resolve() for x in sources if isinstance(x, dict))):
             errors.append('render receipt must bind current design spec')
@@ -386,6 +458,43 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
         checks = receipt.get('checks', {})
         if not isinstance(checks, dict) or any(checks.get(k) is not True for k in ('font', 'text_allowlist', 'layout', 'target_size')):
             errors.append('render receipt checks incomplete')
+        strict_text = True  # All renderers must submit actual canvas text.
+        rendered_text = receipt.get('rendered_text')
+        if strict_text:
+            if not isinstance(checks, dict) or checks.get('scientific_text_only') is not True:
+                errors.append('render receipt scientific_text_only check missing or false')
+            if receipt.get('text_policy_id') != _text_module.TEXT_POLICY_ID:
+                errors.append('render receipt current text_policy_id missing or invalid')
+            if (receipt.get('footer_policy_id') != _text_module.FOOTER_POLICY_ID
+                    or not isinstance(checks, dict) or checks.get('footer_free') is not True):
+                errors.append('render receipt current no-canvas-footer policy and footer_free check required')
+        if strict_text or 'rendered_text' in receipt:
+            if not isinstance(rendered_text, list) or not all(isinstance(label, str) for label in rendered_text):
+                errors.append('render receipt rendered_text must be an array of actual rendered strings')
+            else:
+                errors.extend(_text_module.validate_figure_text(rendered_text, field='render receipt rendered_text'))
+                text_design_path = design_spec if design_spec is not None else authorized_design_path
+                if text_design_path is None:
+                    errors.append('rendered text evidence requires the current bound Design Spec')
+                else:
+                    text_design = load(text_design_path)
+                    contract = text_design.get('text_contract', {}) if isinstance(text_design, dict) else {}
+                    errors.extend(_text_module.validate_footer_contract(contract))
+                    allowed = contract.get('allowed_text') if isinstance(contract, dict) else None
+                    if not isinstance(allowed, list) or not all(isinstance(label, str) for label in allowed):
+                        errors.append('rendered text evidence requires Design Spec text_contract.allowed_text strings')
+                    else:
+                        errors.extend(_text_module.validate_figure_text(allowed))
+                        # Empty grob labels are invisible; every visible string must be declared.
+                        unexpected = sorted(set(label for label in rendered_text if label.strip()) - set(allowed))
+                        if unexpected:
+                            errors.append('render receipt actual rendered_text contains unapproved labels: ' + ' | '.join(unexpected))
+        cell_design_path = design_spec if design_spec is not None else authorized_design_path
+        cell_design = load(cell_design_path) if cell_design_path is not None else {}
+        if _cell_module.requires_cell_geometry(cell_design) or receipt.get('heatmap_cells'):
+            errors.extend(_cell_module.validate_cell_metrics(receipt.get('heatmap_cells'), cell_design))
+            if receipt.get('heatmap_cell_policy_id') != _cell_module.POLICY_ID or checks.get('cell_geometry') is not True:
+                errors.append('heatmap_cells requires current policy and executed cell_geometry check')
         size = receipt.get('target_min_text_pt')
         if type(size) not in (int, float) or not math.isfinite(size) or size < 5:
             errors.append('render receipt target text below 5 pt or invalid')
@@ -483,6 +592,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                 if not isinstance(evidence.get(key), str) or not evidence[key].strip():
                     errors.append(f"CP1 {key} must be non-empty")
         if checkpoint_id == "CP2":
+            spec_doc = {}
             spec_path = Path(str(evidence.get('design_spec', ''))).expanduser()
             if not spec_path.is_file():
                 errors.append('CP2 design_spec file required')
@@ -502,8 +612,13 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                         errors.extend(validate_preparation_receipt(prep_path, spec_doc))
                 except Exception as exc:
                     errors.append(f'CP2 preparation receipt binding failed: {exc}')
-            receipt_path = evidence.get('reference_method_receipt', evidence.get('reproduction_retrieval_receipt',''))
-            errors.extend(validate_reproduction_receipt(str(receipt_path), root=ROOT.parent))
+            try:
+                cp2_mode = design_reference_mode(spec_doc) if spec_path.is_file() else 'reference-guided'
+                if cp2_mode != 'original':
+                    receipt_path = evidence.get('reference_method_receipt', evidence.get('reproduction_retrieval_receipt',''))
+                    errors.extend(validate_reproduction_receipt(str(receipt_path), document_path=spec_path, reference_mode=cp2_mode))
+            except ValueError as exc:
+                errors.append(str(exc))
             for key, wanted in (("design_spec_validation", "PASS"), ("renderer_available", True), ("layout_slots_reserved", True)):
                 if evidence.get(key) != wanted:
                     errors.append(f"CP2 {key} must be {wanted}")
@@ -537,6 +652,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             elif any(detected[key] is not False for key in DETECTED_KEYS):
                 errors.append("CP3 cannot PASS with a detected hard failure")
         if checkpoint_id == "CP4":
+            spec_doc = {}
             cp2 = entries[2].get('evidence', {})
             cp3 = entries[3].get('evidence', {})
             command = [sys.executable, str(ROOT/'scripts/run_critics.py'), '--artifact', str(cp3.get('artifact', '')),
@@ -549,7 +665,8 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             else:
                 try:
                     inspection_doc = load(inspection_path)
-                    errors.extend([f'inspection evidence: {item}' for item in validate_inspection_evidence(inspection_doc)])
+                    current_spec = load(Path(str(cp2.get('design_spec', ''))))
+                    errors.extend([f'inspection evidence: {item}' for item in validate_inspection_evidence(inspection_doc, current_spec)])
                     if inspection_doc.get('artifact_sha256') != cp3.get('artifact_sha256'):
                         errors.append('inspection evidence artifact hash differs from CP3')
                     if inspection_doc.get('first_render_sha256') != cp3.get('first_render_sha256'):
@@ -575,6 +692,9 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             spec_path = Path(str(cp2.get('design_spec', '')))
             try:
                 spec_doc = load(spec_path)
+                current_mode = design_reference_mode(spec_doc)
+                if ledger.get('reference_mode') is not None and ledger['reference_mode'] != current_mode:
+                    errors.append('reference_mode differs between ledger and Design Spec')
                 biology = spec_doc.get('biology_contract', {})
                 for key in ('primary_domain', 'secondary_domain'):
                     if biology.get(key): command.extend(['--domain', str(biology[key])])
@@ -592,6 +712,7 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                 errors.append("CP4 deliverables must be non-empty")
             else:
                 observed = set()
+                observed_formats = set()
                 for item in deliverables:
                     if not isinstance(item, dict):
                         errors.append("CP4 deliverable must be a mapping")
@@ -604,8 +725,13 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                         errors.append(f"CP4 deliverable hash mismatch: {path}")
                     else:
                         observed.add(claimed)
+                        observed_formats.add(path.suffix.lower().lstrip('.'))
                 if cp3_digest and cp3_digest not in observed:
                     errors.append("CP4 deliverables do not include the inspected artifact")
+                required_formats = set(spec_doc.get('deliverable_contract', {}).get('required_formats', []))
+                missing_formats = required_formats - observed_formats
+                if missing_formats:
+                    errors.append('CP4 actual deliverables missing required format(s): ' + ', '.join(sorted(missing_formats)))
     return errors
 
 

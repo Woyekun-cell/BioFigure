@@ -376,5 +376,18 @@
       "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv"
     ]
   },
-  "public_execution_profile": "data/metadata/public-replay.json"
+  "public_execution_profile": "data/metadata/public-replay.json",
+  "portable_release_3_8": {
+    "status": "reference-only",
+    "reason": "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code.",
+    "code_license": "MIT for BioFigure-owned adapters only; no license granted for author source code or inputs.",
+    "removed_public_input_files": [
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv",
+        "sha256": "2f510290caed40468736a85fe037b581087b75aa1ef3e56b593443d7abb0c822",
+        "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+      }
+    ],
+    "historical_records": "Historical source links, learned findings and old qualification scopes retained. Earlier Git history may still contain the formerly published derived tables."
+  }
 }

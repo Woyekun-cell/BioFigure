@@ -30,8 +30,35 @@ required:
   - inspection_plan
   - critic_targets
 notes: Internal pre-render contract; it does not replace scientific result tables.
+reference_mode_contract:
+  values: [original, reference-guided, reproduction]
+  new_specs: explicit_and_equal_to_preparation_request_receipt_and_authorization
+  legacy_without_mode: preserve_source_guided_rules_without_upgrading_evidence
+  original: full_design_analysis_and_six_dimension_design_quality_without_source_figure_or_DOI
+  source_modes: preserve_reference_analysis_source_bindings_and_reference_quality
+heatmap_cell_contract:
+  trigger: displayed_rectangular_heatmap_including_learned_native_matrix
+  required: [policy_id, shape, rows, columns, measurement_basis, max_relative_error]
+  policy_id: heatmap-cells-v1
+  shape: [square, dense-overview]
+  counts: actual_displayed_matrix_not_raw_input
+  measurement_basis: final_body_viewports_mm
+  max_relative_error: positive_and_at_most_0.01
+  dense_overview: explicit_density_reason_and_displayed_rows_or_columns_greater_than_200
+  annotation_layers: optional_list_of_layer_index_and_categorical-strip_role_checked_one_dimension_at_most_3mm
+  evidence: actual_per_panel_or_slice_measurements_and_final_size_visual_observation
+mark_style_contract:
+  compatibility: optional_for_archived_specs_required_by_workflow_for_new_point_line_area_figures
+  policy_id: layer-role-opacity-v1
+  required: [policy_id, layers]
+  layer_required: [layer, role]
+  role_options: [replicate-point, hollow-point, dense-point, individual-line, summary-line, uncertainty-band, distribution-fill, continuous-bubble, bar-fill]
+  optional_layer_fields: [fill_alpha, edge_alpha, alpha, override_reason]
+  renderer_check: bf_check_mark_layers_actual_built_aesthetics_before_export
 field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, reference_analysis: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, project_style_contract: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
 reference_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
+original_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query]
+original_design_target: six_dimensions_observation_implementation_difference_reason_no_reference_or_reference_opened
 primary_source_lock_contract: {trigger: reference_evidence.primary_source_lock_is_nonempty, required: [primary_source_lock, primary_source], empty_atlas_ids_permitted_when_lock_validates: true}
 reference_analysis_required: [figure_family, semantic_purpose, panels, elements, relationships, spatial_topology, required_structures, forbidden_substitutions]
 reference_panel_required: [id, role, position]
@@ -58,6 +85,7 @@ biology_contract_required: [primary_domain, entities, relationships, experimenta
 role_contract_required: [primary_role, secondary_roles]
 backend_lock_required: [backend, lock_id, locked, preview_export_qa_same_backend]
 deliverable_contract_required: [target, required_formats]
+deliverable_formats: {quick-png: [png], paper-pdf: [pdf, png], paper-composite: [pdf, svg, png], editable-vector: [svg, pdf, png], tiff-submission: [tiff, png]}
 integrity_contract_required: [source_data_preserved, exclusions_declared, uncertainty_declared]
 renderer_constraint: backend_must_exist_in_renderer-registry_and_selected_pattern_options
 layout_contract_required: [canvas, data_bbox, annotation_bbox, legend_bbox, label_reserve, collision_policy, text_extent_method, preflight_collision_check, coordinate_policy]
@@ -68,10 +96,22 @@ font_size_roles_required: [axis_text, axis_title, legend_text, strip_text, annot
 font_size_basis: final_output_size
 font_minimum_final_text_pt: 5
 font_max_role_ratio: 1.6
+font_source_max_role_ratio: 4
+# Optional source_typography_contract: reproduction only; viewed source image and
+# current SHA-256/read-set binding, semantic reason, role_basis for all text roles,
+# explicit maximum_role_ratio <=4, and final_pdf_role_sizes_required: true.
 background_contract_required: [canvas, panel, export]
 inspection_plan_required: [open_png, target_size_check, bbox_check, font_face_check]
 
 text_contract_required: [allowed_text, allow_headings]
+text_contract_content_policy:
+  id: scientific-content-only-v1
+  footer_policy_id: no-canvas-footer-v1
+  footer_policy: outside-only
+  canvas_caption_footer_footnote: forbidden_independent_of_heading_authorization
+  allowed_text_scope: scientific_labels_units_ticks_ids_legends_panels_statistics_n_scale_bars
+  forbid: canvas_caption_footer_footnote_methods_prose_filtering_criteria_paragraph_ai_commentary_generation_workflow_internal_audit_status_disclaimers
+  allow_headings_does_not_exempt_forbidden_content: true
 
 statistics_contract:
   trigger: statistics_required_is_true_or_statistics_plan_is_present

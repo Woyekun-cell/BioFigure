@@ -1,0 +1,737 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-nichenet-2020",
+  "learned_method_id": "BENCH-subjournal-nichenet-2020",
+  "title": "NicheNet: modeling intercellular communication by linking ligands to target genes",
+  "label": "NicheNet／ggplot2／cowplot：20配体活性排序、20×31调控潜力与10肿瘤共享键热图",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "chart_type": "ranked-heatmap",
+  "chart_types": [
+    "ranked-heatmap",
+    "ligand-target-heatmap",
+    "aligned-heatmaps"
+  ],
+  "figure_family": "ranked-heatmap",
+  "domain": "single-cell",
+  "paper": {
+    "title": "NicheNet: modeling intercellular communication by linking ligands to target genes",
+    "doi": "10.1038/s41592-019-0667-5",
+    "url": "https://www.nature.com/articles/s41592-019-0667-5",
+    "journal": "Nature Methods",
+    "year": 2020,
+    "online_publication_date": "2019-12-09",
+    "issue_date": "2020-02",
+    "volume": "17",
+    "pages": "159–162",
+    "figures": [
+      "Fig2a",
+      "Fig2b",
+      "Fig2c",
+      "Fig2d"
+    ],
+    "publication_assets_license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY",
+    "official_page_saved": "benchmark/library/single-cell/nichenet-2020/sources/paper.html",
+    "code_availability_locator": "Official paper Code availability section",
+    "online_date": "2019-12-09"
+  },
+  "source_implementation": {
+    "repository": "https://github.com/saeyslab/nichenetr",
+    "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd",
+    "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+    "source_type": "original paper analysis via immutableZenodo3462199 archivev1; current package is separate",
+    "original_figure_script_status": "DIRECT_ANALYSIS_PANEL_MAPPING",
+    "original_analysis_archive": {
+      "doi": "10.5281/zenodo.3462199",
+      "version": "v1",
+      "date": "2019-09-26",
+      "archive": "application_final.zip",
+      "archive_md5_reported": "55b00398f6ac46581aebac548b629665",
+      "archive_full_downloaded": false,
+      "git_commit": "NOT_APPLICABLE_ZENODO_RELEASE",
+      "member_crc32_verified": true,
+      "total_range_transfer_bytes": 154156
+    },
+    "package_commit_role": "current package implementation, not original2019analysis",
+    "repo": "https://github.com/saeyslab/nichenetr"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/Fig2.png",
+      "sha256": "a111477672d820a4e45fca63a143ccb1a497b803497e5d0feac69bd5df5ddb43",
+      "bytes": 155526,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_Fig2_HTML.png",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2117,
+        1218
+      ]
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/MOESM12.xlsx",
+      "sha256": "e449ddc903b64c005f0d0ace0a7b5714acc871dbb89aa086c0e69a356d81ab28",
+      "bytes": 45205,
+      "role": "official-source-data",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_MOESM12_ESM.xlsx",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/MOESM13.xlsx",
+      "sha256": "21caea4dffbd5a6601479ca54dafbc04d07dd1afad606280485caa63dbabdf35",
+      "bytes": 19990,
+      "role": "official-source-data",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_MOESM13_ESM.xlsx",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/MOESM7.xlsx",
+      "sha256": "ecbeba0d23b267427b5e1025e86cb4c347bfddd35898dff3a31b1857122682d1",
+      "bytes": 79515,
+      "role": "official-source-data",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_MOESM7_ESM.xlsx",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/MOESM9.xlsx",
+      "sha256": "21d2f2e56fb7a3841f56027f9cb6c23fa14a652b3ace5418df8f43b7dbb46921",
+      "bytes": 15693,
+      "role": "official-source-data",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_MOESM9_ESM.xlsx",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/DESCRIPTION",
+      "sha256": "3ab4724d58d2e83eed21a0c01f77f5a6fef23388949d98f861cc9a87c4de59a4",
+      "bytes": 1545,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/DESCRIPTION",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_network_extraction.R",
+      "sha256": "8392c3617a26dca55a4053cd8579595235906990114735055459e21f21dffac8",
+      "bytes": 13808,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_network_extraction.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_prediction.R",
+      "sha256": "a3636b54bc58200924d4798f0398d5cbbcc37b1ac17e931aa61f900acfe85c7f",
+      "bytes": 133688,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_prediction.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_visualization.R",
+      "sha256": "f5f407d6e1e8afea27e0ed4fb90db37bf2b8c48a89542785e9b0bc807dcbb00b",
+      "bytes": 81578,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_visualization.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/README.md",
+      "sha256": "0d89c9d177041a4a011563d571f8e2ea7a966fcca40d9589571e7f94aa4c45fe",
+      "bytes": 14326,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/README.md",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/vignettes/ligand_activity_geneset.Rmd",
+      "sha256": "03be2fa4bce4e0de9c8bf3d19fbb9783bb04c3b53e4b6ebdc265a0394ac1f6c2",
+      "bytes": 17360,
+      "role": "tutorial-not-original-figure-script",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/vignettes/ligand_activity_geneset.Rmd",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/paper.html",
+      "sha256": "12d77dc2c3b7c48ec7e2f0af6a4830bbd78aafd71eb82aa100ec37d067672c24",
+      "bytes": 423295,
+      "role": "official-paper-html",
+      "source_url": "https://www.nature.com/articles/s41592-019-0667-5?error=cookies_not_supported&code=1",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/README.txt",
+      "sha256": "c7df9c4b215b3767093d00510001f3a523c8add4156f82776dd4068bdf9108b1",
+      "bytes": 1510,
+      "role": "original-author-small-data",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/README.txt",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/data/gene_signature_pemt.txt",
+      "sha256": "ba4b0127498435fc5b7779191754a238625bd53463af367d96d948fcc64e4759",
+      "bytes": 717,
+      "role": "original-author-small-data",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/data/gene_signature_pemt.txt",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/results/example_signaling_network_datasources.txt",
+      "sha256": "0462e21c96374d73974379f0b1819b5c5a7f4b4adf59748e717153958abebb80",
+      "bytes": 6552,
+      "role": "original-author-small-data",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/results/example_signaling_network_datasources.txt",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/extract_signaling_pathway_TGFB3.R",
+      "sha256": "9dd6341117eb6536eba54efffb1436649f261529faa36a0c029046f43e1e17e6",
+      "bytes": 4305,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/extract_signaling_pathway_TGFB3.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/functions_applications.R",
+      "sha256": "6987afb82d61162d41604db4dfc88b69e4c12c3ac3df2380a3b0415699c0a9ae",
+      "bytes": 36128,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/functions_applications.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_ligand_activity_pemt_figures.R",
+      "sha256": "bdb50c93ac9e8a3ecd7b1c5061570a0821cefa6c4f0a421cc71e31183395542f",
+      "bytes": 31865,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_ligand_activity_pemt_figures.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+      "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3",
+      "bytes": 41794,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_pemt_analysis.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_single_cell_analysis.R",
+      "sha256": "4e0797ba3f971a5e28f71cb8b9ba7901765b85fa7a7b1921023f09e0d8450a24",
+      "bytes": 5190,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_single_cell_analysis.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/pemt_score_ligand_activity_regression.R",
+      "sha256": "74c4124ab98dd7234d6254a88660dc478312bbec141071fcff5d78e1aeb2f37a",
+      "bytes": 10485,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/pemt_score_ligand_activity_regression.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/pemt_scoring_sc.R",
+      "sha256": "402b676a91407dbe4cdf433f5e2e3f93de240d5ab2bd82dac5afd1141aac9c06",
+      "bytes": 2822,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/pemt_scoring_sc.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/process_hnscc_data.R",
+      "sha256": "bea12f524ddfda72fc0243cb9c9e82f19e4a91b1400403ebeb3c752617765a1e",
+      "bytes": 5188,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/process_hnscc_data.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/archive-index.json",
+      "sha256": "38dd91a1f850588ce869ca370518ee26b8b5f7c721e02c52205ce71d524706ab",
+      "bytes": 86500,
+      "role": "remote-zip-extraction-provenance",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/range-log.json",
+      "sha256": "a914a6497de9ba53749f3b1f95b85768963ec47795859dbdcbb2564a4ba8634a",
+      "bytes": 14871,
+      "role": "remote-zip-extraction-provenance",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/zip-central-directory.bin",
+      "sha256": "4cdad352e6e3668f9cf10a9161a9bfa70a82111363ba2e99bca189c2ec33f638",
+      "bytes": 62436,
+      "role": "remote-zip-extraction-provenance",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-record-3462199.json",
+      "sha256": "a629f620c09d89dc25e52bd98c1e9aa4f4775e1281127330a8cf3cdcc491f6e6",
+      "bytes": 5612,
+      "role": "official-immutable-archive-metadata",
+      "source_url": "https://zenodo.org/api/records/3462199",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_network_extraction.R",
+      "sha256": "8392c3617a26dca55a4053cd8579595235906990114735055459e21f21dffac8",
+      "bytes": 13808,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_network_extraction.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_prediction.R",
+      "sha256": "a3636b54bc58200924d4798f0398d5cbbcc37b1ac17e931aa61f900acfe85c7f",
+      "bytes": 133688,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_prediction.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_visualization.R",
+      "sha256": "f5f407d6e1e8afea27e0ed4fb90db37bf2b8c48a89542785e9b0bc807dcbb00b",
+      "bytes": 81578,
+      "role": "current-package-implementation-or-tutorial",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/R/application_visualization.R",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/author/vignettes/ligand_activity_geneset.Rmd",
+      "sha256": "03be2fa4bce4e0de9c8bf3d19fbb9783bb04c3b53e4b6ebdc265a0394ac1f6c2",
+      "bytes": 17360,
+      "role": "tutorial-not-original-figure-script",
+      "source_url": "https://raw.githubusercontent.com/saeyslab/nichenetr/66f90d5eeafef280b2b2f339b3fd70ffec1781dd/vignettes/ligand_activity_geneset.Rmd",
+      "license": "GPL-3 per DESCRIPTION; original Zenodo archive CC-BY-4.0",
+      "commit": "66f90d5eeafef280b2b2f339b3fd70ffec1781dd"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/extract_signaling_pathway_TGFB3.R",
+      "sha256": "9dd6341117eb6536eba54efffb1436649f261529faa36a0c029046f43e1e17e6",
+      "bytes": 4305,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/extract_signaling_pathway_TGFB3.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/functions_applications.R",
+      "sha256": "6987afb82d61162d41604db4dfc88b69e4c12c3ac3df2380a3b0415699c0a9ae",
+      "bytes": 36128,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/functions_applications.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_ligand_activity_pemt_figures.R",
+      "sha256": "bdb50c93ac9e8a3ecd7b1c5061570a0821cefa6c4f0a421cc71e31183395542f",
+      "bytes": 31865,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_ligand_activity_pemt_figures.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+      "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3",
+      "bytes": 41794,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_pemt_analysis.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_single_cell_analysis.R",
+      "sha256": "4e0797ba3f971a5e28f71cb8b9ba7901765b85fa7a7b1921023f09e0d8450a24",
+      "bytes": 5190,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/hnscc_single_cell_analysis.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/pemt_score_ligand_activity_regression.R",
+      "sha256": "74c4124ab98dd7234d6254a88660dc478312bbec141071fcff5d78e1aeb2f37a",
+      "bytes": 10485,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/pemt_score_ligand_activity_regression.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/pemt_scoring_sc.R",
+      "sha256": "402b676a91407dbe4cdf433f5e2e3f93de240d5ab2bd82dac5afd1141aac9c06",
+      "bytes": 2822,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/pemt_scoring_sc.R",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/process_hnscc_data.R",
+      "sha256": "bea12f524ddfda72fc0243cb9c9e82f19e4a91b1400403ebeb3c752617765a1e",
+      "bytes": 5188,
+      "role": "original-author-analysis",
+      "source_url": "https://zenodo.org/records/3462199/files/application_final.zip?download=1#application/HNSCC/scripts/process_hnscc_data.R",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/sources/Fig2.png",
+      "sha256": "a111477672d820a4e45fca63a143ccb1a497b803497e5d0feac69bd5df5ddb43",
+      "bytes": 155526,
+      "role": "official-paper-figure-actually-opened",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-019-0667-5/MediaObjects/41592_2019_667_Fig2_HTML.png",
+      "license": "ALL_RIGHTS_RESERVED_LOCAL_REFERENCE_ONLY",
+      "actual_viewed": true,
+      "view_tool": "view_image",
+      "image_pixels": [
+        2117,
+        1218
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "Fig2a",
+      "chart": "20×1 ligand activity ranked heatmap",
+      "scientific_question": "哪些CAF配体更能解释肿瘤细胞p-EMT基因集？",
+      "encoding": {
+        "y": "top20 by Pearson; source row order low→high, ggplot y displays high at top (PTHLH first)",
+        "fill": "whitesmoke→darkorange; Pearson target-set prediction ability 0.09134–0.12814",
+        "x": "one activity column, no expression unit"
+      },
+      "data_unit": "ligand × correlation of prior regulatory potential to binary pEMT target membership",
+      "shared_keys": [
+        "ligand (shared Fig2b rows)"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              17,
+              44
+            ],
+            [
+              291,
+              310
+            ],
+            [
+              336,
+              339
+            ],
+            [
+              406,
+              411
+            ],
+            [
+              454,
+              456
+            ]
+          ],
+          "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3"
+        }
+      ],
+      "source_table": "MOESM13.xlsx:panel_a_ligand_activity",
+      "layout": "narrow left stripe, 20 rows; bottom horizontal legend distinct from Fig2b–d"
+    },
+    {
+      "id": "Fig2b",
+      "chart": "20 ligands × 31 target genes regulatory-potential heatmap",
+      "scientific_question": "高排名配体对应哪些潜在p-EMT靶基因？",
+      "encoding": {
+        "x": "31 pEMT targets, Ward.D2 order of dist(1-cor(t(matrix)))",
+        "y": "same20 ligands as panel a; no ligand clustering",
+        "fill": "whitesmoke→mediumvioletred, 0–0.007 display; source max0.006426",
+        "zero": "links below pooled25th-percentile cutoff set to0 before display; zero not measured absence"
+      },
+      "data_unit": "prior model regulatory potential (dimensionless), not an observed molecular contact",
+      "shared_keys": [
+        "ligand with Fig2a",
+        "target genes with Fig2c"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              291,
+              339
+            ],
+            [
+              416,
+              422
+            ],
+            [
+              519,
+              569
+            ]
+          ],
+          "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3"
+        },
+        {
+          "path": "benchmark/library/single-cell/nichenet-2020/sources/author/R/application_visualization.R",
+          "role": "current-package-implementation-not-original-figure-script",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              329,
+              380
+            ]
+          ],
+          "sha256": "f5f407d6e1e8afea27e0ed4fb90db37bf2b8c48a89542785e9b0bc807dcbb00b"
+        }
+      ],
+      "source_table": "MOESM13.xlsx:panel_b_ligand_target",
+      "layout": "top wide matrix; italic top target labels90°, white tile separators; source assembled SVG13×8in; final typography not recoverable from raster alone"
+    },
+    {
+      "id": "Fig2c",
+      "chart": "10 tumors × 31 shared target expression heatmap",
+      "scientific_question": "同一靶基因集合的肿瘤平均表达是否随pEMT顺序变化？",
+      "encoding": {
+        "x": "same31 targets and order as panel b",
+        "y": "tumors ranked by mean pEMT; ggplot displays HN16 top to HN6 bottom",
+        "fill": "RdYlBu reversed, quantile-scaled per target to0–1 by dynutils::scale_quantile; source worksheet is unscaled",
+        "white_gaps": "tile separators; no absent tumor replacement"
+      },
+      "data_unit": "tumor-level malignant-cell mean expression; cells summarized within tumor, not20×31 independent samples",
+      "shared_keys": [
+        "target with b",
+        "tumor_id with d"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              343,
+              350
+            ],
+            [
+              370,
+              378
+            ],
+            [
+              416,
+              443
+            ],
+            [
+              519,
+              569
+            ]
+          ],
+          "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3"
+        }
+      ],
+      "source_table": "MOESM13.xlsx:panel_c_target_expression; raw aggregate0–9.40871, not final0–1 display",
+      "layout": "lower wide heatmap columns align exactly with b; no independent clustering allowed"
+    },
+    {
+      "id": "Fig2d",
+      "chart": "10×1 pEMT score aligned stripe",
+      "scientific_question": "给定肿瘤排序依据是什么？",
+      "encoding": {
+        "y": "identical tumor order as c",
+        "fill": "diverging pEMT mean score; separate scale from c",
+        "x": "one score column"
+      },
+      "data_unit": "mean pEMT score per tumor",
+      "shared_keys": [
+        "tumor_id with c"
+      ],
+      "code": [
+        {
+          "path": "benchmark/library/single-cell/nichenet-2020/sources/zenodo-author/application/HNSCC/scripts/hnscc_pemt_analysis.R",
+          "role": "original-author-analysis",
+          "mapping_status": "DIRECT_PANEL_BINDING",
+          "lines": [
+            [
+              343,
+              350
+            ],
+            [
+              459,
+              464
+            ],
+            [
+              519,
+              569
+            ]
+          ],
+          "sha256": "81891f96c7fb3c5abff299e6debc9145d5a47bb7ce91529884ac0a150291aef3"
+        }
+      ],
+      "source_table": "MOESM13.xlsx:panel_d_tumor_score",
+      "layout": "right lower stripe, row heights aligned with c; own horizontal legend"
+    }
+  ],
+  "input_contract": {
+    "required_fields": [
+      "ligand symbol",
+      "target symbol",
+      "tumor_id",
+      "CAF/malignant annotation",
+      "original expression transform",
+      "prior ligand-target regulatory potential",
+      "Pearson ranking statistic",
+      "pEMT gene set and background expressed genes",
+      "per-tumor pEMT mean"
+    ],
+    "experimental_units": "10 tumors in Fig2c/d; cells aggregated within tumor. Ligand rows are predictions, not biological replicates.",
+    "preprocessing": [
+      "source tumor exclusions explicit; primary tumor cells only Lymph node=0",
+      "expressed gene cutoff log2(mean(10*(2**x-1))+1)≥4; CAF ligands plus expressed malignant receptors",
+      "top20 ligands by Pearson to pEMT set vs expressed background",
+      "top250 targets per ligand intersect pEMT; below pooled25%weight cutoff set0",
+      "target order:dist(1-cor(t(matrix)))→Ward.D2; ligand ranking locked shared a/b",
+      "tumor order:ascending mean pEMT; actual top→bottom reverses factor levels",
+      "panelc:mean malignant expression per tumor then dynutils::scale_quantile; source Excel keeps pre-scaling values"
+    ],
+    "units": "regulatory potential andPearson dimensionless; aggregated expression transform source-specific; display0–1 quantile scale; pEMT score separate",
+    "missing_values": "visualized0 is thresholded low prior potential; absent source values must not silently impute0",
+    "seed": "deterministic panel heatmaps after fixed matrices; source broader RF/CV stochastic analyses not executed; no seed invented"
+  },
+  "packages_by_role": [
+    {
+      "name": "nichenetr",
+      "role": "ligand potential and target prediction, prior network extraction; original analysis calls package, current package archive separate",
+      "functions": [
+        "get_single_ligand_importances",
+        "get_weighted_ligand_target_links",
+        "make_heatmap_ggplot",
+        "make_threecolor_heatmap_ggplot"
+      ]
+    },
+    {
+      "name": "tidyverse",
+      "role": "key-preserving joins,CAF/malignant subsets,per-tumor mean summaries,pivot/filter"
+    },
+    {
+      "name": "stats",
+      "role": "dist(1-cor(t(matrix))),hclust(method=ward.D2) target order"
+    },
+    {
+      "name": "dynutils",
+      "role": "scale_quantile per target for0–1 display (not z-score)"
+    },
+    {
+      "name": "ggplot2/RColorBrewer",
+      "role": "tiles,white separators,orange/PuRd-like/Spectral/RdYlBu distinct semantic palettes"
+    },
+    {
+      "name": "cowplot/ggpubr",
+      "role": "shared matrix alignment and separately extracted legends"
+    },
+    {
+      "name": "xlsx",
+      "role": "original panel-level source workbook export"
+    }
+  ],
+  "core_functions": [
+    "get_single_ligand_importances",
+    "get_weighted_ligand_target_links",
+    "make_heatmap_ggplot",
+    "make_threecolor_heatmap_ggplot"
+  ],
+  "gaps": [
+    "原作者分析来自不可变Zenodo release v1／DOI，不是Git commit；已保存archive member bytes、CRC32和SHA256；当前包另锁commit。",
+    "未下载2GB完整application archive或327MB/8.8GB其他archive；只Range提取11个小文件154156bytes，完整归档MD5未重核。",
+    "未获取完整表达矩阵、先验ligand-target模型与全部依赖环境；不重新推断活性或网络。",
+    "当前nichenetr2.2.1.1源码与2019原始分析脚本分开；当前vignette不是原图脚本。",
+    "Fig2c源表是聚合后未缩放表达，须按原作者dynutils::scale_quantile再显示；直接用0–1色标会错误。",
+    "SVG源尺寸13×8in与期刊PNG的实际比例不完全相同，最终出版组装与字号未核实。",
+    "当前包根目录LICENSE请求返回404；GPL-3依据锁定commit的DESCRIPTION声明，未假称取得独立LICENSE文本。"
+  ],
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_VERIFIED",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_analysis": "NOT_RUN",
+    "scope": "source observation, source-code method learning and independent non-rendering table-contract checks only"
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "retrieve original visual encoding and source implementation roles",
+      "future input-contract design after freshCP2",
+      "non-rendering source-table audits"
+    ],
+    "prohibited": [
+      "inheriting original reproductionPASS",
+      "claiming new-input or stress validation",
+      "treating communication scores/prior edges/spatial predictions as established causality or physical cell identity"
+    ],
+    "original_figure_script_pairing": "DIRECT_ANALYSIS_PANEL_MAPPING"
+  },
+  "method_reference": {
+    "path": "benchmark/library/single-cell/nichenet-2020/learning.md",
+    "sha256": "80f5cc22a00227c42fd656c0261f0698a6e98a24a3eb8c0e8babcb0329454c83"
+  },
+  "evidence_manifest": "benchmark/library/single-cell/nichenet-2020/data/metadata/source-manifest.json",
+  "nonrender_checks": "benchmark/library/single-cell/nichenet-2020/data/metadata/nonrender-checks.json",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [
+    "get_single_ligand_importances",
+    "get_weighted_ligand_target_links",
+    "make_heatmap_ggplot",
+    "make_threecolor_heatmap_ggplot"
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/data/metadata/paper-source.json",
+      "sha256": "3281f4c9a1f36c2a44d051401b24b85874df20b439b3fe047cc55c04fb8b0104",
+      "bytes": 2244,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/data/metadata/source-manifest.json",
+      "sha256": "3e34d360f6df537c2cd0cc676921c6158bd8fe8255ef467050c997b399d853f7",
+      "bytes": 14446,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/data/metadata/code-figure-mapping.json",
+      "sha256": "e613853ca000e83f80d0aa7706c11644d0d2750dca3ea94aa5279d130583cbd5",
+      "bytes": 11207,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/nichenet-2020/data/metadata/nonrender-checks.json",
+      "sha256": "5e7707fad2c20128e1f9d2eb7876c17b838e449d7d103cdff996fb0192b20cac",
+      "bytes": 2001,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "NicheNet",
+    "ligand activity",
+    "ligand target heatmap",
+    "expression heatmap",
+    "p-EMT",
+    "single-cell"
+  ]
+}

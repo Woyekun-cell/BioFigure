@@ -70,7 +70,7 @@ reference_evidence:
   learned_source_reference:
     method_id: BENCH-genomics-cannabis-public-chr7-2025
     opened_source_asset:
-      path: docs/assets/genomics-gallery-20261011/cannabis-chr7.png
+      path: examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png
       sha256: 87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5
       original_size_viewed: true
   learned_method_reuse:

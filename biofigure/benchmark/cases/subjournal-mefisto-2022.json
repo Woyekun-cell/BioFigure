@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-mefisto-2022",
+  "learned_method_id": "BENCH-subjournal-mefisto-2022",
+  "title": "Identifying temporal and spatial patterns of variation from multimodal data using MEFISTO",
+  "label": "MEFISTO/MOFA2解释方差柱形热图、时间因子不确定性轨迹与物种相关核热图",
+  "status": "SCOPED_BDE_VISUAL_REPRODUCTION_AND_FIXED_AUTHOR_MODEL_REPLAY_VERIFIED",
+  "figure_family": "multiomics",
+  "domain": "multiomics",
+  "chart_type": "aligned total-variance bars and per-factor heatmaps; five factor trajectories with posterior uncertainty and two score bars; five species-correlation kernel heatmaps with clustering trees",
+  "chart_types": [
+    "aligned total-variance bars and per-factor heatmaps",
+    "five factor trajectories with posterior uncertainty and two score bars",
+    "five species-correlation kernel heatmaps with clustering trees"
+  ],
+  "paper": {
+    "title": "Identifying temporal and spatial patterns of variation from multimodal data using MEFISTO",
+    "journal": "Nature Methods",
+    "year": 2022,
+    "doi": "10.1038/s41592-021-01343-9",
+    "url": "https://www.nature.com/articles/s41592-021-01343-9",
+    "online_year": 2022,
+    "official_html_archived": "benchmark/library/multiomics/mefisto-2022/sources/paper-page.html",
+    "primary_sources": [
+      "https://www.nature.com/articles/s41592-021-01343-9",
+      "https://github.com/bioFAM/MEFISTO_analyses"
+    ],
+    "publication_asset_license": "CC-BY-4.0",
+    "issue_date": "2022-02",
+    "online_date": "2022-01-13"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/bioFAM/MEFISTO_analyses",
+    "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+    "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+    "source_type": "original author paper analysis"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/README.md",
+      "sha256": "c30802b247f118a262ed4d9748678743355efb1e15c83ca67887c0594fc04f91",
+      "bytes": 812,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/README.md",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "README.md"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/README.md",
+      "sha256": "de83b0af2f09c57d539cc41d0571f8accf2985c29aff2cd25da574b24dc88539",
+      "bytes": 1433,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/README.md",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/README.md"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/evodevo_all.Rmd",
+      "sha256": "4170cc42621d1469f8345aafefa1f96362925788369d02fb038180900896be2a",
+      "bytes": 39102,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/evodevo_all.Rmd",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/evodevo_all.Rmd"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/preprocess_data.R",
+      "sha256": "784948d27dd7a956f67756ac753b29c8c4aa09ef37abba94702a8afe59408c0f",
+      "bytes": 2746,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/preprocess_data.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/preprocess_data.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/train_evodevo.py",
+      "sha256": "c2ec135f8f37b07a3e6e6191bb88cd6395f9e1391c260de1d6ed920b899b9ed6",
+      "bytes": 6058,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/train_evodevo.py",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/train_evodevo.py"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/utils_evodevo.R",
+      "sha256": "711c0ccb55d138bf8d05a0d33a11e894d8c41013db55f6ad1f925969dd180613",
+      "bytes": 20574,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/utils_evodevo.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/utils_evodevo.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/evaluate_simulations.Rmd",
+      "sha256": "0d8311519ff2fd6667875dad150f621b0db614f063e495154bf925c4b54d031e",
+      "bytes": 9501,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/evaluate_simulations.Rmd",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/evaluate_simulations.Rmd"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/grid.py",
+      "sha256": "f1daa5412b294001dfc3bd3c482092d3797709d64d354ba32052fdd62ba33a45",
+      "bytes": 11449,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/grid.py",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/grid.py"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/utils_simulation.R",
+      "sha256": "188d7fd289c15937781b9971bf8cbcf93685779e8a69c2bbe46a092c0e1f0225",
+      "bytes": 6404,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/utils_simulation.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/utils_simulation.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-repository-commit.json",
+      "sha256": "15906bd7e5cacbb2d794ff29921516c3a1ed4a9ff8e6f2b56c442c8d6cc15727",
+      "bytes": 6085,
+      "source_url": "https://github.com/bioFAM/MEFISTO_analyses/tree/3310b5f285e49672d07438ca4878aa5eef77816c",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-repository-repo.json",
+      "sha256": "25589857cae57d42256134fad0cfe2e21ec9c9403788aad8e5dcf81d612c5a7b",
+      "bytes": 6890,
+      "source_url": "https://github.com/bioFAM/MEFISTO_analyses/tree/3310b5f285e49672d07438ca4878aa5eef77816c",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-repository-tree.json",
+      "sha256": "e67cafa7ef98f0e88b5bd7519bcdb3b94f1a548e20ffdaf5c3c0203a44d56c7e",
+      "bytes": 20373,
+      "source_url": "https://github.com/bioFAM/MEFISTO_analyses/tree/3310b5f285e49672d07438ca4878aa5eef77816c",
+      "role": "repository-receipt",
+      "license": "metadata"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/DESCRIPTION",
+      "sha256": "d64769d1d9d840181343b3ffebdd9ef6c214515887ea548b29dd8d35da46e660",
+      "bytes": 2500,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/DESCRIPTION",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "DESCRIPTION"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/LICENSE",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "bytes": 7652,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/LICENSE",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "LICENSE"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/R/mefisto.R",
+      "sha256": "794d23395880f0bb23ccee96e299725f08931ee809dfb2a8f4349f0a78a1c378",
+      "bytes": 50133,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/R/mefisto.R",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "R/mefisto.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/R/plot_factors.R",
+      "sha256": "d8fcc0dfb6e381b67aa63e0f0d19e71d7d8f9243ccb1f26f5778cccfe76f1a19",
+      "bytes": 21842,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/R/plot_factors.R",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "R/plot_factors.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/vignettes/MEFISTO_temporal.Rmd",
+      "sha256": "c3137be753d1f0e68dd8e10a17bfe241a06eadc62f1edaca4c621ea9701b962c",
+      "bytes": 7226,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/vignettes/MEFISTO_temporal.Rmd",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "vignettes/MEFISTO_temporal.Rmd"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/local-checks/check_current_package_demo.R",
+      "sha256": "f344ed79dc44fd92bcd033cc6c754a77078640e2a3954a4ad1d46fb226a7240d",
+      "bytes": 2025,
+      "source_url": "local-derived-nonrender-verification",
+      "role": "local-check-script",
+      "license": "local"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/original-figures/Fig2.png",
+      "sha256": "c589bbec79d62280a300fa588cf3a27b735cff3ad4a328310e1fce0f982d6120",
+      "bytes": 451578,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig2_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "CC-BY-4.0",
+      "figure": "Fig2",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "NOT_VERIFIED"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/paper-page.html",
+      "sha256": "0da6264f7bb46d09bc892faf9c3485a4513b446141d89d9a5efdb6d735d766b1",
+      "bytes": 498698,
+      "source_url": "https://www.nature.com/articles/s41592-021-01343-9",
+      "role": "source-document",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/raw/package-example/inst/extdata/MEFISTO_model.hdf5",
+      "sha256": "7564a6692886de695a7b0263cd55db78cda9e33c1f01e14a0760c0b2ac44532a",
+      "bytes": 299573,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/inst/extdata/MEFISTO_model.hdf5",
+      "role": "current-package-synthetic-example-not-paper-Fig2",
+      "license": "LGPL-3"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/raw/author-model/evodevo_model.hdf5",
+      "sha256": "c3c4b6a868e67ab8ad6089786929a7cb7cf0102492c0c16b9efb1d3630d81e08",
+      "bytes": 28870331,
+      "role": "Original author deposited evodevo model used in all three rows",
+      "source_url": "https://ndownloader.figshare.com/files/25486583",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/original-figures/paper.pdf",
+      "sha256": "416730ae3ec2243b921da0b61a5dbb7ca5f82ff75651e41c014e4f62e61443ea",
+      "bytes": 17473946,
+      "role": "Original full paper",
+      "source_url": "https://www.nature.com/articles/s41592-021-01343-9.pdf",
+      "license": "CC-BY-4.0"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/evodevo_all.Rmd",
+      "sha256": "4170cc42621d1469f8345aafefa1f96362925788369d02fb038180900896be2a",
+      "bytes": 39102,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/evodevo_all.Rmd",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/evodevo_all.Rmd"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/preprocess_data.R",
+      "sha256": "784948d27dd7a956f67756ac753b29c8c4aa09ef37abba94702a8afe59408c0f",
+      "bytes": 2746,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/preprocess_data.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/preprocess_data.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/train_evodevo.py",
+      "sha256": "c2ec135f8f37b07a3e6e6191bb88cd6395f9e1391c260de1d6ed920b899b9ed6",
+      "bytes": 6058,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/train_evodevo.py",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/train_evodevo.py"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/evodevo/utils_evodevo.R",
+      "sha256": "711c0ccb55d138bf8d05a0d33a11e894d8c41013db55f6ad1f925969dd180613",
+      "bytes": 20574,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/evodevo/utils_evodevo.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "evodevo/utils_evodevo.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/evaluate_simulations.Rmd",
+      "sha256": "0d8311519ff2fd6667875dad150f621b0db614f063e495154bf925c4b54d031e",
+      "bytes": 9501,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/evaluate_simulations.Rmd",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/evaluate_simulations.Rmd"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/grid.py",
+      "sha256": "f1daa5412b294001dfc3bd3c482092d3797709d64d354ba32052fdd62ba33a45",
+      "bytes": 11449,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/grid.py",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/grid.py"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/author-code/simulations/utils_simulation.R",
+      "sha256": "188d7fd289c15937781b9971bf8cbcf93685779e8a69c2bbe46a092c0e1f0225",
+      "bytes": 6404,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MEFISTO_analyses/3310b5f285e49672d07438ca4878aa5eef77816c/simulations/utils_simulation.R",
+      "role": "original-author-analysis-code",
+      "license": "NO_LICENSE_FILE_FOUND_LOCAL_REFERENCE_ONLY",
+      "commit": "3310b5f285e49672d07438ca4878aa5eef77816c",
+      "repository_path": "simulations/utils_simulation.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/R/mefisto.R",
+      "sha256": "794d23395880f0bb23ccee96e299725f08931ee809dfb2a8f4349f0a78a1c378",
+      "bytes": 50133,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/R/mefisto.R",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "R/mefisto.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/R/plot_factors.R",
+      "sha256": "d8fcc0dfb6e381b67aa63e0f0d19e71d7d8f9243ccb1f26f5778cccfe76f1a19",
+      "bytes": 21842,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/R/plot_factors.R",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "R/plot_factors.R"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/current-package/vignettes/MEFISTO_temporal.Rmd",
+      "sha256": "c3137be753d1f0e68dd8e10a17bfe241a06eadc62f1edaca4c621ea9701b962c",
+      "bytes": 7226,
+      "source_url": "https://raw.githubusercontent.com/bioFAM/MOFA2/4a102f2b491ab600738ddf693a70f0baf032ca68/vignettes/MEFISTO_temporal.Rmd",
+      "role": "current-package-not-original-paper-script",
+      "license": "LGPL-3",
+      "commit": "4a102f2b491ab600738ddf693a70f0baf032ca68",
+      "repository_path": "vignettes/MEFISTO_temporal.Rmd"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/sources/original-figures/Fig2.png",
+      "sha256": "c589bbec79d62280a300fa588cf3a27b735cff3ad4a328310e1fce0f982d6120",
+      "bytes": 451578,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01343-9/MediaObjects/41592_2021_1343_Fig2_HTML.png",
+      "role": "official-original-figure-bytes",
+      "license": "CC-BY-4.0",
+      "figure": "Fig2",
+      "actual_viewed": true,
+      "view_date": "2026-10-15",
+      "render_reproduction_status": "SELECTED_BDE_VISUAL_STYLE_REVIEWED_WITH_DECLARED_SOURCE_DIFFERENCES"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig2b",
+      "chart_type": "aligned total-variance bars and per-factor heatmaps",
+      "observed": true,
+      "color": "species colors for total R2 bars; white-to-purple factor-specific explained variance",
+      "values": "R2 percentage; total variance bar is not simple sum of independent per-factor effects",
+      "axes": "species blocks Mouse,Rabbit,Rat,Human,Opossum; within blocks Brain,Cerebellum,Heart,Liver,Testis; factor5 top to factor1 bottom",
+      "order": "explicit spec/vws at Rmd69-70; heatmap factor axis follows MOFA plotting orientation",
+      "density": "5species ×5organs ×5factors; physical square5.2mm cells in this reproduction; sourceb cells slightly tall.",
+      "typography": "species block headers; shared Var.(%) labels; rotated organ labels; factor labels only left block",
+      "legend": "shared continuous Var.(%) white-purple scale, approximately0-60",
+      "layers": "small total bars aligned directly over per-factor grid; consistent column widths",
+      "source_locator": "evodevo_all.Rmd198-201 and461-472",
+      "pairing": "EXACT_AUTHOR_PAPER_ANALYSIS; MOFA2 native plot_variance_explained then ggplot/cowplot assembly"
+    },
+    {
+      "panel": "Fig2d",
+      "chart_type": "five factor trajectories with posterior uncertainty and two score bars",
+      "observed": true,
+      "color": "five species retain colors across facets; teal smoothness; green sharedness; gray remainder",
+      "values": "point observed factor value; mean latent process line; ribbon authors code mean±1.96 sqrt(variance), paper caption more broadly calls mean/variance",
+      "axes": "common inferred developmental time Early to Late; y factor value; factors1..5 across columns",
+      "order": "factor order model factor names; species named lookup from sorted names; time coordinate uses warped common covariate",
+      "density": "five horizontally aligned plots with 5 species each; dense overlaid ribbons; ambiguity must be checked at final size",
+      "typography": "factor strip header; compact smoothness/sharedness text; shared y title and one x title",
+      "legend": "species semantics shared across panels; no separate per-factor legend",
+      "layers": "uncertainty ribbons alpha0.2 gray stroke0.1; line; observed dots size1; score tracks",
+      "source_locator": "evodevo_all.Rmd390-403,410-447",
+      "pairing": "EXACT_AUTHOR_PAPER_ANALYSIS; manuscript relocates the score bars above trajectories versus code assembly below"
+    },
+    {
+      "panel": "Fig2e",
+      "chart_type": "five species-correlation kernel heatmaps with clustering trees",
+      "observed": true,
+      "color": "blue negative/red positive group-kernel correlation fixed[-1,1], white around0",
+      "values": "learned species correlation for each latent factor; no causal conservation claim from color alone",
+      "axes": "five species on each axis; row labels suppressed and column labels rotated",
+      "order": "PublishedF1 Opossum,Human,Rabbit,Mouse,Rat; F2 Opossum,Human,Rat,Mouse,Rabbit; F3 Human,Opossum,Rabbit,Mouse,Rat; F4 Mouse,Rat,Opossum,Rabbit,Human; F5 Human,Mouse,Rat,Rabbit,Opossum. Actual deposited kernels clustered independently and not relabeled.",
+      "density": "each grid5x5, five grids; square cells meaningful",
+      "typography": "shared left color legend; 9pt source heatmap fontsize; species labels bottom",
+      "legend": "single diverging continuous[-1,1] legend",
+      "layers": "heatmaps with row/column dendrograms, thin cell boundaries; cowplot alignment",
+      "source_locator": "evodevo_all.Rmd352-384; utils_evodevo.R164-180",
+      "pairing": "EXACT_AUTHOR_PAPER_ANALYSIS; my_heatmap delegates pheatmap, final ordering depends clustering defaults and matrix values"
+    }
+  ],
+  "input_contract": {
+    "unit": "species-timepoint-organ summary after averaging replicates; not individual animal-level inferential sample",
+    "fields": [
+      "gene",
+      "view/organ",
+      "group/species",
+      "sample/timepoint",
+      "value/normalized expression",
+      "continuous time covariate",
+      "HDF5: factor means/variances,group kernels,R2"
+    ],
+    "preprocessing": "DESeq2 size factors then variance stabilizing transformation; filter orthologues; average same gene/tissue/time replicate_mean with n and variance retained; 7696 orthologues in paper;5 species×5 organs; MEFISTO5 factors;warping reference Mouse",
+    "seed": "Plot seed0; original training seed2020 recorded but not rerun",
+    "pretrained_source": "Figshare13233860.v1 file25486583; v1/v2 identical MD5; no retraining",
+    "source_model_sha256": "c3c4b6a868e67ab8ad6089786929a7cb7cf0102492c0c16b9efb1d3630d81e08",
+    "stored_counts": {
+      "species": 5,
+      "organs": 5,
+      "factors": 5,
+      "samples": 83,
+      "r2_total": 25,
+      "r2_per_factor": 125,
+      "observed_factor_values": 415,
+      "interpolation_rows": 350,
+      "kernel_entries": 125
+    },
+    "display_rule": "Preserve12negative R2 raw values; native display only ifelse(x<0,.001,x); posterior mean±1.96sqrt(var)"
+  },
+  "packages_by_role": {
+    "scientific_computation": [
+      "MOFA2",
+      "mofapy2",
+      "DESeq2"
+    ],
+    "rendering": [
+      "ggplot2",
+      "pheatmap",
+      "cowplot"
+    ]
+  },
+  "gaps": [
+    "Originalb mildly tall cells changed to physical squares under sparse-cell rule",
+    "Deposited Kg and native labels/clusters differ from published factors3/4/5, especially4/5; original named arrays retained",
+    "Final-artwork species colors and calibrated purple style replace current code defaults",
+    "OriginalFig2a illustration/2c scatter omitted; no claim complete Fig2 replication",
+    "No original full figure/retraining/exact original environment/new-input/stress/user acceptance claim.",
+    "Author repository has no LICENSE found: local inspection, no redistribution grant inferred."
+  ],
+  "nonrender_checks": {
+    "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/nonrender-checks.json",
+    "sha256": "85e1e03e9da006e43cc715a2ac112ca3de0bf5ab090aff043a4bed5ea631769d",
+    "historical_source_only": true
+  },
+  "benchmark_usage": {
+    "allowed": [
+      "source grammar/style retrieval",
+      "frozen author-model visual replay via scripts/replay.sh",
+      "source comparison and correct field/interval/legend transfer"
+    ],
+    "rendering_run": true,
+    "model_fit_run": false,
+    "registration": "Artifact-bound scoped learning/replay evidence; reproduction/transfer/stress bundles remain null",
+    "not_verified": [
+      "new_input_transfer",
+      "structural_stress",
+      "original_all_arrays_numerical_identity",
+      "original_environment_rebuild",
+      "user_acceptance",
+      "original_full_figure_reproduction"
+    ]
+  },
+  "claim_boundary": {
+    "visual_style_review": "PASS_SCOPED_SELECTED_BDE_PNG_PDF",
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "original_numerical_identity": "NOT_CLAIMED_DEPOSITED_KERNEL_DIFFERS",
+    "new_input_transfer": "NOT_VERIFIED",
+    "structural_stress": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "model_training_run": false,
+    "raw_workflow_run": false,
+    "actual_rendering_run": true
+  },
+  "method_reference": {
+    "path": "benchmark/library/multiomics/mefisto-2022/learning.md",
+    "sha256": "e67938d731ac3a85f862b5d029400793ae5530dbf2a6dabc5ed8218ac6483ba8",
+    "bytes": 6975,
+    "role": "Current source-grounded visual and encoding reuse contract"
+  },
+  "r_functions": [
+    {
+      "function_name": "MOFA2::plot_variance_explained",
+      "role": "model R2 bars/heatmaps; original Rmd198-201"
+    },
+    {
+      "function_name": "MOFA2::get_interpolated_factors + ggplot2::geom_ribbon/geom_line",
+      "role": "posterior factor mean and 95%-style normal interval; Rmd410-436"
+    },
+    {
+      "function_name": "MOFA2::plot_smoothness / plot_sharedness",
+      "role": "GP scale and mean absolute off-diagonal group correlation; current mefisto.R315-377"
+    },
+    {
+      "function_name": "get_group_kernel + my_heatmap + pheatmap",
+      "role": "factor-specific learned group kernels; original Rmd352-384; helper164-180"
+    },
+    {
+      "function_name": "cowplot::plot_grid",
+      "role": "multi-panel assembly; original Rmd445-485"
+    }
+  ],
+  "original_reproduction": "SELECTED_CHART_STYLE_REPRODUCED_WITH_DECLARED_KERNEL_DIFFERENCES",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "R_TECHNICAL_AND_ACTUAL_SCOPED_VISUAL_REVIEW_VERIFIED_CURRENT_CALL_REQUIRES_FRESH_GATES",
+  "functions": [
+    {
+      "function_name": "MOFA2::plot_variance_explained",
+      "role": "model R2 bars/heatmaps; original Rmd198-201"
+    },
+    {
+      "function_name": "MOFA2::get_interpolated_factors + ggplot2::geom_ribbon/geom_line",
+      "role": "posterior factor mean and 95%-style normal interval; Rmd410-436"
+    },
+    {
+      "function_name": "MOFA2::plot_smoothness / plot_sharedness",
+      "role": "GP scale and mean absolute off-diagonal group correlation; current mefisto.R315-377"
+    },
+    {
+      "function_name": "get_group_kernel + my_heatmap + pheatmap",
+      "role": "factor-specific learned group kernels; original Rmd352-384; helper164-180"
+    },
+    {
+      "function_name": "cowplot::plot_grid",
+      "role": "multi-panel assembly; original Rmd445-485"
+    }
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/paper-source.json",
+      "sha256": "fe2ba978ede5774e8d13a95b1db9f4f6ef9d723877285080babb8a0d1e7afc7b",
+      "bytes": 613,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/source-manifest.json",
+      "sha256": "5cdecfed2d5e37a52358032d5ca3b0bcbce0fa7750439dcd7f49814a0b87710e",
+      "bytes": 11007,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/code-figure-mapping.json",
+      "sha256": "46ddb052d4360eaba0a1159a48cccb46d49624bc0a1ed316c993dbc38153da6b",
+      "bytes": 6380,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/nonrender-checks.json",
+      "sha256": "85e1e03e9da006e43cc715a2ac112ca3de0bf5ab090aff043a4bed5ea631769d",
+      "bytes": 912,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "MEFISTO",
+    "MOFA2",
+    "variance explained",
+    "barplot",
+    "heatmap",
+    "trajectory",
+    "uncertainty interval",
+    "group kernel correlation",
+    "multi-omics"
+  ],
+  "source_learning_status": "COMPLETE_WITH_SOURCE_MODEL_AND_ACTUAL_BDE_VISUAL_REPLAY",
+  "fixed_input_replay": "PNG_BYTES_IDENTICAL_FRESH_PREPARE_CP2_AUTHORIZED_R",
+  "reproduction_review": {
+    "path": "benchmark/library/multiomics/mefisto-2022/results/tables/final-scoped-review.json",
+    "sha256": "d30156d3019544cd5982416eff05194bdbbbf2c0f958d95d3a1b6fd28c998ce4",
+    "bytes": 15380,
+    "role": "Actual source/final-native-R review scope"
+  },
+  "reproduction_evidence_manifest": {
+    "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/reproduction-evidence-manifest.json",
+    "sha256": "93ed561a8c3332a71c33ac0a9b6f9c1b9b7244c4623ff068b7af9d055f415fa5",
+    "bytes": 14028,
+    "role": "One-way permanent evidence manifest"
+  },
+  "frozen_replay_inputs": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/current_package_demo_interpolation.csv",
+      "sha256": "ec7823f4477c3e9987edfa049852991d9fbf72de0c7a3a50a8731ce7baebd0fd",
+      "bytes": 27544,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/factor_scores.csv",
+      "sha256": "6841d009e86e77cc4b6972585d479b92aba6ffeccfce6c21d4820977dc1d04b5",
+      "bytes": 720,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/group_kernels.csv",
+      "sha256": "e2ef58fb6c58953ccd50cef6ebf40fcc174afe34bad157defd8a6cac267ed604",
+      "bytes": 6037,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/interpolated_factors.csv",
+      "sha256": "57bcedead485bcbce7aed572b482312a76e2a8beb7eed4c3a8a3fba38ae176dc",
+      "bytes": 33222,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/observed_factors.csv",
+      "sha256": "a8263e21f5856aa40bad2a7aa37aadea18ebc30a64c481b0f7c5a1664e4ddccf",
+      "bytes": 23462,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/r2_per_factor.csv",
+      "sha256": "e2f4ab54c19376e4df2aea463191f55746869bc2118094de3a337e80b52b03fe",
+      "bytes": 5897,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/r2_total.csv",
+      "sha256": "f2bac8edcb813052cff403694a6ac587f1a34c2abaefe2289d96cd0d63feeff1",
+      "bytes": 887,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/sample_metadata.csv",
+      "sha256": "6d4c0372b17dfe208ee2c2bb3042ce8fc0673291b8f5544fc3ba979a8b663215",
+      "bytes": 2226,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/plot_data/species_colors.csv",
+      "sha256": "c3041577435533fe2dcd31de8ac308673ef73e62faae653750bb921f97ecc52c",
+      "bytes": 109,
+      "role": "Author-model extracted draw input, actual raw values preserved"
+    }
+  ],
+  "reproduction_scripts": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/build_source_comparison.py",
+      "sha256": "c3480894d30a02828d431e98dc20aec400f09730d6895b5371a346478e239f3d",
+      "bytes": 13794,
+      "role": "Native scientific renderer, fresh replay and source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/render.R",
+      "sha256": "7b62121b779172b2b01862058350e69285f4f4939578367eca4128d02d5a9384",
+      "bytes": 14377,
+      "role": "Native scientific renderer, fresh replay and source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/replay.py",
+      "sha256": "a09aca5d95274c0b75560e8c7bb437492c5d2b2e41624df8bb0bf7e262023f31",
+      "bytes": 4359,
+      "role": "Native scientific renderer, fresh replay and source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/replay.sh",
+      "sha256": "e85d4c76fd060725eb8f14e91df33e2a9046e0655d9604364e12febd55ce9a3f",
+      "bytes": 210,
+      "role": "Native scientific renderer, fresh replay and source comparison"
+    }
+  ],
+  "reproduction_outputs": [
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/figures/mefisto-fig2bde.pdf",
+      "sha256": "b4d06f255ef89103e7d1bd3e48648f093e328a674fde7b82abe885e35a831117",
+      "bytes": 103674,
+      "role": "New actual native data figure or explicitly labelled source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/figures/mefisto-fig2bde.png",
+      "sha256": "f263441fc519e9b571a23337eecbc8e07d9ac847eefa310903d0dc3f5ab4d677",
+      "bytes": 560017,
+      "role": "New actual native data figure or explicitly labelled source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/figures/mefisto-fig2bde.svg",
+      "sha256": "e9052f6bec8ec73cfb8bdb2f17d5e1d1ac193bb466674be5f6b7d3633266761f",
+      "bytes": 227889,
+      "role": "New actual native data figure or explicitly labelled source comparison"
+    },
+    {
+      "path": "benchmark/library/multiomics/mefisto-2022/results/figures/mefisto-original-vs-reproduction.pdf",
+      "sha256": "2861e17b4a27ed41b38433a7390c474f031880ec0bc5fe334dbf2c6a748c0d46",
+      "bytes": 1141922,
+      "role": "New actual native data figure or explicitly labelled source comparison"
+    }
+  ],
+  "visual_reuse_recipe": {
+    "renderer": {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/render.R",
+      "sha256": "7b62121b779172b2b01862058350e69285f4f4939578367eca4128d02d5a9384",
+      "bytes": 14377,
+      "role": "bound local evidence"
+    },
+    "entry": {
+      "path": "benchmark/library/multiomics/mefisto-2022/scripts/replay.sh",
+      "sha256": "e85d4c76fd060725eb8f14e91df33e2a9046e0655d9604364e12febd55ce9a3f",
+      "bytes": 210,
+      "role": "bound local evidence"
+    },
+    "style": {
+      "path": "benchmark/library/multiomics/mefisto-2022/data/metadata/reproduction/project-style.yaml",
+      "sha256": "105fc426b988f9387e5ffea5840509adcc62391c307e59a7c4d584e5c4f4e9d2",
+      "bytes": 459,
+      "role": "bound local evidence"
+    },
+    "scope": "Only frozen source-model inputs verified. New inputs need fresh semantics, axes, intervals, scales, physical-body and finalPNG/PDF review.",
+    "minimum_text_pt": 7,
+    "native_colorbars": "grid.rect vector strips, both export orientations checked",
+    "source_comparison": "equal data body widths, not whole-crop fit"
+  }
+}

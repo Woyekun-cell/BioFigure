@@ -2787,6 +2787,453 @@
         "new_input_requires": "fresh preparation,source comparison,CP2,actual final PNG/PDF review"
       },
       "validation_scope": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。 Whole figure/new-input/stress remain NOT_VERIFIED."
+    },
+    {
+      "case_id": "genomics-lepidoptera-merian-paints-2024",
+      "method_id": "BENCH-genomics-lepidoptera-merian-paints-2024",
+      "source": "genomics",
+      "label": "鳞翅目染色体演化 Fig.4b：系统树与120条真实染色体涂色",
+      "learning_source": "benchmark/library/genomics/lepidoptera-chromosome-evolution/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Reproduce formal Fig.4b Pierini layout from actual author processed BUSCO and chromosome tables plus saved phylogeny; use a new categorical palette. Fig.4a, original whole Fig.4, raw sequencing analysis, new-input transfer and stress qualification are outside this scoped fixture.",
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "date": "2026-10-11",
+        "scope": "Fixed author-processed formal Fig.4b only; intentionally recolored and single-panel legend reflowed",
+        "local_bundle": "benchmark/library/genomics/lepidoptera-chromosome-evolution/evidence/bundle.json",
+        "sha256": "6aaf47721a912f2efd05fb1dc9f3112d8baaa062f7111f73639f0b9c7ead5289",
+        "final_pdf": "benchmark/library/genomics/lepidoptera-chromosome-evolution/results/figures/fig4b_merian_recolored.pdf",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "whole_Fig4": "NOT_VERIFIED",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "case_id": "singlecell-circular-embedding-plot1cell",
+      "method_id": "BENCH-singlecell-circular-embedding-plot1cell",
+      "source": "single-cell",
+      "label": "环形UMAP外圈注释 plot1cell：15类102710真实细胞",
+      "learning_source": "benchmark/library/single-cell/circular-embedding-plot1cell/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Native-R circular-annotation method transfer using full102710 author-processed ADPKD UMAP coordinates; not original pig Fig2 or original ADPKD Fig1b ring reproduction. No raw sequencing, clustering, UMAP recomputation, inferential statistics or invented percent.mt.",
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_AT_DELIVERY",
+        "date": "2026-10-11",
+        "scope": "Fixed102710cell/15type/13donor processed UMAP native circular method transfer only",
+        "local_bundle": "benchmark/library/single-cell/circular-embedding-plot1cell/evidence/bundle.json",
+        "sha256": "776474a38998328ff6ff2ab05cf0983921e932b5651fda443a6f985eb9360af6",
+        "final_pdf": "benchmark/library/single-cell/circular-embedding-plot1cell/results/figures/circular_embedding_adpkd_recolored.pdf",
+        "renderer": "benchmark/library/single-cell/circular-embedding-plot1cell/scripts/render.R",
+        "new_input_transfer": "NOT_VERIFIED",
+        "stress": "NOT_VERIFIED",
+        "whole_original_figure": "NOT_VERIFIED",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "case_id": "epigenomics-te-tf-motif-atlas",
+      "method_id": "BENCH-epigenomics-te-tf-motif-atlas",
+      "source": "epigenomics",
+      "label": "转座子TF-motif14×35聚类热图及双对数散点",
+      "learning_source": "benchmark/library/epigenomics/te-tf-motif-atlas/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Native-R recolored reconstruction of formal Fig3a two log-log scatter panels and Fig3b full14x35 matrix, preserved existing statistics; no raw NGS, new testing or Fig3c/d signal reconstruction.",
+      "latest_scoped_review": {
+        "status": "SCOPED_PASS_FIXED_FIG3A_B",
+        "date": "2026-10-12",
+        "scope": "Formal Figure3a two scatters+Figure3b complete14x35/3slices/4trees;558source rows;no originalc/d/newinput/stress certification",
+        "local_bundle": "benchmark/library/epigenomics/te-tf-motif-atlas/evidence/bundle.json",
+        "sha256": "490c26ba7b11ecfb2b3ab20b507c7fdb2ad4d67c4454ff80c5f4bf5f66dca851",
+        "final_pdf": "benchmark/library/epigenomics/te-tf-motif-atlas/results/figures/te_tf_motif_atlas_recolored.pdf",
+        "renderer": "benchmark/library/epigenomics/te-tf-motif-atlas/scripts/render.R",
+        "fresh_CP2_and_final_review_required": true
+      }
+    },
+    {
+      "case_id": "multiomics-hmo-gene-reaction",
+      "method_id": "BENCH-multiomics-hmo-gene-reaction",
+      "source": "multiomics",
+      "label": "糖组学–转录组HMO：43节点58反应网络＋27结构共现热图",
+      "learning_source": "benchmark/library/multiomics/hmo-gene-reaction/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Source-exposed native-R method transfer from formal author Dataset3:43selected nodes/58directed reactions and full27x27 structure co-occurrence Jaccard matrix. Original Fig4 SNFG/manual composition not reproduced. No flux/MILP/raw sequencing, model reanalysis, new inference, or preprint values presented as final2022 Fig5.",
+      "latest_visual_review": {
+        "status": "USER_REJECTED_SOURCE_LAYOUT",
+        "date": "2026-10-12",
+        "reason": "Missing SNFG glycan glyphs/TypeI-II partition/formal layout; fixed replay equality is separate",
+        "local_bundle": "benchmark/library/multiomics/hmo-gene-reaction/evidence/bundle.json",
+        "sha256": "3f9ed0e0499123b1caff3152e4916674bd51a65a3018a82e6d56843ebeb9895f"
+      }
+    },
+    {
+      "case_id": "multiomics-hmo-snfg-fig4",
+      "method_id": "BENCH-multiomics-hmo-snfg-fig4",
+      "source": "multiomics",
+      "label": "HMO正式Fig4：SNFG糖链网络31节点40反应＋3异构体",
+      "learning_source": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Source-exposed Figure4A/B structural/layout reconstruction: originalA3isomers IDs28/29/39 and originalB31labels40formalreactions, true196visibleSNFGresidueglyphs/parentbonds,TypeI/II,zoom/carboninset/legends. Formalnumericimportance retained; sourcepixelwidths not invented. Manual source positions approx3-6px; authorfinalSNFGassemblycode unavailable. No rawsequencing ormodelreanalysis; wholeexactpixels/newinput/stressnotqualified.",
+      "latest_visual_review": {
+        "status": "SCOPED_SOURCE_LAYOUT_PASS_WITH_DISCLOSED_DIFFERENCES",
+        "date": "2026-10-12",
+        "high_fidelity_eligible": false,
+        "user_acceptance": "PENDING"
+      },
+      "latest_scoped_review": {
+        "status": "SCOPED_SOURCE_LAYOUT_NATIVE_STRUCTURE_FIXED_INPUT_REPLAY_PASS_WITH_DISCLOSED_DIFFERENCES",
+        "qualification": "benchmark/library/multiomics/hmo-gene-reaction/variants/fig4-snfg/evidence/scoped-qualification.json",
+        "sha256": "e326cefa1959251c3293460eb5c850172932e14aa8388617064e1ce9be603230",
+        "new_call_requires_fresh_CP2": true,
+        "source_numeric_linewidth_conflicts_preserved": true
+      }
+    },
+    {
+      "case_id": "genomics-rice-centromere-multitrack-2025",
+      "method_id": "BENCH-genomics-rice-centromere-multitrack-2025",
+      "source": "genomics",
+      "label": "水稻着丝粒：共线性多边形与十材料多轨注释",
+      "learning_source": "benchmark/library/genomics/rice-centromere-multitrack-2025/case-card.draft.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Original source/code learning plus processed-data or algorithm checks. No new figure rendered; no original-layout reproduction or transfer certification.",
+      "source_learning_review": {
+        "path": "work/2026-10-13-deep-omics-learning/independent-source-review.json",
+        "sha256": "c4ebb656697399b54d16b2ca88fcd05b66310238170715d4004ecd374b484699",
+        "scope": "source code, actual source images and non-rendering transforms; no visual reproduction approval"
+      }
+    },
+    {
+      "case_id": "epigenomics-chromafold-multiresolution-contact-atlas",
+      "method_id": "BENCH-epigenomics-chromafold-multiresolution-contact-atlas",
+      "source": "epigenomics",
+      "label": "ChromaFold：多分辨率接触三角图与共享基因组轨道",
+      "learning_source": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/machine-card.draft.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Original source/code learning plus processed-data or algorithm checks. No new figure rendered; no original-layout reproduction or transfer certification.",
+      "source_learning_review": {
+        "path": "work/2026-10-13-deep-omics-learning/independent-source-review.json",
+        "sha256": "c4ebb656697399b54d16b2ca88fcd05b66310238170715d4004ecd374b484699",
+        "scope": "source code, actual source images and non-rendering transforms; no visual reproduction approval"
+      }
+    },
+    {
+      "case_id": "multiomics-mofacll-proliferative-drive",
+      "method_id": "BENCH-multiomics-mofacll-proliferative-drive",
+      "source": "multiomics",
+      "label": "mofaCLL：连续因子排序热图与通路归属网络",
+      "learning_source": "benchmark/library/multiomics/mofacll-proliferative-drive/data/metadata/source-learning.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Original source/code learning plus processed-data or algorithm checks. No new figure rendered; no original-layout reproduction or transfer certification.",
+      "source_learning_review": {
+        "path": "work/2026-10-13-deep-omics-learning/independent-source-review.json",
+        "sha256": "c4ebb656697399b54d16b2ca88fcd05b66310238170715d4004ecd374b484699",
+        "scope": "source code, actual source images and non-rendering transforms; no visual reproduction approval"
+      }
+    },
+    {
+      "case_id": "gggenomes-emales-2026",
+      "method_id": "BENCH-gggenomes-emales-2026",
+      "source": "comparative-genomics",
+      "label": "六病毒基因组：基因箭头、蛋白共线带、TIR、NGARO与GC轨道",
+      "learning_source": "benchmark/cases/gggenomes-emales-2026.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Native six-virus tracks and same-input orientation test; all143genes,2856GCwindows,222adjacent protein ribbons.",
+      "latest_scoped_review": {
+        "status": "REFER_TO_ARTIFACT_BOUND_SCOPED_REVIEW",
+        "date": "2026-10-13",
+        "local_bundle": "benchmark/library/comparative-genomics/gggenomes-emales/evidence/bundle.json",
+        "root_review": "../results/tables/deep-learning-root-review-2026-10-13.json",
+        "renderer": "benchmark/library/comparative-genomics/gggenomes-emales/scripts/render.R",
+        "new_call_requires_fresh_CP2_and_actual_PNG_PDF_review": true,
+        "scope": "Fixed official inputs only; declared source differences retained; arbitrary new-input and user acceptance not verified.",
+        "hash_location": "Root review binds bundle/source/final hashes separately to avoid registry-receipt circularity."
+      }
+    },
+    {
+      "case_id": "ggtranscript-sod1-2026",
+      "method_id": "BENCH-ggtranscript-sod1-2026",
+      "source": "transcriptomics",
+      "label": "ggtranscript转录本结构、间隔压缩与异构体差异",
+      "learning_source": "benchmark/cases/ggtranscript-sod1-2026.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Native complete SOD1/PKNOX1 reference annotation structures, common gap shortening, isoform differences and half ranges; no expression inference.",
+      "latest_scoped_review": {
+        "status": "REFER_TO_ARTIFACT_BOUND_SCOPED_REVIEW",
+        "date": "2026-10-13",
+        "local_bundle": "benchmark/library/transcriptomics/ggtranscript-sod1/data/metadata/final-bundle.json",
+        "root_review": "../results/tables/deep-learning-root-review-2026-10-13.json",
+        "renderer": "benchmark/library/transcriptomics/ggtranscript-sod1/scripts/render.R",
+        "new_call_requires_fresh_CP2_and_actual_PNG_PDF_review": true,
+        "scope": "Fixed official inputs only; declared source differences retained; arbitrary new-input and user acceptance not verified.",
+        "hash_location": "Root review binds bundle/source/final hashes separately to avoid registry-receipt circularity."
+      }
+    },
+    {
+      "case_id": "ggsashimi-splicing-2026",
+      "method_id": "BENCH-ggsashimi-splicing-2026",
+      "source": "transcriptomics",
+      "label": "原生BAM覆盖剪接弧线叠加与均值",
+      "learning_source": "benchmark/cases/ggsashimi-splicing-2026.json",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "validation_scope": "Native author BAM counting plus explicit R compatibility repair;12libraries,overlay shrink andmean fixed-axis; upstream coordinate/filter semantics retained.",
+      "latest_scoped_review": {
+        "status": "REFER_TO_ARTIFACT_BOUND_SCOPED_REVIEW",
+        "date": "2026-10-13",
+        "local_bundle": "benchmark/library/transcriptomics/ggsashimi-splicing/evidence/bundle.json",
+        "root_review": "../results/tables/deep-learning-root-review-2026-10-13.json",
+        "renderer": "benchmark/library/transcriptomics/ggsashimi-splicing/scripts/render.R",
+        "new_call_requires_fresh_CP2_and_actual_PNG_PDF_review": true,
+        "scope": "Fixed official inputs only; declared source differences retained; arbitrary new-input and user acceptance not verified.",
+        "hash_location": "Root review binds bundle/source/final hashes separately to avoid registry-receipt circularity."
+      }
+    },
+    {
+      "case_id": "subjournal-cellrank-2022",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "CellRank 命运概率环形投影、伪时间概率散点与Scanpy标记基因气泡图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "COMPLETE_WITH_HISTORICAL_SNAPSHOT",
+      "original_reproduction": "PARTIAL_AUTHOR_METHOD_REANALYSIS_WITH_SOURCE_DIFFERENCES",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "CP2_VALID_NATIVE_PYTHON_RENDER_REVIEWED_OFFICIAL_CP3_NOT_VERIFIED",
+      "learning_reference": "benchmark/library/single-cell/cellrank-2022/learning.md",
+      "source_record": "benchmark/cases/subjournal-cellrank-2022.json",
+      "method_id": "BENCH-subjournal-cellrank-2022",
+      "fixed_input_replay": "EXACT_PNG_PIXELS_AND_PDF_SVG_BYTES_IN_THIS_ENVIRONMENT",
+      "latest_scoped_review": {
+        "status": "PARTIAL_AUTHOR_METHOD_REANALYSIS_AND_FIXED_INPUT_RENDER_VERIFIED_WITH_SOURCE_DIFFERENCES",
+        "date": "2026-10-15",
+        "root_review": "benchmark/library/single-cell/cellrank-2022/results/tables/final-scoped-review.json",
+        "renderer": "benchmark/library/single-cell/cellrank-2022/scripts/render_reproduction.py",
+        "replay": "benchmark/library/single-cell/cellrank-2022/scripts/replay.sh",
+        "evidence_manifest": "benchmark/library/single-cell/cellrank-2022/data/metadata/reanalysis-evidence-manifest.json",
+        "new_call_requires_fresh_CP2_and_actual_PNG_PDF_review": true,
+        "scope": "Actual original-data author-method reanalysis and frozen-input native redraw only; known numerical/visual differences; no full-fidelity or new-input qualification."
+      }
+    },
+    {
+      "case_id": "subjournal-mefisto-2022",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "MEFISTO/MOFA2解释方差柱形热图、时间因子不确定性轨迹与物种相关核热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "COMPLETE_WITH_SOURCE_MODEL_AND_ACTUAL_BDE_VISUAL_REPLAY",
+      "original_reproduction": "SELECTED_CHART_STYLE_REPRODUCED_WITH_DECLARED_KERNEL_DIFFERENCES",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "R_TECHNICAL_AND_ACTUAL_SCOPED_VISUAL_REVIEW_VERIFIED_CURRENT_CALL_REQUIRES_FRESH_GATES",
+      "learning_reference": "benchmark/library/multiomics/mefisto-2022/learning.md",
+      "source_record": "benchmark/cases/subjournal-mefisto-2022.json",
+      "method_id": "BENCH-subjournal-mefisto-2022",
+      "fixed_input_replay": "PNG_BYTES_IDENTICAL_FRESH_PREPARE_CP2_AUTHORIZED_R",
+      "latest_scoped_review": {
+        "date": "2026-10-15",
+        "status": "SCOPED_BDE_VISUAL_REPRODUCTION_AND_FIXED_AUTHOR_MODEL_REPLAY_VERIFIED",
+        "root_review": "benchmark/library/multiomics/mefisto-2022/results/tables/final-scoped-review.json",
+        "renderer": "benchmark/library/multiomics/mefisto-2022/scripts/render.R",
+        "replay": "benchmark/library/multiomics/mefisto-2022/scripts/replay.sh",
+        "evidence_manifest": "benchmark/library/multiomics/mefisto-2022/data/metadata/reproduction-evidence-manifest.json",
+        "new_call_requires_fresh_CP2_and_actual_PNG_PDF_review": true,
+        "scope": "Original deposited model b/d/e style reproduction; nativeR technical/actual visual reviewed; same frozenPNG byte-identical; declared kernel differences, no full-fidelity or new-input qualification."
+      }
+    },
+    {
+      "case_id": "subjournal-augur-2021",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "Augur AUC细胞数稳健性曲线、差异表达响应热图与ggplot2细胞类型排序棒棒糖图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE_WITH_DOCUMENTED_INPUT_AND_CODE_GAPS",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/single-cell/augur-2021/learning.md",
+      "source_record": "benchmark/cases/subjournal-augur-2021.json"
+    },
+    {
+      "case_id": "subjournal-liana-plus-2024",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "LIANA+／Squidpy／seaborn：NMF因子富集热图、空间转录组表达图与配体受体差异热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/spatial/liana-plus-2024/learning.md",
+      "source_record": "benchmark/cases/subjournal-liana-plus-2024.json"
+    },
+    {
+      "case_id": "subjournal-nichenet-2020",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "NicheNet／ggplot2／cowplot：20配体活性排序、20×31调控潜力与10肿瘤共享键热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/single-cell/nichenet-2020/learning.md",
+      "source_record": "benchmark/cases/subjournal-nichenet-2020.json"
+    },
+    {
+      "case_id": "subjournal-tangram-2021",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "Tangram／Matplotlib：空间转录组概率图、基因预测对照与spot内解卷积",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/spatial/tangram-2021/learning.md",
+      "source_record": "benchmark/cases/subjournal-tangram-2021.json"
+    },
+    {
+      "case_id": "subjournal-archr-2021",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "ArchR：B细胞伪时间双热图、三模态TF热图与基因组峰弧轨道",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/epigenomics/archr-2021/learning.md",
+      "source_record": "benchmark/cases/subjournal-archr-2021.json"
+    },
+    {
+      "case_id": "subjournal-signac-2021",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "Signac：注释一致性与标签转移热图、基因组coverage轨道、峰基因弧与TF足迹",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/epigenomics/signac-2021/learning.md",
+      "source_record": "benchmark/cases/subjournal-signac-2021.json"
+    },
+    {
+      "case_id": "subjournal-seacells-2023",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "SEACells：基因峰相关散点、NFR覆盖弧、TF活动热图与基因协方差",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/single-cell/seacells-2023/learning.md",
+      "source_record": "benchmark/cases/subjournal-seacells-2023.json"
+    },
+    {
+      "case_id": "subjournal-milo-2022",
+      "source": "nature-subjournal-author-source-learning",
+      "label": "Milo miloR 邻域网络 差异丰度 分面蜂群图 logFC排序表达热图",
+      "bundles": {
+        "reproduction": null,
+        "transfer": null,
+        "stress": null
+      },
+      "source_learning_status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+      "original_reproduction": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "structural_stress": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "CP2_CP4": "NOT_RUN",
+      "learning_reference": "benchmark/library/single-cell/milo-2022/learning.md",
+      "source_record": "benchmark/cases/subjournal-milo-2022.json"
     }
   ]
 }

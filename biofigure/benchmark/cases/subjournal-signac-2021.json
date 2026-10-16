@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-signac-2021",
+  "learned_method_id": "BENCH-subjournal-signac-2021",
+  "title": "Single-cell chromatin state analysis with Signac",
+  "label": "Signac：注释一致性与标签转移热图、基因组coverage轨道、峰基因弧与TF足迹",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "claim_boundary": {
+    "original_full_figure_reproduction": "NOT_VERIFIED",
+    "visual_pass": "NOT_RUN",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress_test": "NOT_VERIFIED",
+    "user_acceptance": "NOT_VERIFIED",
+    "raw_sequencing_analysis": false
+  },
+  "figure_family": "genomic-tracks",
+  "chart_type": "Signac：coverage峰基因弧、多组TF footprint与标签转移热图",
+  "chart_types": [
+    "genomic-tracks",
+    "peak-gene-arcs",
+    "TF-footprint",
+    "confusion-heatmap",
+    "two-dimensional-link-count-histogram"
+  ],
+  "domain": "epigenomics",
+  "paper": {
+    "schema_version": 1,
+    "accessed_on": "2026-10-15",
+    "title": "Single-cell chromatin state analysis with Signac",
+    "journal": "Nature Methods",
+    "year": 2021,
+    "doi": "10.1038/s41592-021-01282-5",
+    "url": "https://www.nature.com/articles/s41592-021-01282-5",
+    "article_license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+    "correction": {
+      "doi": "10.1038/s41592-022-01393-7",
+      "date": "2022-01-07",
+      "verified_source": "benchmark/library/epigenomics/signac-2021/sources/correction.html",
+      "effect": "Fig3 caption removed erroneous n=6 cell-type points; retained n=20 cell-type points; core Fig2 panels unaffected"
+    },
+    "code_availability": {
+      "paper_section": "Code availability",
+      "paper_page": "benchmark/library/epigenomics/signac-2021/sources/paper.html",
+      "author_paper_analysis_repo": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "source_type": "original author paper analysis code; package/tutorial supplementary material kept distinct"
+    },
+    "full_figure_reproduction": "NOT_VERIFIED",
+    "viewed_figures": [
+      "Fig2",
+      "Fig3"
+    ],
+    "data_availability": [
+      "PBMC fragment files",
+      "feature matrices and paired barcodes",
+      "pbmc.rds",
+      "pbmc_links.rds",
+      "actual20x20 confusion table"
+    ],
+    "issue_date": "2021-11",
+    "online_date": "2021-11-01"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/timoast/signac-paper",
+    "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+    "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+    "source_type": "original-author-paper-analysis",
+    "supplementary_package": "Signac1.2.0@255eea060cfae95489109e5940c19c23e533cb20"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/data/raw/pbmc-download-list.txt",
+      "sha256": "df7987113cdb95ea0b034df6d6e42d8f708ea2607aeff1957c3aedfa6c99e81b",
+      "bytes": 469,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/datasets/pbmc.txt",
+      "role": "original-author-data-bytes-or-provenanced-extract",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/results/plot_data/source-semantics-probes.tsv",
+      "sha256": "f8a65770894c208c83aed39a43293ad96ab55d23f268009f33fcba23ed28d6e7",
+      "bytes": 381,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/scripts/check_source_semantics.py",
+      "sha256": "7b452972e52c3c9cd4d572a68fa6b375a9bc8cc6465950f8205ed9ad8b28bda4",
+      "bytes": 2878,
+      "source_url": null,
+      "role": "derived-local-evidence",
+      "license": "LOCAL_AUDIT_ARTIFACT",
+      "publishable": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/README.md",
+      "sha256": "dbd94e37fa19d99740253501716b4696da619914ccf24e5e4c1799706be5cf23",
+      "bytes": 463,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/README.md",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "README.md",
+      "git_blob_sha1": "aa8f5c22b68527c6e2205f5b1c0c3795f3539416",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/Snakefile",
+      "sha256": "15d964b8bbcfd513987c5834b42edf202e0c2d7525a35673319dd7ed38383010",
+      "bytes": 11192,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/Snakefile",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "Snakefile",
+      "git_blob_sha1": "f3bbfde4d07f0729b036ce67c038f2b6365c15aa",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+      "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+      "bytes": 12133,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/analyze_pbmc.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/analyze_pbmc.R",
+      "git_blob_sha1": "272f410e820d1018f32faa7dba914c96fb0bda36",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+      "sha256": "eafed250793593bf258b7b0c139133ecb25c038b30796191b90b82269dc42bcf",
+      "bytes": 3024,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/figure2.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/figure2.R",
+      "git_blob_sha1": "1fc3074cbac35fb4b8d43c4537768e4fb125dcd5",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/link_peaks.R",
+      "sha256": "622e44a638c03df92549de0a749836e7bcd542777ad5ab70f98e5dfcb87b6d88",
+      "bytes": 382,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/link_peaks.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/link_peaks.R",
+      "git_blob_sha1": "ca22e8e510a1e610e18e84313be8d59868902ed3",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/multimodal_label_transfer.R",
+      "sha256": "b8395f881d3d7c145328b55ea63d8ef1f01116c2c4e00ffe88ae445750278334",
+      "bytes": 1376,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/multimodal_label_transfer.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/multimodal_label_transfer.R",
+      "git_blob_sha1": "22c199776a385997b0c2df1f89e92c09ee908fc2",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/process_pbmc.R",
+      "sha256": "6222b980836445a483ed59669e486a573a9b53511b677a199dda997046915cdc",
+      "bytes": 6163,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/process_pbmc.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/process_pbmc.R",
+      "git_blob_sha1": "29a77d5b54b5fb8f87b69f7f7fb74efe3f9676d0",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/datasets/pbmc.txt",
+      "sha256": "df7987113cdb95ea0b034df6d6e42d8f708ea2607aeff1957c3aedfa6c99e81b",
+      "bytes": 469,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/datasets/pbmc.txt",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "datasets/pbmc.txt",
+      "git_blob_sha1": "c16a5ff39bb6f43ac3610751f40b45e5ad644a57",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/environment.yaml",
+      "sha256": "4a1951e0f3d598474a771c1f408ac3b2e92d7b64340820f0c7991919463f8de3",
+      "bytes": 236,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/environment.yaml",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "environment.yaml",
+      "git_blob_sha1": "cd26c48745283b24eb89d491e1cec1e2f6bf9b7b",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/correction.html",
+      "sha256": "3b40cf2f84c30a7aae853562f975c3a6f36a7782620c7cc64936e948cc050dca",
+      "bytes": 215879,
+      "source_url": "https://www.nature.com/articles/10.1038/s41592-022-01393-7?error=cookies_not_supported",
+      "role": "official-paper-page-or-correction",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/figures/Fig2.png",
+      "sha256": "5aeb92b7f69ab882c44315ce52c94c4a668bf069b38d0ff601f45448d7b56a89",
+      "bytes": 559621,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41592-021-01282-5/MediaObjects/41592_2021_1282_Fig2_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false,
+      "figure": "Fig2",
+      "width_px": 2123,
+      "height_px": 1964,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/figures/Fig3.png",
+      "sha256": "7f2ef444187c5cbc2da6b8767ac8de1d798039931aa15331d44256bfdd0bcb48",
+      "bytes": 421647,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41592-021-01282-5/MediaObjects/41592_2021_1282_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false,
+      "figure": "Fig3",
+      "width_px": 2115,
+      "height_px": 1644,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/DESCRIPTION",
+      "sha256": "2c7b7f2a4e0425d87b50ef9c4c3a01e52dbf021e1f22aa85ee1d10929daf8bfd",
+      "bytes": 2327,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/DESCRIPTION",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/LICENSE",
+      "sha256": "d900b1b76c0128354afe0e9a8522e670417bc1d386f66bd10612b502cb63820a",
+      "bytes": 40,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/LICENSE",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/footprinting.R",
+      "sha256": "a084f778585b6489b8c460e25f4aa8999b30e3b14ceb133c75ce3d423f8e8803",
+      "bytes": 16131,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/footprinting.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/links.R",
+      "sha256": "bce979c88e0a431b936f70922dd57bcd40ace110ea6adf39a32c66ecbfe0727c",
+      "bytes": 19245,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/links.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/utilities.R",
+      "sha256": "12981d701f83523aa9713617394ba5e2488099dcc920221a142ce1d0780e14de",
+      "bytes": 69534,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/utilities.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/visualization.R",
+      "sha256": "c6d5a094b797d492cac518d719cf4e0d2be0ea25fdb56a10338b8a884a618cfb",
+      "bytes": 77582,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/visualization.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/paper.html",
+      "sha256": "a0af70ee98b7b4bd8ca0ca8b99b996eb2f0b04f7151e8c6e1868e61652ed2c8c",
+      "bytes": 397185,
+      "source_url": "https://www.nature.com/articles/10.1038/s41592-021-01282-5?error=cookies_not_supported",
+      "role": "official-paper-page-or-correction",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/pmc-access-challenge.html",
+      "sha256": "cf33031d75fe9d076fe27281a39b22edb1b2159e711ce79837405ce0374ca958",
+      "bytes": 21413,
+      "source_url": null,
+      "role": "FAILED_ACCESS_CHALLENGE_NOT_PAPER_TEXT",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+      "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+      "bytes": 12133,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/analyze_pbmc.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/analyze_pbmc.R",
+      "git_blob_sha1": "272f410e820d1018f32faa7dba914c96fb0bda36",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+      "sha256": "eafed250793593bf258b7b0c139133ecb25c038b30796191b90b82269dc42bcf",
+      "bytes": 3024,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/figure2.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/figure2.R",
+      "git_blob_sha1": "1fc3074cbac35fb4b8d43c4537768e4fb125dcd5",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/link_peaks.R",
+      "sha256": "622e44a638c03df92549de0a749836e7bcd542777ad5ab70f98e5dfcb87b6d88",
+      "bytes": 382,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/link_peaks.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/link_peaks.R",
+      "git_blob_sha1": "ca22e8e510a1e610e18e84313be8d59868902ed3",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/multimodal_label_transfer.R",
+      "sha256": "b8395f881d3d7c145328b55ea63d8ef1f01116c2c4e00ffe88ae445750278334",
+      "bytes": 1376,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/multimodal_label_transfer.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/multimodal_label_transfer.R",
+      "git_blob_sha1": "22c199776a385997b0c2df1f89e92c09ee908fc2",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/process_pbmc.R",
+      "sha256": "6222b980836445a483ed59669e486a573a9b53511b677a199dda997046915cdc",
+      "bytes": 6163,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac-paper/1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f/code/process_pbmc.R",
+      "role": "original-author-paper-code-or-document",
+      "license": "NO_LICENSE_LOCAL_RESEARCH_REFERENCE_ONLY",
+      "publishable": false,
+      "repository": "https://github.com/timoast/signac-paper",
+      "commit": "1cdbb6dd6a5ad817bd23bb7d65319d5bf802455f",
+      "repository_path": "code/process_pbmc.R",
+      "git_blob_sha1": "29a77d5b54b5fb8f87b69f7f7fb74efe3f9676d0",
+      "git_blob_verified": true
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/footprinting.R",
+      "sha256": "a084f778585b6489b8c460e25f4aa8999b30e3b14ceb133c75ce3d423f8e8803",
+      "bytes": 16131,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/footprinting.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/links.R",
+      "sha256": "bce979c88e0a431b936f70922dd57bcd40ace110ea6adf39a32c66ecbfe0727c",
+      "bytes": 19245,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/links.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/utilities.R",
+      "sha256": "12981d701f83523aa9713617394ba5e2488099dcc920221a142ce1d0780e14de",
+      "bytes": 69534,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/utilities.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/package-signac-1.2.0/R/visualization.R",
+      "sha256": "c6d5a094b797d492cac518d719cf4e0d2be0ea25fdb56a10338b8a884a618cfb",
+      "bytes": 77582,
+      "source_url": "https://raw.githubusercontent.com/timoast/signac/255eea060cfae95489109e5940c19c23e533cb20/R/visualization.R",
+      "role": "supplementary-package-implementation-not-paper-figure-script",
+      "license": "MIT",
+      "publishable": true,
+      "repository": "https://github.com/timoast/signac",
+      "commit": "255eea060cfae95489109e5940c19c23e533cb20"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/figures/Fig2.png",
+      "sha256": "5aeb92b7f69ab882c44315ce52c94c4a668bf069b38d0ff601f45448d7b56a89",
+      "bytes": 559621,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41592-021-01282-5/MediaObjects/41592_2021_1282_Fig2_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false,
+      "figure": "Fig2",
+      "width_px": 2123,
+      "height_px": 1964,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/sources/figures/Fig3.png",
+      "sha256": "7f2ef444187c5cbc2da6b8767ac8de1d798039931aa15331d44256bfdd0bcb48",
+      "bytes": 421647,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F10.1038/s41592-021-01282-5/MediaObjects/41592_2021_1282_Fig3_HTML.png",
+      "role": "official-paper-figure-actually-opened",
+      "license": "PUBLIC_PREVIEW_LOCAL_REFERENCE_ONLY_REPUBLICATION_NOT_ESTABLISHED",
+      "publishable": false,
+      "figure": "Fig3",
+      "width_px": 2115,
+      "height_px": 1644,
+      "actual_viewed": true,
+      "inspection": "Actual view_image call on2026-10-15; source observation only; no reproduction or visualPASS"
+    }
+  ],
+  "panels": [
+    {
+      "panel": "Fig2l",
+      "chart_type": "two loci coverage/genes/peaks/link arcs with RNA violin tracks",
+      "data_bearing": true,
+      "encoding": {
+        "x": "hg38 physical bp; MS4A1 and LYZ windows retain true different spans",
+        "y": "shared cell-type identity across coverage and RNA",
+        "color": "cell type for coverage; independent per-locus score legend for arcs",
+        "density": "7 groups and distinct per-locus link counts; actual input absent"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "lines": [
+            [
+              210,
+              229
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_FIGURE_PANEL_SCRIPT",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+          "repository_relative_locator": "code/analyze_pbmc.R"
+        },
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+          "lines": [
+            [
+              43,
+              49
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_COMPONENT_ASSEMBLY",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+          "sha256": "eafed250793593bf258b7b0c139133ecb25c038b30796191b90b82269dc42bcf",
+          "repository_relative_locator": "code/figure2.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig2h",
+      "chart_type": "EOMES/TBX21 bias-corrected footprint and expected Tn5 tracks",
+      "data_bearing": true,
+      "encoding": {
+        "x": "distance from motif center in bp, +/-250 by pinned default",
+        "y": "flank-normalized observed minus expected insertion; lower expected panel separate",
+        "color": "CD8 TEM and CD8 naive identity, not TF binding probability"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "lines": [
+            [
+              82,
+              99
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_FIGURE_PANEL_SCRIPT",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+          "repository_relative_locator": "code/analyze_pbmc.R"
+        },
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+          "lines": [
+            [
+              35,
+              41
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_COMPONENT_EXPORT",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/figure2.R",
+          "sha256": "eafed250793593bf258b7b0c139133ecb25c038b30796191b90b82269dc42bcf",
+          "repository_relative_locator": "code/figure2.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig2d",
+      "chart_type": "20-cell-type RNA annotation versus ATAC prediction confusion heatmap",
+      "data_bearing": true,
+      "encoding": {
+        "x": "true RNA category",
+        "y": "predicted ATAC category",
+        "color": "fraction within each true RNA category0-1",
+        "normalization": "source rows sum1 but rendered x columns sum1 because Var1 maps to x"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "lines": [
+            [
+              348,
+              380
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_FIGURE_PANEL_SCRIPT; final placement outside shown figure2.R layout not fully captured",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+          "repository_relative_locator": "code/analyze_pbmc.R"
+        }
+      ]
+    },
+    {
+      "panel": "Fig2k",
+      "chart_type": "positive/negative link count two-dimensional frequency tile plots",
+      "data_bearing": true,
+      "encoding": {
+        "x/y": "positive/negative links; group-by gene versus group-by peak distinct",
+        "color": "log10(count+1)"
+      },
+      "sources": [
+        {
+          "file": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "lines": [
+            [
+              128,
+              178
+            ]
+          ],
+          "pairing": "ORIGINAL_AUTHOR_FIGURE_PANEL_SCRIPT",
+          "path": "benchmark/library/epigenomics/signac-2021/sources/author/code/analyze_pbmc.R",
+          "sha256": "85abc7426c3c82ac295808cb8b939a27179fdf2b00a1dc7b9dfc07b021be6d7c",
+          "repository_relative_locator": "code/analyze_pbmc.R"
+        }
+      ]
+    }
+  ],
+  "input_contract": {
+    "assembly": "hg38 / EnsDb.Hsapiens.v86 / BSgenome.Hsapiens.UCSC.hg38 for Fig2",
+    "experimental_unit": "PBMC multiome same-cell paired ATAC+RNA; cells or cell types do not establish independent donor n",
+    "required_keys": [
+      "cell barcode",
+      "sample/donor",
+      "RNA/ATAC same-cell pairing",
+      "celltype",
+      "peak genomic ranges",
+      "gene coordinates/strand",
+      "motif IDs",
+      "link score/zscore/pvalue"
+    ],
+    "original_display_genes": [
+      "MS4A1",
+      "LYZ",
+      "EOMES",
+      "TBX21",
+      "TBX2"
+    ],
+    "preprocessing": "seed1234 in process_pbmc; QC ATAC5000<count<70000,RNA1000<count<25000,nucleosome<2,TSS>1; MACS2 max-gap50; min.cells5; TF-IDF/SVD LSI2:40",
+    "normalization": "coverage=count/group_total_depth*median_group_total_depth then centered100bp rolling sum; RNA SCT for LinkPeaks",
+    "link_defaults": "Signac1.2.0 Pearson,distance500kb,min.cells10,n_sample200,abs.score>.05,nominal p<.05 using pnorm(-abs(z))",
+    "replication": "LinkPeaks script separate process lacks local set.seed; upstream process seed does not guarantee random background draws",
+    "missing_data": [
+      "PBMC fragment files",
+      "feature matrices and paired barcodes",
+      "pbmc.rds",
+      "pbmc_links.rds",
+      "actual20x20 confusion table"
+    ]
+  },
+  "packages_by_role": [
+    {
+      "package": "Signac",
+      "version": "1.2.0 tag commit255eea060cfae95489109e5940c19c23e533cb20",
+      "role": "coverage, footprints, motifs, linkage, chromatin data structures"
+    },
+    {
+      "package": "Seurat",
+      "version": "source environment; not executed",
+      "role": "RNA SCT, clustering and label transfer"
+    },
+    {
+      "package": "BSgenome / EnsDb / GenomeInfoDb",
+      "version": "hg38 and EnsDb86",
+      "role": "sequence context and physical annotations"
+    },
+    {
+      "package": "ggplot2 / patchwork",
+      "version": "source environment; not executed",
+      "role": "data layers and component assembly"
+    },
+    {
+      "package": "JASPAR2020 / chromVAR",
+      "version": "source references",
+      "role": "motif definitions and accessibility deviations"
+    }
+  ],
+  "native_functions": [
+    "CoveragePlot",
+    "SingleCoveragePlot",
+    "CoverageTrack",
+    "ApplyMatrixByGroup",
+    "Footprint",
+    "PlotFootprint",
+    "LinkPeaks",
+    "RunTFIDF",
+    "RunSVD",
+    "FindMotifs",
+    "RunChromVAR"
+  ],
+  "gaps": [
+    "Paper analysis repository has no LICENSE; packageMIT license is separate",
+    "Nature full-text access returned challenge; EuropePMC XML HTTP500",
+    "Source PBMC objects and actual plotted matrices not downloaded",
+    "Final publication assembly beyond exported components not complete",
+    "Synthetic semantic probes are not original-data recalculation",
+    "Footprints, chromVAR and links do not establish binding or causality"
+  ],
+  "benchmark_usage": {
+    "allowed": [
+      "reference selection",
+      "source-backed layer and parameter learning",
+      "design input contract for future fresh preparation"
+    ],
+    "not_established": [
+      "original-paper-reproduction",
+      "new-input-transfer",
+      "density-stress-test",
+      "cross-environment-reproduction",
+      "visual-pass",
+      "user-acceptance"
+    ],
+    "next_gate": "Future actual rendering requires independently specified inputs and fresh gates; source-learning status grants no rendering or statistical validation"
+  },
+  "method_reference": {
+    "path": "benchmark/library/epigenomics/signac-2021/learning.md",
+    "sha256": "3541da196b67a2c5162528501c7af6c80ae135675e984bcd542c4fc6ee2f9cf0"
+  },
+  "evidence_manifest": {
+    "path": "benchmark/library/epigenomics/signac-2021/data/metadata/source-manifest.json",
+    "sha256": "8f1670de175cad4e490065a7bfdea98feeb55bfaed5df69116f512b2332d4995"
+  },
+  "nonrender_checks": {
+    "path": "benchmark/library/epigenomics/signac-2021/data/metadata/nonrender-checks.json",
+    "sha256": "82a2c26b8693d42953f5b7745fa7188b533ae532fd361958e972fdad9b7e2a6f"
+  },
+  "limitations": "See documented gaps. Exact final data/code pairing and rendering were not claimed.",
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/data/metadata/paper-source.json",
+      "sha256": "cf4f9c8afb8ca3a6c6f60042a40497f39c5c271107d63dc7b7328521a19e40fe",
+      "bytes": 1457,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/data/metadata/source-manifest.json",
+      "sha256": "8f1670de175cad4e490065a7bfdea98feeb55bfaed5df69116f512b2332d4995",
+      "bytes": 14932,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/data/metadata/code-figure-mapping.json",
+      "sha256": "177716337693d3c6811ce1e4fd047e92f71955ee4d953766f1b3006ee3643c8e",
+      "bytes": 8072,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/epigenomics/signac-2021/data/metadata/nonrender-checks.json",
+      "sha256": "82a2c26b8693d42953f5b7745fa7188b533ae532fd361958e972fdad9b7e2a6f",
+      "bytes": 1058,
+      "role": "source-learning contract; not rendered evidence"
+    }
+  ],
+  "keywords": [
+    "Signac",
+    "confusion heatmap",
+    "coverage tracks",
+    "footprint",
+    "peak gene links",
+    "single-cell",
+    "注释一致性热图",
+    "标签转移热图",
+    "基因组轨道",
+    "基因组",
+    "轨道",
+    "Tn5",
+    "峰基因弧线"
+  ]
+}

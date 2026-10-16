@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "case_id": "multiomics-mofacll-proliferative-drive",
+  "learned_method_id": "BENCH-multiomics-mofacll-proliferative-drive",
+  "recipe_id": "MULTI-MOFACLL-001",
+  "title": "mofaCLL ordered multi-pathway expression heatmaps and gene-pathway membership network",
+  "label": "多组学CLL-PD连续因子排序热图与三通路共享基因网络",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Original Fig4d/ED6a-c studied. Author network build replayed on formal source data; processed 5000x202 RNA scaling audited. No new figure rendered or original-layout reproduction certified.",
+  "figure_family": "heatmap",
+  "chart_type": "aligned pathway heatmaps and bipartite gene-pathway network",
+  "chart_types": [
+    "heatmap",
+    "network"
+  ],
+  "domain": "multi-omics",
+  "method_families": [
+    "latent-factor-ordered-heatmap",
+    "bipartite-membership-network",
+    "shared-gene-layout",
+    "continuous-annotation"
+  ],
+  "paper": {
+    "title": "Multi-omics reveals clinically relevant proliferative drive associated with mTOR-MYC-OXPHOS activity in chronic lymphocytic leukemia",
+    "journal": "Nature Cancer",
+    "year": 2021,
+    "doi": "10.1038/s43018-021-00216-6",
+    "figure": "Figure4d; Extended Data Figure6a-c",
+    "url": "https://www.nature.com/articles/s43018-021-00216-6"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/Huber-group-EMBL/mofaCLL",
+    "commit": "7c8d57d586d4e9b5c090c87ac64692d6027c70cf",
+    "license": "GPL-3.0-or-later for code; publisher images separately copyrighted",
+    "source_type": "original author R package and manuscript Rmarkdown",
+    "repository_relative_path": "vignettes/src/part5.Rmd"
+  },
+  "source_code_files": [
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/DESCRIPTION",
+      "sha256": "66f5be68c6d6b8d4be4d439d924b97710c9d0ec5fd438210c15e2767e810414c",
+      "bytes": 1302,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/R/utils_vignettes.R",
+      "sha256": "7fcfe2313cec5a4b33551b0a02d1e480feef8bb964e5b2a11b9dee5318c05f42",
+      "bytes": 43905,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/R/vars.R",
+      "sha256": "0ca55a5e3bd6c12c388332b59c384ffe571a297a0bd5009e10b935516cafcbed",
+      "bytes": 2547,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/README.md",
+      "sha256": "9ee364a2655a43c38da659a0d630f4b8f28ead8442ef1e5463725f14ca7786df",
+      "bytes": 2912,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part1.Rmd",
+      "sha256": "94fcda287603fbe8cbfbbb31c94ef6e744f73b27be0fd44bc1710945a5f3e9ad",
+      "bytes": 3605,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part2.Rmd",
+      "sha256": "1476bb57701733a34a6bbc6c0b1452d559eb5b47a1417e5e110d847360fd7c80",
+      "bytes": 27235,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part3.Rmd",
+      "sha256": "54cd99d2842ff232f102ff71502c8c72b658da7ce2566d1c51d4ebeb5f9b3f4e",
+      "bytes": 34758,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part4.Rmd",
+      "sha256": "6f15b406d2724bb1ce23b4df4598cd71a5d23c84514cf70eb54f591aa0300854",
+      "bytes": 17270,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part5.Rmd",
+      "sha256": "114d8b5fa8409b0bce8dc1ffde22027712c6270ee11848fedadcb0a400db9024",
+      "bytes": 37153,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part6.Rmd",
+      "sha256": "cd4b7e80e10a4912e50ac77f4c70910bbd4c2dc251b9165746ad77443d0d7e7c",
+      "bytes": 25878,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/Figure4.png",
+      "sha256": "b0f0c3888cb5cc86707de05df705ff97251a1b2f13bfcfcd8cc1cece165540d9",
+      "bytes": 243933,
+      "role": "actual original image viewed; private local reference, not public redistribution",
+      "dimensions_px": [
+        2120,
+        1388
+      ],
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_Fig4_HTML.png"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/ExtendedDataFigure6.jpg",
+      "sha256": "b14cbc92c9059b985a25310ac18f0c65c4b09586909c913c2f81f5d12111ac18",
+      "bytes": 678896,
+      "role": "actual original image viewed; private local reference, not public redistribution",
+      "dimensions_px": [
+        1933,
+        2711
+      ],
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_Fig12_ESM.jpg"
+    }
+  ],
+  "source_assets": [
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/Figure4.png",
+      "sha256": "b0f0c3888cb5cc86707de05df705ff97251a1b2f13bfcfcd8cc1cece165540d9",
+      "bytes": 243933,
+      "role": "publisher reference/data private local archive",
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_Fig4_HTML.png"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/ExtendedDataFigure6.jpg",
+      "sha256": "b14cbc92c9059b985a25310ac18f0c65c4b09586909c913c2f81f5d12111ac18",
+      "bytes": 678896,
+      "role": "publisher reference/data private local archive",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_Fig12_ESM.jpg"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/figure4.xlsx",
+      "sha256": "d711fc747c477175b51d599102500a0dd76615e2757381e9a054e37385281a17",
+      "bytes": 19781,
+      "role": "publisher reference/data private local archive",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_MOESM6_ESM.xlsx"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/extended-data-fig6.xlsx",
+      "sha256": "e394036e81e6d777eb40179eab50c7cec1f5fb8abb126d89fabbc8a6f5ac71c7",
+      "bytes": 25714,
+      "role": "publisher reference/data private local archive",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs43018-021-00216-6/MediaObjects/43018_2021_216_MOESM13_ESM.xlsx"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/article.html",
+      "sha256": "d498c5805535d1363462eec3f26608ebea2075c990453c0b8be0f6b1f147b1f1",
+      "bytes": 560652,
+      "role": "publisher reference/data private local archive",
+      "source_url": "https://www.nature.com/articles/s43018-021-00216-6"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/DESCRIPTION",
+      "sha256": "66f5be68c6d6b8d4be4d439d924b97710c9d0ec5fd438210c15e2767e810414c",
+      "bytes": 1302,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/R/utils_vignettes.R",
+      "sha256": "7fcfe2313cec5a4b33551b0a02d1e480feef8bb964e5b2a11b9dee5318c05f42",
+      "bytes": 43905,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/R/vars.R",
+      "sha256": "0ca55a5e3bd6c12c388332b59c384ffe571a297a0bd5009e10b935516cafcbed",
+      "bytes": 2547,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/README.md",
+      "sha256": "9ee364a2655a43c38da659a0d630f4b8f28ead8442ef1e5463725f14ca7786df",
+      "bytes": 2912,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part1.Rmd",
+      "sha256": "94fcda287603fbe8cbfbbb31c94ef6e744f73b27be0fd44bc1710945a5f3e9ad",
+      "bytes": 3605,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part2.Rmd",
+      "sha256": "1476bb57701733a34a6bbc6c0b1452d559eb5b47a1417e5e110d847360fd7c80",
+      "bytes": 27235,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part3.Rmd",
+      "sha256": "54cd99d2842ff232f102ff71502c8c72b658da7ce2566d1c51d4ebeb5f9b3f4e",
+      "bytes": 34758,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part4.Rmd",
+      "sha256": "6f15b406d2724bb1ce23b4df4598cd71a5d23c84514cf70eb54f591aa0300854",
+      "bytes": 17270,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part5.Rmd",
+      "sha256": "114d8b5fa8409b0bce8dc1ffde22027712c6270ee11848fedadcb0a400db9024",
+      "bytes": 37153,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/sources/author/vignettes/src/part6.Rmd",
+      "sha256": "cd4b7e80e10a4912e50ac77f4c70910bbd4c2dc251b9165746ad77443d0d7e7c",
+      "bytes": 25878,
+      "role": "GPL author source, commit 7c8d57d586d4e9b5c090c87ac64692d6027c70cf"
+    }
+  ],
+  "panel_bindings": [
+    {
+      "panel": "Figure4d",
+      "code": "vignettes/src/part5.Rmd:247-313",
+      "data": "Source Data Fig4 XLSX columns M:O after gene symbol header",
+      "executed": "exact author network block 264-283 plus numerical layout only"
+    },
+    {
+      "panel": "ED6a",
+      "code": "vignettes/src/part5.Rmd:238-245 + R/utils_vignettes.R:661-714",
+      "data": "VST expression + LF4 DESeq2 coefficients + Hallmark MYC targets v1",
+      "executed": "helper contract fixture only; not full publication matrix"
+    },
+    {
+      "panel": "ED6b",
+      "code": "vignettes/src/part5.Rmd:220-236 + R/utils_vignettes.R:661-714",
+      "data": "same with OXPHOS",
+      "executed": "helper contract fixture only"
+    },
+    {
+      "panel": "ED6c",
+      "code": "vignettes/src/part5.Rmd:207-217 + R/utils_vignettes.R:661-714",
+      "data": "same with mTORC1",
+      "executed": "helper contract fixture only"
+    }
+  ],
+  "input_contract": {
+    "network_genes": 225,
+    "network_pathways": 3,
+    "network_nodes": 228,
+    "network_edges": 245,
+    "mitochondrial_genes": 76,
+    "mitochondrial_genes_semantics": "MitoCarta注释的线粒体蛋白相关基因；Human.MitoCarta3.0.xls Symbol列，包含核编码基因，不等同于mtDNA编码基因",
+    "rna_model_dimensions": [
+      5000,
+      217
+    ],
+    "rna_observed_patients": 202,
+    "rna_whole_modality_missing_patients": 15,
+    "network_semantics": "gene to pathway membership, not interaction/correlation/causality",
+    "unit": "patients; gene identifiers preserved; model F4 is continuous",
+    "required_heatmap_columns": [
+      "id",
+      "symbol",
+      "coef",
+      "adj.P.Val"
+    ],
+    "statistics": "reuse author estimates; no model training or new biological inference"
+  },
+  "packages_by_role": {
+    "DESeq2": "source VST and LF4 regression (not rerun)",
+    "MOFA": "stored factors/train matrices (model not retrained)",
+    "dplyr/tidyr": "ID joins, significance/coef filters, orders",
+    "ComplexHeatmap": "heatmaps and matching annotations",
+    "circlize": "CLL-PD annotation colour map",
+    "igraph/tidygraph/ggraph": "bipartite network and seed2 nicely numerical layout",
+    "cowplot": "grid assembly and detached legends",
+    "readxl": "formal publisher source data"
+  },
+  "processing": {
+    "heatmap_selection": "adj.P.Val < .01 and coef > 0 intersect Hallmark v6.2",
+    "rows": "descending LF4 regression coef, gene id index, symbol label",
+    "columns": "ascending first annotation column CLL-PD, identity-keyed same patient order",
+    "clustering": "rows FALSE, columns FALSE; no distance/linkage",
+    "scaling": "row z-score then clip +-4, keep raw values/stats",
+    "color_scale": "100 colour vector actual range; not guaranteed white=0; CLL-PD separate white-green min/max",
+    "network": "union gene names + pathway names, zero-based ids, retain cross-set membership edges, seed2 nicely"
+  },
+  "visual_observations": {
+    "source_viewed": true,
+    "network": "three hubs triangular with exclusive spokes and shared-gene bridges; pathway-only labels",
+    "heatmap": "three aligned tall blocks, top gradient, italic labels with red mito subset, common right legends",
+    "assembly_gap": "part5 gives Fig4 cowplot drafts, full ED6 page assembled separately/not found in this source"
+  },
+  "gaps": [
+    {
+      "detail": "Formal ED6 XLSX contains panels d/e only; exact a-c full matrix and final page assembly not reproduced."
+    },
+    {
+      "detail": "Source gene network uses corRes.sig despite creating corRes.sigUp; capture variables explicitly when adapting."
+    },
+    {
+      "detail": "100-colour vector does not itself fix white at zero; source/current version behaviour must be measured."
+    },
+    {
+      "detail": "Author R4.0.2/igraph1.2.6/ggraph2.0.5/ComplexHeatmap2.4.3 differs from current execution environment."
+    },
+    {
+      "detail": "mscale unused FALSE/FALSE branch typo and MAD double consistency factor are documented; default z-score tested."
+    },
+    {
+      "detail": "Publisher images local reference only; GPL source license does not license publisher images."
+    },
+    {
+      "detail": "No new render, CP2, fidelity PASS, user acceptance or stable-template certification."
+    }
+  ],
+  "method_reference": {
+    "path": "benchmark/library/multiomics/mofacll-proliferative-drive/learning.md",
+    "sha256": "a52b3ddd23850c937733a655e1e18bbd60b17bd4d6f9b30dfe2f3eaf47512371",
+    "bytes": 11506,
+    "role": "deep source and visual grammar learning"
+  },
+  "learning_assets": [
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/scripts/assemble_metadata.py",
+      "sha256": "e2a186fbb049bbce14f335d3eed5dfcdf66c338c9a1d9a9d6b4774d92b1432f8",
+      "bytes": 10854,
+      "role": "non-render audit or metadata assembly script"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/scripts/audit_heatmap_contract.R",
+      "sha256": "c6a92f916e0165f94cda919caf6125fc3d131899080a3e17202bad80af82f4f5",
+      "bytes": 3047,
+      "role": "non-render audit or metadata assembly script"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/scripts/audit_network.R",
+      "sha256": "5be8d1d375cac8b47417b7e7ea3d20b48d37d1358db0c407c9ec3212c4be6955",
+      "bytes": 4522,
+      "role": "non-render audit or metadata assembly script"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/scripts/audit_processed_model.R",
+      "sha256": "598ade4c6b795b3ec7d0b67f61ce70400dd2a9d3c45ceef6b4c835bd6ee5d652",
+      "bytes": 3129,
+      "role": "non-render audit or metadata assembly script"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/fig4d_author_layout_current_environment.csv",
+      "sha256": "3f748d5af0f0afe5fd2406da53b0579b82cc06c6addeb53ddea0c1487dd52cad",
+      "bytes": 11076,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/fig4d_edges.csv",
+      "sha256": "84373893dc622a645e4bf584aca92c04611c509d2486b51b7327de5cee43bf12",
+      "bytes": 3165,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/fig4d_memberships.csv",
+      "sha256": "57702034947d734dbe3ffcdd669efc05f08a21b4a75a81306a3f11436af567d5",
+      "bytes": 8553,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/fig4d_nodes.csv",
+      "sha256": "121d810b4246387f57eff11aa1304963ac8dcaa2764fa6e11a91b27c46611698",
+      "bytes": 7206,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/model_mrna_cllpd_sample_order.csv",
+      "sha256": "5b1c774a4f4c81a1eea43db0df047bc25d62f7e32a3c9e74093ebcb218b34342",
+      "bytes": 5846,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/results/plot_data/model_mrna_scaling_qc_by_gene.csv",
+      "sha256": "79cf284a7c1c392447f09312696b3943cd975d71278d0791b1ea1cfc4344d6cc",
+      "bytes": 277689,
+      "role": "derived source-data table or numerical QC"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/multiomics/author_processed/data/mofaOut.RData",
+      "sha256": "8af675bcd9e7aafd1518ec4860308094d8450cd1187f4bbd671fe68fa769bbde",
+      "bytes": 32621648,
+      "role": "public author processed model; no retraining"
+    }
+  ],
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "MOFA CLL-PD 因子排序热图",
+      "多组学 三通路 共享基因 双部网络",
+      "MYC OXPHOS mTORC1 heatmap no clustering",
+      "连续临床因子 行回归系数 列排序",
+      "ComplexHeatmap gene label annotation"
+    ],
+    "appropriate_for": [
+      "aligned pathway-specific expression across continuous patient score",
+      "gene set overlap with categorical biological annotation"
+    ],
+    "not_appropriate_for": [
+      "gene-gene interaction inference",
+      "claiming latent score as cell proportion",
+      "independent clustering of shared samples"
+    ]
+  },
+  "execution_evidence": [
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/evidence/network-replay.json",
+      "sha256": "167a4e94e2481a3a2e89d6c876304a7b2854a0278985a24d6df8e1113455b0bf",
+      "bytes": 1845,
+      "role": "verified scope in file"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/evidence/heatmap-contract-probes.json",
+      "sha256": "d4b8da3763ff66abc9e3cb303e9e296844f10039ec612b3c3974c3db4d77acdd",
+      "bytes": 1376,
+      "role": "verified scope in file"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/evidence/processed-model-audit.json",
+      "sha256": "5be6d6b3ef77a56db3d68106edae383050a5c7b96904c01984fd0e1128d2adbd",
+      "bytes": 1425,
+      "role": "verified scope in file"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/evidence/source-identity.json",
+      "sha256": "7675a75b2196b2e0bb68f4ea744d9d9d227143b9118a63ee795aaf1393ea0c70",
+      "bytes": 926,
+      "role": "verified scope in file"
+    },
+    {
+      "path": "benchmark/library/multiomics/mofacll-proliferative-drive/evidence/author-environment.json",
+      "sha256": "f2d97994c90c8193cc7d79a9cd41e8c5a3ee6c5700119174b6eea45fc3ed9141",
+      "bytes": 403,
+      "role": "verified scope in file"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/independent-mofacll-network-check.json",
+      "sha256": "a9735a59fcfa6c2580b5a1730d93988e8d66fcc1c76b6e3cfcf02c401781ef56",
+      "bytes": 562,
+      "role": "independent root original-source-table audit"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/independent_mofacll_network_check.py",
+      "sha256": "da31ac8a187e0071bddbd7df5b76b910e59133a76856d51f0008c24fca22f441",
+      "bytes": 2355,
+      "role": "independent root original-source-table audit"
+    }
+  ],
+  "high_fidelity_eligible": false,
+  "stable_template_eligible": false,
+  "visual_reproduction_status": "NOT_RENDERED_NOT_VERIFIED",
+  "user_acceptance": "PENDING"
+}

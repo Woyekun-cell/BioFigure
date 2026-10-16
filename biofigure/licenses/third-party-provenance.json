@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-10-16",
+  "method": "Pinned repository license files checked against the exact processed-input repository. Article licenses are not used as a substitute for independent GitHub input permissions.",
+  "third_party_data_cases": [
+    {
+      "case_id": "cannabis-cassette",
+      "source_repository": "https://github.com/ViningLab/CannabisPangenome",
+      "source_commit": "3c3d9672cff4df811df2d44d4f17d608af9f9f4b",
+      "source_license": "GPL-3.0-only",
+      "license_url": "https://github.com/ViningLab/CannabisPangenome/blob/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/LICENSE",
+      "bundled_license_file": "licenses/GPL-3.0.txt",
+      "bundled_license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "author_processed_inputs": [
+        {
+          "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Fig5D_BUSCOchrom7/BUSCOchrom7.csv.gz",
+          "sha256": "c53ba7186b978a9941fdef49c1ea1c677cb1bc2c791b6b282461fe6b453b3067",
+          "role": "author-processed-input"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Fig5D_BUSCOchrom7/cannsyn_blast.csv",
+          "sha256": "dc2a0641886aa6329247a3f1d9986328731a6087ad147a22ae98cb7762a96ad8",
+          "role": "author-processed-input"
+        }
+      ],
+      "bundled_derivatives": "Case results/plot_data CSV and own replot reference assets. These retain the applicable upstream data-content license; they are not relicensed by the root MIT license.",
+      "changes": "Subset/reshape source processed coordinates or native plot object into explicit CSV plotting tables, then apply the separately authored BioFigure renderer and semantic palette. The exact transformation and bounds remain in each case provenance and scripts.",
+      "own_adapter_code_license": "MIT; no author plotting code is bundled in these cases",
+      "source_code_availability": "Modifiable first-party transformation/render scripts and the derived plotting tables are included; pinned upstream source/data URLs are retained.",
+      "qualification": "Fixed processed-input own-layout replay only; no whole-paper reproduction or new-input qualification is inferred."
+    },
+    {
+      "case_id": "cannabis-chr7",
+      "source_repository": "https://github.com/ViningLab/CannabisPangenome",
+      "source_commit": "3c3d9672cff4df811df2d44d4f17d608af9f9f4b",
+      "source_license": "GPL-3.0-only",
+      "license_url": "https://github.com/ViningLab/CannabisPangenome/blob/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/LICENSE",
+      "bundled_license_file": "licenses/GPL-3.0.txt",
+      "bundled_license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "author_processed_inputs": [
+        {
+          "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Supplemental_Figure23_BUSCOchrom7public/BUSCOchrom7.csv.gz",
+          "sha256": "c53ba7186b978a9941fdef49c1ea1c677cb1bc2c791b6b282461fe6b453b3067",
+          "role": "author-processed-input"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Supplemental_Figure23_BUSCOchrom7public/cannsyn_blast.csv",
+          "sha256": "dc2a0641886aa6329247a3f1d9986328731a6087ad147a22ae98cb7762a96ad8",
+          "role": "author-processed-input"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ViningLab/CannabisPangenome/3c3d9672cff4df811df2d44d4f17d608af9f9f4b/Supplemental_Figure23_BUSCOchrom7public/cbdas_ncbi.csv",
+          "sha256": "c7f0d32ceff115579e18234aae3d7420e1061126af0409b230c5565436b65f26",
+          "role": "author-processed-input"
+        }
+      ],
+      "bundled_derivatives": "Case results/plot_data CSV and own replot reference assets. These retain the applicable upstream data-content license; they are not relicensed by the root MIT license.",
+      "changes": "Subset/reshape source processed coordinates or native plot object into explicit CSV plotting tables, then apply the separately authored BioFigure renderer and semantic palette. The exact transformation and bounds remain in each case provenance and scripts.",
+      "own_adapter_code_license": "MIT; no author plotting code is bundled in these cases",
+      "source_code_availability": "Modifiable first-party transformation/render scripts and the derived plotting tables are included; pinned upstream source/data URLs are retained.",
+      "qualification": "Fixed processed-input own-layout replay only; no whole-paper reproduction or new-input qualification is inferred."
+    },
+    {
+      "case_id": "planarian-dotplot",
+      "source_repository": "https://github.com/Jeremias-Brand/SmedAsex",
+      "source_commit": "876ac87b09e27ce2f81a581e35196d65ea78d040",
+      "source_license": "GPL-3.0-only",
+      "license_url": "https://github.com/Jeremias-Brand/SmedAsex/blob/876ac87b09e27ce2f81a581e35196d65ea78d040/LICENSE",
+      "bundled_license_file": "licenses/GPL-3.0.txt",
+      "bundled_license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "author_processed_inputs": [
+        {
+          "url": "https://raw.githubusercontent.com/Jeremias-Brand/SmedAsex/876ac87b09e27ce2f81a581e35196d65ea78d040/analysis/synteny/dotplots/schMedA2h1__schMedA2h2_aln.tsv",
+          "sha256": "565fb3b5664df77f25b7cac690e4899f074a4a6a84e4caeebf37369744de58c3",
+          "role": "author processed coordinate alignment"
+        }
+      ],
+      "bundled_derivatives": "Case results/plot_data CSV and own replot reference assets. These retain the applicable upstream data-content license; they are not relicensed by the root MIT license.",
+      "changes": "Subset/reshape source processed coordinates or native plot object into explicit CSV plotting tables, then apply the separately authored BioFigure renderer and semantic palette. The exact transformation and bounds remain in each case provenance and scripts.",
+      "own_adapter_code_license": "MIT; no author plotting code is bundled in these cases",
+      "source_code_availability": "Modifiable first-party transformation/render scripts and the derived plotting tables are included; pinned upstream source/data URLs are retained.",
+      "qualification": "Fixed processed-input own-layout replay only; no whole-paper reproduction or new-input qualification is inferred."
+    },
+    {
+      "case_id": "ohca-microc",
+      "source_repository": "https://github.com/js2264/OHCA",
+      "source_commit": "8ef6242d336e8c8875f4afb2164b47c4d0fbcea4",
+      "source_license": "MIT",
+      "license_url": "https://github.com/js2264/OHCA/blob/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/LICENSE.md",
+      "bundled_license_file": "licenses/OHCA-MIT.md",
+      "bundled_license_sha256": "0839b70bfd1e690dd18a37f2a7c177f58a6c0f564c96d33a0a53a417a765606d",
+      "author_processed_inputs": [
+        {
+          "url": "https://raw.githubusercontent.com/js2264/OHCA/8ef6242d336e8c8875f4afb2164b47c4d0fbcea4/inst/extdata/microC_with-loops.rds",
+          "sha256": "b20fc02f9dcd5fcd027d02b4108d08650407a7de80553e2171f87bc7f296750d",
+          "role": "author-processed-plot-object"
+        }
+      ],
+      "bundled_derivatives": "Case results/plot_data CSV and own replot reference assets. These retain the applicable upstream data-content license; they are not relicensed by the root MIT license.",
+      "changes": "Subset/reshape source processed coordinates or native plot object into explicit CSV plotting tables, then apply the separately authored BioFigure renderer and semantic palette. The exact transformation and bounds remain in each case provenance and scripts.",
+      "own_adapter_code_license": "MIT; no author plotting code is bundled in these cases",
+      "source_code_availability": "Modifiable first-party transformation/render scripts and the derived plotting tables are included; pinned upstream source/data URLs are retained.",
+      "qualification": "Fixed processed-input own-layout replay only; no whole-paper reproduction or new-input qualification is inferred."
+    }
+  ],
+  "reference_only_cases": {
+    "dpm-bubbles": "No explicit author GitHub code/data license; derived CSV/PDF/PNG excluded from this release.",
+    "dpm-network": "No explicit author GitHub code/data license; derived CSV/PDF/PNG excluded from this release."
+  },
+  "first_party_cases": [
+    "boxplot",
+    "heatmap",
+    "dense-heatmap",
+    "bubble",
+    "volcano",
+    "synteny",
+    "phylogeny",
+    "sankey",
+    "oncoprint"
+  ],
+  "first_party_license": "MIT for BioFigure-owned code and explicitly simulated data; external packages retain their own licenses."
+}

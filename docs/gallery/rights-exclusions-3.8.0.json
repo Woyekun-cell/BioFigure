@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scope": "Release clone only; original local archives preserved",
+  "files": [
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data/dpm_fig3f_recolored_plot_data.csv",
+      "sha256": "2f510290caed40468736a85fe037b581087b75aa1ef3e56b593443d7abb0c822",
+      "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_edges.csv",
+      "sha256": "f5de71e1da9be1f31905c340a95f66148cb1fa59fb5e942a6f1d4ce57c06c820",
+      "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_layout.csv",
+      "sha256": "9a6f29b84b4e37bc5453cbb134a9b6d1d5308c8c0df3e54082645cb150c3757a",
+      "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_memberships.csv",
+      "sha256": "3ec91bca2a81ef1d6394cff4aa8926d9dd1c4a9c3b26473ee1ff73f958f48dde",
+      "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv",
+      "sha256": "7d3b339bac5ae2e05ff32e5858d239b76e40f81014b52f44a5263327f7b21b11",
+      "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf",
+      "sha256": "bedb55aa32702d18ffd30d7813901d575745225a1fa3a0dc103db445908e7445",
+      "reason": "Rendered derivative of the same unlicensed GitHub inputs; removed together with the derived CSV distribution."
+    },
+    {
+      "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/figures/dpm_fig3e_recolored.pdf",
+      "sha256": "9d1515288fc26ef51f87e23cd1c34093eca42d697cb30d788ffa5d8e463ceda9",
+      "reason": "Rendered derivative of the same unlicensed GitHub inputs; removed together with the derived CSV distribution."
+    },
+    {
+      "path": "docs/assets/genomics-gallery-20261011/dpm-bubbles.png",
+      "sha256": "9bb943cb914d9e1128113932effbefc1c5abb183c0ceeb78c35f222267b4171c",
+      "reason": "Rendered derivative of the same unlicensed GitHub inputs; removed together with the derived CSV distribution."
+    },
+    {
+      "path": "docs/assets/genomics-gallery-20261011/dpm-network.png",
+      "sha256": "a01d225450689b8bc513b4779df5bef2c8461ef48b279d9ec4f0c7aa9224cfaf",
+      "reason": "Rendered derivative of the same unlicensed GitHub inputs; removed together with the derived CSV distribution."
+    }
+  ]
+}

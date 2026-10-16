@@ -23,7 +23,7 @@ class ReceiptTests(unittest.TestCase):
         self.script = self.root/'plot.R'
         self.script.write_text('render()')
         self.design = self.root/'design.yaml'
-        self.design.write_text('figure_task: fixture')
+        self.design.write_text('figure_task: fixture\ntext_contract:\n  allowed_text: [Sample]\n  allow_headings: false\n')
         self.preparation = self.root/'preparation.json'
         self.preparation.write_text('{}')
         self.font = self.root/'Arial.ttf'
@@ -51,31 +51,93 @@ class ReceiptTests(unittest.TestCase):
                      'authorization_consumption':{'consumed':True,'authorization_id':self.auth_id,
                          'marker':bound(self.auth_marker),'authorization_file':bound(self.authorization),
                          'preparation_receipt':bound(self.preparation)},
-                     'checks':{k:True for k in ('font','text_allowlist','layout','target_size')},
+                     'checks':{k:True for k in ('font','text_allowlist','layout','target_size','scientific_text_only','footer_free')},
+                     'text_policy_id':'scientific-content-only-v1','footer_policy_id':'no-canvas-footer-v1','rendered_text':[],
                      'target_min_text_pt':7,
                      'target_size':{'width_mm':90,'height_mm':75,'size_class':'single-column',
                                     'size_basis':'final_physical_output'}}
         self.receipt.write_text(json.dumps(self.data))
-    def _bind_authorization(self, preparation, design):
+    def _bind_authorization(self, preparation, design, renderer_sources=None):
         def bound(path):
             return {'path':str(path.resolve()), 'sha256':m.digest(path)}
+        renderer_sources = [self.script] if renderer_sources is None else renderer_sources
         body={'schema_version':1,'status':'AUTHORIZED','single_use':True,
-              'bound':{'receipt':bound(preparation),'design_spec':bound(design),'sources':[bound(self.script)]}}
+              'bound':{'receipt':bound(preparation),'design_spec':bound(design),
+                       'sources':[bound(path) for path in renderer_sources]}}
         auth_id=hashlib.sha256(json.dumps(body,sort_keys=True).encode()).hexdigest()
         body['authorization_id']=auth_id
         body['consumed']=True
         self.authorization.write_text(json.dumps(body))
         self.auth_id=auth_id
         self.auth_marker.write_text(auth_id+'\n')
-        self.data['sources']=[bound(self.script),bound(design)]
+        self.data['sources']=[bound(path) for path in renderer_sources]+[bound(design)]
         self.data['authorization_consumption']={'consumed':True,'authorization_id':auth_id,
           'marker':bound(self.auth_marker),'authorization_file':bound(self.authorization),
           'preparation_receipt':bound(preparation)}
         self.receipt.write_text(json.dumps(self.data))
+    def _text_receipt(self, labels=None, rendered=None, helper=None):
+        labels = ['Sample', 'AI accuracy', 'AI_001', 'n = 6', '20 µm'] if labels is None else labels
+        self.design.write_text(__import__('yaml').safe_dump({
+            'figure_task':'fixture', 'text_contract':{'allowed_text':labels,'allow_headings':False}}))
+        self.data['renderer']='ggplot2'
+        self.data['text_policy_id']='scientific-content-only-v1'
+        self.data['checks']['scientific_text_only']=True
+        self.data['rendered_text']=labels if rendered is None else rendered
+        helper = ROOT/'scripts/figure_style.R' if helper is None else helper
+        self._bind_authorization(self.preparation, self.design, [self.script, helper])
     def check(self):
         return m.validate_render_receipt(str(self.receipt), self.artifact)
     def test_valid_bound_receipt(self):
         self.assertEqual(self.check(), [])
+    def test_heatmap_cannot_pass_without_actual_physical_cell_measurement(self):
+        self._text_receipt(labels=['Sample'])
+        import yaml
+        doc=yaml.safe_load(self.design.read_text())
+        doc['reference_analysis']={'figure_family':'expression heatmap',
+            'spatial_topology':{'coordinate_system':'cartesian'}}
+        doc['heatmap_cell_contract']={'policy_id':'heatmap-cells-v1','shape':'square',
+            'measurement_basis':'final_body_viewports_mm','max_relative_error':.01,'rows':8,'columns':4}
+        self.design.write_text(yaml.safe_dump(doc))
+        self.data['renderer']='native-grid'
+        self._bind_authorization(self.preparation,self.design,[self.script,ROOT/'scripts/figure_style.R'])
+        self.assertTrue(any('heatmap_cells' in e for e in self.check()))
+        self.data['heatmap_cell_policy_id']='heatmap-cells-v1'
+        self.data['checks']['cell_geometry']=True
+        self.data['heatmap_cells']=[{'panel_id':'expr-1-1','rows':8,'columns':4,
+            'body_width_mm':20,'body_height_mm':40,'cell_width_mm':5,'cell_height_mm':5,
+            'measurement_method':'final_body_viewports_mm'}]
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertEqual(self.check(),[])
+        # A lying square result cannot hide the measured body geometry.
+        self.data['heatmap_cells'][0]['body_height_mm']=32
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertTrue(any('heatmap_cells' in e for e in self.check()))
+    def test_native_backend_cannot_omit_actual_canvas_text(self):
+        self._text_receipt(labels=['Sample'])
+        self.data['renderer']='native-grid'
+        self.data.pop('rendered_text')
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertTrue(any('rendered_text must be an array' in error for error in self.check()))
+    def test_screenshot_footer_is_rejected_even_when_allowlisted(self):
+        self._text_receipt(labels=['Sample','n = 8 fish per group; infection day 12',
+                                  'FDR <= 0.05; VIP >= 1; FC >= 1.2 or <= 1/1.2'])
+        self.assertTrue(any('sample_design_footer' in error or 'filtering_criteria_footer' in error for error in self.check()))
+    def test_every_renderer_requires_current_footer_policy_and_checked_result(self):
+        for renderer in ('ggplot2', 'native-grid'):
+            for defect in ('missing_policy', 'legacy_policy', 'missing_check', 'failed_check'):
+                with self.subTest(renderer=renderer, defect=defect):
+                    self._text_receipt(labels=['Sample'])
+                    self.data['renderer']=renderer
+                    if defect=='missing_policy':
+                        self.data.pop('footer_policy_id')
+                    elif defect=='legacy_policy':
+                        self.data['footer_policy_id']='legacy-policy'
+                    elif defect=='missing_check':
+                        self.data['checks'].pop('footer_free')
+                    else:
+                        self.data['checks']['footer_free']=False
+                    self.receipt.write_text(json.dumps(self.data))
+                    self.assertTrue(any('no-canvas-footer' in error for error in self.check()))
     def test_python_render_receipt_cannot_pass_cp3_without_official_authorized_renderer(self):
         self.data['backend']='Python'
         self.receipt.write_text(json.dumps(self.data))
@@ -148,6 +210,62 @@ class ReceiptTests(unittest.TestCase):
         self.data['renderer']='ggplot2'
         self.receipt.write_text(json.dumps(self.data))
         self.assertTrue(self.check())
+    def test_ggplot_actual_scientific_text_is_bound_to_the_authorized_spec(self):
+        self._text_receipt()
+        self.assertEqual(self.check(), [])
+        self.assertEqual(m.validate_render_receipt(str(self.receipt),self.artifact,self.design), [])
+    def test_checks_true_and_a_self_approved_note_do_not_pass(self):
+        self._text_receipt(labels=['Sample', 'AI-generated figure'])
+        self.assertTrue(all(self.data['checks'].values()))
+        errors=self.check()
+        self.assertTrue(any('prohibited production/audit/disclaimer text' in error for error in errors))
+    def test_missing_or_malformed_actual_text_cannot_pass_ggplot_cp3(self):
+        self._text_receipt()
+        for value in (None, 'Sample', ['Sample', 5], {'label':'Sample'}):
+            with self.subTest(value=value):
+                self.data['rendered_text']=value
+                self.receipt.write_text(json.dumps(self.data))
+                self.assertTrue(any('rendered_text must be an array' in error for error in self.check()))
+        self.data.pop('rendered_text')
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertTrue(any('rendered_text must be an array' in error for error in self.check()))
+    def test_actual_visible_text_must_be_in_current_spec(self):
+        self._text_receipt(labels=['Sample'],rendered=['Sample','n = 7'])
+        self.assertTrue(any('unapproved labels' in error for error in self.check()))
+    def test_empty_actual_text_array_is_valid_for_a_textless_object(self):
+        self._text_receipt(rendered=[])
+        self.assertEqual(self.check(), [])
+    def test_ggplot_cp3_requires_current_policy_and_scientific_text_check(self):
+        self._text_receipt()
+        self.data['checks']['scientific_text_only']=False
+        self.data['text_policy_id']='legacy-policy'
+        self.receipt.write_text(json.dumps(self.data))
+        errors=self.check()
+        self.assertTrue(any('scientific_text_only' in error for error in errors))
+        self.assertTrue(any('text_policy_id' in error for error in errors))
+    def test_native_backend_requires_text_policy_without_requiring_ggplot_adapter(self):
+        self._text_receipt(labels=['Sample', 'AI note: illustrative'])
+        self.data['renderer']='native-grid'
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertTrue(any('prohibited production/audit/disclaimer text' in error for error in self.check()))
+        self._text_receipt(labels=['AI accuracy','AI_001'])
+        self.data['renderer']='native-grid'
+        self.data.pop('text_policy_id')
+        self.data['checks'].pop('scientific_text_only')
+        self.receipt.write_text(json.dumps(self.data))
+        errors=self.check()
+        self.assertTrue(any('text_policy_id' in error for error in errors))
+        self.assertTrue(any('scientific_text_only' in error for error in errors))
+    def test_legacy_or_modified_style_copy_cannot_claim_current_ggplot_cp3(self):
+        helper=self.root/'figure_style.R'
+        helper.write_text('legacy_unrestricted_export()')
+        self._text_receipt(helper=helper)
+        self.assertTrue(any('current canonical figure_style.R' in error for error in self.check()))
+    def test_identical_style_copy_is_accepted(self):
+        helper=self.root/'figure_style.R'
+        helper.write_bytes((ROOT/'scripts/figure_style.R').read_bytes())
+        self._text_receipt(helper=helper)
+        self.assertEqual(self.check(), [])
     def test_small_text_requires_basis(self):
         self.data['target_min_text_pt']=5.5
         self.receipt.write_text(json.dumps(self.data))
@@ -210,6 +328,7 @@ class ReceiptTests(unittest.TestCase):
         preparation['learned_methods']=retrieve_learning(preparation['query'])
         preparation=finalize_receipt(preparation)
         spec_doc=m.load(spec_path)
+        spec_doc['text_contract']={'allowed_text':['Sample'],'allow_headings':False,'footer_policy':'outside-only'}
         spec_doc['reference_evidence']['learned_method_reuse']={'adopted':[],'rejected':[
             {'method_id':x['method_id'],'reason':'orchestration fixture; no source adaptation rendered'}
             for x in preparation['learned_methods']['results']]}
@@ -234,7 +353,7 @@ class ReceiptTests(unittest.TestCase):
                 key:{'status':'PASS','evidence':f'{key} checked on final-size PNG','colored_data_marks':True}
                 for key in ('typography_size','typography_position','label_overlap',
                             'legend_overlap','clipping','panel_alignment',
-                            'figure_text_proportion', 'semantic_color')}}}))
+                            'figure_text_proportion', 'semantic_color', 'footer_absent')}}}))
         entries[4]['evidence'].update(critic_status='PASS',qa_status='PASS',simulation_disclosed=True,
             reviewer_type='human',reviewer_id='fixture-reviewer',inspection_evidence=str(inspection),deliverables=[{'path':str(self.artifact),'sha256':m.digest(self.artifact)}])
         return {'schema_version':1,'artifact_id':'fixture','mode':'standard','checkpoints':entries},definition

@@ -1,5 +1,11 @@
 schema_version: '1.0'
 patterns:
+- pattern_id: PHYLO-TREE-001
+  path: genome/phylogeny.yaml
+  domain: comparative-genomics
+  task: phylogenetic-relationships
+  message_type: evolutionary-tree-structure
+  tags: [phylogeny, tree, branch-length, tip-label]
 - pattern_id: DIFF-VOLCANO-001
   path: differential/volcano-restrained.yaml
   domain: differential

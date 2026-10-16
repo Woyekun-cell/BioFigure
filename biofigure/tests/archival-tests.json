@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "policy": "Archive tests are NOT_RUN in public profile, never counted as PASS; use --profile archive or --profile all explicitly.",
+  "archival_tests": [
+    {
+      "pattern": "test_all_learning.AllLearningTests.test_every_persisted_learning_record_can_be_retrieved_by_its_id",
+      "reason": "Rebuilds and replays every historical learning input; third-party local snapshots are not part of the public package.",
+      "inputs": [
+        "library/topjournal-corpus/results/plot_data/biofigure_candidates.json",
+        "library/"
+      ]
+    },
+    {
+      "pattern": "test_all_learning.AllLearningTests.test_core_source_files_are_bound_not_only_metadata",
+      "reason": "Verifies original third-party code bytes in historical local source snapshots, not the searchable public record.",
+      "inputs": [
+        "library/topjournal-corpus/results/code/issue_023/block_001.R",
+        "library/single-cell/fleck-organoid/sources/author-code/figures/FIGURE_1.R",
+        "library/nature-genomics-multiomics/sources/gao-lab--GLUE/experiments/TripleOmics/s03_markers.py"
+      ]
+    },
+    {
+      "pattern": "test_all_learning.AllLearningTests.test_cp2_cannot_delete_learning_candidates_or_forget_prior_defects",
+      "reason": "Positive adoption test requires the actual GLUE source snapshot. Public protocol tests independently enforce candidate, defect and adapter binding.",
+      "inputs": [
+        "library/nature-genomics-multiomics/sources/gao-lab--GLUE/"
+      ]
+    },
+    {
+      "pattern": "test_critics.CriticsTests.test_current_bound_learned_pattern_is_accepted",
+      "reason": "Actual SCICASE source image is required to construct the historical image-bound fixture.",
+      "inputs": [
+        "benchmark/library/scidraw/sources/06_half_violin_box_points_source.jpg"
+      ]
+    },
+    {
+      "pattern": "test_critics.CriticsTests.test_stale_learned_binding_and_unviewed_source_are_rejected",
+      "reason": "Actual SCICASE source image is required to construct the historical image-bound fixture.",
+      "inputs": [
+        "benchmark/library/scidraw/sources/06_half_violin_box_points_source.jpg"
+      ]
+    },
+    {
+      "pattern": "test_learned_native_design.*",
+      "reason": "Actual SCICASE-007 and SCICASE-071 original source images are required for source-specific native-pattern/background exceptions.",
+      "inputs": [
+        "benchmark/library/scidraw/sources/06_half_violin_box_points_source.jpg",
+        "benchmark/library/scidraw/sources/ternary_03.png"
+      ]
+    },
+    {
+      "pattern": "test_source_typography.*",
+      "reason": "Source-specific typography exception replay requires the actual original image. Public design tests still enforce default font/minimum/ratio gates.",
+      "inputs": [
+        "benchmark/library/scidraw/sources/06_half_violin_box_points_source.jpg"
+      ]
+    },
+    {
+      "pattern": "test_template_reuse.*",
+      "reason": "Locked historical fixture replay requires original issue-097 request, immutable baseline, source files and run evidence.",
+      "inputs": [
+        "benchmark/library/topjournal/issue_097/data/metadata/request.yaml",
+        "benchmark/library/topjournal/issue_097/evidence/simulation-baseline.json"
+      ]
+    },
+    {
+      "pattern": "test_scidraw_review.SciDrawReviewTests.test_artifacts_and_hashes",
+      "reason": "Checks historical gallery exports and their old immutable evidence hashes; these exports are not the new public executable examples.",
+      "inputs": [
+        "../docs/assets/scidraw-gallery/",
+        "../docs/assets/scidraw-gallery-batch2/"
+      ]
+    },
+    {
+      "pattern": "test_scidraw_review.SciDrawReviewTests.test_public_gallery_excludes_source_material",
+      "reason": "Checks historical gallery exports and their old immutable evidence hashes; these exports are not the new public executable examples.",
+      "inputs": [
+        "../docs/assets/scidraw-gallery/",
+        "../docs/assets/scidraw-gallery-batch2/"
+      ]
+    },
+    {
+      "pattern": "test_scidraw_batch2_review.SciDrawBatch2ReviewTests.test_artifact_hashes_and_dimensions",
+      "reason": "Checks historical gallery exports and their old immutable evidence hashes; these exports are not the new public executable examples.",
+      "inputs": [
+        "../docs/assets/scidraw-gallery/",
+        "../docs/assets/scidraw-gallery-batch2/"
+      ]
+    },
+    {
+      "pattern": "test_scidraw_batch2_review.SciDrawBatch2ReviewTests.test_public_bundle_contains_only_independent_material",
+      "reason": "Checks historical gallery exports and their old immutable evidence hashes; these exports are not the new public executable examples.",
+      "inputs": [
+        "../docs/assets/scidraw-gallery/",
+        "../docs/assets/scidraw-gallery-batch2/"
+      ]
+    }
+  ]
+}

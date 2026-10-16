@@ -2,7 +2,7 @@
 
 [全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)
 
-本类 **7 张代表图**，每个细分图型保留一例。
+本类 **6 张代表图**，每个细分图型保留一例。
 
 按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
 
@@ -65,15 +65,5 @@
 ![BF-0178 聚类热图与行趋势](../../docs/assets/archive-gallery/topjournal-early/issue059_cluster_heatmap.png)
 
 [原尺寸](../../docs/assets/archive-gallery/topjournal-early/issue059_cluster_heatmap.png) · [脚本](../../biofigure/examples/archive-gallery/topjournal-early/scripts/issue059_cluster_heatmap_reproduction.R) · [记录](catalog.csv)
-
-<a id="bf-0219"></a>
-
-## BF-0219 · 双通路 OE/KD 气泡矩阵
-
-图型：通路双矩阵基因气泡图。真实作者处理数据；37/23基因、120个单元。保留raw P与效应，通路标签为FWER；缺失原星号依据，未补造。
-
-![BF-0219 双通路 OE/KD 气泡矩阵](../../docs/assets/genomics-gallery-20261011/dpm-bubbles.png)
-
-[原尺寸](../../docs/assets/genomics-gallery-20261011/dpm-bubbles.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/figures/dpm_fig3f_recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/dpm-bubbles/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/dpm-bubbles/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/dpm-bubbles/provenance.json) · [方法来源](https://www.nature.com/articles/s41467-024-49986-4) · [记录](catalog.csv)
 
 [全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)

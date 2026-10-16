@@ -104,14 +104,24 @@ def generate():
     files['docs/GALLERY.md'] = '\n'.join(index)
     readme = (ROOT / 'README.md').read_text()
     start, end = readme.index('## 分类图廊'), readme.index('## 绘图方法')
-    section = ['## 分类图廊 / Gallery by plot type\n',
-               f'现有成图中精选 {heading}。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。<br>Selected {total} representatives from available figures across {len(categories)} categories. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.\n',
-               '数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。<br>Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings.\n',
-               '| 图型分类 / Category | 图数 / Figures |\n|---|---:|']
+    section = ['## 分类图廊\n',
+               f'现有成图中精选 {heading}。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。\n',
+               '数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。\n',
+               '| 图型分类 | 图数 |\n|---|---:|']
     for cat, count, _ in nav_rows:
-        section.append(f'| [{cat["title"]} / {cat["english"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
+        section.append(f'| [{cat["title"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。\n\n')
     files['README.md'] = readme[:start] + '\n'.join(section) + readme[end:]
+    english = (ROOT / 'README.en.md').read_text()
+    start, end = english.index('## Gallery by plot type'), english.index('## Methods and quality checks')
+    section_en = ['## Gallery by plot type\n',
+                  f'The gallery selects **{total} figures in {len(categories)} categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.\n',
+                  'Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings or complete acceptance testing.\n',
+                  '| Category | Figures |\n|---|---:|']
+    for cat, count, _ in nav_rows:
+        section_en.append(f'| [{cat["english"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
+    section_en.append('\nSee the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.\n\n')
+    files['README.en.md'] = english[:start] + '\n'.join(section_en) + english[end:]
     fields = ['id', 'category', 'subtype', 'title', 'image', 'pdf', 'sha256', 'data_origin', 'historical', 'validation', 'note', 'origin_paths', 'scripts', 'plot_data', 'provenance']
     out = io.StringIO(newline='')
     writer = csv.DictWriter(out, fieldnames=fields, lineterminator="\n")

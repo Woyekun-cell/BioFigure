@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "case_id": "epigenomics-chromafold-multiresolution-contact-atlas",
+  "learned_method_id": "BENCH-epigenomics-chromafold-multiresolution-contact-atlas",
+  "title": "ChromaFold: multiresolution Hi-C, co-accessibility and linked genomic tracks",
+  "domain": "epigenomics",
+  "collection": "epigenomics",
+  "status": "SOURCE_CODE_LEARNING_COMPLETE_NOT_RENDERED",
+  "archive_status": "source-code-learning-complete-not-rendered",
+  "source_kind": "peer-reviewed-author-code",
+  "paper": {
+    "title": "ChromaFold predicts the 3D contact map from single-cell chromatin accessibility",
+    "journal": "Nature Communications",
+    "year": 2024,
+    "doi": "10.1038/s41467-024-53628-0",
+    "url": "https://www.nature.com/articles/s41467-024-53628-0",
+    "correction_doi": "10.1038/s41467-025-56017-3",
+    "article_license": "CC BY-NC-ND 4.0"
+  },
+  "repository": {
+    "url": "https://github.com/viannegao/ChromaFold",
+    "commit": "1c5dd9b07d851d196c31c26024d90c0335f1bd75",
+    "license": "MIT",
+    "notebook_blob_sha": "5dd278734d21b546c8f84221fcef11ba63768e18"
+  },
+  "target_panels": [
+    "Figure 2a",
+    "Figure 2c",
+    "Figure 4a",
+    "Figure 4b"
+  ],
+  "direct_parameter_match": [
+    "Figure 4a GCB chr16:23-25 Mb"
+  ],
+  "type_tags": [
+    "Hi-C",
+    "triangle",
+    "genomic-tracks",
+    "chromatin-arcs",
+    "multi-panel",
+    "co-accessibility",
+    "heatmap"
+  ],
+  "keywords": [
+    "ChromaFold",
+    "Hi-C",
+    "V-stripe",
+    "45 degree",
+    "HiCDCPlus",
+    "TopDom",
+    "CoolBox",
+    "ATAC",
+    "CTCF",
+    "500bp",
+    "50bp",
+    "10kb",
+    "Jaccard",
+    "共同坐标",
+    "染色质接触",
+    "多轨基因组"
+  ],
+  "source_reference_images": [
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/chromatin/source/fig2-original.png",
+      "sha256": "6f0996e075018fa1449bdee77cf6afbbd2f5ed8ec3184a5191c16657eeec8121",
+      "width_px": 1749,
+      "height_px": 2487,
+      "original_size_opened": true,
+      "review": "Source figure viewed; no reconstructed figure exists.",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-024-53628-0/MediaObjects/41467_2024_53628_Fig2_HTML.png"
+    },
+    {
+      "path": "../work/2026-10-13-deep-omics-learning/chromatin/source/fig4-original.png",
+      "sha256": "46d64b82943fd6d35db727e5175f0adaa4a263cd88bd434eed70b1567ebf7fe0",
+      "width_px": 1786,
+      "height_px": 2495,
+      "original_size_opened": true,
+      "review": "Source figure viewed; no reconstructed figure exists.",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-024-53628-0/MediaObjects/41467_2024_53628_Fig4_HTML.png"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/LICENSE",
+      "sha256": "9b4e2fc67b20084b9a8010a522f545d91ba82e0f1d553e9fdc314a3111706111",
+      "role": "license"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/chromafold.yml",
+      "sha256": "ebd2b8b2d220eeb23001fc2da64cdd1df1468da6e5cfd9a6fb56c3ed68552165",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/chromafold__dataloader.py",
+      "sha256": "80b651a67e6a724d85c0b44447ba0a93256d423f76cd1c3433c43a35c3f06b27",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/chromafold__inference.py",
+      "sha256": "cafec40c5a48a779e6a04b5d6e4c5211512105bcbedba17736257427d409b420",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/chromafold__utils.py",
+      "sha256": "9c41e3d7e65be3cf5a471413b01da6c015abd499a816f622a06c5ec35803f652",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/step1_hicdcplus_normalization_run.R",
+      "sha256": "96a98371c744bc7cf22fef88d83f67b906fa8fec063e6e794f92b4eeff86f1a7",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/step2_python_save.py",
+      "sha256": "4889f081649bad1725851b9d671aa956fe16f8b5384b54dc4d511a22268203fc",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/visualize-evaluate.code.py",
+      "sha256": "e12d4b6a6be51808713c6bb3456bee6463bb98bcb12ff6e239170b5e7c9d79fa",
+      "role": "author-source-code"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/source/visualize-evaluate.outputs-stripped.ipynb",
+      "sha256": "252b924479cf75031de7ecd84e0daa66e438871f48b169d40ffb3e0496af86d2",
+      "role": "author-source-code"
+    }
+  ],
+  "learning_materials": [
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/learning.md",
+      "sha256": "8d99ad12ed8ac83bb79d5dc4be3d9e228ce52c26aa7dbd2419c7e0d697202fc4"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/evidence/source-layout-observations.json",
+      "sha256": "1386d3f71a6a0dd98a3dd035b7714abb05d592c6bfc4c4752866cb4e0fbb4b80"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/data/plot_data/real_imr90_chr19_23_25Mb_uppertriangle.csv",
+      "sha256": "19afe67c8ed74ee4fd2913da293ffc0b9138e6d1176527ffbc27cf57e4b1f06a"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/evidence/fixture-QC.json",
+      "sha256": "b26ee4e9008c948d82cfbec1dac033039bccd263952fb6a4660cf5d1b2a98c76"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/evidence/real-matrix-QC.json",
+      "sha256": "186227edf8ae1be9b78100ee902434590395442b9639c9bc2496738fde4f3767"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/scripts/audit_transforms.py",
+      "sha256": "749a3d89686eb8ad386c4b57b45de87ff1f4e31e0cbd9e000f3cad547a8774f1",
+      "role": "non-rendering simulated author-function and geometry audit"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/scripts/audit_real_processed_matrix.py",
+      "sha256": "acbeca717c231db751ef3e110e1ddeafd8ff70d076ac8a174401c5b1281c03c1",
+      "role": "non-rendering restricted real-matrix processing audit"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/data/plot_data/real_imr90_chr19_vstripe_22Mb.csv",
+      "sha256": "89910b06a86ff5a76e51cdb798fec431e94917805cd1d36365646327a0196de2",
+      "role": "actual processed chr19 400value target extraction"
+    },
+    {
+      "path": "benchmark/library/epigenomics/chromafold-multiresolution-contact-atlas/evidence/source-manifest.json",
+      "sha256": "c5b6aec4de6d53f2dfb0d4be2f435711dee8b4516e5862c60bbd2716415147c2",
+      "role": "complete assets manifest; excludes current card and itself to avoid hash cycles"
+    }
+  ],
+  "key_packages": [
+    "numpy",
+    "pandas",
+    "scipy",
+    "torch",
+    "matplotlib",
+    "seaborn",
+    "coolbox",
+    "tabix",
+    "HiCDCPlus",
+    "TopDom"
+  ],
+  "processing_contract": {
+    "matrix_order": "genomic bins, never cluster or sort by value",
+    "coordinate_mapping": "midpoint=(i+j)/2; distance=j-i; upstream flipud before pcolormesh",
+    "context_vs_view": "700x700 context; 300:500 midpoint view, 0:200 distance; 10kb bins",
+    "normalization": "(counts-mu)/sdev from HiC-DC+; no row z-score",
+    "jaccard": "binarize >0 across metacells at500bp; two-axis20bin mean afterward",
+    "color_policy": "source-specific limits retained as facts; linear RdBu_r midpoint not0 when limits asymmetric",
+    "statistical_boundary": "top10percent zscore is ranking classification, not q cutoff"
+  },
+  "data_input_contract": {
+    "downloaded_data": "real processed IMR90 hg38 chr19 HiCDC Zscore, 5862x5862 upper sparse matrix,1158162 entries",
+    "source_data_doi": "10.5281/zenodo.13362537",
+    "matrix_sha256": "bb3ccda3653423735f382624a6bd2c23a55026c9878158ea1fae795dd1e631a9",
+    "matrix_git_blob": "9749aa10a9b1d998f40681e23f149badd8af45ea",
+    "real_region": "chr19:20-27Mb context /23-25Mb visible; explicitly differs from mouse Fig4 chr16/chr1",
+    "simulated_fixture": "620x400 seeded V-stripe input ->420x420; artificial indexing test only",
+    "required_inputs_for_figure4": [
+      "mouse GCB/mHSC/Treg processed HiC and predictions",
+      "matching mm10 ATAC/motif/Jaccard inputs",
+      "BEDPE peak interactions",
+      "GTF",
+      "TopDom insulation scores",
+      "final layout and shading coordinates"
+    ]
+  },
+  "validation": {
+    "non_rendering_fixture_checks_passed": 13,
+    "non_rendering_real_data_checks_passed": 8,
+    "cp2": "NOT_RUN",
+    "render": "NOT_RUN",
+    "visual_fidelity": "NOT_VERIFIED",
+    "original_reproduction": "NOT_VERIFIED",
+    "user_acceptance": "PENDING",
+    "high_fidelity_eligible": false,
+    "benchmark_eligible": false
+  },
+  "known_gaps": [
+    "Final publication composite code absent",
+    "Arcs depends on undefined start_ind",
+    "Per-panel configurations absent except GCB Fig4a subset",
+    "Author load_hic wrongly assigns zscore input to qvalue variable",
+    "Full visual input for Fig4 not retrieved",
+    "Data zeros include source fill convention"
+  ],
+  "reuse_instruction": "Retrieve this source-learning case, inspect source and code, define genomic range, input semantics and comparison objective, then fresh CP2 and actual final source comparison before any visual PASS.",
+  "packages_by_role": {
+    "numpy": "author stripe insertion, midpoint-distance grid, clipping and matrix operations",
+    "pandas": "author stripe alignment/reindex/pivot; no biological row sorting",
+    "scipy": "author CSR storage and statistics; this audit parses reviewed CSR state through an inert data container",
+    "torch": "author metacell binary Jaccard and model computation; no model executed here",
+    "matplotlib": "author pcolormesh contact geometry; this audit captures arrays without drawing",
+    "seaborn": "author display dependency; no new plots",
+    "coolbox": "author GTF and BEDPE arcs sharing genomic coordinates",
+    "tabix": "author indexed genomic-track access dependency",
+    "HiCDCPlus": "source contact normalization, not rerun",
+    "TopDom": "article Methods insulation/TAD scoring at10kb and w30; implementation not in reviewed plotting notebook"
+  },
+  "input_contract": {
+    "downloaded_data": "real processed IMR90 hg38 chr19 HiCDC Zscore, 5862x5862 upper sparse matrix,1158162 entries",
+    "source_data_doi": "10.5281/zenodo.13362537",
+    "matrix_sha256": "bb3ccda3653423735f382624a6bd2c23a55026c9878158ea1fae795dd1e631a9",
+    "matrix_git_blob": "9749aa10a9b1d998f40681e23f149badd8af45ea",
+    "real_region": "chr19:20-27Mb context /23-25Mb visible; explicitly differs from mouse Fig4 chr16/chr1",
+    "simulated_fixture": "620x400 seeded V-stripe input ->420x420; artificial indexing test only",
+    "required_inputs_for_figure4": [
+      "mouse GCB/mHSC/Treg processed HiC and predictions",
+      "matching mm10 ATAC/motif/Jaccard inputs",
+      "BEDPE peak interactions",
+      "GTF",
+      "TopDom insulation scores",
+      "final layout and shading coordinates"
+    ]
+  },
+  "layout_contract": {
+    "coordinate_mapping": "midpoint=(i+j)/2; distance=j-i; upstream flipud before pcolormesh",
+    "context_vs_view": "700x700 context; 300:500 midpoint view, 0:200 distance; 10kb bins",
+    "row_order": "genomic position; no heatmap clustering",
+    "column_alignment": "10kb matrix;50bp signal;500bp co-accessibility share explicit genomic interval",
+    "source_color_policy": "source-specific limits retained as facts; linear RdBu_r midpoint not0 when limits asymmetric",
+    "figure4_observed_distribution": "two equal locus columns, two states vertically per locus; narrow statistics column right; genes below",
+    "exact_publication_panel_dimensions": "NOT_VERIFIED; notebook8x3/8x1.5 are separate previews",
+    "final_composite_code": "NOT_FOUND_IN_REVIEWED_SOURCE"
+  },
+  "transferable_decisions": [
+    "Keep flanking anchor context outside midpoint display window.",
+    "Use explicit assembly/genomic interval/bin edges across contact, signal, arcs and genes.",
+    "Keep source-specific colour limits distinct from a new cross-condition shared-scale design.",
+    "Compute500bp binary Jaccard before20x20 block averaging; do not reverse those operations.",
+    "Never reinterpret top10percent Zscore labels as qvalue significance.",
+    "Fresh CP2 and actual final source comparison remain mandatory before new plotting approval."
+  ]
+}

@@ -363,5 +363,33 @@
       "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv"
     ]
   },
-  "public_execution_profile": "data/metadata/public-replay.json"
+  "public_execution_profile": "data/metadata/public-replay.json",
+  "portable_release_3_8": {
+    "status": "reference-only",
+    "reason": "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code.",
+    "code_license": "MIT for BioFigure-owned adapters only; no license granted for author source code or inputs.",
+    "removed_public_input_files": [
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_edges.csv",
+        "sha256": "f5de71e1da9be1f31905c340a95f66148cb1fa59fb5e942a6f1d4ce57c06c820",
+        "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+      },
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_layout.csv",
+        "sha256": "9a6f29b84b4e37bc5453cbb134a9b6d1d5308c8c0df3e54082645cb150c3757a",
+        "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+      },
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_memberships.csv",
+        "sha256": "3ec91bca2a81ef1d6394cff4aa8926d9dd1c4a9c3b26473ee1ff73f958f48dde",
+        "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+      },
+      {
+        "path": "biofigure/examples/genomics-gallery-20261011/dpm-network/results/plot_data/dpm_fig3e_recolored_nodes.csv",
+        "sha256": "7d3b339bac5ae2e05ff32e5858d239b76e40f81014b52f44a5263327f7b21b11",
+        "reason": "Derived from author GitHub inputs without an explicit redistribution license; no license inferred from the article CC-BY notice."
+      }
+    ],
+    "historical_records": "Historical source links, learned findings and old qualification scopes retained. Earlier Git history may still contain the formerly published derived tables."
+  }
 }

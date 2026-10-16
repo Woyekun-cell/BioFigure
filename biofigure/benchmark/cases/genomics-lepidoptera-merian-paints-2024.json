@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "case_id": "genomics-lepidoptera-merian-paints-2024",
+  "learned_method_id": "BENCH-genomics-lepidoptera-merian-paints-2024",
+  "recipe_id": "GEN-LEPIDOPTERA-MERIAN-PAINTS-001",
+  "title": "Lepidoptera Fig.4b phylogeny plus 120 Merian chromosome paints",
+  "label": "鳞翅目染色体演化 Fig.4b：系统树与120条真实染色体涂色",
+  "paper": {
+    "title": "Comparative genomics reveals the dynamics of chromosome evolution in Lepidoptera",
+    "journal": "Nature Ecology & Evolution",
+    "year": 2024,
+    "doi": "10.1038/s41559-024-02329-4",
+    "url": "https://www.nature.com/articles/s41559-024-02329-4",
+    "figure_url": "https://www.nature.com/articles/s41559-024-02329-4/figures/4",
+    "license": "CC BY 4.0"
+  },
+  "repository": {
+    "url": "https://github.com/charlottewright/Chromosome_evolution_Lepidoptera_MS",
+    "commit": "9e2742ba8270aa88e9ce14b08e2c4fd7c1c56cc2",
+    "license": "MIT",
+    "helper_commit": "cf2081c28f39111599d709883c279375dfd84697"
+  },
+  "status": "SOURCE_CODE_AND_DATA_LEARNING_COMPLETE; SCOPED_PASS_AT_DELIVERY_FORMAL_FIG4B",
+  "panel": "formal Fig.4b / Pierini_panel (source output filename Fig4A.pdf)",
+  "claim_boundary": "Reproduce formal Fig.4b Pierini layout from actual author processed BUSCO and chromosome tables plus saved phylogeny; use a new categorical palette. Fig.4a, original whole Fig.4, raw sequencing analysis, new-input transfer and stress qualification are outside this scoped fixture.",
+  "source_assets": [
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/data/raw/fig4b_selected_species_busco.tsv",
+      "relative_path": "data/raw/fig4b_selected_species_busco.tsv",
+      "role": "lossless selected author BUSCO table",
+      "sha256": "131ed88dc0ea2ff153bf5ea7a0f619c0bb7b2bb2aaaa4e5a8c69c0642b285bbc",
+      "bytes": 2066413
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/1_genomes/annotated_phylogeny/functions_tree_plots.R",
+      "relative_path": "sources/1_genomes/annotated_phylogeny/functions_tree_plots.R",
+      "role": "author phylogeny pruning helper",
+      "sha256": "60150cba6148b944aef93f8556b9736e66c77620a74cb4bc880aeb92c93c6de9",
+      "bytes": 514
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/1_genomes/lepidoptera_phylogeny/phylogeny_210Leps_5Trichop.treefile",
+      "relative_path": "sources/1_genomes/lepidoptera_phylogeny/phylogeny_210Leps_5Trichop.treefile",
+      "role": "author processed phylogeny",
+      "sha256": "103c9bf153af1a3cb02fa892865bba4d711e5f8624a8d4551ee68e9bc5db7363",
+      "bytes": 8798
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/2_merian_elements/merian_paints/functions_busco_painter.R",
+      "relative_path": "sources/2_merian_elements/merian_paints/functions_busco_painter.R",
+      "role": "author chromosome painting R functions",
+      "sha256": "1b18e5cf3289d464b9b3e3215e1b79c223fa6c0a72f8fd5a563959075794dbe4",
+      "bytes": 10038
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/4_highly_rearranged_genomes/Fig4.pdf",
+      "relative_path": "sources/4_highly_rearranged_genomes/Fig4.pdf",
+      "role": "author original full Fig.4 PDF",
+      "sha256": "8f546871c312422af9420cf8b4c3b20ea9d11700b2199888166cfe025407c669",
+      "bytes": 1261385
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/4_highly_rearranged_genomes/merian_paints/Fig4.R",
+      "relative_path": "sources/4_highly_rearranged_genomes/merian_paints/Fig4.R",
+      "role": "author native R plot assembly",
+      "sha256": "afce1d06d147a8d441393d26e93b1dd05ff608f6af356131c43cfa73b071cd5f",
+      "bytes": 9843
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/lep_busco_painter/buscopainter.py",
+      "relative_path": "sources/lep_busco_painter/buscopainter.py",
+      "role": "author midpoint and modal-element processing logic",
+      "sha256": "4fa3379c5cf0fc2d630956ae1f8c720f0775cbbacad1a55a7b3de67647863010",
+      "bytes": 6622
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/publisher/41559_2024_2329_Fig4_HTML.png",
+      "relative_path": "sources/publisher/41559_2024_2329_Fig4_HTML.png",
+      "role": "formal published full Fig.4 reference",
+      "sha256": "4b4781e03a746f99c2a5c24272c56334334cd727a6e3a5ec7ec4a045f7c867ca",
+      "bytes": 211873
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/sup_tables/TableS4_Merian_element_definitions.tsv",
+      "relative_path": "sources/sup_tables/TableS4_Merian_element_definitions.tsv",
+      "role": "author Merian definitions",
+      "sha256": "0646b1794446ca3570c378f9a94d8c7eec608d14aade215e6127374c0d765e73",
+      "bytes": 113878
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/sup_tables/tableS10_chromosome_statistics.tsv",
+      "relative_path": "sources/sup_tables/tableS10_chromosome_statistics.tsv",
+      "role": "author processed chromosome length and status",
+      "sha256": "98a588009689f9c2436bcbbf50564a8b04803610c4a48aa3b77dd2ff028ff9a4",
+      "bytes": 1797736
+    }
+  ],
+  "source_manifest": {
+    "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/source-manifest.json",
+    "sha256": "7544281e31218910e59ded5d280a71746141b7de5ffd8cc6a6423c697e292e9f"
+  },
+  "input_contract": {
+    "selected_raw_rows": 20345,
+    "retained_rows": 20316,
+    "chromosomes": 120,
+    "species_left_to_right": [
+      "Anthocharis_cardamines",
+      "Aporia_crataegi",
+      "Pieris_rapae",
+      "Pieris_brassicae",
+      "Pieris_napi"
+    ],
+    "chromosome_counts": [
+      30,
+      25,
+      25,
+      15,
+      25
+    ],
+    "units": "bp; midpoint=(start+end)/2; axis Mb",
+    "filters": "exclude colon contigs; retain chromosomes with >3 assigned BUSCO loci; no sampling",
+    "neutral_rule": "unique modal Merian, or lexical first among ties; self means dominant on this chromosome",
+    "tie": "HG993173.1 M1 and M9 both74; lexical M1 wins",
+    "chromosome_order": "fusion then split then ancestral; lexical chromosome ID within each status",
+    "marker_half_width_bp": 20000,
+    "marker_boundary": "13 source markers extend beyond chromosome boxes; no silent clipping",
+    "color_counts": {
+      "dominant_neutral": 10964,
+      "alternative_merian": 9352
+    },
+    "source_tree": "215 tips pruned to five; real branch lengths preserved; ggtree default ladderize TRUE right FALSE; dendrogram rotation/revts only"
+  },
+  "original_figure_review": {
+    "opened": true,
+    "formal_reference_opened": true,
+    "assets": [
+      "sources/4_highly_rearranged_genomes/Fig4.pdf",
+      "sources/publisher/41559_2024_2329_Fig4_HTML.png"
+    ],
+    "viewer": "native Poppler source PDF raster plus actual full publisher PNG via view_image",
+    "geometry": "tree above five equal-width chromosome columns; species names and n at leaves; 30/25/25/15/25 row counts filling a shared height; separate Mb scales; shared Merian and rearrangement legends below; fusion/fission annotations on source branches",
+    "source_plot_ratio": "patchwork upper/lower 1:4; final shared legend added below; not equal row pitch across species"
+  },
+  "code_learning": {
+    "packages": {
+      "ggplot2": "geom_rect, facet_wrap, manual fill/outline scales and per-species Mb scales",
+      "dplyr/tidyr": "filters, joins, factors and complete selected loci",
+      "scales": "hue_pal original palette; numeric Mb breaks",
+      "ggtree": "saved tree data and dendrogram/revts/coord_flip; keep real branch lengths",
+      "ape/phytools": "read author Newick and prune without phylogeny inference",
+      "cowplot/patchwork/ggpubr": "five-column assembly, vertical 1:4 tree/paint division, shared legend/axis title"
+    },
+    "entrypoints": [
+      "sources/4_highly_rearranged_genomes/merian_paints/Fig4.R: Pierini_panel",
+      "sources/2_merian_elements/merian_paints/functions_busco_painter.R: get_busco_paint, prepare_data, busco_paint_coloured_chr",
+      "sources/lep_busco_painter/buscopainter.py: print_summary_table, print_location_table"
+    ],
+    "processing": "Select five species from processed217-species table; validate S4 assignments; keep BUSCO/species/chr IDs and source start/end; midpoint and +/-20kb markers; compute source modal/lexical tie; named S10 join supplies true chr length/status; source factor order; prune saved tree; map source x/y to physical display only."
+  },
+  "gaps": [
+    {
+      "detail": "Source header says2022 but formal publication is2024; cite journal publication."
+    },
+    {
+      "detail": "Source A/B output filenames reversed versus formal caption; formally name Fig.4b."
+    },
+    {
+      "detail": "Absolute paths and obsolete S10 numeric column indices repaired with named species/chr/status/length."
+    },
+    {
+      "detail": "Unused source Length=length*1e6 is misleading; plotted length is bp."
+    },
+    {
+      "detail": "self is chromosome-dominant Merian, never missing assignment or ancestral status."
+    },
+    {
+      "detail": "layout_dendrogram rotates/revts a real branch-length tree; never replace by equally spaced topology."
+    }
+  ],
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "Merian chromosome paint phylogeny",
+      "鳞翅目染色体演化 系统树 染色体涂色",
+      "多物种基因组 重排 fusion fission BUSCO"
+    ],
+    "appropriate_data": "orthologue positions per chromosome + saved tree + named chr lengths/status + ancestral element definitions",
+    "avoid_for": "raw reads or incomplete chromosome lengths; aggregate bar charts; interpreting grey as unassigned",
+    "no_inferential_statistics": "No new ANOVA/tests; source branch-event annotations retained as published source results."
+  },
+  "chart_type": "phylogeny genome-track chromosome painting",
+  "figure_family": "genome",
+  "domain": "genome-sequence-variation",
+  "method_families": [
+    "phylogeny",
+    "genome-track"
+  ],
+  "chart_types": [
+    "tree",
+    "genome-track"
+  ],
+  "source_learning_reference": "references/lepidoptera-merian-paints-learning.md",
+  "independent_verifier": {
+    "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/verify_source.py",
+    "sha256": "5b86231637a3fe790571aff9139d822b5c640e42a4b75348f516e8abad19d630"
+  },
+  "method_reference": {
+    "path": "references/lepidoptera-merian-paints-learning.md",
+    "sha256": "ca4ba00e44887c043c740dd4c8446badd58c63d0abf6de9d5405556d16a4b0c6"
+  },
+  "source_code_files": [
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/1_genomes/annotated_phylogeny/functions_tree_plots.R",
+      "relative_path": "sources/1_genomes/annotated_phylogeny/functions_tree_plots.R",
+      "role": "author phylogeny pruning helper",
+      "sha256": "60150cba6148b944aef93f8556b9736e66c77620a74cb4bc880aeb92c93c6de9",
+      "bytes": 514
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/2_merian_elements/merian_paints/functions_busco_painter.R",
+      "relative_path": "sources/2_merian_elements/merian_paints/functions_busco_painter.R",
+      "role": "author chromosome painting R functions",
+      "sha256": "1b18e5cf3289d464b9b3e3215e1b79c223fa6c0a72f8fd5a563959075794dbe4",
+      "bytes": 10038
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/4_highly_rearranged_genomes/merian_paints/Fig4.R",
+      "relative_path": "sources/4_highly_rearranged_genomes/merian_paints/Fig4.R",
+      "role": "author native R plot assembly",
+      "sha256": "afce1d06d147a8d441393d26e93b1dd05ff608f6af356131c43cfa73b071cd5f",
+      "bytes": 9843
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/lep_busco_painter/buscopainter.py",
+      "relative_path": "sources/lep_busco_painter/buscopainter.py",
+      "role": "author midpoint and modal-element processing logic",
+      "sha256": "4fa3379c5cf0fc2d630956ae1f8c720f0775cbbacad1a55a7b3de67647863010",
+      "bytes": 6622
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/4_highly_rearranged_genomes/Fig4.pdf",
+      "relative_path": "sources/4_highly_rearranged_genomes/Fig4.pdf",
+      "role": "author original full Fig.4 PDF",
+      "sha256": "8f546871c312422af9420cf8b4c3b20ea9d11700b2199888166cfe025407c669",
+      "bytes": 1261385
+    },
+    {
+      "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/sources/publisher/41559_2024_2329_Fig4_HTML.png",
+      "relative_path": "sources/publisher/41559_2024_2329_Fig4_HTML.png",
+      "role": "formal published full Fig.4 reference",
+      "sha256": "4b4781e03a746f99c2a5c24272c56334334cd727a6e3a5ec7ec4a045f7c867ca",
+      "bytes": 211873
+    }
+  ],
+  "native_adapter": {
+    "scope": "fixed formal Fig.4b author-processed fixture; new input/environment requires fresh CP2 and final review",
+    "scripts": [
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/prepare_data.R",
+        "sha256": "3795deb7eec46f8d2a4224efe1949519e15ba8549e72a9dfbc7aa1fdcad471c6"
+      },
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/prepare_spec.py",
+        "sha256": "4d46c0aad335a25ea70ce7fae2e8ba155cf5028a561ac143894ef8cce0b8aa54"
+      },
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/render.R",
+        "sha256": "a74973b356405cca54c62c0df84e9fed1f70864fac4c36e6b3f33302e86595d3"
+      },
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/reproduce.py",
+        "sha256": "929b0ded6ee955fe59b260123e20e93e3fe515a1f373ca93a347d94778791396"
+      },
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/verify_render_mapping.py",
+        "sha256": "ccffa39db3a5393b2139eca1a727d670d8565041515e36e03bf62c8f3c795eab"
+      },
+      {
+        "path": "benchmark/library/genomics/lepidoptera-chromosome-evolution/scripts/verify_source.py",
+        "sha256": "5b86231637a3fe790571aff9139d822b5c640e42a4b75348f516e8abad19d630"
+      }
+    ],
+    "runtime": "macOS Quartz PDF, native R4.6.1/ggtree4.2.0/ape5.8.1; Rscript/PyYAML/Arial/native Poppler required; no package installer/network/raw analysis",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED"
+  },
+  "latest_scoped_review": {
+    "status": "SCOPED_PASS_AT_DELIVERY",
+    "date": "2026-10-11",
+    "scope": "Fixed author-processed formal Fig.4b only; intentionally recolored and single-panel legend reflowed",
+    "local_bundle": "benchmark/library/genomics/lepidoptera-chromosome-evolution/evidence/bundle.json",
+    "sha256": "6aaf47721a912f2efd05fb1dc9f3112d8baaa062f7111f73639f0b9c7ead5289",
+    "final_pdf": "benchmark/library/genomics/lepidoptera-chromosome-evolution/results/figures/fig4b_merian_recolored.pdf",
+    "new_input_transfer": "NOT_VERIFIED",
+    "stress": "NOT_VERIFIED",
+    "whole_Fig4": "NOT_VERIFIED",
+    "fresh_CP2_and_final_review_required": true
+  }
+}

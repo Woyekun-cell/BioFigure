@@ -651,14 +651,6 @@
   },
   "learning_reference": "references/genomics-source-gallery-learning-20261011.md",
   "original_archival_learning_source": {},
-  "public_execution_profile": {
-    "schema_version": 1,
-    "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
-    "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED.",
-    "source_asset": "../docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
-    "public_renderer": "scripts/render.R",
-    "input_mode": "published-plot-tables"
-  },
   "learning_source": {
     "read_paths": [
       "../docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
@@ -681,5 +673,14 @@
       "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py"
     ],
     "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED."
+  },
+  "public_execution_profile": {
+    "schema_version": 1,
+    "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+    "scope": "Public published-table native BUSCOplot replay of the current own layout. Author-raw processing, original-whole-figure fidelity and new-input qualification NOT_VERIFIED.",
+    "source_asset": "examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png",
+    "public_renderer": "scripts/render.R",
+    "input_mode": "published-plot-tables",
+    "reference_asset_origin": "BioFigure-owned current gallery replot, byte-identical to the previously public PNG; not the original author figure"
   }
 }

@@ -958,5 +958,13 @@
       "data/metadata/native-acquisition.json",
       "data/metadata/public-replay.json"
     ]
+  },
+  "portable_release_3_8": {
+    "scope": "Current own-layout public replay only; historical scientific/source/visual qualifications unchanged.",
+    "reference_asset": "examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png",
+    "reference_sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
+    "origin": "Byte-identical copy of the already-public BioFigure gallery replot, bundled inside the Skill.",
+    "parent_repository_required": false,
+    "runtime_revalidation": "Required after current release bindings freeze; not inferred from historical PASS."
   }
 }

@@ -19,6 +19,22 @@ def load():
 
 
 class CapabilityGraphTests(unittest.TestCase):
+    def test_public_graph_preserves_source_review_when_bundle_is_not_distributed(self):
+        import sync_capability_status as sync
+        self.assertTrue(hasattr(sync, 'synchronize_registered_cases'), 'registered-case availability sync is missing')
+        graph = {'nodes': [{'id': 'scoped', 'kind': 'case', 'visual_status': 'source-compared-png',
+                           'review_status': 'pass', 'high_fidelity_eligible': True,
+                           'generation_mode': 'source-exposed-independent'}], 'summary': {}}
+        registry = {'cases': [{'case_id': 'scoped', 'label': 'Scoped historical example', 'bundles': {}},
+                              {'case_id': 'new-study', 'label': 'New source learning', 'source': 'source-study', 'bundles': {}}]}
+        result = sync.synchronize_registered_cases(graph, registry, {'scoped': {'tracks': {'reproduction': {'status': 'PENDING_INPUT'}}}})
+        node = next(n for n in result['nodes'] if n['id'] == 'scoped')
+        self.assertEqual(node['historical_source_review']['review_status'], 'pass')
+        self.assertFalse(node['high_fidelity_eligible'])
+        new = next(n for n in result['nodes'] if n['id'] == 'new-study')
+        self.assertFalse(new['high_fidelity_eligible'])
+        self.assertEqual(new['review_status'], 'NOT_VERIFIED')
+
     def test_graph_counts_and_status_boundary(self):
         graph = json.loads((ROOT / "atlas/unified-capability-graph.json").read_text())
         reproduction = json.loads((ROOT / "atlas/reproduction-methods.json").read_text())["cases"]

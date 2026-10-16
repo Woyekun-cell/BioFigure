@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "phylogeny",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101606,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "16b6bd1047b24cc9274f74251031d912761ef59629993183fbbed094bd5940b8",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

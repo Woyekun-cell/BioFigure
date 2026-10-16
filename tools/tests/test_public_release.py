@@ -104,5 +104,13 @@ class PublicReleaseTests(unittest.TestCase):
         self.catalog['figures'][1]['image']='../external.png';self.write_json('docs/gallery/catalog.json',self.catalog);self.assert_error('gallery_image_path')
     def test_missing_refresh_is_rejected(self):
         (self.root/'docs/gallery/refresh-20261011.json').unlink();self.assert_error('refresh_manifest')
+    def test_current_release_manifest_does_not_rewrite_historical_refresh(self):
+        self.write_json('docs/gallery/current-release.json',{'schema_version':1,'current_refresh_manifest':'docs/gallery/refresh-current.json'})
+        self.write_json('docs/gallery/refresh-current.json',self.refresh)
+        (self.root/'docs/gallery/refresh-20261011.json').unlink()
+        self.assertEqual(self.run_audit()['status'],'PASS')
+    def test_current_release_marker_cannot_escape_repository(self):
+        self.write_json('docs/gallery/current-release.json',{'schema_version':1,'current_refresh_manifest':'../outside.json'})
+        self.assert_error('refresh_manifest')
 
 if __name__=='__main__':unittest.main()

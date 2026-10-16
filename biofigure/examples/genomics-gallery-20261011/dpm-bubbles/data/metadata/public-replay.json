@@ -6,5 +6,7 @@
   "public_renderer": "scripts/public-render.R",
   "archival_renderer": "scripts/render.R",
   "input_mode": "published-plot-tables",
-  "simulation": false
+  "simulation": false,
+  "status": "reference-only",
+  "unavailable_reason": "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code."
 }

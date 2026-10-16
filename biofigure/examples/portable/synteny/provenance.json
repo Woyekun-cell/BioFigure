@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "case_id": "synteny",
+  "origin": "BioFigure-owned synthetic data",
+  "creator": "BioFigure contributors",
+  "license": "MIT",
+  "synthetic": true,
+  "seed": 2026101605,
+  "generator": "examples/portable/generate_inputs.py",
+  "input_sha256": "51847ed024876eee8c07779b47fda504cea0c29d8f707e5975b844f6b608fa01",
+  "third_party_materials": [],
+  "scope": "First-party demonstration input; rendering does not imply scientific or visual acceptance."
+}

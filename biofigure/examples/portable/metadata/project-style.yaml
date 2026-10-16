@@ -1,0 +1,19 @@
+schema_version: '1.0'
+project_id: biofigure-portable-original-examples
+palette:
+  palette_id: biofigure-portable-semantic-v1
+  semantic_colors:
+    Control: '#38658B'
+    Treatment: '#B66E83'
+    negative: '#38658B'
+    positive: '#B66E83'
+    neutral: '#8A929C'
+    continuous: muted-blue-white-purple
+    centered: '#285C8D #93B8D1 #FFFFFF #BDABD4 #674788'
+    genomic_pair: chromosome_keyed
+    tree_clade: exact_tip_group_dictionary
+typography:
+  family: Arial
+  size_roles_pt: {axis_text: 7, axis_title: 7, legend_text: 7, strip_text: 7, annotation_text: 6, panel_label: 8}
+size_system:
+  allowed_classes: [single-column, one-and-half-column, double-column, custom]

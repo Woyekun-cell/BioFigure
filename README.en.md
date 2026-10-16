@@ -6,7 +6,7 @@
 
 **Reference-guided design and quality control for biological figures**
 
-[![BioFigure](https://img.shields.io/badge/BioFigure-3.7.1-28527A)](biofigure/SKILL.md)
+[![BioFigure](https://img.shields.io/badge/BioFigure-3.8.0-28527A)](biofigure/SKILL.md)
 [![R first](https://img.shields.io/badge/backend-R%20first-4F8F8A)](biofigure/renderer-registry.yaml)
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
@@ -36,28 +36,28 @@ These are areas covered by the method library and routing rules. Individual task
 
 ## Gallery by plot type
 
-The gallery selects **79 figures in 14 categories** from available outputs. Each visual subtype appears once; color-only, dataset-only, and historical variants are omitted.
+The gallery selects **77 figures in 14 categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
 
-Each figure states whether it uses simulated, public, or package-example data. Inclusion does not certify reproduction of original research findings or complete acceptance testing.
+Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings or complete acceptance testing.
 
 | Category | Figures |
 |---|---:|
-| [Heatmaps and matrix annotations](docs/gallery/heatmaps.md) | 7 |
-| [Distributions, box plots, and violins](docs/gallery/distributions.md) | 5 |
-| [Correlations, scatter plots, and bubble matrices](docs/gallery/correlations.md) | 6 |
-| [Composition, flows, and ternary plots](docs/gallery/composition.md) | 7 |
-| [Bars, lollipops, and petal plots](docs/gallery/bars.md) | 6 |
-| [Radar plots and multimetric comparisons](docs/gallery/radar.md) | 2 |
-| [Differential expression, enrichment, and Manhattan plots](docs/gallery/differential.md) | 6 |
-| [Embeddings, single-cell, and spatial plots](docs/gallery/embeddings.md) | 6 |
-| [Survival, forest, and patient trajectory plots](docs/gallery/clinical.md) | 7 |
-| [Genomes, chromosomes, and phylogenies](docs/gallery/genomes.md) | 11 |
-| [Networks and maps](docs/gallery/networks.md) | 6 |
-| [Time courses, curves, and signal profiles](docs/gallery/profiles.md) | 5 |
-| [Set intersections and UpSet plots](docs/gallery/intersections.md) | 2 |
-| [Mechanisms, imaging, and multi-panel figures](docs/gallery/multipanel.md) | 3 |
+| [Heatmaps](docs/gallery/heatmaps.md) | 6 |
+| [Distributions](docs/gallery/distributions.md) | 5 |
+| [Correlations and scatter plots](docs/gallery/correlations.md) | 6 |
+| [Composition and flows](docs/gallery/composition.md) | 7 |
+| [Bars and lollipops](docs/gallery/bars.md) | 6 |
+| [Radar plots](docs/gallery/radar.md) | 2 |
+| [Differential expression](docs/gallery/differential.md) | 6 |
+| [Embeddings and spatial plots](docs/gallery/embeddings.md) | 6 |
+| [Clinical plots](docs/gallery/clinical.md) | 7 |
+| [Genomes and phylogeny](docs/gallery/genomes.md) | 11 |
+| [Networks and maps](docs/gallery/networks.md) | 5 |
+| [Time courses and profiles](docs/gallery/profiles.md) | 5 |
+| [Set intersections](docs/gallery/intersections.md) | 2 |
+| [Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
 
-See the [complete gallery index](docs/GALLERY.md) and [per-figure catalog with file hashes](docs/gallery/catalog.csv). Composite figures are assigned to one primary category, and variants are not repeated.
+See the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.
 
 ## Methods and quality checks
 
@@ -71,13 +71,32 @@ See the [complete gallery index](docs/GALLERY.md) and [per-figure catalog with f
 
 ## Installation and use
 
-Place the complete `biofigure` folder in the project's `.agents/skills/` directory or your personal `~/.agents/skills/` directory. Keep its scripts, configuration, and reference files. Invoke it in a Codex environment that supports Skills; see the [VS Code instructions](biofigure/references/vscode-execution.md) for paths and extension details.
+Place the complete `biofigure` folder in the project's `.agents/skills/` directory or your personal `~/.agents/skills/` directory. Keep scripts, configuration, examples and licenses together. Ordinary original figures do not require the parent repository or the author's private source archive.
 
 ```bash
 python3 -m pip install -r biofigure/requirements.txt
+Rscript biofigure/scripts/install_public_dependencies.R --check
+python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output work/portable-install-audit.json
 ```
 
-Install R packages as needed for the selected plot. Provide the data, research question, and intended figure, for example:
+`--check` is read-only. To install the free R dependencies, explicitly select a separate library. Missing CRAN packages are installed as needed; ComplexHeatmap uses BiocManager, without upgrading existing packages:
+
+```bash
+Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library
+```
+
+The demonstration dependencies are ggplot2, ragg, systemfonts, jsonlite, yaml, digest, ComplexHeatmap, circlize, ape, ggrepel, scales and stringi. External packages retain their licenses; see the [Bioconductor installation instructions](https://www.bioconductor.org/install/). Fonts are not bundled. Current demonstrations require Arial and return `NEEDS_FONT` when it is missing. `--font Helvetica` checks that exact alternative family; changing a figure font still requires updating its specification and reviewing the new output. Execution has been tested on macOS; Linux and Windows runtime, font and device acceptance remain unverified. PDF export additionally requires the free Ghostscript `gs` executable for font embedding. This script never installs system software. On macOS use `brew install ghostscript`, or obtain it from [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html). PNG-only checks use `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png` and do not require Ghostscript.
+
+Run a first-party synthetic example:
+
+```bash
+python3 biofigure/scripts/run_public_example.py --case boxplot --output-dir work/boxplot-new
+python3 biofigure/scripts/run_public_example.py --case heatmap --output-dir work/heatmap-new --formats png
+```
+
+PNG and PDF are the defaults; `--formats png` exports PNG only. Use a new or empty output directory. Set `R_LIBS_USER` to a separately installed R library when needed. Other cases are dense-heatmap, bubble, volcano, synteny and phylogeny. Each keeps its synthetic-data label, inputs, code, statistical or coordinate semantics, and scope boundaries.
+
+For real data, state the research question, experimental unit, groups, comparison direction and pairing, for example:
 
 ```text
 $biofigure Read expression.csv and metadata.csv and draw a grouped expression heatmap.
@@ -91,22 +110,26 @@ See the [English handbook](docs/HANDBOOK.en.md) for fuller design and export gui
 
 ## Validation and scope
 
-Method coverage does not mean every case has passed acceptance testing. Source reproduction, independent transfer, and stress tests are tracked separately; the full V2 benchmark remains incomplete. Automated checks assess rules, files, and execution evidence, while final figures still require visual review. See the [acceptance protocol](biofigure/references/benchmark-protocol.md) and [audit record](docs/release-audit-3.5.1.json).
+Version 3.8.0 separates the searchable learning catalog from public executable cases. The 454 learning records retain sources, methods, historical defects and qualification boundaries. Unshipped source material is reported as `source-materials-unavailable`: it is not advertised as executable and does not block an ordinary original figure. Explicit source adoption or reproduction still requires the relevant source image, code, inputs and fresh CP2 binding.
 
-Version 3.7.1 adds six complex replots using author-processed data and refreshes two simulated examples: a BUSCO-anchored region, cross-genome paths, a dual pathway matrix, an evidence network, a Micro-C contact matrix with loop marks, a haplotype comparison, a Sankey plot, and a multi-event OncoPrint. Code, data, palette, layout, and exported PDFs were reviewed for the current inputs. See the [genomics learning index](biofigure/references/genomics-source-gallery-learning-20261011.md).
+The [public case manifest](biofigure/public-cases.json) lists 13 executable entries: seven entirely first-party synthetic examples, plus two Cannabis cases, Planarian, OHCA, Sankey and OncoPrint. It binds code, input, provenance, licenses and SHA256. OHCA requires a SHA-pinned processed RDS; Cannabis requires pinned BUSCOplot source or a verified source cache. Network and external R dependencies are declared. Complete entrypoints do not certify arbitrary new data, another platform, full original-paper figures, or current visual acceptance.
 
-Public packages include BioFigure adapters, plotting tables, PDFs, executable configuration, and per-case provenance. The [public replay entries](biofigure/examples/genomics-gallery-20261011/README.md) use new directories and fresh preparation, CP2, and authorization; OHCA separately acquires a SHA-pinned processed RDS. Original author code, reference images, raw R objects, and complete local gate records are not bundled. Current-input acceptance does not certify whole-figure fidelity, transfer to new data, or the full V2 corpus.
+The two DPM cases remain reference-only, with first-party adapters and the [original paper](https://www.nature.com/articles/s41467-024-49986-4). Their separate GitHub input repository provides no explicit redistribution license. This release removes the derived CSV, PNG and PDF files rather than treating the article's CC-BY license as permission for that repository. Earlier Git history may still contain those files; the [withdrawal manifest](docs/gallery/rights-exclusions-3.8.0.json) records exact paths and hashes.
 
-Check public file bindings with `python3 tools/audit_public_release.py` and generated gallery documents with `python3 tools/build_gallery.py --check`. The [refresh manifest](docs/gallery/refresh-20261011.json) records SHA256 bindings; packaging checks do not replace scientific reproduction or visual review.
+The portable audit checks the complete distribution, declared runtime materials, hashes, path containment, license declarations, and a Skill-only copy. It does not execute R or award scientific, source-fidelity or visual PASS. Actual figures still require applicable analysis, CP2, single-use authorization, output checks, and final-size PNG/PDF review. The full V2 scientific benchmark remains incomplete; historical PASS does not transfer to new data or environments.
 
-All eight public entries were run in fresh directories with native R, fresh CP2 and single-use authorization, and actual PNG/PDF-preview review at 96 or 120 dpi. Plotting-table hashes and PNG bytes match the sealed current layouts. The [runtime record](docs/gallery/runtime-validation-20261011.json) records environment, file bindings, and scoped results. The 127 selected functional checks and 21 packaging tests passed; the historical full suite remains incomplete without its unbundled source and evidence corpus.
+```bash
+python3 biofigure/scripts/audit_portable_install.py --distribution-root . --output work/release-audit.json
+python3 tools/build_gallery.py --check
+```
 
-The Skill does not change model weights or guarantee identical results across models and reasoning settings. It supplies explicit methods, constraints, and checks for the workflow.
+The Skill supplies methods and checks. It does not change model parameters or guarantee equivalent results across models or reasoning settings.
 
 ## Versions and history
 
 - [Releases: download named versions](https://github.com/Woyekun-cell/BioFigure/releases)
-- [v3.7.1 current update](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [Pre-refresh snapshot](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
+- [v3.8.0 portable installation and public cases](https://github.com/Woyekun-cell/BioFigure/tree/v3.8.0)
+- [v3.7.1 historical update](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [Pre-refresh snapshot](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
 - [v3.5.1 release notes](docs/RELEASE-NOTES-3.5.1.md) · [v3.5.0 release notes](docs/RELEASE-NOTES-3.5.0.md)
 - [Complete commit history](https://github.com/Woyekun-cell/BioFigure/commits/main/): inspect each change and its contemporary files.
 

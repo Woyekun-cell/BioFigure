@@ -7,6 +7,7 @@ import json
 import re
 import yaml
 import os
+import copy
 from pathlib import Path
 from learning_materials import bind_materials, portable
 
@@ -16,6 +17,64 @@ PROJECT = ROOT.parent
 
 def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def overlay_public_profiles(index, *, root=ROOT):
+    """Bind the public replay separately from retained author-source history.
+
+    Rebinding these current packaged bytes does not award original-figure,
+    new-input, stress or visual qualification. The archival dependency set stays
+    queryable and is never replaced by a fabricated historical PASS.
+    """
+    root = Path(root)
+    result = copy.deepcopy(index)
+    by_id = {entry['method_id']: entry for entry in result['entries']}
+    for path in sorted((root / 'examples').glob('**/data/metadata/public-replay.json')):
+        profile = json.loads(path.read_text())
+        entry = by_id.get(profile.get('method_id'))
+        if not entry:
+            continue
+        case = path.parents[2]
+        entry.setdefault('archival_source_dependencies', {
+            'mandatory_read_set': entry.get('mandatory_read_set', []),
+            'material_binding': entry.get('material_binding', {}),
+            'scope': 'Historical author-source study; absent source assets are not public runtime dependencies.'})
+        if profile.get('status') == 'reference-only':
+            entry['public_execution_profile'] = profile
+            entry['learned_contract']['public_execution_profile'] = profile
+            entry['mandatory_read_set'] = entry['archival_source_dependencies']['mandatory_read_set']
+            entry['material_binding'] = entry['archival_source_dependencies']['material_binding']
+            source = root / entry['source_record']
+            if source.is_file():
+                entry['source_sha256'] = sha(source)
+                result.setdefault('sources', {})[entry['source_record']] = sha(source)
+            entry['claim_boundary'] = profile['unavailable_reason']
+            continue
+        references = [rel for rel in entry.get('mandatory_read_set', []) if rel.startswith('references/')]
+        material = sorted(p.relative_to(root).as_posix() for p in case.rglob('*')
+                          if p.is_file() and '__pycache__' not in p.parts and p.name != '.DS_Store')
+        source_asset = profile.get('source_asset')
+        if source_asset:
+            material.append(source_asset)
+        shared = case.parent / 'replay_public.py'
+        if shared.is_file():
+            material.append(shared.relative_to(root).as_posix())
+        material = list(dict.fromkeys(material))
+        entry['mandatory_read_set'] = list(dict.fromkeys([entry['source_record'], *references, *material]))
+        source = root / entry['source_record']
+        if source.is_file():
+            entry['source_sha256'] = sha(source)
+            result.setdefault('sources', {})[entry['source_record']] = sha(source)
+        bound = [{'path': rel, 'sha256': sha(root / rel), 'recorded_path': rel,
+                  'recorded_hash_verified': True} for rel in material if (root / rel).is_file()]
+        entry['material_binding'] = {'bound': bound,
+            'unresolved': [{'recorded_path': rel, 'expected_sha256': None} for rel in material if not (root / rel).is_file()],
+            'hash_mismatches': []}
+        entry['public_execution_profile'] = profile
+        entry['learned_contract']['public_execution_profile'] = profile
+        entry['claim_boundary'] = ('Bundled current-table own-layout replay only. Historical author-source records retained; '
+                                   'original full-figure fidelity, arbitrary-input transfer, stress and current visual review are not inferred.')
+    return result
 
 
 def build():
@@ -210,15 +269,17 @@ def build():
     counts = {}
     for entry in entries:
         counts[entry['collection']] = counts.get(entry['collection'], 0) + 1
-    return json.loads(json.dumps({'schema_version': 1, 'policy': 'all persisted source learning; fixed fixture and independent transfer remain separate',
-            'sources': sources, 'coverage': counts, 'entry_count': len(entries), 'entries': entries}, ensure_ascii=False))
+    return overlay_public_profiles(json.loads(json.dumps({'schema_version': 1, 'policy': 'all persisted source learning; fixed fixture and independent transfer remain separate',
+            'sources': sources, 'coverage': counts, 'entry_count': len(entries), 'entries': entries}, ensure_ascii=False)))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / 'atlas/learned-method-index.json')
+    parser.add_argument('--refresh-public-profiles', action='store_true',
+                        help='Refresh only bundled public execution bindings while retaining the shipped historical catalog; no private archives required.')
     args = parser.parse_args()
-    result = build()
+    result = overlay_public_profiles(json.loads(args.output.read_text())) if args.refresh_public_profiles else build()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     if args.output.resolve() == (ROOT / 'atlas/learned-method-index.json').resolve():

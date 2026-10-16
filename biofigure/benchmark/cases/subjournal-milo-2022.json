@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "case_id": "subjournal-milo-2022",
+  "learned_method_id": "BENCH-subjournal-milo-2022",
+  "title": "Milo neighborhood DA networks, faceted quasi-beeswarm and ranked expression heatmaps",
+  "label": "Milo miloR 邻域网络 差异丰度 分面蜂群图 logFC排序表达热图",
+  "status": "SOURCE_FIGURE_AND_CODE_LEARNING_COMPLETE",
+  "claim_boundary": "Original publisher figures visually studied and pinned author analysis mapped. Static small checks only. Original-data reproduction and CP2–CP4 NOT_RUN; all transfer/acceptance NOT_VERIFIED.",
+  "figure_family": "network",
+  "chart_type": "neighborhood network, faceted beeswarm, dense heatmap",
+  "chart_types": [
+    "network",
+    "heatmap",
+    "scatter"
+  ],
+  "domain": "single-cell",
+  "method_families": [
+    "differential-abundance",
+    "network",
+    "heatmap"
+  ],
+  "paper": {
+    "title": "Differential abundance testing on single-cell data using k-nearest neighbor graphs",
+    "journal": "Nature Biotechnology",
+    "year": 2022,
+    "online_date": "2021-09-30",
+    "doi": "10.1038/s41587-021-01033-z",
+    "url": "https://www.nature.com/articles/s41587-021-01033-z",
+    "figure": "Fig4c/d/f; Fig5c/d/f",
+    "volume": "40",
+    "pages": "245–253"
+  },
+  "source_implementation": {
+    "repo": "https://github.com/MarioniLab/milo_analysis_2020",
+    "commit": "99c1c1ce858fc39fd6c4033d4a17348f610d18d1",
+    "license": "GPL-3.0",
+    "source_type": "original paper analysis notebooks; current package implementation supplemental"
+  },
+  "source_assets": [
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/LICENSE",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/README.md",
+      "sha256": "4afa65427185641f4929662c618dd1a7b23feb3ba380ee2bb867f830afbdc60b",
+      "bytes": 68,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/README.md",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/ms/figures/milo_figures.Rmd",
+      "sha256": "68839b88671e731aad895eefc081e9ea4ffdc66fcd95c6ff0e11acd0e410a40f",
+      "bytes": 8611,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/ms/figures/milo_figures.Rmd",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/mouse_thymus-figures_revision.Rmd",
+      "sha256": "f9939780fb96acf20a3f9497814d90a015c5d71a5ecb8c6bba161f5716260e48",
+      "bytes": 26485,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/notebooks/mouse_thymus-figures_revision.Rmd",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/Fig5_liver_cirrhosis.Rmd",
+      "sha256": "c73283f2b7f71f9a24209a64c405f5bb82d7e2e1e60209842c83cc9ad468e272",
+      "bytes": 34286,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/notebooks/Fig5_liver_cirrhosis.Rmd",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/mousethymus_validation.Rmd",
+      "sha256": "fb78c37ef6b0669381ec975613ac24baaeca8a55914eea1e5910772117ad956c",
+      "bytes": 12028,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/notebooks/mousethymus_validation.Rmd",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/ms/supplement/suppl_tables/suppl_tab1.csv",
+      "sha256": "05462e1d6ca97f68831733130188a7be4d27114e6b27230b06557299212bac8f",
+      "bytes": 363,
+      "source_url": "https://raw.githubusercontent.com/MarioniLab/milo_analysis_2020/99c1c1ce858fc39fd6c4033d4a17348f610d18d1/ms/supplement/suppl_tables/suppl_tab1.csv",
+      "http_content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/publisher/Fig4.png",
+      "sha256": "941aa46b761e6f387f27c6f3cd4915512f7273c9d32df7c3eddcbe9a7b6d0b60",
+      "bytes": 1156211,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-021-01033-z/MediaObjects/41587_2021_1033_Fig4_HTML.png",
+      "http_content_type": "image/png"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/publisher/Fig5.png",
+      "sha256": "e9e32435688e86410c93a9a6dbf8035e4892182db0512740b9672b37d683f2c0",
+      "bytes": 1402929,
+      "source_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-021-01033-z/MediaObjects/41587_2021_1033_Fig5_HTML.png",
+      "http_content_type": "image/png"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/article.xml",
+      "sha256": "714e3f1a6d6dd927d9570eaf3ef73500bf0fbd244e07540766ea022eaf3db426",
+      "bytes": 138723,
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7617075/fullTextXML",
+      "http_content_type": "application/xml"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/DESCRIPTION",
+      "sha256": "9f2af83ed39fc68b926cf2de0072f33fac4e4857d727da66cc5444b4e42366fa",
+      "bytes": 2566,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/R/buildGraph.R",
+      "sha256": "35300c5cb32437a73da2f2d0e6101dab057d2aa8ff2c534e97b0b2feb327dd5b",
+      "bytes": 7470,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/R/buildNhoodGraph.R",
+      "sha256": "53244eb89a7b5c93b9d35a4663ad342cdb20325f5ed9b66434d9307853fefb80",
+      "bytes": 1585,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/R/graphSpatialFDR.R",
+      "sha256": "5bb20d996c8020e8195923f36e43e95a84743432bde7c3125e13932fe71a4300",
+      "bytes": 8866,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/R/plotNhoods.R",
+      "sha256": "2d3503591ee191157d146763294e57b29345849c82af2d5266ffdbed6033d353",
+      "bytes": 38045,
+      "role": "current package supplemental implementation; not paper version"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/miloR-source.tar.gz",
+      "sha256": "387a0c0bbd7e0e93da218c1f32509154d82d430e70a8e865cc6974e6e513b5a6",
+      "bytes": 6108399,
+      "role": "current package supplemental implementation; not paper version"
+    }
+  ],
+  "source_code_files": [
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/ms/figures/milo_figures.Rmd",
+      "sha256": "68839b88671e731aad895eefc081e9ea4ffdc66fcd95c6ff0e11acd0e410a40f",
+      "bytes": 8611,
+      "role": "original author paper analysis"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/Fig5_liver_cirrhosis.Rmd",
+      "sha256": "c73283f2b7f71f9a24209a64c405f5bb82d7e2e1e60209842c83cc9ad468e272",
+      "bytes": 34286,
+      "role": "original author paper analysis"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/mouse_thymus-figures_revision.Rmd",
+      "sha256": "f9939780fb96acf20a3f9497814d90a015c5d71a5ecb8c6bba161f5716260e48",
+      "bytes": 26485,
+      "role": "original author paper analysis"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/author/notebooks/mousethymus_validation.Rmd",
+      "sha256": "fb78c37ef6b0669381ec975613ac24baaeca8a55914eea1e5910772117ad956c",
+      "bytes": 12028,
+      "role": "original author paper analysis"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/current-package/R/plotNhoods.R",
+      "sha256": "2d3503591ee191157d146763294e57b29345849c82af2d5266ffdbed6033d353",
+      "bytes": 38045,
+      "role": "current package supplemental native implementation"
+    }
+  ],
+  "source_reference_images": [
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/publisher/Fig4.png",
+      "sha256": "941aa46b761e6f387f27c6f3cd4915512f7273c9d32df7c3eddcbe9a7b6d0b60",
+      "bytes": 1156211,
+      "role": "formal publisher original full figure, actually opened"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/sources/publisher/Fig5.png",
+      "sha256": "e9e32435688e86410c93a9a6dbf8035e4892182db0512740b9672b37d683f2c0",
+      "bytes": 1402929,
+      "role": "formal publisher original full figure, actually opened"
+    }
+  ],
+  "panels": [
+    {
+      "figure_locator": "Fig4c",
+      "chart_type": "fixed UMAP neighborhood network",
+      "source_code": "sources/author/notebooks/mouse_thymus-figures_revision.Rmd",
+      "line_range": [
+        326,
+        336
+      ],
+      "functions": [
+        "buildNhoodGraph",
+        "plotNhoodGraphDA"
+      ],
+      "mapping_status": "ORIGINAL_AUTHOR_ANALYSIS_CODE",
+      "contract": "Fixed UMAP positions; size=cell count; pale edges=shared cells; DA color=logFC; SpatialFDR .1"
+    },
+    {
+      "figure_locator": "Fig4d",
+      "chart_type": "faceted horizontal quasi-beeswarm plus direction arrows",
+      "source_code": "sources/author/notebooks/mouse_thymus-figures_revision.Rmd",
+      "line_range": [
+        382,
+        438
+      ],
+      "functions": [
+        "geom_quasirandom",
+        "facet_grid",
+        "plot_layout"
+      ],
+      "mapping_status": "ORIGINAL_AUTHOR_ANALYSIS_CODE",
+      "contract": "Neighborhood points; same symmetric logFC range and keyed cell-type facets; side strip/main 1:8; gray non-DA"
+    },
+    {
+      "figure_locator": "Fig4f",
+      "chart_type": "DA rank curve over dense expression heatmap",
+      "source_code": "sources/author/notebooks/mouse_thymus-figures_revision.Rmd",
+      "line_range": [
+        508,
+        537
+      ],
+      "functions": [
+        "plotNhoodExpressionDA"
+      ],
+      "mapping_status": "ORIGINAL_AUTHOR_ANALYSIS_CODE",
+      "contract": "Column=neighborhood ranked by logFC, row-wise minmax, row clustering true; 8 highlighted genes",
+      "assay_argument": "logcounts; cache origin unverified"
+    },
+    {
+      "figure_locator": "Fig5c/d",
+      "chart_type": "liver neighborhood network and faceted beeswarm",
+      "source_code": "sources/author/notebooks/Fig5_liver_cirrhosis.Rmd",
+      "line_range": [
+        200,
+        331
+      ],
+      "functions": [
+        "plotNhoodGraphDA",
+        "geom_quasirandom"
+      ],
+      "mapping_status": "ORIGINAL_AUTHOR_ANALYSIS_CODE",
+      "contract": "Positive logFC=Cirrhotic versus Uninjured; condition factor order must survive; no new force layout"
+    },
+    {
+      "figure_locator": "Fig5e/f",
+      "chart_type": "subset UMAP and DA expression heatmap",
+      "source_code": "sources/author/notebooks/Fig5_liver_cirrhosis.Rmd",
+      "line_range": [
+        343,
+        371
+      ],
+      "additional_heatmap_function_lines": [
+        651
+      ],
+      "functions": [
+        "runUMAP",
+        "plotNhoodExpressionDA"
+      ],
+      "mapping_status": "ORIGINAL_AUTHOR_ANALYSIS_CODE_WITH_UNAVAILABLE_PROCESSED_INPUT",
+      "contract": "UMAP lines343–371; heatmap calls at additional_heatmap_function_lines. Figure5e reverses condition colors relative to5b; bind semantic palette per panel. Heatmap groups54/70, marker FDR<.05, native row minmax, added DA logFC tile strip.",
+      "additional_heatmap_line_range": [
+        646,
+        680
+      ],
+      "assay_argument": "counts; cache origin unverified"
+    }
+  ],
+  "input_contract": {
+    "required_fields": [
+      "cell_id",
+      "gene_id",
+      "assays",
+      "sample_id",
+      "age_or_condition",
+      "PCA",
+      "UMAP",
+      "neighborhood_membership",
+      "Nhood",
+      "logFC",
+      "SpatialFDR"
+    ],
+    "unit": "mouse/donor in DA design; points are overlapping neighborhoods, not independent biological replicates",
+    "comparison_direction": "age continuous ~AgeInt; Cirrhotic vs Uninjured with factor levels Uninjured,Cirrhotic",
+    "thymus_source_parameters": {
+      "seed": 42,
+      "k": 21,
+      "d": 40,
+      "prop": 0.3,
+      "SpatialFDR": 0.1
+    },
+    "liver_source_parameters": {
+      "k": 30,
+      "d": 11,
+      "prop": 0.05
+    },
+    "missing": "processed Milo objects not retrieved; declared sample counts not independently verified from raw metadata",
+    "panel_assays": {
+      "Fig4f": "logcounts argument",
+      "Fig5f": "counts argument",
+      "cache_boundary": "Actual pre-existing nhoodExpression cache assay not verified; current package recomputes only if empty/missing features."
+    }
+  },
+  "packages_by_role": {
+    "miloR": "native graph/neighborhood/counts/DA and plotNhoodGraphDA/plotNhoodExpressionDA",
+    "ggbeeswarm": "native quasirandom neighborhood point packing",
+    "ggplot2": "facets, scales, arrow strip",
+    "patchwork": "keyed strip plus main plot assembly"
+  },
+  "r_functions": [
+    "buildNhoodGraph",
+    "plotNhoodGraphDA",
+    "plotNhoodExpressionDA",
+    "geom_quasirandom",
+    "facet_grid",
+    "plot_layout"
+  ],
+  "python_functions": [],
+  "visual_observations": {
+    "network": "fixed UMAP positions; pale shared-cell edges; non-DA white",
+    "beeswarm": "9 keyed facets, common symmetric scale, narrow DA-direction strip",
+    "heatmap": "neighborhood columns sorted by logFC; per-gene minmax0–1; selected labels outside body"
+  },
+  "gaps": [
+    {
+      "detail": "Processed Milo objects and final assembled individual figure PDFs unavailable; no native reanalysis/render run."
+    },
+    {
+      "detail": "Paper package environment not fully locked; current miloR commit is supplemental only."
+    },
+    {
+      "detail": "Thymus prose1% versus code/caption10% FDR; marker proselogFC>1 versus code>0."
+    },
+    {
+      "detail": "Official liver panels reverse condition colors; CSV supplement has ragged rows from unquoted commas."
+    },
+    {
+      "detail": "Source figures/code inspected, not numerical original-figure reproduction, new-input transfer, stress or user acceptance."
+    },
+    {
+      "detail": "Fig5d healthy list repeats Tcells (1); left_join can duplicate neighborhood rows. Actual formal point duplication unverified."
+    }
+  ],
+  "benchmark_usage": {
+    "retrieve_queries": [
+      "Milo 邻域网络 分面蜂群 差异丰度 热图",
+      "miloR neighborhood differential abundance heatmap"
+    ],
+    "appropriate_data": "sample-aware single-cell differential abundance with explicit neighborhoods and frozen embedding",
+    "avoid_for": "cell-level pseudoreplication; unaligned new network layout; interpreting minmax as z-score or DA as mechanism"
+  },
+  "method_reference": {
+    "path": "benchmark/library/single-cell/milo-2022/learning.md",
+    "sha256": "fc6213bf41d8d544df50b5edddcd42f7c11c9317d958ca5bcaa1d3331059c938",
+    "bytes": 5555,
+    "role": "source/code learning contract with independent review corrections"
+  },
+  "code_files": [
+    {
+      "path": "benchmark/library/single-cell/milo-2022/scripts/check_source_contracts.py",
+      "sha256": "d6fb52bf668dc1887916488e00314fcd97aca2679373cec08f69b2f4425afeac",
+      "bytes": 2490,
+      "role": "executed nonrender checks"
+    }
+  ],
+  "learning_checks": {
+    "path": "benchmark/library/single-cell/milo-2022/data/metadata/regenerated-static-checks.json",
+    "sha256": "0d3958eb03b002c4d7955794dea74426d023f9f476d8a3d0e6c86dd08a7f278e",
+    "bytes": 1034,
+    "role": "static checks with retained source anomalies"
+  },
+  "original_reproduction": "NOT_VERIFIED",
+  "new_input_transfer": "NOT_VERIFIED",
+  "structural_stress": "NOT_VERIFIED",
+  "user_acceptance": "NOT_VERIFIED",
+  "CP2_CP4": "NOT_RUN",
+  "functions": [
+    "buildNhoodGraph",
+    "plotNhoodGraphDA",
+    "plotNhoodExpressionDA",
+    "geom_quasirandom",
+    "facet_grid",
+    "plot_layout"
+  ],
+  "learning_evidence": [
+    {
+      "path": "benchmark/library/single-cell/milo-2022/data/metadata/paper-source.json",
+      "sha256": "d6c6531db8796e676c5f695339269589140d35faec1c0b66dc9814954950871a",
+      "bytes": 615,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/data/metadata/source-manifest.json",
+      "sha256": "d9287888aec6db83815a59611e5cdd38fd2166649cb6e6827df26414954f1dbc",
+      "bytes": 6620,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/data/metadata/code-figure-mapping.json",
+      "sha256": "0304659d598bb3ebf44c8a445f196c97e556301bfa7a2792abe119259a0164a0",
+      "bytes": 3399,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/data/metadata/nonrender-checks.json",
+      "sha256": "3758d607736fbfd2bef691d668cefc441292a715cf889b4b27e99c6f7a01bbf5",
+      "bytes": 3040,
+      "role": "source-learning contract; not rendered evidence"
+    },
+    {
+      "path": "benchmark/library/single-cell/milo-2022/data/metadata/regenerated-static-checks.json",
+      "sha256": "0d3958eb03b002c4d7955794dea74426d023f9f476d8a3d0e6c86dd08a7f278e",
+      "bytes": 1034,
+      "role": "root independent static check replay"
+    }
+  ],
+  "keywords": [
+    "Milo",
+    "miloR",
+    "neighborhood network",
+    "differential abundance",
+    "beeswarm",
+    "expression heatmap",
+    "single-cell"
+  ]
+}

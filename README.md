@@ -6,7 +6,7 @@
 
 **参考引导的生物科研图设计与质控 Skill**
 
-[![BioFigure](https://img.shields.io/badge/BioFigure-3.7.1-28527A)](biofigure/SKILL.md)
+[![BioFigure](https://img.shields.io/badge/BioFigure-3.8.0-28527A)](biofigure/SKILL.md)
 [![R first](https://img.shields.io/badge/backend-R%20first-4F8F8A)](biofigure/renderer-registry.yaml)
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
@@ -36,13 +36,13 @@ R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和
 
 ## 分类图廊
 
-现有成图中精选 **14 类、79 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。
+现有成图中精选 **14 类、77 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。
 
 数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。
 
 | 图型分类 | 图数 |
 |---|---:|
-| [热图与矩阵注释](docs/gallery/heatmaps.md) | 7 |
+| [热图与矩阵注释](docs/gallery/heatmaps.md) | 6 |
 | [分布、箱线与小提琴](docs/gallery/distributions.md) | 5 |
 | [相关、散点与气泡矩阵](docs/gallery/correlations.md) | 6 |
 | [组成、桑基与三元图](docs/gallery/composition.md) | 7 |
@@ -52,7 +52,7 @@ R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和
 | [降维、单细胞与空间](docs/gallery/embeddings.md) | 6 |
 | [生存、森林与患者轨迹](docs/gallery/clinical.md) | 7 |
 | [基因组、染色体与系统树](docs/gallery/genomes.md) | 11 |
-| [网络与地图](docs/gallery/networks.md) | 6 |
+| [网络与地图](docs/gallery/networks.md) | 5 |
 | [时序、曲线与信号](docs/gallery/profiles.md) | 5 |
 | [集合交叠与 UpSet](docs/gallery/intersections.md) | 2 |
 | [机制、图像与多面板](docs/gallery/multipanel.md) | 3 |
@@ -71,13 +71,32 @@ R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和
 
 ## 安装与使用
 
-将完整的 `biofigure` 文件夹放入项目的 `.agents/skills/`，或个人 `~/.agents/skills/`。保留脚本、配置和参考文件，不能只复制入口文档。在支持 Skills 的 Codex 中调用；[VS Code 使用说明](biofigure/references/vscode-execution.md)包含扩展和路径说明。
+将完整的 `biofigure` 文件夹放入项目的 `.agents/skills/` 或个人 `~/.agents/skills/`。脚本、配置、案例、许可证须一起保留；普通原创绘图不依赖父仓库或作者电脑上的私有图库。安装后先检查依赖：
 
 ```bash
 python3 -m pip install -r biofigure/requirements.txt
+Rscript biofigure/scripts/install_public_dependencies.R --check
+python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output work/portable-install-audit.json
 ```
 
-R 包按图型安装，无需一次安装所有依赖。提供数据、研究目的和期望图型，例如：
+`--check` 只读。需要安装免费 R 包时，显式选择独立 library；CRAN 包按缺失项安装，ComplexHeatmap 通过 BiocManager 安装，不升级已有包：
+
+```bash
+Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library
+```
+
+原生依赖为 ggplot2、ragg、systemfonts、jsonlite、yaml、digest、ComplexHeatmap、circlize、ape、ggrepel、scales、stringi。R 包遵守各自许可证，参考 [Bioconductor 安装说明](https://www.bioconductor.org/install/)。字体不随包分发；当前示例指定 Arial，缺失时返回 `NEEDS_FONT`，不静默换字体。可用 `--font Helvetica` 单独检查 Helvetica；更改出图字体仍须更新当前规格并重新核验。已实跑环境为 macOS；Linux、Windows 尚未完成运行和字体/设备验收。 PDF 导出还需免费 Ghostscript `gs` 嵌入字体；本脚本不自动安装系统软件。macOS 可用 `brew install ghostscript`，或从 [Ghostscript 官方](https://www.ghostscript.com/releases/gsdnld.html)获取。仅 PNG 可运行 `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png`，无需 Ghostscript。
+
+可执行的一方模拟例：
+
+```bash
+python3 biofigure/scripts/run_public_example.py --case boxplot --output-dir work/boxplot-new
+python3 biofigure/scripts/run_public_example.py --case heatmap --output-dir work/heatmap-new --formats png
+```
+
+默认输出 PNG、PDF；`--formats png` 仅导出 PNG。输出目录须为新目录或空目录。使用独立 R library 时设置 `R_LIBS_USER` 指向该目录。其余入口为 dense-heatmap、bubble、volcano、synteny、phylogeny；每例明确模拟身份、输入、代码、统计/坐标语义及适用边界。
+
+提供真实数据时同时说明研究问题、实验单位、分组、比较方向与配对关系，例如：
 
 ```text
 $biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
@@ -91,22 +110,26 @@ $biofigure 用 differential.csv 画火山图，横轴 log2FC，纵轴 -log10(pad
 
 ## 验证与适用边界
 
-方法覆盖不等于每个案例都已通过验收。仓库分别记录来源复现、独立迁移和压力测试；当前全量 V2 benchmark 尚未完成。自动检查主要验证规则、文件和运行证据，最终图仍须审阅。[查看验收规则](biofigure/references/benchmark-protocol.md)与[审计记录](docs/release-audit-3.5.1.json)。
+3.8.0 将可检索学习档案与公开执行入口分开。454 条学习记录保留来源、方法、历史缺陷和资格边界；未分发的来源材料显示 `source-materials-unavailable`，不冒称可执行，也不阻断普通原创图。明确采用某个来源或要求复现时，仍须具备相应原图、代码、输入和新的 CP2 绑定。
 
-3.7.1 新增 6 个作者处理数据的复杂图重绘案例，并替换 2 个模拟示例：BUSCO 锚定区域、跨基因组路径、通路双矩阵、证据网络、Micro-C 接触矩阵与环标记、单倍型比对、桑基图和多事件 OncoPrint。当前输入已逐图核对代码、数据、配色、版式和实际 PDF；学习要点见[基因组案例索引](biofigure/references/genomics-source-gallery-learning-20261011.md)。
+[公开案例清单](biofigure/public-cases.json)列出 13 个执行入口：7 个全一方模拟例，加 Cannabis 两案、Planarian、OHCA、桑基图和 OncoPrint 六个既有公开适配例。清单绑定代码、输入、来源、许可证和 SHA256。OHCA 需取得固定 SHA256 的作者处理 RDS；Cannabis 需固定版本 BUSCOplot 或核验过的来源缓存，所需网络与外部 R 包均明确列出。执行入口完整不代表任意新数据、跨平台、原论文整幅图或视觉验收已通过。
 
-公开包包含自有适配脚本、绘图表、PDF、可执行配置和逐案例来源记录；[公开重绘入口](biofigure/examples/genomics-gallery-20261011/README.md)每次使用新目录与新的准备、CP2 和授权，OHCA 按固定 URL 和校验值另取处理 RDS。原作者代码、原图、原始 R 对象及本地完整验收档案未随仓库发布。此次通过的是当前输入的限定范围验收；原论文整幅图的高保真资格、新数据迁移及全量 V2 验证仍分别记录。
+DPM 气泡图与网络两案仅保留参考档案、第一方适配代码及[原论文链接](https://www.nature.com/articles/s41467-024-49986-4)。其独立 GitHub 输入未有明确再分发许可；本版撤下相关 CSV、PNG、PDF，未把论文学术 CC-BY 许可套用到该仓库。历史版本无法由本次撤回；[撤下清单](docs/gallery/rights-exclusions-3.8.0.json)记录具体路径与哈希。
 
-公开文件检查：`python3 tools/audit_public_release.py`；图库文档检查：`python3 tools/build_gallery.py --check`。[本次文件与替换清单](docs/gallery/refresh-20261011.json)保留 SHA256。两项检查验证公开包的一致性，不代替科学复现与视觉审阅。
+独立安装审计检查完整发行目录、公开运行材料、哈希、文件均位于 Skill 根内的检查、许可声明及仅复制 Skill 后的依赖完整性；它不运行 R，也不授予科研、来源或视觉 PASS。实际绘图仍须先完成适用统计、CP2、一次性授权、当前输出检查及终尺寸 PNG/PDF 审阅。全量 V2 科学 benchmark 尚未完成，历史 PASS 不迁移到新数据或环境。
 
-8 个公开入口已在新目录完成原生 R 复跑，重新验证 CP2 与一次性授权，并实际检查新 PNG 和 96/120 dpi PDF 预览。绘图表与封存版本哈希一致，新 PNG 与图库字节一致；[本次运行记录](docs/gallery/runtime-validation-20261011.json)记录环境、文件绑定与限定范围结果。127 项相关功能检查和 21 项公开包测试通过；完整历史测试因未随公开包发布的来源与全量证据仍未全通过，不升级全量 V2 资格。
+```bash
+python3 biofigure/scripts/audit_portable_install.py --distribution-root . --output work/release-audit.json
+python3 tools/build_gallery.py --check
+```
 
-Skill 不改变模型参数，也不能保证不同模型与推理档位得到相同结果。其作用是提供明确的方法、约束和检查流程。
+Skill 提供方法与检查流程，不改变模型参数，也不保证不同模型或推理档位得到相同结果。
 
 ## 版本与历史
 
 - [Releases：下载已命名版本](https://github.com/Woyekun-cell/BioFigure/releases)
-- [v3.7.1：本次更新](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [更新前快照](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
+- [v3.8.0：独立安装与公开案例](https://github.com/Woyekun-cell/BioFigure/tree/v3.8.0)
+- [v3.7.1：历史更新](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [更新前快照](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
 - [v3.5.1 更新记录](docs/RELEASE-NOTES-3.5.1.md) · [v3.5.0 更新记录](docs/RELEASE-NOTES-3.5.0.md)
 - [完整提交历史](https://github.com/Woyekun-cell/BioFigure/commits/main/)：查看每次修改和当时的文件。
 

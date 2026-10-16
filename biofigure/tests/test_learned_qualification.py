@@ -29,7 +29,8 @@ class LearnedQualificationTests(unittest.TestCase):
                   'source_material': material_hashes(self.entry), 'bundles': {}}
         result = validate(record, self.entry)
         self.assertEqual(result['status'], 'FAIL')
-        self.assertEqual(len(result['errors']), 3)
+        for bundle in ('new_input', 'repeat', 'stress'):
+            self.assertTrue(any(error.startswith(bundle + ':') for error in result['errors']), result['errors'])
 
     def test_other_method_and_current_source_drift_cannot_inherit_pass(self):
         record = {'method_id': 'other-method', 'source_material': {}}

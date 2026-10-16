@@ -1,4 +1,4 @@
-# BioFigure 3.7.1 Full Handbook
+# BioFigure 3.8.0 Full Handbook
 
 ## 1. Scope
 

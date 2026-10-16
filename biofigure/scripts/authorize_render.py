@@ -5,10 +5,13 @@ import argparse
 import hashlib
 import json
 import importlib.util
+import sys
 from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from reference_modes import receipt_reference_mode, code_gate, mode_binding_errors
 
 
 def sha(path: Path) -> str:
@@ -20,9 +23,13 @@ def issue(receipt: Path, design: Path, sources: list[Path], output: Path) -> dic
     if not paths or any(not p.is_file() for p in paths):
         raise ValueError('receipt, Design Spec, and renderer sources must exist')
     receipt_doc = json.loads(receipt.read_text(encoding='utf-8'))
-    if receipt_doc.get('status') != 'PREFLIGHT_COMPLETE' or receipt_doc.get('code_gate') != 'BLOCKED_UNTIL_REFERENCE_ANALYSIS_AND_CP2':
+    reference_mode = receipt_reference_mode(receipt_doc)
+    if receipt_doc.get('status') != 'PREFLIGHT_COMPLETE' or receipt_doc.get('code_gate') != code_gate(reference_mode):
         raise ValueError('preparation receipt is not eligible for render authorization')
     design_doc = yaml.safe_load(design.read_text(encoding='utf-8'))
+    mode_errors = mode_binding_errors(receipt_doc, design_doc)
+    if mode_errors:
+        raise ValueError('; '.join(mode_errors))
     design_spec_module_spec = importlib.util.spec_from_file_location('biofigure_authorize_design_spec', ROOT / 'scripts/validate_design_spec.py')
     design_spec_module = importlib.util.module_from_spec(design_spec_module_spec)
     assert design_spec_module_spec and design_spec_module_spec.loader
@@ -35,16 +42,18 @@ def issue(receipt: Path, design: Path, sources: list[Path], output: Path) -> dic
     assert cp_spec and cp_spec.loader
     cp_spec.loader.exec_module(cp_module)
     binding_errors = cp_module.validate_preparation_receipt(str(receipt), design_doc)
-    from reuse_templates import validate_fixture_sources
-    binding_errors.extend(validate_fixture_sources(receipt_doc, sources))
-    from retrieve_learned_methods import validate_adapter_sources
-    binding_errors.extend(validate_adapter_sources(receipt_doc, design_doc, sources))
+    if reference_mode != 'original':
+        from reuse_templates import validate_fixture_sources
+        binding_errors.extend(validate_fixture_sources(receipt_doc, sources))
+        from retrieve_learned_methods import validate_adapter_sources
+        binding_errors.extend(validate_adapter_sources(receipt_doc, design_doc, sources))
     if binding_errors:
         raise ValueError('CP2 preparation binding failed: ' + '; '.join(binding_errors))
     bound = {'receipt': {'path': str(receipt.resolve()), 'sha256': sha(receipt)},
              'design_spec': {'path': str(design.resolve()), 'sha256': sha(design)},
              'sources': [{'path': str(p.resolve()), 'sha256': sha(p)} for p in sources]}
-    body = {'schema_version': 1, 'status': 'AUTHORIZED', 'single_use': True, 'bound': bound}
+    body = {'schema_version': 1, 'status': 'AUTHORIZED', 'single_use': True, 'bound': bound,
+            'reference_mode': reference_mode}
     body['authorization_id'] = hashlib.sha256(json.dumps(body, sort_keys=True).encode()).hexdigest()
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(body, indent=2, sort_keys=True) + '\n', encoding='utf-8')
@@ -76,6 +85,11 @@ def consume(authorization: Path, design: Path, sources: list[Path]) -> bool:
     receipt_path = Path(receipt.get('path', ''))
     if not receipt_path.is_file() or sha(receipt_path) != receipt.get('sha256'):
         raise ValueError('preparation receipt changed')
+    preparation_doc = json.loads(receipt_path.read_text(encoding='utf-8'))
+    design_doc = yaml.safe_load(design.read_text(encoding='utf-8'))
+    mode_errors = mode_binding_errors(preparation_doc, design_doc)
+    if mode_errors or body.get('reference_mode', 'reference-guided') != receipt_reference_mode(preparation_doc):
+        raise ValueError('reference_mode differs between authorization and bound inputs' + (': ' + '; '.join(mode_errors) if mode_errors else ''))
     marker = authorization.with_suffix(authorization.suffix + '.consumed')
     try:
         marker.write_text(auth_id + '\n', encoding='utf-8', exclusive=True)

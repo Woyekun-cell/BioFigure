@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,re
 ROOT=Path(__file__).resolve().parents[1]
-LIBRARY='library/pangenome/tomato-superpangenome/data/metadata/paradigms.json'
+LIBRARY='static/core/pangenome-paradigms.json'
 
 def applies(query,context=None):
  return context is not None or re.search(r'泛基因组|超泛基因组|\b(?:super[ -]?)?pan[ -]?genome\b',query,re.I) is not None
