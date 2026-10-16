@@ -2,7 +2,10 @@
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -156,6 +159,27 @@ class PlatformSmokeTests(unittest.TestCase):
             self.module.parse_case_libraries([f'oncoprint={self.root}'])
         with self.assertRaisesRegex(ValueError, 'duplicate'):
             self.module.parse_case_libraries([f'ohca-microc={self.root}', f'ohca-microc={self.root}'])
+
+    def test_cli_json_survives_non_utf8_stdout_without_masking_file_encoding(self):
+        expected_path = 'C:/BioFigure 便携 test'
+        error_message = '缺少目录'
+        for fails in (False, True):
+            with self.subTest(error=fails):
+                setup = (f'm.prepare=lambda *a,**k: (_ for _ in ()).throw(ValueError({json.dumps(error_message)}))' if fails
+                         else f'm.prepare=lambda *a,**k: {json.dumps({"status": "READY", "skill_root": expected_path})}')
+                code = ('import importlib.util,sys\n'
+                        f's=importlib.util.spec_from_file_location("smoke",{str(SCRIPT)!r})\n'
+                        'm=importlib.util.module_from_spec(s);s.loader.exec_module(m)\n'
+                        + setup + '\n'
+                        'sys.argv=["platform_smoke.py","prepare","--repository-root",".","--work-root","mock-only"]\n'
+                        'raise SystemExit(m.main())\n')
+                process = subprocess.run([sys.executable, '-c', code], capture_output=True,
+                    env=dict(os.environ, PYTHONIOENCODING='cp1252', PYTHONUTF8='0', PYTHONDONTWRITEBYTECODE='1'))
+                self.assertEqual(process.returncode, 1 if fails else 0, process.stderr.decode('cp1252'))
+                raw = process.stderr if fails else process.stdout
+                self.assertTrue(raw.isascii(), 'CLI JSON must be ASCII-safe even when paths/messages contain Chinese')
+                record = json.loads(raw.decode('cp1252'))
+                self.assertEqual(record['error'] if fails else record['skill_root'], error_message if fails else expected_path)
 
 
 if __name__ == '__main__':
