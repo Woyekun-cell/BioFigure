@@ -1,0 +1,1851 @@
+{
+  "schema_version": 2,
+  "release": "3.8.0",
+  "check_scope": "public-package-portability-and-gallery",
+  "status": "PASS",
+  "errors": [],
+  "release_readiness": "PUBLIC_PACKAGE_READY_FULL_BENCHMARK_INCOMPLETE",
+  "scientific_or_visual_pass_inferred": false,
+  "versions": {
+    "manifest": "3.8.0",
+    "skill": "3.8.0",
+    "readme": "3.8.0",
+    "handbook_zh": "3.8.0",
+    "handbook_en": "3.8.0"
+  },
+  "hot_load": {
+    "files": [
+      {
+        "path": "SKILL.md",
+        "zh_chars": 684
+      },
+      {
+        "path": "references/reference-modes.md",
+        "zh_chars": 889
+      },
+      {
+        "path": "references/enforced-execution.md",
+        "zh_chars": 1043
+      },
+      {
+        "path": "references/visual-design-synthesis.md",
+        "zh_chars": 687
+      },
+      {
+        "path": "references/mark-opacity.md",
+        "zh_chars": 476
+      },
+      {
+        "path": "references/figure-execution-gates.md",
+        "zh_chars": 699
+      },
+      {
+        "path": "references/benchmark-protocol.md",
+        "zh_chars": 253
+      },
+      {
+        "path": "static/core/execution-contract.yaml",
+        "zh_chars": 0
+      },
+      {
+        "path": "static/core/contract.md",
+        "zh_chars": 301
+      },
+      {
+        "path": "static/core/stance.md",
+        "zh_chars": 380
+      },
+      {
+        "path": "references/checkpoints.md",
+        "zh_chars": 541
+      },
+      {
+        "path": "references/semantic-context.md",
+        "zh_chars": 580
+      },
+      {
+        "path": "references/selection.md",
+        "zh_chars": 540
+      },
+      {
+        "path": "references/biology-ontology.md",
+        "zh_chars": 182
+      }
+    ],
+    "total_zh_chars": 7255
+  },
+  "benchmark": {
+    "schema_version": 2,
+    "inventory_status": "PASS",
+    "benchmark_status": "INCOMPLETE",
+    "case_count": 281,
+    "legacy_pass": 31,
+    "verified_benchmark_pass": 0,
+    "benchmark_failed": 4,
+    "pending_migration": 277,
+    "track_pass": {
+      "reproduction": 0,
+      "transfer": 0,
+      "stress": 0
+    },
+    "errors": [],
+    "boundary": "Legacy flags are not V2 evidence. Registered bundles are revalidated on every query; visual judgment remains observer evidence."
+  },
+  "public_cases": {
+    "case_counts": {
+      "runnable": 13,
+      "reference-only": 2
+    },
+    "cases": [
+      {
+        "id": "cannabis-cassette",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit.",
+          "BUSCOplot native source is fetched at pinned commit and verified by SHA256; its GPL license is retained. Network or a verified native-source cache is required."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 20,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:BUSCOplot",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:cowplot",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "cannabis-chr7",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit.",
+          "BUSCOplot native source is fetched at pinned commit and verified by SHA256; its GPL license is retained. Network or a verified native-source cache is required."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 20,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:BUSCOplot",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:cowplot",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "dpm-bubbles",
+        "status": "reference-only",
+        "limitations": [
+          "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false
+      },
+      {
+        "id": "dpm-network",
+        "status": "reference-only",
+        "limitations": [
+          "The pinned author repository has no code/data license. The article CC-BY notice does not establish permission for the separate GitHub inputs; those derived CSV inputs are not distributed in 3.8.0. Supply separately authorized inputs before adapting this code."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false
+      },
+      {
+        "id": "ohca-microc",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 18,
+        "external_input_count": 1,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:HiCExperiment",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:HiContacts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrastr",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": false
+      },
+      {
+        "id": "oncoprint",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 21,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:cowplot",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "planarian-dotplot",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 16,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:data.table",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "sankey",
+        "status": "runnable",
+        "limitations": [
+          "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+          "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 19,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggalluvial",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:svglite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "boxplot",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "heatmap",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "dense-heatmap",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "bubble",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "volcano",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "synteny",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      },
+      {
+        "id": "phylogeny",
+        "status": "runnable",
+        "limitations": [
+          "Entirely synthetic; no biological finding or source-paper reproduction is established.",
+          "Fresh analysis, CP2, one-use authorization, output checks and actual PNG/PDF review remain required for each new invocation."
+        ],
+        "runtime_execution_verified": false,
+        "visual_review_verified": false,
+        "bound_file_count": 9,
+        "external_input_count": 0,
+        "dependencies": [
+          {
+            "name": "Python 3",
+            "version": "3.10+",
+            "source": "https://www.python.org/"
+          },
+          {
+            "name": "PyYAML",
+            "version": "6.0.3",
+            "source": "https://pypi.org/project/PyYAML/6.0.3/"
+          },
+          {
+            "name": "R:ComplexHeatmap",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ape",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:circlize",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:digest",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggplot2",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ggrepel",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:jsonlite",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:ragg",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:systemfonts",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          },
+          {
+            "name": "R:yaml",
+            "version": "record installed version for the current render",
+            "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+          }
+        ],
+        "offline_inputs": true
+      }
+    ]
+  },
+  "learning_catalog": {
+    "indexed_records": 454,
+    "source_materials_unavailable": 437,
+    "catalog_reference_status": "source-materials-unavailable",
+    "unavailable_method_ids": [
+      "SCICASE-001",
+      "SCICASE-002",
+      "SCICASE-003",
+      "SCICASE-004",
+      "SCICASE-005",
+      "SCICASE-006",
+      "SCICASE-007",
+      "SCICASE-008",
+      "SCICASE-009",
+      "SCICASE-010",
+      "SCICASE-011",
+      "SCICASE-012",
+      "SCICASE-013",
+      "SCICASE-014",
+      "SCICASE-015",
+      "SCICASE-016",
+      "SCICASE-017",
+      "SCICASE-018",
+      "SCICASE-019",
+      "SCICASE-020",
+      "SCICASE-021",
+      "SCICASE-022",
+      "SCICASE-023",
+      "SCICASE-024",
+      "SCICASE-025",
+      "SCICASE-026",
+      "SCICASE-027",
+      "SCICASE-028",
+      "SCICASE-029",
+      "SCICASE-030",
+      "SCICASE-031",
+      "SCICASE-032",
+      "SCICASE-033",
+      "SCICASE-034",
+      "SCICASE-035",
+      "SCICASE-036",
+      "SCICASE-038",
+      "SCICASE-039",
+      "SCICASE-040",
+      "SCICASE-041",
+      "SCICASE-042",
+      "SCICASE-043",
+      "SCICASE-044",
+      "SCICASE-045",
+      "SCICASE-046",
+      "SCICASE-047",
+      "SCICASE-048",
+      "SCICASE-049",
+      "SCICASE-050",
+      "SCICASE-051",
+      "SCICASE-052",
+      "SCICASE-053",
+      "SCICASE-054",
+      "SCICASE-055",
+      "SCICASE-056",
+      "SCICASE-057",
+      "SCICASE-058",
+      "SCICASE-059",
+      "SCICASE-060",
+      "SCICASE-061",
+      "SCICASE-062",
+      "SCICASE-063",
+      "SCICASE-064",
+      "SCICASE-065",
+      "SCICASE-066",
+      "SCICASE-067",
+      "SCICASE-068",
+      "SCICASE-069",
+      "SCICASE-070",
+      "SCICASE-071",
+      "SCICASE-072",
+      "SCICASE-073",
+      "SCICASE-074",
+      "SCICASE-075",
+      "SCICASE-076",
+      "SCICASE-077",
+      "SCICASE-078",
+      "SCICASE-079",
+      "SCICASE-080",
+      "SCICASE-081",
+      "SCICASE-082",
+      "SCICASE-084",
+      "SCICASE-085",
+      "SCICASE-086",
+      "SCICASE-087",
+      "SCICASE-088",
+      "SCICASE-089",
+      "SCICASE-090",
+      "SCICASE-091",
+      "SCICASE-092",
+      "SCICASE-093",
+      "SCICASE-095",
+      "SCICASE-096",
+      "SCICASE-097",
+      "SCICASE-098",
+      "SCICASE-099",
+      "SCICASE-100",
+      "SCICASE-101",
+      "SCICASE-102",
+      "SCICASE-103",
+      "SCICASE-104",
+      "SCICASE-106",
+      "SCICASE-107",
+      "SCICASE-108",
+      "SCICASE-109",
+      "SCICASE-110",
+      "SCICASE-111",
+      "SCICASE-112",
+      "SCICASE-113",
+      "SCICASE-114",
+      "SCICASE-115",
+      "SCICASE-116",
+      "SCICASE-117",
+      "SCICASE-118",
+      "SCICASE-119",
+      "SCICASE-120",
+      "SCICASE-121",
+      "SCICASE-122",
+      "SCICASE-123",
+      "SCICASE-124",
+      "SCICASE-125",
+      "SCICASE-126",
+      "SCICASE-127",
+      "SCICASE-128",
+      "SCICASE-129",
+      "SCICASE-130",
+      "SCICASE-131",
+      "SCICASE-132",
+      "SCICASE-133",
+      "SCICASE-134",
+      "SCICASE-135",
+      "SCICASE-136",
+      "SCICASE-137",
+      "SCICASE-138",
+      "SCICASE-139",
+      "SCICASE-140",
+      "SCICASE-141",
+      "SCICASE-142",
+      "SCICASE-144",
+      "SCICASE-145",
+      "SCICASE-146",
+      "SCICASE-147",
+      "SCICASE-148",
+      "SCICASE-149",
+      "SCICASE-150",
+      "SCICASE-151",
+      "SCICASE-152",
+      "SCICASE-153",
+      "SCICASE-154",
+      "SCICASE-155",
+      "SCICASE-156",
+      "SCICASE-157",
+      "REPRO-001",
+      "REPRO-002",
+      "REPRO-003",
+      "REPRO-004",
+      "REPRO-005",
+      "REPRO-006",
+      "REPRO-007",
+      "REPRO-008",
+      "REPRO-009",
+      "REPRO-010",
+      "REPRO-011",
+      "REPRO-012",
+      "REPRO-013",
+      "REPRO-014",
+      "REPRO-015",
+      "REPRO-016",
+      "REPRO-017",
+      "REPRO-018",
+      "REPRO-019",
+      "REPRO-020",
+      "REPRO-021",
+      "REPRO-022",
+      "REPRO-023",
+      "REPRO-024",
+      "REPRO-025",
+      "REPRO-026",
+      "REPRO-027",
+      "REPRO-028",
+      "REPRO-029",
+      "REPRO-031",
+      "REPRO-032",
+      "REPRO-033",
+      "REPRO-034",
+      "REPRO-035",
+      "REPRO-036",
+      "REPRO-037",
+      "REPRO-038",
+      "REPRO-039",
+      "REPRO-040",
+      "REPRO-041",
+      "REPRO-042",
+      "REPRO-043",
+      "REPRO-044",
+      "REPRO-045",
+      "REPRO-046",
+      "REPRO-047",
+      "REPRO-048",
+      "REPRO-049",
+      "REPRO-050",
+      "REPRO-051",
+      "REPRO-052",
+      "REPRO-053",
+      "REPRO-054",
+      "REPRO-055",
+      "REPRO-056",
+      "REPRO-057",
+      "REPRO-058",
+      "REPRO-059",
+      "REPRO-060",
+      "REPRO-061",
+      "REPRO-062",
+      "REPRO-063",
+      "REPRO-064",
+      "REPRO-065",
+      "REPRO-066",
+      "REPRO-067",
+      "REPRO-068",
+      "REPRO-069",
+      "REPRO-070",
+      "REPRO-071",
+      "REPRO-072",
+      "REPRO-073",
+      "REPRO-074",
+      "REPRO-075",
+      "REPRO-076",
+      "REPRO-077",
+      "REPRO-078",
+      "REPRO-079",
+      "REPRO-080",
+      "REPRO-086",
+      "REPRO-089",
+      "REPRO-097",
+      "REPRO-098",
+      "PAPER-ape-t2t",
+      "APE-SYNTENY-STACK",
+      "APE-INVERSION-ZOOM",
+      "APE-SELF-IDENTITY-TRIANGLE",
+      "APE-BINNED-DIVERGENCE",
+      "APE-REGISTERED-GENOME-TRACKS",
+      "PAPER-arabidopsis-27",
+      "GEN-ATH27-SYNTENY-001",
+      "GEN-ATH27-ALIGNED-TRACKS-001",
+      "GEN-ATH27-SV-SPECTRUM-001",
+      "GEN-ATH27-TE-DISTRIBUTION-001",
+      "GEN-ATH27-NESTED-NETWORK-001",
+      "GEN-ATH27-PANGENOME-GROWTH-001",
+      "GEN-ATH27-COORDINATE-DILUTION-001",
+      "GEN-ATH27-PAIRWISE-SV-001",
+      "GEN-ATH27-REFERENCE-BIAS-001",
+      "PAPER-barley-pantranscriptome",
+      "GEN-BARLEY-COMMUNITY-NETWORK-001",
+      "GEN-BARLEY-MODULE-SIMILARITY-001",
+      "GEN-BARLEY-MODULE-TISSUE-001",
+      "GEN-BARLEY-TOM-DENDROGRAM-001",
+      "GEN-BARLEY-TFBS-FACETS-001",
+      "GEN-BARLEY-TFBS-COHERENCE-001",
+      "GEN-BARLEY-ORDINATION-LAYOUT-001",
+      "PAPER-cannabis-pangenome",
+      "GEN-CANNABIS-CGP-SYNTENY-001",
+      "GEN-CANNABIS-SEX-EXPRESSION-JOINT-001",
+      "PAPER-dpm-multiomics",
+      "GEN-DPM-SIGNED-HEATMAP-001",
+      "GEN-DPM-GENE-MODALITY-BUBBLES-002",
+      "GEN-DPM-EVIDENCE-PIE-NETWORK-003",
+      "PAPER-rpe1-reference",
+      "GEN-RPE1-DENSITY-HDR-HOR-001",
+      "GEN-RPE1-SYRI-PLOTSR-001",
+      "GEN-RPE1-FLAGGER-LENGTH-001",
+      "PAPER-fleck-organoid",
+      "FLECK-MULTIOMIC-HEATMAP",
+      "FLECK-FIXED-GRN",
+      "FLECK-PERTURB-HEATMAP",
+      "FLECK-CIRCULAR-REGULOME",
+      "FLECK-GENOMIC-TRACKS",
+      "PAPER-han-foregut",
+      "PAPER-hochgerner-dentate",
+      "PAPER-ma-primate-pfc",
+      "PAPER-trevino-cortex",
+      "PAPER-wahle-retinal",
+      "PAPER-yu-interneuron",
+      "NATURE-OMICS-001",
+      "NATURE-OMICS-001-FIG-01",
+      "NATURE-OMICS-001-FIG-02",
+      "NATURE-OMICS-002",
+      "NATURE-OMICS-002-FIG-01",
+      "NATURE-OMICS-002-FIG-02",
+      "NATURE-OMICS-003",
+      "NATURE-OMICS-003-FIG-01",
+      "NATURE-OMICS-003-FIG-02",
+      "NATURE-OMICS-004",
+      "NATURE-OMICS-004-FIG-01",
+      "NATURE-OMICS-004-FIG-02",
+      "NATURE-OMICS-005",
+      "NATURE-OMICS-005-FIG-01",
+      "NATURE-OMICS-006",
+      "NATURE-OMICS-006-FIG-01",
+      "NATURE-OMICS-006-FIG-02",
+      "PAN-ANNOT",
+      "PAN-GENE",
+      "PAN-CLASS",
+      "PAN-FREQ",
+      "PAN-CURVE",
+      "PAN-PAV",
+      "PAN-SUBSETS",
+      "PAN-SVCOUNT",
+      "PAN-TRACK",
+      "PAN-ALIGN",
+      "PAN-HIC",
+      "PAN-TREE",
+      "PAN-GWAS",
+      "PAN-GO",
+      "PAN-ALLELE",
+      "MBE-MAIN-Figure 1A",
+      "MBE-MAIN-Figure 1B",
+      "MBE-MAIN-Figure 1C",
+      "MBE-MAIN-Figure 1D",
+      "MBE-MAIN-Figure 1E",
+      "MBE-MAIN-Figure 1F",
+      "MBE-MAIN-Figure 2A",
+      "MBE-MAIN-Figure 2B",
+      "MBE-MAIN-Figure 2C",
+      "MBE-MAIN-Figure 2D",
+      "MBE-MAIN-Figure 2E",
+      "MBE-MAIN-Figure 2F",
+      "MBE-MAIN-Figure 3A",
+      "MBE-MAIN-Figure 3B",
+      "MBE-MAIN-Figure 3C",
+      "MBE-MAIN-Figure 3D",
+      "MBE-MAIN-Figure 4A",
+      "MBE-MAIN-Figure 4B",
+      "MBE-MAIN-Figure 4C",
+      "MBE-MAIN-Figure 4D",
+      "MBE-MAIN-Figure 5A",
+      "MBE-MAIN-Figure 5B",
+      "MBE-MAIN-Figure 5C",
+      "MBE-SUPPLEMENT-S1",
+      "MBE-SUPPLEMENT-S2",
+      "MBE-SUPPLEMENT-S3",
+      "MBE-SUPPLEMENT-S4",
+      "MBE-SUPPLEMENT-S5",
+      "MBE-SUPPLEMENT-S6",
+      "MBE-SUPPLEMENT-S7",
+      "MBE-SUPPLEMENT-S8",
+      "MBE-SUPPLEMENT-S9",
+      "MBE-SUPPLEMENT-S10",
+      "MBE-SUPPLEMENT-S11",
+      "MBE-SUPPLEMENT-S12",
+      "MBE-SUPPLEMENT-S13",
+      "MBE-SUPPLEMENT-S14",
+      "MBE-SUPPLEMENT-S15",
+      "MBE-SUPPLEMENT-S16",
+      "MBE-SUPPLEMENT-S17",
+      "MBE-SUPPLEMENT-S18",
+      "MBE-SUPPLEMENT-S19",
+      "MBE-SUPPLEMENT-S20",
+      "MBE-SUPPLEMENT-S21",
+      "MBE-SUPPLEMENT-S22",
+      "ASF-V01",
+      "ASF-V02",
+      "ASF-V03",
+      "ASF-V04",
+      "ASF-V05",
+      "ASF-V06",
+      "ASF-V07",
+      "ASF-V08",
+      "ASF-V09",
+      "ASF-V10",
+      "ASF-V11",
+      "ASF-V12",
+      "ASF-V13",
+      "ASF-V14",
+      "ASF-V15",
+      "ASF-V16",
+      "ASF-V17",
+      "ASF-V18",
+      "ASF-V19",
+      "ASF-V20",
+      "ASF-V21",
+      "ASF-V22",
+      "ASF-V23",
+      "ASF-V24",
+      "ASF-V25",
+      "ASF-V26",
+      "ASF-V27",
+      "ASF-V28",
+      "ASF-V29",
+      "ASF-RECIPE-geo-flow-map",
+      "ASF-RECIPE-matched-map-grid",
+      "ASF-RECIPE-map-stat-composite",
+      "ASF-RECIPE-dark-spatial-comparison",
+      "ASF-RECIPE-temporal-facet-bubble",
+      "ASF-RECIPE-method-comparison-grid",
+      "ASF-RECIPE-mechanism-map-hybrid",
+      "ASF-RECIPE-paired-contrast-bars",
+      "ASF-RECIPE-log-model-grid",
+      "ASF-RECIPE-ranked-distribution-overlay",
+      "ASF-RECIPE-two-panel-bubble-fit",
+      "ASF-RECIPE-editorial-visual-metaphor",
+      "BENCH-epigenomics-chromafold-multiresolution-contact-atlas",
+      "BENCH-epigenomics-te-tf-motif-atlas",
+      "BENCH-genomics-dpm-hoxa10-bubbles-2024",
+      "BENCH-genomics-dpm-hoxa10-network-2024",
+      "BENCH-genomics-lepidoptera-merian-paints-2024",
+      "BENCH-genomics-rice-centromere-multitrack-2025",
+      "BENCH-gggenomes-emales-2026",
+      "BENCH-ggsashimi-splicing-2026",
+      "BENCH-ggtranscript-sod1-2026",
+      "BENCH-multiomics-hmo-gene-reaction",
+      "BENCH-multiomics-hmo-snfg-fig4",
+      "BENCH-multiomics-mofacll-proliferative-drive",
+      "BENCH-populus-fig2b-source-001",
+      "BENCH-singlecell-circular-embedding-plot1cell",
+      "BENCH-subjournal-archr-2021",
+      "BENCH-subjournal-augur-2021",
+      "BENCH-subjournal-cellrank-2022",
+      "BENCH-subjournal-liana-plus-2024",
+      "BENCH-subjournal-mefisto-2022",
+      "BENCH-subjournal-milo-2022",
+      "BENCH-subjournal-nichenet-2020",
+      "BENCH-subjournal-seacells-2023",
+      "BENCH-subjournal-signac-2021",
+      "BENCH-subjournal-tangram-2021",
+      "EVIDENCE-populus-fig2b-source-001",
+      "EVIDENCE-toomanycells-fig2-001",
+      "EVIDENCE-populus-synteny-edfig1a-001",
+      "EVIDENCE-populus-compartment-edfig1b-001",
+      "CORE-anova-tukey-eight-replicates-data-metadata",
+      "CORE-evidence-sankey",
+      "CORE-source_data-metadata",
+      "CORE-triangular-sequence-identity-data-metadata",
+      "SIX-PROJECT-biofigure-case-mca-fig2a",
+      "SIX-PROJECT-biofigure-case-pearson-fig6",
+      "SIX-PROJECT-biofigure-case-populus-fig2b",
+      "SIX-PROJECT-biofigure-case-ra-fig2",
+      "SIX-PROJECT-biofigure-case-singlecell-qc"
+    ],
+    "qualification": "Historical records retained; catalog presence does not mean runnable or qualified."
+  },
+  "distribution": {
+    "file_count": 794,
+    "text_files_scanned": 684,
+    "privacy_and_containment_errors": []
+  },
+  "current_gallery": {
+    "figure_count": 77,
+    "category_count": 14,
+    "png_header_dimensions": {
+      "BF-0001": [
+        1251,
+        1062
+      ],
+      "BF-0002": [
+        1322,
+        1039
+      ],
+      "BF-0003": [
+        1322,
+        1133
+      ],
+      "BF-0004": [
+        1559,
+        850
+      ],
+      "BF-0006": [
+        1842,
+        921
+      ],
+      "BF-0008": [
+        2055,
+        1559
+      ],
+      "BF-0010": [
+        1275,
+        1039
+      ],
+      "BF-0012": [
+        1440,
+        897
+      ],
+      "BF-0014": [
+        1889,
+        1440
+      ],
+      "BF-0015": [
+        1535,
+        1204
+      ],
+      "BF-0017": [
+        1464,
+        992
+      ],
+      "BF-0018": [
+        1322,
+        1039
+      ],
+      "BF-0019": [
+        1948,
+        1948
+      ],
+      "BF-0020": [
+        2598,
+        1476
+      ],
+      "BF-0022": [
+        1535,
+        1157
+      ],
+      "BF-0023": [
+        2185,
+        1417
+      ],
+      "BF-0024": [
+        2303,
+        1417
+      ],
+      "BF-0025": [
+        2421,
+        1771
+      ],
+      "BF-0026": [
+        2125,
+        1393
+      ],
+      "BF-0027": [
+        1948,
+        1948
+      ],
+      "BF-0029": [
+        2421,
+        1240
+      ],
+      "BF-0030": [
+        1948,
+        1594
+      ],
+      "BF-0034": [
+        2007,
+        2007
+      ],
+      "BF-0035": [
+        1594,
+        1358
+      ],
+      "BF-0036": [
+        1948,
+        1440
+      ],
+      "BF-0044": [
+        1440,
+        936
+      ],
+      "BF-0046": [
+        1260,
+        900
+      ],
+      "BF-0048": [
+        1260,
+        1080
+      ],
+      "BF-0052": [
+        1620,
+        1224
+      ],
+      "BF-0055": [
+        1530,
+        1170
+      ],
+      "BF-0056": [
+        1440,
+        1260
+      ],
+      "BF-0064": [
+        1181,
+        885
+      ],
+      "BF-0068": [
+        2007,
+        2007
+      ],
+      "BF-0070": [
+        1889,
+        1889
+      ],
+      "BF-0072": [
+        1771,
+        2125
+      ],
+      "BF-0073": [
+        1440,
+        1440
+      ],
+      "BF-0082": [
+        1800,
+        1800
+      ],
+      "BF-0084": [
+        1639,
+        1240
+      ],
+      "BF-0086": [
+        1760,
+        1639
+      ],
+      "BF-0088": [
+        1800,
+        900
+      ],
+      "BF-0106": [
+        3850,
+        985
+      ],
+      "BF-0109": [
+        3212,
+        2362
+      ],
+      "BF-0112": [
+        2640,
+        990
+      ],
+      "BF-0127": [
+        1100,
+        1760
+      ],
+      "BF-0128": [
+        1617,
+        1760
+      ],
+      "BF-0129": [
+        1760,
+        1507
+      ],
+      "BF-0132": [
+        1760,
+        1056
+      ],
+      "BF-0138": [
+        1760,
+        798
+      ],
+      "BF-0146": [
+        4322,
+        3921
+      ],
+      "BF-0151": [
+        1771,
+        1417
+      ],
+      "BF-0152": [
+        1771,
+        1417
+      ],
+      "BF-0156": [
+        2161,
+        1594
+      ],
+      "BF-0167": [
+        2102,
+        1488
+      ],
+      "BF-0168": [
+        2102,
+        1748
+      ],
+      "BF-0170": [
+        2102,
+        1086
+      ],
+      "BF-0175": [
+        2200,
+        1300
+      ],
+      "BF-0178": [
+        2244,
+        2480
+      ],
+      "BF-0182": [
+        2007,
+        1771
+      ],
+      "BF-0184": [
+        2125,
+        1086
+      ],
+      "BF-0187": [
+        1240,
+        1476
+      ],
+      "BF-0189": [
+        1948,
+        1948
+      ],
+      "BF-0190": [
+        1948,
+        1122
+      ],
+      "BF-0199": [
+        2180,
+        1720
+      ],
+      "BF-0201": [
+        1240,
+        1240
+      ],
+      "BF-0203": [
+        2066,
+        1488
+      ],
+      "BF-0204": [
+        2838,
+        1019
+      ],
+      "BF-0206": [
+        1426,
+        936
+      ],
+      "BF-0207": [
+        2611,
+        1412
+      ],
+      "BF-0209": [
+        2564,
+        1561
+      ],
+      "BF-0212": [
+        2626,
+        1728
+      ],
+      "BF-0213": [
+        2457,
+        1866
+      ],
+      "BF-0215": [
+        2125,
+        1086
+      ],
+      "BF-0216": [
+        1535,
+        1039
+      ],
+      "BF-0217": [
+        2125,
+        1370
+      ],
+      "BF-0218": [
+        2125,
+        1417
+      ],
+      "BF-0221": [
+        2125,
+        1866
+      ],
+      "BF-0222": [
+        4251,
+        4251
+      ]
+    },
+    "decoded_pixel_hashes_verified": false
+  },
+  "selected_public_gallery_pngs": [
+    "docs/assets/gallery/domain-chromatin-heatmap.png",
+    "docs/assets/gallery/domain-chromatin-profile.png",
+    "docs/assets/gallery/domain-imaging-assay.png",
+    "docs/assets/gallery/domain-mechanism.png",
+    "docs/assets/gallery/domain-ml-evaluation.png",
+    "docs/assets/gallery/domain-multipanel-evidence.png",
+    "docs/assets/gallery/domain-spatial-expression.png",
+    "docs/assets/gallery/domain-synteny.png",
+    "docs/assets/gallery/template-phylogeny-tracks.png",
+    "docs/assets/gallery/template-radar.png",
+    "docs/assets/gallery/template-single-cell-dotplot.png",
+    "docs/assets/gallery/template-volcano.png",
+    "docs/assets/genome-gallery/chromosome-distribution.png",
+    "docs/assets/reference-transfer/forest.png",
+    "docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png",
+    "docs/assets/reproduction-gallery/figure_076_issue067_circlize_rainbow_heatmap.png",
+    "docs/assets/reproduction-gallery/figure_077_issue068_clinical_heatmap.png",
+    "docs/assets/reproduction-gallery/figure_081_issue070_annotated_swimmer.png",
+    "docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png",
+    "docs/assets/reproduction-gallery/figure_086_issue074_petal_network.png",
+    "docs/assets/reproduction-gallery/figure_090_issue080_flow_map.png",
+    "docs/assets/scidraw-gallery/01_pcoa_marginal.png",
+    "docs/assets/scidraw-gallery/05_chord_outer_track.png",
+    "docs/assets/scidraw-gallery/06_volcano_gsea.png",
+    "docs/assets/scidraw-gallery/scidraw_rcs.png",
+    "docs/assets/scidraw-gallery-batch2/07_violin_box_beeswarm.png",
+    "docs/assets/scidraw-gallery-batch2/09_grouped_raincloud_gghalves.png",
+    "docs/assets/scidraw-gallery-batch2/11_fit_marginal_residual_box.png",
+    "docs/assets/scidraw-gallery-batch2/15_faceted_correlation_bubbles.png",
+    "docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png",
+    "docs/assets/scidraw-gallery-batch2/19_density_matrix_rainbow.png",
+    "docs/assets/archive-gallery/benchmark-six/survival.png",
+    "docs/assets/archive-gallery/random-three/circular.png",
+    "docs/assets/archive-gallery/random-three/logfc.png",
+    "docs/assets/archive-gallery/ridge-repaired-v2/scidraw_ridge_bipolar.png",
+    "docs/assets/archive-gallery/scidraw-001-065/01_nmds_marginal_box.png",
+    "docs/assets/archive-gallery/scidraw-001-065/10_circular_heatmap_upset.png",
+    "docs/assets/archive-gallery/scidraw-001-065/12_semicircle_violin.png",
+    "docs/assets/archive-gallery/scidraw-001-065/14_circular_grouped_profiles.png",
+    "docs/assets/archive-gallery/scidraw-001-065/15_nested_bar.png",
+    "docs/assets/archive-gallery/scidraw-001-065/33_faceted_paired_boxplot.png",
+    "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
+    "docs/assets/archive-gallery/scidraw-001-065/39_multi_cell_volcano.png",
+    "docs/assets/archive-gallery/scidraw-001-065/54_stacked_bar_dumbbell.png",
+    "docs/assets/archive-gallery/scidraw-001-065/55_dual_triangle_circle_heatmap.png",
+    "docs/assets/archive-gallery/scidraw-001-065/56_timeseries_ribbon.png",
+    "docs/assets/archive-gallery/scidraw-001-065/59_china_scatterpie.png",
+    "docs/assets/archive-gallery/scidraw-001-065/65_log_frequency_curves.png",
+    "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
+    "docs/assets/archive-gallery/public-omics/03_scrna_pca.png",
+    "docs/assets/archive-gallery/public-omics/04_scrna_umap.png",
+    "docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png",
+    "docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png",
+    "docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png",
+    "docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png",
+    "docs/assets/archive-gallery/topjournal-early/issue025_upset.png",
+    "docs/assets/archive-gallery/topjournal-early/issue059_cluster_heatmap.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_055_cluster_network_code_driven.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_059_spider_code_driven.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_062_ggbreak_stacked_code_driven.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_067_weighted_voronoi_code_driven.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_068_dcurves_code_driven.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_082_issue071_sunburst.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_085_issue073_spline_petals.png",
+    "docs/assets/archive-gallery/full-reproduction/figure_089_issue079_streamgraph.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_41_inset_scatter.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_43_subgroup_forest.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_44_waterfall.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_46_lollipop_go.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_49_venn_gallery.png",
+    "docs/assets/archive-gallery/full-reproduction/revision_v1_50_radar_spider.png",
+    "docs/assets/archive-gallery/manhattan/manhattan_simulated.png",
+    "docs/assets/archive-gallery/linear/linear_scatter.png",
+    "docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
+    "docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
+    "docs/assets/genomics-gallery-20261011/ohca-microc.png",
+    "docs/assets/genomics-gallery-20261011/planarian-dotplot.png"
+  ],
+  "capability_graph": {
+    "case_count": 281,
+    "source_compared_pass": 31,
+    "historical_source_review_summary": {
+      "source_compared_cases": 145,
+      "source_compared_pass": 35,
+      "source_compared_needs_revision": 110
+    }
+  },
+  "legacy_source_archive_audit": {
+    "status": "NOT_RUN",
+    "entrypoint": "audit_legacy_source_archive()",
+    "scope": "Full private/source archive and historical 8/8/20 audit; retained separately, not silently promoted by a public install."
+  },
+  "claim_boundary": "Public package integrity only. Actual analysis, runtime execution, source fidelity, final-size visual review, new-input transfer and user acceptance remain separate."
+}

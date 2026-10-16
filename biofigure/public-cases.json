@@ -78,7 +78,7 @@
     },
     {
       "path": "atlas/figure-reference-catalog.json",
-      "sha256": "6c0135d10f59c82cc6acc7da0fea3a44c0db6315d29be645c8c34004584d7c0a",
+      "sha256": "84b96a71768404ffedc7db07beb797c806d4a26cfb872e74fe6bfc8e3ae86c7d",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -92,7 +92,7 @@
     },
     {
       "path": "atlas/learned-method-index.json",
-      "sha256": "8b4983788f31fafd70566d542382dd6bfff09f1877976a121c137805aecc704c",
+      "sha256": "79d1e3de31d81d2445173f95f461f23451f19955898a2fb4d0afbb990d493de8",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -246,7 +246,7 @@
     },
     {
       "path": "benchmark/cases/gallery-multievent-oncoprint-2026.json",
-      "sha256": "77ea70032b781b22f9c6ebe7015b1cd7e999bf76b36a03e869d2c628da4ae9dd",
+      "sha256": "ed10b5a63c27dc44b7434b9ae004ce79e6482b45220f7269d70381435c5552ea",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2525,13 +2525,14 @@
         "python3",
         "{skill_root}/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
         "--output-dir",
-        "{output_dir}"
+        "{output_dir}",
+        "--source-view-confirmed"
       ],
       "provenance": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
       "files": [
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
-          "sha256": "84f28c6e3d0ac03aeb26502e150a24425f8b0cc1c0b9b241ad22c119d9e8759a",
+          "sha256": "26e0474f936df720b71b5ce6374f874166d45cedb7ce82581e15e356c677f37d",
           "role": "provenance",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2552,7 +2553,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
-          "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2566,7 +2567,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
-          "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705",
+          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2657,7 +2658,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
-          "sha256": "365d2e0445006ed15344d9d52b703c70516d37fa37ed2dd0402ab1a43e1f56fa",
+          "sha256": "81f0b8650b1d34cd791f70bb6c3a492c59c54c417b165899bf18e43d69dc6f93",
           "role": "reference",
           "license": "GPL-3.0-only",
           "origin": "Derived author-processed data from a pinned GPL-3.0 repository; attribution and modifications are recorded in licenses/third-party-provenance.json"
@@ -2727,13 +2728,14 @@
         "python3",
         "{skill_root}/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
         "--output-dir",
-        "{output_dir}"
+        "{output_dir}",
+        "--source-view-confirmed"
       ],
       "provenance": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
       "files": [
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
-          "sha256": "ac546dfd63516bb9c5bcbe449bfaaf13bbaaf90f3e673aba4e357ddd54587491",
+          "sha256": "934348496b7bfa9de94867151bddbc0b89376fc6683d03e44424e046a4ef185a",
           "role": "provenance",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2754,7 +2756,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
-          "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2768,7 +2770,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
-          "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705",
+          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2789,7 +2791,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/design-template.yaml",
-          "sha256": "dbe59b27192ad18806f191def62c3072d226ee48df86bdad9a93eb05c0c1998a",
+          "sha256": "af8705a9d339606eb1378d802199e0914c039c113d5c4903d6978748b73cc8b9",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -2859,7 +2861,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
-          "sha256": "5e4c2e67b7ff9fda52f5d8094628e3eae4275fb652e3d5b34a557888ccf75e6f",
+          "sha256": "59f6ab0814a0fd49af812f023962a9845378d47a0b45e6b58a28dd80028188e7",
           "role": "reference",
           "license": "GPL-3.0-only",
           "origin": "Derived author-processed data from a pinned GPL-3.0 repository; attribution and modifications are recorded in licenses/third-party-provenance.json"
@@ -3252,7 +3254,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
-          "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3294,7 +3296,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
-          "sha256": "a46853fc3253a82308aa295a47a8d1c11e747860f76976222794f050da182b0f",
+          "sha256": "31455e14b9eec60971e51370cb52a43529f9b997e3970a14164f3ac598432e5a",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3350,7 +3352,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
-          "sha256": "ff4dec7bfa29e53b1367d2e47ffcf3c8f6d625472aee5ad3f4c0af17b9a03b2d",
+          "sha256": "971c0f47822087c066564bed8c653da608d0b35b08b247f79eb3123138eba324",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3422,7 +3424,7 @@
     {
       "id": "oncoprint",
       "title": "BENCH-gallery-multievent-oncoprint-2026",
-      "status": "blocked",
+      "status": "runnable",
       "entrypoint": "examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
       "command": [
         "python3",
@@ -3456,7 +3458,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
-          "sha256": "fd24ddb3828f0ae07d3338f3f6b3e8df2aa2a3615144267f7aaa3dd35c3083e1",
+          "sha256": "ba2f0738e885ae543f4e67029e5bc1f7e8ccf57fc2609067276cbbd7e99e6fa7",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3476,6 +3478,13 @@
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
+          "path": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+          "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361",
+          "role": "reference",
+          "license": "MIT",
+          "origin": "BioFigure-owned public adapter or metadata"
+        },
+        {
           "path": "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
           "sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
           "role": "reference",
@@ -3491,28 +3500,28 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
-          "sha256": "b1891538b19059a6cf2768d4ab28029d562ea00f58e04c4184ccd86141bcc8d5",
+          "sha256": "ea33267668df454559886af1e341ee3b6d95d74e0501b5874a2ecb48c2710c50",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
-          "sha256": "164d48d38e45fae51386099ecc30c2b81fb96041c1a9b019c712f9d5a119cebf",
+          "sha256": "14ba568c1f189a1ab04280d395a55af51253823a5f8bb55d7772ebb6ede9b095",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
-          "sha256": "47a09c30d095c0654df9a2bccc9038dba087d5efdb3e53a4b3323b953fd8b85e",
+          "sha256": "1911eee5274745558161e9f4d5ef2b07820e4a6ed5265921eb3778f9a6470b62",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
-          "sha256": "1af33e17409edd57e71e4693587e3c689917e41797e64fe1779f720c80f2b6f3",
+          "sha256": "3c150c9708b1c1b1129db1977efaded72cf9bfb6fc65573645ce1d477a41d620",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3561,7 +3570,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
-          "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361",
+          "sha256": "b47cfc6300548e6ef47602505007c44b48ef812538744676e851594e9e3ec3c9",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3611,7 +3620,17 @@
           "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
         },
         {
+          "name": "R:ragg",
+          "version": "record installed version for the current render",
+          "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+        },
+        {
           "name": "R:svglite",
+          "version": "record installed version for the current render",
+          "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
+        },
+        {
+          "name": "R:systemfonts",
           "version": "record installed version for the current render",
           "source": "R namespace required by the bundled first-party renderer; use the package source documented in renderer-registry.yaml or the case provenance."
         },
@@ -3622,7 +3641,8 @@
         }
       ],
       "limitations": [
-        "Fresh public Skill-only replay failed the current CP2 heatmap-cell contract: the displayed 12 by 144 matrix has no compliant physical square-cell layout. Historical rendering and qualification are retained, but do not certify this release. A future layout must preserve all sample IDs, genes and events and pass fresh native-cell measurement and PNG/PDF review."
+        "Current fixed processed tables and own layout only; no raw sequencing, full-paper fidelity, new-input transfer, stress or current visual PASS inferred.",
+        "Declared R packages and system fonts are external runtime dependencies; no dependency installation or renderer execution is performed by the portable audit."
       ]
     },
     {
@@ -3655,7 +3675,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
-          "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3683,7 +3703,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
-          "sha256": "383c7e4d7768fad382438639f308cb30ed427cb141087e17ca26baad8001f25e",
+          "sha256": "bb954f4048d70e934f6745569a6b4976fb416adc86d2a9f3b808ed69989667f7",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3739,7 +3759,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8",
+          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
           "role": "reference",
           "license": "GPL-3.0-only",
           "origin": "Derived author-processed data from a pinned GPL-3.0 repository; attribution and modifications are recorded in licenses/third-party-provenance.json"
@@ -3843,7 +3863,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
-          "sha256": "fff2f76d91489fe13e4b97d4b2f485539f739c4997e2367326c8d5b19157e2dc",
+          "sha256": "9ca46b0c0dbb62a6cd56f25eb4fea9356decaa2d2a15cc886f910664d61508a0",
           "role": "code",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3878,7 +3898,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/data/metadata/design-template.yaml",
-          "sha256": "5e533c19e72d0760c645f47fdbe30251af5c4383395b2f25eecd7f037caf0ff2",
+          "sha256": "c38ddd68c2131d7ce9c87dd7658e811497325990075a2d12bf1ff9d5ca5318e3",
           "role": "config",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"
@@ -3934,7 +3954,7 @@
         },
         {
           "path": "examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
-          "sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1",
+          "sha256": "ed470f7170d3dfac544e64ab9c0671ddd8ae9541666072718626f76ecbbd37b2",
           "role": "reference",
           "license": "MIT",
           "origin": "BioFigure-owned public adapter or metadata"

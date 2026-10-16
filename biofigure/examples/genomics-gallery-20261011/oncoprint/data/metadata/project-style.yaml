@@ -17,12 +17,12 @@ palette:
 typography:
   family: Arial
   size_roles_pt:
-    axis_text: 7.5
-    axis_title: 7.5
-    legend_text: 7.5
-    strip_text: 7.5
-    annotation_text: 7.5
-    panel_label: 7.5
+    axis_text: 6.5
+    axis_title: 6.5
+    legend_text: 6.5
+    strip_text: 6.5
+    annotation_text: 6.5
+    panel_label: 6.5
 size_system:
   allowed_classes:
   - double-column

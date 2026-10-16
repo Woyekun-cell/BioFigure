@@ -6,21 +6,21 @@
     {
       "gallery_id": "BF-0109",
       "previous_sha256": "1272eba2042b59049a645b89e980617073c990d99854f5e910aaf718a98d4e82",
-      "current_sha256": "5d11f7971f45aa1507ad8e11444ba1299a0c170600b52b05fa187eee711fe62e",
+      "current_sha256": "3dcd7ecd2944facf2918752a9dadbf7e99e9dccf5d8303d69a8e401bef1b75bc",
       "archive_path": "biofigure/examples/genomics-gallery-20261011/sankey/sources/previous-gallery.png",
       "git_snapshot_tag": "snapshot-20261011-pre-gallery-refresh"
     },
     {
       "gallery_id": "BF-0146",
       "previous_sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
-      "current_sha256": "29f4c1fc3b70e509818b0638d6588ac5f1703c392407cdb9054177ffe89f7e2e",
+      "current_sha256": "25876b46abd6c97c9000453dfd247915047a143ec89d8c1e135b44015984c7c4",
       "archive_path": "biofigure/examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
       "git_snapshot_tag": "snapshot-20261011-pre-gallery-refresh"
     }
   ],
   "runtime_validation": {
-    "path": "docs/gallery/runtime-validation-20261011.json",
-    "sha256": "6edc11b8a1fc5e9243274bd4a7e10caf073dc4e07e76aeddcafbc4dce8f9074f"
+    "path": "docs/gallery/runtime-validation-3.8.0.json",
+    "sha256": "27436b8efbdd3b4cf9b37257882ebd57a689c9c130d8105e84a608fdb5387f4d"
   },
   "release": "3.8.0",
   "inventory_date": "2026-10-16",
@@ -48,7 +48,7 @@
       "files": [
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/data/metadata/design-template.yaml",
-          "sha256": "1d2caeb0975d4e0d06fdf2e0836389e09c6f20fe50cf68ea16c7d1739c152fdd"
+          "sha256": "b30ea3f2765351176f7c353899155682a8edc7f2b65a9d6667ad31f3b7b0738c"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/data/metadata/native-acquisition.json",
@@ -72,11 +72,11 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
-          "sha256": "118ba4d05f2767165d628346ab8f761076395ead9418d75f613a0fa274683527"
+          "sha256": "26e0474f936df720b71b5ce6374f874166d45cedb7ce82581e15e356c677f37d"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
-          "sha256": "365d2e0445006ed15344d9d52b703c70516d37fa37ed2dd0402ab1a43e1f56fa"
+          "sha256": "81f0b8650b1d34cd791f70bb6c3a492c59c54c417b165899bf18e43d69dc6f93"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data/busco-coordinates.csv",
@@ -108,15 +108,15 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
-          "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705"
+          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
-          "sha256": "049e6ecd54c744b8b1bf6c2635eaad519317bba39de161764d87c347759836b0"
+          "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
-          "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942"
+          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/sources/own-reference.png",
@@ -124,9 +124,10 @@
         },
         {
           "path": "docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
-          "sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514"
+          "sha256": "c9f78acc81a21bc1d493e3957092c97df593860aa070f93eaa842bd6c62091b1"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     },
     {
@@ -152,7 +153,7 @@
       "files": [
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/design-template.yaml",
-          "sha256": "442ea8e9424a50e6a328049f935ad7593d6b79b3f24bc28e635cb4b7fbebe6ff"
+          "sha256": "af8705a9d339606eb1378d802199e0914c039c113d5c4903d6978748b73cc8b9"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/native-acquisition.json",
@@ -176,11 +177,11 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
-          "sha256": "be6e9293d3e5d918b5069ecb65d034e825ea36a47a257dc0302e88a5e6573696"
+          "sha256": "934348496b7bfa9de94867151bddbc0b89376fc6683d03e44424e046a4ef185a"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
-          "sha256": "5e4c2e67b7ff9fda52f5d8094628e3eae4275fb652e3d5b34a557888ccf75e6f"
+          "sha256": "59f6ab0814a0fd49af812f023962a9845378d47a0b45e6b58a28dd80028188e7"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data/busco-coordinates.csv",
@@ -212,15 +213,15 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
-          "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705"
+          "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
-          "sha256": "049e6ecd54c744b8b1bf6c2635eaad519317bba39de161764d87c347759836b0"
+          "sha256": "d4aac38d62314cf435a5e64e2dc44fd7f2a21e9c14698d8434f7ccce8a814728"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
-          "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942"
+          "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/sources/own-reference.png",
@@ -228,9 +229,10 @@
         },
         {
           "path": "docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
-          "sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5"
+          "sha256": "bba2b66c58af77b2d02d0631b971b40055d2ef9950b1523c7b80f7e4655ea0be"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     },
     {
@@ -255,7 +257,7 @@
       "files": [
         {
           "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
-          "sha256": "a46853fc3253a82308aa295a47a8d1c11e747860f76976222794f050da182b0f"
+          "sha256": "31455e14b9eec60971e51370cb52a43529f9b997e3970a14164f3ac598432e5a"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/data/metadata/execution-config.json",
@@ -283,7 +285,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
-          "sha256": "ff4dec7bfa29e53b1367d2e47ffcf3c8f6d625472aee5ad3f4c0af17b9a03b2d"
+          "sha256": "971c0f47822087c066564bed8c653da608d0b35b08b247f79eb3123138eba324"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data/bin-axis.csv",
@@ -319,13 +321,14 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
-          "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525"
+          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf"
         },
         {
           "path": "docs/assets/genomics-gallery-20261011/ohca-microc.png",
           "sha256": "de9250e5bb86e9e846c6beb3076fd3dd7ef37fd09d358f4bbbb1b5ab9c5a18bb"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     },
     {
@@ -348,7 +351,7 @@
       "files": [
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
-          "sha256": "383c7e4d7768fad382438639f308cb30ed427cb141087e17ca26baad8001f25e"
+          "sha256": "bb954f4048d70e934f6745569a6b4976fb416adc86d2a9f3b808ed69989667f7"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/execution-config.json",
@@ -376,7 +379,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-          "sha256": "35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8"
+          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data/planarian_haplotype_recolored_alignments.csv",
@@ -404,13 +407,14 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
-          "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525"
+          "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf"
         },
         {
           "path": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
           "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     },
     {
@@ -439,7 +443,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/metadata/design-template.yaml",
-          "sha256": "824b2ca65685779f86450245548263551db2a5c0c81e99281bc0c945283d8b5f"
+          "sha256": "c38ddd68c2131d7ce9c87dd7658e811497325990075a2d12bf1ff9d5ca5318e3"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/metadata/project-style.yaml",
@@ -447,7 +451,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/metadata/public-replay.json",
-          "sha256": "a06a2c45c79f606608767a646aa8bd358746ef614683347693e945d041909ffd"
+          "sha256": "b4a49637cd5b457f2d0e58d535fba8edbb83b91e335acf7865bf92174dffdf70"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/data/metadata/request.yaml",
@@ -463,11 +467,11 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/provenance.json",
-          "sha256": "d7b5900b13d4a6c82f5073d11f2c3331680403df1bb9ffc09a93839bf72e22c6"
+          "sha256": "8e641041682c16f41cfd3bc0450154f5b8fdf57d5f4919f51499e46dc337ce19"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
-          "sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1"
+          "sha256": "ed470f7170d3dfac544e64ab9c0671ddd8ae9541666072718626f76ecbbd37b2"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data/sankey_native_strata.csv",
@@ -487,7 +491,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
-          "sha256": "1d3a69637b5ab0be89609f6b7cfb3175e3dc8ac31e7b11918a61abab9652d16a"
+          "sha256": "9ca46b0c0dbb62a6cd56f25eb4fea9356decaa2d2a15cc886f910664d61508a0"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/render.R",
@@ -502,14 +506,19 @@
           "sha256": "ecd6b170557bb0a974086bcf423784a7e432d22d0ca0f8d7645c6f960c549472"
         },
         {
+          "path": "biofigure/examples/genomics-gallery-20261011/sankey/sources/own-reference-20261011.pdf",
+          "sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1"
+        },
+        {
           "path": "biofigure/examples/genomics-gallery-20261011/sankey/sources/previous-gallery.png",
           "sha256": "1272eba2042b59049a645b89e980617073c990d99854f5e910aaf718a98d4e82"
         },
         {
           "path": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
-          "sha256": "5d11f7971f45aa1507ad8e11444ba1299a0c170600b52b05fa187eee711fe62e"
+          "sha256": "3dcd7ecd2944facf2918752a9dadbf7e99e9dccf5d8303d69a8e401bef1b75bc"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     },
     {
@@ -535,19 +544,19 @@
       "files": [
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
-          "sha256": "b1891538b19059a6cf2768d4ab28029d562ea00f58e04c4184ccd86141bcc8d5"
+          "sha256": "ea33267668df454559886af1e341ee3b6d95d74e0501b5874a2ecb48c2710c50"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
-          "sha256": "47a09c30d095c0654df9a2bccc9038dba087d5efdb3e53a4b3323b953fd8b85e"
+          "sha256": "1911eee5274745558161e9f4d5ef2b07820e4a6ed5265921eb3778f9a6470b62"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
-          "sha256": "57f7bbec0395ed02a42d41c9f082e8e2afb8bb1ddf2d312d15bf96e904c62e6e"
+          "sha256": "3c150c9708b1c1b1129db1977efaded72cf9bfb6fc65573645ce1d477a41d620"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
-          "sha256": "164d48d38e45fae51386099ecc30c2b81fb96041c1a9b019c712f9d5a119cebf"
+          "sha256": "14ba568c1f189a1ab04280d395a55af51253823a5f8bb55d7772ebb6ede9b095"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
@@ -567,7 +576,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
-          "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361"
+          "sha256": "b47cfc6300548e6ef47602505007c44b48ef812538744676e851594e9e3ec3c9"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
@@ -595,7 +604,7 @@
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
-          "sha256": "fd24ddb3828f0ae07d3338f3f6b3e8df2aa2a3615144267f7aaa3dd35c3083e1"
+          "sha256": "ba2f0738e885ae543f4e67029e5bc1f7e8ccf57fc2609067276cbbd7e99e6fa7"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
@@ -604,6 +613,10 @@
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
           "sha256": "6a6242966da52503908041118703bd41638c2bfba2fc44a2962e5a65bdb6ce46"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+          "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361"
         },
         {
           "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
@@ -615,14 +628,15 @@
         },
         {
           "path": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
-          "sha256": "29f4c1fc3b70e509818b0638d6588ac5f1703c392407cdb9054177ffe89f7e2e"
+          "sha256": "25876b46abd6c97c9000453dfd247915047a143ec89d8c1e135b44015984c7c4"
         }
       ],
+      "public_execution_status": "runnable",
       "release_scope": "Current packaged own-layout processed-input replay; no new visual or original-paper qualification inferred."
     }
   ],
   "new_figures": 4,
-  "current_scope": "Six retained earlier public adapters; seven first-party portable examples are bound separately by biofigure/public-cases.json. DPM derivatives are excluded for unresolved input redistribution rights.",
+  "current_scope": "Six retained earlier public adapter archives with explicit current execution status; seven first-party portable examples are bound separately by biofigure/public-cases.json. DPM derivatives are excluded for unresolved input redistribution rights. Historical images do not certify a currently blocked renderer.",
   "historical_manifest": "docs/gallery/refresh-20261011.json",
   "rights_exclusions": "docs/gallery/rights-exclusions-3.8.0.json"
 }

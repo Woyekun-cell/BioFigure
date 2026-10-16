@@ -240,7 +240,7 @@ layout_contract:
     coordinates direct
 font_contract:
   family: Arial
-  resolved_font_file: /System/Library/Fonts/Supplemental/Arial.ttf
+  resolved_font_file: runtime exact Arial resolution by bf_font and systemfonts; actual file recorded in the current render receipt
   fallback_policy: fail
   warning_policy: fail
   all_layers_inherit_policy: fail_if_any_layer_unverified

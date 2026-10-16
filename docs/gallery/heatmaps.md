@@ -50,7 +50,7 @@
 
 ## BF-0146 · OncoPrint 多事件突变景观
 
-图型：OncoPrint。明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。
+图型：OncoPrint。明确模拟144个肿瘤、12个基因，按原始连续48列分为3块原生矩阵；2.1mm方格、完整424事件/56多事件单元/13零事件样本，频率分母144。当前PNG/PDF与CP0–CP4仅验固定模拟输入和macOS；跨平台另行实跑。
 
 ![BF-0146 OncoPrint 多事件突变景观](../../docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png)
 

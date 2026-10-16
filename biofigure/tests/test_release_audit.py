@@ -21,7 +21,20 @@ class ReleaseAuditTests(unittest.TestCase):
         self.assertTrue(all(x["zh_chars"] <= 1200 for x in result["hot_load"]["files"]))
         catalog = json.loads((ROOT.parent/'docs/gallery/catalog.json').read_text())
         self.assertEqual(set(result['selected_public_gallery_pngs']), {x['image'] for x in catalog['figures']})
-        self.assertEqual(result['public_cases']['case_counts'], {'runnable': 13, 'reference-only': 2})
+        # OncoPrint may remain explicitly blocked until its fresh native geometry
+        # and output review pass; the other twelve public cases must stay runnable.
+        manifest = json.loads((ROOT/'public-cases.json').read_text())
+        statuses = {case['id']: case['status'] for case in manifest['cases']}
+        self.assertEqual(len(statuses), 15)
+        for case_id in ('dpm-bubbles', 'dpm-network'):
+            self.assertEqual(statuses[case_id], 'reference-only')
+        self.assertIn(statuses['oncoprint'], ('runnable', 'blocked'))
+        self.assertTrue(all(status == 'runnable' for case_id, status in statuses.items()
+                            if case_id not in ('dpm-bubbles', 'dpm-network', 'oncoprint')))
+        expected = {'runnable': 12 + (statuses['oncoprint'] == 'runnable'), 'reference-only': 2}
+        if statuses['oncoprint'] == 'blocked':
+            expected['blocked'] = 1
+        self.assertEqual(result['public_cases']['case_counts'], expected)
         self.assertEqual(result['learning_catalog']['indexed_records'], 454)
         self.assertFalse(result['scientific_or_visual_pass_inferred'])
 

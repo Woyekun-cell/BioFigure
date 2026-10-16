@@ -243,7 +243,7 @@ output_size:
   size_rationale:
     panel_count: 1
     density: high
-    longest_label_chars: 32
+    longest_label_chars: 15
     recommended_class: double-column
     selection_reason: Preserve source data-region aspect≈1.65,31 ordered columns and60degree
       labels, full0-80Mb tick scale and all BUSCO/CD BAS crossing structure; three

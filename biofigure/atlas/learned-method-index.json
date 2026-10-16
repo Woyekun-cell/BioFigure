@@ -29,7 +29,7 @@
     "atlas/awesome-scientific-figure-layout-recipes.json": "2544cb4b98991f05aee3d3dee97505182664b95c4fea97cc6f9495b162dbe95d",
     "benchmark/cases/epigenomics-chromafold-multiresolution-contact-atlas.json": "ec84b876dc7b7fbb57ca0a2c7fd073d441f2f0b1cba7b41a3e1c56b8cbe60723",
     "benchmark/cases/epigenomics-te-tf-motif-atlas.json": "26512ef906e0a790cb663d01c082816cdd24e61f7c4ef62337e460396152df34",
-    "benchmark/cases/gallery-multievent-oncoprint-2026.json": "77ea70032b781b22f9c6ebe7015b1cd7e999bf76b36a03e869d2c628da4ae9dd",
+    "benchmark/cases/gallery-multievent-oncoprint-2026.json": "ed10b5a63c27dc44b7434b9ae004ce79e6482b45220f7269d70381435c5552ea",
     "benchmark/cases/gallery-multiomics-alluvial-2026.json": "d12ad2c08754608da378c9abfb4c5c076383509724e5ca4e3ef708d48735ab14",
     "benchmark/cases/genomics-cannabis-busco-chr7-2025.json": "68170322e9dec3b79fe7a3a5fd954bd6ffc816043580f74ad32ab90a9e20ece5",
     "benchmark/cases/genomics-cannabis-public-chr7-2025.json": "d438570b94aa444d81f1cfd33a615c98e05436acb2dc233dcdcfdae48e4a60a9",
@@ -100332,15 +100332,32 @@
       "parent_case": null,
       "title": "144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction",
       "source_record": "benchmark/cases/gallery-multievent-oncoprint-2026.json",
-      "source_sha256": "77ea70032b781b22f9c6ebe7015b1cd7e999bf76b36a03e869d2c628da4ae9dd",
+      "source_sha256": "ed10b5a63c27dc44b7434b9ae004ce79e6482b45220f7269d70381435c5552ea",
       "mandatory_read_set": [
         "benchmark/cases/gallery-multievent-oncoprint-2026.json",
         "references/benchmark-case-method.md",
         "references/all-learning-audit-defects.md",
+        "examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
+        "examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
+        "examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
+        "examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
         "examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
-        "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+        "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_events.csv",
+        "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_sample_metadata.csv",
+        "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+        "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+        "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+        "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+        "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+        "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv",
+        "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
         "examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
-        "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py"
+        "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+        "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+        "examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+        "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+        "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
+        "examples/genomics-gallery-20261011/replay_public.py"
       ],
       "search_text": "BENCH-gallery-multievent-oncoprint-2026 144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction source-benchmark  {\"example_id\": \"gallery-oncoprint-simulated-20261011\", \"scope\": \"Self-authored simulated data and original implementation. Teaching example only; not paper-data or original-figure reproduction. Historical records remain unchanged.\", \"official_method\": {\"url\": \"https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html\", \"sections\": [\"7.1.1 input formats\", \"7.1.2 multi-event alter_fun\", \"7.1.6 annotation and percent settings\"], \"reviewed_on\": \"2026-10-11\", \"principles\": [\"Cell values may encode multiple alteration types; retain each type.\", \"Input and metadata must share sample keys and display order.\", \"Annotation barplots and legends require separate space from the event matrix.\"]}, \"local_learning\": {\"method_id\": \"REPRO-008\", \"gallery_id\": \"BF-0146\", \"source_asset\": \"biofigure/library/topjournal-corpus/results/figures/issue_008/image_001.png\", \"sha256\": \"9d89e4b07c2c19de426f73ce1c1083b81e3cedc1f6b75c47c8ac0593610210a3\", \"viewed_original_size\": true, \"old_gallery_asset\": \"docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png\", \"old_gallery_sha256\": \"51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018\", \"original_data_available\": false, \"original_figure_fidelity\": \"NOT_VERIFIED\", \"source_is_tutorial_composite\": true}, \"original_code_findings\": [\"Original MAF and clinical tables require external GDC downloads; no original table copied.\", \"Old preprocessing collapses coexisting classes to Multi_Hit; new example preserves every type.\", \"Original clinical unknowns must not be converted to Never smoker; synthetic Unknown is explicit.\", \"Historic gallery legend overlaps two bottom gene rows; new example reserves independent bottom legend slot.\"], \"data_contract\": {\"origin\": \"explicitly simulated\", \"seed\": 2026101108, \"tumours\": 144, \"genes\": 12, \"event_classes\": [\"Missense\", \"Frameshift\", \"Nonsense\", \"Splice\", \"In_frame\"], \"all_genes_assayed\": true, \"empty_cell_meaning\": \"No simulated event detected, not missing assay\", \"clinical_metadata\": \"Synthetic categorical illustration; no real clinical interpretation\"}, \"layout_contract\": {\"native_package\": \"ComplexHeatmap::oncoPrint\", \"canvas_mm\": [180, 118], \"native_matrix_mm\": [124, 66], \"legend\": \"Separate bottom band with alteration/sex/smoking groups\", \"frequency_denominator\": \"144 distinct synthetic tumours, independent of multi-event counts\", \"sample_sort\": \"A/B/C cohorts, within-cohort binary lexicographic sort in ranked gene order\", \"source_fidelity_claim\": false, \"minimum_font_pt\": 7.5}, \"public_content_policy\": \"Only original code, self-generated data and figures; no third-party code blocks or original images copied into this package.\", \"schema_version\": 1, \"case_id\": \"gallery-multievent-oncoprint-2026\", \"learned_method_id\": \"BENCH-gallery-multievent-oncoprint-2026\", \"title\": \"144-tumour multievent native ComplexHeatmap OncoPrint: simulated-input gallery correction\", \"domain\": [\"genome-sequence-variation\"], \"status\": \"EXPLICIT_SIMULATED_INPUT_SCOPED_PASS_AT_DELIVERY\", \"claim_boundary\": \"Current explicitly simulated-input layout correction; original study fidelity, patient inference and new-input qualification NOT_VERIFIED\", \"prior_method_id\": \"REPRO-008\", \"known_failures\": [\"Historical legend masks bottom gene rows\", \"Do not count multiple events as multiple altered tumours\", \"Keep all assayed and zero-event tumour columns in the denominator\", \"Fresh source/data/environment requires new CP2 and actual final review\"], \"source_assets\": [{\"path\": \"examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json\", \"sha256\": \"920353f00ad1ce546b70bf10e9829c9795c3bc1f0ebe31a2aba85d122c7fd8d1\", \"role\": \"immutable-source-method-card\"}, {\"path\": \"examples/genomics-gallery-20261011/oncoprint/scripts/render.R\", \"sha256\": \"3dbf39698291aa9c2e455bb5f524bd083a813eb06d73682ddfb51cdb1177f4a3\", \"role\": \"independently-authored-native-renderer\"}, {\"path\": \"examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R\", \"sha256\": \"1511565b79431b5ae72c5f1c7411c9d1e4f98d8784e905b37a857dbae2b830b8\", \"role\": \"explicit-simulation-preparation\"}, {\"path\": \"examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py\", \"sha256\": \"0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497\", \"role\": \"independent-count-audit\"}], \"original_source_learning_stage_status\": \"EXPLICIT_SIMULATED_INPUT_SCOPED_PASS_AT_DELIVERY\", \"latest_scoped_review\": {\"date\": \"2026-10-11\", \"status\": \"SCOPED_PASS_AT_DELIVERY\", \"scope\": \"明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。\", \"gallery_id\": \"BF-0146\", \"method_id\": \"BENCH-gallery-multievent-oncoprint-2026\", \"local_bundle\": \"examples/genomics-gallery-20261011/oncoprint/evidence/bundle.json\", \"local_bundle_sha256\": \"8955144e3c67e6610605f35db03704274480649449d5381ac032a1c7136546e6\", \"public_recipe\": \"examples/genomics-gallery-20261011/oncoprint/provenance.json\", \"original_full_figure_fidelity\": \"NOT_VERIFIED\", \"new_input_transfer\": \"NOT_VERIFIED\", \"stress\": \"NOT_VERIFIED\", \"user_acceptance\": \"NOT_REQUESTED\", \"new_input_requires\": \"fresh preparation,source comparison,CP2,actual final PNG/PDF review\"}, \"learning_reference\": \"references/genomics-source-gallery-learning-20261011.md\"}",
       "learned_contract": {
@@ -100494,27 +100511,100 @@
           "schema_version": 1,
           "method_id": "BENCH-gallery-multievent-oncoprint-2026",
           "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
-          "source_asset": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+          "source_asset": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
           "public_renderer": "scripts/public-render.R",
           "archival_renderer": "scripts/render.R",
           "input_mode": "published-plot-tables",
           "simulation": true,
-          "status": "blocked",
-          "unavailable_reason": "Fresh public Skill-only replay failed the current CP2 heatmap-cell contract: the displayed 12 by 144 matrix has no compliant physical square-cell layout. Historical rendering and qualification are retained, but do not certify this release. A future layout must preserve all sample IDs, genes and events and pass fresh native-cell measurement and PNG/PDF review."
+          "status": "runnable",
+          "current_layout": "Three consecutive original-cohort48 blocks; each12x48 native body100.8x25.2mm; physical cells2.1x2.1mm; one183x166mm canvas and shared legends. All144 IDs,12 genes,424 events and full144 frequency denominator retained.",
+          "validation_scope": "Fresh Skill-only fixed-table replay and actual final PNG/PDF review on macOS,2026-10-16; current CP0-CP4 validation passed. Source study/full-figure fidelity, new-input transfer, stress, cross-platform execution and user acceptance are not certified."
         }
       },
       "material_binding": {
         "bound": [
           {
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
+            "sha256": "ea33267668df454559886af1e341ee3b6d95d74e0501b5874a2ecb48c2710c50",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/design-template.yaml",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
+            "sha256": "1911eee5274745558161e9f4d5ef2b07820e4a6ed5265921eb3778f9a6470b62",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/project-style.yaml",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
+            "sha256": "3c150c9708b1c1b1129db1977efaded72cf9bfb6fc65573645ce1d477a41d620",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/public-replay.json",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
+            "sha256": "14ba568c1f189a1ab04280d395a55af51253823a5f8bb55d7772ebb6ede9b095",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/request.yaml",
+            "recorded_hash_verified": true
+          },
+          {
             "path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
-            "sha256": "920353f00ad1ce546b70bf10e9829c9795c3bc1f0ebe31a2aba85d122c7fd8d1",
+            "sha256": "01c63e65e4d7aa7e322645a133c6199fc0ac47b773cd00e6be9224c463ebc14b",
             "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/metadata/source-learning.json",
             "recorded_hash_verified": true
           },
           {
-            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
-            "sha256": "3dbf39698291aa9c2e455bb5f524bd083a813eb06d73682ddfb51cdb1177f4a3",
-            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_events.csv",
+            "sha256": "9038aafe1f97ffb7c68666411f0fc9811d003d6285e3cb01f22201618f8e9ac9",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_events.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_sample_metadata.csv",
+            "sha256": "b6c50d58bf456b6b411acf77b5d5e2301449dfda0f1b17b54a57e919252c22ef",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/data/raw/simulated_sample_metadata.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+            "sha256": "221c779bdc24ac39037da7257500963b5e553780190fcf318d592b8428f4448c",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/provenance.json",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+            "sha256": "b47cfc6300548e6ef47602505007c44b48ef812538744676e851594e9e3ec3c9",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+            "sha256": "6cd7e37231c26869c194cd22c99e976ac45d27578588c7e6b80c73612d22a88e",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_gene_frequency.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+            "sha256": "17167456fe291d39b33e4dcfa1b8517b931b67a1ec7e4934d5cdce7658459cc1",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_matrix.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+            "sha256": "46582b797e28394535b8a1f2f457cff2cbf262c3682a092e7642d4be0b3a08d4",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_counts.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv",
+            "sha256": "1ee3125d5c9fb314a015cd335b612227e5f893fce2bfa718f0b085a962c58c98",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/results/plot_data/oncoprint_simulated_sample_order.csv",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+            "sha256": "0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
             "recorded_hash_verified": true
           },
           {
@@ -100524,9 +100614,39 @@
             "recorded_hash_verified": true
           },
           {
-            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
-            "sha256": "0ef675ef6391a908a6cf2376fce7a43ffcc7a017f68b80a6f54e1d13fa21e497",
-            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
+            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+            "sha256": "ba2f0738e885ae543f4e67029e5bc1f7e8ccf57fc2609067276cbbd7e99e6fa7",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/public-render.R",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+            "sha256": "3dbf39698291aa9c2e455bb5f524bd083a813eb06d73682ddfb51cdb1177f4a3",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/render.R",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+            "sha256": "6a6242966da52503908041118703bd41638c2bfba2fc44a2962e5a65bdb6ce46",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+            "sha256": "61c72ecc2de9a4e3363af89eab1165ba6fee2b0c7047c1134a1125f552981361",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
+            "sha256": "51ec4b3985a4a35f093c39b234d7ee33fc9137ea4718afd37db46674cb218018",
+            "recorded_path": "examples/genomics-gallery-20261011/oncoprint/sources/previous-gallery.png",
+            "recorded_hash_verified": true
+          },
+          {
+            "path": "examples/genomics-gallery-20261011/replay_public.py",
+            "sha256": "991ce31cb1583ea1f361f7a137be24661e612f3a6f0a78996c9955df76c21484",
+            "recorded_path": "examples/genomics-gallery-20261011/replay_public.py",
             "recorded_hash_verified": true
           }
         ],
@@ -100535,7 +100655,7 @@
       },
       "transfer_status": "NOT_VERIFIED",
       "stress_status": "NOT_VERIFIED",
-      "claim_boundary": "Fresh public Skill-only replay failed the current CP2 heatmap-cell contract: the displayed 12 by 144 matrix has no compliant physical square-cell layout. Historical rendering and qualification are retained, but do not certify this release. A future layout must preserve all sample IDs, genes and events and pass fresh native-cell measurement and PNG/PDF review.",
+      "claim_boundary": "Bundled current-table own-layout replay only. Historical author-source records retained; original full-figure fidelity, arbitrary-input transfer, stress and current visual review are not inferred.",
       "archival_source_dependencies": {
         "mandatory_read_set": [
           "benchmark/cases/gallery-multievent-oncoprint-2026.json",
@@ -100582,13 +100702,14 @@
         "schema_version": 1,
         "method_id": "BENCH-gallery-multievent-oncoprint-2026",
         "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
-        "source_asset": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+        "source_asset": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
         "public_renderer": "scripts/public-render.R",
         "archival_renderer": "scripts/render.R",
         "input_mode": "published-plot-tables",
         "simulation": true,
-        "status": "blocked",
-        "unavailable_reason": "Fresh public Skill-only replay failed the current CP2 heatmap-cell contract: the displayed 12 by 144 matrix has no compliant physical square-cell layout. Historical rendering and qualification are retained, but do not certify this release. A future layout must preserve all sample IDs, genes and events and pass fresh native-cell measurement and PNG/PDF review."
+        "status": "runnable",
+        "current_layout": "Three consecutive original-cohort48 blocks; each12x48 native body100.8x25.2mm; physical cells2.1x2.1mm; one183x166mm canvas and shared legends. All144 IDs,12 genes,424 events and full144 frequency denominator retained.",
+        "validation_scope": "Fresh Skill-only fixed-table replay and actual final PNG/PDF review on macOS,2026-10-16; current CP0-CP4 validation passed. Source study/full-figure fidelity, new-input transfer, stress, cross-platform execution and user acceptance are not certified."
       }
     },
     {
@@ -100763,7 +100884,7 @@
         "bound": [
           {
             "path": "examples/genomics-gallery-20261011/sankey/data/metadata/design-template.yaml",
-            "sha256": "5e533c19e72d0760c645f47fdbe30251af5c4383395b2f25eecd7f037caf0ff2",
+            "sha256": "c38ddd68c2131d7ce9c87dd7658e811497325990075a2d12bf1ff9d5ca5318e3",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/data/metadata/design-template.yaml",
             "recorded_hash_verified": true
           },
@@ -100805,7 +100926,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
-            "sha256": "56238db8f8f60ab9a8dbe089f46e77582fad03659e95fdee1cde5921af09cef1",
+            "sha256": "ed470f7170d3dfac544e64ab9c0671ddd8ae9541666072718626f76ecbbd37b2",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
             "recorded_hash_verified": true
           },
@@ -100835,7 +100956,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
-            "sha256": "fff2f76d91489fe13e4b97d4b2f485539f739c4997e2367326c8d5b19157e2dc",
+            "sha256": "9ca46b0c0dbb62a6cd56f25eb4fea9356decaa2d2a15cc886f910664d61508a0",
             "recorded_path": "examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
             "recorded_hash_verified": true
           },
@@ -101817,13 +101938,13 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
-            "sha256": "84f28c6e3d0ac03aeb26502e150a24425f8b0cc1c0b9b241ad22c119d9e8759a",
+            "sha256": "26e0474f936df720b71b5ce6374f874166d45cedb7ce82581e15e356c677f37d",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/provenance.json",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
-            "sha256": "365d2e0445006ed15344d9d52b703c70516d37fa37ed2dd0402ab1a43e1f56fa",
+            "sha256": "81f0b8650b1d34cd791f70bb6c3a492c59c54c417b165899bf18e43d69dc6f93",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
             "recorded_hash_verified": true
           },
@@ -101871,7 +101992,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
-            "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705",
+            "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
@@ -101883,7 +102004,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
-            "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+            "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
@@ -102849,7 +102970,7 @@
         "bound": [
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/design-template.yaml",
-            "sha256": "dbe59b27192ad18806f191def62c3072d226ee48df86bdad9a93eb05c0c1998a",
+            "sha256": "af8705a9d339606eb1378d802199e0914c039c113d5c4903d6978748b73cc8b9",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/data/metadata/design-template.yaml",
             "recorded_hash_verified": true
           },
@@ -102885,13 +103006,13 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
-            "sha256": "ac546dfd63516bb9c5bcbe449bfaaf13bbaaf90f3e673aba4e357ddd54587491",
+            "sha256": "934348496b7bfa9de94867151bddbc0b89376fc6683d03e44424e046a4ef185a",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/provenance.json",
             "recorded_hash_verified": true
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
-            "sha256": "5e4c2e67b7ff9fda52f5d8094628e3eae4275fb652e3d5b34a557888ccf75e6f",
+            "sha256": "59f6ab0814a0fd49af812f023962a9845378d47a0b45e6b58a28dd80028188e7",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
             "recorded_hash_verified": true
           },
@@ -102939,7 +103060,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
-            "sha256": "c9ecde7af279fa6ca6b82eb157db4ec64dc7410c0991fef45e5bdc3b103ba705",
+            "sha256": "3b5c5162a7b7863d53990f5e57ba990793b861077561ca324a3d59245f76f4d5",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/prepare_spec.py",
             "recorded_hash_verified": true
           },
@@ -102951,7 +103072,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
-            "sha256": "7bb2ced88ee149771aba3a648cb5d34c78293190a960106265e6eb8aff4a4942",
+            "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3",
             "recorded_path": "examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
@@ -105672,7 +105793,7 @@
         "bound": [
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
-            "sha256": "a46853fc3253a82308aa295a47a8d1c11e747860f76976222794f050da182b0f",
+            "sha256": "31455e14b9eec60971e51370cb52a43529f9b997e3970a14164f3ac598432e5a",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/data/metadata/design-template.yaml",
             "recorded_hash_verified": true
           },
@@ -105714,7 +105835,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
-            "sha256": "ff4dec7bfa29e53b1367d2e47ffcf3c8f6d625472aee5ad3f4c0af17b9a03b2d",
+            "sha256": "971c0f47822087c066564bed8c653da608d0b35b08b247f79eb3123138eba324",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
             "recorded_hash_verified": true
           },
@@ -105768,7 +105889,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
-            "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+            "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
             "recorded_path": "examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
             "recorded_hash_verified": true
           },
@@ -106905,7 +107026,7 @@
         "bound": [
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
-            "sha256": "383c7e4d7768fad382438639f308cb30ed427cb141087e17ca26baad8001f25e",
+            "sha256": "bb954f4048d70e934f6745569a6b4976fb416adc86d2a9f3b808ed69989667f7",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/data/metadata/design-template.yaml",
             "recorded_hash_verified": true
           },
@@ -106947,7 +107068,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
-            "sha256": "35e5e40386ee1bcd8ebb59396b6c4889bcdbf069d8afc813d262794effcce0e8",
+            "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
             "recorded_hash_verified": true
           },
@@ -106989,7 +107110,7 @@
           },
           {
             "path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
-            "sha256": "2a3284588d417890fc364afabcf1b6e0fc4c78a1e13b7cd074db597b0f013525",
+            "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf",
             "recorded_path": "examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
             "recorded_hash_verified": true
           },

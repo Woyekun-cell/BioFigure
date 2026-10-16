@@ -1013,7 +1013,7 @@
     "native_source_acquisition": "scripts/acquire_sources.py, separately downloads 26 original GPL source assets at fixed commit with byte/SHA checks",
     "isolated_install": "scripts/install_native.R <acquired native source root> <new output/R-library>",
     "fresh_gate": "prepare_spec.py creates new preparation receipt and CP2; reproduce.py issues and consumes a fresh one-use authorization",
-    "command": "python3 scripts/reproduce.py --output-dir <new-directory> [--native-source-dir <verified-source-cache>] [--pdftoppm <executable>]",
+    "command": "python3 scripts/reproduce.py --source-view-confirmed --output-dir <new-directory> [--native-source-dir <verified-source-cache>] [--pdftoppm <executable>]",
     "requirements": [
       "Python3 with PyYAML",
       "R and declared dependencies; Arial font",
@@ -1088,6 +1088,7 @@
     "origin": "Byte-identical copy of the already-public BioFigure gallery replot, bundled inside the Skill.",
     "parent_repository_required": false,
     "runtime_revalidation": "Required after current release bindings freeze; not inferred from historical PASS.",
-    "text_cleanup": "Author-data and figure-number provenance header removed from the current figure interior; provenance remains outside the figure. All source IDs, values, plotted marks, source-exposed scope and scientific labels remain unchanged."
+    "text_cleanup": "Author-data and figure-number provenance header removed from the current figure interior; provenance remains outside the figure. All source IDs, values, plotted marks, source-exposed scope and scientific labels remain unchanged.",
+    "source_view_policy": "A source view is never inferred. Both the replay and prepare entrypoints require explicit --source-view-confirmed after viewing the bundled own-reference.png for the current invocation."
   }
 }

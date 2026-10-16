@@ -149,12 +149,13 @@
     "schema_version": 1,
     "method_id": "BENCH-gallery-multievent-oncoprint-2026",
     "scope": "Public plotting-table native replay of the current BioFigure layout; not original paper-data/full-figure fidelity or new-input qualification.",
-    "source_asset": "examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+    "source_asset": "examples/genomics-gallery-20261011/oncoprint/sources/own-reference-20261011.pdf",
     "public_renderer": "scripts/public-render.R",
     "archival_renderer": "scripts/render.R",
     "input_mode": "published-plot-tables",
     "simulation": true,
-    "status": "blocked",
-    "unavailable_reason": "Fresh public Skill-only replay failed the current CP2 heatmap-cell contract: the displayed 12 by 144 matrix has no compliant physical square-cell layout. Historical rendering and qualification are retained, but do not certify this release. A future layout must preserve all sample IDs, genes and events and pass fresh native-cell measurement and PNG/PDF review."
+    "status": "runnable",
+    "current_layout": "Three consecutive original-cohort48 blocks; each12x48 native body100.8x25.2mm; physical cells2.1x2.1mm; one183x166mm canvas and shared legends. All144 IDs,12 genes,424 events and full144 frequency denominator retained.",
+    "validation_scope": "Fresh Skill-only fixed-table replay and actual final PNG/PDF review on macOS,2026-10-16; current CP0-CP4 validation passed. Source study/full-figure fidelity, new-input transfer, stress, cross-platform execution and user acceptance are not certified."
   }
 }

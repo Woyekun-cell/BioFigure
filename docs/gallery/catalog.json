@@ -961,13 +961,13 @@
       "title": "DNA–RNA–Protein 状态桑基图",
       "category": "composition",
       "image": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
-      "sha256": "5d11f7971f45aa1507ad8e11444ba1299a0c170600b52b05fa187eee711fe62e",
+      "sha256": "3dcd7ecd2944facf2918752a9dadbf7e99e9dccf5d8303d69a8e401bef1b75bc",
       "origin_paths": [
         "biofigure/examples/genomics-gallery-20261011/sankey"
       ],
       "collection": "genomics-gallery-20261011",
       "data_origin": "simulated",
-      "note": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial。修正标签碰撞与画布空白，只认证当前模拟版式。",
+      "note": "明确模拟1800个匹配特征、27条完整路径；原生ggalluvial，9节点计数守恒。本轮移除图内方法/模拟脚注，说明在图外；仅固定模拟输入与当前版式复核。",
       "scripts": [
         "biofigure/examples/genomics-gallery-20261011/sankey/scripts/prepare_data.R",
         "biofigure/examples/genomics-gallery-20261011/sankey/scripts/public-render.R",
@@ -976,7 +976,7 @@
         "biofigure/examples/genomics-gallery-20261011/sankey/scripts/validate_inputs.py",
         "biofigure/examples/genomics-gallery-20261011/replay_public.py"
       ],
-      "validation": "scoped-simulated-layout-pass",
+      "validation": "fresh-fixed-input-own-layout-reviewed-3.8.0",
       "historical": false,
       "source_url": "https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html",
       "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
@@ -992,8 +992,9 @@
       "new_input_transfer": "NOT_VERIFIED",
       "pixels": [
         3212,
-        2716
-      ]
+        2362
+      ],
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     },
     {
       "id": "BF-0112",
@@ -1138,13 +1139,13 @@
       "title": "OncoPrint 多事件突变景观",
       "category": "heatmaps",
       "image": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
-      "sha256": "29f4c1fc3b70e509818b0638d6588ac5f1703c392407cdb9054177ffe89f7e2e",
+      "sha256": "25876b46abd6c97c9000453dfd247915047a143ec89d8c1e135b44015984c7c4",
       "origin_paths": [
         "biofigure/examples/genomics-gallery-20261011/oncoprint"
       ],
       "collection": "genomics-gallery-20261011",
       "data_origin": "simulated",
-      "note": "明确模拟144个肿瘤、12个基因；保留424事件、56多事件单元及13零事件样本。原生ComplexHeatmap，修正图例遮挡；频率分母固定144。",
+      "note": "明确模拟144个肿瘤、12个基因，按原始连续48列分为3块原生矩阵；2.1mm方格、完整424事件/56多事件单元/13零事件样本，频率分母144。当前PNG/PDF与CP0–CP4仅验固定模拟输入和macOS；跨平台另行实跑。",
       "scripts": [
         "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/audit_inputs.py",
         "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/prepare_inputs.R",
@@ -1153,7 +1154,7 @@
         "biofigure/examples/genomics-gallery-20261011/oncoprint/scripts/reproduce.py",
         "biofigure/examples/genomics-gallery-20261011/replay_public.py"
       ],
-      "validation": "scoped-simulated-layout-pass",
+      "validation": "fresh-fixed-input-native-square-layout-reviewed-3.8.0",
       "historical": false,
       "historical_review_status": "preserved-in-git-and-previous-gallery-artifact",
       "subtype": "OncoPrint",
@@ -1168,10 +1169,11 @@
       "original_full_figure_fidelity": "NOT_VERIFIED",
       "new_input_transfer": "NOT_VERIFIED",
       "pixels": [
-        4251,
-        2787
+        4322,
+        3921
       ],
-      "source_url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html"
+      "source_url": "https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html",
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     },
     {
       "id": "BF-0151",
@@ -1660,7 +1662,7 @@
       "subtype": "BUSCO锚定基因区域图",
       "title": "BUSCO 锚定合酶区域对照",
       "image": "docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
-      "sha256": "8c556df25adf13e92c5b55780d382399696f8f6b01d58c242b7b4e03417cf514",
+      "sha256": "c9f78acc81a21bc1d493e3957092c97df593860aa070f93eaa842bd6c62091b1",
       "origin_paths": [
         "biofigure/benchmark/library/genomics/cannabis-pangenome/additional-panels/busco-chr7-cassette"
       ],
@@ -1675,7 +1677,7 @@
         "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/render.R",
         "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py"
       ],
-      "validation": "scoped-author-processed-replot-pass",
+      "validation": "fresh-fixed-input-own-layout-reviewed-3.8.0",
       "historical": false,
       "pdf": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
       "plot_data": [
@@ -1692,7 +1694,8 @@
         2125,
         1370
       ],
-      "source_url": "https://www.nature.com/articles/s41586-025-09065-0"
+      "source_url": "https://www.nature.com/articles/s41586-025-09065-0",
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     },
     {
       "id": "BF-0218",
@@ -1700,7 +1703,7 @@
       "subtype": "跨基因组BUSCO路径与基因位点",
       "title": "整条染色体 BUSCO 与 CBDAS 定位",
       "image": "docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
-      "sha256": "87814203e075cfcfc0a14f2c2dfcf66675c362ba657b400217bf6c76552655b5",
+      "sha256": "bba2b66c58af77b2d02d0631b971b40055d2ef9950b1523c7b80f7e4655ea0be",
       "origin_paths": [
         "biofigure/benchmark/library/genomics/cannabis-pangenome/additional-panels/author-public-chr7"
       ],
@@ -1715,7 +1718,7 @@
         "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/render.R",
         "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py"
       ],
-      "validation": "scoped-author-processed-replot-pass",
+      "validation": "fresh-fixed-input-own-layout-reviewed-3.8.0",
       "historical": false,
       "pdf": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
       "plot_data": [
@@ -1732,7 +1735,8 @@
         2125,
         1417
       ],
-      "source_url": "https://www.nature.com/articles/s41586-025-09065-0"
+      "source_url": "https://www.nature.com/articles/s41586-025-09065-0",
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     },
     {
       "id": "BF-0221",
@@ -1755,7 +1759,7 @@
         "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/render.R",
         "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py"
       ],
-      "validation": "scoped-author-processed-replot-pass",
+      "validation": "fresh-fixed-input-own-layout-reviewed-3.8.0",
       "historical": false,
       "pdf": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
       "plot_data": [
@@ -1771,7 +1775,8 @@
         2125,
         1866
       ],
-      "source_url": "https://www.nature.com/articles/s41467-024-44761-x"
+      "source_url": "https://www.nature.com/articles/s41467-024-44761-x",
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     },
     {
       "id": "BF-0222",
@@ -1792,7 +1797,7 @@
         "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/render.R",
         "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py"
       ],
-      "validation": "scoped-author-processed-replot-pass",
+      "validation": "fresh-fixed-input-own-layout-reviewed-3.8.0",
       "historical": false,
       "pdf": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
       "plot_data": [
@@ -1808,7 +1813,8 @@
         4251,
         4251
       ],
-      "source_url": "https://www.nature.com/articles/s41467-026-74605-9"
+      "source_url": "https://www.nature.com/articles/s41467-026-74605-9",
+      "current_runtime_validation": "docs/gallery/runtime-validation-3.8.0.json"
     }
   ],
   "collections": {

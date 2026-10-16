@@ -25,6 +25,7 @@ def call(log, *args):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output-dir", type=pathlib.Path, help="Required fresh, previously nonexistent directory for a render")
+    p.add_argument("--source-view-confirmed", action="store_true", help="Confirm that sources/own-reference.png was actually viewed for this invocation")
     p.add_argument("--native-source-dir", type=pathlib.Path, help="Optional previously acquired, SHA-verified original GPL BUSCOplot source cache")
     p.add_argument("--check-only", action="store_true", help="Verify packaged input hashes only; this is not a rendering PASS")
     p.add_argument("--rscript", default="Rscript")
@@ -39,6 +40,8 @@ def main():
         print(json.dumps({"status": "PUBLIC_INPUT_HASH_CHECK_PASS", "assets": len(lock["assets"]), "rendered": False})); return
     if not a.output_dir:
         p.error("--output-dir is required for a fresh replay; reviewed packaged outputs are never overwritten")
+    if not a.source_view_confirmed:
+        p.error("View sources/own-reference.png, then pass --source-view-confirmed; no source view is inferred")
     bf = skill_root(); out = a.output_dir.resolve(); out.mkdir(parents=True, exist_ok=False)
     meta = out / "data/metadata"; meta.mkdir(parents=True)
     qa = out / "work"; qa.mkdir()
@@ -52,7 +55,7 @@ def main():
     lib = out / "R-library"
     call(out / "native-install.log", a.rscript, ROOT / "scripts/install_native.R", native, lib)
     call(out / "current-table-audit.log", a.rscript, ROOT / "scripts/audit_inputs.R", ROOT, out / "current-table-audit.json")
-    call(out / "prepare-cp2.log", sys.executable, ROOT / "scripts/prepare_spec.py", "--output-dir", meta, "--rscript", a.rscript)
+    call(out / "prepare-cp2.log", sys.executable, ROOT / "scripts/prepare_spec.py", "--output-dir", meta, "--rscript", a.rscript, "--source-view-confirmed")
     spec = yaml.safe_load((meta / "design-spec.yaml").read_text())
     acquisition = json.loads((ROOT / "data/metadata/native-acquisition.json").read_text())
     sources = [ROOT / "scripts/render.R", bf / "scripts/figure_style.R", ROOT / "data/metadata/source-lock.json"]

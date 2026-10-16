@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "release": "3.8.0",
+  "scope": "Six retained public adapters; fresh fixed-input own-layout execution and actual exported PNG/PDF review on macOS only. Seven new synthetic examples are tracked separately. No cross-platform or arbitrary-input qualification is inferred.",
+  "status": "SCOPED_CURRENT_OUTPUT_REVIEW_PASS",
+  "environment_boundary": "macOS with the existing R package/Arial runtime, Python interpreter and Poppler tooling; this is a Skill-only filesystem installation test, not a clean operating-system dependency installation or Linux/Windows certification. OHCA uses an explicitly selected external R package library.",
+  "pdf_measurement_method": "Actual final PDF objects: page count and embedded font descriptors; per-glyph text-matrix axis norms for physical point size, including rotated labels.",
+  "cases": [
+    {
+      "id": "cannabis-cassette",
+      "method_id": "BENCH-genomics-cannabis-busco-chr7-2025",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "source_reference_viewed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "output_bindings": [
+        {
+          "path": "docs/assets/genomics-gallery-20261011/cannabis-cassette.png",
+          "sha256": "c9f78acc81a21bc1d493e3957092c97df593860aa070f93eaa842bd6c62091b1"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf",
+          "sha256": "81f0b8650b1d34cd791f70bb6c3a492c59c54c417b165899bf18e43d69dc6f93"
+        }
+      ],
+      "entrypoint": {
+        "path": "biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts/reproduce.py",
+        "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3"
+      },
+      "pdf_inspection": {
+        "pages": 1,
+        "canvas_mm": [
+          180.0,
+          116.0
+        ],
+        "fonts": [
+          {
+            "name": "/AAAAAB+ArialMT",
+            "embedded": true
+          }
+        ],
+        "minimum_text_pt": 7.0,
+        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
+        "all_fonts_embedded": true
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED"
+    },
+    {
+      "id": "cannabis-chr7",
+      "method_id": "BENCH-genomics-cannabis-public-chr7-2025",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "source_reference_viewed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "output_bindings": [
+        {
+          "path": "docs/assets/genomics-gallery-20261011/cannabis-chr7.png",
+          "sha256": "bba2b66c58af77b2d02d0631b971b40055d2ef9950b1523c7b80f7e4655ea0be"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf",
+          "sha256": "59f6ab0814a0fd49af812f023962a9845378d47a0b45e6b58a28dd80028188e7"
+        }
+      ],
+      "entrypoint": {
+        "path": "biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts/reproduce.py",
+        "sha256": "b4e88cacbe95fac06bbf45e521380ccc584c4b349ece506e080f717f5c8686e3"
+      },
+      "pdf_inspection": {
+        "pages": 1,
+        "canvas_mm": [
+          180.0,
+          120.0
+        ],
+        "fonts": [
+          {
+            "name": "/AAAAAB+ArialMT",
+            "embedded": true
+          }
+        ],
+        "minimum_text_pt": 7.0,
+        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
+        "all_fonts_embedded": true
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED"
+    },
+    {
+      "id": "planarian-dotplot",
+      "method_id": "BENCH-genomics-planarian-haplotype-dotplot-2026",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "source_reference_viewed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "output_bindings": [
+        {
+          "path": "docs/assets/genomics-gallery-20261011/planarian-dotplot.png",
+          "sha256": "ead5f342ac627aa0e9bc818d3ec3cdc2a3630a96244aca4ad28321fd56008f46"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf",
+          "sha256": "46fe4a834a845a89af8a828b8b2109dc38e80e5950c3514d3faef590fc0c2302"
+        }
+      ],
+      "entrypoint": {
+        "path": "biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts/reproduce.py",
+        "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf"
+      },
+      "pdf_inspection": {
+        "pages": 1,
+        "canvas_mm": [
+          180.0,
+          180.0
+        ],
+        "fonts": [
+          {
+            "name": "/AAAAAB+ArialMT",
+            "embedded": true
+          }
+        ],
+        "minimum_text_pt": 7.499999705569194,
+        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
+        "all_fonts_embedded": true
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED"
+    },
+    {
+      "id": "ohca-microc",
+      "method_id": "BENCH-genomics-ohca-microc-loops-2024",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "source_reference_viewed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "output_bindings": [
+        {
+          "path": "docs/assets/genomics-gallery-20261011/ohca-microc.png",
+          "sha256": "de9250e5bb86e9e846c6beb3076fd3dd7ef37fd09d358f4bbbb1b5ab9c5a18bb"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf",
+          "sha256": "971c0f47822087c066564bed8c653da608d0b35b08b247f79eb3123138eba324"
+        }
+      ],
+      "entrypoint": {
+        "path": "biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts/reproduce.py",
+        "sha256": "234340b0f31fff7275233119302119fa12ae9722547c6599217da0301e3658cf"
+      },
+      "pdf_inspection": {
+        "pages": 1,
+        "canvas_mm": [
+          180.0,
+          158.0
+        ],
+        "fonts": [
+          {
+            "name": "/AAAAAB+ArialMT",
+            "embedded": true
+          }
+        ],
+        "minimum_text_pt": 7.0,
+        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
+        "all_fonts_embedded": true
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED",
+      "runtime_boundary": "Existing explicitly selected external HiContacts/HiCExperiment R library used; SHA-pinned licensed source object fetched freshly. No private scientific inputs borrowed."
+    },
+    {
+      "id": "sankey",
+      "method_id": "BENCH-gallery-multiomics-alluvial-2026",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "single_use_authorization_consumed": true,
+      "source_reference_viewed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "output_bindings": [
+        {
+          "path": "docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png",
+          "sha256": "3dcd7ecd2944facf2918752a9dadbf7e99e9dccf5d8303d69a8e401bef1b75bc"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf",
+          "sha256": "ed470f7170d3dfac544e64ab9c0671ddd8ae9541666072718626f76ecbbd37b2"
+        }
+      ],
+      "entrypoint": {
+        "path": "biofigure/examples/genomics-gallery-20261011/sankey/scripts/reproduce.py",
+        "sha256": "f1ddf899c0a28ea25aa7b44f64c392f3f36f58b109b6846af856dd528df6e2d0"
+      },
+      "pdf_inspection": {
+        "pages": 1,
+        "canvas_mm": [
+          136.0,
+          100.0
+        ],
+        "fonts": [
+          {
+            "name": "/AAAAAB+ArialMT",
+            "embedded": true
+          }
+        ],
+        "minimum_text_pt": 8.0,
+        "text_measurement": "minimum norm of both actual per-glyph PDF text-matrix axes; avoids treating rotated glyph width as font size",
+        "all_fonts_embedded": true
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED"
+    },
+    {
+      "id": "oncoprint",
+      "method_id": "BENCH-gallery-multievent-oncoprint-2026",
+      "status": "FRESH_EXECUTION_AND_SCOPED_PNG_PDF_REVIEW_PASS",
+      "fresh_preparation": true,
+      "fresh_CP2": true,
+      "CP0_CP4_validator": "PASS",
+      "single_use_authorization_consumed": true,
+      "PNG_and_PDF_actually_viewed": true,
+      "independent_root_review": "PASS; actual final03 PNG and rendered PDF page independently opened",
+      "output_bindings": [
+        {
+          "path": "docs/assets/archive-gallery/topjournal-001-010/08_oncoprint_landscape.png",
+          "sha256": "25876b46abd6c97c9000453dfd247915047a143ec89d8c1e135b44015984c7c4"
+        },
+        {
+          "path": "biofigure/examples/genomics-gallery-20261011/oncoprint/results/figures/oncoprint-simulated.pdf",
+          "sha256": "b47cfc6300548e6ef47602505007c44b48ef812538744676e851594e9e3ec3c9"
+        }
+      ],
+      "native_matrix_bodies": [
+        {
+          "rows": 12,
+          "columns": 48,
+          "body_width_mm": 100.8,
+          "body_height_mm": 25.2,
+          "cell_width_mm": 2.1,
+          "cell_height_mm": 2.1
+        },
+        {
+          "rows": 12,
+          "columns": 48,
+          "body_width_mm": 100.8,
+          "body_height_mm": 25.2,
+          "cell_width_mm": 2.1,
+          "cell_height_mm": 2.1
+        },
+        {
+          "rows": 12,
+          "columns": 48,
+          "body_width_mm": 100.8,
+          "body_height_mm": 25.2,
+          "cell_width_mm": 2.1,
+          "cell_height_mm": 2.1
+        }
+      ],
+      "preserved_counts": {
+        "samples": 144,
+        "genes": 12,
+        "events": 424,
+        "multievent_cells": 56,
+        "zero_event_samples": 13,
+        "frequency_denominator": 144
+      },
+      "original_whole_figure_fidelity": "NOT_VERIFIED",
+      "new_input_transfer": "NOT_VERIFIED",
+      "stress": "NOT_VERIFIED",
+      "cross_platform": "NOT_VERIFIED",
+      "user_acceptance": "NOT_VERIFIED"
+    }
+  ],
+  "full_paper_reproduction_or_new_input_acceptance_inferred": false
+}

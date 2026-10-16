@@ -193,6 +193,18 @@ class PortableInstallTests(unittest.TestCase):
             self.assertTrue(reference.is_relative_to(skill), name + ' borrows parent repository')
             self.assertTrue(reference.is_file(), name + ' reference not distributed')
 
+    def test_cannabis_cannot_infer_source_view_or_create_render_output(self):
+        skill = AUDITOR.parents[1]
+        for name in ('cannabis-cassette', 'cannabis-chr7'):
+            case = skill / 'examples/genomics-gallery-20261011' / name
+            for entry in ('reproduce.py', 'prepare_spec.py'):
+                output = Path(self.tmp.name) / (name + entry)
+                result = subprocess.run([sys.executable, str(case/'scripts'/entry),
+                                         '--output-dir', str(output)], capture_output=True, text=True)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('--source-view-confirmed', result.stderr)
+                self.assertFalse(output.exists(), 'source view was inferred and render output was created')
+
     def test_public_profile_overlay_preserves_history_and_binds_bundled_files(self):
         skill = AUDITOR.parents[1]
         sys.path.insert(0, str(skill / 'scripts'))

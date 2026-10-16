@@ -12,3 +12,4 @@ learned_method_id: BENCH-gallery-multievent-oncoprint-2026
 pattern_id: LEARNED-BENCH-gallery-multievent-oncoprint-2026
 claim_boundary: Public plotting-table native replay of the current BioFigure layout;
   not original paper-data/full-figure fidelity or new-input qualification.
+reference_mode: reference-guided

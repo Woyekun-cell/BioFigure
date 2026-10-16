@@ -89,9 +89,11 @@ metrics <- lapply(texts,measure)
 stopifnot(max(vapply(metrics,`[[`,numeric(1),'w'))<.34/2.56*120-1,
  min(strata$count)/1800*83>2*max(vapply(metrics,`[[`,numeric(1),'h'))+4)
 grDevices::dev.off()
-boxes <- data.frame(id=c('data','headings'),x=c(8,5),
- y=c(2,87),w=c(120,126),h=c(83,9))
-bf_check_boxes(boxes,width,height)
+# The categorical legend consists of the state labels inside the nine native
+# strata. Their actual text extents and node clearance were measured above.
+boxes <- data.frame(id=c('data','labels','legend'),x=c(8,5,8),
+ y=c(2,87,2),w=c(120,126,120),h=c(83,9,83))
+bf_check_boxes(boxes,width,height,allowed_pairs='data:legend')
 sources <- c(spec_path,file.path(root,'scripts/public-render.R'),file.path(skill,'scripts/figure_style.R'),
  sort(list.files(file.path(root,'results/plot_data'),pattern='[.]csv$',full.names=TRUE))[!basename(sort(list.files(file.path(root,'results/plot_data'),pattern='[.]csv$',full.names=TRUE))) %in% c('dpm_fig3e_recolored_layout.csv','sankey_native_strata.csv')],
  sort(list.files(file.path(root,'data/raw'),pattern='[.]csv$',full.names=TRUE)),
@@ -99,7 +101,7 @@ sources <- c(spec_path,file.path(root,'scripts/public-render.R'),file.path(skill
 png <- file.path(work,'sankey_simulated_repaired.png')
 bf_render_png(plot,png,font=font,allowed_text=spec$text_contract$allowed_text,
  width_mm=width,height_mm=height,target_width_mm=width,dpi=600,min_text_pt=8,
- source_files=sources,boxes=boxes,authorization=authorization,skill_root=skill,
+ source_files=sources,boxes=boxes,allowed_pairs='data:legend',authorization=authorization,skill_root=skill,
  publication_size_class='one-and-half-column',size_override_basis='none')
 pdf <- file.path(root,'results/figures/sankey_simulated_repaired.pdf')
 grDevices::quartz(type='pdf',file=pdf,width=width/25.4,height=height/25.4,family=font$family,bg='white')
