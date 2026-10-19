@@ -10,17 +10,17 @@ description: Use when choosing a suitable chart from biological data, designing,
 ## 启动与模式
 
 先定位Skill根，读`static/core/execution-contract.yaml`与[绘图门禁](references/figure-execution-gates.md)。[证据模式](references/reference-modes.md)贯穿request、Spec、授权与CP4：
-- `original`：普通新画默认；按当前数据与包内Pattern原创，不以私有图库、原图、作者数据或DOI作前置。
+- `original`：普通新画默认；须先检索、审阅匹配模板与参考代码，再按当前数据设计。不以DOI、作者数据或私人档案作前置。
 - `reference-guided`：采用来源/learned/reuse；绑定真实来源、采用/拒绝、适配与renderer哈希。
 - `reproduction`：`operation: reproduce`；保留原图、作者码、源数据与panel映射。模式冲突拒绝，缺材料不偷换原创。
 
-查已验模板或来源时轻检索，不预读图库：
+**所有绘图写代码前必须轻检索匹配模板与参考代码，读图读码并适配；原创不豁免。** 检索与采用分开，不预读图库：
 
 ```bash
 python3 <Skill根>/scripts/find_figure_reference.py --query "图型 + 数据含义 + 科研问题"
 ```
 
-前三卡只定位；`--list-types`/`--type`筛型。选ID再用`retrieve_learned_methods.py --case-id <ID>`读源码/合同/缺陷；request绑定`learned_method_id`再fresh prepare/CP2。零命中可原创，排名不作视觉相似证据。领域学习按需查[索引](references/benchmark-learning-index.md)；锁定模板按[复用规则](references/stable-template-reuse.md)执行。
+前三卡只定位；`--list-types`/`--type`筛型。选ID后读原尺寸图、代码/合同/缺陷；learned用`retrieve_learned_methods.py --case-id <ID>`。原创用回执`design_discovery`和Spec的`reference_evidence.design_precedent`按[模式合同](references/reference-modes.md)绑定候选、哈希、六项review及适配；无可用候选逐项说明拒绝后走`pattern-fallback`，缺私人档案不锁死。来源/复现保留原source/template/learned证据合同，不强加这两个新字段。排名不是视觉证据，锁定模板按[复用规则](references/stable-template-reuse.md)执行。
 
 ## 统一执行
 
@@ -31,7 +31,7 @@ python3 <Skill根>/scripts/prepare_figure.py request.yaml --output preparation-r
 ```
 
 1. 核问题、实验单位、分组/方向、配对、尺度与缺失；技术重复非独立n。关键语义缺失返`NEEDS_SPEC`；未指定图型先选型，不猜显著性。
-2. 写完整`reference_analysis`：面板、元素、映射、拓扑、层级、包职责；原创按当前问题设计，来源模式还须查看原尺寸原图/方法。`design_target`保留六维；原创不虚填reference。首图建`project-style.yaml`，后续绑定其哈希、语义色、字体角色与尺寸。
+2. 完成参考审阅及适配，写完整`reference_analysis`：面板、元素、映射、拓扑、层级、包职责；`design_target`保留六维。原创不虚填来源；来源/复现继续绑定原图、代码和输入。首图建`project-style.yaml`，后续绑定其哈希、语义色、字体角色与尺寸。
 3. 按[布局](references/layout.md)锁最终画布/字号。运行`validate_design_spec.py <Spec> --preparation-receipt <回执>`，成功才可开始编码；预检或CP2失败禁写图代码。编码后、渲染前签发一次性授权，R用`bf_render_png()`消费。Python无官方授权入口，不得CP3 PASS。
 4. CP3打开当前PNG/PDF，核真实字体、终尺寸与哈希；CP4检查字号/位置、碰撞、裁切、对齐、配色与图文比例。原创`design-quality`、来源`reference-quality`均须hierarchy/geometry/palette/typography/marks/annotation六维实际观察。重绘使旧检查失效；自动检查不能替代human/model审图。
 

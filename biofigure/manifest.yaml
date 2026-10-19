@@ -11,6 +11,10 @@ execution_profiles:
     pangenome_contracts: static/core/pangenome-paradigms.json
     policy: same_evidence_gates_as_all_other_modes
 reference_discovery:
+  required_for: all_drawing_modes_including_original
+  original_preflight: scripts/design_discovery.py
+  review_contract: references/design-precedent.md
+  cp2_binding: reference_evidence.design_precedent
   entry: scripts/find_figure_reference.py
   catalog: atlas/figure-reference-catalog.json
   default_limit: 3

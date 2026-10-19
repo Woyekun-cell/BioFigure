@@ -51,6 +51,15 @@ def original_spec(directory, receipt):
         'preparation_id': receipt['preparation_id'], 'preparation_request': receipt['request'],
         'selected_method_case_id': receipt['selected_reference_candidates']['planner_selected'],
         'retrieval_query': {'domain': 'distribution', 'task': 'group-distribution', 'pattern': 'DIST-BOX-001'}}
+    discovery = receipt.get('design_discovery', {})
+    if discovery.get('candidates'):
+        candidate = discovery['candidates'][0]
+        doc['reference_evidence']['design_precedent'] = {
+            'policy_id': 'reference-first-v1', 'strategy': 'reviewed-reference',
+            'candidate_id': candidate['candidate_id'], 'files': candidate['files'],
+            'inspection': {'figure_opened': True, 'code_read': True},
+            'review': {key: 'Protocol fixture only; not a source-inspection claim: ' + key
+                      for key in ('structure', 'code', 'data_mapping', 'typography', 'legend_and_layout', 'adaptation')}}
     doc['reference_analysis'] = {
         'figure_family': 'distribution', 'semantic_purpose': 'Display all independent observations and quartiles.',
         'panels': [{'id': 'main', 'role': 'group distribution', 'position': 'full canvas'}],

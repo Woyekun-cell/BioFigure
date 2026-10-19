@@ -117,6 +117,8 @@ class PublicExampleTests(unittest.TestCase):
                 analysis = {'allowed_text': ['Control', 'Treatment', f'Expression ({unit})'],
                     'width_mm': 90, 'height_mm': 75, 'renderer': 'ggplot2', 'statistics': None, 'heatmap_cells': None}
                 receipt = {'preparation_id': 'fixture', 'request': {}, 'selected_reference_candidates': {'planner_selected': 'fixture'}}
+                from design_discovery import discover
+                receipt['design_discovery'] = discover({'pattern_id': 'DIST-BOX-001'}, 'boxplot')
                 spec = module.make_spec('boxplot', metadata, analysis, receipt, audit, ['png'])
                 self.assertEqual(spec['data_contract_summary']['unit'], unit)
                 self.assertEqual(spec['data_contract_summary']['experimental_unit'], 'fish')
@@ -189,6 +191,8 @@ class PublicExampleTests(unittest.TestCase):
                         'semantic_colors': {'actual_mark': '#123456'}}
             receipt = {'preparation_id': 'fixture', 'request': {},
                        'selected_reference_candidates': {'planner_selected': 'fixture'}}
+            from design_discovery import discover
+            receipt['design_discovery'] = discover({'pattern_id': module.CASES[case][0]}, case)
             spec = module.make_spec(case, metadata, analysis, receipt, audit, ['png'])
             style = yaml.safe_load(Path(spec['project_style_contract']['registry_path']).read_text())
             self.assertEqual(style['palette']['semantic_colors'].get('actual_mark'), '#123456')

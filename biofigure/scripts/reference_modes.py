@@ -18,6 +18,8 @@ ORIGINAL_MATERIAL = frozenset({
     'scripts/authorize_render.py', 'scripts/run_critics.py',
     'scripts/figure_text_policy.py', 'scripts/heatmap_geometry.py',
     'scripts/validate_statistics_plan.py', 'scripts/plan_pangenome_figure.py', 'critics/design-quality.md',
+    'scripts/design_discovery.py', 'scripts/figure_reference_search.py', 'scripts/reuse_templates.py',
+    'scripts/run_public_example.py', 'references/design-precedent.md',
 })
 
 

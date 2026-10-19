@@ -229,6 +229,9 @@ def validate_preparation_receipt(receipt_path: str, design_spec: dict) -> list[s
         receipt = json.loads(Path(receipt_path).expanduser().read_text(encoding='utf-8'))
         reference_mode = receipt_reference_mode(receipt)
         errors.extend(mode_binding_errors(receipt, design_spec))
+        if reference_mode == 'original':
+            from design_discovery import validate_review
+            errors.extend(validate_review(receipt.get('design_discovery'), design_spec))
         if reference_mode != 'original':
             from reuse_templates import validate_binding
             errors.extend(validate_binding(receipt, design_spec))

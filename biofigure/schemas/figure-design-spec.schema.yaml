@@ -57,7 +57,7 @@ mark_style_contract:
   renderer_check: bf_check_mark_layers_actual_built_aesthetics_before_export
 field_types: {figure_task: string, scientific_message: string, data_contract_summary: mapping, candidate_patterns: "list[string]", selected_pattern: string, selection_reason: string, reference_evidence: mapping, reference_analysis: mapping, visual_hierarchy: mapping, encoding: mapping, annotation: mapping, legend: mapping, palette_semantics: mapping, project_style_contract: mapping, renderer: mapping, output_size: mapping, layout_contract: mapping, font_contract: mapping, background_contract: mapping, inspection_plan: mapping, critic_targets: mapping}
 reference_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query, selected_atlas_ids, observed_principles, transfer_decisions, rejected_elements, evidence_status]
-original_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query]
+original_evidence_required: [preparation_id, preparation_request, selected_method_case_id, retrieval_query, design_precedent]
 original_design_target: six_dimensions_observation_implementation_difference_reason_no_reference_or_reference_opened
 primary_source_lock_contract: {trigger: reference_evidence.primary_source_lock_is_nonempty, required: [primary_source_lock, primary_source], empty_atlas_ids_permitted_when_lock_validates: true}
 reference_analysis_required: [figure_family, semantic_purpose, panels, elements, relationships, spatial_topology, required_structures, forbidden_substitutions]
