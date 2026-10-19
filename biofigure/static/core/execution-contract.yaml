@@ -4,6 +4,11 @@ reference_modes:
   canonical: scripts/reference_modes.py
   values: [original, reference-guided, reproduction]
   ordinary_draw_default: original
+  discovery_policy: reference-first-v1
+  original_exempts_private_archives_and_doi_not_template_code_discovery_or_review: true
+  original_cp2_review_binding: reference_evidence.design_precedent
+  original_discovery_receipt: design_discovery
+  packaged_recipe_replay_requires_actual_unchanged_renderer_hash: true
   explicit_source_reuse_or_reproduction_cannot_downgrade_to_original: true
   original_private_archives: optional_and_not_required_for_rendering
   all_modes_require: full_scientific_design_typography_color_layout_text_and_actual_final_size_visual_review
@@ -62,6 +67,8 @@ workflow:
 - analyze_data_and_question_then_propose_chart_family_if_unspecified
 - resolve_statistical_intent_and_design_before_requested_inference
 - validate_declared_statistics_plan_before_cp2_and_bind_results_to_annotations
+- all_modes_discover_matching_templates_and_paired_code_before_design
+- inspect_matched_figure_and_code_or_document_each_rejected_candidate_and_pattern_fallback
 - source_modes_retrieve_relevant_learned_method_contracts_and_bind_adopted_adaptation_and_prior_failures
 - retrieve_locked_template_and_bind_fresh_fixture_replay_before_reuse
 - inspect_bound_sources_and_hash_material

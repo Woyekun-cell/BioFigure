@@ -433,6 +433,11 @@ def validate(doc: dict, schema: dict, spec_path: Path | None = None) -> list[str
         for key in required_reference:
             if key not in reference:
                 errors.append(f"reference_evidence.{key} is required")
+        if reference_mode == 'original':
+            from design_discovery import discover, validate_review
+            request = reference.get('preparation_request', {})
+            if isinstance(request, dict):
+                errors.extend(validate_review(discover(request, ' '.join(str(request.get(key, '')) for key in ('figure_task', 'figure_family', 'data_shape', 'pattern_id'))), doc))
         preparation_id = reference.get("preparation_id")
         if not isinstance(preparation_id, str) or not re.fullmatch(r"[0-9a-f]{64}", preparation_id):
             errors.append("reference_evidence.preparation_id must be a 64-character preflight receipt hash")

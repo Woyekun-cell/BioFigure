@@ -198,6 +198,20 @@ def make_spec(case, metadata, analysis, receipt, audit, formats):
             'measurement_basis': 'final_body_viewports_mm', 'max_relative_error': .01}
         if cells['mode'] == 'dense-overview':
             doc['heatmap_cell_contract']['density_reason'] = 'The full displayed matrix has thousands of rows; aggregate pattern, not individual cells, is the reading target.'
+    candidate = next((row for row in receipt['design_discovery']['candidates']
+                      if row['candidate_id'] == 'PUBLIC-' + case), None)
+    if not candidate:
+        raise ValueError('Paired public recipe, preview, metadata or provenance missing; review a new design instead of claiming recipe replay')
+    doc['reference_evidence']['design_precedent'] = {
+        'policy_id': 'reference-first-v1', 'strategy': 'packaged-replay',
+        'candidate_id': candidate['candidate_id'], 'files': candidate['files'],
+        'review': {
+            'structure': f'Execute the unchanged {case} branch; retain the complete declared data body and scientific labels.',
+            'code': 'The paired render.R is required as an actual authorized source; no replacement renderer or visual-inspection attestation is generated.',
+            'data_mapping': f'Current analysis maps {y} by {x}; the input hash, experimental unit and statistics are freshly bound before CP2.',
+            'typography': f'{doc["font_contract"]["family"]} at {width} by {height} mm; exact font and role sizes remain subject to actual output checks.',
+            'legend_and_layout': 'Use the sealed branch layout and analysis-derived physical size; legends and labels have reserved slots, and final output still needs visual inspection.',
+            'adaptation': 'Recompute summaries, statistical annotations and allowed text from the current input; preserve the unchanged recipe, not historical visual PASS.'}}
     return doc
 
 

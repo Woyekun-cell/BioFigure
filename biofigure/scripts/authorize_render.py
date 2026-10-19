@@ -42,6 +42,9 @@ def issue(receipt: Path, design: Path, sources: list[Path], output: Path) -> dic
     assert cp_spec and cp_spec.loader
     cp_spec.loader.exec_module(cp_module)
     binding_errors = cp_module.validate_preparation_receipt(str(receipt), design_doc)
+    if reference_mode == 'original':
+        from design_discovery import validate_renderer_sources
+        binding_errors.extend(validate_renderer_sources(receipt_doc, design_doc, sources))
     if reference_mode != 'original':
         from reuse_templates import validate_fixture_sources
         binding_errors.extend(validate_fixture_sources(receipt_doc, sources))

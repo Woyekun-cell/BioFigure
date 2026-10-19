@@ -78,7 +78,9 @@ def prepare_original(request: dict, routed: dict, request_id: str, query: str, m
     item = candidates[0]
     card_path = 'patterns/' + item['path']
     card = yaml.safe_load((ROOT / card_path).read_text(encoding='utf-8'))
-    material = set(ORIGINAL_MATERIAL) | set(routed['modules']) | {card_path}
+    from design_discovery import discover, material_paths
+    discovery = discover(request, query)
+    material = set(ORIGINAL_MATERIAL) | set(routed['modules']) | {card_path} | material_paths(discovery)
     missing = sorted(name for name in material if not (ROOT / name).is_file())
     selected = 'PATTERN-' + item['pattern_id']
     plan = {'planning_status': 'ORIGINAL_DESIGN_CANDIDATE', 'ready_to_render': False,
@@ -93,11 +95,13 @@ def prepare_original(request: dict, routed: dict, request_id: str, query: str, m
         'source_hashes': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in sorted(material) if (ROOT / name).is_file()},
         'missing_material': missing,
         'selected_reference_candidates': {'planner_selected': selected, 'reproduction': [], 'scidraw': [], 'top_journal': [], 'capability_graph': []},
-        'learned_methods': {'results': [], 'status': 'NOT_REQUESTED'},
-        'reusable_templates': {'results': [], 'status': 'NOT_REQUESTED'},
-        'retrievals': {}, 'code_gate': 'BLOCKED' if missing else code_gate('original'),
+        'learned_methods': discovery['optional_archive_search'],
+        'reusable_templates': discovery['locked_template_search'],
+        'design_discovery': discovery,
+        'retrievals': {'design_references': discovery['candidates']}, 'code_gate': 'BLOCKED' if missing else code_gate('original'),
         'pre_code_gate': routed['pre_code_gate'],
         'required_next_steps': ['validate experimental units, input fields, scales and statistical intent',
+            'inspect a matched reference figure and its paired code; bind design_precedent review before CP2, or justify every rejected candidate and Pattern fallback',
             'record original panels, elements, spatial topology and all six design decisions',
             'validate the Design Spec with this receipt before writing renderer code',
             'inspect actual final-size PNG/PDF with all scientific, typography, color, layout and design-quality gates'],
