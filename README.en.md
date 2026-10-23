@@ -2,7 +2,7 @@
 
 **[中文](README.md) · English**
 
-# BioFigure
+# 🎨 BioFigure
 
 **Reference-guided design and quality control for biological figures**
 
@@ -15,7 +15,7 @@
 
 </div>
 
-BioFigure supports figure design across multi-omics and biomedical research, from checking data structures and selecting plot types to writing R/Python code, arranging panels, and reviewing rendered output. It is a Skill for coding assistants that connects research questions to suitable plotting methods while retaining editable code and plot data.
+From choosing a plot to getting the layout right, BioFigure helps you turn biological and multi-omics data into figures you can keep refining. It works as a Skill for coding assistants, bringing plot selection, colors, layout, rendering, and quality checks together while preserving editable R/Python code and plot data. The project is under active development.
 
 R is the default backend. Dedicated packages handle annotated matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Native AnnData and Scanpy workflows can remain in Python. The workflow preserves scientific meaning while giving labels, colors, legends, and panels a clear layout.
 
