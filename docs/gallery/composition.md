@@ -4,76 +4,76 @@
 
 本类 **7 张代表图**，每个细分图型保留一例。
 
-按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
+按图形结构与科研用途浏览，每个细分图型选一张代表图；点击图片下方的来源与代码，继续探索绘图过程。<br>Explore one example per visual subtype, with source and code links for a closer look at the workflow.
 
 <a id="bf-0022"></a>
 
 ## BF-0022 · 三元分组图
 
-图型：三元组成。模拟数据／方法展示；非原论文数据复现。
+三元组成绘图示例。
 
 ![BF-0022 三元分组图](../../docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png)
 
-[原尺寸](../../docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png) · [脚本](../../biofigure/examples/reproduction-gallery/generate_064_080_gallery.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/reproduction-gallery/figure_073_issue065_ternary_groups.png) · [脚本](../../biofigure/examples/reproduction-gallery/generate_064_080_gallery.R) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0026"></a>
 
 ## BF-0026 · 双层环图
 
-图型：嵌套环图。模拟数据／方法展示；非原论文数据复现。
+嵌套环图绘图示例。
 
 ![BF-0026 双层环图](../../docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png)
 
-[原尺寸](../../docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png) · [脚本](../../biofigure/examples/reproduction-gallery/generate_064_080_gallery.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/reproduction-gallery/figure_083_issue072_nested_piedonut.png) · [脚本](../../biofigure/examples/reproduction-gallery/generate_064_080_gallery.R) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0034"></a>
 
 ## BF-0034 · 弦图与外层注释轨道
 
-图型：弦图。模拟数据／方法展示；非原论文数据复现。
+弦图绘图示例。
 
 ![BF-0034 弦图与外层注释轨道](../../docs/assets/scidraw-gallery/05_chord_outer_track.png)
 
-[原尺寸](../../docs/assets/scidraw-gallery/05_chord_outer_track.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/scidraw-gallery/05_chord_outer_track.png) · [脚本](../../biofigure/examples/scidraw-gallery/scripts/generate_six_scidraw.R) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0109"></a>
 
 ## BF-0109 · DNA–RNA–Protein 状态桑基图
 
-图型：桑基图。明确模拟1800个匹配特征、27条完整路径；原生ggalluvial，9节点计数守恒。本轮移除图内方法/模拟脚注，说明在图外；仅固定模拟输入与当前版式复核。
+DNA、RNA 与蛋白状态的完整路径，在一张桑基图中串联呈现。
 
 ![BF-0109 DNA–RNA–Protein 状态桑基图](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png)
 
-[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/sankey/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/sankey/provenance.json) · [方法来源](https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/scidraw-001-065/36_gradient_sankey.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/sankey/results/figures/sankey_simulated_repaired.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/sankey/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/sankey/results/plot_data) · [来源说明 / Source notes](../../biofigure/examples/genomics-gallery-20261011/sankey/provenance.json) · [参考来源 / Reference](https://corybrunson.github.io/ggalluvial/articles/ggalluvial.html) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0189"></a>
 
 ## BF-0189 · 加权 Voronoi 组成图
 
-图型：Voronoi组成。模拟数据／方法展示；非原论文数据复现。
+Voronoi组成绘图示例。
 
 ![BF-0189 加权 Voronoi 组成图](../../docs/assets/archive-gallery/full-reproduction/figure_067_weighted_voronoi_code_driven.png)
 
-[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_067_weighted_voronoi_code_driven.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_067_weighted_voronoi_code_driven.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/non_single_cell_055_069.R) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0199"></a>
 
 ## BF-0199 · 多层旭日图
 
-图型：旭日图。模拟数据／方法展示；非原论文数据复现。
+旭日图绘图示例。
 
 ![BF-0199 多层旭日图](../../docs/assets/archive-gallery/full-reproduction/figure_082_issue071_sunburst.png)
 
-[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_082_issue071_sunburst.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_082_issue071_sunburst.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R) · [案例记录 / Details](catalog.csv)
 
 <a id="bf-0203"></a>
 
 ## BF-0203 · 分面流图
 
-图型：流图。模拟数据／方法展示；非原论文数据复现。
+流图绘图示例。
 
 ![BF-0203 分面流图](../../docs/assets/archive-gallery/full-reproduction/figure_089_issue079_streamgraph.png)
 
-[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_089_issue079_streamgraph.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/full-reproduction/figure_089_issue079_streamgraph.png) · [脚本](../../biofigure/examples/archive-gallery/full-reproduction/scripts/code_driven_071_087.R) · [案例记录 / Details](catalog.csv)
 
 [全部分类](../GALLERY.md) · [脚本存档说明](../../biofigure/examples/archive-gallery/README.md)

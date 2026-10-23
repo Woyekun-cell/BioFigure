@@ -1,7 +1,7 @@
 # 示例图库 / Example gallery
 
-全部示例使用模拟数据与固定随机种子，用于检查代码执行、字体、排版和视觉语法，不代表生物学结果。<br>
-All examples use simulated data and fixed seeds to test execution, typography, layout, and visual grammar. They do not represent biological results.
+从基础统计图到单细胞、空间与多组学组合图，这里用固定随机种子的模拟输入，展示图型、配色、字体和排版的具体做法。<br>
+From core statistical charts to single-cell, spatial and multi-omics layouts, these fixed-seed simulated examples show how the visual encoding, colours, typography and composition come together.
 
 ## 核心图型 / Core figures
 

@@ -4,87 +4,87 @@
 
 本类 **11 张代表图**，每个细分图型保留一例。
 
-按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
-
-<a id="bf-0012"></a>
-
-## BF-0012 · 共线性示意
-
-图型：共线性。模拟数据／方法展示；非原论文数据复现。
-
-![BF-0012 共线性示意](../../docs/assets/gallery/domain-synteny.png)
-
-[原尺寸](../../docs/assets/gallery/domain-synteny.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [记录](catalog.csv)
-
-<a id="bf-0014"></a>
-
-## BF-0014 · 系统树与多轨注释
-
-图型：系统树与注释。模拟数据／方法展示；非原论文数据复现。
-
-![BF-0014 系统树与多轨注释](../../docs/assets/gallery/template-phylogeny-tracks.png)
-
-[原尺寸](../../docs/assets/gallery/template-phylogeny-tracks.png) · [脚本](../../biofigure/examples/gallery/generate_advanced_gallery.R) · [记录](catalog.csv)
-
-<a id="bf-0019"></a>
-
-## BF-0019 · 嵌套染色体与区间分布
-
-图型：嵌套染色体。模拟数据／方法展示；非原论文数据复现。
-
-![BF-0019 嵌套染色体与区间分布](../../docs/assets/genome-gallery/chromosome-distribution.png)
-
-[原尺寸](../../docs/assets/genome-gallery/chromosome-distribution.png) · [脚本](../../biofigure/examples/genome-gallery/draw.R) · [记录](catalog.csv)
-
-<a id="bf-0156"></a>
-
-## BF-0156 · ATAC：染色体峰位置
-
-图型：染色体峰位置。公开数据演示：10x PBMC1k、ENCODE K562 或参考组装；不代表完整上游分析。
-
-![BF-0156 ATAC：染色体峰位置](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png)
-
-[原尺寸](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png) · [脚本](../../biofigure/examples/archive-gallery/public-omics/scripts/analysis.R) · [记录](catalog.csv)
-
-<a id="bf-0167"></a>
-
-## BF-0167 · 双物种组装与注释概览
-
-图型：组装注释概览。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
-
-![BF-0167 双物种组装与注释概览](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png)
-
-[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
-
-<a id="bf-0168"></a>
-
-## BF-0168 · 染色体基因密度
-
-图型：基因密度。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
-
-![BF-0168 染色体基因密度](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png)
-
-[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
-
-<a id="bf-0170"></a>
-
-## BF-0170 · 代表性基因结构示意
-
-图型：基因结构。斑马鱼与大黄鱼公开参考组装／注释示例；无全基因组比对或 SV calling。
-
-![BF-0170 代表性基因结构示意](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png)
-
-[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [记录](catalog.csv)
+按图形结构与科研用途浏览，每个细分图型选一张代表图；点击图片下方的来源与代码，继续探索绘图过程。<br>Explore one example per visual subtype, with source and code links for a closer look at the workflow.
 
 <a id="bf-0217"></a>
 
 ## BF-0217 · BUSCO 锚定合酶区域对照
 
-图型：BUSCO锚定基因区域图。真实作者处理坐标；147个BUSCO、76个基因组。Fig4d选定面板换色重绘，保留锚定、样本顺序、有限窗口与原NA。
+基于原作者公开处理数据重绘，展示 BUSCO 锚定的基因区域比较。
 
 ![BF-0217 BUSCO 锚定合酶区域对照](../../docs/assets/genomics-gallery-20261011/cannabis-cassette.png)
 
-[原尺寸](../../docs/assets/genomics-gallery-20261011/cannabis-cassette.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [方法来源](https://www.nature.com/articles/s41586-025-09065-0) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/genomics-gallery-20261011/cannabis-cassette.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/figures/fig4d-author-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/results/plot_data) · [来源说明 / Source notes](../../biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [参考来源 / Reference](https://www.nature.com/articles/s41586-025-09065-0) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0218"></a>
+
+## BF-0218 · 整条染色体 BUSCO 与 CBDAS 定位
+
+基于原作者公开处理坐标重绘，串联 BUSCO 路径与 CBDAS 位点。
+
+![BF-0218 整条染色体 BUSCO 与 CBDAS 定位](../../docs/assets/genomics-gallery-20261011/cannabis-chr7.png)
+
+[原尺寸](../../docs/assets/genomics-gallery-20261011/cannabis-chr7.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data) · [来源说明 / Source notes](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/provenance.json) · [参考来源 / Reference](https://www.nature.com/articles/s41586-025-09065-0) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0221"></a>
+
+## BF-0221 · Micro-C 联系矩阵与 loops
+
+OHCA 书籍案例重绘：Micro-C 接触矩阵与环标记。<br>A redraw of the OHCA book example: Micro-C contact matrix and loop annotations.
+
+![BF-0221 Micro-C 联系矩阵与 loops](../../docs/assets/genomics-gallery-20261011/ohca-microc.png)
+
+[原尺寸](../../docs/assets/genomics-gallery-20261011/ohca-microc.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data) · [来源说明 / Source notes](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [参考来源 / Reference](https://js2264.github.io/OHCA/devel/pages/topological-features.html) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0222"></a>
+
+## BF-0222 · 四染色体单倍型比对
+
+基于原作者公开处理坐标重绘，以四染色体单倍型点阵呈现序列比对关系。
+
+![BF-0222 四染色体单倍型比对](../../docs/assets/genomics-gallery-20261011/planarian-dotplot.png)
+
+[原尺寸](../../docs/assets/genomics-gallery-20261011/planarian-dotplot.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data) · [来源说明 / Source notes](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/provenance.json) · [参考来源 / Reference](https://www.nature.com/articles/s41467-026-74605-9) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0012"></a>
+
+## BF-0012 · 共线性示意
+
+共线性绘图示例。
+
+![BF-0012 共线性示意](../../docs/assets/gallery/domain-synteny.png)
+
+[原尺寸](../../docs/assets/gallery/domain-synteny.png) · [脚本](../../biofigure/examples/gallery/generate_domain_gallery.R) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0014"></a>
+
+## BF-0014 · 系统树与多轨注释
+
+系统树与注释绘图示例。
+
+![BF-0014 系统树与多轨注释](../../docs/assets/gallery/template-phylogeny-tracks.png)
+
+[原尺寸](../../docs/assets/gallery/template-phylogeny-tracks.png) · [脚本](../../biofigure/examples/gallery/generate_advanced_gallery.R) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0019"></a>
+
+## BF-0019 · 嵌套染色体与区间分布
+
+嵌套染色体绘图示例。
+
+![BF-0019 嵌套染色体与区间分布](../../docs/assets/genome-gallery/chromosome-distribution.png)
+
+[原尺寸](../../docs/assets/genome-gallery/chromosome-distribution.png) · [脚本](../../biofigure/examples/genome-gallery/draw.R) · [案例记录 / Details](catalog.csv)
+
+<a id="bf-0156"></a>
+
+## BF-0156 · ATAC：染色体峰位置
+
+染色体峰位置：公开数据可视化示例。
+
+![BF-0156 ATAC：染色体峰位置](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png)
+
+[原尺寸](../../docs/assets/archive-gallery/public-omics/08_atac_chromosome_peak_map.png) · [脚本](../../biofigure/examples/archive-gallery/public-omics/scripts/analysis.R) · [案例记录 / Details](catalog.csv)
 
 页码：**1** · [2](genomes-2.md)
 

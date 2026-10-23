@@ -19,26 +19,49 @@ From choosing a plot to getting the layout right, BioFigure helps you turn biolo
 
 R is the default backend. Dedicated packages handle annotated matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Native AnnData and Scanpy workflows can remain in Python. The workflow preserves scientific meaning while giving labels, colors, legends, and panels a clear layout.
 
-## Research areas and plot types
+## Featured figures
 
-| Research area | Plotting tasks |
-|---|---|
-| Transcriptomics and proteomics | Expression and differential heatmaps, volcano plots, grouped expression, enrichment, correlation matrices |
-| Metabolomics and multi-omics | PCA, abundance distributions, cross-omics associations, annotated heatmaps, networks |
-| Single-cell and spatial omics | Embeddings, marker dot plots, cell composition, spatial expression, faceted comparisons |
-| Epigenomics and chromatin | ATAC/ChIP profiles, signal heatmaps, regions and genomic tracks |
-| Genomics and comparative genomics | Chromosome and interval distributions, synteny, circular links, phylogenies with aligned annotations |
-| Microbiology and ecology | Community composition, ordination, phylogenies, abundance and environmental associations |
-| Clinical and experimental biology | Survival curves, forest plots, patient swimmers, time courses, group comparisons, model evaluation |
-| Integrated figures | Multi-panel figures, imaging plates, evidence annotations |
+A few examples of the layouts I work on: dense annotations, genomic comparisons and connected statistical views. Follow the case links for the source and rendering workflow.
 
-These are areas covered by the method library and routing rules. Individual tasks depend on available data, dependencies, and method validation status. Existing analysis results can be plotted directly; unavailable upstream analyses are not treated as completed.
+### Circular heatmap × UpSet
+
+Layered annotations, expression patterns and set intersections, composed as one connected figure.
+
+![Circular heatmap × UpSet](docs/assets/archive-gallery/scidraw-001-065/10_circular_heatmap_upset.png)
+
+[Case](docs/gallery/heatmaps.md#bf-0082) · [Code](biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R) · [Reference](https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA)
+
+### BUSCO-anchored genomic comparison
+
+A redraw from publicly released author-processed data, aligning genomic regions and synthase loci.
+
+![BUSCO-anchored genomic comparison](docs/assets/genomics-gallery-20261011/cannabis-cassette.png)
+
+[Case](docs/gallery/genomes.md#bf-0217) · [Code](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [Source notes](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [Reference](https://www.nature.com/articles/s41586-025-09065-0)
+
+### Micro-C contact map and loops
+
+A redraw of the OHCA book example, combining a Micro-C contact matrix with loop annotations.
+
+![Micro-C contact map and loops](docs/assets/genomics-gallery-20261011/ohca-microc.png)
+
+[Case](docs/gallery/genomes.md#bf-0221) · [Code](biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [Source notes](biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [Reference](https://js2264.github.io/OHCA/devel/pages/topological-features.html)
+
+### Correlation matrix and Mantel network
+
+Using vegan example data to connect an environmental correlation matrix with a Mantel-test network.
+
+![Correlation matrix and Mantel network](docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png)
+
+[Case](docs/gallery/networks.md#bf-0055) · [Code](biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [Example data](https://github.com/vegandevs/vegan/blob/master/man/varechem.Rd)
+
+[Seven compact examples with inputs and PNG/PDF exports](biofigure/examples/portable)
 
 ## Gallery by plot type
 
 The gallery selects **77 figures in 14 categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
 
-Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings or complete acceptance testing.
+Explore the visual approach, then follow the code, data and source links to adapt a figure for your own work.
 
 | Category | Figures |
 |---|---:|
@@ -59,53 +82,20 @@ Each figure states whether it uses simulated, public or package-example data. In
 
 See the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.
 
-## Portable examples
+## Research areas and plot types
 
-Seven first-party synthetic examples bundle the current PNG/PDF, input, metadata and provenance. Simulation and interpretation limits are recorded outside the figures. These examples do not certify new inputs or another platform.
+| Research area | Plotting tasks |
+|---|---|
+| Transcriptomics and proteomics | Expression and differential heatmaps, volcano plots, grouped expression, enrichment, correlation matrices |
+| Metabolomics and multi-omics | PCA, abundance distributions, cross-omics associations, annotated heatmaps, networks |
+| Single-cell and spatial omics | Embeddings, marker dot plots, cell composition, spatial expression, faceted comparisons |
+| Epigenomics and chromatin | ATAC/ChIP profiles, signal heatmaps, regions and genomic tracks |
+| Genomics and comparative genomics | Chromosome and interval distributions, synteny, circular links, phylogenies with aligned annotations |
+| Microbiology and ecology | Community composition, ordination, phylogenies, abundance and environmental associations |
+| Clinical and experimental biology | Survival curves, forest plots, patient swimmers, time courses, group comparisons, model evaluation |
+| Integrated figures | Multi-panel figures, imaging plates, evidence annotations |
 
-[Shared rendering code](biofigure/examples/portable/render.R) · [Input generator](biofigure/examples/portable/generate_inputs.py)
-
-### Grouped box plot
-
-![Grouped box plot](biofigure/examples/portable/boxplot/figures/boxplot.png)
-
-[PDF](biofigure/examples/portable/boxplot/figures/boxplot.pdf) · [Data](biofigure/examples/portable/boxplot/data.csv) · [Metadata](biofigure/examples/portable/boxplot/metadata.json) · [Provenance](biofigure/examples/portable/boxplot/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Square-cell heatmap
-
-![Square-cell heatmap](biofigure/examples/portable/heatmap/figures/heatmap.png)
-
-[PDF](biofigure/examples/portable/heatmap/figures/heatmap.pdf) · [Data](biofigure/examples/portable/heatmap/data.csv) · [Metadata](biofigure/examples/portable/heatmap/metadata.json) · [Provenance](biofigure/examples/portable/heatmap/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Dense matrix overview
-
-![Dense matrix overview](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.png)
-
-[PDF](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.pdf) · [Data](biofigure/examples/portable/dense-heatmap/data.csv) · [Metadata](biofigure/examples/portable/dense-heatmap/metadata.json) · [Provenance](biofigure/examples/portable/dense-heatmap/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Bubble plot
-
-![Bubble plot](biofigure/examples/portable/bubble/figures/bubble.png)
-
-[PDF](biofigure/examples/portable/bubble/figures/bubble.pdf) · [Data](biofigure/examples/portable/bubble/data.csv) · [Metadata](biofigure/examples/portable/bubble/metadata.json) · [Provenance](biofigure/examples/portable/bubble/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Volcano plot
-
-![Volcano plot](biofigure/examples/portable/volcano/figures/volcano.png)
-
-[PDF](biofigure/examples/portable/volcano/figures/volcano.pdf) · [Data](biofigure/examples/portable/volcano/data.csv) · [Metadata](biofigure/examples/portable/volcano/metadata.json) · [Provenance](biofigure/examples/portable/volcano/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Synteny plot
-
-![Synteny plot](biofigure/examples/portable/synteny/figures/synteny.png)
-
-[PDF](biofigure/examples/portable/synteny/figures/synteny.pdf) · [Data](biofigure/examples/portable/synteny/data.csv) · [Metadata](biofigure/examples/portable/synteny/metadata.json) · [Provenance](biofigure/examples/portable/synteny/provenance.json) · [Code](biofigure/examples/portable/render.R)
-
-### Phylogenetic tree
-
-![Phylogenetic tree](biofigure/examples/portable/phylogeny/figures/phylogeny.png)
-
-[PDF](biofigure/examples/portable/phylogeny/figures/phylogeny.pdf) · [Data](biofigure/examples/portable/phylogeny/data.csv) · [Metadata](biofigure/examples/portable/phylogeny/metadata.json) · [Provenance](biofigure/examples/portable/phylogeny/provenance.json) · [Code](biofigure/examples/portable/render.R)
+Start with your analysis results, choose a figure around the question and data structure, then prepare the relevant packages and plotting parameters.
 
 ## Methods and quality checks
 
@@ -133,9 +123,14 @@ python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output
 Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library --profile portable
 ```
 
+<details>
+<summary>Dependency versions, fonts and platforms</summary>
+
 The default `portable` profile covers the seven new synthetic examples and OncoPrint. Its dependencies are ggplot2, ragg, systemfonts, jsonlite, yaml, digest, ComplexHeatmap, circlize, ape, ggrepel, scales and stringi. R and top-level package versions must match the [version lock](biofigure/static/core/public-runtime-versions.tsv): R 4.6.1 and Bioconductor 3.23. Mismatches return `NEEDS_R_VERSION` or `NEEDS_PACKAGE_VERSIONS`. Explicit installation obtains the selected versions from official CRAN/Bioconductor sources without upgrading unrelated existing packages. External packages retain their licenses; see the [Bioconductor installation instructions](https://www.bioconductor.org/install/). Fonts are not bundled. Current demonstrations require Arial and return `NEEDS_FONT` when it is missing. `--font Helvetica` checks that exact alternative family; changing a figure font still requires updating its specification and reviewing the new output. Execution has been tested on macOS; Linux and Windows runtime, font and device acceptance remain unverified. A fresh Python environment still uses existing R packages and system Arial; this is not a fresh operating-system installation test. PDF export additionally requires free Ghostscript for font embedding; it resolves an explicit `R_GSCMD` path or `gs`, `gswin64c` and `gswin32c`. This script never installs system software. On macOS use `brew install ghostscript`, or obtain it from [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html). PNG-only checks use `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png` and do not require Ghostscript.
 
-Run a first-party synthetic example:
+</details>
+
+Run a built-in plotting example:
 
 ```bash
 python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/boxplot-new
@@ -156,7 +151,10 @@ The comparison is treatment versus control. Label specified genes; export PNG an
 
 See the [English handbook](docs/HANDBOOK.en.md) for fuller design and export guidance.
 
-## Validation and scope
+## Cases and validation records
+
+<details>
+<summary>Public cases, sources, dependencies and validation records</summary>
 
 
 For all 13 cases, explicitly select `all-public`. It installs the specialist packages and verifies the fixed HiCExperiment/HiContacts source archives by commit and SHA256, then records hashes of the installed package files. A matching package name/version alone is not source-pin evidence.
@@ -185,6 +183,8 @@ python3 tools/build_gallery.py --check
 
 The Skill supplies methods and checks. It does not change model parameters or guarantee equivalent results across models or reasoning settings.
 
+</details>
+
 ## Versions and history
 
 - [Releases: download named versions](https://github.com/Woyekun-cell/BioFigure/releases)
@@ -197,6 +197,7 @@ The Skill supplies methods and checks. It does not change model parameters or gu
 
 ## Sources and feedback
 
-See [design sources](docs/DESIGN-SOURCES.md) and [NOTICE](NOTICE.md) for provenance. The gallery contains independently generated figures with per-figure data-origin labels; third-party reference images, webpages, and scraped code are not included.
+Find the ideas and methods behind the figures in [design sources](docs/DESIGN-SOURCES.md) and [NOTICE](NOTICE.md). Gallery cases link to code, data and sources—follow the workflow, then adapt it to your own data.
 
 Use [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions) for figure ideas, references, and design feedback. Report reproducible problems through [Issues](https://github.com/Woyekun-cell/BioFigure/issues/new/choose), including data structure, code, package versions, and output. See the [contribution guide](CONTRIBUTING.md).
+

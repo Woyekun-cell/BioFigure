@@ -13,4 +13,4 @@ Rscript --vanilla scripts/generate_batch20.R
 
 需要的核心包：`rms`、`survival`、`ggplot2`、`ggridges`、`patchwork`、`vegan`、`ggtern`、`corrplot`、`ggnewscale`、`circlize`、`ggrepel`、`fmsb`、`ggradar`、`gghalves`、`ggbeeswarm`、`ggdist`、`ggside`、`factoextra`、`pheatmap`、`GGally`、`linkET`、`ragg`、`systemfonts`、`jsonlite`。
 
-输出位于 `results/figures/` 与 `results/plot_data/`。所有数值仅用于方法和视觉结构验证，不能解释为来源研究结果。
+输出位于 `results/figures/` 与 `results/plot_data/`。案例展示不同图型的信息层、配色与排版；配套输入与来源见相应脚本及图库记录。

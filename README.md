@@ -19,26 +19,49 @@
 
 R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和多面板组合分别使用适合的专用包；AnnData、Scanpy 等原生数据对象也可沿用 Python 工作流。重点是保留图的科学含义，同时处理好文字、配色、图例和面板之间的关系。
 
-## 适用领域与图型
+## 精选作品
 
-| 研究领域 | 绘图任务 |
-|---|---|
-| 转录组、蛋白组 | 表达与差异热图、火山图、分组表达、富集结果、相关矩阵 |
-| 代谢组与多组学整合 | PCA、丰度分布、跨组学关联、注释热图、关联网络 |
-| 单细胞与空间组学 | 降维嵌入、标记基因气泡图、细胞组成、空间表达及分面比较 |
-| 表观组与染色质 | ATAC/ChIP 信号曲线、信号热图、区域与基因组轨道 |
-| 基因组与比较基因组 | 染色体与区间分布、共线性、环形连线、系统树及对齐注释 |
-| 微生物与生态研究 | 群落组成、排序分析、系统树、丰度与环境关联 |
-| 临床与实验生物学 | 生存曲线、森林图、患者泳道、时序响应、分组比较与模型评估 |
-| 综合展示 | 多面板组合、图像实验板和证据注释 |
+挑几张我在做的复杂图放在这里：多层注释、基因组比较，以及把多种统计信息接起来的组合图。每张都附了案例与代码入口，方便继续看细节。
 
-以上是方法与路由覆盖范围；具体任务取决于输入数据、包依赖和相应方法的验证状态。已有分析结果可直接用于绘图，缺少上游数据时不会声称完成了相应分析。
+### 环形热图 × UpSet
+
+把多层注释、表达模式和集合交集放到一起，展示复杂信息如何在一张图里有条理地展开。
+
+![环形热图 × UpSet](docs/assets/archive-gallery/scidraw-001-065/10_circular_heatmap_upset.png)
+
+[案例详情](docs/gallery/heatmaps.md#bf-0082) · [绘图代码](biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R) · [参考来源](https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA)
+
+### BUSCO 锚定的基因区域比较
+
+基于原作者公开处理数据重绘，把跨基因组的区域结构与合酶位点放到同一视野。
+
+![BUSCO 锚定的基因区域比较](docs/assets/genomics-gallery-20261011/cannabis-cassette.png)
+
+[案例详情](docs/gallery/genomes.md#bf-0217) · [绘图代码](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [来源说明](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [参考来源](https://www.nature.com/articles/s41586-025-09065-0)
+
+### Micro-C 接触矩阵与环标记
+
+OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示。
+
+![Micro-C 接触矩阵与环标记](docs/assets/genomics-gallery-20261011/ohca-microc.png)
+
+[案例详情](docs/gallery/genomes.md#bf-0221) · [绘图代码](biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [来源说明](biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [参考来源](https://js2264.github.io/OHCA/devel/pages/topological-features.html)
+
+### 相关矩阵与 Mantel 网络
+
+使用 vegan 示例数据，将环境变量相关矩阵与 Mantel 检验网络连接起来。
+
+![相关矩阵与 Mantel 网络](docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png)
+
+[案例详情](docs/gallery/networks.md#bf-0055) · [绘图代码](biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [示例数据](https://github.com/vegandevs/vegan/blob/master/man/varechem.Rd)
+
+[7 个含输入与 PNG/PDF 的便携绘图案例](biofigure/examples/portable)
 
 ## 分类图廊
 
 现有成图中精选 **14 类、77 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。
 
-数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。
+从图形结构和科研用途出发挑选案例，附上代码、数据与参考来源，方便继续修改和复用。
 
 | 图型分类 | 图数 |
 |---|---:|
@@ -59,53 +82,20 @@ R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和
 
 [完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。
 
-## 便携案例
+## 适用领域与图型
 
-7 个一方模拟例提供当前 PNG/PDF、输入、元数据与来源记录。模拟身份与解释边界写在图外；这些示例不认证新数据或其他平台。
+| 研究领域 | 绘图任务 |
+|---|---|
+| 转录组、蛋白组 | 表达与差异热图、火山图、分组表达、富集结果、相关矩阵 |
+| 代谢组与多组学整合 | PCA、丰度分布、跨组学关联、注释热图、关联网络 |
+| 单细胞与空间组学 | 降维嵌入、标记基因气泡图、细胞组成、空间表达及分面比较 |
+| 表观组与染色质 | ATAC/ChIP 信号曲线、信号热图、区域与基因组轨道 |
+| 基因组与比较基因组 | 染色体与区间分布、共线性、环形连线、系统树及对齐注释 |
+| 微生物与生态研究 | 群落组成、排序分析、系统树、丰度与环境关联 |
+| 临床与实验生物学 | 生存曲线、森林图、患者泳道、时序响应、分组比较与模型评估 |
+| 综合展示 | 多面板组合、图像实验板和证据注释 |
 
-[共用绘图代码](biofigure/examples/portable/render.R) · [输入生成脚本](biofigure/examples/portable/generate_inputs.py)
-
-### 分组箱线图
-
-![分组箱线图](biofigure/examples/portable/boxplot/figures/boxplot.png)
-
-[PDF](biofigure/examples/portable/boxplot/figures/boxplot.pdf) · [数据](biofigure/examples/portable/boxplot/data.csv) · [元数据](biofigure/examples/portable/boxplot/metadata.json) · [来源与边界](biofigure/examples/portable/boxplot/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 方格热图
-
-![方格热图](biofigure/examples/portable/heatmap/figures/heatmap.png)
-
-[PDF](biofigure/examples/portable/heatmap/figures/heatmap.pdf) · [数据](biofigure/examples/portable/heatmap/data.csv) · [元数据](biofigure/examples/portable/heatmap/metadata.json) · [来源与边界](biofigure/examples/portable/heatmap/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 密集矩阵概览
-
-![密集矩阵概览](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.png)
-
-[PDF](biofigure/examples/portable/dense-heatmap/figures/dense-heatmap.pdf) · [数据](biofigure/examples/portable/dense-heatmap/data.csv) · [元数据](biofigure/examples/portable/dense-heatmap/metadata.json) · [来源与边界](biofigure/examples/portable/dense-heatmap/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 气泡图
-
-![气泡图](biofigure/examples/portable/bubble/figures/bubble.png)
-
-[PDF](biofigure/examples/portable/bubble/figures/bubble.pdf) · [数据](biofigure/examples/portable/bubble/data.csv) · [元数据](biofigure/examples/portable/bubble/metadata.json) · [来源与边界](biofigure/examples/portable/bubble/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 火山图
-
-![火山图](biofigure/examples/portable/volcano/figures/volcano.png)
-
-[PDF](biofigure/examples/portable/volcano/figures/volcano.pdf) · [数据](biofigure/examples/portable/volcano/data.csv) · [元数据](biofigure/examples/portable/volcano/metadata.json) · [来源与边界](biofigure/examples/portable/volcano/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 共线性图
-
-![共线性图](biofigure/examples/portable/synteny/figures/synteny.png)
-
-[PDF](biofigure/examples/portable/synteny/figures/synteny.pdf) · [数据](biofigure/examples/portable/synteny/data.csv) · [元数据](biofigure/examples/portable/synteny/metadata.json) · [来源与边界](biofigure/examples/portable/synteny/provenance.json) · [代码](biofigure/examples/portable/render.R)
-
-### 系统树
-
-![系统树](biofigure/examples/portable/phylogeny/figures/phylogeny.png)
-
-[PDF](biofigure/examples/portable/phylogeny/figures/phylogeny.pdf) · [数据](biofigure/examples/portable/phylogeny/data.csv) · [元数据](biofigure/examples/portable/phylogeny/metadata.json) · [来源与边界](biofigure/examples/portable/phylogeny/provenance.json) · [代码](biofigure/examples/portable/render.R)
+从已有分析结果出发，按数据结构和研究问题选择图型，再准备相应的包与绘图参数。
 
 ## 绘图方法与质量检查
 
@@ -133,9 +123,14 @@ python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output
 Rscript biofigure/scripts/install_public_dependencies.R --install --library work/R-library --profile portable
 ```
 
+<details>
+<summary>依赖版本、字体与平台说明</summary>
+
 `portable` 检查器覆盖新增 7 例与 OncoPrint 的依赖，依赖为 ggplot2、ragg、systemfonts、jsonlite、yaml、digest、ComplexHeatmap、circlize、ape、ggrepel、scales、stringi。R 与顶层包版本按[固定版本清单](biofigure/static/core/public-runtime-versions.tsv)精确检查：R 4.6.1、Bioconductor 3.23；不匹配会明确返回 `NEEDS_R_VERSION` 或 `NEEDS_PACKAGE_VERSIONS`。安装器只从官方 CRAN／Bioconductor 安装指定版本，不自动升级其他既有包。R 包遵守各自许可证，参考 [Bioconductor 安装说明](https://www.bioconductor.org/install/)。字体不随包分发；当前示例指定 Arial，缺失时返回 `NEEDS_FONT`，不静默换字体。可用 `--font Helvetica` 单独检查 Helvetica；更改出图字体仍须更新当前规格并重新核验。已实跑环境为 macOS；Linux、Windows 尚未完成运行和字体/设备验收。Python 新环境测试仍使用既有 R 包和系统 Arial，不等同在全新操作系统上安装验证。 PDF 导出还需免费 Ghostscript 嵌入字体，支持 `R_GSCMD` 显式路径以及 `gs`、`gswin64c`、`gswin32c`；本脚本不自动安装系统软件。macOS 可用 `brew install ghostscript`，或从 [Ghostscript 官方](https://www.ghostscript.com/releases/gsdnld.html)获取。仅 PNG 可运行 `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png`，无需 Ghostscript。
 
-可执行的一方模拟例：
+</details>
+
+运行内置绘图示例：
 
 ```bash
 python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/boxplot-new
@@ -166,7 +161,10 @@ Rscript biofigure/scripts/install_public_dependencies.R --check --library work/R
 
 执行阶段须让 R 找到同一库：macOS shell 可用 `export R_LIBS_USER="$PWD/work/R-library"`；Windows PowerShell 可用 `$env:R_LIBS_USER=(Resolve-Path "work/R-library").Path`。Windows 和 macOS 共用精确字体 PDF／Ghostscript 接口，无 Quartz 专属运行路径。PDF 需要 Ghostscript 10；旧例的 PDF 检视还需 Poppler `pdftoppm`。macOS 可用 `brew install ghostscript poppler`；Windows 工具步骤见[双系统验证说明](docs/PLATFORM-VALIDATION.md)。字体仅从合法已安装系统字体解析，不随包分发。跨系统测试结果以真实 CI 记录和导出图审阅为准；配置成功不算两端成图验收。
 
-## 验证与适用边界
+## 案例与验证记录
+
+<details>
+<summary>查看公开案例、来源、依赖与验证记录</summary>
 
 3.8.0 将可检索学习档案与公开执行入口分开。454 条学习记录保留来源、方法、历史缺陷和资格边界；未分发的来源材料显示 `source-materials-unavailable`，不冒称可执行，也不阻断普通原创图。明确采用某个来源或要求复现时，仍须具备相应原图、代码、输入和新的 CP2 绑定。
 
@@ -185,6 +183,8 @@ python3 tools/build_gallery.py --check
 
 Skill 提供方法与检查流程，不改变模型参数，也不保证不同模型或推理档位得到相同结果。
 
+</details>
+
 ## 版本与历史
 
 - [Releases：下载已命名版本](https://github.com/Woyekun-cell/BioFigure/releases)
@@ -197,6 +197,7 @@ Skill 提供方法与检查流程，不改变模型参数，也不保证不同�
 
 ## 来源与反馈
 
-方法来源见[设计来源](docs/DESIGN-SOURCES.md)和[来源声明](NOTICE.md)。本图廊展示自行生成的图件，模拟数据、公开数据与软件包示例逐图标注；不上传第三方参考原图、网页或抓取代码。
+绘图思路与方法参考整理在[设计来源](docs/DESIGN-SOURCES.md)和[来源声明](NOTICE.md)中。图廊里的案例附有代码、数据和来源链接，欢迎顺着看，也欢迎带着自己的数据继续改。
 
 绘图需求、参考案例和审美建议欢迎发到 [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions)。可复现的问题请提交 [Issue](https://github.com/Woyekun-cell/BioFigure/issues/new/choose)，附数据结构、代码、包版本和成图；贡献方式见[贡献指南](CONTRIBUTING.md)。
+

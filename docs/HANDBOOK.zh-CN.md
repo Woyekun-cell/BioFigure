@@ -2,7 +2,7 @@
 
 ## 3.8.0 公开发行范围
 
-[公开案例清单](../biofigure/public-cases.json)区分 13 个可执行入口与 2 个 DPM 仅参考档案。可执行入口包括 7 个一方模拟例、Cannabis 两案、Planarian、OHCA、桑基图和 OncoPrint。OncoPrint 保留12×144全部单元，以3个12×48原生方格矩阵排布；当前固定输入、macOS执行与PNG/PDF另行核验，历史记录不迁移为当前通过。454 条学习档案是可检索方法记录，不代表来源材料全部分发或全部可运行。
+[公开案例清单](../biofigure/public-cases.json)区分 13 个可执行入口与 2 个 DPM 仅参考档案。可执行入口包括 7 个一方模拟例、Cannabis 两案、Planarian、OHCA、桑基图和 OncoPrint。OncoPrint 保留12×144全部单元，以3个12×48原生方格矩阵排布；当前固定输入、macOS执行与PNG/PDF另行核验，历史记录不迁移为当前通过。454 条学习档案按方法组织，便于查找图型、设计思路和对应来源；可分发材料与执行入口见各项记录。
 
 依赖检查分为 `portable` 和 `all-public`：前者覆盖新增 7 例与 OncoPrint，后者补齐保留案例的专用 R 包。Cannabis 需固定 BUSCOplot 来源；OHCA 需既有 HiContacts/HiCExperiment 等 R 依赖及固定哈希 RDS，锁定提交和来源见 [README 安装说明](../README.md#安装与使用)及案例执行配置。macOS 已实跑；Linux、Windows 未验证。Python 新环境仍使用既有 R 包及 Arial，不等于全新操作系统安装验收。代码执行、材料审计、来源保真、当前 PNG/PDF 审阅和用户认可分别记录。
 
@@ -11,7 +11,7 @@
 
 ## 1. 定位
 
-BioFigure 是统一的生物科研图生产 Skill。目标是从研究问题生成科学可信、视觉克制、代码可复现、可实际审查的单图或组图。它不负责原始 NGS 流程，也不以“Nature 风格”替代具体数据语义和期刊要求。
+BioFigure 把研究问题、已有分析结果和图形设计接在一起，做成代码可复现、便于继续修改的单图或组图。原始 NGS 分析在上游完成；选图、编码与排版围绕具体的数据语义和期刊要求展开。
 
 ## 2. 启动与动态加载
 

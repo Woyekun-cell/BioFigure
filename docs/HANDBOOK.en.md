@@ -2,7 +2,7 @@
 
 ## 3.8.0 public distribution scope
 
-The [public case manifest](../biofigure/public-cases.json) separates 13 executable entries and two reference-only DPM records. Executable entries comprise seven first-party synthetic examples, two Cannabis cases, Planarian, OHCA, Sankey and OncoPrint. OncoPrint retains all 12×144 cells in three native 12×48 square-cell bodies; its current fixed-input macOS execution and PNG/PDF outputs were reviewed afresh. Historical qualification is not inherited. The 454 learning records form a searchable methods catalog, not a promise that all source materials are distributed or executable.
+The [public case manifest](../biofigure/public-cases.json) separates 13 executable entries and two reference-only DPM records. Executable entries comprise seven first-party synthetic examples, two Cannabis cases, Planarian, OHCA, Sankey and OncoPrint. OncoPrint retains all 12×144 cells in three native 12×48 square-cell bodies; its current fixed-input macOS execution and PNG/PDF outputs were reviewed afresh. Historical qualification is not inherited. The 454 learning records organize figure types, design approaches and source references into a searchable methods catalog. Available materials and execution entry points are listed in each record.
 
 The default portable dependency profile covers the seven new examples and OncoPrint; all-public adds specialist R packages required by retained cases. Cannabis requires pinned BUSCOplot source; OHCA requires existing HiContacts/HiCExperiment dependencies and a hash-pinned RDS. Commit locks and sources are linked from the [README installation instructions](../README.en.md#installation-and-use) and case execution configuration. macOS has been executed; Linux and Windows remain unverified. A fresh Python environment still uses existing R packages and Arial, so it is not a fresh operating-system acceptance test. Execution, material audits, source fidelity, current PNG/PDF inspection and user approval remain separate states.
 
@@ -11,7 +11,7 @@ Dependency profiles `portable` and `all-public` enforce R 4.6.1, Bioconductor 3.
 
 ## 1. Scope
 
-BioFigure is a unified production skill for biological scientific figures. It turns a research question into a scientifically bounded, visually restrained, reproducible, and inspectable figure. It does not replace raw NGS analysis, and “Nature style” never overrides data semantics or journal-specific requirements.
+BioFigure connects a research question, existing analysis results and figure design to produce reproducible figures that are easy to refine. Raw NGS analysis happens upstream; chart selection, visual encoding and layout follow the meaning of the data and the requirements of the journal.
 
 ## 2. Entry point and dynamic routing
 

@@ -8,4 +8,4 @@
 Rscript --vanilla biofigure/examples/reproduction-gallery/generate_064_080_gallery.R /tmp/biofigure-064-080
 ```
 
-图件用于检查方法、信息层、字体、图例与布局。模拟数据不能支持生物学结论。脚本可生成20张；分类图库仅展示其中具有不同图形结构的代表图。
+这组案例展示不同图型的信息层、字体、图例与布局，配套固定种子的模拟输入便于继续修改。脚本可生成 20 张图；分类图库选取其中结构不同的代表图。

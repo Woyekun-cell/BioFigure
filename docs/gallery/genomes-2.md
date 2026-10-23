@@ -4,37 +4,37 @@
 
 本类 **11 张代表图**，每个细分图型保留一例。
 
-按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.
+按图形结构与科研用途浏览，每个细分图型选一张代表图；点击图片下方的来源与代码，继续探索绘图过程。<br>Explore one example per visual subtype, with source and code links for a closer look at the workflow.
 
-<a id="bf-0218"></a>
+<a id="bf-0167"></a>
 
-## BF-0218 · 整条染色体 BUSCO 与 CBDAS 定位
+## BF-0167 · 双物种组装与注释概览
 
-图型：跨基因组BUSCO路径与基因位点。真实作者处理坐标；147个BUSCO、31个基因组、31个CBDAS位点。作者公开图重绘，正式补图编号未验证。
+组装注释概览：公开数据可视化示例。
 
-![BF-0218 整条染色体 BUSCO 与 CBDAS 定位](../../docs/assets/genomics-gallery-20261011/cannabis-chr7.png)
+![BF-0167 双物种组装与注释概览](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png)
 
-[原尺寸](../../docs/assets/genomics-gallery-20261011/cannabis-chr7.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/figures/author-public-chr7-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/cannabis-chr7/provenance.json) · [方法来源](https://www.nature.com/articles/s41586-025-09065-0) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/01_assembly_annotation_overview.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [案例记录 / Details](catalog.csv)
 
-<a id="bf-0221"></a>
+<a id="bf-0168"></a>
 
-## BF-0221 · Micro-C 联系矩阵与 loops
+## BF-0168 · 染色体基因密度
 
-图型：染色质接触矩阵与环标记。真实作者book处理RDS；5kb、200bins、19667联系记录、31个可见环。原生HiContacts；仅对应book案例，正式论文面板未验证。
+基因密度：公开数据可视化示例。
 
-![BF-0221 Micro-C 联系矩阵与 loops](../../docs/assets/genomics-gallery-20261011/ohca-microc.png)
+![BF-0168 染色体基因密度](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png)
 
-[原尺寸](../../docs/assets/genomics-gallery-20261011/ohca-microc.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/results/figures/author-book-microc-loops-recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [方法来源](https://www.nature.com/articles/s41467-024-44761-x) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/02_chromosome_gene_density.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [案例记录 / Details](catalog.csv)
 
-<a id="bf-0222"></a>
+<a id="bf-0170"></a>
 
-## BF-0222 · 四染色体单倍型比对
+## BF-0170 · 代表性基因结构示意
 
-图型：全基因组单倍型端点比对。真实作者已翻向、拼接的处理坐标；19637条比对、39274端点。保留作者4×4顺序和maxEnd边界，按单条比对identity换色；正式面板未验证。
+基因结构：公开数据可视化示例。
 
-![BF-0222 四染色体单倍型比对](../../docs/assets/genomics-gallery-20261011/planarian-dotplot.png)
+![BF-0170 代表性基因结构示意](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png)
 
-[原尺寸](../../docs/assets/genomics-gallery-20261011/planarian-dotplot.png) · [PDF](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/figures/planarian_haplotype_recolored.pdf) · [批次脚本](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/scripts) · [绘图数据](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/results/plot_data) · [来源与验证范围](../../biofigure/examples/genomics-gallery-20261011/planarian-dotplot/provenance.json) · [方法来源](https://www.nature.com/articles/s41467-026-74605-9) · [记录](catalog.csv)
+[原尺寸](../../docs/assets/archive-gallery/comparative-genomics/04_representative_gene_models.png) · [脚本](../../biofigure/examples/archive-gallery/comparative-genomics/scripts/analysis.R) · [案例记录 / Details](catalog.csv)
 
 页码：[1](genomes.md) · **2**
 

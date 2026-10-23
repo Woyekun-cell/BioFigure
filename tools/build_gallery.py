@@ -10,41 +10,96 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_SIZE = 8
-PORTABLE_CASES = [
-    ('boxplot', '分组箱线图', 'Grouped box plot'),
-    ('heatmap', '方格热图', 'Square-cell heatmap'),
-    ('dense-heatmap', '密集矩阵概览', 'Dense matrix overview'),
-    ('bubble', '气泡图', 'Bubble plot'),
-    ('volcano', '火山图', 'Volcano plot'),
-    ('synteny', '共线性图', 'Synteny plot'),
-    ('phylogeny', '系统树', 'Phylogenetic tree'),
+
+# Public presentation copy is kept separate from provenance and validation records.
+DISPLAY_CAPTIONS = {
+    'BF-0055': '相关矩阵与 Mantel 网络 · vegan 示例数据 / Correlation matrix and Mantel network · vegan example data。',
+    'BF-0082': '环形热图与 UpSet 组合：在同一版面中连接多层注释、表达模式与集合交集。<br>Circular heatmap and UpSet: layered annotations, expression patterns and set intersections in one layout.',
+    'BF-0109': 'DNA、RNA 与蛋白状态的完整路径，在一张桑基图中串联呈现。',
+    'BF-0132': '以 GADM 边界为底图，组合模拟采样点与组成饼图。',
+    'BF-0146': '多事件突变景观示例：12 个基因、144 个样本，在三块对齐方格矩阵中呈现。',
+    'BF-0217': '基于原作者公开处理数据重绘，展示 BUSCO 锚定的基因区域比较。',
+    'BF-0218': '基于原作者公开处理坐标重绘，串联 BUSCO 路径与 CBDAS 位点。',
+    'BF-0221': 'OHCA 书籍案例重绘：Micro-C 接触矩阵与环标记。<br>A redraw of the OHCA book example: Micro-C contact matrix and loop annotations.',
+    'BF-0222': '基于原作者公开处理坐标重绘，以四染色体单倍型点阵呈现序列比对关系。',
+}
+
+
+def display_caption(row):
+    if row['id'] in DISPLAY_CAPTIONS:
+        return DISPLAY_CAPTIONS[row['id']]
+    if row['data_origin'] == 'public-data':
+        return f'{row["subtype"]}：公开数据可视化示例。'
+    return f'{row["subtype"]}绘图示例。'
+
+
+def display_order(row):
+    return (row['data_origin'] != 'public-author-processed', row['historical'], row['id'])
+
+
+FEATURED_CASES = [
+    ('BF-0082', '环形热图 × UpSet', 'Circular heatmap × UpSet',
+     '把多层注释、表达模式和集合交集放到一起，展示复杂信息如何在一张图里有条理地展开。',
+     'Layered annotations, expression patterns and set intersections, composed as one connected figure.'),
+    ('BF-0217', 'BUSCO 锚定的基因区域比较', 'BUSCO-anchored genomic comparison',
+     '基于原作者公开处理数据重绘，把跨基因组的区域结构与合酶位点放到同一视野。',
+     'A redraw from publicly released author-processed data, aligning genomic regions and synthase loci.'),
+    ('BF-0221', 'Micro-C 接触矩阵与环标记', 'Micro-C contact map and loops',
+     'OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示。',
+     'A redraw of the OHCA book example, combining a Micro-C contact matrix with loop annotations.'),
+    ('BF-0055', '相关矩阵与 Mantel 网络', 'Correlation matrix and Mantel network',
+     '使用 vegan 示例数据，将环境变量相关矩阵与 Mantel 检验网络连接起来。',
+     'Using vegan example data to connect an environmental correlation matrix with a Mantel-test network.'),
 ]
+DISPLAY_SOURCES = {
+    'BF-0055': 'https://github.com/vegandevs/vegan/blob/master/man/varechem.Rd',
+    'BF-0221': 'https://js2264.github.io/OHCA/devel/pages/topological-features.html',
+}
 
 
-def portable_section(english=False):
-    heading = 'Portable examples' if english else '便携案例'
-    intro = ('Seven first-party synthetic examples bundle the current PNG/PDF, input, metadata and provenance. '
-             'Simulation and interpretation limits are recorded outside the figures. These examples do not certify new inputs or another platform.'
+def featured_section(figures, destinations, english=False):
+    by_id = {row['id']: row for row in figures}
+    heading = 'Featured figures' if english else '精选作品'
+    intro = ('A few examples of the layouts I work on: dense annotations, genomic comparisons and connected statistical views. Follow the case links for the source and rendering workflow.'
              if english else
-             '7 个一方模拟例提供当前 PNG/PDF、输入、元数据与来源记录。模拟身份与解释边界写在图外；这些示例不认证新数据或其他平台。')
-    code_label = 'Shared rendering code' if english else '共用绘图代码'
-    input_label = 'Input generator' if english else '输入生成脚本'
-    lines = [f'## {heading}\n', intro + '\n',
-             f'[{code_label}](biofigure/examples/portable/render.R) · [{input_label}](biofigure/examples/portable/generate_inputs.py)\n']
-    for ident, title_zh, title_en in PORTABLE_CASES:
+             '挑几张我在做的复杂图放在这里：多层注释、基因组比较，以及把多种统计信息接起来的组合图。每张都附了案例与代码入口，方便继续看细节。')
+    lines = [f'## {heading}\n', intro + '\n']
+    for ident, title_zh, title_en, caption_zh, caption_en in FEATURED_CASES:
+        row = by_id[ident]
         title = title_en if english else title_zh
-        base = f'biofigure/examples/portable/{ident}'
-        paths = [f'{base}/figures/{ident}.{ext}' for ext in ('png', 'pdf')]
-        paths += [f'{base}/{name}' for name in ('data.csv', 'metadata.json', 'provenance.json')]
-        for path in paths:
-            assert (ROOT / path).is_file(), f'Missing portable example material: {path}'
-        lines += [f'### {title}\n', f'![{title}]({paths[0]})\n',
-                  f'[PDF]({paths[1]}) · [{"Data" if english else "数据"}]({paths[2]}) · '
-                  f'[{"Metadata" if english else "元数据"}]({paths[3]}) · '
-                  f'[{"Provenance" if english else "来源与边界"}]({paths[4]}) · '
-                  f'[{"Code" if english else "代码"}](biofigure/examples/portable/render.R)\n']
+        caption = caption_en if english else caption_zh
+        lines += [f'### {title}\n', caption + '\n', f'![{title}]({row["image"]})\n']
+        links = [f'[{"Case" if english else "案例详情"}](docs/gallery/{destinations[ident]})']
+        if row['scripts']:
+            script_path = row['scripts'][0] if len(row['scripts']) == 1 else str(Path(row['scripts'][0]).parent)
+            if ident == 'BF-0082':
+                script_path = 'biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R'
+            links.append(f'[{"Code" if english else "绘图代码"}]({script_path})')
+        if row.get('provenance'):
+            links.append(f'[{"Source notes" if english else "来源说明"}]({row["provenance"]})')
+        source = DISPLAY_SOURCES.get(ident, row.get('source_url'))
+        if source:
+            label = ('Example data' if english else '示例数据') if ident == 'BF-0055' else ('Reference' if english else '参考来源')
+            links.append(f'[{label}]({source})')
+        lines.append(' · '.join(links) + '\n')
+    portable_label = 'Seven compact examples with inputs and PNG/PDF exports' if english else '7 个含输入与 PNG/PDF 的便携绘图案例'
+    lines.append(f'[{portable_label}](biofigure/examples/portable)\n')
     return '\n'.join(lines) + '\n'
 
+
+def replace_showcase(text, section, english=False):
+    featured = '## Featured figures' if english else '## 精选作品'
+    gallery = '## Gallery by plot type' if english else '## 分类图廊'
+    areas = '## Research areas and plot types' if english else '## 适用领域与图型'
+    methods = '## Methods and quality checks' if english else '## 绘图方法'
+    if featured in text:
+        start, end = text.index(featured), text.index(areas)
+        text = text[:start] + text[end:]
+    if gallery in text:
+        start, end = text.index(gallery), text.index(methods)
+        text = text[:start] + text[end:]
+    location = text.index(areas)
+    return text[:location] + section + text[location:]
 
 def page_name(slug, number):
     return f'{slug}.md' if number == 1 else f'{slug}-{number}.md'
@@ -78,29 +133,27 @@ def generate():
     destinations = {}
     for category in categories:
         slug = category['slug']
-        rows = sorted((r for r in figures if r['category'] == slug), key=lambda r: (r['historical'], r['id']))
+        rows = sorted((r for r in figures if r['category'] == slug), key=display_order)
         pages = math.ceil(len(rows) / PAGE_SIZE)
         nav_rows.append((category, len(rows), pages))
         for i, row in enumerate(rows):
             destinations[row['id']] = f'{page_name(slug, i // PAGE_SIZE + 1)}#{row["id"].lower()}'
     for category, count, pages in nav_rows:
         slug = category['slug']
-        rows = sorted((r for r in figures if r['category'] == slug), key=lambda r: (r['historical'], r['id']))
+        rows = sorted((r for r in figures if r['category'] == slug), key=display_order)
         for number in range(1, pages + 1):
             paging = ' · '.join(f'**{n}**' if n == number else f'[{n}]({page_name(slug, n)})' for n in range(1, pages + 1))
             body = [f'# {category["title"]} / {category["english"]}\n',
                     '[全部分类 / Categories](../GALLERY.md) · [首页 / Home](../../README.md) · [逐图清单 / Inventory](catalog.csv)\n',
                     f'本类 **{count} 张代表图**，每个细分图型保留一例。\n',
-                    '按结构与用途选取代表图，去除同类配色、数据集及历史变体。数据来源逐图标注；收录不等于完整 CP 验收。<br>One representative per visual subtype; color-only, dataset-only and historical variants are omitted. Inclusion does not certify scientific fidelity.\n']
+                    '按图形结构与科研用途浏览，每个细分图型选一张代表图；点击图片下方的来源与代码，继续探索绘图过程。<br>Explore one example per visual subtype, with source and code links for a closer look at the workflow.\n']
             for row in rows[(number - 1) * PAGE_SIZE:number * PAGE_SIZE]:
                 ident = row['id']
                 body.append(f'<a id="{ident.lower()}"></a>\n')
                 if row['historical']:
                     body.append(f'<details>\n<summary>{ident} · {row["title"]}（历史存档，点击展开）</summary>\n')
                 body.append(f'## {ident} · {row["title"]}\n')
-                body.append(f'图型：{row["subtype"]}。' + row['note'] + '\n')
-                if row['validation'].startswith('needs-revision'):
-                    body.append('状态：方法展示／仍待修订，不能视为高保真验收通过。\n')
+                body.append(display_caption(row) + '\n')
                 if row.get('superseded_by'):
                     newer = row['superseded_by']
                     body.append(f'[查看当前修订版 {newer}]({destinations[newer]})\n')
@@ -117,10 +170,12 @@ def generate():
                     parent = str(Path(row['plot_data'][0]).parent)
                     links.append(f'[绘图数据](../../{parent})')
                 if row.get('provenance'):
-                    links.append(f'[来源与验证范围](../../{row["provenance"]})')
-                if row.get('source_url'):
-                    links.append(f'[方法来源]({row["source_url"]})')
-                links.append('[记录](catalog.csv)')
+                    links.append(f'[来源说明 / Source notes](../../{row["provenance"]})')
+                source = DISPLAY_SOURCES.get(ident, row.get('source_url'))
+                if source:
+                    label = '示例数据 / Example data' if ident == 'BF-0055' else '参考来源 / Reference'
+                    links.append(f'[{label}]({source})')
+                links.append('[案例记录 / Details](catalog.csv)')
                 body.append(' · '.join(links) + '\n')
                 if row['historical']:
                     body.append('</details>\n')
@@ -129,33 +184,33 @@ def generate():
     heading = f'**{len(categories)} 类、{total} 张**'
     index = ['# BioFigure 分类代表图库 / Curated gallery\n', '[返回首页 / Home](../README.md) · [逐图清单 CSV](gallery/catalog.csv) · [完整来源记录 JSON](gallery/catalog.json)\n',
              f'精选 {heading}，每个细分图型保留一个代表。点击类别即可查看对应图片。<br>Browse {total} representative figures in {len(categories)} categories, with one example per visual subtype.\n',
-             '从现有成图中按图形结构与用途筛选，移除同图型的配色、数据集、批次和历史修订变体；保留有实质差异的子类型。本地原始成果与脚本保留。\n',
-             '包含模拟数据、公开数据分析与软件包示例，各图分别注明。展示不代表完整验收；待修订案例保留状态。第三方参考原图、对照拼图、网页截图、调试首稿及纯技术测试图不列入。\n',
+             '从多组学、基因组到统计图与多面板组合，按图形结构和科研用途整理。每类选取不同的表达方式，方便从研究问题找到合适的图。<br>From multi-omics and genomics to statistics and multi-panel layouts, the gallery is organized around the questions a figure helps explain.\n',
+             '每张图都连接相应代码、数据或参考来源；作者数据重绘案例保留原研究和教程入口。<br>Follow the links beneath each figure for code, data, and the original study or tutorial behind redraw examples.\n',
              '| 分类 / Category | 代表图数 |\n|---|---:|']
     for cat, count, pages in nav_rows:
         index.append(f'| [{cat["title"]} / {cat["english"]}](gallery/{cat["slug"]}.md) | {count} |')
-    index.append('\n[来源与权利](../NOTICE.md) · [脚本存档与复现边界](../biofigure/examples/archive-gallery/README.md) · [验收规则](../biofigure/references/benchmark-protocol.md)\n')
+    index.append('\n[来源与权利](../NOTICE.md) · [复现与脚本存档](../biofigure/examples/archive-gallery/README.md) · [成图检查流程](../biofigure/references/benchmark-protocol.md)\n')
     files['docs/GALLERY.md'] = '\n'.join(index)
     readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-    start, end = readme.index('## 分类图廊'), readme.index('## 绘图方法')
     section = ['## 分类图廊\n',
                f'现有成图中精选 {heading}。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。\n',
-               '数据来源包括模拟数据、公开数据和软件包示例，逐图标注。收录不等于原论文数据复现或完整验收。\n',
+               '从图形结构和科研用途出发挑选案例，附上代码、数据与参考来源，方便继续修改和复用。\n',
                '| 图型分类 | 图数 |\n|---|---:|']
     for cat, count, _ in nav_rows:
         section.append(f'| [{cat["title"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section.append('\n[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。\n\n')
-    files['README.md'] = readme[:start] + '\n'.join(section) + portable_section() + readme[end:]
+    showcase = featured_section(figures, destinations) + '\n'.join(section)
+    files['README.md'] = replace_showcase(readme, showcase)
     english = (ROOT / 'README.en.md').read_text(encoding='utf-8')
-    start, end = english.index('## Gallery by plot type'), english.index('## Methods and quality checks')
     section_en = ['## Gallery by plot type\n',
                   f'The gallery selects **{total} figures in {len(categories)} categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.\n',
-                  'Each figure states whether it uses simulated, public or package-example data. Inclusion does not certify reproduction of original research findings or complete acceptance testing.\n',
+                  'Explore the visual approach, then follow the code, data and source links to adapt a figure for your own work.\n',
                   '| Category | Figures |\n|---|---:|']
     for cat, count, _ in nav_rows:
         section_en.append(f'| [{cat["english"]}](docs/gallery/{cat["slug"]}.md) | {count} |')
     section_en.append('\nSee the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.\n\n')
-    files['README.en.md'] = english[:start] + '\n'.join(section_en) + portable_section(english=True) + english[end:]
+    showcase_en = featured_section(figures, destinations, english=True) + '\n'.join(section_en)
+    files['README.en.md'] = replace_showcase(english, showcase_en, english=True)
     fields = ['id', 'category', 'subtype', 'title', 'image', 'pdf', 'sha256', 'data_origin', 'historical', 'validation', 'note', 'origin_paths', 'scripts', 'plot_data', 'provenance']
     out = io.StringIO(newline='')
     writer = csv.DictWriter(out, fieldnames=fields, lineterminator="\n")
@@ -183,3 +238,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
