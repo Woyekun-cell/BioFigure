@@ -43,6 +43,40 @@ $biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
 python3 -m pip install -r biofigure/requirements-python.txt
 ```
 
+## 最新作品
+
+刚出炉的几张复杂图：环形系统发育树、半圆多轨道、临床队列旭日图、基因组共线性、世界地图分布——每一张都照着投稿质感打磨，代码可改。
+
+### 环形系统发育树
+
+树干与外圈多层注释同框，进化关系与分组一目了然。
+
+![环形系统发育树](docs/assets/showcase-20261028/ggtree-circular.png)
+
+### 半圆多轨道图
+
+多组学、多变量在半圆轨道上有条理地展开。
+
+![半圆多轨道图](docs/assets/showcase-20261028/semicircle-tracks.png)
+
+### 旭日图：临床队列 857 例
+
+诊断、性别、吸烟与合并症层层递进，队列结构一眼看清。
+
+![旭日图：临床队列 857 例](docs/assets/showcase-20261028/sunburst-clinical.png)
+
+### 基因组共线性图
+
+两品系基因组区域结构与转座元件的对照，附局部放大。
+
+![基因组共线性图](docs/assets/showcase-20261028/synteny.png)
+
+### 世界地图饼图
+
+地理分布 × 生态型组成，全球格局一张图讲清。
+
+![世界地图饼图](docs/assets/showcase-20261028/worldmap-pies.png)
+
 ## 精选作品
 
 先看几张复杂图：多层注释、基因组比较、多统计信息组合——每张都附案例与代码入口，方便继续改。
