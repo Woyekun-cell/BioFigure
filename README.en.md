@@ -17,7 +17,7 @@
 
 From choosing a plot to getting the layout right, BioFigure helps you turn biological and multi-omics data into figures you can keep refining. It works as a Skill for coding assistants, bringing plot selection, colors, layout, rendering, and quality checks together while preserving editable R/Python code and plot data. The project is under active development.
 
-R is the default backend, with preparation, CP2, single-use render authorization, and artifact review. Dedicated packages handle matrices, circular tracks, phylogenies, and genomic coordinates. AnnData and Scanpy can retain their Python code workflows; **Python currently has no official render-authorization entry point and cannot claim CP3 PASS**. Both paths require scientific checks and review of the actual output.
+**R is the primary plotting route; Python is a fallback.** Use R packages for general statistics, matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Choose Python only on explicit user request, to preserve an existing Python-native workflow, or when R has no suitable implementation. Fallback Matplotlib Figures, including Figures obtained from seaborn/Scanpy, can use the official `biofigure/scripts/figure_style.py` entry point to consume single-use authorization and export PNG/PDF/SVG with a render receipt. Both paths share preparation, CP2, and scientific and visual gates. Exported artifacts still require current-file inspection and checkpoint validation. Other Python/CLI exporters do not automatically receive an official receipt.
 
 ## Quick start
 
@@ -35,6 +35,12 @@ Other executable examples are `heatmap`, `dense-heatmap`, `bubble`, `volcano`, `
 ```text
 $biofigure Read expression.csv and metadata.csv and draw a grouped expression heatmap.
 Preserve metadata sample order, annotate treatment and time, and review labels and legends.
+```
+
+When the Python fallback is needed, follow the [official authorized-rendering steps](biofigure/references/python-rendering.md). Initial support excludes rectangular heatmaps requiring dedicated cell-geometry audits and MathText/TeX. Install the optional dependencies when needed; R-only work does not require them. Prepare seaborn/Scanpy separately for the task and record actual versions:
+
+```bash
+python3 -m pip install -r biofigure/requirements-python.txt
 ```
 
 ## Featured figures

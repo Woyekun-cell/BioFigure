@@ -37,9 +37,11 @@ BioFigure 把研究问题、已有分析结果和图形设计接在一起，做�
 
 ## 6. Renderer 与 Components
 
-`renderer-registry.yaml` 登记18个后端。R 默认用 ggplot2；矩阵用 ComplexHeatmap；树用 ggtree；基因组与共线性用 gggenomes/circlize；单细胞可用 Seurat＋自定义 ggplot。Python 提供 matplotlib、seaborn、Scanpy、pyGenomeTracks 和 pyGenomeViz。专用工具可提供输入，但不能绕过最终 QA。
+`renderer-registry.yaml` 登记18个后端。R 默认用 ggplot2；矩阵用 ComplexHeatmap；树用 ggtree；基因组与共线性用 gggenomes/circlize；单细胞可用 Seurat＋自定义 ggplot。Python 候补登记 matplotlib、seaborn、Scanpy、pyGenomeTracks 和 pyGenomeViz；登记能力不代表同等选用优先级。专用工具可提供输入，但不能绕过最终 QA。
 
-R 提供准备、CP2、一次性授权及成图审查执行链。Python 当前支持代码工作流，但没有官方绘图授权入口，不能声明 CP3 PASS。公开依赖脚本 `install_public_dependencies.R` 的 `portable` / `all-public` 配置精确锁定 R 4.6.1 与所列包版本；这不是所有 R 入口的统一版本硬锁。冷安装与已配好环境的入口见 [README](../README.md#快速开始)，实际跨平台证据见[平台记录](PLATFORM-VALIDATION.md)。
+R 为主流程；常规任务优先 R，Python 仅在用户指定、保留既有 Python 原生流程或 R 无合适实现时作为候补，并记录原因。锁定后不得因 R 失败静默换后端，切换须重新准备、授权和审阅。Python Matplotlib Figure（包括 seaborn/Scanpy 返回后取得的 Figure）可通过官方 `scripts/figure_style.py` 的 `bf_render()` 消费一次性授权，导出 PNG/PDF/SVG 与正式渲染凭据；[调用与审查步骤](../biofigure/references/python-rendering.md)保留相同的准备、CP2、真实字体、文字、尺寸、来源哈希和实际审图门禁。首版拒绝需专用格形量测的矩形热图及 MathText/TeX。其他 Python/CLI 导出不自动获得认证；生成凭据也不自动授予 CP3/CP4 PASS。Python 绘图库按任务单独准备并记录版本，不沿用既有 R 案例的运行或跨平台资格。
+
+公开依赖脚本 `install_public_dependencies.R` 的 `portable` / `all-public` 配置精确锁定 R 4.6.1 与所列包版本；这不是所有 R 入口的统一版本硬锁，也不约束 Python 版本。冷安装与已配好环境的入口见 [README](../README.md#快速开始)，实际跨平台证据见[平台记录](PLATFORM-VALIDATION.md)。
 
 `components/` 定义 marks、labels、legends、annotation、statistical layers 和 genomic tracks。组件是可组合对象，不是成图模板。数据区、标签区、注释区和图例区必须先按毫米分配。
 

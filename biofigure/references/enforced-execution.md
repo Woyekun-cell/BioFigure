@@ -18,7 +18,11 @@ bf_render_png(plot, "figure.png", font, allowed_text,
 
 尺寸按数据与当前设计计算；来源模式还须对照参考。`target_width_mm`是论文/展示实际宽度；不能为通过字号检查写原始大画布宽度。默认≥6pt；5pt须填写`text_size_authorization`依据。标题授权用`heading_authorization`，仍须在清单内。
 
-入口预检同一对象并导出，检查字体、清单、双离散GeomTile方格、槽位及最终字号。成功才写JSON；失败删除旧凭据。凭据绑定PNG、字体、脚本、样式助手与Spec哈希。boxes是测量输入，不代表脚本已识别全部真实对象碰撞，仍须看图。
+入口预检并导出同一对象，核字体、清单、双离散GeomTile方格、槽位及终字号。成功才写JSON；失败删旧凭据。绑定PNG、字体、脚本、helper与Spec哈希。boxes是测量输入，不证明无碰撞，仍须看图。
+
+## Python Matplotlib 入口
+
+`scripts/figure_style.py::bf_render` 支持 Matplotlib Figure（含 seaborn/Scanpy 的 Figure），ID 为 `biofigure-matplotlib-v1`。先授权，再按[调用步骤](python-rendering.md)渲染；`source_files` 按授权顺序绑定脚本、输入和实际 helper，Spec 独立传入。导出及凭据不自动授予 CP3/CP4 PASS；当前 PNG/PDF/SVG 仍须审图和验证 ledger。
 
 ## 图内文字
 
@@ -44,11 +48,11 @@ CP4：打开当前PNG及实际PDF/SVG，从数据区看到最底边。`footer_ab
 
 ## 其他后端
 
-ComplexHeatmap/grid/Python保持原后端，使用真实字体/文本/布局测量及同次导出生成相同JSON字段；字段定义见`validate_render_receipt`。不得手写`checks=true`充数。缺适配器只交未验证预览。
+ComplexHeatmap/grid 保持 R，Python 用上述入口；均实测字体、文本、布局并同次导出凭据，字段见 `validate_render_receipt`。无适配器的对象/CLI 只交未验证预览；不得手写 `checks=true`。
 
 ## 最后一道门
 
-CP2 evidence增加`design_spec`绝对路径；CP3增加`render_receipt`；CP4增加`inspection_evidence`，指向实际观察文件。凭据source_files必须包含Spec；所有凭据文件路径为绝对路径。
+CP2 evidence增加`design_spec`绝对路径；CP3增加`render_receipt`；CP4增加`inspection_evidence`，指向实际观察文件。凭据须绑定Spec及实际source_files；所有凭据文件路径为绝对路径。
 
 ```sh
 python3 scripts/validate_checkpoints.py checkpoint-ledger.yaml --json

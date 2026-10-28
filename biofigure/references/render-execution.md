@@ -20,7 +20,9 @@
 
 ## Python
 
-建立文字清单与槽位，findfont禁fallback，逐Text核对真实字体/字号；canvas.draw后测extent。Scanpy关闭未批准标题，rcParams不能代替逐对象检查。
+Matplotlib Figure 使用官方 `scripts/figure_style.py` 的 `bf_font`、`bf_style` 与 `bf_render`；seaborn/Scanpy 须取得其实际 Figure 后走同一入口。先完成准备与 CP2，编码后以实际脚本、输入和 helper 自身签发一次性授权，Spec 通过独立参数绑定，再由 `bf_render` 消费。具体参数与命令见 [Python 授权渲染](python-rendering.md)。
+
+文字清单从设计和输入语义预先确定，不从成图反向批准；真实字体禁 fallback，逐 Text 核对字体/字号，canvas.draw 后测 extent。Scanpy 关闭未批准标题，rcParams 不能代替逐对象检查。普通 `savefig` 或其他 CLI 只证明导出文件；正式回执也不替代当前 PNG/PDF/SVG 的实际检查与 CP3/CP4 校验。
 
 ## 证据
 

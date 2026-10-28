@@ -170,6 +170,97 @@ class ReceiptTests(unittest.TestCase):
         self.data['rendered_text']=labels if rendered is None else rendered
         helper = ROOT/'scripts/figure_style.R' if helper is None else helper
         self._bind_authorization(self.preparation, self.design, [self.script, helper])
+    def _python_receipt(self, helper=None):
+        """Receipt validation fixture only; it does not attest Matplotlib execution."""
+        skill = self.root / 'python-skill'
+        canonical = skill / 'scripts/figure_style.py'
+        canonical.parent.mkdir(parents=True, exist_ok=True)
+        canonical.write_text('# Canonical helper protocol fixture, not executable rendering evidence.\n')
+        plot = self.root / 'plot.py'
+        plot.write_text('# Independent Python renderer protocol fixture.\n')
+        self.design.write_text(__import__('yaml').safe_dump({
+            'figure_task':'fixture', 'text_contract':{'allowed_text':['Sample'], 'allow_headings':False},
+            'backend_lock':{'backend':'Python', 'lock_id':'python-fixture', 'locked':True,
+                            'preview_export_qa_same_backend':True},
+            'renderer':{'language':'Python', 'backend':'matplotlib', 'packages':['matplotlib']}}))
+        self.data.update(backend='Python', renderer='matplotlib',
+                         renderer_entrypoint='biofigure-matplotlib-v1', rendered_text=['Sample'])
+        self._bind_authorization(self.preparation, self.design, [plot, helper or canonical])
+        return skill, plot, canonical
+
+    def test_official_python_receipt_uses_the_shared_authorization_and_artifact_gates(self):
+        skill, _, _ = self._python_receipt()
+        with patch.object(m, 'ROOT', skill):
+            self.assertEqual(self.check(), [])
+
+    def test_official_matplotlib_entrypoint_cannot_be_relabelled_as_r(self):
+        skill, _, _ = self._python_receipt()
+        self.data['backend'] = 'R'
+        self.receipt.write_text(json.dumps(self.data))
+        with patch.object(m, 'ROOT', skill):
+            self.assertTrue(any('requires backend Python' in error for error in self.check()))
+
+    def test_python_rejects_missing_or_nonofficial_entrypoint_and_renderer(self):
+        skill, _, _ = self._python_receipt()
+        for field, value in (('renderer_entrypoint', None), ('renderer_entrypoint', 'custom-python'),
+                             ('renderer', 'seaborn'), ('renderer', 'ggplot2')):
+            with self.subTest(field=field, value=value):
+                before = dict(self.data)
+                self.data[field] = value
+                self.receipt.write_text(json.dumps(self.data))
+                with patch.object(m, 'ROOT', skill):
+                    self.assertTrue(any('official matplotlib entrypoint' in error for error in self.check()))
+                self.data = before
+
+    def test_python_requires_the_current_authorized_helper_and_independent_plot_source(self):
+        skill, plot, canonical = self._python_receipt()
+        for sources in ([plot], [canonical]):
+            self._bind_authorization(self.preparation, self.design, sources)
+            with patch.object(m, 'ROOT', skill):
+                self.assertTrue(any('matplotlib receipt must bind' in error for error in self.check()))
+        modified = self.root / 'modified/figure_style.py'
+        modified.parent.mkdir()
+        modified.write_text('# Modified helper cannot claim the official entrypoint.\n')
+        self._bind_authorization(self.preparation, self.design, [plot, modified])
+        with patch.object(m, 'ROOT', skill):
+            self.assertTrue(any('current canonical figure_style.py' in error for error in self.check()))
+
+    def test_python_helper_must_be_in_the_consumed_authorization_source_set(self):
+        skill, plot, canonical = self._python_receipt()
+        self._bind_authorization(self.preparation, self.design, [plot])
+        self.data['sources'].append({'path':str(canonical), 'sha256':m.digest(canonical)})
+        self.receipt.write_text(json.dumps(self.data))
+        with patch.object(m, 'ROOT', skill):
+            self.assertTrue(any('authorization source bindings differ' in error for error in self.check()))
+
+    def test_python_keeps_exact_font_size_and_actual_text_checks(self):
+        skill, _, _ = self._python_receipt()
+        original = json.dumps(self.data)
+        for defect in ('missing-font', 'fallback-font', 'small-text', 'unexpected-text', 'missing-check'):
+            with self.subTest(defect=defect):
+                self.data = json.loads(original)
+                if defect == 'missing-font':
+                    self.data['font']['path'] = str(self.root / 'missing.ttf')
+                elif defect == 'fallback-font':
+                    self.data['font']['family'] = 'DejaVu Sans'
+                elif defect == 'small-text':
+                    self.data['target_min_text_pt'] = 4
+                elif defect == 'unexpected-text':
+                    self.data['rendered_text'] = ['Undeclared label']
+                else:
+                    self.data['checks'].pop('layout')
+                self.receipt.write_text(json.dumps(self.data))
+                with patch.object(m, 'ROOT', skill):
+                    self.assertTrue(self.check())
+
+    def test_python_receipt_cannot_change_the_authorized_backend_lock(self):
+        skill, plot, canonical = self._python_receipt()
+        document = m.load(self.design)
+        document['backend_lock']['backend'] = 'R'
+        self.design.write_text(__import__('yaml').safe_dump(document))
+        self._bind_authorization(self.preparation, self.design, [plot, canonical])
+        with patch.object(m, 'ROOT', skill):
+            self.assertTrue(any('authorized Python backend lock' in error for error in self.check()))
     def check(self):
         return m.validate_render_receipt(str(self.receipt), self.artifact)
     def test_valid_bound_receipt(self):
@@ -226,7 +317,7 @@ class ReceiptTests(unittest.TestCase):
     def test_python_render_receipt_cannot_pass_cp3_without_official_authorized_renderer(self):
         self.data['backend']='Python'
         self.receipt.write_text(json.dumps(self.data))
-        self.assertTrue(any('Python CP3 PASS blocked' in error for error in self.check()))
+        self.assertTrue(any('official matplotlib entrypoint' in error for error in self.check()))
     def test_missing_render_authorization_consumption_is_rejected(self):
         self.data.pop('authorization_consumption')
         self.receipt.write_text(json.dumps(self.data))

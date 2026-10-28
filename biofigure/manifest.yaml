@@ -69,6 +69,8 @@ routing_axes:
   backend:
     selection: exactly_one_locked_before_design_spec
     default: R
+    priority_order: [R, Python]
+    python_role: fallback
     values:
     - R
     - Python

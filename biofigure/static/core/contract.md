@@ -4,4 +4,6 @@
 
 视觉契约声明主编码、辅助编码、视觉层级、图例、注释、最终物理尺寸、Helvetica/Arial、背景和导出格式。统计不适用时必须写 `not_applicable` 及理由；不得为树、轨道、图像板或机制图补造数值。用户未提供数值时，只能制作明确标记为示意的结构，不能生成貌似实测的定量结果。
 
-后端在 Design Spec 前锁定为 R 或 Python。同一图的渲染、预览、导出和 QA 必须沿用该后端；改变后端作废旧证据并完整重渲染。专用轨道/图像工具只能提供输入或预处理，不能绕过最终审查。
+R为主、Python候补；选用条件见`renderer-registry.yaml::backend_policy`，记录原因。Spec前锁定，预览/导出/QA同后端；失败不静默切换。切换须更新Spec、重做准备/授权/渲染/审阅，旧证据失效。专用工具只供输入，不绕过QA。
+
+Python候补用`scripts/figure_style.py::bf_render`导出Matplotlib Figure；一次性授权绑定实际脚本、输入、Spec与helper。普通CLI保存不产生正式凭据。科学、字体、文字、尺寸、来源哈希及实际审图门禁不降级；导出不自动授予CP3/CP4 PASS。

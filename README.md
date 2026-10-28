@@ -17,7 +17,7 @@
 
 让科研绘图更顺手，也更好看。BioFigure 是给编码助手用的生物科研绘图 Skill，围绕生物与多组学数据，把选图、配色、排版、出图和成图检查串起来，留下能继续修改的 R/Python 代码与绘图数据。项目还在持续更新，绘图方法、案例和质控流程也在不断完善。
 
-R 是默认后端，提供准备、CP2、一次性绘图授权和成图审查流程；矩阵、环形轨道、系统树和基因组图按任务选择专用包。AnnData、Scanpy 等可沿用 Python 代码工作流；**当前 Python 无官方绘图授权入口，不能声明 CP3 PASS**。两条路径都需核对科学含义与最终输出。
+**R 为主要绘图路线，Python 只作候补。** 常规统计、矩阵、环形轨道、系统树、基因组和组图优先使用 R 专用包；仅用户指定、需保留既有 Python 原生流程或 R 无合适实现时选 Python。候补路线的 Matplotlib Figure，以及 seaborn/Scanpy 生成并取得的 Figure，可通过官方 `biofigure/scripts/figure_style.py` 入口消费一次性授权并导出 PNG/PDF/SVG 与渲染凭据。两条路径共用准备、CP2、科学与视觉门禁；导出成功后仍须审阅当前文件并完成检查点校验。其他 Python/CLI 工具仅保存文件，不自动取得正式凭据。
 
 ## 快速开始
 
@@ -35,6 +35,12 @@ python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/biofig
 ```text
 $biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
 样本顺序按元数据，标注处理与时间，先检查数据，再绘图并检查文字与图例。
+```
+
+确需 Python 候补时，见[官方授权渲染步骤](biofigure/references/python-rendering.md)。首版不接受需专用格形量测的矩形热图及 MathText/TeX。按需安装可选依赖，不影响 R-only 路径；seaborn/Scanpy 按任务另行准备，并记录实际版本：
+
+```bash
+python3 -m pip install -r biofigure/requirements-python.txt
 ```
 
 ## 精选作品

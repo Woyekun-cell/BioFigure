@@ -36,7 +36,7 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "edd3dc240333e8426d5177976464aeb381fa59906009f8751f0fb4847412ae04",
+      "sha256": "f0ac0f1d03ea0805788c9927e57813fd6d49f0b5c44b7831fdcf1857361eb2b7",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -911,7 +911,7 @@
     },
     {
       "path": "manifest.yaml",
-      "sha256": "7e22d38c602c98e8b656098645c791aa7432ed18ab039fb901290f59933372f7",
+      "sha256": "cb071c3fb17409569cfe804877e0dd9ee0a245f623631597dfae4a1ed9d11b8a",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -1380,21 +1380,21 @@
     },
     {
       "path": "references/enforced-execution.md",
-      "sha256": "321a846b9195d5a0c0c85b53dc4f51552eca1f0ceb4e5c2d6cb41a01237001c6",
+      "sha256": "a29538d8701a5fb0479fa674bd7c83148acc31f0bdc9cd730d45036da3f11a16",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "references/export.md",
-      "sha256": "a59ff6a9c1a6a8b955880655aa5e8a3d8394d9c7757ad59a3bc1d68986795a4f",
+      "sha256": "97f4f0d3ce9b64badea1c679c4e5ae090162ae0776c42d6c0f0ed9a2879f7df9",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "references/figure-execution-gates.md",
-      "sha256": "f3c74c01a891a7c10394c3e6919a4e08b43c46a38a6ab388c3a1b53dd91818f7",
+      "sha256": "95ed0b95a5935e1674c98a0a1be490103e714999909baf06d407616b0bd70c86",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -1660,7 +1660,7 @@
     },
     {
       "path": "references/python-rendering.md",
-      "sha256": "1ac69fe461eee549c87055ebeb32b315a3a1708f01843ee9ef35a2c1abf8410e",
+      "sha256": "5d5871327aafcae6064d80ec81c3cee972d20b569b696b4a69b84066e9281fc3",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -1702,7 +1702,7 @@
     },
     {
       "path": "references/render-execution.md",
-      "sha256": "2c831ec9b8a52b05a855e3a6f289993912dbd84cd554bcddfcd3d20bec82420d",
+      "sha256": "434bcd7b1f7653cdd54282fe80c33145736d7b2a0d9bc83fbcb779386b02fa6b",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2003,7 +2003,7 @@
     },
     {
       "path": "renderer-registry.yaml",
-      "sha256": "c2e1c530ad7efd73612113258b7253a4e8c527d9cf92c580f94dd5f10aa0dc90",
+      "sha256": "6e89cd69741c3d5412a1afe455e690ebf1e1143295e95d9f79527013a26007aa",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2416,7 +2416,7 @@
     },
     {
       "path": "scripts/validate_checkpoints.py",
-      "sha256": "a25f8b089ca7b5994aebb6fb636a4ef9589d2115f33d1d680b97b22a5d0eab4e",
+      "sha256": "6f94884b87cbba8c9997b955ea440f08d5a72868d0a708d53eca529fec591b3f",
       "role": "code",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2458,14 +2458,14 @@
     },
     {
       "path": "static/core/contract.md",
-      "sha256": "986d3f110534473bbfb1f87cda576aa28d84de7acb3ec5200e155df4be10fa82",
+      "sha256": "b341a7f6d027b386987b155acbc5c1fd827daae0f288c9b51bc6f650875c0639",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
     },
     {
       "path": "static/core/execution-contract.yaml",
-      "sha256": "16239622a0faf7521b8dc38744c166e4b5e303fe5dc01518ab40f1b11de9d5cc",
+      "sha256": "3b56f15a8be0ddd7791ce707ba69490d437ea8967277d03c3161a3e912fcfaeb",
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
@@ -2504,6 +2504,20 @@
       "role": "config",
       "license": "MIT",
       "origin": "BioFigure-owned runtime, method metadata or documentation; external materials are links, not relicensed copies"
+    },
+    {
+      "path": "scripts/figure_style.py",
+      "sha256": "66eaac39da7e171f3ea3f01377b93322d5218ae6c9812446ca4ba9088def5ba6",
+      "role": "code",
+      "license": "MIT",
+      "origin": "BioFigure-owned official Python renderer or optional runtime dependency declaration; no external figure or research data bundled."
+    },
+    {
+      "path": "requirements-python.txt",
+      "sha256": "72e714d4c3a90f884c7447e83682325947842ac8b186c1047b237130cf03b27a",
+      "role": "config",
+      "license": "MIT",
+      "origin": "BioFigure-owned official Python renderer or optional runtime dependency declaration; no external figure or research data bundled."
     }
   ],
   "distribution_exclusions": [

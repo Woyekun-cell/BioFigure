@@ -376,7 +376,11 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
         if receipt.get('backend') not in {'R', 'Python'}:
             errors.append('render receipt backend invalid')
         if receipt.get('backend') == 'Python':
-            errors.append('Python CP3 PASS blocked: official authorized Python renderer is not implemented')
+            if (receipt.get('renderer') != 'matplotlib'
+                    or receipt.get('renderer_entrypoint') != 'biofigure-matplotlib-v1'):
+                errors.append('Python receipt requires the official matplotlib entrypoint biofigure-matplotlib-v1')
+        elif receipt.get('renderer') == 'matplotlib' or receipt.get('renderer_entrypoint') == 'biofigure-matplotlib-v1':
+            errors.append('official matplotlib entrypoint requires backend Python')
         authorization = receipt.get('authorization_consumption', {})
         authorization = authorization if isinstance(authorization, dict) else {}
         authorized_design_path = None
@@ -475,6 +479,23 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
                              and Path(str(x.get('path', ''))).name == 'figure_style.R'] if isinstance(sources, list) else []
             if not any(path is not None and digest(path) == digest(current_style) for path in style_sources):
                 errors.append('ggplot2 receipt must bind the current canonical figure_style.R or an identical copy')
+        if receipt.get('backend') == 'Python':
+            names = [Path(str(x.get('path', ''))).name for x in sources if isinstance(x, dict)] if isinstance(sources, list) else []
+            if 'figure_style.py' not in names or not any(n.lower().endswith('.py') and n != 'figure_style.py' for n in names):
+                errors.append('matplotlib receipt must bind plot source and figure_style.py')
+            current_style = ROOT / 'scripts/figure_style.py'
+            style_sources = [bound_path(x) for x in sources if isinstance(x, dict)
+                             and Path(str(x.get('path', ''))).name == 'figure_style.py'] if isinstance(sources, list) else []
+            if not current_style.is_file() or not any(path is not None and digest(path) == digest(current_style) for path in style_sources):
+                errors.append('matplotlib receipt must bind the current canonical figure_style.py or an identical copy')
+            python_design_path = design_spec if design_spec is not None else authorized_design_path
+            python_design = load(python_design_path) if python_design_path is not None else {}
+            lock = python_design.get('backend_lock', {})
+            renderer = python_design.get('renderer', {})
+            if (lock.get('backend') != 'Python' or lock.get('locked') is not True
+                    or lock.get('preview_export_qa_same_backend') is not True
+                    or renderer.get('language') != 'Python' or renderer.get('backend') != 'matplotlib'):
+                errors.append('matplotlib receipt requires the authorized Python backend lock and matplotlib Design Spec')
         if design_spec is not None and (not isinstance(sources, list) or not any(
                 bound_path(x) == design_spec.resolve() for x in sources if isinstance(x, dict))):
             errors.append('render receipt must bind current design spec')

@@ -6,6 +6,8 @@
 
 R导出顺序：先用ragg::agg_png生成首轮PNG并实际打开，再用svglite/PDF设备输出矢量。设备先试写；Cairo动态库不可用时不得继续。PDF/SVG重开检查文字仍为文字、字体替代、透明度和栅格层。PNG dpi按最终物理尺寸确定，不固定600dpi。
 
+Python 的 Matplotlib Figure 通过官方 `scripts/figure_style.py::bf_render` 消费一次性授权，保留必需 PNG 及所选 PDF/SVG 的来源与哈希凭据；seaborn/Scanpy 以实际 Figure 接入。调用步骤见 [Python 渲染](python-rendering.md)。导出后同样打开当前 PNG 与每种交付矢量文件，核对真实字体、文字、裁切、白底与终尺寸；凭据不能代替 CP3/CP4 审查。其他 CLI 保存的文件不自动获得官方认证。
+
 密集数据层可栅格化，轴、文字、图例、树和关键标注保持矢量。不得只有嵌入整页位图的SVG。纯白#FFFFFF同时设置在canvas、panel和设备。
 
 图注独立保存；画布不塞模拟声明、来源或方法说明。Illustrator编辑保留代码原版、编辑版和修改清单，且不手工改变数据、误差线、统计或关系。

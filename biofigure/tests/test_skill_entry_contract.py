@@ -1,11 +1,55 @@
 from pathlib import Path
+import sys
 import unittest
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from route_figure import route
 
 
 class SkillEntryContractTests(unittest.TestCase):
+    def test_r_primary_python_fallback_keeps_explicit_backend_locks(self):
+        manifest = yaml.safe_load((ROOT / 'manifest.yaml').read_text(encoding='utf-8'))
+        contract = yaml.safe_load((ROOT / 'static/core/execution-contract.yaml').read_text(encoding='utf-8'))
+        registry = yaml.safe_load((ROOT / 'renderer-registry.yaml').read_text(encoding='utf-8'))
+        policy = registry['backend_policy']
+        authorization = contract['renderer_authorization']
+        axis = manifest['routing_axes']['backend']
+        self.assertEqual(axis['default'], 'R')
+        self.assertEqual(policy['preferred_default'], 'R')
+        self.assertEqual(authorization['default_backend'], 'R')
+        for actual in (axis['priority_order'], policy['priority_order'], authorization['backend_priority']):
+            self.assertEqual(actual, ['R', 'Python'])
+        for record in (axis, policy, authorization):
+            self.assertEqual(record['python_role'], 'fallback')
+        self.assertEqual(policy['python_selection_conditions'], authorization['python_selection_conditions'])
+        self.assertFalse(policy['silent_fallback_after_lock'])
+        self.assertFalse(authorization['silent_fallback_after_lock'])
+        request = dict(primary_domain='single-cell-spatial', primary_role='discovery',
+                       backend='R', deliverable='editable-vector', reference_mode='original')
+        r_lock = route(request)['backend_lock']
+        self.assertEqual(r_lock['backend'], 'R')
+        self.assertFalse(r_lock['prior_evidence_invalidated'])
+        python_lock = route({**request, 'backend':'Python'}, previous_lock=r_lock)['backend_lock']
+        self.assertEqual(python_lock['backend'], 'Python')
+        self.assertTrue(python_lock['prior_evidence_invalidated'])
+        self.assertTrue(python_lock['rerender_required'])
+
+    def test_python_cp3_is_limited_to_the_official_matplotlib_helper(self):
+        contract = yaml.safe_load((ROOT / 'static/core/execution-contract.yaml').read_text(encoding='utf-8'))
+        registry = yaml.safe_load((ROOT / 'renderer-registry.yaml').read_text(encoding='utf-8'))
+        authorization = contract['renderer_authorization']
+        self.assertEqual(authorization['enabled_backends'], ['R', 'Python'])
+        self.assertEqual(authorization['python_cp3'], 'OFFICIAL_MATPLOTLIB_ENTRYPOINT_ONLY')
+        self.assertEqual(authorization['python_entrypoint'], {
+            'renderer':'matplotlib', 'renderer_entrypoint':'biofigure-matplotlib-v1',
+            'helper':'scripts/figure_style.py'})
+        self.assertEqual(registry['renderers']['matplotlib']['authorized_entrypoint'],
+                         'biofigure-matplotlib-v1')
+        self.assertEqual(registry['renderers']['matplotlib']['authorized_helper'],
+                         'scripts/figure_style.py')
+
     def test_skill_entry_embeds_bootstrap_gate_and_contract_location(self):
         skill = (ROOT / 'SKILL.md').read_text(encoding='utf-8')
         self.assertIn('先定位', skill)

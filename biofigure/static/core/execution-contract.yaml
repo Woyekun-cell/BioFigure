@@ -32,8 +32,14 @@ bootstrap:
   - missing_permission
   - chart_selection_and_cp2_spec_incomplete
 renderer_authorization:
-  enabled_backend: R
-  python_cp3: BLOCKED_UNTIL_OFFICIAL_AUTHORIZED_RENDERER
+  default_backend: R
+  backend_priority: [R, Python]
+  python_role: fallback
+  python_selection_conditions: [explicit_user_request, preserve_existing_python_native_workflow, no_suitable_R_implementation]
+  silent_fallback_after_lock: false
+  enabled_backends: [R, Python]
+  python_cp3: OFFICIAL_MATPLOTLIB_ENTRYPOINT_ONLY
+  python_entrypoint: {renderer: matplotlib, renderer_entrypoint: biofigure-matplotlib-v1, helper: scripts/figure_style.py}
   claim_boundary: workflow_consistency_only_not_anti_forgery_security
 figure_text:
   policy: scientific-content-only-v1
