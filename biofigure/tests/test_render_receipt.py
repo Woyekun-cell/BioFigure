@@ -1,7 +1,11 @@
 import hashlib
 import importlib.util
+import io
 import json
+from contextlib import redirect_stdout
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -14,6 +18,86 @@ m = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
 
 class ReceiptTests(unittest.TestCase):
+    def test_cli_pending_ledger_returns_json_without_reading_inspection(self):
+        definition = m.load(m.DEFINITION)
+        entries = [{'id': gate['id'], 'status': 'STOP' if index == 0 else 'NOT_RUN',
+                    'evidence': {}, 'failures': ['awaiting scientific intent'] if index == 0 else [],
+                    'next_action': 'resolve earlier checkpoint'}
+                   for index, gate in enumerate(definition['checkpoints'])]
+        ledger = {'schema_version': 1, 'artifact_id': 'pending-fixture',
+                  'mode': 'standard', 'checkpoints': entries}
+        self.assertEqual(m.validate(ledger, definition), [])
+        path = self.root / 'pending-ledger.json'
+        path.write_text(json.dumps(ledger))
+        result = subprocess.run([sys.executable, str(ROOT / 'scripts/validate_checkpoints.py'),
+                                 str(path), '--json'], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 1, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload['status'], 'FAIL')
+        self.assertTrue(any('release is blocked' in error for error in payload['errors']))
+        self.assertFalse(payload['current_render_inspection_verified'])
+        self.assertNotIn('Traceback', result.stderr)
+
+    def test_final_inspection_reload_fails_closed_after_validation(self):
+        original_validate = m.validate
+        for change in ('missing-inspection', 'changed-receipt'):
+            with self.subTest(change=change):
+                ledger, _ = self.ledger()
+                path = self.root / 'ledger.json'
+                path.write_text(json.dumps(ledger))
+                inspection = Path(ledger['checkpoints'][4]['evidence']['inspection_evidence'])
+                def change_after_validation(document, definition):
+                    errors = original_validate(document, definition)
+                    self.assertEqual(errors, [])
+                    if change == 'missing-inspection':
+                        inspection.unlink()
+                    else:
+                        self.receipt.write_bytes(self.receipt.read_bytes() + b'\n')
+                    return errors
+                output = io.StringIO()
+                with patch.object(m.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout='', stderr='')), \
+                     patch.object(m, 'validate', side_effect=change_after_validation), redirect_stdout(output):
+                    status = m.main([str(path), '--json'])
+                payload = json.loads(output.getvalue())
+                self.assertEqual(status, 1, payload)
+                self.assertEqual(payload['status'], 'FAIL')
+                self.assertTrue(payload['errors'])
+                self.assertFalse(payload['current_render_inspection_verified'])
+
+    def test_current_cp3_cannot_omit_inspection_policy_to_use_legacy_scope(self):
+        self.data.pop('inspection_binding_policy')
+        self.receipt.write_text(json.dumps(self.data))
+        self.assertTrue(any('inspection_binding_policy' in error for error in self.check()))
+
+    def test_cp4_rejects_old_inspection_after_new_authorization_with_identical_artifact(self):
+        ledger, definition = self.ledger()
+        artifact_before = self.artifact.read_bytes()
+        inspection_path = Path(ledger['checkpoints'][4]['evidence']['inspection_evidence'])
+        inspection_before = inspection_path.read_bytes()
+        with patch.object(m.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout='', stderr='')):
+            self.assertEqual(m.validate(ledger, definition), [])
+            authorization = json.loads(self.authorization.read_text())
+            authorization.pop('authorization_id')
+            authorization.pop('consumed')
+            authorization['issued_at'] = 'new authorized fixture render'
+            new_id = hashlib.sha256(json.dumps(authorization, sort_keys=True).encode()).hexdigest()
+            authorization.update(authorization_id=new_id, consumed=True)
+            self.authorization.write_text(json.dumps(authorization))
+            self.auth_marker.write_text(new_id + '\n')
+            consumption = self.data['authorization_consumption']
+            consumption['authorization_id'] = new_id
+            for key, path in (('authorization_file', self.authorization), ('marker', self.auth_marker)):
+                consumption[key] = {'path': str(path), 'sha256': m.digest(path)}
+            self.receipt.write_text(json.dumps(self.data))
+            errors = m.validate(ledger, definition)
+            self.assertTrue(any('render_receipt_sha256' in error for error in errors), errors)
+            self.assertEqual(inspection_path.read_bytes(), inspection_before)
+            inspection = json.loads(inspection_path.read_text())
+            inspection['render_receipt_sha256'] = m.digest(self.receipt)
+            inspection_path.write_text(json.dumps(inspection))
+            self.assertEqual(m.validate(ledger, definition), [])
+        self.assertEqual(self.artifact.read_bytes(), artifact_before)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
@@ -46,6 +130,7 @@ class ReceiptTests(unittest.TestCase):
         def bound(p):
             return {'path':str(p), 'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
         self.data = {'schema_version':1, 'status':'PASS', 'backend':'R',
+                     'inspection_binding_policy':'render-receipt-sha256-v1',
                      'artifact':bound(self.artifact), 'sources':[bound(self.script),bound(self.design)],
                      'font':dict(bound(self.font), family='Arial'),
                      'authorization_consumption':{'consumed':True,'authorization_id':self.auth_id,
@@ -345,6 +430,7 @@ class ReceiptTests(unittest.TestCase):
             target_size={'width_mm':90,'height_mm':75},detected=dict.fromkeys(m.DETECTED_KEYS,False))
         inspection=self.root/'inspection.yaml'
         inspection.write_text(json.dumps({'artifact_sha256':m.digest(self.artifact),
+            'render_receipt_sha256':m.digest(self.receipt),
             'artifact_path':str(self.artifact.resolve()),'first_render_path':str(self.artifact.resolve()),
             'first_render_sha256':m.digest(self.artifact),'target_size':{'width_mm':90,'height_mm':75},
             'reviewer_type':'human','reviewer_id':'fixture-reviewer','judgment':'PASS',
@@ -365,6 +451,7 @@ class ReceiptTests(unittest.TestCase):
         commands=[c.args[0] for c in run.call_args_list]
         self.assertIn('validate_design_spec.py',commands[0][1])
         self.assertIn('publication',commands[1]); self.assertIn('imaging-assay',commands[1])
+        self.assertIn('--render-receipt', commands[1])
     def test_preparation_receipt_tampering_is_rejected(self):
         ledger,definition=self.ledger()
         cp2=ledger['checkpoints'][2]['evidence']

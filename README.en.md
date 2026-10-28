@@ -11,13 +11,31 @@
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
 
-[English handbook](docs/HANDBOOK.en.md) · [Design sources](docs/DESIGN-SOURCES.md) · [Gallery](docs/GALLERY.md) · [Releases](https://github.com/Woyekun-cell/BioFigure/releases) · [Community](https://github.com/Woyekun-cell/BioFigure/discussions)
+[Quick start](#quick-start) · [English handbook](docs/HANDBOOK.en.md) · [Design sources](docs/DESIGN-SOURCES.md) · [Gallery](docs/GALLERY.md) · [Releases](https://github.com/Woyekun-cell/BioFigure/releases) · [Community](https://github.com/Woyekun-cell/BioFigure/discussions)
 
 </div>
 
 From choosing a plot to getting the layout right, BioFigure helps you turn biological and multi-omics data into figures you can keep refining. It works as a Skill for coding assistants, bringing plot selection, colors, layout, rendering, and quality checks together while preserving editable R/Python code and plot data. The project is under active development.
 
-R is the default backend. Dedicated packages handle annotated matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Native AnnData and Scanpy workflows can remain in Python. The workflow preserves scientific meaning while giving labels, colors, legends, and panels a clear layout.
+R is the default backend, with preparation, CP2, single-use render authorization, and artifact review. Dedicated packages handle matrices, circular tracks, phylogenies, and genomic coordinates. AnnData and Scanpy can retain their Python code workflows; **Python currently has no official render-authorization entry point and cannot claim CP3 PASS**. Both paths require scientific checks and review of the actual output.
+
+## Quick start
+
+**Environment already configured:** run a box plot with bundled synthetic data from the repository root. The output retains PNG, PDF, statistics, and execution records. Use a fresh directory whenever inputs change.
+
+```bash
+Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
+python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/biofigure-first-boxplot
+```
+
+Continue after the dependency check reports `READY`. A successful render reports `RENDERED_PENDING_VISUAL_REVIEW`; open the current PNG/PDF to check fonts, final size, labels, and legends. Runtime depends on the local environment and dependencies. First-time users should follow [Installation and use](#installation-and-use).
+
+Other executable examples are `heatmap`, `dense-heatmap`, `bubble`, `volcano`, `synteny`, and `phylogeny`. For real data, tell the coding assistant the experimental units, groups, comparison direction, and intended output:
+
+```text
+$biofigure Read expression.csv and metadata.csv and draw a grouped expression heatmap.
+Preserve metadata sample order, annotate treatment and time, and review labels and legends.
+```
 
 ## Featured figures
 
@@ -112,6 +130,8 @@ Start with your analysis results, choose a figure around the question and data s
 Place the complete `biofigure` folder in the project's `.agents/skills/` directory or your personal `~/.agents/skills/` directory. Keep scripts, configuration, examples and licenses together. Ordinary original figures do not require the parent repository or the author's private source archive.
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python3 -m pip install -r biofigure/requirements.txt
 Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
 python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output work/portable-install-audit.json
@@ -125,6 +145,8 @@ Rscript biofigure/scripts/install_public_dependencies.R --install --library work
 
 <details>
 <summary>Dependency versions, fonts and platforms</summary>
+
+This exact-version requirement applies to the `portable` / `all-public` profiles in `install_public_dependencies.R`, rather than every R renderer. Other R tasks still require checks for their selected packages, fonts, and devices.
 
 The default `portable` profile covers the seven new synthetic examples and OncoPrint. Its dependencies are ggplot2, ragg, systemfonts, jsonlite, yaml, digest, ComplexHeatmap, circlize, ape, ggrepel, scales and stringi. R and top-level package versions must match the [version lock](biofigure/static/core/public-runtime-versions.tsv): R 4.6.1 and Bioconductor 3.23. Mismatches return `NEEDS_R_VERSION` or `NEEDS_PACKAGE_VERSIONS`. Explicit installation obtains the selected versions from official CRAN/Bioconductor sources without upgrading unrelated existing packages. External packages retain their licenses; see the [Bioconductor installation instructions](https://www.bioconductor.org/install/). Fonts are not bundled. Current demonstrations require Arial and return `NEEDS_FONT` when it is missing. `--font Helvetica` checks that exact alternative family; changing a figure font still requires updating its specification and reviewing the new output. Execution has been tested on macOS; Linux and Windows runtime, font and device acceptance remain unverified. A fresh Python environment still uses existing R packages and system Arial; this is not a fresh operating-system installation test. PDF export additionally requires free Ghostscript for font embedding; it resolves an explicit `R_GSCMD` path or `gs`, `gswin64c` and `gswin32c`. This script never installs system software. On macOS use `brew install ghostscript`, or obtain it from [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html). PNG-only checks use `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png` and do not require Ghostscript.
 
@@ -150,6 +172,17 @@ The comparison is treatment versus control. Label specified genes; export PNG an
 ```
 
 See the [English handbook](docs/HANDBOOK.en.md) for fuller design and export guidance.
+
+## Validation and scope
+
+Scientific and visual gates remain required: confirm experimental and statistical units, inspect data, lock the design, and review the actual output. Re-rendered figures require fresh review. Automated checks assess rules, files, and execution evidence; they neither replace inspection nor establish a general aesthetic score.
+
+| Validation scope | Supported conclusion |
+|---|---|
+| Fixed cases | Applies only to the bound inputs, code, environment, and output; consult each case's status |
+| New data | Recheck design, input, statistics, preparation, CP2, authorization, and the current figure; prior PASS does not transfer |
+| Other platforms | Different operating systems, R/package versions, fonts, and devices require fresh execution and inspection; see the [platform record](docs/PLATFORM-VALIDATION.md) |
+| Full V2 benchmark | Incomplete; method coverage, gallery inclusion, and public packaging tests do not establish full qualification |
 
 ## Cases and validation records
 

@@ -3,6 +3,7 @@ import tempfile
 import unittest
 import copy
 import sys
+import json
 from pathlib import Path
 from argparse import Namespace
 import yaml
@@ -11,6 +12,30 @@ s=importlib.util.spec_from_file_location('critics',Path(__file__).resolve().pare
 m=importlib.util.module_from_spec(s); s.loader.exec_module(m)
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 class CriticsTests(unittest.TestCase):
+    def test_same_artifact_with_new_render_receipt_requires_fresh_inspection(self):
+        receipt = Path(str(self.art) + '.render.json')
+        document = {'inspection_binding_policy': 'render-receipt-sha256-v1',
+                    'artifact': {'sha256': m.sha256(self.art)},
+                    'authorization_consumption': {'authorization_id': 'a' * 64}}
+        receipt.write_text(json.dumps(document))
+        self.ev['render_receipt_sha256'] = m.sha256(receipt)
+        current = self.run_case()
+        self.assertEqual(current['status'], 'PASS', current)
+        self.assertTrue(current['inspection']['current_render_inspection_verified'])
+        document['authorization_consumption']['authorization_id'] = 'b' * 64
+        receipt.write_text(json.dumps(document))
+        stale = self.run_case()
+        self.assertEqual(stale['status'], 'FAIL', stale)
+        self.assertFalse(stale['inspection']['current_render_inspection_verified'])
+        self.assertTrue(any(row['issue'] == 'inspection_render_binding_invalid' for row in stale['hard_failures']))
+        self.ev['render_receipt_sha256'] = m.sha256(receipt)
+        self.assertEqual(self.run_case()['status'], 'PASS')
+
+    def test_legacy_inspection_does_not_claim_current_render_verification(self):
+        result = self.run_case()
+        self.assertEqual(result['status'], 'PASS', result)
+        self.assertFalse(result['inspection']['current_render_inspection_verified'])
+
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
         self.art=Path(self.tmp.name)/'figure.png'

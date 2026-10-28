@@ -39,6 +39,8 @@ Imaging figures retain scale-bar, exposure, sampling, and representative-image b
 
 `renderer-registry.yaml` registers 18 backends. R defaults to ggplot2, ComplexHeatmap for matrices, ggtree for trees, and gggenomes/circlize for genome and synteny layouts. Seurat plus custom ggplot supports R-native single-cell work. Python offers matplotlib, seaborn, Scanpy, pyGenomeTracks, and pyGenomeViz. Specialized tools may create inputs, but they do not bypass final QA.
 
+R provides preparation, CP2, single-use authorization, and artifact-review support. Python currently supports code workflows but has no official render-authorization entry point and cannot claim CP3 PASS. The `portable` / `all-public` profiles in `install_public_dependencies.R` pin R 4.6.1 and the listed package versions; this is not a universal version lock on every R entry point. See the [README](../README.en.md#quick-start) for cold installation and configured-environment starts, and the [platform record](PLATFORM-VALIDATION.md) for actual cross-platform evidence.
+
 `components/` defines marks, labels, legends, annotations, statistical layers, and genomic tracks. Components are composable objects rather than complete templates. Data, label, annotation, and legend regions are allocated in millimetres before layers are drawn.
 
 ## 7. First-render standard
@@ -52,6 +54,8 @@ Comparisons with biological replicates export a statistics table containing anal
 CP0 resolves scientific intent; CP1 fixes the scientific contract; CP2 locks the design; CP3 opens the final PNG and records its hash, size, viewer, and defects; CP4 releases only after critics and QA pass. A later checkpoint cannot pass after an earlier gate fails.
 
 The Scientific Critic covers semantics and statistics; Visual covers hierarchy, density, composition, and whitespace; Publication covers fonts, line weights, clipping, and export; Anti-AI rejects decorative headings, cards, and generic template language. ML, imaging, genome, and mechanism figures add specialist critics. Benchmarking evaluates the skill across tasks with a common rubric; it does not replace artifact inspection. `CODE EXECUTES`, `FIGURE PASSES`, user approval, and journal acceptance are separate claims.
+
+A fixed-case pass binds only the recorded inputs, code, environment, and actual output. New data require a fresh scientific and statistical contract plus fresh gates; other platforms require dependency, font, device, and artifact checks. The full V2 benchmark remains incomplete. Gallery inclusion, installation checks, and selected tests do not establish full qualification or a general aesthetic score.
 
 ## 9. Directory map
 

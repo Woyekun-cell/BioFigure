@@ -685,6 +685,7 @@ bf_render_png <- function(plot,path,font,allowed_text,width_mm,height_mm,target_
   if(!file.exists(consumed_marker)||trimws(readLines(consumed_marker,warn=FALSE)[1])!=auth_doc$authorization_id)
     stop('render authorization consumption record missing')
   receipt<-list(schema_version=1,status='PASS',backend='R',renderer='ggplot2',artifact=bound(path),sources=sources,
+    inspection_binding_policy='render-receipt-sha256-v1',
     authorization_consumption=list(consumed=TRUE,authorization_id=auth_doc$authorization_id,
       marker=bound(consumed_marker),authorization_file=bound(authorization),
       preparation_receipt=auth_doc$bound$receipt),

@@ -12,4 +12,6 @@
 
 critic_reviews逐项记录status与具体evidence；未审查为NOT_ASSESSED。输入文件哈希只验证身份，不证明科学结论或真实视觉查看。
 
+新正式渲染的inspection须填写当前渲染回执文件的`render_receipt_sha256`；CP4从CP3读取该回执，独立调用`run_critics.py`时可用`--render-receipt`显式指定。新授权或回执变化后重新查看并记录，不把内容相同当作同一次渲染。历史审计保留原范围，使用其冻结运行环境，不改写旧PASS。
+
 交付新增绑定见`enforced-execution.md`：CP2必须提供Spec文件供实际重验；CP3绑定渲染凭据；CP4重跑完整Critic。缺凭据、改脚本/Spec/PNG、缺专项观察均不得PASS。每张PNG独立ledger；合法REVISE日志不代表可交付。

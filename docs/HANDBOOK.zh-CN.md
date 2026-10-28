@@ -39,6 +39,8 @@ BioFigure 把研究问题、已有分析结果和图形设计接在一起，做�
 
 `renderer-registry.yaml` 登记18个后端。R 默认用 ggplot2；矩阵用 ComplexHeatmap；树用 ggtree；基因组与共线性用 gggenomes/circlize；单细胞可用 Seurat＋自定义 ggplot。Python 提供 matplotlib、seaborn、Scanpy、pyGenomeTracks 和 pyGenomeViz。专用工具可提供输入，但不能绕过最终 QA。
 
+R 提供准备、CP2、一次性授权及成图审查执行链。Python 当前支持代码工作流，但没有官方绘图授权入口，不能声明 CP3 PASS。公开依赖脚本 `install_public_dependencies.R` 的 `portable` / `all-public` 配置精确锁定 R 4.6.1 与所列包版本；这不是所有 R 入口的统一版本硬锁。冷安装与已配好环境的入口见 [README](../README.md#快速开始)，实际跨平台证据见[平台记录](PLATFORM-VALIDATION.md)。
+
 `components/` 定义 marks、labels、legends、annotation、statistical layers 和 genomic tracks。组件是可组合对象，不是成图模板。数据区、标签区、注释区和图例区必须先按毫米分配。
 
 ## 7. 首次成图标准
@@ -52,6 +54,8 @@ BioFigure 把研究问题、已有分析结果和图形设计接在一起，做�
 CP0 确认科学意图；CP1 固定科学契约；CP2 锁定设计；CP3 打开最终 PNG 并记录哈希、尺寸、查看方式和缺陷；CP4 在 Critics 与 QA 通过后交付。前门失败时后门不能 PASS。
 
 Scientific Critic 检查语义和统计；Visual 检查层级、密度、构图、留白；Publication 检查字体、线宽、裁切和导出；Anti-AI 检查装饰化标题、卡片和模板腔；ML、图像、基因组和机制图有专项 Critic。Benchmark 以统一权重测试整个 Skill，不代替单图审查。`CODE EXECUTES`、`FIGURE PASSES`、用户认可和期刊接收是四件不同的事。
+
+固定案例的通过只绑定当时输入、代码、环境和实际输出。新数据需重新确认科学与统计契约并重跑门禁；其他平台需重新核验依赖、字体、设备和成图。全量 V2 benchmark 尚未完成，图库收录、安装检查和局部测试均不替代全量验证，也不产生通用审美评分。
 
 ## 9. 目录导航
 

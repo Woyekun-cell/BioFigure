@@ -17,6 +17,7 @@ from PIL import Image, ImageStat
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from reference_modes import design_reference_mode, DIMENSIONS
+from validate_checkpoints import validate_inspection_render_binding
 _text_spec = importlib.util.spec_from_file_location('biofigure_critic_text_policy', ROOT / 'scripts/figure_text_policy.py')
 _text_module = importlib.util.module_from_spec(_text_spec)
 _text_spec.loader.exec_module(_text_module)
@@ -233,12 +234,22 @@ def run(args: argparse.Namespace) -> dict:
         hard.append(issue("non_white_background_machine", metrics["corner_channel_mean_min"], "export canvas and panel with #FFFFFF"))
     # A dominant data color is not evidence of a colored panel background.
     evidence, evidence_hard, evidence_major, evidence_minor = (None, [], [], [])
+    current_render_inspection_verified = False
     if artifact.exists():
         evidence, evidence_hard, evidence_major, evidence_minor = validate_evidence(
             Path(args.inspection_evidence) if args.inspection_evidence else None, artifact, metrics)
         hard.extend(evidence_hard)
         major.extend(evidence_major)
         minor.extend(evidence_minor)
+        receipt_path = Path(getattr(args, 'render_receipt', None) or (str(artifact) + '.render.json')).expanduser()
+        binding_errors, current_render_inspection_verified = validate_inspection_render_binding(
+            evidence or {}, receipt_path if receipt_path.is_file() or getattr(args, 'render_receipt', None) else None)
+        for failure in binding_errors:
+            failure_record = issue('inspection_render_binding_invalid', failure,
+                                   'open this render and record the current render receipt SHA-256')
+            evidence_hard.append(failure_record)
+            hard.append(failure_record)
+        current_render_inspection_verified = current_render_inspection_verified and not evidence_hard
     if _cell_module.requires_cell_geometry(design_spec):
         for failure in _cell_module.validate_cell_metrics((evidence or {}).get('heatmap_cells'), design_spec):
             hard.append(issue('heatmap_cell_geometry_invalid', failure,
@@ -303,6 +314,9 @@ def run(args: argparse.Namespace) -> dict:
         "major_issues": major, "minor_issues": minor,
         "scores": scores, "critic_requirements": {name: critic_basis[name] for name in critics_run},
         "inspection": {"status": inspection_status, "artifact_exists": artifact.exists(), "artifact_sha256": sha256(artifact) if artifact.exists() else None,
+                       "current_render_inspection_verified": current_render_inspection_verified,
+                       "render_binding_scope": "current-render receipt binding" if current_render_inspection_verified else
+                           "legacy artifact-only or failed audit; current-render inspection not verified",
                        "image_metrics": metrics, "vector_text_nodes": vector_text, "raster_nodes": raster_nodes,
                        "evidence_scope": "hash_bound_machine_checks_plus_actual_visual_observations"},
         "revision_history": [], "next_action": "PASS" if status == "PASS" else "revise_and_rerun",
@@ -316,6 +330,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--mode", choices=sorted(MODE_CRITICS), default="standard")
     parser.add_argument("--actual-inspection", action="store_true")
     parser.add_argument("--inspection-evidence", type=Path)
+    parser.add_argument("--render-receipt", type=Path)
     parser.add_argument("--design-spec", type=Path)
     parser.add_argument("--domain", action="append", default=[])
     parser.add_argument("--json", action="store_true")

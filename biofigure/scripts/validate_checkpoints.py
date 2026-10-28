@@ -44,9 +44,36 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate_inspection_evidence(document: dict, heatmap_design: dict | None = None) -> list[str]:
+def validate_inspection_render_binding(document: dict, receipt_path: Path | None) -> tuple[list[str], bool]:
+    """Bind new inspections to one render; legacy evidence keeps its original scope."""
+    claimed = document.get('render_receipt_sha256')
+    if claimed is not None and not SHA256.fullmatch(str(claimed)):
+        return ['render_receipt_sha256 must be a SHA-256 hash'], False
+    if receipt_path is None:
+        return [], False
+    try:
+        receipt_bytes = receipt_path.read_bytes()
+        receipt = json.loads(receipt_bytes)
+        policy = receipt.get('inspection_binding_policy')
+        if policy not in {None, 'render-receipt-sha256-v1'}:
+            return ['render receipt inspection_binding_policy is unsupported'], False
+        if policy is not None or claimed is not None:
+            if not SHA256.fullmatch(str(claimed or '')) or claimed != hashlib.sha256(receipt_bytes).hexdigest():
+                return ['render_receipt_sha256 must bind the current render receipt; inspect this render again'], False
+        if policy is not None:
+            artifact = receipt.get('artifact', {})
+            if (not isinstance(artifact, dict) or not SHA256.fullmatch(str(artifact.get('sha256', '')))
+                    or artifact['sha256'] != document.get('artifact_sha256')):
+                return ['inspection artifact_sha256 differs from the current render receipt artifact'], False
+        return [], policy == 'render-receipt-sha256-v1'
+    except (OSError, ValueError, AttributeError, TypeError) as exc:
+        return [f'inspection render receipt unreadable: {exc}'], False
+
+
+def validate_inspection_evidence(document: dict, heatmap_design: dict | None = None,
+                                 render_receipt_path: Path | None = None) -> list[str]:
     """Validate artifact-bound CP3/CP4 inspection evidence fields."""
-    errors = []
+    errors, _ = validate_inspection_render_binding(document, render_receipt_path)
     required = ('artifact_sha256', 'first_render_sha256', 'target_size', 'reviewer_type',
                 'reviewer_id', 'judgment', 'artifact_path', 'first_render_path',
                 'defect_coordinates', 'viewer_method', 'revision_count', 'final_size_checks')
@@ -344,6 +371,8 @@ def validate_render_receipt(receipt_path: str, artifact: Path, design_spec: Path
         receipt = json.loads(Path(receipt_path).read_text(encoding='utf-8'))
         if receipt.get('schema_version') != 1 or receipt.get('status') != 'PASS':
             errors.append('render receipt version/status invalid')
+        if receipt.get('inspection_binding_policy') != 'render-receipt-sha256-v1':
+            errors.append('render receipt inspection_binding_policy must require the current render receipt SHA-256; use the frozen runtime for historical audits')
         if receipt.get('backend') not in {'R', 'Python'}:
             errors.append('render receipt backend invalid')
         if receipt.get('backend') == 'Python':
@@ -661,7 +690,8 @@ def validate(ledger: dict, definition: dict) -> list[str]:
             command = [sys.executable, str(ROOT/'scripts/run_critics.py'), '--artifact', str(cp3.get('artifact', '')),
                        '--pattern', str(cp2.get('selected_pattern', '')), '--mode', 'publication',
                        '--inspection-evidence', str(evidence.get('inspection_evidence', '')),
-                       '--design-spec', str(cp2.get('design_spec', '')), '--json']
+                       '--design-spec', str(cp2.get('design_spec', '')),
+                       '--render-receipt', str(cp3.get('render_receipt', '')), '--json']
             inspection_path = Path(str(evidence.get('inspection_evidence', ''))).expanduser()
             if not inspection_path.is_file():
                 errors.append('CP4 inspection evidence file required')
@@ -669,7 +699,8 @@ def validate(ledger: dict, definition: dict) -> list[str]:
                 try:
                     inspection_doc = load(inspection_path)
                     current_spec = load(Path(str(cp2.get('design_spec', ''))))
-                    errors.extend([f'inspection evidence: {item}' for item in validate_inspection_evidence(inspection_doc, current_spec)])
+                    errors.extend([f'inspection evidence: {item}' for item in validate_inspection_evidence(
+                        inspection_doc, current_spec, Path(str(cp3.get('render_receipt', ''))).expanduser())])
                     if inspection_doc.get('artifact_sha256') != cp3.get('artifact_sha256'):
                         errors.append('inspection evidence artifact hash differs from CP3')
                     if inspection_doc.get('first_render_sha256') != cp3.get('first_render_sha256'):
@@ -743,14 +774,24 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("ledger", type=Path)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
+    current_inspection = False
     try:
         ledger = load(args.ledger)
         errors = validate(ledger, load(DEFINITION))
         if not errors and not all(entry.get('status') == 'PASS' for entry in ledger['checkpoints']):
             errors.append('ledger is structurally valid but release is blocked; all checkpoints must PASS')
+        if not errors:
+            entries = ledger['checkpoints']
+            document = load(Path(entries[4]['evidence']['inspection_evidence']).expanduser())
+            binding_errors, current_inspection = validate_inspection_render_binding(
+                document, Path(entries[3]['evidence']['render_receipt']).expanduser())
+            errors.extend(f'inspection evidence: {item}' for item in binding_errors)
     except Exception as exc:
         errors = [str(exc)]
-    payload = {"status": "PASS" if not errors else "FAIL", "errors": errors}
+    payload = {"status": "PASS" if not errors else "FAIL", "errors": errors,
+               "current_render_inspection_verified": current_inspection,
+               "inspection_scope": "current-render receipt binding" if current_inspection else
+                   "legacy artifact-only or failed audit; current-render inspection not verified"}
     print(json.dumps(payload, ensure_ascii=False, indent=2) if args.json else ("CHECKPOINTS_OK" if not errors else "CHECKPOINTS_FAIL\n" + "\n".join(errors)))
     return 0 if not errors else 1
 

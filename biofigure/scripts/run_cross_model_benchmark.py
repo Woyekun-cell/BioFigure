@@ -89,7 +89,8 @@ def validate_run_evidence(row: dict, base_dir: Path | None = None) -> list[str]:
         errors.extend('CP2: ' + message for message in checkpoint.validate_preparation_receipt(str(files['preparation_receipt']), spec_doc))
         errors.extend('CP3: ' + message for message in checkpoint.validate_render_receipt(
             str(files['render_receipt']), files['png'], files['design_spec'], files['preparation_receipt']))
-        errors.extend('CP4: ' + message for message in checkpoint.validate_inspection_evidence(inspection))
+        errors.extend('CP4: ' + message for message in checkpoint.validate_inspection_evidence(
+            inspection, spec_doc, files['render_receipt']))
         gate_errors = checkpoint.validate(ledger, checkpoint.load(checkpoint.DEFINITION))
         errors.extend('checkpoint ledger: ' + message for message in gate_errors)
         if checkpoint_entries[3].get('status') != 'PASS' or checkpoint_entries[4].get('status') != 'PASS':

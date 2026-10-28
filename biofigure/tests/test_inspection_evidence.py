@@ -1,5 +1,7 @@
 import importlib.util
 import math
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -10,6 +12,43 @@ spec.loader.exec_module(module)
 
 
 class InspectionEvidenceTests(unittest.TestCase):
+    def test_current_render_binding_rejects_same_bytes_after_new_authorization(self):
+        with tempfile.TemporaryDirectory() as folder:
+            receipt = Path(folder) / 'final.png.render.json'
+            rendered = {'inspection_binding_policy': 'render-receipt-sha256-v1',
+                        'artifact': {'sha256': 'a' * 64},
+                        'authorization_consumption': {'authorization_id': 'b' * 64}}
+            receipt.write_text(json.dumps(rendered))
+            evidence = {'render_receipt_sha256': module.digest(receipt), 'artifact_sha256': 'a' * 64}
+            self.assertEqual(module.validate_inspection_render_binding(evidence, receipt), ([], True))
+            rendered['authorization_consumption']['authorization_id'] = 'c' * 64
+            receipt.write_text(json.dumps(rendered))
+            errors, verified = module.validate_inspection_render_binding(evidence, receipt)
+            self.assertTrue(any('render_receipt_sha256' in error for error in errors))
+            self.assertFalse(verified)
+            evidence['render_receipt_sha256'] = module.digest(receipt)
+            self.assertEqual(module.validate_inspection_render_binding(evidence, receipt), ([], True))
+            wrong_artifact = dict(evidence, artifact_sha256='d' * 64)
+            self.assertTrue(module.validate_inspection_render_binding(wrong_artifact, receipt)[0])
+            self.assertTrue(module.validate_inspection_render_binding({}, receipt)[0])
+
+    def test_legacy_render_binding_keeps_history_but_is_not_current_verification(self):
+        with tempfile.TemporaryDirectory() as folder:
+            receipt = Path(folder) / 'legacy.png.render.json'
+            receipt.write_text(json.dumps({'artifact': {'sha256': 'a' * 64}}))
+            before = receipt.read_bytes()
+            self.assertEqual(module.validate_inspection_render_binding({}, receipt), ([], False))
+            self.assertEqual(receipt.read_bytes(), before)
+
+    def test_current_inspection_validation_reaches_render_binding_gate(self):
+        with tempfile.TemporaryDirectory() as folder:
+            receipt = Path(folder) / 'final.png.render.json'
+            receipt.write_text(json.dumps({'inspection_binding_policy': 'render-receipt-sha256-v1'}))
+            errors = module.validate_inspection_evidence({}, render_receipt_path=receipt)
+            self.assertTrue(any('render_receipt_sha256' in error for error in errors))
+            receipt.write_text(json.dumps({'inspection_binding_policy': []}))
+            self.assertTrue(module.validate_inspection_render_binding({}, receipt)[0])
+
     @staticmethod
     def final_size_checks(status='PASS'):
         return {'target_size_opened': True, 'checks': {

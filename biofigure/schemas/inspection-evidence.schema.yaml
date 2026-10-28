@@ -1,7 +1,9 @@
-schema_version: "1.0"
+schema_version: "1.1"
 kind: artifact-bound-inspection-evidence
 required: [artifact_sha256, first_render_sha256, artifact_path, first_render_path, target_size, reviewer_type, reviewer_id, judgment, defect_coordinates, viewer_method, revision_count, final_size_checks]
-hash_fields: [artifact_sha256, first_render_sha256]
+hash_fields: [artifact_sha256, first_render_sha256, render_receipt_sha256]
+current_render_binding: "For render receipts with inspection_binding_policy=render-receipt-sha256-v1, render_receipt_sha256 is required and must match the exact current CP3 render receipt. A new authorization requires a fresh inspection even if image bytes are unchanged."
+historical_scope: "Receipts without this policy retain their original artifact-only audit scope and must use their frozen runtime for CP3/CP4 validation; current_render_inspection_verified=false in current critics. Current CP3 requires the policy. Do not rewrite or promote historical PASS records."
 target_size_required: [width_mm, height_mm]
 reviewer_type: [human, model, automated]
 viewer_method: [direct-open, contact-sheet-open]

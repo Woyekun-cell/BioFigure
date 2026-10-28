@@ -154,6 +154,7 @@ render()
 stopifnot(file.exists(paste0(target,'.render.json')))
 receipt_doc<-jsonlite::fromJSON(paste0(target,'.render.json'),simplifyVector=FALSE)
 stopifnot(isTRUE(receipt_doc$checks$scientific_text_only),
+  identical(receipt_doc$inspection_binding_policy,'render-receipt-sha256-v1'),
   setequal(unlist(receipt_doc$rendered_text,use.names=FALSE),labels),
   identical(receipt_doc$text_policy_id,'scientific-content-only-v1'))
 expect_error(render(allowed=c(labels,'Unapproved scientific label')),

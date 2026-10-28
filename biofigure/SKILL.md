@@ -35,6 +35,8 @@ python3 <Skill根>/scripts/prepare_figure.py request.yaml --output preparation-r
 3. 按[布局](references/layout.md)锁最终画布/字号。运行`validate_design_spec.py <Spec> --preparation-receipt <回执>`，成功才可开始编码；预检或CP2失败禁写图代码。编码后、渲染前签发一次性授权，R用`bf_render_png()`消费。Python无官方授权入口，不得CP3 PASS。
 4. CP3打开当前PNG/PDF，核真实字体、终尺寸与哈希；CP4检查字号/位置、碰撞、裁切、对齐、配色与图文比例。原创`design-quality`、来源`reference-quality`均须hierarchy/geometry/palette/typography/marks/annotation六维实际观察。重绘使旧检查失效；自动检查不能替代human/model审图。
 
+按[变更范围复核与收口](references/workflow.md)：日常单次出图，将输入/统计核验与最终PNG/PDF审图合并一轮；必要检查通过即交付。无硬缺陷不继续润色，登记文字、路径整理和基准归档不触发重画；新输入、绑定变更或实际重渲染仍执行相应门禁，不沿用旧审阅。
+
 ## 专项硬门
 
 - 推断读[统计流程](references/statistics-workflow.md)，声明`statistics_required`与plan，先诊断/统计后标注；已有P/q保留来源，不为画图重算。

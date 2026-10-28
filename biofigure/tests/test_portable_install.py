@@ -12,9 +12,39 @@ import os
 
 
 AUDITOR = Path(__file__).resolve().parents[1] / 'scripts/audit_portable_install.py'
+DEPENDENCY_CHECK_STATUSES = ('READY', 'NEEDS_R_VERSION', 'NEEDS_PACKAGE_VERSIONS',
+    'NEEDS_DEPENDENCIES', 'NEEDS_PINNED_NATIVE_PACKAGES', 'NEEDS_FONT',
+    'NEEDS_GHOSTSCRIPT', 'NEEDS_TOOLS')
 
 
 class PortableInstallTests(unittest.TestCase):
+    def test_package_version_diagnostic_is_read_only_and_keeps_version_lock(self):
+        if not shutil.which('Rscript'):
+            self.skipTest('Rscript unavailable')
+        fixture = Path(self.tmp.name) / 'package-version-runtime'
+        (fixture / 'scripts').mkdir(parents=True)
+        (fixture / 'static/core').mkdir(parents=True)
+        for name in ('install_public_dependencies.R', 'figure_style.R'):
+            shutil.copyfile(AUDITOR.parent / name, fixture / 'scripts' / name)
+        runtime = subprocess.run(['Rscript', '-e', 'cat(as.character(getRversion()))'],
+                                 capture_output=True, text=True, check=True).stdout
+        lock = (AUDITOR.parents[1] / 'static/core/public-runtime-versions.tsv').read_text(encoding='utf-8')
+        lock = '\n'.join(f'R\t{runtime}\t{runtime}\truntime' if line.startswith('R\t') else line
+                         for line in lock.splitlines()) + '\nstats\t99.0.0\t99.0.0\truntime\n'
+        locked = fixture / 'static/core/public-runtime-versions.tsv'
+        locked.write_text(lock, encoding='utf-8')
+        before = locked.read_bytes()
+        library = Path(self.tmp.name) / 'package-version-no-library'
+        result = subprocess.run(['Rscript', str(fixture / 'scripts/install_public_dependencies.R'),
+                                 '--check', '--library', str(library)], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 2, result.stderr)
+        report = json.loads(result.stdout)
+        self.assertEqual(report['status'], 'NEEDS_PACKAGE_VERSIONS')
+        self.assertIn(report['status'], DEPENDENCY_CHECK_STATUSES)
+        self.assertEqual(report['operation'], 'read-only-check')
+        self.assertFalse(library.exists())
+        self.assertEqual(locked.read_bytes(), before)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
@@ -254,7 +284,9 @@ class PortableInstallTests(unittest.TestCase):
                                 capture_output=True, text=True)
         self.assertIn(result.returncode, (0, 2), result.stderr)
         report = json.loads(result.stdout)
-        self.assertIn(report['status'], ('READY', 'NEEDS_DEPENDENCIES', 'NEEDS_FONT', 'NEEDS_GHOSTSCRIPT'))
+        self.assertIn(report['status'], DEPENDENCY_CHECK_STATUSES)
+        self.assertEqual(report['operation'], 'read-only-check')
+        self.assertEqual(result.returncode, 0 if report['status'] == 'READY' else 2)
         self.assertFalse(library.exists(), 'read-only dependency check installed or created a library')
 
     def test_dependency_check_rejects_wrong_r_version_without_installing(self):

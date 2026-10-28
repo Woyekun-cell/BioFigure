@@ -173,6 +173,7 @@ if(!identical(before,lapply(sources,bound)))stop('bound input changed during nat
 auth<-jsonlite::fromJSON(authorization,simplifyVector=FALSE);marker<-paste0(authorization,'.consumed')
 if(!file.exists(marker)||trimws(readLines(marker,warn=FALSE)[1])!=auth$authorization_id)stop('missing authorization consumption')
 receipt<-list(schema_version=1,status='PASS',backend='R',renderer='ComplexHeatmap',artifact=bound(png_path),sources=before,
+ inspection_binding_policy='render-receipt-sha256-v1',
  authorization_consumption=list(consumed=TRUE,authorization_id=auth$authorization_id,marker=bound(marker),
   authorization_file=bound(authorization),preparation_receipt=auth$bound$receipt),font=c(bound(font$path),list(family=font$family)),
  checks=list(font=TRUE,text_allowlist=TRUE,scientific_text_only=TRUE,footer_free=TRUE,layout=TRUE,target_size=TRUE,cell_geometry=TRUE),

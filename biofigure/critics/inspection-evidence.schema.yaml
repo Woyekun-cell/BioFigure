@@ -1,4 +1,4 @@
-schema_version: "1.1"
+schema_version: "1.2"
 kind: actual-inspection-evidence
 required: [artifact, artifact_sha256, artifact_opened, inspected_at, inspector, viewer_record, image_metrics, detected, visual_evidence, issues, critic_reviews]
 artifact_sha256: sha256_of_exact_rendered_artifact
@@ -6,6 +6,8 @@ detected_required: [clipping, overlap, missing_glyph, legend_overlap, non_white_
 visual_evidence_required: [hierarchy, whitespace, legend, title_discipline]
 visual_observation_contract: each entry is a mapping with a concrete observation recorded after opening the artifact
 viewer_record_contract: {method: [direct-open, contact-sheet-open], opened_artifact_sha256: exact_sha256}
+current_render_binding: "For render receipts with inspection_binding_policy=render-receipt-sha256-v1, render_receipt_sha256 is required and must match the exact current render receipt (--render-receipt or artifact.render.json). Reusing identical image bytes under a new authorization does not reuse an old inspection."
+historical_scope: "Evidence without a policy-bearing receipt retains its original artifact-only scope; current_render_inspection_verified=false. Historical PASS records are preserved, not upgraded."
 issues_contract: every issue declares issue, severity, evidence, and proposed_fix; hard or major prevents PASS
 notes: Machine checks reject missing, blank, near-blank, mismatched, or stale artifacts. Human or agent visual observations remain mandatory for hierarchy and composition.
 trust_boundary: viewer_record is an accountable attestation, not cryptographic proof of human perception; machine gates independently check blankness, corners, dimensions, and artifact identity.

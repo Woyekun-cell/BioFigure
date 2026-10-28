@@ -11,13 +11,31 @@
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
 
-[中文手册](docs/HANDBOOK.zh-CN.md) · [设计来源](docs/DESIGN-SOURCES.md) · [精选图廊](docs/GALLERY.md) · [版本下载](https://github.com/Woyekun-cell/BioFigure/releases) · [社区](https://github.com/Woyekun-cell/BioFigure/discussions)
+[快速开始](#快速开始) · [中文手册](docs/HANDBOOK.zh-CN.md) · [设计来源](docs/DESIGN-SOURCES.md) · [精选图廊](docs/GALLERY.md) · [版本下载](https://github.com/Woyekun-cell/BioFigure/releases) · [社区](https://github.com/Woyekun-cell/BioFigure/discussions)
 
 </div>
 
 让科研绘图更顺手，也更好看。BioFigure 是给编码助手用的生物科研绘图 Skill，围绕生物与多组学数据，把选图、配色、排版、出图和成图检查串起来，留下能继续修改的 R/Python 代码与绘图数据。项目还在持续更新，绘图方法、案例和质控流程也在不断完善。
 
-R 是默认后端。矩阵注释、环形轨道、系统树、基因组坐标和多面板组合分别使用适合的专用包；AnnData、Scanpy 等原生数据对象也可沿用 Python 工作流。重点是保留图的科学含义，同时处理好文字、配色、图例和面板之间的关系。
+R 是默认后端，提供准备、CP2、一次性绘图授权和成图审查流程；矩阵、环形轨道、系统树和基因组图按任务选择专用包。AnnData、Scanpy 等可沿用 Python 代码工作流；**当前 Python 无官方绘图授权入口，不能声明 CP3 PASS**。两条路径都需核对科学含义与最终输出。
+
+## 快速开始
+
+**环境已配好：**在仓库根目录运行一个自带模拟数据的箱线图。输出保留 PNG、PDF、统计表与执行记录；每次改输入请用新目录。
+
+```bash
+Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
+python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/biofigure-first-boxplot
+```
+
+依赖检查显示 `READY` 后再运行；渲染成功状态为 `RENDERED_PENDING_VISUAL_REVIEW`，仍需打开当前 PNG/PDF 检查字体、终尺寸、文字与图例。耗时取决于本机环境与依赖，不承诺固定完成时间。首次使用见下方[安装与使用](#安装与使用)。
+
+可运行示例还有 `heatmap`、`dense-heatmap`、`bubble`、`volcano`、`synteny`、`phylogeny`。真实数据任务可直接向编码助手描述实验单位、分组、比较方向和输出用途：
+
+```text
+$biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
+样本顺序按元数据，标注处理与时间，先检查数据，再绘图并检查文字与图例。
+```
 
 ## 精选作品
 
@@ -112,6 +130,8 @@ OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示
 将完整的 `biofigure` 文件夹放入项目的 `.agents/skills/` 或个人 `~/.agents/skills/`。脚本、配置、案例、许可证须一起保留；普通原创绘图不依赖父仓库或作者电脑上的私有图库。安装后先检查依赖：
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python3 -m pip install -r biofigure/requirements.txt
 Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
 python3 biofigure/scripts/audit_portable_install.py --dry-fresh-install --output work/portable-install-audit.json
@@ -125,6 +145,8 @@ Rscript biofigure/scripts/install_public_dependencies.R --install --library work
 
 <details>
 <summary>依赖版本、字体与平台说明</summary>
+
+该精确版本要求适用于 `install_public_dependencies.R` 的 `portable` / `all-public` 公开依赖配置，不代表所有 R 绘图入口都有同一版本硬锁。其他 R 任务仍按所选包、字体与设备单独核验。
 
 `portable` 检查器覆盖新增 7 例与 OncoPrint 的依赖，依赖为 ggplot2、ragg、systemfonts、jsonlite、yaml、digest、ComplexHeatmap、circlize、ape、ggrepel、scales、stringi。R 与顶层包版本按[固定版本清单](biofigure/static/core/public-runtime-versions.tsv)精确检查：R 4.6.1、Bioconductor 3.23；不匹配会明确返回 `NEEDS_R_VERSION` 或 `NEEDS_PACKAGE_VERSIONS`。安装器只从官方 CRAN／Bioconductor 安装指定版本，不自动升级其他既有包。R 包遵守各自许可证，参考 [Bioconductor 安装说明](https://www.bioconductor.org/install/)。字体不随包分发；当前示例指定 Arial，缺失时返回 `NEEDS_FONT`，不静默换字体。可用 `--font Helvetica` 单独检查 Helvetica；更改出图字体仍须更新当前规格并重新核验。已实跑环境为 macOS；Linux、Windows 尚未完成运行和字体/设备验收。Python 新环境测试仍使用既有 R 包和系统 Arial，不等同在全新操作系统上安装验证。 PDF 导出还需免费 Ghostscript 嵌入字体，支持 `R_GSCMD` 显式路径以及 `gs`、`gswin64c`、`gswin32c`；本脚本不自动安装系统软件。macOS 可用 `brew install ghostscript`，或从 [Ghostscript 官方](https://www.ghostscript.com/releases/gsdnld.html)获取。仅 PNG 可运行 `Rscript biofigure/scripts/install_public_dependencies.R --check --formats png`，无需 Ghostscript。
 
@@ -160,6 +182,17 @@ Rscript biofigure/scripts/install_public_dependencies.R --check --library work/R
 ```
 
 执行阶段须让 R 找到同一库：macOS shell 可用 `export R_LIBS_USER="$PWD/work/R-library"`；Windows PowerShell 可用 `$env:R_LIBS_USER=(Resolve-Path "work/R-library").Path`。Windows 和 macOS 共用精确字体 PDF／Ghostscript 接口，无 Quartz 专属运行路径。PDF 需要 Ghostscript 10；旧例的 PDF 检视还需 Poppler `pdftoppm`。macOS 可用 `brew install ghostscript poppler`；Windows 工具步骤见[双系统验证说明](docs/PLATFORM-VALIDATION.md)。字体仅从合法已安装系统字体解析，不随包分发。跨系统测试结果以真实 CI 记录和导出图审阅为准；配置成功不算两端成图验收。
+
+## 验证与适用边界
+
+科学与视觉门禁始终保留：确认实验与统计单位，先检查数据，再锁设计；实际渲染后检查当前文件，复绘后重审。自动检查验证规则、文件与执行证据，不能替代看图，也不产生通用审美分数。
+
+| 验证范围 | 可支持的结论 |
+|---|---|
+| 固定案例 | 只适用于记录绑定的输入、代码、环境及输出；逐例状态见材料清单 |
+| 新数据 | 重新检查实验设计、输入、统计、准备回执、CP2、授权与当前成图；旧 PASS 不转移 |
+| 跨平台 | 其他操作系统、R/包版本、字体和设备需重新运行并审图；见[平台记录](docs/PLATFORM-VALIDATION.md) |
+| 全量 V2 | 尚未完成；方法库覆盖、图库收录和公开包测试均不升级为全量资格 |
 
 ## 案例与验证记录
 
