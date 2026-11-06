@@ -1,0 +1,13 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);S<-file.path(P,'biofigure');W<-file.path(P,'work/2026-10-26-unreproduced-complex/pathway-network');D<-file.path(P,'data/raw/apear_go_cc_20261026');F<-file.path(P,'results/figures/apear_go_cc_20261026')
+source(file.path(S,'scripts/figure_style.R'));library(ggplot2);library(grid)
+font<-bf_font('Arial');sp<-file.path(W,'design-spec.yaml');spec<-yaml::read_yaml(sp);p<-readRDS(file.path(W,'adapted-plot.rds'))
+sources<-c(file.path(P,'scripts/figures/apear_go_cc_20261026.R'),sp,file.path(W,c('prepare_inputs.R','prepare_layout.R','prepare_spec.py','adapted-plot.rds','network-layout.rds','label-bounds.csv','user-selected-layout.png','selection.json','input-qc.json','layout-qc.json','source-lock.json')),file.path(S,c('scripts/figure_style.R','palettes/continuous-luts.csv','palettes/bright-luts.csv')),file.path(D,c('official-code.md','official-source.png','geneList.rds','eligible_gene_sets.rds','current_gsea_result.rds')),list.files(file.path(P,'results/plot_data'),pattern='^apear_go_cc_20261026.*csv$',full.names=TRUE))
+bound<-function(p)list(path=normalizePath(p,mustWork=TRUE),sha256=digest::digest(file=p,algo='sha256'));wr<-function(x,p)jsonlite::write_json(x,p,pretty=TRUE,auto_unbox=TRUE,digits=NA,null='null');before<-lapply(sources,bound)
+auth<-file.path(W,paste0('authorization-',format(Sys.time(),'%Y%m%d%H%M%S'),'-',Sys.getpid(),'.json'));a<-c(file.path(S,'scripts/authorize_render.py'),'--receipt',file.path(W,'preparation-receipt.json'),'--design-spec',sp,'--output',auth,unlist(lapply(sources[sources!=sp],function(p)c('--source',p))))
+if(system2('python3',shQuote(a))!=0L)stop('CP2 authorization failed')
+boxes<-data.frame(id=c('data','labels','legend'),x=c(2,2,3),y=c(13,13,1),w=c(179,179,177),h=c(154,154,10));t<-proc.time()[['elapsed']]
+r<-bf_render_png(p,paste0(F,'.png'),font,unlist(spec$text_contract$allowed_text),183,170,183,sources,boxes,allowed_pairs='data:labels',dpi=400,min_text_pt=6.5,authorization=auth,skill_root=S,publication_size_class='double-column');png_s<-proc.time()[['elapsed']]-t
+if(!file.exists(file.path(W,'first-render.png')))file.copy(paste0(F,'.png'),file.path(W,'first-render.png'))
+t<-proc.time()[['elapsed']];bf_pdf_open(paste0(F,'.pdf'),183,170,font);print(p);dev.off();pdf_s<-proc.time()[['elapsed']]-t
+pa<-bf_pdf_finalize(paste0(F,'.pdf'),font,183,170);wr(pa,paste0(F,'.pdf.pdf-audit.json'));stopifnot(identical(before,lapply(sources,bound)))
+wr(list(status='RENDERED_PENDING_VISUAL_REVIEW',png=bound(paste0(F,'.png')),pdf=bound(paste0(F,'.pdf')),authorization=auth,timing=list(png_render_R_seconds=png_s,pdf_export_R_seconds=pdf_s)),file.path(W,'run.json'));capture.output(sessionInfo(),file=file.path(W,'render-sessionInfo.txt'));cat('NETWORK_RENDERED\n')

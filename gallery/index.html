@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按图型浏览已完成的科研绘图作品。">
+  <title>BioFigure 图画廊</title>
+  <style>
+    :root { color-scheme: light; --ink:#203027; --muted:#607168; --line:#dce4dc; --bg:#f5f7f3; --paper:#fff; --accent:#225e48; --soft:#e9f1ea; }
+    * { box-sizing:border-box }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif }
+    button,input { font:inherit }
+    button { cursor:pointer }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:3px }
+    .top { background:var(--paper); border-bottom:1px solid var(--line) }
+    .top-inner { max-width:1560px; margin:auto; padding:19px 36px; display:flex; align-items:center; justify-content:space-between; gap:20px }
+    .brand { font-size:23px; font-weight:680; letter-spacing:-.04em; white-space:nowrap }
+    .brand b { color:var(--accent) }
+    .lang { display:flex; border:1px solid var(--line); border-radius:7px; padding:3px }
+    .lang button { border:0; background:transparent; padding:5px 11px; border-radius:5px; color:var(--muted); font-size:13px }
+    .lang button[aria-pressed=true] { background:var(--soft); color:var(--ink); font-weight:650 }
+    .shell { max-width:1560px; margin:auto; padding:42px 36px 70px }
+    .hero { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:30px }
+    h1 { font-size:clamp(29px,3vw,42px); letter-spacing:-.045em; line-height:1.2; margin:0 0 9px; font-weight:650 }
+    .hero p { color:var(--muted); margin:0; font-size:14px }
+    .count { color:var(--accent); font-size:13px; white-space:nowrap; font-variant-numeric:tabular-nums }
+    .layout { display:grid; grid-template-columns:190px minmax(0,1fr); gap:36px }
+    aside { border-right:1px solid var(--line); padding-right:20px; align-self:start; position:sticky; top:20px; max-height:calc(100vh - 40px); overflow:auto }
+    aside h2 { color:var(--muted); font-size:12px; font-weight:600; margin:2px 0 12px; letter-spacing:.02em }
+    .categories { display:flex; flex-direction:column; gap:3px }
+    .categories button { width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; border:0; background:transparent; text-align:left; border-radius:6px; padding:8px 10px; font-size:13px; color:#42554a }
+    .categories button:hover { background:#eaf0e9 }
+    .categories button[aria-pressed=true] { background:var(--soft); color:var(--accent); font-weight:650 }
+    .categories small { color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums }
+    .toolbar { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:20px }
+    .search { width:min(420px,100%); height:44px; border:1px solid #cbd8ce; border-radius:8px; background:var(--paper); padding:0 14px; color:var(--ink) }
+    .search::placeholder { color:#809087 }
+    .result-count { color:var(--muted); font-size:13px; white-space:nowrap }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(235px,1fr)); gap:18px }
+    .card { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--paper); border-radius:9px; overflow:hidden; text-align:left; padding:0; color:inherit; min-width:0; transition:border-color .15s,transform .15s }
+    .card:hover { border-color:#96ad9c; transform:translateY(-2px) }
+    .thumb { display:flex; align-items:center; justify-content:center; height:215px; padding:13px; background:#fff; border-bottom:1px solid var(--line) }
+    .thumb img { width:100%; height:100%; object-fit:contain }
+    .card-content { padding:14px 15px 16px }
+    .eyebrow { color:var(--accent); font-size:11px; font-weight:600; margin-bottom:7px }
+    .card h3 { font-size:14px; font-weight:600; line-height:1.5; margin:0; overflow-wrap:anywhere }
+    .empty { padding:70px 20px; text-align:center; color:var(--muted); background:var(--paper); border:1px solid var(--line); border-radius:9px }
+    .pager { display:flex; justify-content:center; align-items:center; gap:18px; margin-top:30px; color:var(--muted); font-size:13px }
+    .pager button { background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:7px 13px; min-width:66px }
+    .pager button:disabled { opacity:.45; cursor:default }
+    dialog { width:min(1020px,calc(100vw - 28px)); max-height:calc(100vh - 28px); border:1px solid var(--line); border-radius:11px; padding:0; box-shadow:0 24px 70px #15241b33; color:var(--ink) }
+    dialog::backdrop { background:#0d1a12aa }
+    .dialog-head { display:flex; justify-content:space-between; align-items:start; gap:20px; padding:23px 27px; border-bottom:1px solid var(--line) }
+    .dialog-head p { font-size:12px; color:var(--accent); font-weight:600; margin:0 0 5px }
+    .dialog-head h2 { font-size:22px; line-height:1.35; letter-spacing:-.025em; margin:0; font-weight:640 }
+    .close { border:1px solid var(--line); background:var(--paper); border-radius:6px; width:34px; height:34px; font-size:22px; line-height:1 }
+    .dialog-body { overflow:auto; max-height:calc(100vh - 118px); padding:25px 27px 30px }
+    .figure-view { display:flex; align-items:center; justify-content:center; min-height:250px; max-height:58vh; background:#fff; border:1px solid var(--line); border-radius:7px; padding:15px }
+    .figure-view img { display:block; max-width:100%; max-height:calc(58vh - 30px); object-fit:contain }
+    .detail-grid { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:32px; margin-top:23px }
+    .detail-grid h3 { font-size:13px; margin:0 0 9px }
+    .detail-grid p { margin:0; line-height:1.7; color:#44564b }
+    .files { display:flex; flex-direction:column; gap:7px }
+    .files a { display:flex; justify-content:space-between; gap:14px; text-decoration:none; color:var(--accent); border:1px solid var(--line); border-radius:6px; padding:9px 11px; font-size:13px }
+    .files a:hover { border-color:#8cac97; background:#f5f9f5 }
+    .files span:last-child { color:var(--muted); white-space:nowrap }
+    @media (max-width:850px) { .shell{padding:30px 20px 60px}.layout{display:block}aside{position:static;border:0;padding:0;margin-bottom:20px;max-height:none}.categories{flex-direction:row;overflow-x:auto;padding-bottom:8px}.categories button{width:auto;white-space:nowrap;border:1px solid var(--line);background:var(--paper)}.hero{align-items:start}.count{padding-top:8px} }
+    @media (max-width:600px) { .top-inner{padding:15px 18px}.brand{font-size:20px}.shell{padding:25px 16px 50px}.hero{display:block}.count{display:block;margin-top:14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.thumb{height:145px;padding:8px}.card-content{padding:10px}.card h3{font-size:12px}.toolbar{display:block}.search{width:100%}.result-count{display:block;margin-top:9px}.dialog-head{padding:18px}.dialog-head h2{font-size:18px}.dialog-body{padding:16px}.detail-grid{display:block}.detail-grid section+section{margin-top:20px} }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand">Bio<b>Figure</b></div><div class="lang" aria-label="Language"><button id="zh" aria-pressed="true" type="button">中文</button><button id="en" aria-pressed="false" type="button">EN</button></div></div></header>
+  <div class="shell">
+    <div class="hero"><div><h1 id="page-title">科研图画廊</h1><p id="subtitle">按图型浏览已完成的绘图作品</p></div><span class="count" id="total"></span></div>
+    <div class="layout"><aside aria-label="图型分类"><h2 id="category-heading">图型分类</h2><div class="categories" id="categories"></div></aside><main><div class="toolbar"><input class="search" id="search" type="search" aria-label="搜索图型或关键包" placeholder="搜索图型或关键包"><span class="result-count" id="result-count"></span></div><div class="grid" id="grid"></div><div class="pager" id="pager"></div></main></div>
+  </div>
+  <dialog id="detail" aria-labelledby="detail-title"><div class="dialog-head"><div><p id="detail-category"></p><h2 id="detail-title"></h2></div><button class="close" id="close" type="button" aria-label="关闭">×</button></div><div class="dialog-body"><div class="figure-view"><img id="detail-image" alt=""></div><div class="detail-grid"><section><h3 id="intro-heading">图介绍</h3><p id="detail-intro"></p></section><section><h3 id="files-heading">对应文件</h3><div class="files" id="files"></div></section></div></div></dialog>
+  <script>
+    const T={zh:{title:'科研图画廊',subtitle:'按图型浏览已完成的绘图作品',categories:'图型分类',all:'全部图型',search:'搜索图型或关键包',results:'张图',empty:'没有找到匹配的图',previous:'上一页',next:'下一页',intro:'图介绍',files:'对应文件',image:'无损 WebP 成图',pdf:'PDF 图稿',code:'绘图脚本',data:'绘图表',close:'关闭'},en:{title:'Scientific figure gallery',subtitle:'Explore finished figures by chart type',categories:'Chart types',all:'All figures',search:'Search chart types or packages',results:'figures',empty:'No figures found',previous:'Previous',next:'Next',intro:'About this figure',files:'Files',image:'Lossless WebP artwork',pdf:'PDF artwork',code:'Plotting script',data:'Plot table',close:'Close'}};
+    const state={lang:'zh',category:'all',query:'',page:1};
+    const $=id=>document.getElementById(id);
+    const item=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
+    const size=n=>n>=1e6?`${(n/1e6).toFixed(1)} MB`:`${Math.max(1,Math.round(n/1e3))} KB`;
+    let data,figures=[];
+    const label=id=>data.categories.find(c=>c.id===id)?.label[state.lang]||'';
+    function renderCategories(){const wrap=$('categories');wrap.replaceChildren();const cats=[{id:'all',label:{zh:T.zh.all,en:T.en.all}},...data.categories];for(const c of cats){const count=c.id==='all'?figures.length:figures.filter(f=>f.categories.includes(c.id)).length;const b=item('button','');b.type='button';b.setAttribute('aria-pressed',String(state.category===c.id));b.append(item('span','',c.label[state.lang]),item('small','',String(count)));b.onclick=()=>{state.category=c.id;state.page=1;render()};wrap.append(b)}}
+    function filtered(){const q=state.query.toLocaleLowerCase();return figures.filter(f=>(state.category==='all'||f.categories.includes(state.category))&&(!q||[f.title.zh,f.title.en,...f.packages,...f.categories.map(label)].join(' ').toLocaleLowerCase().includes(q)))}
+    function render(){const t=T[state.lang];document.documentElement.lang=state.lang==='zh'?'zh-CN':'en';document.title=`BioFigure · ${t.title}`;$('page-title').textContent=t.title;$('subtitle').textContent=t.subtitle;$('total').textContent=`${figures.length} ${t.results}`;$('category-heading').textContent=t.categories;$('search').placeholder=t.search;$('search').setAttribute('aria-label',t.search);$('intro-heading').textContent=t.intro;$('files-heading').textContent=t.files;$('close').setAttribute('aria-label',t.close);$('zh').setAttribute('aria-pressed',String(state.lang==='zh'));$('en').setAttribute('aria-pressed',String(state.lang==='en'));renderCategories();const matches=filtered();$('result-count').textContent=`${matches.length} ${t.results}`;const pages=Math.max(1,Math.ceil(matches.length/24));state.page=Math.min(state.page,pages);const grid=$('grid');grid.replaceChildren();if(!matches.length)grid.append(item('div','empty',t.empty));for(const f of matches.slice((state.page-1)*24,state.page*24)){const b=item('button','card');b.type='button';b.setAttribute('aria-label',f.title[state.lang]);const picture=item('div','thumb'),im=item('img');im.src=f.image;im.alt=f.title[state.lang];im.loading='lazy';picture.append(im);const body=item('div','card-content');body.append(item('div','eyebrow',label(f.category)),item('h3','',f.title[state.lang]));b.append(picture,body);b.onclick=()=>openFigure(f);grid.append(b)}const pager=$('pager');pager.replaceChildren();if(pages>1){const prev=item('button','',t.previous),next=item('button','',t.next);prev.disabled=state.page===1;next.disabled=state.page===pages;prev.onclick=()=>{state.page--;render();scrollTo({top:0,behavior:'smooth'})};next.onclick=()=>{state.page++;render();scrollTo({top:0,behavior:'smooth'})};pager.append(prev,item('span','',`${state.page} / ${pages}`),next)}}
+    function openFigure(f){$('detail-category').textContent=label(f.category);$('detail-title').textContent=f.title[state.lang];$('detail-intro').textContent=f.intro[state.lang];$('detail-image').src=f.image;$('detail-image').alt=f.title[state.lang];const files=$('files');files.replaceChildren();for(const x of f.files){const a=item('a');a.href=x.path;a.download=x.name;a.append(item('span','',`${T[state.lang][x.kind]} · ${x.name}`),item('span','',size(x.bytes)));files.append(a)}if(!$('detail').open)$('detail').showModal();history.replaceState(null,'',`#${f.id}`)}
+    $('detail').addEventListener('close',()=>{history.replaceState(null,'',location.pathname+location.search);$('detail-image').removeAttribute('src')});$('close').onclick=()=>$('detail').close();$('detail').onclick=e=>{if(e.target===$('detail'))$('detail').close()};$('search').oninput=e=>{state.query=e.target.value.trim();state.page=1;render()};$('zh').onclick=()=>{state.lang='zh';render();if($('detail').open)openFigure(figures.find(f=>`#${f.id}`===location.hash))};$('en').onclick=()=>{state.lang='en';render();if($('detail').open)openFigure(figures.find(f=>`#${f.id}`===location.hash))};
+    fetch('gallery.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{data=d;figures=d.figures;render();const id=location.hash.slice(1),found=figures.find(f=>f.id===id);if(found)openFigure(found)}).catch(()=>{$('grid').replaceChildren(item('div','empty','图库加载失败 / Gallery unavailable'))});
+  </script>
+</body>
+</html>

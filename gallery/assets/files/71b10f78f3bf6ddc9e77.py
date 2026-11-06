@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Independent source-to-plot and lossless-PDF check. Requires numpy/pandas/pypdf/pdfplumber.
+Does not require SCGV, SciPy, Matplotlib or Monte Carlo rerun.
+"""
+from pathlib import Path
+import argparse,json,hashlib
+import numpy as np,pandas as pd
+from pypdf import PdfReader
+import pdfplumber
+p=argparse.ArgumentParser();p.add_argument('--case',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--figure-dir',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args();C=a.case.resolve();F=(a.figure_dir or C/'results/figures/fig3a-t2').resolve();D=C/'results/plot_data/fig3a-t2';orig=pd.read_csv(C/'data/raw/KPCLOH.Tumor2.DP.SP.5k.seg.quantal.primary.txt.gz',sep='\t');cn=pd.read_csv(D/'rounded-cn.csv');order=pd.read_csv(D/'cell-order.csv');idx=order.original_column.to_numpy();source=orig.iloc[:,3:].to_numpy();expected=np.round(source)[:,idx];actual=cn.iloc[:,2:].to_numpy();lineage=pd.read_csv(C/'data/metadata/KPCLOH.Tumor2.DP.SP.ENA.cell-lineage.tsv',sep='\t').set_index('cell_id');expected_lineage=[lineage.loc[k,'lineage']if k in lineage.index and pd.notna(lineage.loc[k,'lineage'])else'Unknown'for k in order.cell_id];colors=json.load(open(D/'source-colors.json'))['cn_colors'];pal=np.array([[int(h[i:i+2],16)for i in [1,3,5]]for h in colors],dtype=np.uint8);rgb_expected=pal[np.clip(actual,0,4).astype(int)];reader=PdfReader(F/'fig3a-t2.pdf');image=reader.pages[0].images[0];rgb=np.array(image.image);tf=[]
+def visitor(text,cm,tm,font,size):
+ if text.strip():tf.append(size)
+reader.pages[0].extract_text(visitor_text=visitor)
+with pdfplumber.open(F/'fig3a-t2.pdf')as f:
+ page=f.pages[0];fonts=sorted(set(x['fontname']for x in page.chars));outside=sum(x['x0']<0 or x['top']<0 or x['x1']>page.width+.01 or x['bottom']>page.height+.01 for x in page.chars);replace=sum(x['text']=='\ufffd'for x in page.chars)
+checks={'source_matrix_shape':source.shape==(5000,185),'all_original_cell_ids':list(orig.columns[3:][idx])==list(order.cell_id),'leaf_order_is_permutation':sorted(idx.tolist())==list(range(185)),'all925000_rounded_values':np.array_equal(actual,expected),'all_chromosome_ids':np.array_equal(cn.chrom.to_numpy(),orig.chrom.to_numpy()),'all185_lineage_exact_or_unknown':list(order.lineage)==expected_lineage,'lineage_counts':order.lineage.value_counts().to_dict()=={'SP':129,'DP':54,'Unknown':2},'all925000_pdf_rgb':np.array_equal(rgb,rgb_expected),'pdf_lossless_flated_image':image.name.endswith('.png')and len(np.unique(rgb.reshape(-1,3),axis=0))==5,'pdf_Tf_7_8pt':sorted(set(tf))==[7.,8.],'one_page':len(reader.pages)==1,'Arial_only':all(x.endswith('+ArialMT')or x=='ArialMT'for x in fonts),'no_outside_glyph':outside==0,'no_replacement_glyph':replace==0}
+q={'status':'PASS'if all(checks.values())else'FAIL','checks':checks,'cells':185,'bins':5000,'source_value_count':925000,'tree_segments':len(pd.read_csv(D/'tree-segments.csv')),'fonts':fonts,'actual_Tf_sizes_pt':sorted(set(tf)),'pdf_raster_size':list(image.image.size),'png_sha256':hashlib.sha256((F/'fig3a-t2.png').read_bytes()).hexdigest(),'pdf_sha256':hashlib.sha256((F/'fig3a-t2.pdf').read_bytes()).hexdigest(),'scope':'Source input mapping and current PDF only; no raw sequencing/new input/original paper NJ-tree identity qualification.'};a.output.write_text(json.dumps(q,indent=2));print(json.dumps(q,indent=2));raise SystemExit(0 if q['status']=='PASS'else 1)

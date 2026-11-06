@@ -1,0 +1,14 @@
+suppressPackageStartupMessages({library(ggplot2);library(ggtern);library(grid);library(jsonlite)})
+source(file.path(dirname(normalizePath(commandArgs(TRUE)[1])),'native_export.R'));d<-read.csv(file.path(B,'input.csv'),check.names=FALSE,na.strings='');age<-basename(B)=='ternary-age';fields<-c('NMF5_Th2','NMF11_Th1','NMF2_Th17');v<-as.matrix(d[fields]);stopifnot(!anyDuplicated(d$pbmc_sample_id),all(is.finite(v)),all(v>=0));v<-v/rowSums(v);d$TH2<-v[,1];d$TH1<-v[,2];d$TH17<-v[,3]
+# The package performs the ternary projection; all three scales stay0..1.
+p<-ggtern(d,aes(TH2,TH1,TH17))+
+ geom_point(aes(fill=if(age)Ages else`Age Group`),shape=21,size=if(age)1.4 else 1.9,stroke=.18,colour=adjustcolor('#202830',alpha.f=.8))+
+ labs(x='TH2 score',y='TH1 score',z='TH17 score',fill=if(age)'Age (years)'else'Age group')+
+ theme_rgbw(base_size=7,base_family='Arial')+
+ scale_T_continuous(limits=c(0,1),breaks=seq(.2,1,.2),labels=seq(20,100,20))+
+ scale_L_continuous(limits=c(0,1),breaks=seq(.2,1,.2),labels=seq(20,100,20))+
+ scale_R_continuous(limits=c(0,1),breaks=seq(.2,1,.2),labels=seq(20,100,20))+
+ theme(text=element_text(family='Arial',size=7,colour='#30343B'),axis.text=element_text(size=7,family='Arial'),axis.title=element_text(size=7,family='Arial'),legend.text=element_text(size=7,family='Arial'),legend.title=element_text(size=7,family='Arial'),tern.axis.text=element_text(size=7,family='Arial'),tern.axis.title=element_text(size=7,family='Arial'),tern.axis.title.T=element_blank(),tern.axis.title.L=element_blank(),tern.axis.title.R=element_blank(),tern.axis.line=element_line(linewidth=.25),tern.panel.grid.major=element_line(linewidth=.18,colour='#D6DBDF'),tern.panel.grid.minor=element_blank(),legend.position='right',legend.key.size=unit(2.6,'mm'),legend.background=element_blank(),legend.key=element_blank(),plot.margin=margin(7,3,7,7,'mm'),plot.background=element_rect(fill='white',colour=NA),panel.background=element_rect(fill='white',colour=NA))
+if(age)p<-p+scale_fill_gradientn(colours=adjustcolor(c('#496A9B','#94C4D2','#F6F2DD','#E8B68D','#AA5265'),alpha.f=.7),limits=c(40,90),breaks=seq(40,90,10),guide=guide_colourbar(barheight=unit(28,'mm'),barwidth=unit(2.5,'mm')))else p<-p+scale_fill_manual(values=c(Young=adjustcolor('#35978F',alpha.f=.65),Older=adjustcolor('#BF812D',alpha.f=.65)),breaks=c('Young','Older'))
+draw_figure<-function(){print(p,newpage=FALSE);write_json(list(rows=nrow(d),pbmc_sample_ids=d$pbmc_sample_id,closure_max_error=max(abs(rowSums(v)-1)),raw_values_retained=TRUE,package_projection='ggtern',opaque_outline_separate_translucent_fill=TRUE,source=if(age)'Fig5c follow-up234'else'Fig5a source92, published caption96;4 missing records not invented'),file.path(B,'ternary-audit.json'),pretty=TRUE,auto_unbox=TRUE,digits=NA)}
+export_native(draw_figure,'ggplot2')

@@ -1,0 +1,22 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);W<-file.path(P,'work/2026-10-29-grouped-upset');S<-file.path(P,'biofigure')
+source(file.path(S,'scripts/figure_style.R'));library(ggplot2)
+font<-bf_font('Arial');q<-jsonlite::fromJSON(file.path(W,'input-qc.json'));sp<-file.path(W,'design-spec.yaml');s<-yaml::read_yaml(sp)
+p<-readRDS(file.path(W,'render-object.rds'));F<-file.path(P,'results/figures',q$stem)
+sources<-unique(c(file.path(W,c('render.R','prepare_plot.R','prepare_grobs.R','prepare_spec.py','input-qc.json','render-object.rds','composed-vector-grob.rds','text-manifest.json','source-review-receipt.json')),
+ sp,file.path(S,c('scripts/figure_style.R','palettes/bright-luts.csv','palettes/continuous-luts.csv')),
+ file.path(P,'results/plot_data',q$plot_data_files),jsonlite::fromJSON(file.path(W,'source-review-receipt.json'))$source_files$path))
+auth<-file.path(W,paste0('authorization-',Sys.getpid(),'.json'))
+a<-c(file.path(S,'scripts/authorize_render.py'),'--receipt',file.path(W,'preparation-receipt.json'),'--design-spec',sp,'--output',auth,
+ unlist(lapply(setdiff(sources,sp),function(f)c('--source',f))))
+stopifnot(system2('python3',shQuote(a))==0L)
+width<-q$width_mm;height<-q$height_mm
+boxes<-data.frame(id=c('data','labels','legend'),x=c(1,1,1),y=c(1,1,1),w=rep(width-2,3),h=rep(height-2,3))
+bf_render_png(p,paste0(F,'.png'),font,unlist(s$text_contract$allowed_text),width,height,width,sources,boxes,
+ allowed_pairs=c('data:labels','data:legend','labels:legend'),dpi=360,min_text_pt=7,authorization=auth,skill_root=S,
+ publication_size_class='double-column',size_override_basis=s$output_size$size_rationale$override_basis)
+if(!file.exists(file.path(W,'first-render.png')))file.copy(paste0(F,'.png'),file.path(W,'first-render.png'))
+bf_pdf_open(paste0(F,'.pdf'),width,height,font);print(p);dev.off()
+audit<-bf_pdf_finalize(paste0(F,'.pdf'),font,width,height)
+jsonlite::write_json(audit,file.path(W,'pdf-technical-audit.json'),auto_unbox=TRUE,pretty=TRUE)
+capture.output(sessionInfo(),file=file.path(W,'render-sessionInfo.txt'))
+cat('RENDERED_PENDING_ACTUAL_REVIEW\n')

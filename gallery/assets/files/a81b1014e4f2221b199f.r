@@ -1,0 +1,21 @@
+a<-commandArgs(TRUE);P<-normalizePath(a[1]);W<-file.path(P,'work/2026-11-05-burke-dipeptide-mrna');source(file.path(P,'biofigure/scripts/figure_style.R'));library(ggplot2);library(grid);font<-bf_font('Arial');stem<-'burke_dipeptide_mrna_20261105';d<-read.csv(file.path(P,'results/plot_data',paste0(stem,'_amino_acids.csv')));m<-read.csv(file.path(P,'results/plot_data',paste0(stem,'_dipeptides.csv')),check.names=FALSE);m$display_mask<-tolower(m$display_mask)=='true';stopifnot(nrow(d)==42,nrow(m)==400,sum(m$display_mask)==2)
+# All coordinates below are final millimetres on a zero-margin 183x117mm canvas.
+ord<-names(sort(tapply(d$lfc,d$aa,mean),decreasing=TRUE));step<-76/21;d$y<-23+(match(d$aa,ord)-.5)*step+(ifelse(d$pos==1,-.37,.37));d$x<-24+(d$lfc+1.45)/2.2*43;d$xl<-24+(d$lfc-d$lfc_sd+1.45)/2.2*43;d$xr<-24+(d$lfc+d$lfc_sd+1.45)/2.2*43;d$col<-ifelse(d$pos==1,'#159F96','#E36A55');d$shape<-ifelse(d$pos==1,21,24)
+lev<-sort(unique(m$aa1));m$xmin<-88+(match(m$aa1,lev)-1)*3.8;m$xmax<-m$xmin+3.8;m$ymin<-23+(match(m$aa2,lev)-1)*3.8;m$ymax<-m$ymin+3.8
+ramp<-grDevices::colorRampPalette(c('#159F96','#FFFEFA','#E36A55'))(401);m$col<-ramp[pmin(401,pmax(1,round((m$lfc+2)/4*400)+1))];m$col[m$display_mask]<-'#A8ADB1'
+# Layer4 is the sole matrix; key segments are separate from its physical-cell audit.
+guides<-data.frame(y=23+(seq(21)-.5)*step)
+p<-ggplot()+geom_segment(data=guides,aes(x=23,xend=67,y=y,yend=y),colour='#E8ECEE',linewidth=.18)+geom_segment(data=d,aes(x=xl,xend=xr,y=y,yend=y,colour=col),linewidth=.32)+geom_point(data=d,aes(x=x,y=y,colour=col,shape=shape),fill='white',size=1.8,stroke=.35)+geom_rect(data=m,aes(xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax,fill=col),colour=NA)+scale_fill_identity()+scale_colour_identity()+scale_shape_identity()+coord_cartesian(xlim=c(0,183),ylim=c(0,117),expand=FALSE,clip='on')+theme_void(base_family=font$family)+theme(plot.margin=margin(0,0,0,0),legend.position='none')
+# Subtle zero reference and source axis ticks.
+xx<-function(z)24+(z+1.45)/2.2*43
+p<-p+geom_segment(data=data.frame(x=xx(0)),aes(x=x,xend=x,y=23,yend=99),linewidth=.22,linetype='dashed',colour='#B8C2C8')+geom_segment(aes(x=23,xend=67,y=22,yend=22),linewidth=.25,colour='#71828C')
+t<-data.frame(x=xx(c(-1,-.5,0,.5)),label=c('-1.0','-0.5','0.0','0.5'));p<-p+geom_segment(data=t,aes(x=x,xend=x,y=22,yend=20.9),linewidth=.25,colour='#71828C')
+labels<-data.frame(x=c(rep(20,21),t$x,seq(89.9,163,by=3.8),rep(86,20)),y=c(23+(seq(21)-.5)*step,rep(18.8,4),rep(21.5,20),seq(24.9,98,by=3.8)),label=c(ord,t$label,lev,lev),hjust=c(rep(1,21),rep(.5,4),rep(1,20),rep(1,20)),angle=c(rep(0,25),rep(55,20),rep(0,20)),size=7/ggplot2::.pt,col='#344956',face='plain')
+add<-function(x,y,label,size=7,hjust=.5,angle=0,col='#344956',face='plain')data.frame(x,y,label,hjust,angle,size=size/ggplot2::.pt,col,face)
+labels<-rbind(labels,add(c(4.5,80),110,c('a','b'),9,hjust=0,col='#233B49',face='bold'),add(44.5,c(11,7.5),c('Average mRNA level','(log2, arb. units)')),add(7.5,61,'Amino acid',angle=90),add(126,8,'Amino acid at position 1'),add(76.5,61,'Amino acid at position 2',angle=90),add(25,105.5,'Position',hjust=0),add(c(48.5,61.5),105.5,c('1','2'),hjust=0),add(173.5,c(90,86.5),c('mRNA level','(log2, arb. units)')),add(173.5,32,'GW / WG'))
+legend<-data.frame(x=c(44.7,57.7),y=105.5,shape=c(21,24),col=c('#159F96','#E36A55'));p<-p+geom_point(data=legend,aes(x,y,shape=shape,colour=col),fill='white',size=1.9,stroke=.35)
+cb<-rectGrob(x=.5,y=(seq_along(ramp)-.5)/length(ramp),width=1,height=1.02/length(ramp),gp=gpar(fill=ramp,col=NA));p<-p+annotation_custom(cb,xmin=170,xmax=173,ymin=43,ymax=79)
+labels<-rbind(labels,add(175,c(43,52,61,70,79),c('<-2','-1','0','1','>2'),hjust=0))
+p<-p+geom_segment(aes(x=171.5,xend=171.5,y=39,yend=36.5),colour='#A8ADB1',linewidth=3,lineend='butt')+geom_text(data=labels,aes(x=x,y=y,label=label,hjust=hjust,angle=angle,size=size,colour=col,fontface=face),family=font$family)+scale_size_identity()
+saveRDS(p,file.path(W,'plot.rds'));write.csv(d,file.path(W,'mean-geometry.csv'),row.names=FALSE);write.csv(m,file.path(W,'matrix-geometry.csv'),row.names=FALSE);jsonlite::write_json(list(labels=unique(labels$label)),file.path(W,'text-manifest.json'),pretty=TRUE,auto_unbox=TRUE)
+ggsave(file.path(W,'preview.png'),p,width=183,height=117,units='mm',dpi=320,device=ragg::agg_png,bg='white');cat('Exploratory preview ready\n')
