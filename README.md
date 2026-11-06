@@ -17,69 +17,55 @@
 
 让 AI 画出投稿级的图。BioFigure 是给编码助手用的生物科研绘图 Skill：选图、配色、排版、出图、成图检查一气呵成，最后留下能继续修改的 R / Python 代码和绘图数据——图好看，也改得动。
 
-**R 为主要绘图路线，Python 只作候补。** 常规统计、矩阵、环形轨道、系统树、基因组和组图优先使用 R 专用包；仅用户指定、需保留既有 Python 原生流程或 R 无合适实现时选 Python。候补路线的 Matplotlib Figure，以及 seaborn/Scanpy 生成并取得的 Figure，可通过官方 `biofigure/scripts/figure_style.py` 入口消费一次性授权并导出 PNG/PDF/SVG 与渲染凭据。两条路径共用准备、CP2、科学与视觉门禁；导出成功后仍须审阅当前文件并完成检查点校验。其他 Python/CLI 工具仅保存文件，不自动取得正式凭据。
-
-## 快速开始
-
-**环境已配好：**在仓库根目录运行一个自带模拟数据的箱线图。输出保留 PNG、PDF、统计表与执行记录；每次改输入请用新目录。
-
-```bash
-Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
-python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/biofigure-first-boxplot
-```
-
-依赖检查显示 `READY` 后再运行；渲染成功状态为 `RENDERED_PENDING_VISUAL_REVIEW`，仍需打开当前 PNG/PDF 检查字体、终尺寸、文字与图例。耗时取决于本机环境与依赖，不承诺固定完成时间。首次使用见下方[安装与使用](#安装与使用)。
-
-可运行示例还有 `heatmap`、`dense-heatmap`、`bubble`、`volcano`、`synteny`、`phylogeny`。真实数据任务可直接向编码助手描述实验单位、分组、比较方向和输出用途：
-
-```text
-$biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
-样本顺序按元数据，标注处理与时间，先检查数据，再绘图并检查文字与图例。
-```
-
-确需 Python 候补时，见[官方授权渲染步骤](biofigure/references/python-rendering.md)。首版不接受需专用格形量测的矩形热图及 MathText/TeX。按需安装可选依赖，不影响 R-only 路径；seaborn/Scanpy 按任务另行准备，并记录实际版本：
-
-```bash
-python3 -m pip install -r biofigure/requirements-python.txt
-```
+BioFigure 以 R 为主要绘图路线，也支持已有的 Python 原生流程。根据数据和图型选择合适的绘图包，完成设计、导出与成图检查。
 
 ## 精选作品
 
-先看几张复杂图：多层注释、基因组比较、多统计信息组合——每张都附案例与代码入口，方便继续改。
+从基因组结构到多组学关联，这里选了四张图，展示多轨道、多面板和复杂关联的绘制方式。
 
-### 环形热图 × UpSet
+### Hi-C 接触矩阵与多组学轨道
 
-把多层注释、表达模式和集合交集放到一起，展示复杂信息如何在一张图里有条理地展开。
+把接触矩阵、染色体位置、信号轨道和基因注释放在同一坐标中。依据 [plotgardener 示例](https://phanstiellab.github.io/plotgardener/)的公开数据绘制。
 
-![环形热图 × UpSet](docs/assets/archive-gallery/scidraw-001-065/10_circular_heatmap_upset.png)
+![Hi-C 接触矩阵与多组学轨道](gallery/assets/5733d1858b9d509cb309.webp)
 
-[案例详情](docs/gallery/heatmaps.md#bf-0082) · [绘图代码](biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R) · [参考来源](https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA)
+### 基因与研究关联弦图
 
-### BUSCO 锚定的基因区域比较
+用弦图连接基因和研究，外围轨道呈现各组信息。依据 [OmicScope 论文](https://doi.org/10.1038/s41467-024-50875-z) Fig. 4H 的公开数据重绘。
 
-基于原作者公开处理数据重绘，把跨基因组的区域结构与合酶位点放到同一视野。
+![基因与研究关联弦图](gallery/assets/378f02a238431cff2839.webp)
 
-![BUSCO 锚定的基因区域比较](docs/assets/genomics-gallery-20261011/cannabis-cassette.png)
+### 全基因组共线性
 
-[案例详情](docs/gallery/genomes.md#bf-0217) · [绘图代码](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [来源说明](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [参考来源](https://www.nature.com/articles/s41586-025-09065-0)
+按染色体排列多个基因组，并用连线呈现结构对应关系。此图使用模拟数据，展示绘图布局。
 
-### Micro-C 接触矩阵与环标记
+![全基因组共线性](gallery/assets/10106dc180143d1f73dd.webp)
 
-OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示。
+### 蛋白家族序列 Logo 与 FrustIC 轨道
 
-![Micro-C 接触矩阵与环标记](docs/assets/genomics-gallery-20261011/ohca-microc.png)
+将序列保守性与 FrustIC 轨道对齐展示，依据[蛋白家族局部能量挫折研究](https://doi.org/10.1038/s41467-023-43801-2)补充图 3A 的公开数据重绘。
 
-[案例详情](docs/gallery/genomes.md#bf-0221) · [绘图代码](biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [来源说明](biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [参考来源](https://js2264.github.io/OHCA/devel/pages/topological-features.html)
+![蛋白家族序列 Logo 与 FrustIC 轨道](gallery/assets/58073964d9de442621be.webp)
 
-### 相关矩阵与 Mantel 网络
+[浏览图画廊文件](gallery/) · [分类图廊](docs/GALLERY.md)
 
-使用 vegan 示例数据，将环境变量相关矩阵与 Mantel 检验网络连接起来。
+## 快速开始
 
-![相关矩阵与 Mantel 网络](docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png)
+安装 BioFigure 后，直接告诉编码助手数据位置、图型和需要保留的信息。例如：
 
-[案例详情](docs/gallery/networks.md#bf-0055) · [绘图代码](biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [示例数据](https://github.com/vegandevs/vegan/blob/master/man/varechem.Rd)
+```text
+$biofigure 读取 expression.csv 和 metadata.csv，画分组表达热图。
+样本顺序按元数据，标注处理与时间，检查文字、图例并输出 PDF。
+```
 
-[7 个含输入与 PNG/PDF 的便携绘图案例](biofigure/examples/portable)
+也可使用内置模拟数据试运行基因组共线性示例：
+
+```bash
+Rscript biofigure/scripts/install_public_dependencies.R --check --profile portable
+python3 biofigure/scripts/run_public_example.py synteny --output-dir work/biofigure-first-synteny
+```
+
+依赖检查显示 `READY` 后运行；生成图稿后打开 PNG 或 PDF，检查文字、图例和最终尺寸。[安装与使用](#安装与使用)中还有环境配置和更多示例。
 
 ## 分类图廊
 
@@ -108,7 +94,7 @@ OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示
 
 ## 图画廊与最近更新
 
-[图画廊文件](gallery/)收录 317 张成图，可按图型检索并查看可下载的图稿、脚本和绘图表。下载 `gallery` 目录后，用本地静态服务器打开即可浏览。
+[图画廊文件](gallery/)收录 313 张成图，可按图型检索并查看可下载的图稿、脚本和绘图表。下载 `gallery` 目录后，用本地静态服务器打开即可浏览。
 
 最近新增 4 个基于作者公开数据的重绘案例：二肽 mRNA 效应与响应矩阵、蛋白家族序列 Logo 与 FrustIC 轨道、基因与研究关联弦图，以及跨研究组学计数与富集联图。对应来源分别为 [Burke 等（2022）](https://doi.org/10.1038/s41467-022-34664-0)、[蛋白家族局部能量挫折研究（2023）](https://doi.org/10.1038/s41467-023-43801-2)和 [OmicScope（2024）](https://doi.org/10.1038/s41467-024-50875-z)。这些案例重绘指定面板，保留各自的数据与适用范围。
 
@@ -116,7 +102,7 @@ OHCA 书籍案例重绘，将公开数据的接触矩阵与环标记组合展示
 python3 -m http.server 8000 --directory gallery
 ```
 
-在浏览器打开 `http://localhost:8000/`。部分依赖本机路径的脚本未纳入下载文件。
+在浏览器打开 `http://localhost:8000/`。画廊中的图稿和可用下载文件可直接查看。
 
 ## 适用领域与图型
 
@@ -139,7 +125,7 @@ python3 -m http.server 8000 --directory gallery
 
 **先核对科学含义。** 检查实验单位、分组、配对关系、比较方向、数据变换及坐标。请求含糊时补齐关键信息，不能凭图名猜测统计方法，也不能补造测量值。
 
-**按实际成图检查。** 统一字体和最终尺寸，为标签和图例留出空间，核对文字遮挡、裁切、颜色语义和必要注释。修图后重新检查当前输出；代码运行成功不等于版式通过。
+**按实际成图检查。** 统一字体和最终尺寸，为标签和图例留出空间，核对文字遮挡、裁切、颜色语义和必要注释。修图后重新检查当前输出；运行后结合实际图稿检查版式。
 
 **保留可复现材料。** 交付绘图代码、所用数据及必要环境信息。案例记录保存包用法、布局方法和已知问题，便于更换数据后重新编码和调整。
 
@@ -173,7 +159,7 @@ Rscript biofigure/scripts/install_public_dependencies.R --install --library work
 运行内置绘图示例：
 
 ```bash
-python3 biofigure/scripts/run_public_example.py boxplot --output-dir work/boxplot-new
+python3 biofigure/scripts/run_public_example.py synteny --output-dir work/synteny-new
 python3 biofigure/scripts/run_public_example.py heatmap --output-dir work/heatmap-new --formats png
 ```
 
