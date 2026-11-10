@@ -1,6 +1,6 @@
 <div align="center">
 
-**[中文](README.md) · English**
+**English · [中文](README.zh-CN.md)**
 
 # 🎨 BioFigure
 
@@ -18,6 +18,42 @@
 From choosing a plot to getting the layout right, BioFigure helps you turn biological and multi-omics data into figures you can keep refining. It works as a Skill for coding assistants, bringing plot selection, colors, layout, rendering, and quality checks together while preserving editable R/Python code and plot data. The project is under active development.
 
 **R is the primary plotting route; Python is a fallback.** Use R packages for general statistics, matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Choose Python only on explicit user request, to preserve an existing Python-native workflow, or when R has no suitable implementation. Fallback Matplotlib Figures, including Figures obtained from seaborn/Scanpy, can use the official `biofigure/scripts/figure_style.py` entry point to consume single-use authorization and export PNG/PDF/SVG with a render receipt. Both paths share preparation, CP2, and scientific and visual gates. Exported artifacts still require current-file inspection and checkpoint validation. Other Python/CLI exporters do not automatically receive an official receipt.
+
+## How BioFigure works
+
+![BioFigure workflow: data and question, reference search, design and render, figure review, and reproducible output](docs/assets/biofigure-workflow-imagegen.png)
+
+1. **Understand the data and question:** check the experimental design, groups and comparisons.
+2. **Find references:** inspect suitable chart types, examples and methods.
+3. **Design and render:** adapt the layout and code to the current data.
+4. **Review the figure:** check scientific meaning, labels, colors and the rendered output.
+5. **Keep the work reproducible:** retain the figure, plotting data, code and relevant environment information.
+
+## Explore the gallery
+
+[**Open the interactive BioFigure gallery →**](https://woyekun-cell.github.io/BioFigure/)
+
+Browse figures by category and explore available code, plotting data and source notes. The gallery includes genomic comparisons, annotated heatmaps, single-cell views and multi-panel designs.
+
+### Multitrack synteny with a detailed view
+
+Genomic annotation tracks and links bring aligned regions and local detail into one view.
+
+![Multitrack synteny with a detailed view](gallery/assets/cfee44dad91e33156eb1.webp)
+
+### Semi-circular multitrack heatmap
+
+Sample features, changes and scores share a compact, layered layout.
+
+![Semi-circular multitrack heatmap](gallery/assets/2f5e88faafd10e05a255.webp)
+
+### Hi-C contact map and multi-omics tracks
+
+A contact matrix, genomic coordinates, signal tracks and gene annotations share a common coordinate system.
+
+![Hi-C contact map and multi-omics tracks](gallery/assets/5733d1858b9d509cb309.webp)
+
+[Explore more figures online](https://woyekun-cell.github.io/BioFigure/) · [Browse the curated index](docs/GALLERY.md)
 
 ## Quick start
 
@@ -42,44 +78,6 @@ When the Python fallback is needed, follow the [official authorized-rendering st
 ```bash
 python3 -m pip install -r biofigure/requirements-python.txt
 ```
-
-## Featured figures
-
-A few examples of the layouts I work on: dense annotations, genomic comparisons and connected statistical views. Follow the case links for the source and rendering workflow.
-
-### Circular heatmap × UpSet
-
-Layered annotations, expression patterns and set intersections, composed as one connected figure.
-
-![Circular heatmap × UpSet](docs/assets/archive-gallery/scidraw-001-065/10_circular_heatmap_upset.png)
-
-[Case](docs/gallery/heatmaps.md#bf-0082) · [Code](biofigure/examples/archive-gallery/scidraw-001-065/scripts/render_cases_10_14.R) · [Reference](https://mp.weixin.qq.com/s/LuFxqYKavB5VvL3K_fDGVA)
-
-### BUSCO-anchored genomic comparison
-
-A redraw from publicly released author-processed data, aligning genomic regions and synthase loci.
-
-![BUSCO-anchored genomic comparison](docs/assets/genomics-gallery-20261011/cannabis-cassette.png)
-
-[Case](docs/gallery/genomes.md#bf-0217) · [Code](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/scripts) · [Source notes](biofigure/examples/genomics-gallery-20261011/cannabis-cassette/provenance.json) · [Reference](https://www.nature.com/articles/s41586-025-09065-0)
-
-### Micro-C contact map and loops
-
-A redraw of the OHCA book example, combining a Micro-C contact matrix with loop annotations.
-
-![Micro-C contact map and loops](docs/assets/genomics-gallery-20261011/ohca-microc.png)
-
-[Case](docs/gallery/genomes.md#bf-0221) · [Code](biofigure/examples/genomics-gallery-20261011/ohca-microc/scripts) · [Source notes](biofigure/examples/genomics-gallery-20261011/ohca-microc/provenance.json) · [Reference](https://js2264.github.io/OHCA/devel/pages/topological-features.html)
-
-### Correlation matrix and Mantel network
-
-Using vegan example data to connect an environmental correlation matrix with a Mantel-test network.
-
-![Correlation matrix and Mantel network](docs/assets/scidraw-gallery-batch2/18_linket_correlation_network.png)
-
-[Case](docs/gallery/networks.md#bf-0055) · [Code](biofigure/examples/scidraw-gallery/scripts/generate_batch20.R) · [Example data](https://github.com/vegandevs/vegan/blob/master/man/varechem.Rd)
-
-[Seven compact examples with inputs and PNG/PDF exports](biofigure/examples/portable)
 
 ## Gallery by plot type
 
