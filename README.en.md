@@ -21,6 +21,10 @@ From choosing a plot to getting the layout right, BioFigure helps you turn biolo
 
 ## How BioFigure works
 
+![BioFigure workflow overview](docs/assets/biofigure-workflow-imagegen.png)
+
+The diagrams below show the checkpoints, revision paths and separate gallery admission process in more detail.
+
 ![BioFigure drawing workflow, from input and CP0–CP4 checks to delivery](docs/assets/biofigure-workflow-main-v2.png)
 
 Drawing starts with the research question, data and reference search. After the design is locked, the code and current inputs are bound to a one-time authorization before rendering. If CP3 or CP4 fails, revise, authorize and render again, then review the new output. Delivery follows verification of the checkpoints and evidence. CP4 covers scientific, visual, publication and anti-AI review.
