@@ -1,0 +1,313 @@
+"feature","domain","id","profile","profile_i","domain_i","value"
+"Affec_1","Affective",22,"PT1 avoidant",1,3,-0.293299382376659
+"Affec_1","Affective",22,"PT2 psychosomatic",2,3,0.230976444584634
+"Affec_1","Affective",22,"PT3 somatic",3,3,0.432897834641362
+"Affec_1","Affective",22,"PT4 distress",4,3,0.258087411821385
+"Affec_10","Affective",31,"PT1 avoidant",1,3,-0.063751657536237
+"Affec_10","Affective",31,"PT2 psychosomatic",2,3,-0.255386649343818
+"Affec_10","Affective",31,"PT3 somatic",3,3,-0.302317633931807
+"Affec_10","Affective",31,"PT4 distress",4,3,-0.257478256174687
+"Affec_2","Affective",23,"PT1 avoidant",1,3,-0.133249067891553
+"Affec_2","Affective",23,"PT2 psychosomatic",2,3,0.340199610992612
+"Affec_2","Affective",23,"PT3 somatic",3,3,0.335755643110566
+"Affec_2","Affective",23,"PT4 distress",4,3,0.280154882242252
+"Affec_3","Affective",24,"PT1 avoidant",1,3,-0.158012421065389
+"Affec_3","Affective",24,"PT2 psychosomatic",2,3,0.258210803955751
+"Affec_3","Affective",24,"PT3 somatic",3,3,0.341217141666099
+"Affec_3","Affective",24,"PT4 distress",4,3,0.186853117610694
+"Affec_4","Affective",25,"PT1 avoidant",1,3,0.0288490960466277
+"Affec_4","Affective",25,"PT2 psychosomatic",2,3,0.289663730401554
+"Affec_4","Affective",25,"PT3 somatic",3,3,0.213444736164566
+"Affec_4","Affective",25,"PT4 distress",4,3,0.00533647890907334
+"Affec_5","Affective",26,"PT1 avoidant",1,3,0.127054876404987
+"Affec_5","Affective",26,"PT2 psychosomatic",2,3,0.237285681510711
+"Affec_5","Affective",26,"PT3 somatic",3,3,0.108233736313705
+"Affec_5","Affective",26,"PT4 distress",4,3,-0.106445079921051
+"Affec_6","Affective",27,"PT1 avoidant",1,3,0.0807227849460144
+"Affec_6","Affective",27,"PT2 psychosomatic",2,3,0.124779653448718
+"Affec_6","Affective",27,"PT3 somatic",3,3,0.0411514246528463
+"Affec_6","Affective",27,"PT4 distress",4,3,-0.171708843827602
+"Affec_7","Affective",28,"PT1 avoidant",1,3,0.149077798169037
+"Affec_7","Affective",28,"PT2 psychosomatic",2,3,0.07782881186254
+"Affec_7","Affective",28,"PT3 somatic",3,3,-0.0363295627401363
+"Affec_7","Affective",28,"PT4 distress",4,3,-0.214963368237878
+"Affec_8","Affective",29,"PT1 avoidant",1,3,0.0845074099916996
+"Affec_8","Affective",29,"PT2 psychosomatic",2,3,-0.0373141621720414
+"Affec_8","Affective",29,"PT3 somatic",3,3,-0.178172409443995
+"Affec_8","Affective",29,"PT4 distress",4,3,-0.222796976726727
+"Affec_9","Affective",30,"PT1 avoidant",1,3,0.232353536757143
+"Affec_9","Affective",30,"PT2 psychosomatic",2,3,-0.113195309328194
+"Affec_9","Affective",30,"PT3 somatic",3,3,-0.34782887856002
+"Affec_9","Affective",30,"PT4 distress",4,3,-0.221703999608478
+"Inter_1","Interpersonal",34,"PT1 avoidant",1,4,-0.310760896793914
+"Inter_1","Interpersonal",34,"PT2 psychosomatic",2,4,-0.507983642442396
+"Inter_1","Interpersonal",34,"PT3 somatic",3,4,-0.452317436500336
+"Inter_1","Interpersonal",34,"PT4 distress",4,4,0.0815544557339506
+"Inter_2","Interpersonal",35,"PT1 avoidant",1,4,-0.397006535813726
+"Inter_2","Interpersonal",35,"PT2 psychosomatic",2,4,-0.454821827748794
+"Inter_2","Interpersonal",35,"PT3 somatic",3,4,-0.358942990375483
+"Inter_2","Interpersonal",35,"PT4 distress",4,4,0.125888202237127
+"Inter_3","Interpersonal",36,"PT1 avoidant",1,4,-0.437365297327544
+"Inter_3","Interpersonal",36,"PT2 psychosomatic",2,4,-0.548324839871268
+"Inter_3","Interpersonal",36,"PT3 somatic",3,4,-0.247884700339202
+"Inter_3","Interpersonal",36,"PT4 distress",4,4,0.193215685514472
+"Inter_4","Interpersonal",37,"PT1 avoidant",1,4,-0.494851510361352
+"Inter_4","Interpersonal",37,"PT2 psychosomatic",2,4,-0.707373840295257
+"Inter_4","Interpersonal",37,"PT3 somatic",3,4,-0.0619726439070437
+"Inter_4","Interpersonal",37,"PT4 distress",4,4,0.406359196204412
+"Inter_5","Interpersonal",38,"PT1 avoidant",1,4,-0.632477804623256
+"Inter_5","Interpersonal",38,"PT2 psychosomatic",2,4,-0.508482312353814
+"Inter_5","Interpersonal",38,"PT3 somatic",3,4,-0.0681843473991059
+"Inter_5","Interpersonal",38,"PT4 distress",4,4,0.440628703186751
+"Inter_6","Interpersonal",39,"PT1 avoidant",1,4,-0.70337058293653
+"Inter_6","Interpersonal",39,"PT2 psychosomatic",2,4,-0.493199898195723
+"Inter_6","Interpersonal",39,"PT3 somatic",3,4,0.0166977393936042
+"Inter_6","Interpersonal",39,"PT4 distress",4,4,0.55773957333422
+"Inter_7","Interpersonal",40,"PT1 avoidant",1,4,-0.749510421792221
+"Inter_7","Interpersonal",40,"PT2 psychosomatic",2,4,-0.456591384204633
+"Inter_7","Interpersonal",40,"PT3 somatic",3,4,0.211438460338831
+"Inter_7","Interpersonal",40,"PT4 distress",4,4,0.688472164553127
+"Inter_8","Interpersonal",41,"PT1 avoidant",1,4,-0.699650292802387
+"Inter_8","Interpersonal",41,"PT2 psychosomatic",2,4,-0.354205058234949
+"Inter_8","Interpersonal",41,"PT3 somatic",3,4,0.229238077681909
+"Inter_8","Interpersonal",41,"PT4 distress",4,4,0.744617301579424
+"Pain__1","Pain quality",44,"PT1 avoidant",1,5,-0.541000643234773
+"Pain__1","Pain quality",44,"PT2 psychosomatic",2,5,0.0942231711731004
+"Pain__1","Pain quality",44,"PT3 somatic",3,5,0.40476063274154
+"Pain__1","Pain quality",44,"PT4 distress",4,5,0.620304611179592
+"Pain__2","Pain quality",45,"PT1 avoidant",1,5,-0.376878442968879
+"Pain__2","Pain quality",45,"PT2 psychosomatic",2,5,0.074923425212404
+"Pain__2","Pain quality",45,"PT3 somatic",3,5,0.555379208431647
+"Pain__2","Pain quality",45,"PT4 distress",4,5,0.693221075705718
+"Pain__3","Pain quality",46,"PT1 avoidant",1,5,-0.305765202115665
+"Pain__3","Pain quality",46,"PT2 psychosomatic",2,5,0.27824557180248
+"Pain__3","Pain quality",46,"PT3 somatic",3,5,0.658674399340733
+"Pain__3","Pain quality",46,"PT4 distress",4,5,0.491021920777391
+"Pain__4","Pain quality",47,"PT1 avoidant",1,5,-0.21967886841256
+"Pain__4","Pain quality",47,"PT2 psychosomatic",2,5,0.223560315920541
+"Pain__4","Pain quality",47,"PT3 somatic",3,5,0.597832957347565
+"Pain__4","Pain quality",47,"PT4 distress",4,5,0.439355269708
+"Pain__5","Pain quality",48,"PT1 avoidant",1,5,-0.155242214620569
+"Pain__5","Pain quality",48,"PT2 psychosomatic",2,5,0.246101154320089
+"Pain__5","Pain quality",48,"PT3 somatic",3,5,0.502310492265189
+"Pain__5","Pain quality",48,"PT4 distress",4,5,0.320109753905317
+"Pain__6","Pain quality",49,"PT1 avoidant",1,5,0.0503915486845318
+"Pain__6","Pain quality",49,"PT2 psychosomatic",2,5,0.276381218030639
+"Pain__6","Pain quality",49,"PT3 somatic",3,5,0.446198620661071
+"Pain__6","Pain quality",49,"PT4 distress",4,5,0.183704872590302
+"Pain__7","Pain quality",50,"PT1 avoidant",1,5,0.109651268289117
+"Pain__7","Pain quality",50,"PT2 psychosomatic",2,5,0.367455025618978
+"Pain__7","Pain quality",50,"PT3 somatic",3,5,0.239617600692545
+"Pain__7","Pain quality",50,"PT4 distress",4,5,0.186851224058523
+"Pain__8","Pain quality",51,"PT1 avoidant",1,5,0.058846855864805
+"Pain__8","Pain quality",51,"PT2 psychosomatic",2,5,0.296718352492815
+"Pain__8","Pain quality",51,"PT3 somatic",3,5,0.211064827131847
+"Pain__8","Pain quality",51,"PT4 distress",4,5,0.0582651365070558
+"Physi_1","Physical quality",54,"PT1 avoidant",1,6,0.253401127731015
+"Physi_1","Physical quality",54,"PT2 psychosomatic",2,6,0.18826117510709
+"Physi_1","Physical quality",54,"PT3 somatic",3,6,-0.0477146124481465
+"Physi_1","Physical quality",54,"PT4 distress",4,6,-0.0530568341687147
+"Physi_2","Physical quality",55,"PT1 avoidant",1,6,0.222877621055653
+"Physi_2","Physical quality",55,"PT2 psychosomatic",2,6,-0.0969934640245974
+"Physi_2","Physical quality",55,"PT3 somatic",3,6,-0.0846060677431774
+"Physi_2","Physical quality",55,"PT4 distress",4,6,-0.187655048938144
+"Physi_3","Physical quality",56,"PT1 avoidant",1,6,0.108678280365841
+"Physi_3","Physical quality",56,"PT2 psychosomatic",2,6,-0.0959645872166137
+"Physi_3","Physical quality",56,"PT3 somatic",3,6,-0.160468682235843
+"Physi_3","Physical quality",56,"PT4 distress",4,6,-0.200305068272063
+"Physi_4","Physical quality",57,"PT1 avoidant",1,6,0.00296327977730358
+"Physi_4","Physical quality",57,"PT2 psychosomatic",2,6,-0.263389426279885
+"Physi_4","Physical quality",57,"PT3 somatic",3,6,-0.357288573529812
+"Physi_4","Physical quality",57,"PT4 distress",4,6,-0.15696992288246
+"Physi_5","Physical quality",58,"PT1 avoidant",1,6,-0.11819307636912
+"Physi_5","Physical quality",58,"PT2 psychosomatic",2,6,-0.25061486053005
+"Physi_5","Physical quality",58,"PT3 somatic",3,6,-0.213526275401087
+"Physi_5","Physical quality",58,"PT4 distress",4,6,-0.0509448451398784
+"Physi_6","Physical quality",59,"PT1 avoidant",1,6,-0.313115620530675
+"Physi_6","Physical quality",59,"PT2 psychosomatic",2,6,-0.422019416721085
+"Physi_6","Physical quality",59,"PT3 somatic",3,6,-0.3820201309293
+"Physi_6","Physical quality",59,"PT4 distress",4,6,0.088141133647875
+"Physi_7","Physical quality",60,"PT1 avoidant",1,6,-0.38822676723973
+"Physi_7","Physical quality",60,"PT2 psychosomatic",2,6,-0.405488465702479
+"Physi_7","Physical quality",60,"PT3 somatic",3,6,-0.366741751704114
+"Physi_7","Physical quality",60,"PT4 distress",4,6,0.123533992808542
+"Physi_8","Physical quality",61,"PT1 avoidant",1,6,-0.453701730988339
+"Physi_8","Physical quality",61,"PT2 psychosomatic",2,6,-0.482573584804401
+"Physi_8","Physical quality",61,"PT3 somatic",3,6,-0.172811706155984
+"Physi_8","Physical quality",61,"PT4 distress",4,6,0.275083614837172
+"Physi_9","Physical quality",62,"PT1 avoidant",1,6,-0.609408396655163
+"Physi_9","Physical quality",62,"PT2 psychosomatic",2,6,-0.506034764452063
+"Physi_9","Physical quality",62,"PT3 somatic",3,6,-0.114385276107756
+"Physi_9","Physical quality",62,"PT4 distress",4,6,0.515358735637699
+"Resou_1","Resources",76,"PT1 avoidant",1,8,0.141040618221407
+"Resou_1","Resources",76,"PT2 psychosomatic",2,8,0.495768344747266
+"Resou_1","Resources",76,"PT3 somatic",3,8,0.265223024491589
+"Resou_1","Resources",76,"PT4 distress",4,8,0.143247368636378
+"Resou_2","Resources",77,"PT1 avoidant",1,8,0.244061155424465
+"Resou_2","Resources",77,"PT2 psychosomatic",2,8,0.4772472833103
+"Resou_2","Resources",77,"PT3 somatic",3,8,0.191523327730076
+"Resou_2","Resources",77,"PT4 distress",4,8,0.0438387535858102
+"Resou_3","Resources",78,"PT1 avoidant",1,8,0.390752713663053
+"Resou_3","Resources",78,"PT2 psychosomatic",2,8,0.387666109264498
+"Resou_3","Resources",78,"PT3 somatic",3,8,0.108802428963364
+"Resou_3","Resources",78,"PT4 distress",4,8,0.0501740978838201
+"Resou_4","Resources",79,"PT1 avoidant",1,8,0.428711554726239
+"Resou_4","Resources",79,"PT2 psychosomatic",2,8,0.183864203455378
+"Resou_4","Resources",79,"PT3 somatic",3,8,-0.0399524354445739
+"Resou_4","Resources",79,"PT4 distress",4,8,-0.0716768682325902
+"Resou_5","Resources",80,"PT1 avoidant",1,8,0.164431567385325
+"Resou_5","Resources",80,"PT2 psychosomatic",2,8,0.102670876124835
+"Resou_5","Resources",80,"PT3 somatic",3,8,0.0237483182524747
+"Resou_5","Resources",80,"PT4 distress",4,8,-0.0109725794849212
+"Resou_6","Resources",81,"PT1 avoidant",1,8,0.159548077009012
+"Resou_6","Resources",81,"PT2 psychosomatic",2,8,-0.0725068579343164
+"Resou_6","Resources",81,"PT3 somatic",3,8,-0.114022253610511
+"Resou_6","Resources",81,"PT4 distress",4,8,-0.0405305708927119
+"Resou_7","Resources",82,"PT1 avoidant",1,8,0.101460972616323
+"Resou_7","Resources",82,"PT2 psychosomatic",2,8,-0.120329523533719
+"Resou_7","Resources",82,"PT3 somatic",3,8,-0.251476460478496
+"Resou_7","Resources",82,"PT4 distress",4,8,-0.0505174168055389
+"Resou_8","Resources",83,"PT1 avoidant",1,8,0.011687952569768
+"Resou_8","Resources",83,"PT2 psychosomatic",2,8,-0.194298424797652
+"Resou_8","Resources",83,"PT3 somatic",3,8,-0.246949501688971
+"Resou_8","Resources",83,"PT4 distress",4,8,0.0408159938555634
+"Sleep_1","Sleep",12,"PT1 avoidant",1,2,-0.738115713899918
+"Sleep_1","Sleep",12,"PT2 psychosomatic",2,2,-0.668657024898134
+"Sleep_1","Sleep",12,"PT3 somatic",3,2,-0.303109814629582
+"Sleep_1","Sleep",12,"PT4 distress",4,2,0.319288372723769
+"Sleep_2","Sleep",13,"PT1 avoidant",1,2,-0.789048832475154
+"Sleep_2","Sleep",13,"PT2 psychosomatic",2,2,-0.5923309992327
+"Sleep_2","Sleep",13,"PT3 somatic",3,2,-0.174142704752474
+"Sleep_2","Sleep",13,"PT4 distress",4,2,0.482372145285284
+"Sleep_3","Sleep",14,"PT1 avoidant",1,2,-0.774529162184846
+"Sleep_3","Sleep",14,"PT2 psychosomatic",2,2,-0.641370103570512
+"Sleep_3","Sleep",14,"PT3 somatic",3,2,-0.0386457614553735
+"Sleep_3","Sleep",14,"PT4 distress",4,2,0.56740793628023
+"Sleep_4","Sleep",15,"PT1 avoidant",1,2,-0.824825102615218
+"Sleep_4","Sleep",15,"PT2 psychosomatic",2,2,-0.388964661198953
+"Sleep_4","Sleep",15,"PT3 somatic",3,2,0.0699472059034172
+"Sleep_4","Sleep",15,"PT4 distress",4,2,0.478984181780561
+"Sleep_5","Sleep",16,"PT1 avoidant",1,2,-0.721200269486531
+"Sleep_5","Sleep",16,"PT2 psychosomatic",2,2,-0.349403036622693
+"Sleep_5","Sleep",16,"PT3 somatic",3,2,0.172130530194811
+"Sleep_5","Sleep",16,"PT4 distress",4,2,0.569934160877832
+"Sleep_6","Sleep",17,"PT1 avoidant",1,2,-0.818393272331292
+"Sleep_6","Sleep",17,"PT2 psychosomatic",2,2,-0.278183754572497
+"Sleep_6","Sleep",17,"PT3 somatic",3,2,0.341232496492116
+"Sleep_6","Sleep",17,"PT4 distress",4,2,0.551004048909738
+"Sleep_7","Sleep",18,"PT1 avoidant",1,2,-0.80057622692899
+"Sleep_7","Sleep",18,"PT2 psychosomatic",2,2,-0.310644509343177
+"Sleep_7","Sleep",18,"PT3 somatic",3,2,0.327552342347324
+"Sleep_7","Sleep",18,"PT4 distress",4,2,0.530155800554308
+"Sleep_8","Sleep",19,"PT1 avoidant",1,2,-0.596265221780756
+"Sleep_8","Sleep",19,"PT2 psychosomatic",2,2,-0.0135996974986869
+"Sleep_8","Sleep",19,"PT3 somatic",3,2,0.471935655210108
+"Sleep_8","Sleep",19,"PT4 distress",4,2,0.654797816249431
+"Somat_1","Somatic symptoms",1,"PT1 avoidant",1,1,-0.0639922206623735
+"Somat_1","Somatic symptoms",1,"PT2 psychosomatic",2,1,0.095699483357587
+"Somat_1","Somatic symptoms",1,"PT3 somatic",3,1,0.0411603784587902
+"Somat_1","Somatic symptoms",1,"PT4 distress",4,1,-0.127656197186005
+"Somat_1","Somatic experiences",86,"PT1 avoidant",1,9,-0.333153654165729
+"Somat_1","Somatic experiences",86,"PT2 psychosomatic",2,9,-0.367370313292774
+"Somat_1","Somatic experiences",86,"PT3 somatic",3,9,-0.079718680387571
+"Somat_1","Somatic experiences",86,"PT4 distress",4,9,0.374833974555333
+"Somat_2","Somatic symptoms",2,"PT1 avoidant",1,1,0.00969691307800385
+"Somat_2","Somatic symptoms",2,"PT2 psychosomatic",2,1,0.137258574011177
+"Somat_2","Somatic symptoms",2,"PT3 somatic",3,1,-0.0542384214590471
+"Somat_2","Somatic symptoms",2,"PT4 distress",4,1,-0.193841324382245
+"Somat_2","Somatic experiences",87,"PT1 avoidant",1,9,-0.393190316202718
+"Somat_2","Somatic experiences",87,"PT2 psychosomatic",2,9,-0.317874852881159
+"Somat_2","Somatic experiences",87,"PT3 somatic",3,9,-0.0680400752723307
+"Somat_2","Somatic experiences",87,"PT4 distress",4,9,0.545921101460466
+"Somat_3","Somatic symptoms",3,"PT1 avoidant",1,1,0.0885247257086304
+"Somat_3","Somatic symptoms",3,"PT2 psychosomatic",2,1,-0.0134577659359483
+"Somat_3","Somatic symptoms",3,"PT3 somatic",3,1,-0.231823865750106
+"Somat_3","Somatic symptoms",3,"PT4 distress",4,1,-0.301390738653473
+"Somat_3","Somatic experiences",88,"PT1 avoidant",1,9,-0.431234432146046
+"Somat_3","Somatic experiences",88,"PT2 psychosomatic",2,9,-0.397653850850515
+"Somat_3","Somatic experiences",88,"PT3 somatic",3,9,0.0672884418472632
+"Somat_3","Somatic experiences",88,"PT4 distress",4,9,0.615441865815947
+"Somat_4","Somatic symptoms",4,"PT1 avoidant",1,1,0.0142713171848072
+"Somat_4","Somatic symptoms",4,"PT2 psychosomatic",2,1,-0.0734055698774924
+"Somat_4","Somatic symptoms",4,"PT3 somatic",3,1,-0.267590081097662
+"Somat_4","Somatic symptoms",4,"PT4 distress",4,1,-0.171174710959545
+"Somat_4","Somatic experiences",89,"PT1 avoidant",1,9,-0.557445519534031
+"Somat_4","Somatic experiences",89,"PT2 psychosomatic",2,9,-0.319596548366614
+"Somat_4","Somatic experiences",89,"PT3 somatic",3,9,0.0619563533281375
+"Somat_4","Somatic experiences",89,"PT4 distress",4,9,0.645611862043767
+"Somat_5","Somatic symptoms",5,"PT1 avoidant",1,1,-0.0706075447127001
+"Somat_5","Somatic symptoms",5,"PT2 psychosomatic",2,1,-0.20694087090251
+"Somat_5","Somatic symptoms",5,"PT3 somatic",3,1,-0.376838364002369
+"Somat_5","Somatic symptoms",5,"PT4 distress",4,1,-0.334957138857567
+"Somat_5","Somatic experiences",90,"PT1 avoidant",1,9,-0.626091197392978
+"Somat_5","Somatic experiences",90,"PT2 psychosomatic",2,9,-0.375416324781647
+"Somat_5","Somatic experiences",90,"PT3 somatic",3,9,0.326543146764726
+"Somat_5","Somatic experiences",90,"PT4 distress",4,9,0.797910168627697
+"Somat_6","Somatic symptoms",6,"PT1 avoidant",1,1,-0.0319034587250538
+"Somat_6","Somatic symptoms",6,"PT2 psychosomatic",2,1,-0.364582459341757
+"Somat_6","Somatic symptoms",6,"PT3 somatic",3,1,-0.386504912952061
+"Somat_6","Somatic symptoms",6,"PT4 distress",4,1,-0.337997455925857
+"Somat_6","Somatic experiences",91,"PT1 avoidant",1,9,-0.575207638203611
+"Somat_6","Somatic experiences",91,"PT2 psychosomatic",2,9,-0.183414443068798
+"Somat_6","Somatic experiences",91,"PT3 somatic",3,9,0.310390515573155
+"Somat_6","Somatic experiences",91,"PT4 distress",4,9,0.777629217325123
+"Somat_7","Somatic symptoms",7,"PT1 avoidant",1,1,-0.270529115312744
+"Somat_7","Somatic symptoms",7,"PT2 psychosomatic",2,1,-0.419765341462927
+"Somat_7","Somatic symptoms",7,"PT3 somatic",3,1,-0.493220368438111
+"Somat_7","Somatic symptoms",7,"PT4 distress",4,1,-0.0829562763369066
+"Somat_7","Somatic experiences",92,"PT1 avoidant",1,9,-0.601839677962094
+"Somat_7","Somatic experiences",92,"PT2 psychosomatic",2,9,-0.0243640044168415
+"Somat_7","Somatic experiences",92,"PT3 somatic",3,9,0.410689616496944
+"Somat_7","Somatic experiences",92,"PT4 distress",4,9,0.857168485374296
+"Somat_8","Somatic symptoms",8,"PT1 avoidant",1,1,-0.241137016711439
+"Somat_8","Somatic symptoms",8,"PT2 psychosomatic",2,1,-0.597918153950839
+"Somat_8","Somatic symptoms",8,"PT3 somatic",3,1,-0.476382788376531
+"Somat_8","Somatic symptoms",8,"PT4 distress",4,1,-0.244198864867038
+"Somat_8","Somatic experiences",93,"PT1 avoidant",1,9,-0.456444644604517
+"Somat_8","Somatic experiences",93,"PT2 psychosomatic",2,9,-0.0317840391333789
+"Somat_8","Somatic experiences",93,"PT3 somatic",3,9,0.580064554619575
+"Somat_8","Somatic experiences",93,"PT4 distress",4,9,0.89378217363079
+"Somat_9","Somatic symptoms",9,"PT1 avoidant",1,1,-0.452721540545473
+"Somat_9","Somatic symptoms",9,"PT2 psychosomatic",2,1,-0.656132098503998
+"Somat_9","Somatic symptoms",9,"PT3 somatic",3,1,-0.501596756430656
+"Somat_9","Somatic symptoms",9,"PT4 distress",4,1,-0.00473052583145763
+"Somat_9","Somatic experiences",94,"PT1 avoidant",1,9,-0.401404028769287
+"Somat_9","Somatic experiences",94,"PT2 psychosomatic",2,9,0.202182415044539
+"Somat_9","Somatic experiences",94,"PT3 somatic",3,9,0.641852790495022
+"Somat_9","Somatic experiences",94,"PT4 distress",4,9,0.778213604384944
+"Stres_1","Stress",65,"PT1 avoidant",1,7,-0.710924348450159
+"Stres_1","Stress",65,"PT2 psychosomatic",2,7,-0.321190351260099
+"Stres_1","Stress",65,"PT3 somatic",3,7,0.0931882669667588
+"Stres_1","Stress",65,"PT4 distress",4,7,0.707230327094096
+"Stres_2","Stress",66,"PT1 avoidant",1,7,-0.70826035771144
+"Stres_2","Stress",66,"PT2 psychosomatic",2,7,-0.241904092858659
+"Stres_2","Stress",66,"PT3 somatic",3,7,0.317857625499714
+"Stres_2","Stress",66,"PT4 distress",4,7,0.729772718541617
+"Stres_3","Stress",67,"PT1 avoidant",1,7,-0.679922918491248
+"Stres_3","Stress",67,"PT2 psychosomatic",2,7,-0.188121406527354
+"Stres_3","Stress",67,"PT3 somatic",3,7,0.416700250055857
+"Stres_3","Stress",67,"PT4 distress",4,7,0.756804922692783
+"Stres_4","Stress",68,"PT1 avoidant",1,7,-0.598778552625798
+"Stres_4","Stress",68,"PT2 psychosomatic",2,7,-0.0899205103865226
+"Stres_4","Stress",68,"PT3 somatic",3,7,0.533992475732169
+"Stres_4","Stress",68,"PT4 distress",4,7,0.64272616091967
+"Stres_5","Stress",69,"PT1 avoidant",1,7,-0.347817605386713
+"Stres_5","Stress",69,"PT2 psychosomatic",2,7,0.047369023509841
+"Stres_5","Stress",69,"PT3 somatic",3,7,0.619138252559761
+"Stres_5","Stress",69,"PT4 distress",4,7,0.714341778679213
+"Stres_6","Stress",70,"PT1 avoidant",1,7,-0.39408137753405
+"Stres_6","Stress",70,"PT2 psychosomatic",2,7,0.330021130357237
+"Stres_6","Stress",70,"PT3 somatic",3,7,0.630817121214958
+"Stres_6","Stress",70,"PT4 distress",4,7,0.667037492009387
+"Stres_7","Stress",71,"PT1 avoidant",1,7,-0.296940013971496
+"Stres_7","Stress",71,"PT2 psychosomatic",2,7,0.333919838970646
+"Stres_7","Stress",71,"PT3 somatic",3,7,0.566679607093336
+"Stres_7","Stress",71,"PT4 distress",4,7,0.657337238200709
+"Stres_8","Stress",72,"PT1 avoidant",1,7,-0.212605796600505
+"Stres_8","Stress",72,"PT2 psychosomatic",2,7,0.388609348535835
+"Stres_8","Stress",72,"PT3 somatic",3,7,0.564942990348457
+"Stres_8","Stress",72,"PT4 distress",4,7,0.498800889997468
+"Stres_9","Stress",73,"PT1 avoidant",1,7,-0.0586165856388828
+"Stres_9","Stress",73,"PT2 psychosomatic",2,7,0.433862872114723
+"Stres_9","Stress",73,"PT3 somatic",3,7,0.597275925075702
+"Stres_9","Stress",73,"PT4 distress",4,7,0.37975465388917

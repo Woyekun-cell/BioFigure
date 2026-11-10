@@ -1,0 +1,11 @@
+args<-commandArgs(TRUE);W<-normalizePath(args[1]);P<-dirname(dirname(W));S<-file.path(P,'biofigure');B<-file.path(P,'work/2026-11-06-genomic-structures-next');q<-jsonlite::fromJSON(file.path(W,'metadata.json'));source(file.path(S,'scripts/figure_style.R'));source(file.path(B,'draw_case.R'));cowplot::set_null_device('agg');font<-bf_font('Arial')
+# Source-specific palette is interpolated by circlize; geometry is native grid.
+pal<-setNames(circlize::colorRamp2(seq_along(pal),unname(pal))(seq_along(pal)),names(pal))
+g<-grid::grid.grabExpr(draw_case(q,P,file.path(W,'layout.json')),width=q$width/25.4,height=q$height/25.4,device=function(...)ragg::agg_capture(...,units='in',res=360))
+p<-cowplot::ggdraw(g);sp<-file.path(W,'design-spec.yaml');spec<-yaml::read_yaml(sp);out<-file.path(P,'results/figures',q$stem);dir.create(dirname(out),recursive=TRUE,showWarnings=FALSE)
+sources<-unique(c(sp,file.path(W,c('config.json','metadata.json','prepare.py','simulation.json','source-review-receipt.json')),file.path(B,c('prepare_case.py','generate.py','draw_case.R','render_case.R')),q$source_files$path,file.path(S,'scripts/figure_style.R')))
+auth<-file.path(W,paste0('authorization-',Sys.getpid(),'.json'));a<-c(file.path(S,'scripts/authorize_render.py'),'--receipt',file.path(W,'preparation-receipt.json'),'--design-spec',sp,'--output',auth,unlist(lapply(setdiff(sources,sp),function(f)c('--source',f))));stopifnot(system2('python3',shQuote(a))==0)
+boxes<-data.frame(id=c('data','labels','legend'),x=0,y=0,w=q$width,h=q$height)
+bf_render_png(p,paste0(out,'.png'),font,unlist(spec$text_contract$allowed_text),q$width,q$height,q$width,sources,boxes,allowed_pairs=c('data:labels','data:legend','labels:legend'),dpi=360,min_text_pt=6.5,authorization=auth,skill_root=S,publication_size_class='double-column')
+if(!file.exists(file.path(W,'first-render.png')))file.copy(paste0(out,'.png'),file.path(W,'first-render.png'))
+bf_pdf_open(paste0(out,'.pdf'),q$width,q$height,font);grid::grid.newpage();grid::grid.draw(ggplot2::ggplotGrob(p));dev.off();jsonlite::write_json(bf_pdf_finalize(paste0(out,'.pdf'),font,q$width,q$height),file.path(W,'pdf-technical-audit.json'),auto_unbox=TRUE,pretty=TRUE);capture.output(sessionInfo(),file=file.path(W,'render-sessionInfo.txt'));cat(q$key,'rendered; review required\n')

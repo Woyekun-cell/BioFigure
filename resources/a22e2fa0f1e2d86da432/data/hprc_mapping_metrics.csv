@@ -1,0 +1,7 @@
+"Eval","Method","Reference","N","TPR","PPV","FacetCol","FacetRow"
+"Primary","STAR (unique)","Spliced GRCh38 reference",9998940,0.98430975516278,0.990140271163623,"Simulated reads (HG002)",""
+"Primary","vg mpmap (unique)","Spliced GRCh38 reference",9998940,0.980836618528299,0.999013001462552,"Simulated reads (HG002)",""
+"Primary","vg mpmap (unique)","MC spliced graph",9998940,0.978218330998599,0.999494952283214,"Simulated reads (HG002)",""
+"Mulit-mapping","STAR (multi)","Spliced GRCh38 reference",9998940,0.998718919286659,0.989334252729273,"Simulated reads (HG002)",""
+"Mulit-mapping","vg mpmap (multi)","Spliced GRCh38 reference",9998940,0.999998997980028,0.998089895618831,"Simulated reads (HG002)",""
+"Mulit-mapping","vg mpmap (multi)","MC spliced graph",9998940,0.999613729793277,0.998888153193741,"Simulated reads (HG002)",""

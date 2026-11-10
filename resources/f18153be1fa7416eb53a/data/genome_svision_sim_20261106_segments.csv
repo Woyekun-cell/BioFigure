@@ -1,0 +1,7 @@
+id,ref_start,ref_end,query_start,query_end,component,control_fraction,case_fraction
+B1,0,12,0,12,Forward,0.95,0.92
+B2,6,12,12,18,Duplication,0.04,0.82
+B3,12,20,18,26,Forward,0.95,0.94
+B4,20,28,26,26,Deletion,0.08,0.88
+B5,28,40,38,26,Inversion,0.12,0.91
+B6,40,60,38,58,Forward,0.96,0.94

@@ -1,0 +1,101 @@
+"network","id","country","lon","lat","origin_region","connections"
+"Network A","AO","Angola",18,-12,"Southern Africa",3
+"Network A","BW","Botswana",24,-22,"Southern Africa",5
+"Network A","CD","DR Congo",23,-3,"Southern Africa",2
+"Network A","CM","Cameroon",12,6,"Western Africa",1
+"Network A","DZ","Algeria",3,28,"Northern Africa",4
+"Network A","EG","Egypt",30,27,"Northern Africa",2
+"Network A","ET","Ethiopia",39,9,"Eastern Africa",2
+"Network A","GH","Ghana",-1,8,"Western Africa",2
+"Network A","KE","Kenya",38,1,"Eastern Africa",0
+"Network A","MA","Morocco",-6,32,"Northern Africa",5
+"Network A","ML","Mali",-4,17,"Western Africa",3
+"Network A","NE","Niger",9,17,"Western Africa",4
+"Network A","NG","Nigeria",8,9,"Western Africa",3
+"Network A","SN","Senegal",-14,14,"Western Africa",3
+"Network A","TN","Tunisia",10,34,"Northern Africa",3
+"Network A","TZ","Tanzania",35,-6,"Eastern Africa",1
+"Network A","UG","Uganda",32,1,"Eastern Africa",3
+"Network A","ZA","South Africa",25,-29,"Southern Africa",1
+"Network A","ZM","Zambia",28,-13,"Southern Africa",0
+"Network A","ZW","Zimbabwe",30,-19,"Southern Africa",3
+"Network B","AO","Angola",18,-12,"Southern Africa",0
+"Network B","BW","Botswana",24,-22,"Southern Africa",3
+"Network B","CD","DR Congo",23,-3,"Southern Africa",0
+"Network B","CM","Cameroon",12,6,"Western Africa",2
+"Network B","DZ","Algeria",3,28,"Northern Africa",0
+"Network B","EG","Egypt",30,27,"Northern Africa",1
+"Network B","ET","Ethiopia",39,9,"Eastern Africa",0
+"Network B","GH","Ghana",-1,8,"Western Africa",2
+"Network B","KE","Kenya",38,1,"Eastern Africa",2
+"Network B","MA","Morocco",-6,32,"Northern Africa",1
+"Network B","ML","Mali",-4,17,"Western Africa",2
+"Network B","NE","Niger",9,17,"Western Africa",2
+"Network B","NG","Nigeria",8,9,"Western Africa",4
+"Network B","SN","Senegal",-14,14,"Western Africa",1
+"Network B","TN","Tunisia",10,34,"Northern Africa",1
+"Network B","TZ","Tanzania",35,-6,"Eastern Africa",0
+"Network B","UG","Uganda",32,1,"Eastern Africa",0
+"Network B","ZA","South Africa",25,-29,"Southern Africa",1
+"Network B","ZM","Zambia",28,-13,"Southern Africa",2
+"Network B","ZW","Zimbabwe",30,-19,"Southern Africa",2
+"Network C","AO","Angola",18,-12,"Southern Africa",4
+"Network C","BW","Botswana",24,-22,"Southern Africa",4
+"Network C","CD","DR Congo",23,-3,"Southern Africa",4
+"Network C","CM","Cameroon",12,6,"Western Africa",3
+"Network C","DZ","Algeria",3,28,"Northern Africa",1
+"Network C","EG","Egypt",30,27,"Northern Africa",3
+"Network C","ET","Ethiopia",39,9,"Eastern Africa",1
+"Network C","GH","Ghana",-1,8,"Western Africa",3
+"Network C","KE","Kenya",38,1,"Eastern Africa",4
+"Network C","MA","Morocco",-6,32,"Northern Africa",4
+"Network C","ML","Mali",-4,17,"Western Africa",4
+"Network C","NE","Niger",9,17,"Western Africa",5
+"Network C","NG","Nigeria",8,9,"Western Africa",4
+"Network C","SN","Senegal",-14,14,"Western Africa",3
+"Network C","TN","Tunisia",10,34,"Northern Africa",2
+"Network C","TZ","Tanzania",35,-6,"Eastern Africa",1
+"Network C","UG","Uganda",32,1,"Eastern Africa",1
+"Network C","ZA","South Africa",25,-29,"Southern Africa",3
+"Network C","ZM","Zambia",28,-13,"Southern Africa",3
+"Network C","ZW","Zimbabwe",30,-19,"Southern Africa",1
+"Network D","AO","Angola",18,-12,"Southern Africa",1
+"Network D","BW","Botswana",24,-22,"Southern Africa",1
+"Network D","CD","DR Congo",23,-3,"Southern Africa",1
+"Network D","CM","Cameroon",12,6,"Western Africa",1
+"Network D","DZ","Algeria",3,28,"Northern Africa",1
+"Network D","EG","Egypt",30,27,"Northern Africa",0
+"Network D","ET","Ethiopia",39,9,"Eastern Africa",0
+"Network D","GH","Ghana",-1,8,"Western Africa",1
+"Network D","KE","Kenya",38,1,"Eastern Africa",2
+"Network D","MA","Morocco",-6,32,"Northern Africa",2
+"Network D","ML","Mali",-4,17,"Western Africa",3
+"Network D","NE","Niger",9,17,"Western Africa",0
+"Network D","NG","Nigeria",8,9,"Western Africa",1
+"Network D","SN","Senegal",-14,14,"Western Africa",0
+"Network D","TN","Tunisia",10,34,"Northern Africa",1
+"Network D","TZ","Tanzania",35,-6,"Eastern Africa",0
+"Network D","UG","Uganda",32,1,"Eastern Africa",1
+"Network D","ZA","South Africa",25,-29,"Southern Africa",0
+"Network D","ZM","Zambia",28,-13,"Southern Africa",1
+"Network D","ZW","Zimbabwe",30,-19,"Southern Africa",2
+"Network E","AO","Angola",18,-12,"Southern Africa",0
+"Network E","BW","Botswana",24,-22,"Southern Africa",0
+"Network E","CD","DR Congo",23,-3,"Southern Africa",1
+"Network E","CM","Cameroon",12,6,"Western Africa",0
+"Network E","DZ","Algeria",3,28,"Northern Africa",3
+"Network E","EG","Egypt",30,27,"Northern Africa",1
+"Network E","ET","Ethiopia",39,9,"Eastern Africa",0
+"Network E","GH","Ghana",-1,8,"Western Africa",1
+"Network E","KE","Kenya",38,1,"Eastern Africa",0
+"Network E","MA","Morocco",-6,32,"Northern Africa",1
+"Network E","ML","Mali",-4,17,"Western Africa",0
+"Network E","NE","Niger",9,17,"Western Africa",1
+"Network E","NG","Nigeria",8,9,"Western Africa",1
+"Network E","SN","Senegal",-14,14,"Western Africa",2
+"Network E","TN","Tunisia",10,34,"Northern Africa",0
+"Network E","TZ","Tanzania",35,-6,"Eastern Africa",0
+"Network E","UG","Uganda",32,1,"Eastern Africa",1
+"Network E","ZA","South Africa",25,-29,"Southern Africa",0
+"Network E","ZM","Zambia",28,-13,"Southern Africa",1
+"Network E","ZW","Zimbabwe",30,-19,"Southern Africa",2

@@ -1,0 +1,19 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);mid<-args[2];S<-file.path(P,'biofigure');B<-file.path(P,'work/2026-10-29-maps-and-umap');W<-file.path(B,mid)
+source(file.path(S,'scripts/figure_style.R'));library(ggplot2);font<-bf_font('Arial');sp<-file.path(W,'design-spec.yaml');spec<-yaml::read_yaml(sp);qc<-jsonlite::fromJSON(file.path(W,'input-qc.json'));p<-readRDS(file.path(W,'render-object.rds'));F<-file.path(P,'results/figures',qc$stem)
+sources<-c(file.path(P,'scripts/figures/render_map_reproductions_20261029.R'),sp,file.path(B,c('prepare_plots.R','prepare_grobs.R','prepare_specs.py')),file.path(W,c('render-object.rds','composed-vector-grob.rds','text-manifest.json','input-qc.json')),file.path(S,c('scripts/figure_style.R','palettes/palette-library.yaml','palettes/bright-luts.csv','palettes/continuous-luts.csv')),file.path(P,'results/plot_data',paste0(qc$stem,'.csv')))
+# palette-library.yaml is hash-bound by the authorization but excluded from the renderer's single-Spec YAML list.
+# Bind the palette metadata through a JSON byte-hash manifest instead.
+sources<-sources[basename(sources)!='palette-library.yaml']
+sources<-c(sources,file.path(W,'source-lock.json'),file.path(B,'sources',paste0(mid,'.png')))
+if(mid=='SCICASE-089')sources<-sources[sources!=file.path(B,'sources',paste0(mid,'.png'))];if(mid=='SCICASE-089')sources<-c(sources,file.path(P,'data/reference/scidraw/SCICASE-089.png'))
+if(mid=='SCICASE-091')sources<-c(sources,file.path(P,'data/raw/map_reproductions_20261026/china-provinces.geojson'),file.path(P,'results/plot_data',c('china_source_traced_zones_20261029.csv','china_source_traced_zones_20261029.geojson','china_source_map_labels_20261029.csv')),file.path(B,'trace_zones.py'))
+bound<-function(x)list(path=normalizePath(x,mustWork=TRUE),sha256=digest::digest(file=x,algo='sha256'));wr<-function(x,f)jsonlite::write_json(x,f,auto_unbox=TRUE,pretty=TRUE,digits=NA,null='null');before<-lapply(sources,bound)
+auth<-file.path(W,paste0('authorization-',Sys.getpid(),'-',format(Sys.time(),'%H%M%S'),'.json'));a<-c(file.path(S,'scripts/authorize_render.py'),'--receipt',file.path(W,'preparation-receipt.json'),'--design-spec',sp,'--output',auth,unlist(lapply(sources[sources!=sp],function(x)c('--source',x))))
+if(system2('python3',shQuote(a))!=0L)stop('CP2 authorization failed')
+width<-qc$width_mm;height<-qc$height_mm
+boxes<-data.frame(id=c('data','labels','legend'),x=c(1,1,if(mid=='SCICASE-088')1 else 136),y=c(if(mid=='SCICASE-088')22 else 1,if(mid=='SCICASE-088')22 else 1,1),w=c(if(mid=='SCICASE-088')width-2 else 134,if(mid=='SCICASE-088')width-2 else 134,if(mid=='SCICASE-088')width-2 else 46),h=c(if(mid=='SCICASE-088')height-23 else height-2,if(mid=='SCICASE-088')height-23 else height-2,if(mid=='SCICASE-088')20 else height-2))
+t<-proc.time()[['elapsed']];bf_render_png(p,paste0(F,'.png'),font,unlist(spec$text_contract$allowed_text),width,height,width,sources,boxes,allowed_pairs='data:labels',dpi=360,min_text_pt=6.5,authorization=auth,skill_root=S,publication_size_class='double-column',size_override_basis=spec$output_size$size_rationale$override_basis);png_s<-proc.time()[['elapsed']]-t
+if(!file.exists(file.path(W,'first-render.png')))file.copy(paste0(F,'.png'),file.path(W,'first-render.png'))
+t<-proc.time()[['elapsed']];bf_pdf_open(paste0(F,'.pdf'),width,height,font);print(p);dev.off();pdf_s<-proc.time()[['elapsed']]-t
+pa<-bf_pdf_finalize(paste0(F,'.pdf'),font,width,height);wr(pa,paste0(F,'.pdf.pdf-audit.json'));stopifnot(identical(before,lapply(sources,bound)))
+wr(list(status='RENDERED_PENDING_VISUAL_REVIEW',method_id=mid,png=bound(paste0(F,'.png')),pdf=bound(paste0(F,'.pdf')),authorization=auth,timing=list(png_render_R_seconds=png_s,pdf_export_R_seconds=pdf_s),scope=qc$data_origin),file.path(W,'run.json'));capture.output(sessionInfo(),file=file.path(W,'render-sessionInfo.txt'));cat(mid,'RENDERED\n')

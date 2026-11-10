@@ -1,0 +1,65 @@
+compound,class,target,recruiter
+C01,Degrader,Target A,Recruiter I
+C02,Degrader,Target A,Recruiter I
+C03,Degrader,Target A,Recruiter I
+C04,Degrader,Target A,Recruiter I
+C05,Degrader,Target A,Recruiter I
+C06,Degrader,Target A,Recruiter I
+C07,Degrader,Target A,Recruiter I
+C08,Degrader,Target A,Recruiter I
+C09,Degrader,Target B,Recruiter II
+C10,Degrader,Target B,Recruiter II
+C11,Degrader,Target B,Recruiter II
+C12,Degrader,Target B,Recruiter II
+C13,Degrader,Target B,Recruiter II
+C14,Degrader,Target B,Recruiter II
+C15,Degrader,Target B,Recruiter II
+C16,Degrader,Target B,Recruiter II
+C17,Degrader,Target C,None
+C18,Degrader,Target C,None
+C19,Degrader,Target C,None
+C20,Degrader,Target C,None
+C21,Degrader,Target C,None
+C22,Degrader,Target C,None
+C23,Degrader,Target C,None
+C24,Degrader,Target C,None
+C25,Degrader,Other,Recruiter I
+C26,Degrader,Other,Recruiter I
+C27,Degrader,Other,Recruiter I
+C28,Degrader,Other,Recruiter I
+C29,Degrader,Other,Recruiter I
+C30,Degrader,Other,Recruiter I
+C31,Degrader,Other,Recruiter I
+C32,Degrader,Other,Recruiter I
+C33,Degrader,Target A,Recruiter II
+C34,Degrader,Target A,Recruiter II
+C35,Degrader,Target A,Recruiter II
+C36,Degrader,Target A,Recruiter II
+C37,Degrader,Target A,Recruiter II
+C38,Degrader,Target A,Recruiter II
+C39,Degrader,Target A,Recruiter II
+C40,Degrader,Target A,Recruiter II
+C41,Binder,Target B,None
+C42,Binder,Target B,None
+C43,Binder,Target B,None
+C44,Binder,Target B,None
+C45,Binder,Target B,None
+C46,Binder,Target B,None
+C47,Binder,Target B,None
+C48,Binder,Target B,None
+C49,Binder,Target C,Recruiter I
+C50,Binder,Target C,Recruiter I
+C51,Binder,Target C,Recruiter I
+C52,Binder,Target C,Recruiter I
+C53,Binder,Target C,Recruiter I
+C54,Binder,Target C,Recruiter I
+C55,Binder,Target C,Recruiter I
+C56,Binder,Target C,Recruiter I
+C57,Control,Other,Recruiter II
+C58,Control,Other,Recruiter II
+C59,Control,Other,Recruiter II
+C60,Control,Other,Recruiter II
+C61,Control,Other,Recruiter II
+C62,Control,Other,Recruiter II
+C63,Control,Other,Recruiter II
+C64,Control,Other,Recruiter II

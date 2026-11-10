@@ -1,0 +1,66 @@
+"gene","from","x1","to","x2"
+"GENE01","Type 2 diabetes",10.5,"Prostate cancer",8.5
+"GENE01","Type 2 diabetes",10.5,"Renal disease",9.5
+"GENE02","Premature mortality",9.5,"Acute pancreatitis",6.5
+"GENE03","Parkinson disease",5.5,"Breast cancer",5.5
+"GENE03","Parkinson disease",5.5,"Acute pancreatitis",1.5
+"GENE04","Type 2 diabetes",2.5,"Prostate cancer",11.5
+"GENE04","Type 2 diabetes",2.5,"Premature mortality",4.5
+"GENE06","Type 2 diabetes",7.5,"Colon cancer",10.5
+"GENE07","Type 2 diabetes",9.5,"Prostate cancer",0.5
+"GENE07","Type 2 diabetes",9.5,"Premature mortality",10.5
+"GENE08","Prostate cancer",2.5,"Lung cancer",13.5
+"GENE08","Prostate cancer",2.5,"Heart failure",0.5
+"GENE10","Type 2 diabetes",17.5,"Prostate cancer",4.5
+"GENE10","Type 2 diabetes",17.5,"COPD",7.5
+"GENE11","Type 2 diabetes",3.5,"Prostate cancer",9.5
+"GENE11","Type 2 diabetes",3.5,"Colon cancer",5.5
+"GENE13","Heart failure",10.5,"Multimorbidity",7.5
+"GENE14","Colon cancer",9.5,"Multimorbidity",5.5
+"GENE15","Type 2 diabetes",13.5,"Lung cancer",10.5
+"GENE15","Type 2 diabetes",13.5,"Heart failure",8.5
+"GENE16","Type 2 diabetes",8.5,"COPD",2.5
+"GENE16","Type 2 diabetes",8.5,"Lung cancer",2.5
+"GENE17","Prostate cancer",10.5,"COPD",3.5
+"GENE17","Prostate cancer",10.5,"Renal disease",3.5
+"GENE18","Premature mortality",3.5,"Lung cancer",8.5
+"GENE18","Premature mortality",3.5,"Parkinson disease",3.5
+"GENE19","Heart failure",7.5,"Parkinson disease",0.5
+"GENE19","Heart failure",7.5,"Multimorbidity",9.5
+"GENE20","Lung cancer",7.5,"Colon cancer",1.5
+"GENE22","Premature mortality",5.5,"Lung cancer",12.5
+"GENE22","Premature mortality",5.5,"Renal disease",0.5
+"GENE23","Premature mortality",1.5,"Parkinson disease",1.5
+"GENE23","Premature mortality",1.5,"Breast cancer",6.5
+"GENE24","Premature mortality",6.5,"Renal disease",2.5
+"GENE24","Premature mortality",6.5,"Colon cancer",4.5
+"GENE25","Type 2 diabetes",6.5,"Prostate cancer",7.5
+"GENE25","Type 2 diabetes",6.5,"COPD",9.5
+"GENE27","Colon cancer",2.5,"Breast cancer",3.5
+"GENE28","Prostate cancer",5.5,"COPD",1.5
+"GENE28","Prostate cancer",5.5,"Renal disease",1.5
+"GENE30","Heart failure",1.5,"Parkinson disease",4.5
+"GENE30","Heart failure",1.5,"Breast cancer",8.5
+"GENE31","Prostate cancer",1.5,"COPD",6.5
+"GENE31","Prostate cancer",1.5,"Breast cancer",10.5
+"GENE32","Premature mortality",2.5,"COPD",4.5
+"GENE32","Premature mortality",2.5,"Lung cancer",6.5
+"GENE33","Type 2 diabetes",1.5,"COPD",10.5
+"GENE33","Type 2 diabetes",1.5,"Heart failure",5.5
+"GENE34","Type 2 diabetes",11.5,"Heart failure",2.5
+"GENE35","Type 2 diabetes",14.5,"Prostate cancer",3.5
+"GENE35","Type 2 diabetes",14.5,"Renal disease",10.5
+"GENE36","COPD",0.5,"Lung cancer",5.5
+"GENE36","COPD",0.5,"Breast cancer",7.5
+"GENE37","Lung cancer",4.5,"Breast cancer",4.5
+"GENE38","Prostate cancer",12.5,"Renal disease",5.5
+"GENE38","Prostate cancer",12.5,"Heart failure",9.5
+"GENE39","Prostate cancer",6.5,"COPD",5.5
+"GENE41","Type 2 diabetes",4.5,"Premature mortality",0.5
+"GENE41","Type 2 diabetes",4.5,"Renal disease",6.5
+"GENE42","COPD",11.5,"Lung cancer",11.5
+"GENE42","COPD",11.5,"Colon cancer",6.5
+"GENE43","Type 2 diabetes",16.5,"Premature mortality",8.5
+"GENE43","Type 2 diabetes",16.5,"Lung cancer",1.5
+"GENE45","Type 2 diabetes",5.5,"Lung cancer",0.5
+"GENE46","Type 2 diabetes",15.5,"Multimorbidity",0.5
