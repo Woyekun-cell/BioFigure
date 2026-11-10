@@ -95,42 +95,33 @@ python3 biofigure/scripts/run_public_example.py synteny --output-dir work/biofig
 
 依赖检查显示 `READY` 后运行；生成图稿后打开 PNG 或 PDF，检查文字、图例和最终尺寸。[安装与使用](#安装与使用)中还有环境配置和更多示例。
 
-## 分类图廊
+## 在线图廊分类
 
-现有成图中精选 **14 类、77 张**。同一细分图型只展示一张代表图，去除重复配色、数据集及历史版本；点击分类查看。
-
-从图形结构和科研用途出发挑选案例，附上代码、数据与参考来源，方便继续修改和复用。
+[在线图廊](https://woyekun-cell.github.io/BioFigure/)目前收录 **324 张图、19 个分类**。一张图可以属于多个分类，因此分类数量相加会超过总图数。下表按网站的筛选方式统计。
 
 | 图型分类 | 图数 |
 |---|---:|
-| [热图与矩阵注释](docs/gallery/heatmaps.md) | 6 |
-| [分布、箱线与小提琴](docs/gallery/distributions.md) | 5 |
-| [相关、散点与气泡矩阵](docs/gallery/correlations.md) | 6 |
-| [组成、桑基与三元图](docs/gallery/composition.md) | 7 |
-| [柱形、棒棒糖与花瓣图](docs/gallery/bars.md) | 6 |
-| [雷达与多指标比较](docs/gallery/radar.md) | 2 |
-| [差异表达、富集与曼哈顿图](docs/gallery/differential.md) | 6 |
-| [降维、单细胞与空间](docs/gallery/embeddings.md) | 6 |
-| [生存、森林与患者轨迹](docs/gallery/clinical.md) | 7 |
-| [基因组、染色体与系统树](docs/gallery/genomes.md) | 11 |
-| [网络与地图](docs/gallery/networks.md) | 5 |
-| [时序、曲线与信号](docs/gallery/profiles.md) | 5 |
-| [集合交叠与 UpSet](docs/gallery/intersections.md) | 2 |
-| [机制、图像与多面板](docs/gallery/multipanel.md) | 3 |
+| 热图与矩阵 | 55 |
+| 散点与降维 | 45 |
+| 分布与箱线 | 41 |
+| 柱形与点图 | 32 |
+| 差异与富集 | 21 |
+| 网络与弦图 | 21 |
+| 桑基与流向 | 7 |
+| 基因组与轨道 | 51 |
+| 地图 | 29 |
+| 环形与雷达 | 38 |
+| 集合与交叠 | 9 |
+| 轨迹与时序 | 28 |
+| 相关与回归 | 16 |
+| 临床与森林 | 17 |
+| 组成与层级 | 30 |
+| 系统树 | 14 |
+| 多面板组合 | 115 |
+| 机制与结构 | 2 |
+| 器官与解剖 | 1 |
 
-[完整分类目录](docs/GALLERY.md) · [逐图清单与文件哈希](docs/gallery/catalog.csv)。复合图只归入一个主要类别，同类变体不重复展示。
-
-## 图画廊与最近更新
-
-[图画廊文件](gallery/)收录 313 张成图，可按图型检索并查看可下载的图稿、脚本和绘图表。下载 `gallery` 目录后，用本地静态服务器打开即可浏览。
-
-画廊涵盖基因组、单细胞、多组学和统计图等多种类型，并持续整理新案例。
-
-```bash
-python3 -m http.server 8000 --directory gallery
-```
-
-在浏览器打开 `http://localhost:8000/`。画廊中的图稿和可用下载文件可直接查看。
+[浏览在线图廊](https://woyekun-cell.github.io/BioFigure/) · [查看仓库精选目录](docs/GALLERY.md)
 
 ## 适用领域与图型
 
