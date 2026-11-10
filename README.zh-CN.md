@@ -245,7 +245,7 @@ Skill 提供方法与检查流程，不改变模型参数，也不保证不同�
 ## 版本与历史
 
 - [Releases：下载已命名版本](https://github.com/Woyekun-cell/BioFigure/releases)
-- [v3.8.0：独立安装与公开案例](https://github.com/Woyekun-cell/BioFigure/tree/v3.8.0)
+- [当前 3.8.0 代码与公开案例](https://github.com/Woyekun-cell/BioFigure/tree/main)
 - [v3.7.1：历史更新](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [更新前快照](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
 - [v3.5.1 更新记录](docs/RELEASE-NOTES-3.5.1.md) · [v3.5.0 更新记录](docs/RELEASE-NOTES-3.5.0.md)
 - [完整提交历史](https://github.com/Woyekun-cell/BioFigure/commits/main/)：查看每次修改和当时的文件。
