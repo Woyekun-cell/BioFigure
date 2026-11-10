@@ -354,9 +354,9 @@ function show(index,direction) {
 }
 function updatePlayback() {
   clearTimeout(timer);
-  $("autoplay").setAttribute("aria-label",play?text().pause:text().play);
-  $("autoplay").replaceChildren(icon(play?"pause":"play"));
   const control=$("autoplay");
+  control.setAttribute("aria-label",play?text().pause:text().play);
+  control.querySelector("use").setAttribute("href",play?"#i-pause":"#i-play");
   const focused=showcase.contains(document.activeElement)&&document.activeElement!==control;
   const hovered=hoverable.matches&&showcase.matches(":hover")&&!control.matches(":hover");
   if(play && onScreen && !document.hidden && !detail.open && !focused && !hovered) {
