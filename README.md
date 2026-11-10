@@ -225,7 +225,7 @@ The Skill supplies methods and checks. It does not change model parameters or gu
 ## Versions and history
 
 - [Releases: download named versions](https://github.com/Woyekun-cell/BioFigure/releases)
-- [v3.8.0 portable installation and public cases](https://github.com/Woyekun-cell/BioFigure/tree/v3.8.0)
+- [Current 3.8.0 code and public cases](https://github.com/Woyekun-cell/BioFigure/tree/main)
 - [v3.7.1 historical update](https://github.com/Woyekun-cell/BioFigure/tree/v3.7.1) · [Pre-refresh snapshot](https://github.com/Woyekun-cell/BioFigure/tree/snapshot-20261011-pre-gallery-refresh)
 - [v3.5.1 release notes](docs/RELEASE-NOTES-3.5.1.md) · [v3.5.0 release notes](docs/RELEASE-NOTES-3.5.0.md)
 - [Complete commit history](https://github.com/Woyekun-cell/BioFigure/commits/main/): inspect each change and its contemporary files.
