@@ -85,28 +85,31 @@ python3 -m pip install -r biofigure/requirements-python.txt
 
 ## Gallery by plot type
 
-The gallery selects **77 figures in 14 categories**. Each visual subtype appears once; color-only, dataset-only and historical variants are omitted.
-
-Explore the visual approach, then follow the code, data and source links to adapt a figure for your own work.
+The [online gallery](https://woyekun-cell.github.io/BioFigure/) currently contains **324 figures across 19 categories**. A figure can appear in more than one category, so category counts add up to more than the total. Counts below follow the site's filters.
 
 | Category | Figures |
 |---|---:|
-| [Heatmaps](docs/gallery/heatmaps.md) | 6 |
-| [Distributions](docs/gallery/distributions.md) | 5 |
-| [Correlations and scatter plots](docs/gallery/correlations.md) | 6 |
-| [Composition and flows](docs/gallery/composition.md) | 7 |
-| [Bars and lollipops](docs/gallery/bars.md) | 6 |
-| [Radar plots](docs/gallery/radar.md) | 2 |
-| [Differential expression](docs/gallery/differential.md) | 6 |
-| [Embeddings and spatial plots](docs/gallery/embeddings.md) | 6 |
-| [Clinical plots](docs/gallery/clinical.md) | 7 |
-| [Genomes and phylogeny](docs/gallery/genomes.md) | 11 |
-| [Networks and maps](docs/gallery/networks.md) | 5 |
-| [Time courses and profiles](docs/gallery/profiles.md) | 5 |
-| [Set intersections](docs/gallery/intersections.md) | 2 |
-| [Mechanisms and panels](docs/gallery/multipanel.md) | 3 |
+| Heatmaps & matrices | 55 |
+| Scatter & embeddings | 45 |
+| Distributions & box plots | 41 |
+| Bars & dot plots | 32 |
+| Differential & enrichment | 21 |
+| Networks & chords | 21 |
+| Sankey & flows | 7 |
+| Genomes & tracks | 51 |
+| Maps | 29 |
+| Circular & radar | 38 |
+| Sets & intersections | 9 |
+| Trajectories & time | 28 |
+| Correlation & regression | 16 |
+| Clinical & forest | 17 |
+| Composition & hierarchy | 30 |
+| Phylogenetic trees | 14 |
+| Multi-panel | 115 |
+| Mechanisms & structures | 2 |
+| Anatomy & organs | 1 |
 
-See the [complete gallery index](docs/GALLERY.md) and [per-figure inventory](docs/gallery/catalog.csv). Composite figures appear in one primary category.
+[Browse the online gallery](https://woyekun-cell.github.io/BioFigure/) · [View the curated repository index](docs/GALLERY.md)
 
 ## Research areas and plot types
 
