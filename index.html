@@ -356,8 +356,10 @@ function updatePlayback() {
   clearTimeout(timer);
   $("autoplay").setAttribute("aria-label",play?text().pause:text().play);
   $("autoplay").replaceChildren(icon(play?"pause":"play"));
-  if(play && !reduce.matches && onScreen && !document.hidden && !detail.open &&
-    !showcase.contains(document.activeElement) && !(hoverable.matches && showcase.matches(":hover"))) {
+  const control=$("autoplay");
+  const focused=showcase.contains(document.activeElement)&&document.activeElement!==control;
+  const hovered=hoverable.matches&&showcase.matches(":hover")&&!control.matches(":hover");
+  if(play && onScreen && !document.hidden && !detail.open && !focused && !hovered) {
     timer=setTimeout(()=>{show(current+1,1);updatePlayback();},5600);
   }
 }
@@ -478,6 +480,8 @@ showcase.addEventListener("keydown",event=>{
 for(const event of ["pointerenter","pointerleave","focusin"])
   showcase.addEventListener(event,updatePlayback);
 showcase.addEventListener("focusout",()=>setTimeout(updatePlayback,0));
+for(const event of ["pointerenter","pointerleave"])
+  $("autoplay").addEventListener(event,updatePlayback);
 $("featured").addEventListener("pointerdown",event=>{
   if(event.pointerType==="touch")startPoint=[event.clientX,event.clientY];
 });
