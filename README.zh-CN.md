@@ -21,9 +21,13 @@ BioFigure 以 R 为主要绘图路线，也支持已有的 Python 原生流程�
 
 ## 工作流程
 
-![BioFigure 工作流程：数据与问题、参考检索、设计绘制、成图检查和可复现交付](docs/assets/biofigure-workflow-imagegen.png)
+![绘图主线：从任务和数据到 CP0–CP4 检查与交付](docs/assets/biofigure-workflow-main-v2.png)
 
-从数据与研究问题出发，检索合适的图型和参考，设计并绘制后检查科学含义与实际成图，最后保留图稿、绘图数据和代码。
+绘图从科学问题、数据和参考检索开始，锁定设计后编写代码，绑定当前输入与脚本进行一次性授权，再渲染并检查当前成图。CP3 或 CP4 未通过时，修改后重新授权、渲染和检查；所有检查及证据核验通过后交付。
+
+![统计分支、来源模式与独立图廊入库流程](docs/assets/biofigure-workflow-gallery-v2.png)
+
+统计分支与来源模式分别选择。图廊入库独立核对案例证据、终尺寸和哈希，并排除撤回及重复案例；缺少证据时不入库。图廊入库不能代替当前绘图的验证。
 
 [浏览在线图廊](https://woyekun-cell.github.io/BioFigure/)，按图型查看案例。
 
