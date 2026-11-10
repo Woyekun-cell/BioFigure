@@ -10,8 +10,8 @@
 :root {
   color-scheme:light; --paper:#f5f2f6; --panel:#eee8ee; --white:#fff; --ink:#252127;
   --muted:#60585e; --line:#d5ccd6; --accent:#762e49; --accent-soft:#f0e0e5;
-  --ease:cubic-bezier(.16,1,.3,1); --display:Georgia,"Songti SC",serif;
-  font-family:system-ui,-apple-system,"PingFang SC",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1); --display:Georgia,serif; --body:system-ui,sans-serif;
+  font-family:var(--body);
 }
 *,*::before,*::after {box-sizing:border-box}
 html {scroll-behavior:smooth; scrollbar-color:#ac9da1 var(--paper)}
@@ -39,7 +39,9 @@ a {color:inherit;text-underline-offset:3px}
 .brand {display:flex;align-items:center;gap:9px;font-size:17px;font-weight:730;letter-spacing:-.025em;text-decoration:none}
 .brand .icon {width:28px;height:28px;padding:4px;background:var(--ink);border-radius:6px;color:white}
 .top-controls {display:flex;align-items:center;gap:20px}
-.top-controls a {text-decoration:none;font-size:14px}
+.top-controls a {display:inline-flex;align-items:center;gap:2px;text-decoration:none;font-size:14px}
+.top-controls a:hover {color:var(--accent);text-decoration:underline}
+.top-controls a .icon {width:14px;height:14px}
 .lang,.icon-button {border:1px solid var(--line);background:transparent;border-radius:8px;min-height:38px}
 .lang {padding:5px 12px}
 .icon-button {display:grid;place-items:center;width:40px;padding:0}
@@ -50,14 +52,15 @@ a {color:inherit;text-underline-offset:3px}
 .action {transition:transform 150ms var(--ease)}
 .action:active {transform:scale(.965)}
 .hero {display:grid;grid-template-columns:minmax(230px,.65fr) minmax(0,1.35fr);align-items:center;gap:clamp(26px,5vw,76px);padding-block:24px 23px;border-bottom:1px solid var(--line)}
-.hero h1 {font:500 clamp(55px,7vw,96px)/.96 var(--display);letter-spacing:-.039em;margin:0 0 20px;text-wrap:balance}
+.hero-copy {container-type:inline-size}
+.hero h1 {font:700 clamp(35px,21cqi,96px)/1 var(--display);letter-spacing:-.039em;margin:0 0 16px;color:var(--accent)}
 .hero-copy p {max-width:29ch;color:var(--muted);font-size:clamp(15px,1.6vw,19px);margin:0 0 23px;text-wrap:pretty}
 .gallery {min-width:0}
 .stage {position:relative;display:grid;place-items:center;width:100%;height:clamp(255px,29vw,374px);padding:16px;border:0;border-radius:14px;background:var(--white);overflow:hidden;touch-action:pan-y}
 .stage img {width:100%;height:100%;min-height:0;min-width:0;object-fit:contain}
 .stage .expand {position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--accent)}
 .gallery figcaption {display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:57px}
-.slide-name {display:block;min-width:0;font:500 clamp(18px,2vw,24px)/1.2 var(--display);letter-spacing:-.024em;text-wrap:balance}
+.slide-name {display:block;min-width:0;font-size:clamp(17px,1.8vw,21px);font-weight:650;line-height:1.25;text-wrap:balance}
 .gallery-controls {display:flex;gap:5px;flex:none}
 .gallery-controls .icon-button {min-height:34px;width:34px}
 .gallery-controls .icon {width:16px;height:16px}
@@ -76,8 +79,7 @@ a {color:inherit;text-underline-offset:3px}
 .plates .card {height:100%}
 .plates .card-media {aspect-ratio:auto;height:clamp(125px,15vw,200px);padding:8px}
 .plates .card:first-child .card-media {height:auto;flex:1;min-height:0}
-.plates .card:first-child strong {font:500 clamp(19px,2vw,27px)/1.15 var(--display);letter-spacing:-.022em}
-.plates .card-packages {display:none}
+.plates .card:first-child strong {font-size:clamp(17px,1.65vw,22px)}
 .catalog {display:grid;grid-template-columns:178px minmax(0,1fr);gap:clamp(22px,3.5vw,46px);align-items:start;padding-block:25px 58px;scroll-margin-top:12px}
 .rail {position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;scrollbar-width:thin}
 .rail h2 {font-size:15px;margin:0 0 9px}
@@ -91,16 +93,18 @@ a {color:inherit;text-underline-offset:3px}
 .search input::placeholder {color:var(--muted)}
 #category-mobile {display:none;max-width:45%;min-height:44px;padding-inline:7px;border:1px solid var(--line);border-radius:8px;background:white}
 .results {display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-block:17px 10px}
-.results h2 {font:500 29px/1.15 var(--display);letter-spacing:-.024em;margin:0}
+.results h2 {font-size:24px;font-weight:680;line-height:1.2;margin:0}
 #result-count {color:var(--muted);font-size:13px;text-align:right}
 .grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr));gap:20px 14px}
 .card {display:flex;flex-direction:column;width:100%;min-width:0;padding:0;border:0;background:transparent;text-align:left}
 .card-media {display:grid;place-items:center;width:100%;aspect-ratio:1.48;padding:10px;border-radius:12px;background:var(--white);overflow:hidden}
 .card-media img {display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain;transition:transform 280ms var(--ease)}
 .card:hover .card-media img {transform:scale(1.025)}
-.card strong {display:block;margin:8px 0 3px;line-height:1.3;font-weight:680;overflow-wrap:anywhere}
+.card strong {display:block;margin:8px 0 6px;line-height:1.3;font-weight:680;overflow-wrap:anywhere}
 .card:hover strong {color:var(--accent)}
-.card-packages {display:block;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.package-list {display:flex;flex-wrap:wrap;gap:4px}
+.package {display:inline-block;max-width:100%;padding:2px 7px;border:1px solid #d8bdcc;border-radius:6px;
+  background:var(--accent-soft);color:#64233e;font-size:12px;font-weight:670;line-height:1.45;overflow-wrap:anywhere}
 .empty {padding:18px 12px;border-top:1px solid var(--line);color:var(--muted)}
 .more {display:block;margin:20px auto 0;min-height:42px;border:1px solid var(--line);border-radius:8px;background:white;padding:7px 16px}
 .more:hover {background:var(--accent-soft)}
@@ -113,7 +117,7 @@ dialog[open] {animation:open 235ms var(--ease)}
 .detail-figure {display:grid;place-items:center;align-self:start;min-width:0;margin:0;padding:18px;position:sticky;top:0}
 .detail-figure img {display:block;width:100%;max-height:calc(100dvh - 80px);object-fit:contain}
 .detail-copy {min-width:0;background:var(--panel);padding:44px 18px 22px}
-.detail-copy h2 {font:500 29px/1.13 var(--display);letter-spacing:-.024em;margin:0 0 7px;overflow-wrap:anywhere}
+.detail-copy h2 {font-size:25px;font-weight:700;line-height:1.2;margin:0 0 9px;overflow-wrap:anywhere}
 .detail-copy p {color:var(--muted)}
 #detail-packages {margin:0}
 .detail-copy .secondary {margin:0 0 14px}
@@ -137,9 +141,10 @@ dialog[open] {animation:open 235ms var(--ease)}
 @media (max-width:680px) {
   .wrap {width:calc(100% - 30px)}
   .mast {min-height:54px}
-  .top-controls {gap:12px}
+  .top-controls {gap:10px}
+  .top-controls a .icon {display:none}
   .hero {display:block;padding-block:18px}
-  .hero h1 {font-size:clamp(40px,9vw,58px);margin-bottom:8px}
+  .hero h1 {font-size:clamp(38px,15.5cqi,62px);margin-bottom:8px}
   .hero-copy {margin-bottom:15px}
   .hero-copy p {font-size:14px;margin-bottom:10px;max-width:36ch}
   .hero-copy .primary {min-height:35px;padding-block:4px}
@@ -160,7 +165,6 @@ dialog[open] {animation:open 235ms var(--ease)}
   .grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 9px}
   .card-media {padding:6px}
   .card strong {font-size:14px}
-  .card-packages {font-size:12px}
   .detail {display:block}
   .detail-figure {position:static;padding:45px 8px 8px}
   .detail-figure img {max-height:48dvh}
@@ -190,14 +194,15 @@ dialog[open] {animation:open 235ms var(--ease)}
   <a class="brand" href="./"><svg class="icon" aria-hidden="true"><use href="#i-brand"/></svg>BioFigure</a>
   <div class="top-controls">
     <a href="#catalog" data-copy="catalog">Catalog</a>
+    <a href="https://github.com/Woyekun-cell/BioFigure" target="_blank" rel="noopener">GitHub<svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
     <button class="lang action" type="button" id="language" lang="zh-CN">中文</button>
   </div>
 </header>
 <main class="wrap">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <h1 id="hero-title" data-copy="title">Figure Atlas</h1>
-      <p data-copy="intro">Explore scientific figures, from genome tracks to layered omics plots.</p>
+      <h1 id="hero-title">BioFigure</h1>
+      <p data-copy="intro">A figure atlas for genomics and multi-omics.</p>
       <a class="primary action" href="#catalog"><span data-copy="browse">Browse figures</span><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
     </div>
     <section class="gallery" id="showcase" aria-label="Featured figures" hidden>
@@ -250,7 +255,7 @@ dialog[open] {animation:open 235ms var(--ease)}
     <figure class="detail-figure" id="detail-figure"></figure>
     <div class="detail-copy">
       <h2 id="detail-title"></h2>
-      <p id="detail-packages"></p>
+      <div id="detail-packages" class="package-list"></div>
       <p id="detail-intro"></p>
       <a class="secondary action" id="download" download><span data-copy="download">Download figure</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
       <section class="resource-group" aria-labelledby="code-title"><h3 id="code-title" data-copy="code">Plotting code</h3><div id="detail-code"></div></section>
@@ -262,7 +267,7 @@ dialog[open] {animation:open 235ms var(--ease)}
 "use strict";
 const copy = {
   en:{
-    title:"Figure Atlas", skip:"Skip to figures", catalog:"Catalog", intro:"Explore scientific figures, from genome tracks to layered omics plots.",
+    title:"Figure Atlas", skip:"Skip to figures", catalog:"Catalog", intro:"A figure atlas for genomics and multi-omics.",
     browse:"Browse figures", categories:"Chart types", all:"All figures", more:"Show more", download:"Download figure", close:"Close figure",
     search:"Search figures or packages", empty:"No matching figures.", error:"The atlas could not load. Refresh to try again.",
     editorial:"Multi-panel figures", editorialIntro:"Aligned tracks, layered annotations, and coordinated panels.",
@@ -272,7 +277,7 @@ const copy = {
     count:n=>n===1?"1 figure":n+" figures"
   },
   zh:{
-    title:"科研图谱", skip:"跳到图库", catalog:"图库", intro:"浏览从基因组轨道到多层组学组合图的科研图例。",
+    title:"科研图谱", skip:"跳到图库", catalog:"图库", intro:"面向基因组和多组学研究的绘图图谱。",
     browse:"浏览图例", categories:"图型", all:"全部图例", more:"显示更多", download:"下载成图", close:"关闭图例",
     search:"搜索图型或绘图包", empty:"没有匹配的图例。", error:"图库加载失败，请刷新重试。",
     editorial:"多面板组图", editorialIntro:"对齐的基因组轨道、多层注释和共享坐标的组图。",
@@ -335,22 +340,20 @@ function setLanguage() {
 function show(index,direction) {
   current=(index+featured.length)%featured.length;
   const row=featured[current];
-  let image=$("featured-image");
-  if(!image){
-    image=node("img");image.id="featured-image";image.alt="";image.fetchPriority="high";
-    $("featured").prepend(image);
-  }
+  const previous=$("featured-image");
   $("featured-title").textContent=row.chart[lang];
   $("featured").setAttribute("aria-label",text().open+" — "+row.chart[lang]);
   for(const button of $("thumbs").children)
     button.setAttribute("aria-current",String(Number(button.dataset.index)===current));
-  if(image.getAttribute("src")!==row.image) {
-    animation?.cancel();
-    image.src=row.image;
-    if(direction&&!reduce.matches)
-      animation=image.animate([{opacity:0,transform:"translateX("+(direction*22)+"px)"},{opacity:1,transform:"none"}],
-        {duration:400,easing:"cubic-bezier(.16,1,.3,1)"});
-  }
+  if(previous?.getAttribute("src")===row.thumbnail)return;
+  animation?.cancel();
+  const image=node("img");
+  image.id="featured-image";image.alt="";image.fetchPriority="high";image.src=row.thumbnail;
+  if(previous)previous.replaceWith(image);
+  else $("featured").prepend(image);
+  if(direction&&!reduce.matches)
+    animation=image.animate([{opacity:.55,transform:"translateX("+(direction*12)+"px)"},{opacity:1,transform:"none"}],
+      {duration:225,easing:"cubic-bezier(.16,1,.3,1)"});
 }
 function updatePlayback() {
   clearTimeout(timer);
@@ -383,11 +386,16 @@ function chooseCategory(id) {
   render({motion:true});
   if($("catalog").getBoundingClientRect().top<0)$("catalog").scrollIntoView();
 }
+function packageTags(packages) {
+  return packages.map(name=>node("span","package",name));
+}
 function card(row) {
   const button=node("button","card action");button.type="button";
   const image=node("img");image.src=row.thumbnail;image.alt="";image.loading="lazy";image.decoding="async";
   const media=node("span","card-media");media.append(image);
-  button.append(media,node("strong","",row.chart[lang]),node("span","card-packages",row.packages.join(" · ")));
+  const packages=node("span","package-list");
+  packages.append(...packageTags(row.packages));
+  button.append(media,node("strong","",row.chart[lang]),packages);
   button.addEventListener("click",()=>openDetail(row));
   return button;
 }
@@ -433,10 +441,24 @@ function resources(kind,items) {
   target.replaceChildren(list);
 }
 function fillDetail(row) {
-  let image=$("detail-image");
-  if(!image){image=node("img");image.id="detail-image";$("detail-figure").append(image);}
-  image.src=row.image;image.alt=row.chart[lang];
-  $("detail-title").textContent=row.chart[lang];$("detail-packages").textContent=row.packages.join(" · ");
+  const currentImage=$("detail-image");
+  if(currentImage?.dataset.figure===row.id) {
+    currentImage.alt=row.chart[lang];
+  } else {
+    const preview=node("img");
+    preview.id="detail-image";preview.dataset.figure=row.id;
+    preview.alt=row.chart[lang];preview.src=row.thumbnail;
+    $("detail-figure").replaceChildren(preview);
+    const full=new Image();
+    full.src=row.image;
+    full.decode().then(()=>{
+      if(!preview.isConnected||!detail.open)return;
+      full.id=preview.id;full.dataset.figure=row.id;full.alt=preview.alt;
+      preview.replaceWith(full);
+    }).catch(()=>{ /* Keep the current preview if the full-size image fails. */ });
+  }
+  $("detail-title").textContent=row.chart[lang];
+  $("detail-packages").replaceChildren(...packageTags(row.packages));
   const description=row.intro[lang];
   $("detail-intro").textContent=row.simulated&&!/simulat|模拟/i.test(description)?text().sim+". "+description:description;
   const download=$("download");download.href=row.image;download.download=row.id+".webp";
@@ -462,7 +484,10 @@ search.addEventListener("input",()=>{if(atlas){limit=pageSize;render();}});
 $("more").addEventListener("click",()=>{limit+=pageSize;render({append:true});});
 $("close").addEventListener("click",()=>detail.close());
 detail.addEventListener("click",event=>{if(event.target===detail)detail.close();});
-detail.addEventListener("close",updatePlayback);
+detail.addEventListener("close",()=>{
+  if(!detail.open)$("detail-figure").replaceChildren();
+  updatePlayback();
+});
 $("prev").addEventListener("click",()=>manual(current-1,-1));
 $("next").addEventListener("click",()=>manual(current+1,1));
 $("autoplay").addEventListener("click",()=>{play=!play;updatePlayback();});
@@ -507,7 +532,6 @@ fetch("./gallery.json")
     featured=data.featured.map(id=>byId.get(id));
     plates=data.editorial.map(id=>byId.get(id));
     showcase.hidden=false;$("editorial").hidden=false;setLanguage();
-    for(const row of featured.slice(1)){const image=new Image();image.src=row.image;}
   }).catch(error=>{empty.textContent=text().error;empty.hidden=false;console.error(error);});
 </script>
 </body>
