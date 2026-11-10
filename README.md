@@ -87,27 +87,18 @@ python3 -m pip install -r biofigure/requirements-python.txt
 
 The [online gallery](https://woyekun-cell.github.io/BioFigure/) currently contains **324 figures across 19 categories**. A figure can appear in more than one category, so category counts add up to more than the total. Counts below follow the site's filters.
 
-| Category | Figures |
-|---|---:|
-| Heatmaps & matrices | 55 |
-| Scatter & embeddings | 45 |
-| Distributions & box plots | 41 |
-| Bars & dot plots | 32 |
-| Differential & enrichment | 21 |
-| Networks & chords | 21 |
-| Sankey & flows | 7 |
-| Genomes & tracks | 51 |
-| Maps | 29 |
-| Circular & radar | 38 |
-| Sets & intersections | 9 |
-| Trajectories & time | 28 |
-| Correlation & regression | 16 |
-| Clinical & forest | 17 |
-| Composition & hierarchy | 30 |
-| Phylogenetic trees | 14 |
-| Multi-panel | 115 |
-| Mechanisms & structures | 2 |
-| Anatomy & organs | 1 |
+| Category | Figures | Category | Figures |
+|---|---:|---|---:|
+| Heatmaps & matrices | 55 | Sets & intersections | 9 |
+| Scatter & embeddings | 45 | Trajectories & time | 28 |
+| Distributions & box plots | 41 | Correlation & regression | 16 |
+| Bars & dot plots | 32 | Clinical & forest | 17 |
+| Differential & enrichment | 21 | Composition & hierarchy | 30 |
+| Networks & chords | 21 | Phylogenetic trees | 14 |
+| Sankey & flows | 7 | Multi-panel | 115 |
+| Genomes & tracks | 51 | Mechanisms & structures | 2 |
+| Maps | 29 | Anatomy & organs | 1 |
+| Circular & radar | 38 |  |  |
 
 [Browse the online gallery](https://woyekun-cell.github.io/BioFigure/) · [View the curated repository index](docs/GALLERY.md)
 
