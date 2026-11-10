@@ -21,13 +21,13 @@ From choosing a plot to getting the layout right, BioFigure helps you turn biolo
 
 ## How BioFigure works
 
-![BioFigure workflow: data and question, reference search, design and render, figure review, and reproducible output](docs/assets/biofigure-workflow-imagegen.png)
+![BioFigure drawing workflow, from input and CP0–CP4 checks to delivery](docs/assets/biofigure-workflow-main-v2.png)
 
-1. **Understand the data and question:** check the experimental design, groups and comparisons.
-2. **Find references:** inspect suitable chart types, examples and methods.
-3. **Design and render:** adapt the layout and code to the current data.
-4. **Review the figure:** check scientific meaning, labels, colors and the rendered output.
-5. **Keep the work reproducible:** retain the figure, plotting data, code and relevant environment information.
+Drawing starts with the research question, data and reference search. After the design is locked, the code and current inputs are bound to a one-time authorization before rendering. If CP3 or CP4 fails, revise, authorize and render again, then review the new output. Delivery follows verification of the checkpoints and evidence. CP4 covers scientific, visual, publication and anti-AI review.
+
+![Independent statistical and source choices, current-output validation and gallery admission](docs/assets/biofigure-workflow-gallery-v2.png)
+
+Statistical paths and source modes are chosen independently. Gallery admission separately checks the case evidence, final size and hash, and excludes withdrawn or duplicate entries. A gallery entry does not replace validation of the current figure.
 
 ## Explore the gallery
 
