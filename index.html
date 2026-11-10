@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#edf1ee">
+<meta name="description" content="BioFigure 科研图谱。按图型与绘图包浏览生物科研图表模板。">
+<title>BioFigure · 科研图谱</title>
+<style>
+:root{
+  color-scheme:light;
+  --paper:#edf1ee;--white:#fff;--ink:#172725;--muted:#485d56;--line:#c4cfca;--accent:#14564a;--tint:#ddeae2;
+  --sans:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","Noto Serif CJK SC",Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,Consolas,monospace;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.55 var(--sans)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+button,a,input,select{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+[hidden]{display:none!important}
+.wrap{width:min(100% - 64px,1440px);margin-inline:auto}
+.skip{position:absolute;top:8px;left:8px;z-index:5;background:var(--white);padding:10px;transform:translateY(-150%)}
+.skip:focus{transform:none}
+.mast{height:63px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:750;letter-spacing:-.035em;text-decoration:none}
+.mark{display:grid;place-items:center;background:var(--accent);color:#fff;width:27px;height:27px}
+.mark svg{width:17px;height:17px}
+.lang{border:1px solid var(--line);background:transparent;padding:5px 12px;min-height:36px}
+.hero{display:grid;grid-template-columns:.95fr 1fr;gap:clamp(24px,6vw,100px);align-items:center;padding-block:clamp(26px,3.4vw,52px);border-bottom:1px solid var(--line)}
+.overline,.figure-number{color:var(--accent);font:650 11px/1.35 var(--mono);letter-spacing:.13em}
+.hero h1{font:650 clamp(54px,7.5vw,112px)/1 var(--serif);letter-spacing:-.07em;margin:11px 0 18px}
+.hero p{max-width:33rem;margin:0 0 20px;color:var(--muted);font-size:clamp(14px,1.55vw,18px)}
+.hero-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.primary{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--accent);color:white;border:1px solid var(--accent);padding:8px 13px;min-height:40px}
+.metric{color:var(--muted);font-size:13px}
+.hero-plate{position:relative;display:grid;width:100%;grid-template-columns:minmax(0,1fr) minmax(100px,.42fr);align-items:center;text-align:left;border:1px solid var(--line);padding:12px;background:var(--white)}
+.hero-plate img{display:block;width:100%;height:clamp(172px,19vw,270px);object-fit:contain}
+.plate-caption{align-self:end;padding:6px 7px 10px 12px}
+.plate-caption strong{display:block;margin:8px 0;font-size:14px;font-weight:650;line-height:1.45}
+.plate-caption small{display:block;color:var(--muted)}
+.catalog{display:grid;grid-template-columns:178px minmax(0,1fr);gap:clamp(22px,3.5vw,52px);padding-block:25px 64px;align-items:start;scroll-margin-top:16px}
+.rail{position:sticky;top:14px;padding:5px 0 0;max-height:calc(100vh - 28px);overflow:auto;scrollbar-width:thin}
+.rail h2{margin:0 0 12px;font-size:14px}
+.rail button{display:flex;width:100%;gap:8px;justify-content:space-between;align-items:center;text-align:left;background:none;border:0;border-left:2px solid transparent;padding:6px 8px;min-height:32px;color:var(--muted);font-size:13px}
+.rail button:hover,.rail button[aria-pressed="true"]{background:var(--tint);color:var(--accent)}
+.rail button[aria-pressed="true"]{border-left-color:var(--accent);font-weight:700}
+.rail button span:last-child{font:11px var(--mono)}
+.controls{display:flex;align-items:center;gap:10px}
+.search{display:flex;min-width:0;align-items:center;gap:9px;flex:1;padding:0 11px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.search:focus-within{outline:2px solid var(--accent);outline-offset:1px}
+.search input{width:100%;min-width:0;min-height:41px;background:none;border:0;outline:none;color:var(--ink)}
+.search svg{flex-shrink:0}
+#category-mobile{display:none;max-width:43%;min-height:43px;border:1px solid var(--line);background:#fff;padding-inline:8px}
+.results{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-block:15px 10px}
+.results h2{font-size:17px;margin:0}
+#result-count{color:var(--muted);font-size:12px;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,238px),1fr));gap:14px}
+.card{display:flex;flex-direction:column;min-width:0;min-height:100%;padding:0;border:1px solid var(--line);background:#f8faf8;text-align:left}
+.card img{display:block;width:100%;height:auto;aspect-ratio:1.44;object-fit:contain;background:white;padding:9px;border-bottom:1px solid var(--line)}
+.card-info{display:flex;flex:1;flex-direction:column;width:100%;padding:10px 11px 11px}
+.card-category{display:flex;justify-content:space-between;gap:5px;margin-bottom:4px;color:var(--accent);font-size:11px;line-height:1.35;font-weight:660}
+.card-category span:last-child{flex-shrink:0}
+.card strong{font-size:14px;line-height:1.4;overflow-wrap:anywhere;margin-bottom:7px}
+.packages{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
+.pkg{background:var(--tint);color:var(--accent);padding:2px 5px;font:11px/1.35 var(--mono);overflow-wrap:anywhere}
+.empty{padding:28px 13px;border:1px dashed var(--line);color:var(--muted)}
+.more{display:block;margin:20px auto 0;border:1px solid var(--line);background:#fff;padding:8px 18px;min-height:40px}
+.more:hover,.lang:hover{background:var(--tint)}
+footer{display:flex;justify-content:space-between;gap:12px;padding-block:16px 27px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+dialog{padding:0;border:1px solid var(--line);width:min(1120px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);background:var(--white);color:var(--ink)}
+dialog::backdrop{background:#122521a8}
+.detail{display:grid;grid-template-columns:minmax(0,1fr) 270px}
+.detail-figure{display:grid;place-items:center;min-width:0;margin:0;padding:12px}
+.detail-figure img{display:block;width:100%;max-height:calc(100dvh - 64px);object-fit:contain}
+.detail-copy{background:var(--paper);border-left:1px solid var(--line);padding:42px 16px 20px}
+.detail-copy h2{font:700 22px/1.35 var(--sans);margin:8px 0 12px;overflow-wrap:anywhere}
+.detail-copy p{color:var(--muted)}
+.detail-copy .primary{margin-top:7px}
+.close{position:absolute;right:7px;top:7px;display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--line);background:#fff;font-size:20px;line-height:1}
+@media (hover:hover) and (pointer:fine){
+  .card,.hero-plate{transition:transform 140ms var(--ease-out)}
+  .card:hover,.hero-plate:hover{transform:translateY(-2px);border-color:var(--accent)}
+}
+@media (prefers-reduced-motion:no-preference){
+  dialog[data-pointer][open]{animation:detail-in 180ms var(--ease-out)}
+  @keyframes detail-in{from{opacity:0;transform:translateY(5px) scale(.985)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:920px){
+  .hero-plate{grid-template-columns:1fr}
+  .hero-plate img{height:clamp(145px,23vw,225px)}
+  .plate-caption{padding:6px 4px 2px}
+  .plate-caption strong{margin:3px 0}
+  .catalog{grid-template-columns:150px minmax(0,1fr)}
+}
+@media(max-width:710px){
+  .wrap{width:calc(100% - 28px)}
+  .hero{grid-template-columns:1fr 1fr;gap:14px;padding-block:22px}
+  .hero h1{font-size:clamp(33px,8.5vw,62px);margin:8px 0 12px}
+  .hero p{margin-bottom:10px;font-size:13px}
+  .hero-plate{padding:6px}
+  .hero-plate img{height:clamp(104px,27vw,173px)}
+  .plate-caption strong{font-size:12px}
+  .catalog{display:block;padding-top:15px}
+  .rail{display:none}
+  #category-mobile{display:block}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:9px}
+  .detail{display:flex;flex-direction:column}
+  .detail-copy{border-left:0;border-top:1px solid var(--line);padding:13px}
+  .detail-figure{padding:42px 7px 7px}
+  .detail-figure img{max-height:54dvh}
+}
+@media(max-width:420px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-links{gap:6px}
+  .metric{font-size:11px}
+  .plate-caption .figure-number,.plate-caption small{font-size:10px}
+  .card-info{padding:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#catalog" data-copy="skip">跳到图库</a>
+<header class="mast wrap">
+  <a class="brand" href="./" aria-label="BioFigure">
+    <span class="mark" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 15.5h16M3.5 14V8m4.4 6V4.5m4.3 9.5V9.5m4.3 4.5V3"/></svg></span>BioFigure
+  </a>
+  <button class="lang" id="language" type="button" lang="en">English</button>
+</header>
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <div class="overline">BIOFIGURE ATLAS</div>
+      <h1 id="hero-title" data-copy="title">科研图谱</h1>
+      <p data-copy="intro">从基因组轨道到多层组图，按图型和绘图包查找科研绘图模板。</p>
+      <div class="hero-links">
+        <a class="primary" href="#catalog"><span data-copy="browse">浏览图谱</span><span aria-hidden="true">↓</span></a>
+        <span class="metric" id="metric"></span>
+      </div>
+    </div>
+    <button type="button" id="featured" class="hero-plate" hidden>
+      <img id="featured-image" alt="" fetchpriority="high">
+      <span class="plate-caption">
+        <span class="figure-number" data-copy="featured">精选图版</span>
+        <strong id="featured-title"></strong>
+        <small id="featured-note"></small>
+      </span>
+    </button>
+  </section>
+  <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+    <aside class="rail" aria-labelledby="category-title">
+      <h2 id="category-title" data-copy="categories">按图型浏览</h2>
+      <nav id="category-nav"></nav>
+    </aside>
+    <div class="collection">
+      <div class="controls">
+        <label class="search">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="5.1"/><path d="m12.3 12.3 4 4"/></svg>
+          <input type="search" id="search" autocomplete="off" aria-label="搜索图型或绘图包" placeholder="搜索图型或绘图包">
+        </label>
+        <select id="category-mobile" aria-label="按图型浏览"></select>
+      </div>
+      <div class="results">
+        <h2 id="catalog-title">全部图例</h2>
+        <span id="result-count" role="status" aria-live="polite" aria-atomic="true"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden></p>
+      <button class="more" type="button" id="more" data-copy="more" hidden>显示更多</button>
+      <noscript><p>请启用 JavaScript 浏览图谱。 Enable JavaScript to browse the atlas.</p></noscript>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>BioFigure Atlas</span><span data-copy="footnote">使用模拟数据的图例会单独标注。</span></footer>
+<dialog id="detail" aria-labelledby="detail-title">
+  <div class="detail">
+    <button class="close" id="close" type="button" aria-label="关闭详情" autofocus>×</button>
+    <figure class="detail-figure"><img id="detail-image" alt=""></figure>
+    <div class="detail-copy">
+      <div class="figure-number" id="detail-category"></div>
+      <h2 id="detail-title"></h2>
+      <div class="packages" id="detail-packages"></div>
+      <p id="detail-intro"></p>
+      <a class="primary" id="download" download><span data-copy="download">下载原尺寸图</span><span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</dialog>
+<script>
+"use strict";
+const copy = {
+  zh:{skip:"跳到图库",title:"科研图谱",intro:"从基因组轨道到多层组图，按图型和绘图包查找科研绘图模板。",
+      browse:"浏览图谱",featured:"精选图版",categories:"按图型浏览",all:"全部图例",more:"显示更多",
+      footnote:"使用模拟数据的图例会单独标注。",download:"下载原尺寸图",close:"关闭详情",
+      search:"搜索图型或绘图包",sim:"模拟数据",empty:"没有匹配的图例。试试其他图型或绘图包。",
+      error:"图库加载失败。请刷新页面重试。",metric:(n,c)=>n+" 张图 · "+c+" 类",count:(n,total)=>"显示 "+n+" / "+total+" 张图"},
+  en:{skip:"Skip to gallery",title:"Figure Atlas",intro:"From genome tracks to layered compositions. Browse scientific figures by chart type and plotting package.",
+      browse:"Browse the atlas",featured:"Featured plate",categories:"Chart categories",all:"All figures",more:"Show more",
+      footnote:"Figures using simulated data are marked.",download:"Download full image",close:"Close details",
+      search:"Search chart types or packages",sim:"Simulated data",empty:"No matching figures. Try another chart type or package.",
+      error:"The atlas could not load. Refresh to try again.",metric:(n,c)=>n+" figures · "+c+" categories",
+      count:(n,total)=>"Showing "+n+" of "+total+" figures"}
+};
+const $ = id => document.getElementById(id);
+const pageSize = 24;
+let atlas, lang = "zh", category = "all", limit = pageSize;
+const search = $("search"), grid = $("grid"), detail = $("detail"), empty = $("empty");
+const text = () => copy[lang];
+const label = id => id === "all" ? text().all : atlas.categories.find(x=>x.id===id).label[lang];
+const node = (tag, name, value) => {
+  const el = document.createElement(tag);
+  if (name) el.className = name;
+  if (value) el.textContent = value;
+  return el;
+};
+function packageTags(packages) {
+  return packages.map(name=>node("span","pkg",name));
+}
+function setLanguage() {
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.title = "BioFigure · " + text().title;
+  document.querySelectorAll("[data-copy]").forEach(el=>{el.textContent=text()[el.dataset.copy];});
+  $("language").textContent = lang === "zh" ? "English" : "中文";
+  $("language").lang = lang === "zh" ? "en" : "zh-CN";
+  search.placeholder = text().search;
+  search.setAttribute("aria-label",text().search);
+  $("close").setAttribute("aria-label",text().close);
+  $("category-mobile").setAttribute("aria-label",text().categories);
+  if (atlas) {
+    const featured = atlas.figures.find(row=>row.id===atlas.featured);
+    $("featured-title").textContent = featured.title[lang];
+    $("featured-note").textContent = featured.simulated ? text().sim : label(featured.category);
+    $("metric").textContent = text().metric(atlas.figures.length,atlas.categories.length);
+    categoryNav();
+    render();
+  }
+}
+function categoryNav() {
+  const counts = new Map([["all",atlas.figures.length]]);
+  for (const figure of atlas.figures) {
+    for (const id of figure.categories) counts.set(id,(counts.get(id)||0)+1);
+  }
+  const choices = ["all",...atlas.categories.map(c=>c.id)];
+  const buttons = choices.map(id=>{
+    const button = node("button");
+    button.type="button";
+    button.dataset.category=id;
+    button.setAttribute("aria-pressed",String(id===category));
+    button.append(node("span","",label(id)),node("span","",String(counts.get(id))));
+    return button;
+  });
+  const options = choices.map(id=>new Option(label(id),id,false,id===category));
+  $("category-nav").replaceChildren(...buttons);
+  $("category-mobile").replaceChildren(...options);
+}
+function chooseCategory(id) {
+  category=id;
+  limit=pageSize;
+  $("category-mobile").value=id;
+  for (const button of $("category-nav").querySelectorAll("button")) {
+    button.setAttribute("aria-pressed",String(button.dataset.category===id));
+  }
+  render();
+  if ($("catalog").getBoundingClientRect().top < -40) $("catalog").scrollIntoView();
+}
+function card(row) {
+  const button=node("button","card");
+  button.type="button";
+  const img=node("img");
+  img.src=row.thumbnail;
+  img.alt="";
+  img.loading="lazy";
+  img.decoding="async";
+  const info=node("span","card-info");
+  const group=node("span","card-category");
+  const cue=node("span","",row.simulated?text().sim:"↗");
+  if (!row.simulated) cue.setAttribute("aria-hidden","true");
+  group.append(node("span","",label(row.category)),cue);
+  const packages=node("span","packages");
+  packages.append(...packageTags(row.packages));
+  info.append(group,node("strong","",row.chart[lang]),packages);
+  button.append(img,info);
+  button.addEventListener("click",event=>openDetail(row,event.detail>0));
+  return button;
+}
+function render(append=false) {
+  const words=search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  const rows=atlas.figures.filter(row=>{
+    if (category!=="all"&&!row.categories.includes(category)) return false;
+    if (!words.length) return true;
+    const terms=[row.title.zh,row.title.en,row.chart.zh,row.chart.en,...row.packages,
+      ...row.categories.flatMap(id=>{const c=atlas.categories.find(x=>x.id===id);return [c.label.zh,c.label.en];})].join(" ").toLocaleLowerCase();
+    return words.every(word=>terms.includes(word));
+  });
+  const start=append ? grid.children.length : 0;
+  const next=rows.slice(start,limit).map(card);
+  if (append) grid.append(...next);
+  else grid.replaceChildren(...next);
+  $("catalog-title").textContent=label(category);
+  $("result-count").textContent=text().count(Math.min(limit,rows.length),rows.length);
+  empty.hidden=Boolean(rows.length);
+  empty.textContent=text().empty;
+  $("more").hidden=limit>=rows.length;
+  if (append && next.length) next[0].focus();
+}
+function openDetail(row,pointer) {
+  detail.toggleAttribute("data-pointer",pointer);
+  $("detail-image").src=row.image;
+  $("detail-image").alt=row.chart[lang];
+  $("detail-category").textContent=label(row.category);
+  $("detail-title").textContent=row.chart[lang];
+  $("detail-packages").replaceChildren(...packageTags(row.packages));
+  $("detail-intro").textContent=row.intro[lang];
+  const download=$("download");
+  download.href=row.image;
+  download.download=row.image.split("/").pop();
+  detail.showModal();
+}
+$("language").addEventListener("click",()=>{lang=lang==="zh"?"en":"zh";setLanguage();});
+$("category-nav").addEventListener("click",event=>{
+  const button=event.target.closest("button[data-category]");
+  if (button) chooseCategory(button.dataset.category);
+});
+$("category-mobile").addEventListener("change",event=>chooseCategory(event.target.value));
+search.addEventListener("input",()=>{if(atlas){limit=pageSize;render();}});
+$("more").addEventListener("click",()=>{limit+=pageSize;render(true);});
+$("close").addEventListener("click",()=>detail.close());
+detail.addEventListener("click",event=>{if(event.target===detail)detail.close();});
+fetch("./gallery.json")
+  .then(response=>{if(!response.ok)throw new Error(response.status);return response.json();})
+  .then(data=>{
+    atlas=data;
+    const featured=atlas.figures.find(row=>row.id===atlas.featured);
+    $("featured-image").src=featured.thumbnail;
+    $("featured").hidden=false;
+    $("featured").addEventListener("click",event=>openDetail(featured,event.detail>0));
+    setLanguage();
+  }).catch(error=>{
+    empty.textContent=text().error;empty.hidden=false;
+    console.error(error);
+  });
+</script>
+</body>
+</html>
