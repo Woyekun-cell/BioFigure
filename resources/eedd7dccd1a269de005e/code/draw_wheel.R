@@ -164,11 +164,26 @@ draw_wheel <- function(x, palette=wheel_palette) {
   invisible(out)
 }
 
+render_wheel_pdf <- function(input, output) {
+  if (file.exists(output) || !grepl("[.]pdf$",output,ignore.case=TRUE)) stop("Use a new PDF path")
+  data <- prepare_wheel(read.csv(input,check.names=FALSE))
+  scratch <- tempfile("target-wheel-",tmpdir=dirname(output),fileext=".pdf")
+  on.exit(unlink(scratch),add=TRUE)
+  previous <- grDevices::dev.cur()
+  if (capabilities("aqua")) {
+    grDevices::quartz(type="pdf",file=scratch,width=183/25.4,height=220/25.4,family="Arial",pointsize=7)
+  } else {
+    grDevices::cairo_pdf(scratch,width=183/25.4,height=220/25.4,family="Arial",pointsize=7)
+  }
+  if (grDevices::dev.cur()==previous) stop("Unable to open a vector PDF graphics device")
+  tryCatch(draw_wheel(data),finally=grDevices::dev.off())
+  stopifnot(file.exists(scratch),file.info(scratch)$size>0)
+  if (!file.link(scratch,output)) stop("Could not write a new PDF at the requested path")
+  invisible(output)
+}
+
 if (sys.nframe()==0L) {
   args <- commandArgs(trailingOnly=TRUE)
   if (length(args)!=2L) stop("Usage: Rscript draw_wheel.R INPUT.csv NEW_OUTPUT.pdf")
-  if (file.exists(args[2]) || !grepl("[.]pdf$",args[2],ignore.case=TRUE)) stop("Use a new PDF path")
-  data <- prepare_wheel(read.csv(args[1],check.names=FALSE))
-  grDevices::cairo_pdf(args[2],width=183/25.4,height=220/25.4,family="Arial",pointsize=7)
-  tryCatch(draw_wheel(data),finally=grDevices::dev.off())
+  render_wheel_pdf(args[1],args[2])
 }
