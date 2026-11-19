@@ -1,0 +1,9 @@
+set_id,label,order,color
+S01,Malignant_vs_Benign,8,#4E9AC6
+S02,StageII_vs_StageI,7,#86BDDA
+S03,StageIII_vs_StageI,6,#B6D7E8
+S04,StageIII_vs_StageII,5,#DEECF4
+S05,StageIV_vs_StageI,4,#FDE5D6
+S06,StageIV_vs_StageII,3,#F9C3A9
+S07,StageIV_vs_StageIII,2,#EF9B7A
+S08,N+_vs_N0,1,#DA6954

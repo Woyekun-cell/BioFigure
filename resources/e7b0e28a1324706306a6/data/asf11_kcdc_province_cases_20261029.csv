@@ -1,0 +1,18 @@
+source_region,gadm_name,cumulative_cases,as_of,unit,source_pdf_page
+Seoul,Seoul,5293,2020-09-30T00:00:00+09:00,confirmed cases,2
+Busan,Busan,421,2020-09-30T00:00:00+09:00,confirmed cases,2
+Daegu,Daegu,7132,2020-09-30T00:00:00+09:00,confirmed cases,2
+Incheon,Incheon,916,2020-09-30T00:00:00+09:00,confirmed cases,2
+Gwangju,Gwangju,495,2020-09-30T00:00:00+09:00,confirmed cases,2
+Daejeon,Daejeon,360,2020-09-30T00:00:00+09:00,confirmed cases,2
+Ulsan,Ulsan,147,2020-09-30T00:00:00+09:00,confirmed cases,2
+Sejong,Sejong,76,2020-09-30T00:00:00+09:00,confirmed cases,2
+Gyeonggi,Gyeonggi-do,4384,2020-09-30T00:00:00+09:00,confirmed cases,2
+Gangwon,Gangwon-do,224,2020-09-30T00:00:00+09:00,confirmed cases,2
+Chungbuk,Chungcheongbuk-do,171,2020-09-30T00:00:00+09:00,confirmed cases,2
+Chungnam,Chungcheongnam-do,484,2020-09-30T00:00:00+09:00,confirmed cases,2
+Jeonbuk,Jeollabuk-do,128,2020-09-30T00:00:00+09:00,confirmed cases,2
+Jeonnam,Jeollanam-do,169,2020-09-30T00:00:00+09:00,confirmed cases,2
+Gyeongbuk,Gyeongsangbuk-do,1551,2020-09-30T00:00:00+09:00,confirmed cases,2
+Gyeongnam,Gyeongsangnam-do,291,2020-09-30T00:00:00+09:00,confirmed cases,2
+Jeju,Jeju,59,2020-09-30T00:00:00+09:00,confirmed cases,2

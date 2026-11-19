@@ -1,0 +1,19 @@
+"axis_id","profile_id","value","label_profile","order_profile","color","label_axis","unit","order_axis","lower","upper","effective_upper","normalized"
+"A01","P01",39.9,"Profile 1",1,"#096DF5","Attribute 1","au",1,0,100,100,0.399
+"A02","P01",41.3,"Profile 1",1,"#096DF5","Attribute 2","au",2,0,100,100,0.413
+"A03","P01",31.1,"Profile 1",1,"#096DF5","Attribute 3","au",3,0,100,100,0.311
+"A04","P01",59.8,"Profile 1",1,"#096DF5","Attribute 4","au",4,0,100,100,0.598
+"A05","P01",21.6,"Profile 1",1,"#096DF5","Attribute 5","au",5,0,100,100,0.216
+"A06","P01",28,"Profile 1",1,"#096DF5","Attribute 6","au",6,0,100,100,0.28
+"A01","P02",40.7,"Profile 2",2,"#E41A1C","Attribute 1","au",1,0,100,100,0.407
+"A02","P02",40.5,"Profile 2",2,"#E41A1C","Attribute 2","au",2,0,100,100,0.405
+"A03","P02",83.6,"Profile 2",2,"#E41A1C","Attribute 3","au",3,0,100,100,0.836
+"A04","P02",66.1,"Profile 2",2,"#E41A1C","Attribute 4","au",4,0,100,100,0.661
+"A05","P02",62.2,"Profile 2",2,"#E41A1C","Attribute 5","au",5,0,100,100,0.622
+"A06","P02",81.7,"Profile 2",2,"#E41A1C","Attribute 6","au",6,0,100,100,0.817
+"A01","P03",36.4,"Profile 3",3,"#24B99A","Attribute 1","au",1,0,100,100,0.364
+"A02","P03",20.7,"Profile 3",3,"#24B99A","Attribute 2","au",2,0,100,100,0.207
+"A03","P03",30.8,"Profile 3",3,"#24B99A","Attribute 3","au",3,0,100,100,0.308
+"A04","P03",49.2,"Profile 3",3,"#24B99A","Attribute 4","au",4,0,100,100,0.492
+"A05","P03",41.1,"Profile 3",3,"#24B99A","Attribute 5","au",5,0,100,100,0.411
+"A06","P03",39.7,"Profile 3",3,"#24B99A","Attribute 6","au",6,0,100,100,0.397

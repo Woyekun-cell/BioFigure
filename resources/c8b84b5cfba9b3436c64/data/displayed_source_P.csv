@@ -1,0 +1,8 @@
+"group","n","author_unpaired_Wilcoxon_P","paired_sensitivity_P","sensitivity_scope","y","label"
+"F",38,2.9016539599915e-22,8.05724515995365e-08,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",6,"P = 2.90e-22"
+"P",28,2.61482664732334e-16,4.00325620497632e-06,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",5,"P = 2.61e-16"
+"R",27,1.02725332573417e-15,5.93442326346505e-06,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",7,"P = 1.03e-15"
+"S",27,1.02725332573417e-15,5.93442326346505e-06,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",8,"P = 1.03e-15"
+"CG",11,2.8351421540276e-06,0.00385729282994252,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",3,"P = 2.84e-06"
+"CHG",11,2.8351421540276e-06,0.00385729282994252,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",2,"P = 2.84e-06"
+"CHH",11,2.8351421540276e-06,0.00385729282994252,"Audit only; pairing across accessions/repeated tissues requires design confirmation.",1,"P = 2.84e-06"

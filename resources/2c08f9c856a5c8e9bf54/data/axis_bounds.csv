@@ -1,0 +1,7 @@
+"axis_id","label","unit","order","lower","upper","effective_upper"
+"A01","Attribute 1","au",1,0,100,100
+"A02","Attribute 2","au",2,0,100,100
+"A03","Attribute 3","au",3,0,100,100
+"A04","Attribute 4","au",4,0,100,100
+"A05","Attribute 5","au",5,0,100,100
+"A06","Attribute 6","au",6,0,100,100
