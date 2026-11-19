@@ -1,0 +1,57 @@
+{
+  "n_cells": 24882,
+  "lineage_names": [
+    "Neuroendocrine",
+    "Ciliated activated_1",
+    "Basal",
+    "Goblet",
+    "Mki67+ proliferation",
+    "Ciliated activated_2",
+    "Krt8+ ADI",
+    "Ciliated",
+    "AT2 activated"
+  ],
+  "lineage_colors": [
+    "#b3cde3",
+    "#0f8248",
+    "#1f77b4",
+    "#ff7f0e",
+    "#decbe4",
+    "#189ed5",
+    "#7f7f7f",
+    "#fbb4ae",
+    "#bcbd22"
+  ],
+  "cluster_categories": [
+    "Basal",
+    "Goblet",
+    "Club activated",
+    "MHC-II+ Club",
+    "Club",
+    "AT1",
+    "AT2",
+    "Krt8+ ADI",
+    "AT2 activated",
+    "Ciliated activated",
+    "Ciliated",
+    "Neuroendocrine",
+    "Club to ciliated",
+    "Mki67+ proliferation"
+  ],
+  "cluster_colors": [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f",
+    "#bcbd22",
+    "#17becf",
+    "#fbb4ae",
+    "#b3cde3",
+    "#ccebc5",
+    "#decbe4"
+  ]
+}
