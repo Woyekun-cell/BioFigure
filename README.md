@@ -11,19 +11,17 @@
 [![Python compatible](https://img.shields.io/badge/Python-compatible-7D719B)](biofigure/renderer-registry.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C97864)](LICENSE)
 
-[Quick start](#quick-start) · [English handbook](docs/HANDBOOK.en.md) · [Design sources](docs/DESIGN-SOURCES.md) · [Online gallery](https://woyekun-cell.github.io/BioFigure/) · [Gallery](docs/GALLERY.md) · [Releases](https://github.com/Woyekun-cell/BioFigure/releases) · [Community](https://github.com/Woyekun-cell/BioFigure/discussions)
+[Quick start](#quick-start) · [Personal drawing tools](#personal-drawing-tools-in-development) · [English handbook](docs/HANDBOOK.en.md) · [Design sources](docs/DESIGN-SOURCES.md) · [Online gallery](https://woyekun-cell.github.io/BioFigure/) · [Gallery](docs/GALLERY.md) · [Releases](https://github.com/Woyekun-cell/BioFigure/releases) · [Community](https://github.com/Woyekun-cell/BioFigure/discussions)
 
 </div>
 
-From choosing a plot to getting the layout right, BioFigure helps you turn biological and multi-omics data into figures you can keep refining. It works as a Skill for coding assistants, bringing plot selection, colors, layout, rendering, and quality checks together while preserving editable R/Python code and plot data. The project is under active development.
+Give BioFigure a data table and the question your figure needs to answer. The Skill helps your coding assistant choose a plot, write the R or Python code, and inspect the exported figure at its final size. You get the plotting data and script alongside the figure so you can change the analysis or layout later.
 
-**R is the primary plotting route; Python is a fallback.** Use R packages for general statistics, matrices, circular tracks, phylogenies, genomic coordinates, and panel assembly. Choose Python only on explicit user request, to preserve an existing Python-native workflow, or when R has no suitable implementation. Fallback Matplotlib Figures, including Figures obtained from seaborn/Scanpy, can use the official `biofigure/scripts/figure_style.py` entry point to consume single-use authorization and export PNG/PDF/SVG with a render receipt. Both paths share preparation, CP2, and scientific and visual gates. Exported artifacts still require current-file inspection and checkpoint validation. Other Python/CLI exporters do not automatically receive an official receipt.
+You can start from your own data, adapt a published design, or reproduce a specific panel. For a reproduction, the assistant checks what the source image, code and data actually support. With a drawing task delegated, it can fix clipped labels or a crowded legend and render again. A missing detail that changes the analysis, such as whether the samples are paired, calls for clarification.
 
 ## How BioFigure works
 
 ![BioFigure workflow overview](docs/assets/biofigure-workflow-imagegen.png)
-
-The diagrams below show the checkpoints, revision paths and separate gallery admission process in more detail.
 
 ![BioFigure drawing workflow, from input and CP0–CP4 checks to delivery](docs/assets/biofigure-workflow-main-v2.png)
 
@@ -37,7 +35,7 @@ Statistical paths and source modes are chosen independently. Gallery admission s
 
 [**Open the interactive BioFigure gallery →**](https://woyekun-cell.github.io/BioFigure/)
 
-Browse figures by category and explore available code, plotting data and source notes. The gallery includes genomic comparisons, annotated heatmaps, single-cell views and multi-panel designs.
+Search by plot type or plotting package, inspect a figure at its original size, or put two figures side by side. Each entry links to the code, data and source notes available for that figure.
 
 ### Multitrack synteny with a detailed view
 
@@ -77,28 +75,52 @@ $biofigure Read expression.csv and metadata.csv and draw a grouped expression he
 Preserve metadata sample order, annotate treatment and time, and review labels and legends.
 ```
 
-When the Python fallback is needed, follow the [official authorized-rendering steps](biofigure/references/python-rendering.md). Initial support excludes rectangular heatmaps requiring dedicated cell-geometry audits and MathText/TeX. Install the optional dependencies when needed; R-only work does not require them. Prepare seaborn/Scanpy separately for the task and record actual versions:
+For Python, the [authorized rendering entry point](biofigure/references/python-rendering.md) is `biofigure/scripts/figure_style.py`. It takes a Matplotlib Figure, including one obtained from seaborn or Scanpy, consumes a single-use authorization, and exports PNG/PDF/SVG with a render receipt. Only this Python entry point issues an official render receipt. Both R and Python require a preparation record, CP2 validation and review of the exported figure.
+
+The Python renderer currently excludes rectangular heatmaps that require cell-geometry checks and MathText/TeX. Install the optional Python dependencies when you need them. For seaborn or Scanpy, install the package separately and record its version.
 
 ```bash
 python3 -m pip install -r biofigure/requirements-python.txt
 ```
 
+## Personal drawing tools in development
+
+These tools run in the local development build. They have yet to ship in the public GitHub Skill.
+
+### Draw from your own references
+
+Pick as many references as you like and describe the part you want to borrow. For example, “Use the panels from the first figure and overlay the individual points the way the second one does.” With no references selected, the assistant searches by research question and opens the figures and scripts it needs. You can import your own images, star a reference and tag what you like about it. Finished plots stay in the project directory unless you ask to save one to your personal gallery.
+
+For each plot family, BioFigure remembers how prominently you like the raw points to show, whether you use a grid, and where you put the legend. It looks at the last five distinct tasks with evidence for that setting. Three explicit requests for the same choice, or four tasks supporting it, make it the default for the next figure in that family, without a confirmation prompt. Revisions to one figure count once. Templates, journal rules and inherited defaults are excluded. You can set fonts, dimensions and group colors for a particular project. If the data call for a different design, the assistant explains why.
+
+### Reuse a technique on a new dataset
+
+Hosts that support background tasks can ask a feedback agent to review new references and corrections. It reads the figure and any available plotting code, identifies the fields each layer needs, then tries the technique on fresh data. A workflow that holds up on independent tasks can be reviewed for inclusion as a reusable Skill.
+
+In a simulated time course, the agent borrowed layers from a longitudinal plot and a distribution plot. The new dataset had 86 observations from 18 individuals. Connecting only consecutive visits for the same individual produced 64 line segments, with breaks at missed visits. When the same 86 values were assigned to independent samples at each visit, the plot had zero individual segments. Group means and interquartile ranges stayed the same.
+
+### Use the same gallery across agents
+
+The development build includes a small CLI. On one machine, different hosts can share a SQLite index of personal references and preferences. Codex has been tested for Skill discovery, and OpenCode has called the CLI through its shell. Claude Code setup is documented and awaits a live test. You can use the CLI to look up a preference, combine references or preview a time course. Adding it to your PATH is optional.
+
+The browser editor lets you adjust the canvas and margins, and change colors or text in SVGs with editable elements. The semicircular heatmap has a dedicated editor where you can load your own data, adjust tracks, and save a project to revisit later.
+
 ## Gallery by plot type
 
-The [online gallery](https://woyekun-cell.github.io/BioFigure/) currently contains **324 figures across 19 categories**. A figure can appear in more than one category, so category counts add up to more than the total. Counts below follow the site's filters.
+On November 19, 2026, the [online gallery](https://woyekun-cell.github.io/BioFigure/) listed 367 distinct figures in 20 categories. A figure can appear under several filters.
 
 | Category | Figures | Category | Figures |
 |---|---:|---|---:|
-| Heatmaps & matrices | 55 | Sets & intersections | 9 |
-| Scatter & embeddings | 45 | Trajectories & time | 28 |
-| Distributions & box plots | 41 | Correlation & regression | 16 |
-| Bars & dot plots | 32 | Clinical & forest | 17 |
-| Differential & enrichment | 21 | Composition & hierarchy | 30 |
-| Networks & chords | 21 | Phylogenetic trees | 14 |
-| Sankey & flows | 7 | Multi-panel | 115 |
-| Genomes & tracks | 51 | Mechanisms & structures | 2 |
+| Heatmaps & matrices | 58 | Sets & intersections | 9 |
+| Scatter & embeddings | 50 | Trajectories & time | 32 |
+| Distributions & box plots | 44 | Correlation & regression | 17 |
+| Bars & dot plots | 40 | Clinical & forest | 16 |
+| Differential & enrichment | 24 | Composition & hierarchy | 34 |
+| Networks & chords | 23 | Phylogenetic trees | 14 |
+| Sankey & flows | 7 | Multi-panel | 94 |
+| Genomes & tracks | 52 | Mechanisms & structures | 2 |
 | Maps | 29 | Anatomy & organs | 1 |
-| Circular & radar | 38 |  |  |
+| Circular & radar | 37 | Curves & response profiles | 3 |
 
 [Browse the online gallery](https://woyekun-cell.github.io/BioFigure/) · [View the curated repository index](docs/GALLERY.md)
 
@@ -119,13 +141,11 @@ Start with your analysis results, choose a figure around the question and data s
 
 ## Methods and quality checks
 
-**Choose packages by task.** Use ggplot2 for general statistics, ComplexHeatmap for annotated matrices, circlize for circular coordinates, ggtree for phylogenies, gggenomes for genomic tracks and synteny, and patchwork or cowplot for panel assembly. Select the package and key functions before coding.
+R is the default. BioFigure uses ggplot2 for general statistics, ComplexHeatmap for annotated matrices, circlize for circular tracks, ggtree for phylogenies, gggenomes for genomic tracks and synteny, and patchwork or cowplot for panel assembly. Python is available when requested, when a project already uses a Python-native workflow, or when R lacks a suitable tool.
 
-**Check scientific meaning first.** Confirm experimental units, groups, pairing, comparison direction, transformations, and coordinates. Resolve material ambiguities instead of guessing statistical tests or inventing measurements.
+Before plotting, the assistant checks the experimental units, groups, pairing, comparison direction, coordinates and data transformations. Any P value or adjusted P value shown in the figure should trace back to a results table. Existing analysis tables can be used directly.
 
-**Review the rendered figure.** Check fonts and final dimensions, reserve space for labels and legends, and inspect overlap, clipping, color semantics, and required annotations. Recheck revised outputs; successful execution alone does not establish visual quality.
-
-**Keep work reproducible.** Deliver plotting code, data, and essential environment information. Method records retain package usage, layout decisions, and known problems to support new datasets.
+After rendering, it checks fonts, labels, legends, panel alignment and group colors at the intended size, looking for overlap and clipping. Each revision gets a fresh review. The deliverables include plotting code, data and relevant environment details. Case records retain layout decisions and known problems.
 
 ## Installation and use
 
