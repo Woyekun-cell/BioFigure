@@ -1,0 +1,6 @@
+x,y,label,fill
+0.10,0.58,Stress,#DCE8EE
+0.38,0.58,Sensor,#D9E8E2
+0.65,0.72,TF-A,#F1E5C8
+0.65,0.42,TF-B,#E6DFED
+0.90,0.58,Response,#EED8D3

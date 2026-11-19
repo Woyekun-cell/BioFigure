@@ -1,0 +1,41 @@
+"land","sex","day","value","offset"
+"Urban residential land","Women","Weekday",0.228854084721627,-0.3
+"Industrial land","Women","Weekday",0.13804915874647,-0.3
+"Commercial service land","Women","Weekday",0.0787511415051296,-0.3
+"Cultural and science land","Women","Weekday",0.0489417521623708,-0.3
+"Transportation hubs","Women","Weekday",0.01325961104949,-0.3
+"Institution land","Women","Weekday",0.00774620859515853,-0.3
+"Higher education land","Women","Weekday",0.00835773067595903,-0.3
+"Public utility land","Women","Weekday",0.00507845172867877,-0.3
+"Rural residential land","Women","Weekday",0.00410024690311868,-0.3
+"Port terminal land","Women","Weekday",0.00234710193358827,-0.3
+"Urban residential land","Men","Weekday",0.152535409540962,-0.1
+"Industrial land","Men","Weekday",0.100179610734433,-0.1
+"Commercial service land","Men","Weekday",0.0763574602232431,-0.1
+"Cultural and science land","Men","Weekday",0.0436012973049935,-0.1
+"Transportation hubs","Men","Weekday",0.00911681289142929,-0.1
+"Institution land","Men","Weekday",0.0103609559268691,-0.1
+"Higher education land","Men","Weekday",0.00924623841867316,-0.1
+"Public utility land","Men","Weekday",0.0062454318350507,-0.1
+"Rural residential land","Men","Weekday",0.00551598567208741,-0.1
+"Port terminal land","Men","Weekday",0.0016054224089114,-0.1
+"Urban residential land","Women","Weekend",0.213806655721832,0.1
+"Industrial land","Women","Weekend",0.105038501517009,0.1
+"Commercial service land","Women","Weekend",0.0769846861184225,0.1
+"Cultural and science land","Women","Weekend",0.0317782418223261,0.1
+"Transportation hubs","Women","Weekend",0.013947080018241,0.1
+"Institution land","Women","Weekend",0.0121599093815777,0.1
+"Higher education land","Women","Weekend",0.0076019014577195,0.1
+"Public utility land","Women","Weekend",0.00499102316450793,0.1
+"Rural residential land","Women","Weekend",0.0050485328330705,0.1
+"Port terminal land","Women","Weekend",0.00211464825066272,0.1
+"Urban residential land","Men","Weekend",0.263539709338313,0.3
+"Industrial land","Men","Weekend",0.102660884399526,0.3
+"Commercial service land","Men","Weekend",0.0740911116287345,0.3
+"Cultural and science land","Men","Weekend",0.0286584290739079,0.3
+"Transportation hubs","Men","Weekend",0.0140430626036692,0.3
+"Institution land","Men","Weekend",0.00924738236032426,0.3
+"Higher education land","Men","Weekend",0.0105018700618809,0.3
+"Public utility land","Men","Weekend",0.00510544119701721,0.3
+"Rural residential land","Men","Weekend",0.00480255878558848,0.3
+"Port terminal land","Men","Weekend",0.00198891531455796,0.3

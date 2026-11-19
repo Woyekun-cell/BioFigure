@@ -1,0 +1,10 @@
+sector_id,label,order,sector_group,inner_group,outer_group,color
+C1,Community 1,1,Community,Region 1,Assemblage 1,#B2182B
+C2,Community 2,2,Community,Region 2,Assemblage 2,#E69F00
+C3,Community 3,3,Community,Region 3,Assemblage 3,#56B4E9
+C4,Community 4,4,Community,Region 4,Assemblage 1,#009E73
+C5,Community 5,5,Community,Region 1,Assemblage 2,#B2182B
+C6,Community 6,6,Community,Region 2,Assemblage 3,#E69F00
+D1,Driver 1,7,Driver,Driver,Drivers,#525252
+D2,Driver 2,8,Driver,Driver,Drivers,#525252
+D3,Driver 3,9,Driver,Driver,Drivers,#525252

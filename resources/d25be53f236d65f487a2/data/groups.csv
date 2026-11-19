@@ -1,0 +1,4 @@
+group_id,label,order,color
+both,Both measurements,1,#C8102E
+sampled,Second only,2,#E6B794
+imaged,First only,3,#FFFFFF

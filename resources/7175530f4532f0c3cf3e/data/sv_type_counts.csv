@@ -1,0 +1,61 @@
+"accession","sv_type","count"
+"S. lycopersicoides","INS",12519
+"S. habrochaites","INS",21241
+"S. pennellii","INS",33226
+"S. chilense","INS",29842
+"S. peruvianum","INS",9594
+"S. corneliomulleri","INS",9737
+"S. neorickii","INS",12908
+"S. chmielewskii","INS",13172
+"S. pimpinellifolium","INS",10196
+"S. lycopersicum var. cerasiforme","INS",8913
+"S. lycopersicum M82","INS",8554
+"S. lycopersicum Heinz1706","INS",9205
+"S. lycopersicoides","DEL",10522
+"S. habrochaites","DEL",23508
+"S. pennellii","DEL",29726
+"S. chilense","DEL",28832
+"S. peruvianum","DEL",10642
+"S. corneliomulleri","DEL",10661
+"S. neorickii","DEL",15368
+"S. chmielewskii","DEL",15189
+"S. pimpinellifolium","DEL",10269
+"S. lycopersicum var. cerasiforme","DEL",11349
+"S. lycopersicum M82","DEL",10182
+"S. lycopersicum Heinz1706","DEL",11284
+"S. lycopersicoides","CNV",248
+"S. habrochaites","CNV",2392
+"S. pennellii","CNV",720
+"S. chilense","CNV",6576
+"S. peruvianum","CNV",8254
+"S. corneliomulleri","CNV",9250
+"S. neorickii","CNV",16465
+"S. chmielewskii","CNV",4799
+"S. pimpinellifolium","CNV",4467
+"S. lycopersicum var. cerasiforme","CNV",4076
+"S. lycopersicum M82","CNV",5756
+"S. lycopersicum Heinz1706","CNV",4934
+"S. lycopersicoides","INV",132
+"S. habrochaites","INV",208
+"S. pennellii","INV",68
+"S. chilense","INV",225
+"S. peruvianum","INV",241
+"S. corneliomulleri","INV",186
+"S. neorickii","INV",115
+"S. chmielewskii","INV",114
+"S. pimpinellifolium","INV",32
+"S. lycopersicum var. cerasiforme","INV",34
+"S. lycopersicum M82","INV",46
+"S. lycopersicum Heinz1706","INV",39
+"S. lycopersicoides","TRANS",2790
+"S. habrochaites","TRANS",3789
+"S. pennellii","TRANS",3488
+"S. chilense","TRANS",3576
+"S. peruvianum","TRANS",2727
+"S. corneliomulleri","TRANS",2535
+"S. neorickii","TRANS",2023
+"S. chmielewskii","TRANS",2214
+"S. pimpinellifolium","TRANS",382
+"S. lycopersicum var. cerasiforme","TRANS",354
+"S. lycopersicum M82","TRANS",395
+"S. lycopersicum Heinz1706","TRANS",355

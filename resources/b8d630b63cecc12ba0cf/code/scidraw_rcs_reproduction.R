@@ -1,0 +1,20 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages({library(rms);library(survival);library(ggplot2);library(grid);library(ragg);library(systemfonts)})
+source('scripts/figure_style.R');font_info<-bf_font('Arial');bf_complexheatmap_font(font_info);font<-font_info$family
+set.seed(7002); n <- 850
+ALT <- pmin(rgamma(n,3.2,scale=14),130); age <- rnorm(n,54,11); sex <- factor(sample(c("Female","Male"),n,TRUE))
+lp1 <- -1.20*exp(-ALT/18) + .0040*ALT + .012*(age-54) + .12*(sex=="Male")
+lp2 <- -.80*exp(-ALT/16) + .0030*ALT + .009*(age-54) + .10*(sex=="Male")
+c1<-rexp(n,.0025); t1<-rexp(n,.0025*exp(lp1)); c2<-rexp(n,.0022); t2<-rexp(n,.0022*exp(lp2))
+d<-data.frame(ALT,age,sex,time=pmin(t1,c1),event=as.integer(t1<=c1),time2=pmin(t2,c2),event2=as.integer(t2<=c2))
+dd<-datadist(d);options(datadist="dd")
+fit1<-cph(Surv(time,event)~rcs(ALT,4)+age+sex,data=d,x=TRUE,y=TRUE,surv=TRUE); fit2<-cph(Surv(time2,event2)~rcs(ALT,4)+age+sex,data=d,x=TRUE,y=TRUE,surv=TRUE)
+pr1<-as.data.frame(Predict(fit1,ALT,fun=exp,ref.zero=TRUE));pr2<-as.data.frame(Predict(fit2,ALT,fun=exp,ref.zero=TRUE))
+inset<-ggplot(pr2,aes(ALT,yhat))+geom_ribbon(aes(ymin=lower,ymax=upper),fill="#C7E3C4",alpha=.9)+geom_line(colour="#86BA79",linewidth=.6)+geom_hline(yintercept=1,linetype=2,linewidth=.35)+annotate("text",x=2,y=max(pr2$upper)*.92,label="Pnon-linear = 0.02\nPoverall < 0.001",hjust=0,vjust=1,size=3,family=font)+labs(x=NULL,y="Mortality")+theme_classic(base_size=9,base_family=font)+theme(text=element_text(family=font),plot.margin=margin(0,0,0,0))
+grDevices::pdf(NULL,family=font);inset_grob<-ggplotGrob(inset);dev.off()
+p<-ggplot(pr1,aes(ALT,yhat))+geom_ribbon(aes(ymin=lower,ymax=upper),fill="#BFE0BD",alpha=.86)+geom_line(colour="#61AF63",linewidth=1)+geom_hline(yintercept=1,linetype=2,linewidth=.55)+annotate("text",x=55,y=min(pr1$lower)*1.3,label="Pnon-linear = 0.02\nPoverall < 0.001",hjust=0,size=4,family=font)+labs(x="ALT",y="HR (95% CI)")+theme_classic(base_size=12,base_family=font)+theme(text=element_text(family=font),axis.title=element_text(face="bold"))+annotation_custom(inset_grob,xmin=10,xmax=54,ymin=max(pr1$upper)*.60,ymax=max(pr1$upper)*1.00)
+dir.create("results/figures",recursive=TRUE,showWarnings=FALSE);dir.create("results/plot_data",recursive=TRUE,showWarnings=FALSE)
+ragg::agg_png("results/figures/scidraw_rcs.png",width=165,height=122,units='mm',res=300,background='white');print(p);dev.off()
+write.csv(transform(d,source="simulated",seed=7002),"results/plot_data/scidraw_rcs.csv",row.names=FALSE)
+write.csv(transform(pr1,model="incident"),"results/plot_data/scidraw_rcs_predictions.csv",row.names=FALSE)
+if(file.exists('Rplots.pdf')) unlink('Rplots.pdf')

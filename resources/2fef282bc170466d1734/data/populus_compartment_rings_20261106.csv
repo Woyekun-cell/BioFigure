@@ -1,0 +1,7 @@
+"pangene_class","compartment","proportion","percent","ring_order"
+"Core","A",0.684,68.4,1
+"Core","B",0.316,31.6,1
+"Dispensable","A",0.604,60.4,2
+"Dispensable","B",0.396,39.6,2
+"Private","A",0.568,56.8,3
+"Private","B",0.432,43.2,3

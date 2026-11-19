@@ -1,0 +1,295 @@
+"tissue","aminoacid","fraction"
+"blood","Ala",0
+"caecum","Ala",0.0393258426966292
+"colon","Ala",0
+"duodenum","Ala",0
+"feces","Ala",0.830179381036862
+"gall bladder","Ala",1.10802286615415
+"ileum","Ala",0
+"jejunum","Ala",0
+"liver","Ala",0
+"oral cavity","Ala",0
+"skin","Ala",0
+"stomach","Ala",0
+"upper digestive tract","Ala",0
+"urine","Ala",0
+"blood","Arg",0
+"caecum","Arg",0.285060975609756
+"colon","Arg",0.0048780487804878
+"duodenum","Arg",0.0878048780487805
+"feces","Arg",0.903048780487805
+"gall bladder","Arg",0.246036585365854
+"ileum","Arg",0.0829268292682927
+"jejunum","Arg",0.180487804878049
+"liver","Arg",0
+"oral cavity","Arg",0
+"skin","Arg",0
+"stomach","Arg",0
+"upper digestive tract","Arg",0.204878048780488
+"urine","Arg",0
+"blood","Asn",0
+"caecum","Asn",0
+"colon","Asn",0
+"duodenum","Asn",0
+"feces","Asn",0.0277777777777778
+"gall bladder","Asn",1.75
+"ileum","Asn",0.138888888888889
+"jejunum","Asn",0.0833333333333333
+"liver","Asn",0
+"oral cavity","Asn",0
+"skin","Asn",0
+"stomach","Asn",0
+"upper digestive tract","Asn",0
+"urine","Asn",0
+"blood","Asp",0
+"caecum","Asp",0
+"colon","Asp",0
+"duodenum","Asp",0
+"feces","Asp",1
+"gall bladder","Asp",0
+"ileum","Asp",0
+"jejunum","Asp",0
+"liver","Asp",0
+"oral cavity","Asp",0
+"skin","Asp",0
+"stomach","Asp",0
+"upper digestive tract","Asp",0
+"urine","Asp",0
+"blood","Cit",0
+"caecum","Cit",0.981981981981982
+"colon","Cit",0.0540540540540541
+"duodenum","Cit",0
+"feces","Cit",0.741741741741742
+"gall bladder","Cit",0.222222222222222
+"ileum","Cit",0
+"jejunum","Cit",0
+"liver","Cit",0
+"oral cavity","Cit",0
+"skin","Cit",0
+"stomach","Cit",0
+"upper digestive tract","Cit",0
+"urine","Cit",0
+"blood","Cys",0
+"caecum","Cys",0
+"colon","Cys",0
+"duodenum","Cys",0
+"feces","Cys",0
+"gall bladder","Cys",0
+"ileum","Cys",0
+"jejunum","Cys",0
+"liver","Cys",0
+"oral cavity","Cys",0
+"skin","Cys",0
+"stomach","Cys",0
+"upper digestive tract","Cys",0
+"urine","Cys",0
+"blood","Gln",0
+"caecum","Gln",0
+"colon","Gln",0
+"duodenum","Gln",0
+"feces","Gln",0.666666666666667
+"gall bladder","Gln",0.333333333333333
+"ileum","Gln",0
+"jejunum","Gln",0
+"liver","Gln",0
+"oral cavity","Gln",0
+"skin","Gln",0
+"stomach","Gln",0
+"upper digestive tract","Gln",0
+"urine","Gln",0
+"blood","Glu",0
+"caecum","Glu",0.405940594059406
+"colon","Glu",0
+"duodenum","Glu",0
+"feces","Glu",1.52475247524752
+"gall bladder","Glu",0
+"ileum","Glu",0.0099009900990099
+"jejunum","Glu",0
+"liver","Glu",0
+"oral cavity","Glu",0
+"skin","Glu",0.0594059405940594
+"stomach","Glu",0
+"upper digestive tract","Glu",0
+"urine","Glu",0
+"blood","Gly",0.288005578800558
+"caecum","Gly",0.0167364016736402
+"colon","Gly",0.00125523012552301
+"duodenum","Gly",0.0310384928961342
+"feces","Gly",0.58303970136035
+"gall bladder","Gly",0.510688286588116
+"ileum","Gly",0.0104602510460251
+"jejunum","Gly",0.0117154811715481
+"liver","Gly",0.00376569037656904
+"oral cavity","Gly",0.0149874394215926
+"skin","Gly",0.480265613812911
+"stomach","Gly",0.00836820083682008
+"upper digestive tract","Gly",0.0251046025104603
+"urine","Gly",0.00209205020920502
+"blood","His",0.0128755364806867
+"caecum","His",0.150214592274678
+"colon","His",0
+"duodenum","His",0.0257510729613734
+"feces","His",1.54077253218884
+"gall bladder","His",0
+"ileum","His",0.137339055793991
+"jejunum","His",0.133047210300429
+"liver","His",0
+"oral cavity","His",0
+"skin","His",0
+"stomach","His",0
+"upper digestive tract","His",0
+"urine","His",0
+"blood","Ile/Leu",0
+"caecum","Ile/Leu",0.46
+"colon","Ile/Leu",0
+"duodenum","Ile/Leu",0.0336134453781513
+"feces","Ile/Leu",1.04274509803922
+"gall bladder","Ile/Leu",0.253557422969188
+"ileum","Ile/Leu",0
+"jejunum","Ile/Leu",0.0588235294117647
+"liver","Ile/Leu",0.00840336134453781
+"oral cavity","Ile/Leu",0.0840336134453782
+"skin","Ile/Leu",0
+"stomach","Ile/Leu",0.0336134453781513
+"upper digestive tract","Ile/Leu",0.0252100840336134
+"urine","Ile/Leu",0
+"blood","Lys",0
+"caecum","Lys",0.64330106595352
+"colon","Lys",0.00359712230215827
+"duodenum","Lys",0
+"feces","Lys",1.33543636295152
+"gall bladder","Lys",0.00719424460431655
+"ileum","Lys",0
+"jejunum","Lys",0
+"liver","Lys",0
+"oral cavity","Lys",0
+"skin","Lys",0
+"stomach","Lys",0
+"upper digestive tract","Lys",0.0104712041884817
+"urine","Lys",0
+"blood","Met",0
+"caecum","Met",1.73543888433142
+"colon","Met",0
+"duodenum","Met",0
+"feces","Met",0.264561115668581
+"gall bladder","Met",0
+"ileum","Met",0
+"jejunum","Met",0
+"liver","Met",0
+"oral cavity","Met",0
+"skin","Met",0
+"stomach","Met",0
+"upper digestive tract","Met",0
+"urine","Met",0
+"blood","Orn",0
+"caecum","Orn",1.25569800569801
+"colon","Orn",0
+"duodenum","Orn",0
+"feces","Orn",0.705840455840456
+"gall bladder","Orn",0.0384615384615385
+"ileum","Orn",0
+"jejunum","Orn",0
+"liver","Orn",0
+"oral cavity","Orn",0
+"skin","Orn",0
+"stomach","Orn",0
+"upper digestive tract","Orn",0
+"urine","Orn",0
+"blood","Phe",0.00280112044817927
+"caecum","Phe",0.724059188892949
+"colon","Phe",0.00280112044817927
+"duodenum","Phe",0.0588235294117647
+"feces","Phe",0.744062842528316
+"gall bladder","Phe",0.136919985385459
+"ileum","Phe",0.061624649859944
+"jejunum","Phe",0.145658263305322
+"liver","Phe",0
+"oral cavity","Phe",0
+"skin","Phe",0
+"stomach","Phe",0.0224089635854342
+"upper digestive tract","Phe",0.0868347338935574
+"urine","Phe",0.00280112044817927
+"blood","Ser",0
+"caecum","Ser",0.931034482758621
+"colon","Ser",0
+"duodenum","Ser",0
+"feces","Ser",1.06896551724138
+"gall bladder","Ser",0
+"ileum","Ser",0
+"jejunum","Ser",0
+"liver","Ser",0
+"oral cavity","Ser",0
+"skin","Ser",0
+"stomach","Ser",0
+"upper digestive tract","Ser",0
+"urine","Ser",0
+"blood","Tau",0.068175314861461
+"caecum","Tau",0.022911502938707
+"colon","Tau",0.0142737195633921
+"duodenum","Tau",0.0435257766582704
+"feces","Tau",0.664618303946264
+"gall bladder","Tau",0.894786565910999
+"ileum","Tau",0.0222421494542401
+"jejunum","Tau",0.04055919395466
+"liver","Tau",0.0323889168765743
+"oral cavity","Tau",0.00732695214105793
+"skin","Tau",0.0407566750629723
+"stomach","Tau",0.0139449202350966
+"upper digestive tract","Tau",0.0568842989084803
+"urine","Tau",0.00310898404701931
+"blood","Thr",0
+"caecum","Thr",0.351351351351351
+"colon","Thr",0
+"duodenum","Thr",0
+"feces","Thr",1.64864864864865
+"gall bladder","Thr",0
+"ileum","Thr",0
+"jejunum","Thr",0
+"liver","Thr",0
+"oral cavity","Thr",0
+"skin","Thr",0
+"stomach","Thr",0
+"upper digestive tract","Thr",0
+"urine","Thr",0
+"blood","Trp",0
+"caecum","Trp",0.717839932956212
+"colon","Trp",0
+"duodenum","Trp",0.0174418604651163
+"feces","Trp",0.976639430127802
+"gall bladder","Trp",0.0613345904043578
+"ileum","Trp",0.0697674418604651
+"jejunum","Trp",0.156976744186047
+"liver","Trp",0
+"oral cavity","Trp",0
+"skin","Trp",0
+"stomach","Trp",0
+"upper digestive tract","Trp",0
+"urine","Trp",0
+"blood","Tyr",0.0140350877192982
+"caecum","Tyr",0.741454760496747
+"colon","Tyr",0.00350877192982456
+"duodenum","Tyr",0.0631578947368421
+"feces","Tyr",0.728681253696038
+"gall bladder","Tyr",0.0982850384387936
+"ileum","Tyr",0.0491228070175439
+"jejunum","Tyr",0.154385964912281
+"liver","Tyr",0
+"oral cavity","Tyr",0.0140350877192982
+"skin","Tyr",0
+"stomach","Tyr",0.0421052631578947
+"upper digestive tract","Tyr",0.087719298245614
+"urine","Tyr",0
+"blood","Val",0
+"caecum","Val",0
+"colon","Val",0
+"duodenum","Val",0
+"feces","Val",2
+"gall bladder","Val",0
+"ileum","Val",0
+"jejunum","Val",0
+"liver","Val",0
+"oral cavity","Val",0
+"skin","Val",0
+"stomach","Val",0
+"upper digestive tract","Val",0
+"urine","Val",0

@@ -1,0 +1,13 @@
+term_id,label,order,gene_count,neglog10p
+T01,Supplied term 01,1,2020,22.0
+T02,Supplied term 02,2,1163,21.2
+T03,Supplied term 03,3,1985,20.4
+T04,Supplied term 04,4,964,19.6
+T05,Supplied term 05,5,498,18.8
+T06,Supplied term 06,6,396,18.0
+T07,Supplied term 07,7,1732,17.2
+T08,Supplied term 08,8,127,16.4
+T09,Supplied term 09,9,1944,15.6
+T10,Supplied term 10,10,97,14.8
+T11,Supplied term 11,11,1558,14.0
+T12,Supplied term 12,12,317,13.2

@@ -1,0 +1,197 @@
+panel,metabolite_id,label,residue_id,parent_id,residue_code,residue_name,shape,fill,x_mm,y_mm,radius_mm,anomer,donor_carbon,acceptor_carbon,source_root_x_px,source_root_y_px,glyph_coordinate_method
+B,2,2,1,,G,Glc,circle,#0072BC,114.6273136568284,96.48374187093546,0.432216108054027,,1,,1273,139,strict topology direction21px at frozen source root
+B,2,2,2,1,A,Gal,circle,#FFD400,112.73636818409204,96.48374187093546,0.432216108054027,b,1,4,1273,139,strict topology direction21px at frozen source root
+B,2,2,3,2,GN,GlcNAc,square,#0072BC,110.84542271135567,95.16008004002,0.432216108054027,b,1,3,1273,139,strict topology direction21px at frozen source root
+B,3,2FL,1,,G,Glc,circle,#0072BC,131.82591295647822,97.74437218609305,0.432216108054027,,1,,1464,125,strict topology direction21px at frozen source root
+B,3,2FL,2,1,A,Gal,circle,#FFD400,129.93496748374187,97.74437218609305,0.432216108054027,b,1,4,1464,125,strict topology direction21px at frozen source root
+B,3,2FL,3,2,F,Fuc,triangle,#ED1C24,129.93496748374187,95.85342671335668,0.432216108054027,a,1,2,1464,125,strict topology direction21px at frozen source root
+B,4,3FL,1,,G,Glc,circle,#0072BC,143.08154077038517,97.56428214107054,0.432216108054027,,1,,1589,127,strict topology direction21px at frozen source root
+B,4,3FL,2,1,F,Fuc,triangle,#ED1C24,141.19059529764883,96.24062031015508,0.432216108054027,a,1,3,1589,127,strict topology direction21px at frozen source root
+B,4,3FL,3,1,A,Gal,circle,#FFD400,141.19059529764883,97.56428214107054,0.432216108054027,b,1,4,1589,127,strict topology direction21px at frozen source root
+B,5,3SL,1,,G,Glc,circle,#0072BC,152.9864932466233,97.74437218609305,0.432216108054027,,1,,1699,125,strict topology direction21px at frozen source root
+B,5,3SL,2,1,A,Gal,circle,#FFD400,151.09554777388695,97.74437218609305,0.432216108054027,b,1,4,1699,125,strict topology direction21px at frozen source root
+B,5,3SL,3,2,NN,Neu5Ac,diamond,#A54399,149.20460230115057,96.42071035517759,0.432216108054027,a,2,3,1699,125,strict topology direction21px at frozen source root
+B,6,LNT,1,,G,Glc,circle,#0072BC,115.34767383691846,84.32766383191596,0.432216108054027,,1,,1281,274,strict topology direction21px at frozen source root
+B,6,LNT,2,1,A,Gal,circle,#FFD400,113.45672836418208,84.32766383191596,0.432216108054027,b,1,4,1281,274,strict topology direction21px at frozen source root
+B,6,LNT,3,2,GN,GlcNAc,square,#0072BC,111.56578289144572,83.0040020010005,0.432216108054027,b,1,3,1281,274,strict topology direction21px at frozen source root
+B,6,LNT,4,3,A,Gal,circle,#FFD400,109.67483741870934,81.68034017008505,0.432216108054027,b,1,3,1281,274,strict topology direction21px at frozen source root
+B,7,LNnT,1,,G,Glc,circle,#0072BC,160.46023011505753,84.0575287643822,0.432216108054027,,1,,1782,277,strict topology direction21px at frozen source root
+B,7,LNnT,2,1,A,Gal,circle,#FFD400,158.56928464232115,84.0575287643822,0.432216108054027,b,1,4,1782,277,strict topology direction21px at frozen source root
+B,7,LNnT,3,2,GN,GlcNAc,square,#0072BC,156.67833916958477,82.73386693346674,0.432216108054027,b,1,3,1782,277,strict topology direction21px at frozen source root
+B,7,LNnT,4,3,A,Gal,circle,#FFD400,154.78739369684843,82.73386693346674,0.432216108054027,b,1,4,1782,277,strict topology direction21px at frozen source root
+B,8,8,1,,G,Glc,circle,#0072BC,83.74187093546773,82.97698849424712,0.432216108054027,,1,,930,289,strict topology direction21px at frozen source root
+B,8,8,2,1,A,Gal,circle,#FFD400,81.85092546273137,82.97698849424712,0.432216108054027,b,1,4,930,289,strict topology direction21px at frozen source root
+B,8,8,3,2,GN,GlcNAc,square,#0072BC,79.95997998999499,84.30065032516258,0.432216108054027,b,1,6,930,289,strict topology direction21px at frozen source root
+B,8,8,4,2,GN,GlcNAc,square,#0072BC,79.95997998999499,81.65332666333167,0.432216108054027,b,1,3,930,289,strict topology direction21px at frozen source root
+B,10,10,1,,G,Glc,circle,#0072BC,82.93146573286643,70.55077538769385,0.432216108054027,,1,,921,427,strict topology direction21px at frozen source root
+B,10,10,2,1,A,Gal,circle,#FFD400,81.04052026013007,70.55077538769385,0.432216108054027,b,1,4,921,427,strict topology direction21px at frozen source root
+B,10,10,3,2,GN,GlcNAc,square,#0072BC,79.14957478739369,71.8744372186093,0.432216108054027,b,1,6,921,427,strict topology direction21px at frozen source root
+B,10,10,4,2,GN,GlcNAc,square,#0072BC,79.14957478739369,69.22711355677839,0.432216108054027,b,1,3,921,427,strict topology direction21px at frozen source root
+B,10,10,5,4,A,Gal,circle,#FFD400,77.25862931465733,67.90345172586294,0.432216108054027,b,1,3,921,427,strict topology direction21px at frozen source root
+B,11,LNFPI,1,,G,Glc,circle,#0072BC,127.95397698849425,71.27113556778389,0.432216108054027,,1,,1421,419,strict topology direction21px at frozen source root
+B,11,LNFPI,2,1,A,Gal,circle,#FFD400,126.06303151575787,71.27113556778389,0.432216108054027,b,1,4,1421,419,strict topology direction21px at frozen source root
+B,11,LNFPI,3,2,GN,GlcNAc,square,#0072BC,124.17208604302151,69.94747373686843,0.432216108054027,b,1,3,1421,419,strict topology direction21px at frozen source root
+B,11,LNFPI,4,3,A,Gal,circle,#FFD400,122.28114057028513,68.62381190595298,0.432216108054027,b,1,3,1421,419,strict topology direction21px at frozen source root
+B,11,LNFPI,5,4,F,Fuc,triangle,#ED1C24,122.28114057028513,66.73286643321661,0.432216108054027,a,1,2,1421,419,strict topology direction21px at frozen source root
+B,13,LNFPII,1,,G,Glc,circle,#0072BC,51.505752876438216,71.09104552276139,0.432216108054027,,1,,572,421,strict topology direction21px at frozen source root
+B,13,LNFPII,2,1,A,Gal,circle,#FFD400,49.614807403701846,71.09104552276139,0.432216108054027,b,1,4,572,421,strict topology direction21px at frozen source root
+B,13,LNFPII,3,2,GN,GlcNAc,square,#0072BC,47.723861930965484,69.76738369184594,0.432216108054027,b,1,3,572,421,strict topology direction21px at frozen source root
+B,13,LNFPII,4,3,F,Fuc,triangle,#ED1C24,45.832916458229114,69.76738369184594,0.432216108054027,a,1,4,572,421,strict topology direction21px at frozen source root
+B,13,LNFPII,5,3,A,Gal,circle,#FFD400,45.832916458229114,68.44372186093047,0.432216108054027,b,1,3,572,421,strict topology direction21px at frozen source root
+B,15,LSTb,1,,G,Glc,circle,#0072BC,114.89744872436218,71.45122561280641,0.432216108054027,,1,,1276,417,strict topology direction21px at frozen source root
+B,15,LSTb,2,1,A,Gal,circle,#FFD400,113.0065032516258,71.45122561280641,0.432216108054027,b,1,4,1276,417,strict topology direction21px at frozen source root
+B,15,LSTb,3,2,GN,GlcNAc,square,#0072BC,111.11555777888944,70.12756378189096,0.432216108054027,b,1,3,1276,417,strict topology direction21px at frozen source root
+B,15,LSTb,4,3,NN,Neu5Ac,diamond,#A54399,109.22461230615308,71.45122561280641,0.432216108054027,a,2,6,1276,417,strict topology direction21px at frozen source root
+B,15,LSTb,5,3,A,Gal,circle,#FFD400,109.22461230615308,68.8039019509755,0.432216108054027,b,1,3,1276,417,strict topology direction21px at frozen source root
+B,18,LNFPIII,1,,G,Glc,circle,#0072BC,155.8679339669835,70.6408204102051,0.432216108054027,,1,,1731,426,strict topology direction21px at frozen source root
+B,18,LNFPIII,2,1,A,Gal,circle,#FFD400,153.9769884942471,70.6408204102051,0.432216108054027,b,1,4,1731,426,strict topology direction21px at frozen source root
+B,18,LNFPIII,3,2,GN,GlcNAc,square,#0072BC,152.08604302151076,69.31715857928964,0.432216108054027,b,1,3,1731,426,strict topology direction21px at frozen source root
+B,18,LNFPIII,4,3,F,Fuc,triangle,#ED1C24,150.19509754877438,67.99349674837418,0.432216108054027,a,1,3,1731,426,strict topology direction21px at frozen source root
+B,18,LNFPIII,5,3,A,Gal,circle,#FFD400,150.19509754877438,69.31715857928964,0.432216108054027,b,1,4,1731,426,strict topology direction21px at frozen source root
+B,21,LSTc,1,,G,Glc,circle,#0072BC,169.1945972986493,70.91095547773887,0.432216108054027,,1,,1879,423,strict topology direction21px at frozen source root
+B,21,LSTc,2,1,A,Gal,circle,#FFD400,167.30365182591294,70.91095547773887,0.432216108054027,b,1,4,1879,423,strict topology direction21px at frozen source root
+B,21,LSTc,3,2,GN,GlcNAc,square,#0072BC,165.4127063531766,69.58729364682341,0.432216108054027,b,1,3,1879,423,strict topology direction21px at frozen source root
+B,21,LSTc,4,3,A,Gal,circle,#FFD400,163.5217608804402,69.58729364682341,0.432216108054027,b,1,4,1879,423,strict topology direction21px at frozen source root
+B,21,LSTc,5,4,NN,Neu5Ac,diamond,#A54399,161.63081540770384,70.91095547773887,0.432216108054027,a,2,6,1879,423,strict topology direction21px at frozen source root
+B,23,23,1,,G,Glc,circle,#0072BC,84.55227613806903,55.69334667333667,0.432216108054027,,1,,939,592,strict topology direction21px at frozen source root
+B,23,23,2,1,A,Gal,circle,#FFD400,82.66133066533266,55.69334667333667,0.432216108054027,b,1,4,939,592,strict topology direction21px at frozen source root
+B,23,23,3,2,GN,GlcNAc,square,#0072BC,80.7703851925963,57.01700850425213,0.432216108054027,b,1,6,939,592,strict topology direction21px at frozen source root
+B,23,23,4,3,A,Gal,circle,#FFD400,78.87943971985993,57.01700850425213,0.432216108054027,b,1,4,939,592,strict topology direction21px at frozen source root
+B,23,23,5,2,GN,GlcNAc,square,#0072BC,80.7703851925963,54.36968484242121,0.432216108054027,b,1,3,939,592,strict topology direction21px at frozen source root
+B,23,23,6,5,A,Gal,circle,#FFD400,78.87943971985993,53.04602301150576,0.432216108054027,b,1,3,939,592,strict topology direction21px at frozen source root
+B,25,25,1,,G,Glc,circle,#0072BC,67.53376688344171,54.79289644822411,0.432216108054027,,1,,750,602,strict topology direction21px at frozen source root
+B,25,25,2,1,A,Gal,circle,#FFD400,65.64282141070535,54.79289644822411,0.432216108054027,b,1,4,750,602,strict topology direction21px at frozen source root
+B,25,25,3,2,GN,GlcNAc,square,#0072BC,63.75187593796898,56.116558279139575,0.432216108054027,b,1,6,750,602,strict topology direction21px at frozen source root
+B,25,25,4,2,GN,GlcNAc,square,#0072BC,63.75187593796898,53.46923461730865,0.432216108054027,b,1,3,750,602,strict topology direction21px at frozen source root
+B,25,25,5,4,F,Fuc,triangle,#ED1C24,61.86093046523261,53.46923461730865,0.432216108054027,a,1,4,750,602,strict topology direction21px at frozen source root
+B,25,25,6,4,A,Gal,circle,#FFD400,61.86093046523261,52.1455727863932,0.432216108054027,b,1,3,750,602,strict topology direction21px at frozen source root
+B,27,27,1,,G,Glc,circle,#0072BC,97.96898449224612,55.603301650825415,0.432216108054027,,1,,1088,593,strict topology direction21px at frozen source root
+B,27,27,2,1,A,Gal,circle,#FFD400,96.07803901950975,55.603301650825415,0.432216108054027,b,1,4,1088,593,strict topology direction21px at frozen source root
+B,27,27,3,2,GN,GlcNAc,square,#0072BC,94.18709354677338,56.92696348174088,0.432216108054027,b,1,6,1088,593,strict topology direction21px at frozen source root
+B,27,27,4,2,GN,GlcNAc,square,#0072BC,94.18709354677338,54.27963981990995,0.432216108054027,b,1,3,1088,593,strict topology direction21px at frozen source root
+B,27,27,5,4,NN,Neu5Ac,diamond,#A54399,92.29614807403702,55.603301650825415,0.432216108054027,a,2,6,1088,593,strict topology direction21px at frozen source root
+B,27,27,6,4,A,Gal,circle,#FFD400,92.29614807403702,52.955977988994505,0.432216108054027,b,1,3,1088,593,strict topology direction21px at frozen source root
+B,29,DFLNT2,1,,G,Glc,circle,#0072BC,51.505752876438216,55.69334667333667,0.432216108054027,,1,,572,592,strict topology direction21px at frozen source root
+B,29,DFLNT2,2,1,F,Fuc,triangle,#ED1C24,49.614807403701846,54.36968484242121,0.432216108054027,a,1,3,572,592,strict topology direction21px at frozen source root
+B,29,DFLNT2,3,1,A,Gal,circle,#FFD400,49.614807403701846,55.69334667333667,0.432216108054027,b,1,4,572,592,strict topology direction21px at frozen source root
+B,29,DFLNT2,4,3,GN,GlcNAc,square,#0072BC,47.723861930965484,54.36968484242121,0.432216108054027,b,1,3,572,592,strict topology direction21px at frozen source root
+B,29,DFLNT2,5,4,F,Fuc,triangle,#ED1C24,45.832916458229114,54.36968484242121,0.432216108054027,a,1,4,572,592,strict topology direction21px at frozen source root
+B,29,DFLNT2,6,4,A,Gal,circle,#FFD400,45.832916458229114,53.04602301150576,0.432216108054027,b,1,3,572,592,strict topology direction21px at frozen source root
+B,31,DSLNT,1,,G,Glc,circle,#0072BC,116.60830415207603,56.05352676338169,0.432216108054027,,1,,1295,588,strict topology direction21px at frozen source root
+B,31,DSLNT,2,1,A,Gal,circle,#FFD400,114.71735867933967,56.05352676338169,0.432216108054027,b,1,4,1295,588,strict topology direction21px at frozen source root
+B,31,DSLNT,3,2,GN,GlcNAc,square,#0072BC,112.82641320660329,54.729864932466235,0.432216108054027,b,1,3,1295,588,strict topology direction21px at frozen source root
+B,31,DSLNT,4,3,NN,Neu5Ac,diamond,#A54399,110.93546773386693,56.05352676338169,0.432216108054027,a,2,6,1295,588,strict topology direction21px at frozen source root
+B,31,DSLNT,5,3,A,Gal,circle,#FFD400,110.93546773386693,53.40620310155078,0.432216108054027,b,1,3,1295,588,strict topology direction21px at frozen source root
+B,31,DSLNT,6,5,NN,Neu5Ac,diamond,#A54399,109.04452226113057,52.08254127063532,0.432216108054027,a,2,3,1295,588,strict topology direction21px at frozen source root
+B,49,FLNH5,1,,G,Glc,circle,#0072BC,68.61430715357679,42.006503251625816,0.432216108054027,,1,,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,2,1,A,Gal,circle,#FFD400,66.72336168084041,42.006503251625816,0.432216108054027,b,1,4,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,3,2,GN,GlcNAc,square,#0072BC,64.83241620810405,43.330165082541285,0.432216108054027,b,1,6,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,4,3,A,Gal,circle,#FFD400,62.94147073536768,43.330165082541285,0.432216108054027,b,1,4,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,5,2,GN,GlcNAc,square,#0072BC,64.83241620810405,40.68284142071036,0.432216108054027,b,1,3,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,6,5,F,Fuc,triangle,#ED1C24,62.94147073536768,40.68284142071036,0.432216108054027,a,1,4,762,744,strict topology direction21px at frozen source root
+B,49,FLNH5,7,5,A,Gal,circle,#FFD400,62.94147073536768,39.359179589794905,0.432216108054027,b,1,3,762,744,strict topology direction21px at frozen source root
+B,50,50,1,,G,Glc,circle,#0072BC,85.54277138569284,41.73636818409204,0.432216108054027,,1,,950,747,strict topology direction21px at frozen source root
+B,50,50,2,1,A,Gal,circle,#FFD400,83.65182591295647,41.73636818409204,0.432216108054027,b,1,4,950,747,strict topology direction21px at frozen source root
+B,50,50,3,2,GN,GlcNAc,square,#0072BC,81.7608804402201,43.06003001500751,0.432216108054027,b,1,6,950,747,strict topology direction21px at frozen source root
+B,50,50,4,3,A,Gal,circle,#FFD400,79.86993496748374,43.06003001500751,0.432216108054027,b,1,4,950,747,strict topology direction21px at frozen source root
+B,50,50,5,2,GN,GlcNAc,square,#0072BC,81.7608804402201,40.41270635317659,0.432216108054027,b,1,3,950,747,strict topology direction21px at frozen source root
+B,50,50,6,5,A,Gal,circle,#FFD400,79.86993496748374,39.08904452226113,0.432216108054027,b,1,3,950,747,strict topology direction21px at frozen source root
+B,50,50,7,6,NN,Neu5Ac,diamond,#A54399,77.97898949474737,37.76538269134568,0.432216108054027,a,2,3,950,747,strict topology direction21px at frozen source root
+B,52,52,1,,G,Glc,circle,#0072BC,99.31965982991495,42.09654827413708,0.432216108054027,,1,,1103,743,strict topology direction21px at frozen source root
+B,52,52,2,1,A,Gal,circle,#FFD400,97.42871435717858,42.09654827413708,0.432216108054027,b,1,4,1103,743,strict topology direction21px at frozen source root
+B,52,52,3,2,GN,GlcNAc,square,#0072BC,95.53776888444222,43.42021010505253,0.432216108054027,b,1,6,1103,743,strict topology direction21px at frozen source root
+B,52,52,4,3,A,Gal,circle,#FFD400,93.64682341170585,43.42021010505253,0.432216108054027,b,1,4,1103,743,strict topology direction21px at frozen source root
+B,52,52,5,2,GN,GlcNAc,square,#0072BC,95.53776888444222,40.77288644322161,0.432216108054027,b,1,3,1103,743,strict topology direction21px at frozen source root
+B,52,52,6,5,NN,Neu5Ac,diamond,#A54399,93.64682341170585,42.09654827413708,0.432216108054027,a,2,6,1103,743,strict topology direction21px at frozen source root
+B,52,52,7,5,A,Gal,circle,#FFD400,93.64682341170585,39.44922461230615,0.432216108054027,b,1,3,1103,743,strict topology direction21px at frozen source root
+B,53,53,1,,G,Glc,circle,#0072BC,51.77588794397198,42.63681840920461,0.432216108054027,,1,,575,737,strict topology direction21px at frozen source root
+B,53,53,2,1,A,Gal,circle,#FFD400,49.88494247123562,42.63681840920461,0.432216108054027,b,1,4,575,737,strict topology direction21px at frozen source root
+B,53,53,3,2,GN,GlcNAc,square,#0072BC,47.99399699849925,43.96048024012006,0.432216108054027,b,1,6,575,737,strict topology direction21px at frozen source root
+B,53,53,4,2,GN,GlcNAc,square,#0072BC,47.99399699849925,41.31315657828914,0.432216108054027,b,1,3,575,737,strict topology direction21px at frozen source root
+B,53,53,5,4,F,Fuc,triangle,#ED1C24,46.10305152576288,41.31315657828914,0.432216108054027,a,1,4,575,737,strict topology direction21px at frozen source root
+B,53,53,6,4,A,Gal,circle,#FFD400,46.10305152576288,39.9894947473737,0.432216108054027,b,1,3,575,737,strict topology direction21px at frozen source root
+B,53,53,7,6,F,Fuc,triangle,#ED1C24,46.10305152576288,38.09854927463732,0.432216108054027,a,1,2,575,737,strict topology direction21px at frozen source root
+B,55,55,1,,G,Glc,circle,#0072BC,115.16758379189594,41.466233116558286,0.432216108054027,,1,,1279,750,strict topology direction21px at frozen source root
+B,55,55,2,1,A,Gal,circle,#FFD400,113.27663831915957,41.466233116558286,0.432216108054027,b,1,4,1279,750,strict topology direction21px at frozen source root
+B,55,55,3,2,GN,GlcNAc,square,#0072BC,111.38569284642321,42.78989494747374,0.432216108054027,b,1,6,1279,750,strict topology direction21px at frozen source root
+B,55,55,4,2,GN,GlcNAc,square,#0072BC,111.38569284642321,40.142571285642816,0.432216108054027,b,1,3,1279,750,strict topology direction21px at frozen source root
+B,55,55,5,4,NN,Neu5Ac,diamond,#A54399,109.49474737368683,41.466233116558286,0.432216108054027,a,2,6,1279,750,strict topology direction21px at frozen source root
+B,55,55,6,4,A,Gal,circle,#FFD400,109.49474737368683,38.818909454727375,0.432216108054027,b,1,3,1279,750,strict topology direction21px at frozen source root
+B,55,55,7,6,NN,Neu5Ac,diamond,#A54399,107.60380190095047,37.495247623811906,0.432216108054027,a,2,3,1279,750,strict topology direction21px at frozen source root
+B,70,DFLNH7,1,,G,Glc,circle,#0072BC,51.77588794397198,27.419209604802404,0.432216108054027,,1,,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,2,1,A,Gal,circle,#FFD400,49.88494247123562,27.419209604802404,0.432216108054027,b,1,4,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,3,2,GN,GlcNAc,square,#0072BC,47.99399699849925,28.742871435717873,0.432216108054027,b,1,6,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,4,3,A,Gal,circle,#FFD400,46.10305152576288,28.742871435717873,0.432216108054027,b,1,4,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,5,2,GN,GlcNAc,square,#0072BC,47.99399699849925,26.09554777388695,0.432216108054027,b,1,3,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,6,5,F,Fuc,triangle,#ED1C24,46.10305152576288,26.09554777388695,0.432216108054027,a,1,4,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,7,5,A,Gal,circle,#FFD400,46.10305152576288,24.771885942971494,0.432216108054027,b,1,3,575,906,strict topology direction21px at frozen source root
+B,70,DFLNH7,8,7,F,Fuc,triangle,#ED1C24,46.10305152576288,22.880940470235117,0.432216108054027,a,1,2,575,906,strict topology direction21px at frozen source root
+B,74,74,1,,G,Glc,circle,#0072BC,84.55227613806903,27.509254627313666,0.432216108054027,,1,,939,905,strict topology direction21px at frozen source root
+B,74,74,2,1,A,Gal,circle,#FFD400,82.66133066533266,27.509254627313666,0.432216108054027,b,1,4,939,905,strict topology direction21px at frozen source root
+B,74,74,3,2,GN,GlcNAc,square,#0072BC,80.7703851925963,28.83291645822912,0.432216108054027,b,1,6,939,905,strict topology direction21px at frozen source root
+B,74,74,4,3,A,Gal,circle,#FFD400,78.87943971985993,28.83291645822912,0.432216108054027,b,1,4,939,905,strict topology direction21px at frozen source root
+B,74,74,5,2,GN,GlcNAc,square,#0072BC,80.7703851925963,26.185592796398197,0.432216108054027,b,1,3,939,905,strict topology direction21px at frozen source root
+B,74,74,6,5,F,Fuc,triangle,#ED1C24,78.87943971985993,26.185592796398197,0.432216108054027,a,1,4,939,905,strict topology direction21px at frozen source root
+B,74,74,7,5,A,Gal,circle,#FFD400,78.87943971985993,24.861930965482742,0.432216108054027,b,1,3,939,905,strict topology direction21px at frozen source root
+B,74,74,8,7,NN,Neu5Ac,diamond,#A54399,76.98849424712355,23.538269134567287,0.432216108054027,a,2,3,939,905,strict topology direction21px at frozen source root
+B,75,75,1,,G,Glc,circle,#0072BC,68.43421710855428,27.329164582291156,0.432216108054027,,1,,760,907,strict topology direction21px at frozen source root
+B,75,75,2,1,A,Gal,circle,#FFD400,66.5432716358179,27.329164582291156,0.432216108054027,b,1,4,760,907,strict topology direction21px at frozen source root
+B,75,75,3,2,GN,GlcNAc,square,#0072BC,64.65232616308154,28.65282641320661,0.432216108054027,b,1,6,760,907,strict topology direction21px at frozen source root
+B,75,75,4,3,A,Gal,circle,#FFD400,62.76138069034517,28.65282641320661,0.432216108054027,b,1,4,760,907,strict topology direction21px at frozen source root
+B,75,75,5,4,NN,Neu5Ac,diamond,#A54399,60.8704352176088,29.976488244122066,0.432216108054027,a,2,6,760,907,strict topology direction21px at frozen source root
+B,75,75,6,2,GN,GlcNAc,square,#0072BC,64.65232616308154,26.005502751375687,0.432216108054027,b,1,3,760,907,strict topology direction21px at frozen source root
+B,75,75,7,6,F,Fuc,triangle,#ED1C24,62.76138069034517,26.005502751375687,0.432216108054027,a,1,4,760,907,strict topology direction21px at frozen source root
+B,75,75,8,6,A,Gal,circle,#FFD400,62.76138069034517,24.681840920460232,0.432216108054027,b,1,3,760,907,strict topology direction21px at frozen source root
+B,77,DSLNH2,1,,G,Glc,circle,#0072BC,114.26713356678339,25.61830915457729,0.432216108054027,,1,,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,2,1,A,Gal,circle,#FFD400,112.37618809404702,25.61830915457729,0.432216108054027,b,1,4,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,3,2,GN,GlcNAc,square,#0072BC,110.48524262131065,26.94197098549276,0.432216108054027,b,1,6,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,4,3,A,Gal,circle,#FFD400,108.59429714857428,26.94197098549276,0.432216108054027,b,1,4,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,5,2,GN,GlcNAc,square,#0072BC,110.48524262131065,24.294647323661835,0.432216108054027,b,1,3,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,6,5,NN,Neu5Ac,diamond,#A54399,108.59429714857428,25.61830915457729,0.432216108054027,a,2,6,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,7,5,A,Gal,circle,#FFD400,108.59429714857428,22.97098549274638,0.432216108054027,b,1,3,1269,926,strict topology direction21px at frozen source root
+B,77,DSLNH2,8,7,NN,Neu5Ac,diamond,#A54399,106.70335167583791,21.647323661830924,0.432216108054027,a,2,3,1269,926,strict topology direction21px at frozen source root
+B,90,FDSLNH1,1,,G,Glc,circle,#0072BC,103.23661830915458,12.651825912956483,0.432216108054027,,1,,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,2,1,A,Gal,circle,#FFD400,101.30065032516258,12.651825912956483,0.432216108054027,b,1,4,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,3,2,GN,GlcNAc,square,#0072BC,99.31965982991495,14.452726363181597,0.432216108054027,b,1,6,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,4,3,A,Gal,circle,#FFD400,97.38369184592295,14.452726363181597,0.432216108054027,b,1,4,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,5,4,F,Fuc,triangle,#ED1C24,97.33866933466733,13.102051025512765,0.432216108054027,a,1,2,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,6,2,GN,GlcNAc,square,#0072BC,99.31965982991495,10.805902951475744,0.432216108054027,b,1,3,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,7,6,NN,Neu5Ac,diamond,#A54399,97.47373686843422,12.066533266633314,0.432216108054027,a,2,6,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,8,6,A,Gal,circle,#FFD400,97.38369184592295,9.860430215107556,0.432216108054027,b,1,3,1147,1071,actualsourcecolorcomponent peratom override
+B,90,FDSLNH1,9,8,NN,Neu5Ac,diamond,#A54399,95.40270135067533,8.779889944972496,0.432216108054027,a,2,3,1147,1071,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,1,,G,Glc,circle,#0072BC,122.46123061530764,13.057028514257127,0.432216108054027,,1,,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,2,1,A,Gal,circle,#FFD400,120.48024012006002,13.057028514257127,0.432216108054027,b,1,4,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,3,2,GN,GlcNAc,square,#0072BC,118.4992496248124,14.90295147573788,0.432216108054027,b,1,6,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,4,3,F,Fuc,triangle,#ED1C24,116.8784392196098,13.552276138069033,0.432216108054027,a,1,3,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,5,3,A,Gal,circle,#FFD400,116.5632816408204,14.90295147573788,0.432216108054027,b,1,4,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,6,2,GN,GlcNAc,square,#0072BC,118.4992496248124,11.256128064032026,0.432216108054027,b,1,3,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,7,6,NN,Neu5Ac,diamond,#A54399,116.83341670835418,12.336668334167086,0.432216108054027,a,2,6,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,8,6,A,Gal,circle,#FFD400,116.5632816408204,10.265632816408214,0.432216108054027,b,1,3,1360,1066,actualsourcecolorcomponent peratom override
+B,91,FDSLNH2,9,8,NN,Neu5Ac,diamond,#A54399,114.58229114557278,9.18509254627314,0.432216108054027,a,2,3,1360,1066,actualsourcecolorcomponent peratom override
+B,92,FDSLNH3,1,,G,Glc,circle,#0072BC,75.81790895447723,12.56178089044522,0.432216108054027,,1,,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,2,1,A,Gal,circle,#FFD400,73.92696348174087,12.56178089044522,0.432216108054027,b,1,4,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,3,2,GN,GlcNAc,square,#0072BC,72.0360180090045,13.88544272136069,0.432216108054027,b,1,6,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,4,3,A,Gal,circle,#FFD400,70.14507253626813,13.88544272136069,0.432216108054027,b,1,4,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,5,4,NN,Neu5Ac,diamond,#A54399,68.25412706353177,15.209104552276145,0.432216108054027,a,2,6,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,6,2,GN,GlcNAc,square,#0072BC,72.0360180090045,11.238119059529765,0.432216108054027,b,1,3,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,7,6,F,Fuc,triangle,#ED1C24,70.14507253626813,11.238119059529765,0.432216108054027,a,1,4,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,8,6,A,Gal,circle,#FFD400,70.14507253626813,9.91445722861431,0.432216108054027,b,1,3,842,1071,strict topology direction21px at frozen source root
+B,92,FDSLNH3,9,8,NN,Neu5Ac,diamond,#A54399,68.25412706353177,8.59079539769887,0.432216108054027,a,2,3,842,1071,strict topology direction21px at frozen source root
+A,28,DFLNT1,1,,G,Glc,circle,#0072BC,31.425712856428213,88.82991495747874,2.386193096548274,,1,,,,actual source coloredcomponent center;formal parent/linkages retained
+A,28,DFLNT1,2,1.0,A,Gal,circle,#FFD400,21.925962981490745,88.87493746873437,2.386193096548274,b,1,4,,,actual source coloredcomponent center;formal parent/linkages retained
+A,28,DFLNT1,3,2.0,GN,GlcNAc,square,#0072BC,12.426213106553275,81.98649324662331,2.386193096548274,b,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,28,DFLNT1,4,3.0,F,Fuc,triangle,#ED1C24,3.0165082541270634,81.76138069034518,2.386193096548274,a,1,4,,,actual source coloredcomponent center;formal parent/linkages retained
+A,28,DFLNT1,5,3.0,A,Gal,circle,#FFD400,2.9714857428714354,75.14307153576789,2.386193096548274,b,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,28,DFLNT1,6,5.0,F,Fuc,triangle,#ED1C24,2.9714857428714354,67.3991995997999,2.386193096548274,a,1,2,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,1,,G,Glc,circle,#0072BC,31.425712856428213,59.02501250625313,2.386193096548274,,1,,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,2,1.0,F,Fuc,triangle,#ED1C24,24.537268634317158,54.25262631315658,2.386193096548274,a,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,3,1.0,A,Gal,circle,#FFD400,21.925962981490745,59.02501250625313,2.386193096548274,b,1,4,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,4,3.0,GN,GlcNAc,square,#0072BC,12.426213106553275,52.1815907953977,2.386193096548274,b,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,5,4.0,F,Fuc,triangle,#ED1C24,3.0165082541270634,51.95647823911956,2.386193096548274,a,1,4,,,actual source coloredcomponent center;formal parent/linkages retained
+A,29,DFLNT2,6,4.0,A,Gal,circle,#FFD400,2.9714857428714354,45.29314657328665,2.386193096548274,b,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,1,,G,Glc,circle,#0072BC,31.425712856428213,30.660830415207613,2.386193096548274,,1,,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,2,1.0,F,Fuc,triangle,#ED1C24,24.537268634317158,25.933466733366686,2.386193096548274,a,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,3,1.0,A,Gal,circle,#FFD400,21.925962981490745,30.705852926463237,2.386193096548274,b,1,4,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,4,3.0,GN,GlcNAc,square,#0072BC,12.426213106553275,23.817408704352175,2.386193096548274,b,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,5,4.0,F,Fuc,triangle,#ED1C24,3.0165082541270634,16.748874437218618,2.386193096548274,a,1,3,,,actual source coloredcomponent center;formal parent/linkages retained
+A,39,DFLNT3,6,4.0,A,Gal,circle,#FFD400,2.9714857428714354,23.817408704352175,2.386193096548274,b,1,4,,,actual source coloredcomponent center;formal parent/linkages retained

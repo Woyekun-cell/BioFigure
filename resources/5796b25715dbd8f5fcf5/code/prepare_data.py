@@ -1,0 +1,13 @@
+from pathlib import Path
+import csv,json,re,hashlib,math,collections
+P=Path(__file__).resolve().parents[2];S=P/'biofigure';W=Path(__file__).resolve().parent;A=S/'benchmark/library/epigenomics/archr-2021';raw=A/'data/raw/author-table5-HMGA1-BLK-extract.tsv';rows=list(csv.DictReader(raw.open(),delimiter='\t'));out=[];loci=[]
+for row in rows:
+ r=dict(row);chrom,start,end=re.fullmatch(r'(chr[^:]+):(\d+)-(\d+)',r['peakATAC']).groups();gc,tss,gene=re.fullmatch(r'(chr[^:]+):(\d+)#(.+)',r['geneRNA']).groups();start,end,tss=map(int,[start,end,tss]);assert chrom==gc and end-start==500 and 0<=float(r['Correlation'])<=1
+ r.update(gene=gene,chromosome=chrom,peak_start=start,peak_end=end,peak_midpoint=(start+end)/2,tss=tss,distance_bp=(start+end)/2-tss);out.append(r)
+assert len(out)==38 and len({(r['peakATAC'],r['geneRNA'])for r in out})==38
+for gene in ['HMGA1','BLK']:
+ q=[r for r in out if r['gene']==gene];lo=math.floor((min(r['peak_start']for r in q)-10000)/50000)*50000;hi=math.ceil((max(r['peak_end']for r in q)+10000)/50000)*50000;loci.append(dict(gene=gene,chromosome=q[0]['chromosome'],tss=q[0]['tss'],start=lo,end=hi,links=len(q)))
+D=P/'results/plot_data';D.mkdir(exist_ok=True)
+for name,data in [('links',out),('loci',loci)]:
+ with (D/f'archr_links_20261026_{name}.csv').open('w')as f:w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();sources=[raw,A/'data/raw/supplementary-tables.xlsx'];qc=dict(status='PASS',data_origin='Original author SupplementaryTable5 real whole-hematopoiesis processed peak-to-gene associations;38 source rows for HMGA1/BLK.',rows=len(out),genes=dict(collections.Counter(r['gene']for r in out)),loci=loci,assembly='hg19',source_fields_preserved=list(rows[0]),correlation_limits=[min(float(r['Correlation'])for r in out),max(float(r['Correlation'])for r in out)],coordinates='Original chr:start-end and chr:TSS#symbol retained. No BED/GRanges conversion. Arcs connect source peak midpoint to exact gene TSS;track intervals retain end-start=500.',scope='Real SupplementaryTable5 source-data adaptation; two genomic arc/peak/TSS panels spanning all38 source links. Whole-hematopoiesis associations are not Fig4e trajectory links or exact Fig4f/g subset.',remaining_paper_inputs='Original Fig4f/g coverage,final browser settings,gene transcript annotations and expression;Fig4e11999-row trajectory matrices and Fig4h TF multi-assay matrices remain unavailable.',source_files=[dict(path=str(p),sha256=sha(p))for p in sources]);(W/'input-qc.json').write_text(json.dumps(qc,ensure_ascii=False,indent=2)+'\n');print(json.dumps(qc,ensure_ascii=False))

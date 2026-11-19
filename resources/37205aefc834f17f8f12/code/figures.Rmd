@@ -1,0 +1,837 @@
+---
+title: "Figures for the ggdist paper"
+author: "Matthew Kay"
+date: "2023-03-11"
+output: 
+  html_document:
+    theme: lumen
+    toc: true
+    self_contained: true
+---
+
+## Introduction
+
+This document generates the various figures for the paper, *ggdist: Visualizations of Distributions and Uncertainty in the Grammar of Graphics*.
+
+## Setup
+
+These libraries are needed to build this file:
+
+```{r setup, message = FALSE, warning = FALSE}
+library(ggplot2)
+library(ggdist)              # obviously
+library(distributional)      # for dist_...
+library(dplyr)               # for data manipulation
+library(sysfonts)            # for using custom fonts
+library(brms)                # for brm() (model-fitting)
+library(posterior)           # rvar
+library(patchwork)
+library(ggtext)              # element_textbox_simple
+library(ragg)                # agg_png
+library(colorspace)
+library(broom)               # augment
+library(tidyr)
+library(palmerpenguins)
+```
+
+And this ggplot theme, based on `theme_ggdist()`, using the Source Sans Pro font (in the `fonts/` folder):
+
+```{r}
+knitr::opts_chunk$set(dev = "ragg_png", fig.ext = "png")
+
+font_add(
+  family = "Source Sans Pro",
+  regular = "fonts/source-sans/SourceSansPro-Regular.ttf",
+  bold = "fonts/source-sans/SourceSansPro-Bold.ttf",
+  italic = "fonts/source-sans/SourceSansPro-Italic.ttf",
+  bolditalic = "fonts/source-sans/SourceSansPro-BoldItalic.ttf",
+)
+
+theme_set(
+  theme_light(base_family = "Source Sans Pro") + theme(
+    axis.line.x = element_line(color = "gray70", linewidth = rel(0.5)), 
+    axis.line.y = element_line(color = "gray70", linewidth = rel(0.5)),
+    axis.title.x = element_text(margin = margin(t = 7)), 
+    axis.title.y = element_text(margin = margin(r = 7)), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), 
+    panel.border = element_blank(),
+    strip.text = element_text(color = "black", margin = margin(6, 6, 6, 6)),
+    strip.background = element_rect(fill = "gray90")
+  )
+)
+```
+
+And some functions we'll use for annotating stuff:
+
+```{r}
+red_ = "#e41a1c"
+blue_ = "#6BAED6"
+label_color = red_
+
+bracket_ = function(..., x, xend = x, y, yend = y, color = label_color, linewidth = 0.5) {
+  annotate("segment",
+    arrow = arrow(angle = 90, ends = "both", length = unit(3, "points")),
+    color = color, linewidth = linewidth,
+    x = x, xend = xend, y = y, yend = yend,
+    ...
+  )
+}
+arrow_ = function(..., curvature = 0, x, xend = x, y, yend = y, color = label_color, linewidth = 0.5) {
+  annotate("curve", 
+    color = color, arrow = arrow(angle = 45, length = unit(3, "points"), type = "closed"),
+    curvature = curvature, linewidth = linewidth,
+    lineend = "square", linejoin = "mitre",
+    x = x, xend = xend, y = y, yend = yend
+  )
+}
+label_ = function(..., hjust = 0, color = label_color, family = "serif") {
+  annotate("text",
+    color = color, hjust = hjust, lineheight = 1,
+    size = 3.75,
+    family = family,
+    ...
+  )
+}
+```
+
+
+## Teaser
+
+This section creates the subfigures used to create the teaser figure.
+
+### Slabinterval
+
+```{r slabinterval_teaser, echo=FALSE, fig.height=4, fig.width=4}
+dists_df = tibble(
+  # enforce order
+  geom = rev(c(
+    "halfeye", 
+    "eye",
+    "gradientinterval", 
+    "ccdfinterval", 
+    "cdfinterval",
+    "interval",
+    "pointinterval",
+    "slab",
+    "histinterval"
+    )) %>%
+    factor(., levels = .),
+  dist = dist_normal(4, 1)
+)
+
+hist_df = tibble(
+  geom = "histinterval",
+  x = qnorm(ppoints(1000), 4, 1)
+)
+
+dists_df_ = function(geom_) filter(dists_df, geom == geom_)
+
+
+# FAMILY HEADER
+
+dists_xlim = c(0,8)
+
+header_theme = theme(
+  plot.title = element_textbox_simple(size = 10, lineheight = 1.1, margin = margin(5,0,5,0)),
+  axis.line.x = element_blank(),
+  plot.background = element_rect(fill = "gray95"),
+  panel.background = element_blank(),
+  plot.margin = unit(c(5.5, 0, 5.5, 5.5), "points")
+)
+
+dists_header_plot = dists_df_("halfeye") %>%
+  mutate(geom = "slabinterval") %>%
+  ggplot(aes(y = geom, xdist = dist)) +
+  stat_slabinterval(position = position_nudge(y = - 0.2)) +
+  scale_x_continuous(limits = dists_xlim, expand = c(0,0), breaks = NULL) +
+  scale_y_discrete(expand = c(0.4,0)) +
+  labs(
+    title = "**The *slabinterval* family**<br>
+    Combinations of *slabs*, *points*, and *intervals*",
+    x = NULL,
+    y = NULL
+  ) +
+  header_theme
+
+# SHORTCUT STATS
+
+dists_plot = dists_df %>%
+  ggplot(aes(y = geom, xdist = dist)) +
+  geom_blank() + # ensures order
+  stat_eye(data = dists_df_("eye")) +
+  stat_halfeye(data = dists_df_("halfeye"), position = position_nudge(y = -0.2)) +
+  stat_gradientinterval(data = dists_df_("gradientinterval"), scale = .5, fill_type = "gradient") +
+  stat_ccdfinterval(data = dists_df_("ccdfinterval"), scale = .5) +
+  stat_cdfinterval(data = dists_df_("cdfinterval"), scale = .5) +
+  stat_interval(data = dists_df_("interval"), color = "gray65", alpha = 1/3, linewidth = 10,
+    position = position_nudge(y = -.1)) +
+  stat_pointinterval(data = dists_df_("pointinterval")) +
+  stat_slab(data = dists_df_("slab"), position = position_nudge(y = - 0.2)) +
+  stat_histinterval(aes(x = x, xdist = NULL), data = hist_df, position = position_nudge(y = - 0.25)) +
+  scale_slab_alpha_continuous(guide = "none") +
+  scale_x_continuous(breaks = NULL, limits = dists_xlim, expand = c(0,0)) +
+  labs(
+    x = NULL,
+    y = NULL
+  )
+
+(dists_header_plot / dists_plot) + plot_layout(heights = c(1.2, 8))
+
+ggsave("figs/teaser-slabinterval.pdf", device = cairo_pdf)
+```
+
+### Wee people
+
+Based on my [wee people example](https://github.com/mjskay/uncertainty-examples/blob/master/weepeople_dotplots.md).
+
+We need to register the Wee People font:
+
+```{r}
+font_add(
+  family = "weepeople",
+  regular = "fonts/wee-people/weepeople.ttf"
+)
+```
+
+Then set up a dataset of people:
+
+```{r}
+set.seed(1234)
+
+people_df = data.frame(
+  x = qnorm(ppoints(100), 1:2),
+  set = c("a", "b"),
+  icon = factor(sample(52, 100, replace = TRUE))
+) 
+
+# the lower and upper case letters in the Wee People font are people:
+people_letters = c(letters, LETTERS)
+```
+
+Then a plot:
+
+```{r teaser_weepeople, fig.width = 4.0, fig.height = 2.9}
+p = people_df |>
+  ggplot(aes(x = x, y = set, group = set, shape = icon, color = x > 0)) + 
+  geom_dots(family = "weepeople", dotsize = 2.4, layout = "swarm")+ 
+  scale_shape_manual(values = people_letters, guide = "none") +
+  scale_color_brewer(palette = "Set1", guide = "none") +
+  ylab("group")
+
+p
+ggsave("figs/teaser-weepeople.pdf", plot = p, device = cairo_pdf, width = 4.0, height = 2.9)
+```
+
+
+
+### Rainclouds
+
+```{r teaser_raincloud, fig.width = 6.5, fig.height = 4}
+set.seed(12345) # for reproducibility
+
+p = data.frame(
+  abc = c("a", "b", "c"),
+  value = rnorm(600, c(1, 8, 3), c(1, 1.7, 1))
+) %>%
+  ggplot(aes(y = abc, x = value, fill = abc)) +
+  stat_slab(density = "unbounded") +
+  stat_dotsinterval(side = "bottom", slab_linewidth = NA, slab_color = NA, layout = "bin") +
+  scale_fill_brewer(palette = "Set2")
+
+p
+ggsave("figs/teaser-raincloud.pdf", device = cairo_pdf)
+```
+
+
+### Fit lines
+
+```{r teaser_mtcars_lines, fig.width = 6, fig.height = 4}
+m_mpg = lm(mpg ~ hp * cyl, data = mtcars)
+p = mtcars %>%
+  group_by(cyl) %>%
+  expand(hp = seq(min(hp), max(hp), length.out = 101)) %>%
+  augment(m_mpg, newdata = ., se_fit = TRUE) %>%
+  ggplot(aes(x = hp, fill = ordered(cyl), color = ordered(cyl))) +
+  stat_lineribbon(
+    aes(dist = "norm", arg1 = .fitted, arg2 = .se.fit), 
+    alpha = 1/4
+  ) +
+  geom_point(aes(y = mpg), data = mtcars) +
+  
+  scale_fill_brewer(palette = "Set2") +
+  scale_color_brewer(palette = "Dark2") +
+  labs(
+    color = "Cylinders",
+    fill = "Cylinders",
+    y = "Miles/gallon",
+    x = "Horsepower"
+  ) +
+  theme(legend.position = c(0.75, 0.8), legend.direction = "horizontal")
+
+p
+ggsave("figs/teaser-mtcars-lines.pdf", device = cairo_pdf)
+```
+
+### Logit dotplots
+
+Fit model:
+
+```{r}
+gentoo = penguins %>%
+  filter(species == "Gentoo", !is.na(sex))
+
+m = glm(sex == "male" ~ body_mass_g, data = gentoo, family = binomial)
+m
+```
+
+Logit dotplots:
+
+```{r teaser_logit_dotplots, fig.width = 5, fig.height = 1.75}
+# construct a prediction grid for the fit line
+prediction_grid = with(gentoo, 
+  data.frame(body_mass_g = seq(min(body_mass_g), max(body_mass_g), length.out = 100))
+)
+
+p = prediction_grid %>%
+  bind_cols(predict(m, ., se.fit = TRUE)) %>%
+  mutate(
+    # distribution describing uncertainty in log odds
+    log_odds = dist_normal(fit, se.fit),
+    # inverse-logit transform the log odds to get
+    # distribution describing uncertainty in Pr(sex == "male")
+    p_male = dist_transformed(log_odds, plogis, qlogis)
+  ) %>%
+  ggplot(aes(x = body_mass_g)) +
+  geom_dots(
+    aes(y = as.numeric(sex == "male"), side = sex),
+    scale = 0.5,
+    data = gentoo
+  ) +
+  stat_lineribbon(
+    aes(ydist = p_male), alpha = 1/4, fill = "#08306b"
+  ) +
+  scale_side_mirrored(guide = "none") +
+  coord_cartesian(ylim = c(0, 1)) +
+  labs(
+    x = "Body mass (g) of Gentoo penguins",
+    y = "Pr(sex = male)"
+  )
+  
+p
+ggsave("figs/teaser-logit_dotplots.pdf", device = cairo_pdf)
+```
+
+
+
+## Setting the stage
+
+### A simplified notation for the grammar of graphics
+
+We're going to use a slightly modified version of the mtcars dataset:
+
+```{r cars}
+cars = mtcars |>
+  mutate(weight = wt)
+```
+
+We can generate a nice scatterplot of it:
+
+```{r 2-mpg_v_weight, fig.height = 2, fig.width = 2.5}
+p = cars |>
+  ggplot(aes(x = weight, y = mpg)) +
+  geom_point()
+p
+
+ggsave("figs/2-mpg_v_weight.pdf", device = cairo_pdf)
+```
+
+### Uncertainty as she is spoke
+
+The (mean, sd) approach:
+
+```{r 2-mean_sd_interval, fig.height = 1.25, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval(.width = .95) +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.95, 2.95)) +
+  label_(label = "italic(mu)", x = 0, y = 0.19, hjust = 0.5, parse = TRUE) +
+  bracket_(x = 0, xend = 1, y = -0.18) +
+  label_(label = "italic(sigma)", x = 0.5, y = -0.34, hjust = 0.5, parse = TRUE) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/2-mean_sd_interval.pdf", device = cairo_pdf)
+```
+
+The magic numbers approach:
+
+```{r 2-xmin_xmax_interval, fig.height = 1.25, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval(.width = .95, justification = 0.55) +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.95, 2.95)) +
+  label_(label = "italic(mu)", x = 0, y = 0.17, hjust = 0.5, parse = TRUE) +
+  arrow_(x = -1.96, y = -0.2, yend = -0.06) +
+  label_(label = "italic(mu - 1.96%.%sigma)", x = -1.96, y = -0.32, hjust = 0.5, parse = TRUE) +
+  arrow_(x = 1.96, y = -0.2, yend = -0.06) +
+  label_(label = "italic(mu + 1.96%.%sigma)", x = 1.96, y = -0.32, hjust = 0.5, parse = TRUE) +
+  labs(y = NULL, x= NULL) 
+
+p
+ggsave("figs/2-xmin_xmax_interval.pdf", device = cairo_pdf)
+```
+
+## Distributional vis
+
+### Intervals
+
+Interval with manually-calculated quantile interval:
+
+```{r 3-geom_pointinterval_quantiles, fig.height = 1.75, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval(.width = .95, justification = 0.65) +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.95, 2.95)) +
+  label_(label = "median(italic(M))", x = 0, y = 0.15, hjust = 0.5, parse = TRUE) +
+  arrow_(x = -1.96, y = -0.2, yend = -0.04) +
+  label_(label = "{italic(F)[italic(M)]^{-1}}~bgroup('[', over(1 - gamma, 2), ']')", x = -1.96, y = -0.42, hjust = 0.5, parse = TRUE) +
+  arrow_(x = 1.96, y = -0.2, yend = -0.04) +
+  label_(label = "{italic(F)[italic(M)]^{-1}}~bgroup('[', over(1 + gamma, 2), ']')", x = 1.96, y = -0.42, hjust = 0.5, parse = TRUE) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/3-geom_pointinterval_quantiles.pdf", device = cairo_pdf)
+```
+Two intervals using mass mapped onto linewidth (still manually calculated):
+
+```{r 3-stat_pointinterval_linewidth, fig.height = 2.5, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval() +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.5, 2.5)) +
+  bracket_(x = -1.96, xend = 1.96, y = 0.07) +
+  label_(label = "γ = 0.95", x = -1.72, y = 0.12, hjust = 0, vjust = 0) +
+  bracket_(x = -0.95, xend = 0.95, y = -0.07) +
+  label_(label = "γ = 0.66", x = -0.67, y = -0.12, hjust = 0, vjust = 1) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/3-stat_pointinterval_linewidth.pdf", device = cairo_pdf)
+```
+
+Three intervals using mass mapped onto color:
+
+```{r 3-stat_pointinterval_color, fig.height = 1.25, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval(aes(interval_color = after_stat(level)), linewidth = 18, .width = c(.5, .8, .95)) +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.5, 2.5)) +
+  scale_color_discrete_sequential(palette = "Light Grays", aesthetics = "interval_color", nmax = 4) +
+  labs(y = NULL, x = NULL, interval_color = "mass")
+
+p
+ggsave("figs/3-stat_pointinterval_color.pdf", device = cairo_pdf)
+```
+Two intervals on distribution $M$:
+
+```{r 3-stat_pointinterval_A, fig.height = 1.75, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval() +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.5, 2.5)) +
+  label_(label = "italic(M)", x = 0, y = 0.15, hjust = 0.5, vjust = 1, parse = TRUE) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/3-stat_pointinterval_A.pdf", device = cairo_pdf)
+```
+
+Two intervals on distribution $\textrm{Normal}(\mu, \sigma)$:
+
+```{r 3-stat_pointinterval_normal, fig.height = 1.75, fig.width = 2.5}
+p = data.frame(a = dist_normal(0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval() +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.5, 2.5)) +
+  label_(label = "Normal(italic(mu), italic(sigma))", x = 0, y = 0.17, hjust = 0.5, vjust = 1, parse = TRUE) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/3-stat_pointinterval_normal.pdf", device = cairo_pdf)
+```
+
+
+```{r 3-stat_pointinterval_student_t, fig.height = 1, fig.width = 2.5}
+p = data.frame(a = dist_student_t(6, 0, 1)) |>
+  ggplot(aes(xdist = a)) +
+  stat_pointinterval() +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL, limits = c(-2.5, 2.5)) +
+  label_(label = "italic(t[nu])(italic(mu), italic(sigma))", x = 0, y = 0.4, hjust = 0.5, vjust = 1, parse = TRUE) +
+  labs(y = NULL, x = NULL)
+
+p
+ggsave("figs/3-stat_pointinterval_student_t.pdf", device = cairo_pdf)
+```
+
+### Ribbons
+
+Build the model:
+
+```{r}
+m_mpg = brm(
+  mpg ~ weight, 
+  family = lognormal, 
+  data = cars, 
+  iter = 5000, 
+  cores = 4, 
+  file = "models/m_mpg.rds",
+  seed = 3142013
+)
+```
+
+And generate the predictions:
+
+```{r}
+set.seed(9304929)
+preds = data.frame(weight = seq(min(cars$weight), max(cars$weight), length.out = 100))
+preds = preds |>
+  mutate(mpg_given_weight = rvar(posterior_predict(m_mpg, preds)))
+head(preds)
+```
+
+Now the vis:
+
+```{r 3-lineribbon, fig.width = 2.5, fig.height = 2}
+p = preds |>
+  ggplot(aes(x = weight)) +
+  stat_lineribbon(aes(ydist = mpg_given_weight), linewidth = 0.75) +
+  geom_point(aes(y = mpg), data = cars, color = alpha("black", 0.65), stroke = 0.65, shape = 21, fill = alpha("white", 0.35), size = 1.25) +
+  scale_fill_discrete_sequential(palette = "Light Grays", nmax = 4) +
+  guides(fill = "none")
+
+p
+ggsave("figs/3-lineribbon.pdf", device = cairo_pdf)
+```
+
+lineribbon fan:
+
+```{r 3-lineribbon_fan, fig.width = 2.5, fig.height = 2}
+p = preds |>
+  ggplot(aes(x = weight)) +
+  stat_lineribbon(aes(ydist = mpg_given_weight, fill = after_stat(.width)), linewidth = 0.75, .width = ppoints(100)) +
+  geom_point(aes(y = mpg), data = cars, color = alpha("black", 0.65), stroke = 0.65, shape = 21, fill = alpha("white", 0.35), size = 1.25) +
+  scale_fill_gradient(low = "gray25", high = "white") +
+  guides(fill = "none")
+
+p
+ggsave("figs/3-lineribbon_fan.pdf", device = cairo_pdf)
+```
+
+### Slabs
+
+Two density plots:
+
+```{r slab_density_two_groups, fig.width = 2.5, fig.height = 2}
+two_a = data.frame(
+  nu = c(8, 60),
+  mu = c(6, 1),
+  sigma = c(1.6, 1.1),
+  group = factor(c("a", "b"))
+)
+
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab() +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5, side = "top") +
+  bracket_(x = 14, y = 2, yend = 2.9) +
+  bracket_(x = 14, y = 1, yend = 1.9) +
+  label_(x = 13.5, y = 2.5, label = "thickness", fontface = "italic", hjust = 1, vjust = 0.9) +
+  label_(x = 13.5, y = c(1.01, 2.01), label = "0", hjust = 1, vjust = 0.2) +
+  label_(x = 13.5, y = c(1.92, 2.92), label = "max(italic(f[M](x)))", parse = TRUE, hjust = 1, vjust = 0.8) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_density_two_groups.pdf", device = cairo_pdf)
+```
+
+Color gradient density plots:
+
+```{r slab_gradient_two_groups, fig.width = 2.5, fig.height = 1.25}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(alpha = !!p_(x)), thickness = 1, side = "both", fill_type = "gradient", scale = 0.7) +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_alpha_continuous(range = c(0, 1), guide = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_gradient_two_groups.pdf", device = cairo_pdf)
+```
+
+Correll gradients
+
+```{r slab_gradient_correll, fig.width = 2.5, fig.height = 1.25}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(alpha = - pmax(abs(2*!!Pr_(X <= x) - 1), .95)), thickness = 1, side = "both", fill_type = "gradient", scale = 0.7) +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_alpha_continuous(range = c(0, 1), guide = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_gradient_correll.pdf", device = cairo_pdf)
+```
+
+Consonance curve
+
+```{r slab_consonance, fig.width = 2.5, fig.height = 1.5}
+p = two_a |>
+  filter(group == "a") |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = 0, thickness = 1 - abs(2*!!Pr_(X < x) - 1))) +
+  stat_slab(scale = 1) +
+  stat_pointinterval(aes(thickness = NULL), .width = c(0.5, .95), side = "top", point_size = 0, color = label_color) +
+  geom_hline(yintercept = c(0.05, 0.5), color = label_color, alpha = 0.25, linetype = "22") +
+  stat_spike(at = \(x) qi(x, .width = .5), n = 1001, scale = 1, size = 0, color = label_color, alpha = 0.5) +
+  stat_spike(at = \(x) qi(x, .width = .95), n = 1001, scale = 1, size = 0, color = label_color, alpha = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14), expand = expansion(0)) +
+  scale_y_continuous(expand = expansion(0.05), limits = c(0, 1), breaks = c(0, 1)) +
+  label_(x = -2.7, y = c(0.05, 0.5) + .04, label = c("0.05", "0.50"), hjust = 0, vjust = 0) +
+  label_(x = c(9.8,7.3), y = c(0.05, 0.5) + .04, label = c("95% CI", "50% CI"), hjust = 0, vjust = 0) +
+  scale_thickness_shared() +
+  labs(
+    x = NULL, 
+    y = quote(1 - abs(2 * italic(F)[italic(M)](italic(x)) - 1))
+  ) +
+  theme(axis.title.y.left = element_text(family = "serif", color = label_color))
+
+p
+ggsave("figs/3-slab_consonance.pdf", device = cairo_pdf)
+```
+
+Helske violin gradients
+
+```{r slab_violin_gradient, fig.width = 2.5, fig.height = 1.5}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(alpha = - pmax(abs(2*!!Pr_(X <= x) - 1), .85)), side = "both", fill_type = "gradient") +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_alpha_continuous(range = c(0, 1), guide = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_violin_gradient.pdf", device = cairo_pdf)
+```
+
+Helske-like violin intervals:
+
+```{r slab_violin_interval, fig.width = 2.5, fig.height = 1.5}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(fill = after_stat(level)), side = "both", .width = c(.5, .8, .95, 1)) +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_fill_discrete_sequential(palette = "Light Grays", nmax = 6) +
+  guides(fill = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_violin_interval.pdf", device = cairo_pdf)
+```
+
+Raindrop plots:
+
+```{r slab_raindrop, fig.width = 2.5, fig.height = 1.5}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(thickness = ifelse(.width <= .95, log(!!p_(x)), NA)), normalize = "groups", .width = .95, linewidth = 0.5, side = "both") +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  guides(alpha = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_raindrop.pdf", device = cairo_pdf)
+```
+
+Fuzzygrams:
+
+```{r slab_fuzzygram, fig.width = 2.5, fig.height = 1.25}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(alpha = !!Pr_(X > x)), thickness = 1, side = "both", fill_type = "gradient", scale = 0.7) +
+  stat_pointinterval(.width = 0.66, linewidth = 0.5) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14), expand = expansion(0)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_alpha_continuous(range = c(0, 1), guide = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-slab_fuzzygram.pdf", device = cairo_pdf)
+```
+
+Regions of practical equivalence:
+
+```{r slab_rope, fig.width = 2.5, fig.height = 2}
+two_a_zero = data.frame(
+  nu = c(5, 60),
+  mu = c(5, 0),
+  sigma = c(1.3, 1.1),
+  group = factor(c("a", "b"))
+)
+
+p = two_a_zero |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(fill = after_stat(abs(x) < 2))) +
+  # stat_pointinterval(.width = 0.66, linewidth = 0.5, color = label_color) +
+  scale_x_continuous(breaks = seq(-2, 14, by = 2)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_fill_manual(
+    values = c("FALSE" = "gray80", "TRUE" = blue_), 
+    guide = guide_legend(reverse = TRUE, title.hjust = 1)
+  ) +
+  labs(x = NULL, fill = "|x| < 2") +
+  theme(legend.position = c(0.75,0.75))
+
+p
+ggsave("figs/3-slab_rope.pdf", device = cairo_pdf)
+```
+
+### Dotplots
+
+Two dotplots:
+
+```{r dots_two, fig.width = 2.5, fig.height = 1.65}
+p = two_a_zero |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_dots(quantiles = 100) +
+  scale_x_continuous(breaks = seq(-2, 14, by = 2)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  labs(x = NULL)
+
+p
+ggsave("figs/3-dots_two.pdf", device = cairo_pdf)
+```
+
+Dotplots with emoji:
+
+```{r dots_emoji, fig.width = 2.5, fig.height = 1.65}
+p = two_a_zero |>
+  filter(group == "b") |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma))) +
+  # geom_vline(xintercept = 0, color = "gray85", linewidth = 0.25) +
+  stat_dots(aes(shape = after_stat(x > 0)), quantiles = 50, stackratio = 1.1, dotsize = 0.9) +
+  scale_x_continuous(breaks = seq(-4, 4, by = 2), limits = c(-4, 4)) +
+  scale_y_continuous(breaks = NULL, expand = expansion(0.01)) +
+  scale_shape_manual(
+    values = c("FALSE" = "😧", "TRUE" = "🙂"), 
+    guide = guide_legend(reverse = TRUE, title.hjust = 0.92, override.aes = list(linewidth = 3))
+  ) +
+  labs(x = NULL, y = NULL) +
+  theme(
+    legend.position = c(0.85,0.8), 
+    legend.spacing.x = unit(4, 'pt'), 
+    legend.spacing.y = unit(4, 'pt'), 
+    legend.key.size = unit(14, "pt")
+  ) 
+
+p
+ggsave("figs/3-dots_emoji.png", device = agg_png, dpi = 900)
+```
+
+## Implementation
+
+Helske-esque interval-density plots used for the implementation figure:
+
+```{r slab_implementation, fig.width = 2.5, fig.height = 1.5}
+p = two_a |>
+  ggplot(aes(xdist = dist_student_t(nu, mu, sigma), y = group)) +
+  stat_slab(aes(fill = after_stat(level)), .width = c(.5, .8, .95, 1)) +
+  # scale_x_continuous(breaks = seq(0, 14, by = 3), limits = c(-3, 14)) +
+  scale_x_continuous(breaks = NULL, limits = c(-3, 14)) +
+  scale_y_discrete(expand = expansion(0.15)) +
+  scale_fill_discrete_sequential(palette = "Light Grays", nmax = 6) +
+  guides(fill = "none") +
+  labs(x = NULL)
+
+p
+ggsave("figs/4-slab.pdf", device = cairo_pdf)
+```
+
+
+## Lessons learned
+
+### Jacobians
+
+Log-normal distribution on the original scale (using `stat_function()`):
+
+```{r 3-jacobian-lognorm, fig.width=2.5, fig.height = 1.25}
+p = ggplot() +
+  stat_function(fun = \(x) dlnorm(x, 0, 1), n = 1000, fill = "gray75", geom = "area") +
+  geom_vline(xintercept = 1, color = label_color, linewidth = 0.5) +
+  label_(x = 1.4, y = 0.675, label = "median", vjust = 1, hjust = 0) +
+  scale_x_continuous(limits = c(0, 10), breaks = 0:10) +
+  scale_y_continuous(breaks = NULL) +
+  labs(x = NULL, y = NULL)
+
+p
+ggsave("figs/3-jacobian-lognorm.pdf", device = cairo_pdf)
+```
+
+Incorrect log-normal distribution on the log scale (using `stat_function()`):
+
+```{r 3-jacobian-incorrect, fig.width=2.5, fig.height = 1.25}
+p = ggplot() +
+  stat_function(fun = \(x) dlnorm(x, 0, 1), n = 1000, geom = "area", fill = "gray75") +
+  geom_vline(xintercept = 1, color = label_color, linewidth = 0.5) +
+  label_(x = 1.4, y = 0.675, label = "median should\nbe here???", vjust = 1, hjust = 0) +
+  scale_x_log10(limits = 10^c(-2,2), breaks = 10^(-2:2), labels = as.character) +
+  scale_y_continuous(breaks = NULL) +
+  labs(x = NULL, y = NULL)
+
+p
+ggsave("figs/3-jacobian-incorrect.pdf", device = cairo_pdf)
+```
+
+Correct log-normal distribution on the log scale (using `stat_slab()`):
+
+```{r 3-jacobian-correct, fig.width=2.5, fig.height = 1.25}
+p = ggplot() +
+  stat_slab(aes(xdist = dist_lognormal(0, 1)), scale = 1, fill = "gray75") +
+  geom_vline(xintercept = 1, color = label_color, linewidth = 0.5) +
+  label_(x = 1.75, y = 1.1, label = "median is here :)", vjust = 1) +
+  scale_x_log10(limits = 10^c(-2,2), breaks = 10^(-2:2), labels = as.character) +
+  scale_y_continuous(breaks = NULL) +
+  labs(x = NULL, y = NULL)
+  
+p
+ggsave("figs/3-jacobian-correct.pdf", device = cairo_pdf)
+```
+
+
+
+## Session Info
+
+This file was built with the following setup:
+
+```{r session info}
+sessionInfo()
+```

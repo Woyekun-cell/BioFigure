@@ -1,0 +1,1387 @@
+"tissue","ba","fraction","count","aminoacid","OH"
+"adrenal gland","Ala_OH3",0,0,"Ala",3
+"blood","Ala_OH3",0,0,"Ala",3
+"brain","Ala_OH3",0,0,"Ala",3
+"caecum","Ala_OH3",0.0393258426966292,7,"Ala",3
+"colon","Ala_OH3",0,0,"Ala",3
+"digestive tract","Ala_OH3",0.0224719101123595,4,"Ala",3
+"duodenum","Ala_OH3",0,0,"Ala",3
+"esophagus","Ala_OH3",0,0,"Ala",3
+"feces","Ala_OH3",0.00561797752808989,1,"Ala",3
+"gall bladder","Ala_OH3",0.932584269662921,166,"Ala",3
+"heart","Ala_OH3",0,0,"Ala",3
+"ileum","Ala_OH3",0,0,"Ala",3
+"jejunum","Ala_OH3",0,0,"Ala",3
+"kidney","Ala_OH3",0,0,"Ala",3
+"liver","Ala_OH3",0,0,"Ala",3
+"lower digestive tract","Ala_OH3",0,0,"Ala",3
+"lung","Ala_OH3",0,0,"Ala",3
+"milk","Ala_OH3",0,0,"Ala",3
+"nasal cavity","Ala_OH3",0,0,"Ala",3
+"not applicable","Ala_OH3",0,0,"Ala",3
+"not specified","Ala_OH3",0,0,"Ala",3
+"oral cavity","Ala_OH3",0,0,"Ala",3
+"ovary","Ala_OH3",0,0,"Ala",3
+"pancreas","Ala_OH3",0,0,"Ala",3
+"skin","Ala_OH3",0,0,"Ala",3
+"spleen","Ala_OH3",0,0,"Ala",3
+"stomach","Ala_OH3",0,0,"Ala",3
+"thymus","Ala_OH3",0,0,"Ala",3
+"trachea","Ala_OH3",0,0,"Ala",3
+"upper digestive tract","Ala_OH3",0,0,"Ala",3
+"urine","Ala_OH3",0,0,"Ala",3
+"uterus","Ala_OH3",0,0,"Ala",3
+"vagina","Ala_OH3",0,0,"Ala",3
+"adrenal gland","Arg_OH3",0,0,"Arg",3
+"blood","Arg_OH3",0,0,"Arg",3
+"brain","Arg_OH3",0,0,"Arg",3
+"caecum","Arg_OH3",0.0975609756097561,20,"Arg",3
+"colon","Arg_OH3",0.0048780487804878,1,"Arg",3
+"digestive tract","Arg_OH3",0.0048780487804878,1,"Arg",3
+"duodenum","Arg_OH3",0.0878048780487805,18,"Arg",3
+"esophagus","Arg_OH3",0,0,"Arg",3
+"feces","Arg_OH3",0.278048780487805,57,"Arg",3
+"gall bladder","Arg_OH3",0.0585365853658537,12,"Arg",3
+"heart","Arg_OH3",0,0,"Arg",3
+"ileum","Arg_OH3",0.0829268292682927,17,"Arg",3
+"jejunum","Arg_OH3",0.180487804878049,37,"Arg",3
+"kidney","Arg_OH3",0,0,"Arg",3
+"liver","Arg_OH3",0,0,"Arg",3
+"lower digestive tract","Arg_OH3",0,0,"Arg",3
+"lung","Arg_OH3",0,0,"Arg",3
+"milk","Arg_OH3",0,0,"Arg",3
+"nasal cavity","Arg_OH3",0,0,"Arg",3
+"not applicable","Arg_OH3",0,0,"Arg",3
+"not specified","Arg_OH3",0,0,"Arg",3
+"oral cavity","Arg_OH3",0,0,"Arg",3
+"ovary","Arg_OH3",0,0,"Arg",3
+"pancreas","Arg_OH3",0,0,"Arg",3
+"skin","Arg_OH3",0,0,"Arg",3
+"spleen","Arg_OH3",0,0,"Arg",3
+"stomach","Arg_OH3",0,0,"Arg",3
+"thymus","Arg_OH3",0,0,"Arg",3
+"trachea","Arg_OH3",0,0,"Arg",3
+"upper digestive tract","Arg_OH3",0.204878048780488,42,"Arg",3
+"urine","Arg_OH3",0,0,"Arg",3
+"uterus","Arg_OH3",0,0,"Arg",3
+"vagina","Arg_OH3",0,0,"Arg",3
+"adrenal gland","Asn_OH3",0,0,"Asn",3
+"blood","Asn_OH3",0,0,"Asn",3
+"brain","Asn_OH3",0,0,"Asn",3
+"caecum","Asn_OH3",0,0,"Asn",3
+"colon","Asn_OH3",0,0,"Asn",3
+"digestive tract","Asn_OH3",0,0,"Asn",3
+"duodenum","Asn_OH3",0,0,"Asn",3
+"esophagus","Asn_OH3",0,0,"Asn",3
+"feces","Asn_OH3",0.0277777777777778,1,"Asn",3
+"gall bladder","Asn_OH3",0.75,27,"Asn",3
+"heart","Asn_OH3",0,0,"Asn",3
+"ileum","Asn_OH3",0.138888888888889,5,"Asn",3
+"jejunum","Asn_OH3",0.0833333333333333,3,"Asn",3
+"kidney","Asn_OH3",0,0,"Asn",3
+"liver","Asn_OH3",0,0,"Asn",3
+"lower digestive tract","Asn_OH3",0,0,"Asn",3
+"lung","Asn_OH3",0,0,"Asn",3
+"milk","Asn_OH3",0,0,"Asn",3
+"nasal cavity","Asn_OH3",0,0,"Asn",3
+"not applicable","Asn_OH3",0,0,"Asn",3
+"not specified","Asn_OH3",0,0,"Asn",3
+"oral cavity","Asn_OH3",0,0,"Asn",3
+"ovary","Asn_OH3",0,0,"Asn",3
+"pancreas","Asn_OH3",0,0,"Asn",3
+"skin","Asn_OH3",0,0,"Asn",3
+"spleen","Asn_OH3",0,0,"Asn",3
+"stomach","Asn_OH3",0,0,"Asn",3
+"thymus","Asn_OH3",0,0,"Asn",3
+"trachea","Asn_OH3",0,0,"Asn",3
+"upper digestive tract","Asn_OH3",0,0,"Asn",3
+"urine","Asn_OH3",0,0,"Asn",3
+"uterus","Asn_OH3",0,0,"Asn",3
+"vagina","Asn_OH3",0,0,"Asn",3
+"adrenal gland","Asp_OH3",0,0,"Asp",3
+"blood","Asp_OH3",0,0,"Asp",3
+"brain","Asp_OH3",0,0,"Asp",3
+"caecum","Asp_OH3",0,0,"Asp",3
+"colon","Asp_OH3",0,0,"Asp",3
+"digestive tract","Asp_OH3",0,0,"Asp",3
+"duodenum","Asp_OH3",0,0,"Asp",3
+"esophagus","Asp_OH3",0,0,"Asp",3
+"feces","Asp_OH3",1,3,"Asp",3
+"gall bladder","Asp_OH3",0,0,"Asp",3
+"heart","Asp_OH3",0,0,"Asp",3
+"ileum","Asp_OH3",0,0,"Asp",3
+"jejunum","Asp_OH3",0,0,"Asp",3
+"kidney","Asp_OH3",0,0,"Asp",3
+"liver","Asp_OH3",0,0,"Asp",3
+"lower digestive tract","Asp_OH3",0,0,"Asp",3
+"lung","Asp_OH3",0,0,"Asp",3
+"milk","Asp_OH3",0,0,"Asp",3
+"nasal cavity","Asp_OH3",0,0,"Asp",3
+"not applicable","Asp_OH3",0,0,"Asp",3
+"not specified","Asp_OH3",0,0,"Asp",3
+"oral cavity","Asp_OH3",0,0,"Asp",3
+"ovary","Asp_OH3",0,0,"Asp",3
+"pancreas","Asp_OH3",0,0,"Asp",3
+"skin","Asp_OH3",0,0,"Asp",3
+"spleen","Asp_OH3",0,0,"Asp",3
+"stomach","Asp_OH3",0,0,"Asp",3
+"thymus","Asp_OH3",0,0,"Asp",3
+"trachea","Asp_OH3",0,0,"Asp",3
+"upper digestive tract","Asp_OH3",0,0,"Asp",3
+"urine","Asp_OH3",0,0,"Asp",3
+"uterus","Asp_OH3",0,0,"Asp",3
+"vagina","Asp_OH3",0,0,"Asp",3
+"adrenal gland","Cit_OH3",0,0,"Cit",3
+"blood","Cit_OH3",0,0,"Cit",3
+"brain","Cit_OH3",0,0,"Cit",3
+"caecum","Cit_OH3",0.333333333333333,3,"Cit",3
+"colon","Cit_OH3",0,0,"Cit",3
+"digestive tract","Cit_OH3",0,0,"Cit",3
+"duodenum","Cit_OH3",0,0,"Cit",3
+"esophagus","Cit_OH3",0,0,"Cit",3
+"feces","Cit_OH3",0.444444444444444,4,"Cit",3
+"gall bladder","Cit_OH3",0.222222222222222,2,"Cit",3
+"heart","Cit_OH3",0,0,"Cit",3
+"ileum","Cit_OH3",0,0,"Cit",3
+"jejunum","Cit_OH3",0,0,"Cit",3
+"kidney","Cit_OH3",0,0,"Cit",3
+"liver","Cit_OH3",0,0,"Cit",3
+"lower digestive tract","Cit_OH3",0,0,"Cit",3
+"lung","Cit_OH3",0,0,"Cit",3
+"milk","Cit_OH3",0,0,"Cit",3
+"nasal cavity","Cit_OH3",0,0,"Cit",3
+"not applicable","Cit_OH3",0,0,"Cit",3
+"not specified","Cit_OH3",0,0,"Cit",3
+"oral cavity","Cit_OH3",0,0,"Cit",3
+"ovary","Cit_OH3",0,0,"Cit",3
+"pancreas","Cit_OH3",0,0,"Cit",3
+"skin","Cit_OH3",0,0,"Cit",3
+"spleen","Cit_OH3",0,0,"Cit",3
+"stomach","Cit_OH3",0,0,"Cit",3
+"thymus","Cit_OH3",0,0,"Cit",3
+"trachea","Cit_OH3",0,0,"Cit",3
+"upper digestive tract","Cit_OH3",0,0,"Cit",3
+"urine","Cit_OH3",0,0,"Cit",3
+"uterus","Cit_OH3",0,0,"Cit",3
+"vagina","Cit_OH3",0,0,"Cit",3
+"adrenal gland","Cys_OH3",0,0,"Cys",3
+"blood","Cys_OH3",0,0,"Cys",3
+"brain","Cys_OH3",0,0,"Cys",3
+"caecum","Cys_OH3",0,0,"Cys",3
+"colon","Cys_OH3",0,0,"Cys",3
+"digestive tract","Cys_OH3",0,0,"Cys",3
+"duodenum","Cys_OH3",0,0,"Cys",3
+"esophagus","Cys_OH3",0,0,"Cys",3
+"feces","Cys_OH3",0,0,"Cys",3
+"gall bladder","Cys_OH3",0,0,"Cys",3
+"heart","Cys_OH3",0,0,"Cys",3
+"ileum","Cys_OH3",0,0,"Cys",3
+"jejunum","Cys_OH3",0,0,"Cys",3
+"kidney","Cys_OH3",0,0,"Cys",3
+"liver","Cys_OH3",0,0,"Cys",3
+"lower digestive tract","Cys_OH3",0,0,"Cys",3
+"lung","Cys_OH3",0,0,"Cys",3
+"milk","Cys_OH3",0,0,"Cys",3
+"nasal cavity","Cys_OH3",0,0,"Cys",3
+"not applicable","Cys_OH3",0,0,"Cys",3
+"not specified","Cys_OH3",0,0,"Cys",3
+"oral cavity","Cys_OH3",0,0,"Cys",3
+"ovary","Cys_OH3",0,0,"Cys",3
+"pancreas","Cys_OH3",0,0,"Cys",3
+"skin","Cys_OH3",0,0,"Cys",3
+"spleen","Cys_OH3",0,0,"Cys",3
+"stomach","Cys_OH3",0,0,"Cys",3
+"thymus","Cys_OH3",0,0,"Cys",3
+"trachea","Cys_OH3",0,0,"Cys",3
+"upper digestive tract","Cys_OH3",0,0,"Cys",3
+"urine","Cys_OH3",0,0,"Cys",3
+"uterus","Cys_OH3",0,0,"Cys",3
+"vagina","Cys_OH3",0,0,"Cys",3
+"adrenal gland","Gln_OH3",0,0,"Gln",3
+"blood","Gln_OH3",0,0,"Gln",3
+"brain","Gln_OH3",0,0,"Gln",3
+"caecum","Gln_OH3",0,0,"Gln",3
+"colon","Gln_OH3",0,0,"Gln",3
+"digestive tract","Gln_OH3",0,0,"Gln",3
+"duodenum","Gln_OH3",0,0,"Gln",3
+"esophagus","Gln_OH3",0,0,"Gln",3
+"feces","Gln_OH3",0.666666666666667,4,"Gln",3
+"gall bladder","Gln_OH3",0.333333333333333,2,"Gln",3
+"heart","Gln_OH3",0,0,"Gln",3
+"ileum","Gln_OH3",0,0,"Gln",3
+"jejunum","Gln_OH3",0,0,"Gln",3
+"kidney","Gln_OH3",0,0,"Gln",3
+"liver","Gln_OH3",0,0,"Gln",3
+"lower digestive tract","Gln_OH3",0,0,"Gln",3
+"lung","Gln_OH3",0,0,"Gln",3
+"milk","Gln_OH3",0,0,"Gln",3
+"nasal cavity","Gln_OH3",0,0,"Gln",3
+"not applicable","Gln_OH3",0,0,"Gln",3
+"not specified","Gln_OH3",0,0,"Gln",3
+"oral cavity","Gln_OH3",0,0,"Gln",3
+"ovary","Gln_OH3",0,0,"Gln",3
+"pancreas","Gln_OH3",0,0,"Gln",3
+"skin","Gln_OH3",0,0,"Gln",3
+"spleen","Gln_OH3",0,0,"Gln",3
+"stomach","Gln_OH3",0,0,"Gln",3
+"thymus","Gln_OH3",0,0,"Gln",3
+"trachea","Gln_OH3",0,0,"Gln",3
+"upper digestive tract","Gln_OH3",0,0,"Gln",3
+"urine","Gln_OH3",0,0,"Gln",3
+"uterus","Gln_OH3",0,0,"Gln",3
+"vagina","Gln_OH3",0,0,"Gln",3
+"adrenal gland","Glu_OH3",0,0,"Glu",3
+"blood","Glu_OH3",0,0,"Glu",3
+"brain","Glu_OH3",0,0,"Glu",3
+"caecum","Glu_OH3",0.099009900990099,10,"Glu",3
+"colon","Glu_OH3",0,0,"Glu",3
+"digestive tract","Glu_OH3",0,0,"Glu",3
+"duodenum","Glu_OH3",0,0,"Glu",3
+"esophagus","Glu_OH3",0,0,"Glu",3
+"feces","Glu_OH3",0.891089108910891,90,"Glu",3
+"gall bladder","Glu_OH3",0,0,"Glu",3
+"heart","Glu_OH3",0,0,"Glu",3
+"ileum","Glu_OH3",0.0099009900990099,1,"Glu",3
+"jejunum","Glu_OH3",0,0,"Glu",3
+"kidney","Glu_OH3",0,0,"Glu",3
+"liver","Glu_OH3",0,0,"Glu",3
+"lower digestive tract","Glu_OH3",0,0,"Glu",3
+"lung","Glu_OH3",0,0,"Glu",3
+"milk","Glu_OH3",0,0,"Glu",3
+"nasal cavity","Glu_OH3",0,0,"Glu",3
+"not applicable","Glu_OH3",0,0,"Glu",3
+"not specified","Glu_OH3",0,0,"Glu",3
+"oral cavity","Glu_OH3",0,0,"Glu",3
+"ovary","Glu_OH3",0,0,"Glu",3
+"pancreas","Glu_OH3",0,0,"Glu",3
+"skin","Glu_OH3",0,0,"Glu",3
+"spleen","Glu_OH3",0,0,"Glu",3
+"stomach","Glu_OH3",0,0,"Glu",3
+"thymus","Glu_OH3",0,0,"Glu",3
+"trachea","Glu_OH3",0,0,"Glu",3
+"upper digestive tract","Glu_OH3",0,0,"Glu",3
+"urine","Glu_OH3",0,0,"Glu",3
+"uterus","Glu_OH3",0,0,"Glu",3
+"vagina","Glu_OH3",0,0,"Glu",3
+"adrenal gland","Gly_OH3",0,0,"Gly",3
+"blood","Gly_OH3",0.121338912133891,290,"Gly",3
+"brain","Gly_OH3",0,0,"Gly",3
+"caecum","Gly_OH3",0.0167364016736402,40,"Gly",3
+"colon","Gly_OH3",0.00125523012552301,3,"Gly",3
+"digestive tract","Gly_OH3",0.00585774058577406,14,"Gly",3
+"duodenum","Gly_OH3",0.0305439330543933,73,"Gly",3
+"esophagus","Gly_OH3",0.000418410041841004,1,"Gly",3
+"feces","Gly_OH3",0.304602510460251,728,"Gly",3
+"gall bladder","Gly_OH3",0.261924686192469,626,"Gly",3
+"heart","Gly_OH3",0,0,"Gly",3
+"ileum","Gly_OH3",0.0104602510460251,25,"Gly",3
+"jejunum","Gly_OH3",0.0117154811715481,28,"Gly",3
+"kidney","Gly_OH3",0,0,"Gly",3
+"liver","Gly_OH3",0.00376569037656904,9,"Gly",3
+"lower digestive tract","Gly_OH3",0,0,"Gly",3
+"lung","Gly_OH3",0,0,"Gly",3
+"milk","Gly_OH3",0.000836820083682008,2,"Gly",3
+"nasal cavity","Gly_OH3",0.000418410041841004,1,"Gly",3
+"not applicable","Gly_OH3",0,0,"Gly",3
+"not specified","Gly_OH3",0,0,"Gly",3
+"oral cavity","Gly_OH3",0.0100418410041841,24,"Gly",3
+"ovary","Gly_OH3",0,0,"Gly",3
+"pancreas","Gly_OH3",0,0,"Gly",3
+"skin","Gly_OH3",0.184518828451883,441,"Gly",3
+"spleen","Gly_OH3",0,0,"Gly",3
+"stomach","Gly_OH3",0.00836820083682008,20,"Gly",3
+"thymus","Gly_OH3",0,0,"Gly",3
+"trachea","Gly_OH3",0,0,"Gly",3
+"upper digestive tract","Gly_OH3",0.0251046025104603,60,"Gly",3
+"urine","Gly_OH3",0.00209205020920502,5,"Gly",3
+"uterus","Gly_OH3",0,0,"Gly",3
+"vagina","Gly_OH3",0,0,"Gly",3
+"adrenal gland","His_OH3",0,0,"His",3
+"blood","His_OH3",0.0128755364806867,3,"His",3
+"brain","His_OH3",0,0,"His",3
+"caecum","His_OH3",0.150214592274678,35,"His",3
+"colon","His_OH3",0,0,"His",3
+"digestive tract","His_OH3",0,0,"His",3
+"duodenum","His_OH3",0.0257510729613734,6,"His",3
+"esophagus","His_OH3",0,0,"His",3
+"feces","His_OH3",0.540772532188841,126,"His",3
+"gall bladder","His_OH3",0,0,"His",3
+"heart","His_OH3",0,0,"His",3
+"ileum","His_OH3",0.137339055793991,32,"His",3
+"jejunum","His_OH3",0.133047210300429,31,"His",3
+"kidney","His_OH3",0,0,"His",3
+"liver","His_OH3",0,0,"His",3
+"lower digestive tract","His_OH3",0,0,"His",3
+"lung","His_OH3",0,0,"His",3
+"milk","His_OH3",0,0,"His",3
+"nasal cavity","His_OH3",0,0,"His",3
+"not applicable","His_OH3",0,0,"His",3
+"not specified","His_OH3",0,0,"His",3
+"oral cavity","His_OH3",0,0,"His",3
+"ovary","His_OH3",0,0,"His",3
+"pancreas","His_OH3",0,0,"His",3
+"skin","His_OH3",0,0,"His",3
+"spleen","His_OH3",0,0,"His",3
+"stomach","His_OH3",0,0,"His",3
+"thymus","His_OH3",0,0,"His",3
+"trachea","His_OH3",0,0,"His",3
+"upper digestive tract","His_OH3",0,0,"His",3
+"urine","His_OH3",0,0,"His",3
+"uterus","His_OH3",0,0,"His",3
+"vagina","His_OH3",0,0,"His",3
+"adrenal gland","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"blood","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"brain","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"caecum","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"colon","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"digestive tract","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"duodenum","Ile/Leu_OH3",0.0336134453781513,4,"Ile/Leu",3
+"esophagus","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"feces","Ile/Leu_OH3",0.529411764705882,63,"Ile/Leu",3
+"gall bladder","Ile/Leu_OH3",0.226890756302521,27,"Ile/Leu",3
+"heart","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"ileum","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"jejunum","Ile/Leu_OH3",0.0588235294117647,7,"Ile/Leu",3
+"kidney","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"liver","Ile/Leu_OH3",0.00840336134453781,1,"Ile/Leu",3
+"lower digestive tract","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"lung","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"milk","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"nasal cavity","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"not applicable","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"not specified","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"oral cavity","Ile/Leu_OH3",0.0840336134453782,10,"Ile/Leu",3
+"ovary","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"pancreas","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"skin","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"spleen","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"stomach","Ile/Leu_OH3",0.0336134453781513,4,"Ile/Leu",3
+"thymus","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"trachea","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"upper digestive tract","Ile/Leu_OH3",0.0252100840336134,3,"Ile/Leu",3
+"urine","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"uterus","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"vagina","Ile/Leu_OH3",0,0,"Ile/Leu",3
+"adrenal gland","Lys_OH3",0,0,"Lys",3
+"blood","Lys_OH3",0,0,"Lys",3
+"brain","Lys_OH3",0,0,"Lys",3
+"caecum","Lys_OH3",0.107329842931937,41,"Lys",3
+"colon","Lys_OH3",0,0,"Lys",3
+"digestive tract","Lys_OH3",0,0,"Lys",3
+"duodenum","Lys_OH3",0,0,"Lys",3
+"esophagus","Lys_OH3",0,0,"Lys",3
+"feces","Lys_OH3",0.882198952879581,337,"Lys",3
+"gall bladder","Lys_OH3",0,0,"Lys",3
+"heart","Lys_OH3",0,0,"Lys",3
+"ileum","Lys_OH3",0,0,"Lys",3
+"jejunum","Lys_OH3",0,0,"Lys",3
+"kidney","Lys_OH3",0,0,"Lys",3
+"liver","Lys_OH3",0,0,"Lys",3
+"lower digestive tract","Lys_OH3",0,0,"Lys",3
+"lung","Lys_OH3",0,0,"Lys",3
+"milk","Lys_OH3",0,0,"Lys",3
+"nasal cavity","Lys_OH3",0,0,"Lys",3
+"not applicable","Lys_OH3",0,0,"Lys",3
+"not specified","Lys_OH3",0,0,"Lys",3
+"oral cavity","Lys_OH3",0,0,"Lys",3
+"ovary","Lys_OH3",0,0,"Lys",3
+"pancreas","Lys_OH3",0,0,"Lys",3
+"skin","Lys_OH3",0,0,"Lys",3
+"spleen","Lys_OH3",0,0,"Lys",3
+"stomach","Lys_OH3",0,0,"Lys",3
+"thymus","Lys_OH3",0,0,"Lys",3
+"trachea","Lys_OH3",0,0,"Lys",3
+"upper digestive tract","Lys_OH3",0.0104712041884817,4,"Lys",3
+"urine","Lys_OH3",0,0,"Lys",3
+"uterus","Lys_OH3",0,0,"Lys",3
+"vagina","Lys_OH3",0,0,"Lys",3
+"adrenal gland","Met_OH3",0,0,"Met",3
+"blood","Met_OH3",0,0,"Met",3
+"brain","Met_OH3",0,0,"Met",3
+"caecum","Met_OH3",0.782608695652174,18,"Met",3
+"colon","Met_OH3",0,0,"Met",3
+"digestive tract","Met_OH3",0,0,"Met",3
+"duodenum","Met_OH3",0,0,"Met",3
+"esophagus","Met_OH3",0,0,"Met",3
+"feces","Met_OH3",0.217391304347826,5,"Met",3
+"gall bladder","Met_OH3",0,0,"Met",3
+"heart","Met_OH3",0,0,"Met",3
+"ileum","Met_OH3",0,0,"Met",3
+"jejunum","Met_OH3",0,0,"Met",3
+"kidney","Met_OH3",0,0,"Met",3
+"liver","Met_OH3",0,0,"Met",3
+"lower digestive tract","Met_OH3",0,0,"Met",3
+"lung","Met_OH3",0,0,"Met",3
+"milk","Met_OH3",0,0,"Met",3
+"nasal cavity","Met_OH3",0,0,"Met",3
+"not applicable","Met_OH3",0,0,"Met",3
+"not specified","Met_OH3",0,0,"Met",3
+"oral cavity","Met_OH3",0,0,"Met",3
+"ovary","Met_OH3",0,0,"Met",3
+"pancreas","Met_OH3",0,0,"Met",3
+"skin","Met_OH3",0,0,"Met",3
+"spleen","Met_OH3",0,0,"Met",3
+"stomach","Met_OH3",0,0,"Met",3
+"thymus","Met_OH3",0,0,"Met",3
+"trachea","Met_OH3",0,0,"Met",3
+"upper digestive tract","Met_OH3",0,0,"Met",3
+"urine","Met_OH3",0,0,"Met",3
+"uterus","Met_OH3",0,0,"Met",3
+"vagina","Met_OH3",0,0,"Met",3
+"adrenal gland","Orn_OH3",0,0,"Orn",3
+"blood","Orn_OH3",0,0,"Orn",3
+"brain","Orn_OH3",0,0,"Orn",3
+"caecum","Orn_OH3",0.403846153846154,21,"Orn",3
+"colon","Orn_OH3",0,0,"Orn",3
+"digestive tract","Orn_OH3",0,0,"Orn",3
+"duodenum","Orn_OH3",0,0,"Orn",3
+"esophagus","Orn_OH3",0,0,"Orn",3
+"feces","Orn_OH3",0.557692307692308,29,"Orn",3
+"gall bladder","Orn_OH3",0.0384615384615385,2,"Orn",3
+"heart","Orn_OH3",0,0,"Orn",3
+"ileum","Orn_OH3",0,0,"Orn",3
+"jejunum","Orn_OH3",0,0,"Orn",3
+"kidney","Orn_OH3",0,0,"Orn",3
+"liver","Orn_OH3",0,0,"Orn",3
+"lower digestive tract","Orn_OH3",0,0,"Orn",3
+"lung","Orn_OH3",0,0,"Orn",3
+"milk","Orn_OH3",0,0,"Orn",3
+"nasal cavity","Orn_OH3",0,0,"Orn",3
+"not applicable","Orn_OH3",0,0,"Orn",3
+"not specified","Orn_OH3",0,0,"Orn",3
+"oral cavity","Orn_OH3",0,0,"Orn",3
+"ovary","Orn_OH3",0,0,"Orn",3
+"pancreas","Orn_OH3",0,0,"Orn",3
+"skin","Orn_OH3",0,0,"Orn",3
+"spleen","Orn_OH3",0,0,"Orn",3
+"stomach","Orn_OH3",0,0,"Orn",3
+"thymus","Orn_OH3",0,0,"Orn",3
+"trachea","Orn_OH3",0,0,"Orn",3
+"upper digestive tract","Orn_OH3",0,0,"Orn",3
+"urine","Orn_OH3",0,0,"Orn",3
+"uterus","Orn_OH3",0,0,"Orn",3
+"vagina","Orn_OH3",0,0,"Orn",3
+"adrenal gland","Phe_OH3",0,0,"Phe",3
+"blood","Phe_OH3",0.00280112044817927,1,"Phe",3
+"brain","Phe_OH3",0,0,"Phe",3
+"caecum","Phe_OH3",0.162464985994398,58,"Phe",3
+"colon","Phe_OH3",0.00280112044817927,1,"Phe",3
+"digestive tract","Phe_OH3",0.00560224089635854,2,"Phe",3
+"duodenum","Phe_OH3",0.0588235294117647,21,"Phe",3
+"esophagus","Phe_OH3",0,0,"Phe",3
+"feces","Phe_OH3",0.316526610644258,113,"Phe",3
+"gall bladder","Phe_OH3",0.126050420168067,45,"Phe",3
+"heart","Phe_OH3",0,0,"Phe",3
+"ileum","Phe_OH3",0.061624649859944,22,"Phe",3
+"jejunum","Phe_OH3",0.145658263305322,52,"Phe",3
+"kidney","Phe_OH3",0,0,"Phe",3
+"liver","Phe_OH3",0,0,"Phe",3
+"lower digestive tract","Phe_OH3",0,0,"Phe",3
+"lung","Phe_OH3",0,0,"Phe",3
+"milk","Phe_OH3",0,0,"Phe",3
+"nasal cavity","Phe_OH3",0,0,"Phe",3
+"not applicable","Phe_OH3",0.00560224089635854,2,"Phe",3
+"not specified","Phe_OH3",0,0,"Phe",3
+"oral cavity","Phe_OH3",0,0,"Phe",3
+"ovary","Phe_OH3",0,0,"Phe",3
+"pancreas","Phe_OH3",0,0,"Phe",3
+"skin","Phe_OH3",0,0,"Phe",3
+"spleen","Phe_OH3",0,0,"Phe",3
+"stomach","Phe_OH3",0.0224089635854342,8,"Phe",3
+"thymus","Phe_OH3",0,0,"Phe",3
+"trachea","Phe_OH3",0,0,"Phe",3
+"upper digestive tract","Phe_OH3",0.0868347338935574,31,"Phe",3
+"urine","Phe_OH3",0.00280112044817927,1,"Phe",3
+"uterus","Phe_OH3",0,0,"Phe",3
+"vagina","Phe_OH3",0,0,"Phe",3
+"adrenal gland","Ser_OH3",0,0,"Ser",3
+"blood","Ser_OH3",0,0,"Ser",3
+"brain","Ser_OH3",0,0,"Ser",3
+"caecum","Ser_OH3",0,0,"Ser",3
+"colon","Ser_OH3",0,0,"Ser",3
+"digestive tract","Ser_OH3",0,0,"Ser",3
+"duodenum","Ser_OH3",0,0,"Ser",3
+"esophagus","Ser_OH3",0,0,"Ser",3
+"feces","Ser_OH3",1,14,"Ser",3
+"gall bladder","Ser_OH3",0,0,"Ser",3
+"heart","Ser_OH3",0,0,"Ser",3
+"ileum","Ser_OH3",0,0,"Ser",3
+"jejunum","Ser_OH3",0,0,"Ser",3
+"kidney","Ser_OH3",0,0,"Ser",3
+"liver","Ser_OH3",0,0,"Ser",3
+"lower digestive tract","Ser_OH3",0,0,"Ser",3
+"lung","Ser_OH3",0,0,"Ser",3
+"milk","Ser_OH3",0,0,"Ser",3
+"nasal cavity","Ser_OH3",0,0,"Ser",3
+"not applicable","Ser_OH3",0,0,"Ser",3
+"not specified","Ser_OH3",0,0,"Ser",3
+"oral cavity","Ser_OH3",0,0,"Ser",3
+"ovary","Ser_OH3",0,0,"Ser",3
+"pancreas","Ser_OH3",0,0,"Ser",3
+"skin","Ser_OH3",0,0,"Ser",3
+"spleen","Ser_OH3",0,0,"Ser",3
+"stomach","Ser_OH3",0,0,"Ser",3
+"thymus","Ser_OH3",0,0,"Ser",3
+"trachea","Ser_OH3",0,0,"Ser",3
+"upper digestive tract","Ser_OH3",0,0,"Ser",3
+"urine","Ser_OH3",0,0,"Ser",3
+"uterus","Ser_OH3",0,0,"Ser",3
+"vagina","Ser_OH3",0,0,"Ser",3
+"adrenal gland","Tau_OH3",0.00146935348446683,7,"Tau",3
+"blood","Tau_OH3",0.033375314861461,159,"Tau",3
+"brain","Tau_OH3",0.000209907640638119,1,"Tau",3
+"caecum","Tau_OH3",0.019311502938707,92,"Tau",3
+"colon","Tau_OH3",0.0142737195633921,68,"Tau",3
+"digestive tract","Tau_OH3",0.0107052896725441,51,"Tau",3
+"duodenum","Tau_OH3",0.0323257766582704,154,"Tau",3
+"esophagus","Tau_OH3",0.0125944584382872,60,"Tau",3
+"feces","Tau_OH3",0.390218303946264,1859,"Tau",3
+"gall bladder","Tau_OH3",0.325986565910999,1553,"Tau",3
+"heart","Tau_OH3",0.00146935348446683,7,"Tau",3
+"ileum","Tau_OH3",0.0178421494542401,85,"Tau",3
+"jejunum","Tau_OH3",0.0245591939546599,117,"Tau",3
+"kidney","Tau_OH3",0.00335852225020991,16,"Tau",3
+"liver","Tau_OH3",0.0251889168765743,120,"Tau",3
+"lower digestive tract","Tau_OH3",0.0054575986565911,26,"Tau",3
+"lung","Tau_OH3",0.00314861460957179,15,"Tau",3
+"milk","Tau_OH3",0,0,"Tau",3
+"nasal cavity","Tau_OH3",0,0,"Tau",3
+"not applicable","Tau_OH3",0.00230898404701931,11,"Tau",3
+"not specified","Tau_OH3",0.000209907640638119,1,"Tau",3
+"oral cavity","Tau_OH3",0.00692695214105793,33,"Tau",3
+"ovary","Tau_OH3",0.0010495382031906,5,"Tau",3
+"pancreas","Tau_OH3",0.00398824517212426,19,"Tau",3
+"skin","Tau_OH3",0.00755667506297229,36,"Tau",3
+"spleen","Tau_OH3",0.000839630562552477,4,"Tau",3
+"stomach","Tau_OH3",0.0115449202350966,55,"Tau",3
+"thymus","Tau_OH3",0.000419815281276238,2,"Tau",3
+"trachea","Tau_OH3",0.00167926112510495,8,"Tau",3
+"upper digestive tract","Tau_OH3",0.0356842989084803,170,"Tau",3
+"urine","Tau_OH3",0.00230898404701931,11,"Tau",3
+"uterus","Tau_OH3",0.00314861460957179,15,"Tau",3
+"vagina","Tau_OH3",0.000839630562552477,4,"Tau",3
+"adrenal gland","Thr_OH3",0,0,"Thr",3
+"blood","Thr_OH3",0,0,"Thr",3
+"brain","Thr_OH3",0,0,"Thr",3
+"caecum","Thr_OH3",0.351351351351351,26,"Thr",3
+"colon","Thr_OH3",0,0,"Thr",3
+"digestive tract","Thr_OH3",0,0,"Thr",3
+"duodenum","Thr_OH3",0,0,"Thr",3
+"esophagus","Thr_OH3",0,0,"Thr",3
+"feces","Thr_OH3",0.648648648648649,48,"Thr",3
+"gall bladder","Thr_OH3",0,0,"Thr",3
+"heart","Thr_OH3",0,0,"Thr",3
+"ileum","Thr_OH3",0,0,"Thr",3
+"jejunum","Thr_OH3",0,0,"Thr",3
+"kidney","Thr_OH3",0,0,"Thr",3
+"liver","Thr_OH3",0,0,"Thr",3
+"lower digestive tract","Thr_OH3",0,0,"Thr",3
+"lung","Thr_OH3",0,0,"Thr",3
+"milk","Thr_OH3",0,0,"Thr",3
+"nasal cavity","Thr_OH3",0,0,"Thr",3
+"not applicable","Thr_OH3",0,0,"Thr",3
+"not specified","Thr_OH3",0,0,"Thr",3
+"oral cavity","Thr_OH3",0,0,"Thr",3
+"ovary","Thr_OH3",0,0,"Thr",3
+"pancreas","Thr_OH3",0,0,"Thr",3
+"skin","Thr_OH3",0,0,"Thr",3
+"spleen","Thr_OH3",0,0,"Thr",3
+"stomach","Thr_OH3",0,0,"Thr",3
+"thymus","Thr_OH3",0,0,"Thr",3
+"trachea","Thr_OH3",0,0,"Thr",3
+"upper digestive tract","Thr_OH3",0,0,"Thr",3
+"urine","Thr_OH3",0,0,"Thr",3
+"uterus","Thr_OH3",0,0,"Thr",3
+"vagina","Thr_OH3",0,0,"Thr",3
+"adrenal gland","Trp_OH3",0,0,"Trp",3
+"blood","Trp_OH3",0,0,"Trp",3
+"brain","Trp_OH3",0,0,"Trp",3
+"caecum","Trp_OH3",0.0872093023255814,15,"Trp",3
+"colon","Trp_OH3",0,0,"Trp",3
+"digestive tract","Trp_OH3",0,0,"Trp",3
+"duodenum","Trp_OH3",0.0174418604651163,3,"Trp",3
+"esophagus","Trp_OH3",0,0,"Trp",3
+"feces","Trp_OH3",0.616279069767442,106,"Trp",3
+"gall bladder","Trp_OH3",0.0523255813953488,9,"Trp",3
+"heart","Trp_OH3",0,0,"Trp",3
+"ileum","Trp_OH3",0.0697674418604651,12,"Trp",3
+"jejunum","Trp_OH3",0.156976744186047,27,"Trp",3
+"kidney","Trp_OH3",0,0,"Trp",3
+"liver","Trp_OH3",0,0,"Trp",3
+"lower digestive tract","Trp_OH3",0,0,"Trp",3
+"lung","Trp_OH3",0,0,"Trp",3
+"milk","Trp_OH3",0,0,"Trp",3
+"nasal cavity","Trp_OH3",0,0,"Trp",3
+"not applicable","Trp_OH3",0,0,"Trp",3
+"not specified","Trp_OH3",0,0,"Trp",3
+"oral cavity","Trp_OH3",0,0,"Trp",3
+"ovary","Trp_OH3",0,0,"Trp",3
+"pancreas","Trp_OH3",0,0,"Trp",3
+"skin","Trp_OH3",0,0,"Trp",3
+"spleen","Trp_OH3",0,0,"Trp",3
+"stomach","Trp_OH3",0,0,"Trp",3
+"thymus","Trp_OH3",0,0,"Trp",3
+"trachea","Trp_OH3",0,0,"Trp",3
+"upper digestive tract","Trp_OH3",0,0,"Trp",3
+"urine","Trp_OH3",0,0,"Trp",3
+"uterus","Trp_OH3",0,0,"Trp",3
+"vagina","Trp_OH3",0,0,"Trp",3
+"adrenal gland","Tyr_OH3",0,0,"Tyr",3
+"blood","Tyr_OH3",0.0140350877192982,4,"Tyr",3
+"brain","Tyr_OH3",0,0,"Tyr",3
+"caecum","Tyr_OH3",0.168421052631579,48,"Tyr",3
+"colon","Tyr_OH3",0.00350877192982456,1,"Tyr",3
+"digestive tract","Tyr_OH3",0,0,"Tyr",3
+"duodenum","Tyr_OH3",0.0631578947368421,18,"Tyr",3
+"esophagus","Tyr_OH3",0.00350877192982456,1,"Tyr",3
+"feces","Tyr_OH3",0.357894736842105,102,"Tyr",3
+"gall bladder","Tyr_OH3",0.0421052631578947,12,"Tyr",3
+"heart","Tyr_OH3",0,0,"Tyr",3
+"ileum","Tyr_OH3",0.0491228070175439,14,"Tyr",3
+"jejunum","Tyr_OH3",0.154385964912281,44,"Tyr",3
+"kidney","Tyr_OH3",0,0,"Tyr",3
+"liver","Tyr_OH3",0,0,"Tyr",3
+"lower digestive tract","Tyr_OH3",0,0,"Tyr",3
+"lung","Tyr_OH3",0,0,"Tyr",3
+"milk","Tyr_OH3",0,0,"Tyr",3
+"nasal cavity","Tyr_OH3",0,0,"Tyr",3
+"not applicable","Tyr_OH3",0,0,"Tyr",3
+"not specified","Tyr_OH3",0,0,"Tyr",3
+"oral cavity","Tyr_OH3",0.0140350877192982,4,"Tyr",3
+"ovary","Tyr_OH3",0,0,"Tyr",3
+"pancreas","Tyr_OH3",0,0,"Tyr",3
+"skin","Tyr_OH3",0,0,"Tyr",3
+"spleen","Tyr_OH3",0,0,"Tyr",3
+"stomach","Tyr_OH3",0.0421052631578947,12,"Tyr",3
+"thymus","Tyr_OH3",0,0,"Tyr",3
+"trachea","Tyr_OH3",0,0,"Tyr",3
+"upper digestive tract","Tyr_OH3",0.087719298245614,25,"Tyr",3
+"urine","Tyr_OH3",0,0,"Tyr",3
+"uterus","Tyr_OH3",0,0,"Tyr",3
+"vagina","Tyr_OH3",0,0,"Tyr",3
+"adrenal gland","Val_OH3",0,0,"Val",3
+"blood","Val_OH3",0,0,"Val",3
+"brain","Val_OH3",0,0,"Val",3
+"caecum","Val_OH3",0,0,"Val",3
+"colon","Val_OH3",0,0,"Val",3
+"digestive tract","Val_OH3",0,0,"Val",3
+"duodenum","Val_OH3",0,0,"Val",3
+"esophagus","Val_OH3",0,0,"Val",3
+"feces","Val_OH3",1,16,"Val",3
+"gall bladder","Val_OH3",0,0,"Val",3
+"heart","Val_OH3",0,0,"Val",3
+"ileum","Val_OH3",0,0,"Val",3
+"jejunum","Val_OH3",0,0,"Val",3
+"kidney","Val_OH3",0,0,"Val",3
+"liver","Val_OH3",0,0,"Val",3
+"lower digestive tract","Val_OH3",0,0,"Val",3
+"lung","Val_OH3",0,0,"Val",3
+"milk","Val_OH3",0,0,"Val",3
+"nasal cavity","Val_OH3",0,0,"Val",3
+"not applicable","Val_OH3",0,0,"Val",3
+"not specified","Val_OH3",0,0,"Val",3
+"oral cavity","Val_OH3",0,0,"Val",3
+"ovary","Val_OH3",0,0,"Val",3
+"pancreas","Val_OH3",0,0,"Val",3
+"skin","Val_OH3",0,0,"Val",3
+"spleen","Val_OH3",0,0,"Val",3
+"stomach","Val_OH3",0,0,"Val",3
+"thymus","Val_OH3",0,0,"Val",3
+"trachea","Val_OH3",0,0,"Val",3
+"upper digestive tract","Val_OH3",0,0,"Val",3
+"urine","Val_OH3",0,0,"Val",3
+"uterus","Val_OH3",0,0,"Val",3
+"vagina","Val_OH3",0,0,"Val",3
+"adrenal gland","Ala_OH2",0,0,"Ala",2
+"blood","Ala_OH2",0,0,"Ala",2
+"brain","Ala_OH2",0,0,"Ala",2
+"caecum","Ala_OH2",0,0,"Ala",2
+"colon","Ala_OH2",0,0,"Ala",2
+"digestive tract","Ala_OH2",0,0,"Ala",2
+"duodenum","Ala_OH2",0,0,"Ala",2
+"esophagus","Ala_OH2",0,0,"Ala",2
+"feces","Ala_OH2",0.824561403508772,47,"Ala",2
+"gall bladder","Ala_OH2",0.175438596491228,10,"Ala",2
+"heart","Ala_OH2",0,0,"Ala",2
+"ileum","Ala_OH2",0,0,"Ala",2
+"jejunum","Ala_OH2",0,0,"Ala",2
+"kidney","Ala_OH2",0,0,"Ala",2
+"liver","Ala_OH2",0,0,"Ala",2
+"lower digestive tract","Ala_OH2",0,0,"Ala",2
+"lung","Ala_OH2",0,0,"Ala",2
+"milk","Ala_OH2",0,0,"Ala",2
+"nasal cavity","Ala_OH2",0,0,"Ala",2
+"not applicable","Ala_OH2",0,0,"Ala",2
+"not specified","Ala_OH2",0,0,"Ala",2
+"oral cavity","Ala_OH2",0,0,"Ala",2
+"ovary","Ala_OH2",0,0,"Ala",2
+"pancreas","Ala_OH2",0,0,"Ala",2
+"skin","Ala_OH2",0,0,"Ala",2
+"spleen","Ala_OH2",0,0,"Ala",2
+"stomach","Ala_OH2",0,0,"Ala",2
+"thymus","Ala_OH2",0,0,"Ala",2
+"trachea","Ala_OH2",0,0,"Ala",2
+"upper digestive tract","Ala_OH2",0,0,"Ala",2
+"urine","Ala_OH2",0,0,"Ala",2
+"uterus","Ala_OH2",0,0,"Ala",2
+"vagina","Ala_OH2",0,0,"Ala",2
+"adrenal gland","Arg_OH2",0,0,"Arg",2
+"blood","Arg_OH2",0,0,"Arg",2
+"brain","Arg_OH2",0,0,"Arg",2
+"caecum","Arg_OH2",0.1875,3,"Arg",2
+"colon","Arg_OH2",0,0,"Arg",2
+"digestive tract","Arg_OH2",0,0,"Arg",2
+"duodenum","Arg_OH2",0,0,"Arg",2
+"esophagus","Arg_OH2",0,0,"Arg",2
+"feces","Arg_OH2",0.625,10,"Arg",2
+"gall bladder","Arg_OH2",0.1875,3,"Arg",2
+"heart","Arg_OH2",0,0,"Arg",2
+"ileum","Arg_OH2",0,0,"Arg",2
+"jejunum","Arg_OH2",0,0,"Arg",2
+"kidney","Arg_OH2",0,0,"Arg",2
+"liver","Arg_OH2",0,0,"Arg",2
+"lower digestive tract","Arg_OH2",0,0,"Arg",2
+"lung","Arg_OH2",0,0,"Arg",2
+"milk","Arg_OH2",0,0,"Arg",2
+"nasal cavity","Arg_OH2",0,0,"Arg",2
+"not applicable","Arg_OH2",0,0,"Arg",2
+"not specified","Arg_OH2",0,0,"Arg",2
+"oral cavity","Arg_OH2",0,0,"Arg",2
+"ovary","Arg_OH2",0,0,"Arg",2
+"pancreas","Arg_OH2",0,0,"Arg",2
+"skin","Arg_OH2",0,0,"Arg",2
+"spleen","Arg_OH2",0,0,"Arg",2
+"stomach","Arg_OH2",0,0,"Arg",2
+"thymus","Arg_OH2",0,0,"Arg",2
+"trachea","Arg_OH2",0,0,"Arg",2
+"upper digestive tract","Arg_OH2",0,0,"Arg",2
+"urine","Arg_OH2",0,0,"Arg",2
+"uterus","Arg_OH2",0,0,"Arg",2
+"vagina","Arg_OH2",0,0,"Arg",2
+"adrenal gland","Asn_OH2",0,0,"Asn",2
+"blood","Asn_OH2",0,0,"Asn",2
+"brain","Asn_OH2",0,0,"Asn",2
+"caecum","Asn_OH2",0,0,"Asn",2
+"colon","Asn_OH2",0,0,"Asn",2
+"digestive tract","Asn_OH2",0,0,"Asn",2
+"duodenum","Asn_OH2",0,0,"Asn",2
+"esophagus","Asn_OH2",0,0,"Asn",2
+"feces","Asn_OH2",0,0,"Asn",2
+"gall bladder","Asn_OH2",1,2,"Asn",2
+"heart","Asn_OH2",0,0,"Asn",2
+"ileum","Asn_OH2",0,0,"Asn",2
+"jejunum","Asn_OH2",0,0,"Asn",2
+"kidney","Asn_OH2",0,0,"Asn",2
+"liver","Asn_OH2",0,0,"Asn",2
+"lower digestive tract","Asn_OH2",0,0,"Asn",2
+"lung","Asn_OH2",0,0,"Asn",2
+"milk","Asn_OH2",0,0,"Asn",2
+"nasal cavity","Asn_OH2",0,0,"Asn",2
+"not applicable","Asn_OH2",0,0,"Asn",2
+"not specified","Asn_OH2",0,0,"Asn",2
+"oral cavity","Asn_OH2",0,0,"Asn",2
+"ovary","Asn_OH2",0,0,"Asn",2
+"pancreas","Asn_OH2",0,0,"Asn",2
+"skin","Asn_OH2",0,0,"Asn",2
+"spleen","Asn_OH2",0,0,"Asn",2
+"stomach","Asn_OH2",0,0,"Asn",2
+"thymus","Asn_OH2",0,0,"Asn",2
+"trachea","Asn_OH2",0,0,"Asn",2
+"upper digestive tract","Asn_OH2",0,0,"Asn",2
+"urine","Asn_OH2",0,0,"Asn",2
+"uterus","Asn_OH2",0,0,"Asn",2
+"vagina","Asn_OH2",0,0,"Asn",2
+"adrenal gland","Asp_OH2",0,0,"Asp",2
+"blood","Asp_OH2",0,0,"Asp",2
+"brain","Asp_OH2",0,0,"Asp",2
+"caecum","Asp_OH2",0,0,"Asp",2
+"colon","Asp_OH2",0,0,"Asp",2
+"digestive tract","Asp_OH2",0,0,"Asp",2
+"duodenum","Asp_OH2",0,0,"Asp",2
+"esophagus","Asp_OH2",0,0,"Asp",2
+"feces","Asp_OH2",0,0,"Asp",2
+"gall bladder","Asp_OH2",0,0,"Asp",2
+"heart","Asp_OH2",0,0,"Asp",2
+"ileum","Asp_OH2",0,0,"Asp",2
+"jejunum","Asp_OH2",0,0,"Asp",2
+"kidney","Asp_OH2",0,0,"Asp",2
+"liver","Asp_OH2",0,0,"Asp",2
+"lower digestive tract","Asp_OH2",0,0,"Asp",2
+"lung","Asp_OH2",0,0,"Asp",2
+"milk","Asp_OH2",0,0,"Asp",2
+"nasal cavity","Asp_OH2",0,0,"Asp",2
+"not applicable","Asp_OH2",0,0,"Asp",2
+"not specified","Asp_OH2",0,0,"Asp",2
+"oral cavity","Asp_OH2",0,0,"Asp",2
+"ovary","Asp_OH2",0,0,"Asp",2
+"pancreas","Asp_OH2",0,0,"Asp",2
+"skin","Asp_OH2",0,0,"Asp",2
+"spleen","Asp_OH2",0,0,"Asp",2
+"stomach","Asp_OH2",0,0,"Asp",2
+"thymus","Asp_OH2",0,0,"Asp",2
+"trachea","Asp_OH2",0,0,"Asp",2
+"upper digestive tract","Asp_OH2",0,0,"Asp",2
+"urine","Asp_OH2",0,0,"Asp",2
+"uterus","Asp_OH2",0,0,"Asp",2
+"vagina","Asp_OH2",0,0,"Asp",2
+"adrenal gland","Cit_OH2",0,0,"Cit",2
+"blood","Cit_OH2",0,0,"Cit",2
+"brain","Cit_OH2",0,0,"Cit",2
+"caecum","Cit_OH2",0.648648648648649,24,"Cit",2
+"colon","Cit_OH2",0.0540540540540541,2,"Cit",2
+"digestive tract","Cit_OH2",0,0,"Cit",2
+"duodenum","Cit_OH2",0,0,"Cit",2
+"esophagus","Cit_OH2",0,0,"Cit",2
+"feces","Cit_OH2",0.297297297297297,11,"Cit",2
+"gall bladder","Cit_OH2",0,0,"Cit",2
+"heart","Cit_OH2",0,0,"Cit",2
+"ileum","Cit_OH2",0,0,"Cit",2
+"jejunum","Cit_OH2",0,0,"Cit",2
+"kidney","Cit_OH2",0,0,"Cit",2
+"liver","Cit_OH2",0,0,"Cit",2
+"lower digestive tract","Cit_OH2",0,0,"Cit",2
+"lung","Cit_OH2",0,0,"Cit",2
+"milk","Cit_OH2",0,0,"Cit",2
+"nasal cavity","Cit_OH2",0,0,"Cit",2
+"not applicable","Cit_OH2",0,0,"Cit",2
+"not specified","Cit_OH2",0,0,"Cit",2
+"oral cavity","Cit_OH2",0,0,"Cit",2
+"ovary","Cit_OH2",0,0,"Cit",2
+"pancreas","Cit_OH2",0,0,"Cit",2
+"skin","Cit_OH2",0,0,"Cit",2
+"spleen","Cit_OH2",0,0,"Cit",2
+"stomach","Cit_OH2",0,0,"Cit",2
+"thymus","Cit_OH2",0,0,"Cit",2
+"trachea","Cit_OH2",0,0,"Cit",2
+"upper digestive tract","Cit_OH2",0,0,"Cit",2
+"urine","Cit_OH2",0,0,"Cit",2
+"uterus","Cit_OH2",0,0,"Cit",2
+"vagina","Cit_OH2",0,0,"Cit",2
+"adrenal gland","Cys_OH2",0,0,"Cys",2
+"blood","Cys_OH2",0,0,"Cys",2
+"brain","Cys_OH2",0,0,"Cys",2
+"caecum","Cys_OH2",0,0,"Cys",2
+"colon","Cys_OH2",0,0,"Cys",2
+"digestive tract","Cys_OH2",0,0,"Cys",2
+"duodenum","Cys_OH2",0,0,"Cys",2
+"esophagus","Cys_OH2",0,0,"Cys",2
+"feces","Cys_OH2",0,0,"Cys",2
+"gall bladder","Cys_OH2",0,0,"Cys",2
+"heart","Cys_OH2",0,0,"Cys",2
+"ileum","Cys_OH2",0,0,"Cys",2
+"jejunum","Cys_OH2",0,0,"Cys",2
+"kidney","Cys_OH2",0,0,"Cys",2
+"liver","Cys_OH2",0,0,"Cys",2
+"lower digestive tract","Cys_OH2",0,0,"Cys",2
+"lung","Cys_OH2",0,0,"Cys",2
+"milk","Cys_OH2",0,0,"Cys",2
+"nasal cavity","Cys_OH2",0,0,"Cys",2
+"not applicable","Cys_OH2",0,0,"Cys",2
+"not specified","Cys_OH2",0,0,"Cys",2
+"oral cavity","Cys_OH2",0,0,"Cys",2
+"ovary","Cys_OH2",0,0,"Cys",2
+"pancreas","Cys_OH2",0,0,"Cys",2
+"skin","Cys_OH2",0,0,"Cys",2
+"spleen","Cys_OH2",0,0,"Cys",2
+"stomach","Cys_OH2",0,0,"Cys",2
+"thymus","Cys_OH2",0,0,"Cys",2
+"trachea","Cys_OH2",0,0,"Cys",2
+"upper digestive tract","Cys_OH2",0,0,"Cys",2
+"urine","Cys_OH2",0,0,"Cys",2
+"uterus","Cys_OH2",0,0,"Cys",2
+"vagina","Cys_OH2",0,0,"Cys",2
+"adrenal gland","Gln_OH2",0,0,"Gln",2
+"blood","Gln_OH2",0,0,"Gln",2
+"brain","Gln_OH2",0,0,"Gln",2
+"caecum","Gln_OH2",0,0,"Gln",2
+"colon","Gln_OH2",0,0,"Gln",2
+"digestive tract","Gln_OH2",0,0,"Gln",2
+"duodenum","Gln_OH2",0,0,"Gln",2
+"esophagus","Gln_OH2",0,0,"Gln",2
+"feces","Gln_OH2",0,0,"Gln",2
+"gall bladder","Gln_OH2",0,0,"Gln",2
+"heart","Gln_OH2",0,0,"Gln",2
+"ileum","Gln_OH2",0,0,"Gln",2
+"jejunum","Gln_OH2",0,0,"Gln",2
+"kidney","Gln_OH2",0,0,"Gln",2
+"liver","Gln_OH2",0,0,"Gln",2
+"lower digestive tract","Gln_OH2",0,0,"Gln",2
+"lung","Gln_OH2",0,0,"Gln",2
+"milk","Gln_OH2",0,0,"Gln",2
+"nasal cavity","Gln_OH2",0,0,"Gln",2
+"not applicable","Gln_OH2",0,0,"Gln",2
+"not specified","Gln_OH2",0,0,"Gln",2
+"oral cavity","Gln_OH2",0,0,"Gln",2
+"ovary","Gln_OH2",0,0,"Gln",2
+"pancreas","Gln_OH2",0,0,"Gln",2
+"skin","Gln_OH2",0,0,"Gln",2
+"spleen","Gln_OH2",0,0,"Gln",2
+"stomach","Gln_OH2",0,0,"Gln",2
+"thymus","Gln_OH2",0,0,"Gln",2
+"trachea","Gln_OH2",0,0,"Gln",2
+"upper digestive tract","Gln_OH2",0,0,"Gln",2
+"urine","Gln_OH2",0,0,"Gln",2
+"uterus","Gln_OH2",0,0,"Gln",2
+"vagina","Gln_OH2",0,0,"Gln",2
+"adrenal gland","Glu_OH2",0,0,"Glu",2
+"blood","Glu_OH2",0,0,"Glu",2
+"brain","Glu_OH2",0,0,"Glu",2
+"caecum","Glu_OH2",0.306930693069307,31,"Glu",2
+"colon","Glu_OH2",0,0,"Glu",2
+"digestive tract","Glu_OH2",0,0,"Glu",2
+"duodenum","Glu_OH2",0,0,"Glu",2
+"esophagus","Glu_OH2",0,0,"Glu",2
+"feces","Glu_OH2",0.633663366336634,64,"Glu",2
+"gall bladder","Glu_OH2",0,0,"Glu",2
+"heart","Glu_OH2",0,0,"Glu",2
+"ileum","Glu_OH2",0,0,"Glu",2
+"jejunum","Glu_OH2",0,0,"Glu",2
+"kidney","Glu_OH2",0,0,"Glu",2
+"liver","Glu_OH2",0,0,"Glu",2
+"lower digestive tract","Glu_OH2",0,0,"Glu",2
+"lung","Glu_OH2",0,0,"Glu",2
+"milk","Glu_OH2",0,0,"Glu",2
+"nasal cavity","Glu_OH2",0,0,"Glu",2
+"not applicable","Glu_OH2",0,0,"Glu",2
+"not specified","Glu_OH2",0,0,"Glu",2
+"oral cavity","Glu_OH2",0,0,"Glu",2
+"ovary","Glu_OH2",0,0,"Glu",2
+"pancreas","Glu_OH2",0,0,"Glu",2
+"skin","Glu_OH2",0.0594059405940594,6,"Glu",2
+"spleen","Glu_OH2",0,0,"Glu",2
+"stomach","Glu_OH2",0,0,"Glu",2
+"thymus","Glu_OH2",0,0,"Glu",2
+"trachea","Glu_OH2",0,0,"Glu",2
+"upper digestive tract","Glu_OH2",0,0,"Glu",2
+"urine","Glu_OH2",0,0,"Glu",2
+"uterus","Glu_OH2",0,0,"Glu",2
+"vagina","Glu_OH2",0,0,"Glu",2
+"adrenal gland","Gly_OH2",0,0,"Gly",2
+"blood","Gly_OH2",0.166666666666667,337,"Gly",2
+"brain","Gly_OH2",0,0,"Gly",2
+"caecum","Gly_OH2",0,0,"Gly",2
+"colon","Gly_OH2",0,0,"Gly",2
+"digestive tract","Gly_OH2",0.00445103857566766,9,"Gly",2
+"duodenum","Gly_OH2",0.000494559841740851,1,"Gly",2
+"esophagus","Gly_OH2",0,0,"Gly",2
+"feces","Gly_OH2",0.278437190900099,563,"Gly",2
+"gall bladder","Gly_OH2",0.248763600395648,503,"Gly",2
+"heart","Gly_OH2",0,0,"Gly",2
+"ileum","Gly_OH2",0,0,"Gly",2
+"jejunum","Gly_OH2",0,0,"Gly",2
+"kidney","Gly_OH2",0,0,"Gly",2
+"liver","Gly_OH2",0,0,"Gly",2
+"lower digestive tract","Gly_OH2",0,0,"Gly",2
+"lung","Gly_OH2",0,0,"Gly",2
+"milk","Gly_OH2",0,0,"Gly",2
+"nasal cavity","Gly_OH2",0,0,"Gly",2
+"not applicable","Gly_OH2",0,0,"Gly",2
+"not specified","Gly_OH2",0,0,"Gly",2
+"oral cavity","Gly_OH2",0.00494559841740851,10,"Gly",2
+"ovary","Gly_OH2",0,0,"Gly",2
+"pancreas","Gly_OH2",0,0,"Gly",2
+"skin","Gly_OH2",0.295746785361029,598,"Gly",2
+"spleen","Gly_OH2",0,0,"Gly",2
+"stomach","Gly_OH2",0,0,"Gly",2
+"thymus","Gly_OH2",0,0,"Gly",2
+"trachea","Gly_OH2",0,0,"Gly",2
+"upper digestive tract","Gly_OH2",0,0,"Gly",2
+"urine","Gly_OH2",0,0,"Gly",2
+"uterus","Gly_OH2",0,0,"Gly",2
+"vagina","Gly_OH2",0.000494559841740851,1,"Gly",2
+"adrenal gland","His_OH2",0,0,"His",2
+"blood","His_OH2",0,0,"His",2
+"brain","His_OH2",0,0,"His",2
+"caecum","His_OH2",0,0,"His",2
+"colon","His_OH2",0,0,"His",2
+"digestive tract","His_OH2",0,0,"His",2
+"duodenum","His_OH2",0,0,"His",2
+"esophagus","His_OH2",0,0,"His",2
+"feces","His_OH2",1,31,"His",2
+"gall bladder","His_OH2",0,0,"His",2
+"heart","His_OH2",0,0,"His",2
+"ileum","His_OH2",0,0,"His",2
+"jejunum","His_OH2",0,0,"His",2
+"kidney","His_OH2",0,0,"His",2
+"liver","His_OH2",0,0,"His",2
+"lower digestive tract","His_OH2",0,0,"His",2
+"lung","His_OH2",0,0,"His",2
+"milk","His_OH2",0,0,"His",2
+"nasal cavity","His_OH2",0,0,"His",2
+"not applicable","His_OH2",0,0,"His",2
+"not specified","His_OH2",0,0,"His",2
+"oral cavity","His_OH2",0,0,"His",2
+"ovary","His_OH2",0,0,"His",2
+"pancreas","His_OH2",0,0,"His",2
+"skin","His_OH2",0,0,"His",2
+"spleen","His_OH2",0,0,"His",2
+"stomach","His_OH2",0,0,"His",2
+"thymus","His_OH2",0,0,"His",2
+"trachea","His_OH2",0,0,"His",2
+"upper digestive tract","His_OH2",0,0,"His",2
+"urine","His_OH2",0,0,"His",2
+"uterus","His_OH2",0,0,"His",2
+"vagina","His_OH2",0,0,"His",2
+"adrenal gland","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"blood","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"brain","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"caecum","Ile/Leu_OH2",0.46,138,"Ile/Leu",2
+"colon","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"digestive tract","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"duodenum","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"esophagus","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"feces","Ile/Leu_OH2",0.513333333333333,154,"Ile/Leu",2
+"gall bladder","Ile/Leu_OH2",0.0266666666666667,8,"Ile/Leu",2
+"heart","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"ileum","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"jejunum","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"kidney","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"liver","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"lower digestive tract","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"lung","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"milk","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"nasal cavity","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"not applicable","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"not specified","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"oral cavity","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"ovary","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"pancreas","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"skin","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"spleen","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"stomach","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"thymus","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"trachea","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"upper digestive tract","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"urine","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"uterus","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"vagina","Ile/Leu_OH2",0,0,"Ile/Leu",2
+"adrenal gland","Lys_OH2",0,0,"Lys",2
+"blood","Lys_OH2",0,0,"Lys",2
+"brain","Lys_OH2",0,0,"Lys",2
+"caecum","Lys_OH2",0.535971223021583,149,"Lys",2
+"colon","Lys_OH2",0.00359712230215827,1,"Lys",2
+"digestive tract","Lys_OH2",0,0,"Lys",2
+"duodenum","Lys_OH2",0,0,"Lys",2
+"esophagus","Lys_OH2",0,0,"Lys",2
+"feces","Lys_OH2",0.453237410071942,126,"Lys",2
+"gall bladder","Lys_OH2",0.00719424460431655,2,"Lys",2
+"heart","Lys_OH2",0,0,"Lys",2
+"ileum","Lys_OH2",0,0,"Lys",2
+"jejunum","Lys_OH2",0,0,"Lys",2
+"kidney","Lys_OH2",0,0,"Lys",2
+"liver","Lys_OH2",0,0,"Lys",2
+"lower digestive tract","Lys_OH2",0,0,"Lys",2
+"lung","Lys_OH2",0,0,"Lys",2
+"milk","Lys_OH2",0,0,"Lys",2
+"nasal cavity","Lys_OH2",0,0,"Lys",2
+"not applicable","Lys_OH2",0,0,"Lys",2
+"not specified","Lys_OH2",0,0,"Lys",2
+"oral cavity","Lys_OH2",0,0,"Lys",2
+"ovary","Lys_OH2",0,0,"Lys",2
+"pancreas","Lys_OH2",0,0,"Lys",2
+"skin","Lys_OH2",0,0,"Lys",2
+"spleen","Lys_OH2",0,0,"Lys",2
+"stomach","Lys_OH2",0,0,"Lys",2
+"thymus","Lys_OH2",0,0,"Lys",2
+"trachea","Lys_OH2",0,0,"Lys",2
+"upper digestive tract","Lys_OH2",0,0,"Lys",2
+"urine","Lys_OH2",0,0,"Lys",2
+"uterus","Lys_OH2",0,0,"Lys",2
+"vagina","Lys_OH2",0,0,"Lys",2
+"adrenal gland","Met_OH2",0,0,"Met",2
+"blood","Met_OH2",0,0,"Met",2
+"brain","Met_OH2",0,0,"Met",2
+"caecum","Met_OH2",0.952830188679245,101,"Met",2
+"colon","Met_OH2",0,0,"Met",2
+"digestive tract","Met_OH2",0,0,"Met",2
+"duodenum","Met_OH2",0,0,"Met",2
+"esophagus","Met_OH2",0,0,"Met",2
+"feces","Met_OH2",0.0471698113207547,5,"Met",2
+"gall bladder","Met_OH2",0,0,"Met",2
+"heart","Met_OH2",0,0,"Met",2
+"ileum","Met_OH2",0,0,"Met",2
+"jejunum","Met_OH2",0,0,"Met",2
+"kidney","Met_OH2",0,0,"Met",2
+"liver","Met_OH2",0,0,"Met",2
+"lower digestive tract","Met_OH2",0,0,"Met",2
+"lung","Met_OH2",0,0,"Met",2
+"milk","Met_OH2",0,0,"Met",2
+"nasal cavity","Met_OH2",0,0,"Met",2
+"not applicable","Met_OH2",0,0,"Met",2
+"not specified","Met_OH2",0,0,"Met",2
+"oral cavity","Met_OH2",0,0,"Met",2
+"ovary","Met_OH2",0,0,"Met",2
+"pancreas","Met_OH2",0,0,"Met",2
+"skin","Met_OH2",0,0,"Met",2
+"spleen","Met_OH2",0,0,"Met",2
+"stomach","Met_OH2",0,0,"Met",2
+"thymus","Met_OH2",0,0,"Met",2
+"trachea","Met_OH2",0,0,"Met",2
+"upper digestive tract","Met_OH2",0,0,"Met",2
+"urine","Met_OH2",0,0,"Met",2
+"uterus","Met_OH2",0,0,"Met",2
+"vagina","Met_OH2",0,0,"Met",2
+"adrenal gland","Orn_OH2",0,0,"Orn",2
+"blood","Orn_OH2",0,0,"Orn",2
+"brain","Orn_OH2",0,0,"Orn",2
+"caecum","Orn_OH2",0.851851851851852,46,"Orn",2
+"colon","Orn_OH2",0,0,"Orn",2
+"digestive tract","Orn_OH2",0,0,"Orn",2
+"duodenum","Orn_OH2",0,0,"Orn",2
+"esophagus","Orn_OH2",0,0,"Orn",2
+"feces","Orn_OH2",0.148148148148148,8,"Orn",2
+"gall bladder","Orn_OH2",0,0,"Orn",2
+"heart","Orn_OH2",0,0,"Orn",2
+"ileum","Orn_OH2",0,0,"Orn",2
+"jejunum","Orn_OH2",0,0,"Orn",2
+"kidney","Orn_OH2",0,0,"Orn",2
+"liver","Orn_OH2",0,0,"Orn",2
+"lower digestive tract","Orn_OH2",0,0,"Orn",2
+"lung","Orn_OH2",0,0,"Orn",2
+"milk","Orn_OH2",0,0,"Orn",2
+"nasal cavity","Orn_OH2",0,0,"Orn",2
+"not applicable","Orn_OH2",0,0,"Orn",2
+"not specified","Orn_OH2",0,0,"Orn",2
+"oral cavity","Orn_OH2",0,0,"Orn",2
+"ovary","Orn_OH2",0,0,"Orn",2
+"pancreas","Orn_OH2",0,0,"Orn",2
+"skin","Orn_OH2",0,0,"Orn",2
+"spleen","Orn_OH2",0,0,"Orn",2
+"stomach","Orn_OH2",0,0,"Orn",2
+"thymus","Orn_OH2",0,0,"Orn",2
+"trachea","Orn_OH2",0,0,"Orn",2
+"upper digestive tract","Orn_OH2",0,0,"Orn",2
+"urine","Orn_OH2",0,0,"Orn",2
+"uterus","Orn_OH2",0,0,"Orn",2
+"vagina","Orn_OH2",0,0,"Orn",2
+"adrenal gland","Phe_OH2",0,0,"Phe",2
+"blood","Phe_OH2",0,0,"Phe",2
+"brain","Phe_OH2",0,0,"Phe",2
+"caecum","Phe_OH2",0.561594202898551,155,"Phe",2
+"colon","Phe_OH2",0,0,"Phe",2
+"digestive tract","Phe_OH2",0,0,"Phe",2
+"duodenum","Phe_OH2",0,0,"Phe",2
+"esophagus","Phe_OH2",0,0,"Phe",2
+"feces","Phe_OH2",0.427536231884058,118,"Phe",2
+"gall bladder","Phe_OH2",0.0108695652173913,3,"Phe",2
+"heart","Phe_OH2",0,0,"Phe",2
+"ileum","Phe_OH2",0,0,"Phe",2
+"jejunum","Phe_OH2",0,0,"Phe",2
+"kidney","Phe_OH2",0,0,"Phe",2
+"liver","Phe_OH2",0,0,"Phe",2
+"lower digestive tract","Phe_OH2",0,0,"Phe",2
+"lung","Phe_OH2",0,0,"Phe",2
+"milk","Phe_OH2",0,0,"Phe",2
+"nasal cavity","Phe_OH2",0,0,"Phe",2
+"not applicable","Phe_OH2",0,0,"Phe",2
+"not specified","Phe_OH2",0,0,"Phe",2
+"oral cavity","Phe_OH2",0,0,"Phe",2
+"ovary","Phe_OH2",0,0,"Phe",2
+"pancreas","Phe_OH2",0,0,"Phe",2
+"skin","Phe_OH2",0,0,"Phe",2
+"spleen","Phe_OH2",0,0,"Phe",2
+"stomach","Phe_OH2",0,0,"Phe",2
+"thymus","Phe_OH2",0,0,"Phe",2
+"trachea","Phe_OH2",0,0,"Phe",2
+"upper digestive tract","Phe_OH2",0,0,"Phe",2
+"urine","Phe_OH2",0,0,"Phe",2
+"uterus","Phe_OH2",0,0,"Phe",2
+"vagina","Phe_OH2",0,0,"Phe",2
+"adrenal gland","Ser_OH2",0,0,"Ser",2
+"blood","Ser_OH2",0,0,"Ser",2
+"brain","Ser_OH2",0,0,"Ser",2
+"caecum","Ser_OH2",0.931034482758621,27,"Ser",2
+"colon","Ser_OH2",0,0,"Ser",2
+"digestive tract","Ser_OH2",0,0,"Ser",2
+"duodenum","Ser_OH2",0,0,"Ser",2
+"esophagus","Ser_OH2",0,0,"Ser",2
+"feces","Ser_OH2",0.0689655172413793,2,"Ser",2
+"gall bladder","Ser_OH2",0,0,"Ser",2
+"heart","Ser_OH2",0,0,"Ser",2
+"ileum","Ser_OH2",0,0,"Ser",2
+"jejunum","Ser_OH2",0,0,"Ser",2
+"kidney","Ser_OH2",0,0,"Ser",2
+"liver","Ser_OH2",0,0,"Ser",2
+"lower digestive tract","Ser_OH2",0,0,"Ser",2
+"lung","Ser_OH2",0,0,"Ser",2
+"milk","Ser_OH2",0,0,"Ser",2
+"nasal cavity","Ser_OH2",0,0,"Ser",2
+"not applicable","Ser_OH2",0,0,"Ser",2
+"not specified","Ser_OH2",0,0,"Ser",2
+"oral cavity","Ser_OH2",0,0,"Ser",2
+"ovary","Ser_OH2",0,0,"Ser",2
+"pancreas","Ser_OH2",0,0,"Ser",2
+"skin","Ser_OH2",0,0,"Ser",2
+"spleen","Ser_OH2",0,0,"Ser",2
+"stomach","Ser_OH2",0,0,"Ser",2
+"thymus","Ser_OH2",0,0,"Ser",2
+"trachea","Ser_OH2",0,0,"Ser",2
+"upper digestive tract","Ser_OH2",0,0,"Ser",2
+"urine","Ser_OH2",0,0,"Ser",2
+"uterus","Ser_OH2",0,0,"Ser",2
+"vagina","Ser_OH2",0,0,"Ser",2
+"adrenal gland","Tau_OH2",0,0,"Tau",2
+"blood","Tau_OH2",0.0348,87,"Tau",2
+"brain","Tau_OH2",0,0,"Tau",2
+"caecum","Tau_OH2",0.0036,9,"Tau",2
+"colon","Tau_OH2",0,0,"Tau",2
+"digestive tract","Tau_OH2",0.02,50,"Tau",2
+"duodenum","Tau_OH2",0.0112,28,"Tau",2
+"esophagus","Tau_OH2",0,0,"Tau",2
+"feces","Tau_OH2",0.2744,686,"Tau",2
+"gall bladder","Tau_OH2",0.5688,1422,"Tau",2
+"heart","Tau_OH2",0,0,"Tau",2
+"ileum","Tau_OH2",0.0044,11,"Tau",2
+"jejunum","Tau_OH2",0.016,40,"Tau",2
+"kidney","Tau_OH2",0,0,"Tau",2
+"liver","Tau_OH2",0.0072,18,"Tau",2
+"lower digestive tract","Tau_OH2",0.0012,3,"Tau",2
+"lung","Tau_OH2",4e-04,1,"Tau",2
+"milk","Tau_OH2",0,0,"Tau",2
+"nasal cavity","Tau_OH2",0,0,"Tau",2
+"not applicable","Tau_OH2",0,0,"Tau",2
+"not specified","Tau_OH2",0,0,"Tau",2
+"oral cavity","Tau_OH2",4e-04,1,"Tau",2
+"ovary","Tau_OH2",0,0,"Tau",2
+"pancreas","Tau_OH2",0,0,"Tau",2
+"skin","Tau_OH2",0.0332,83,"Tau",2
+"spleen","Tau_OH2",0,0,"Tau",2
+"stomach","Tau_OH2",0.0024,6,"Tau",2
+"thymus","Tau_OH2",0,0,"Tau",2
+"trachea","Tau_OH2",0,0,"Tau",2
+"upper digestive tract","Tau_OH2",0.0212,53,"Tau",2
+"urine","Tau_OH2",8e-04,2,"Tau",2
+"uterus","Tau_OH2",0,0,"Tau",2
+"vagina","Tau_OH2",0,0,"Tau",2
+"adrenal gland","Thr_OH2",0,0,"Thr",2
+"blood","Thr_OH2",0,0,"Thr",2
+"brain","Thr_OH2",0,0,"Thr",2
+"caecum","Thr_OH2",0,0,"Thr",2
+"colon","Thr_OH2",0,0,"Thr",2
+"digestive tract","Thr_OH2",0,0,"Thr",2
+"duodenum","Thr_OH2",0,0,"Thr",2
+"esophagus","Thr_OH2",0,0,"Thr",2
+"feces","Thr_OH2",1,4,"Thr",2
+"gall bladder","Thr_OH2",0,0,"Thr",2
+"heart","Thr_OH2",0,0,"Thr",2
+"ileum","Thr_OH2",0,0,"Thr",2
+"jejunum","Thr_OH2",0,0,"Thr",2
+"kidney","Thr_OH2",0,0,"Thr",2
+"liver","Thr_OH2",0,0,"Thr",2
+"lower digestive tract","Thr_OH2",0,0,"Thr",2
+"lung","Thr_OH2",0,0,"Thr",2
+"milk","Thr_OH2",0,0,"Thr",2
+"nasal cavity","Thr_OH2",0,0,"Thr",2
+"not applicable","Thr_OH2",0,0,"Thr",2
+"not specified","Thr_OH2",0,0,"Thr",2
+"oral cavity","Thr_OH2",0,0,"Thr",2
+"ovary","Thr_OH2",0,0,"Thr",2
+"pancreas","Thr_OH2",0,0,"Thr",2
+"skin","Thr_OH2",0,0,"Thr",2
+"spleen","Thr_OH2",0,0,"Thr",2
+"stomach","Thr_OH2",0,0,"Thr",2
+"thymus","Thr_OH2",0,0,"Thr",2
+"trachea","Thr_OH2",0,0,"Thr",2
+"upper digestive tract","Thr_OH2",0,0,"Thr",2
+"urine","Thr_OH2",0,0,"Thr",2
+"uterus","Thr_OH2",0,0,"Thr",2
+"vagina","Thr_OH2",0,0,"Thr",2
+"adrenal gland","Trp_OH2",0,0,"Trp",2
+"blood","Trp_OH2",0,0,"Trp",2
+"brain","Trp_OH2",0,0,"Trp",2
+"caecum","Trp_OH2",0.630630630630631,70,"Trp",2
+"colon","Trp_OH2",0,0,"Trp",2
+"digestive tract","Trp_OH2",0,0,"Trp",2
+"duodenum","Trp_OH2",0,0,"Trp",2
+"esophagus","Trp_OH2",0,0,"Trp",2
+"feces","Trp_OH2",0.36036036036036,40,"Trp",2
+"gall bladder","Trp_OH2",0.00900900900900901,1,"Trp",2
+"heart","Trp_OH2",0,0,"Trp",2
+"ileum","Trp_OH2",0,0,"Trp",2
+"jejunum","Trp_OH2",0,0,"Trp",2
+"kidney","Trp_OH2",0,0,"Trp",2
+"liver","Trp_OH2",0,0,"Trp",2
+"lower digestive tract","Trp_OH2",0,0,"Trp",2
+"lung","Trp_OH2",0,0,"Trp",2
+"milk","Trp_OH2",0,0,"Trp",2
+"nasal cavity","Trp_OH2",0,0,"Trp",2
+"not applicable","Trp_OH2",0,0,"Trp",2
+"not specified","Trp_OH2",0,0,"Trp",2
+"oral cavity","Trp_OH2",0,0,"Trp",2
+"ovary","Trp_OH2",0,0,"Trp",2
+"pancreas","Trp_OH2",0,0,"Trp",2
+"skin","Trp_OH2",0,0,"Trp",2
+"spleen","Trp_OH2",0,0,"Trp",2
+"stomach","Trp_OH2",0,0,"Trp",2
+"thymus","Trp_OH2",0,0,"Trp",2
+"trachea","Trp_OH2",0,0,"Trp",2
+"upper digestive tract","Trp_OH2",0,0,"Trp",2
+"urine","Trp_OH2",0,0,"Trp",2
+"uterus","Trp_OH2",0,0,"Trp",2
+"vagina","Trp_OH2",0,0,"Trp",2
+"adrenal gland","Tyr_OH2",0,0,"Tyr",2
+"blood","Tyr_OH2",0,0,"Tyr",2
+"brain","Tyr_OH2",0,0,"Tyr",2
+"caecum","Tyr_OH2",0.573033707865168,51,"Tyr",2
+"colon","Tyr_OH2",0,0,"Tyr",2
+"digestive tract","Tyr_OH2",0,0,"Tyr",2
+"duodenum","Tyr_OH2",0,0,"Tyr",2
+"esophagus","Tyr_OH2",0,0,"Tyr",2
+"feces","Tyr_OH2",0.370786516853933,33,"Tyr",2
+"gall bladder","Tyr_OH2",0.0561797752808989,5,"Tyr",2
+"heart","Tyr_OH2",0,0,"Tyr",2
+"ileum","Tyr_OH2",0,0,"Tyr",2
+"jejunum","Tyr_OH2",0,0,"Tyr",2
+"kidney","Tyr_OH2",0,0,"Tyr",2
+"liver","Tyr_OH2",0,0,"Tyr",2
+"lower digestive tract","Tyr_OH2",0,0,"Tyr",2
+"lung","Tyr_OH2",0,0,"Tyr",2
+"milk","Tyr_OH2",0,0,"Tyr",2
+"nasal cavity","Tyr_OH2",0,0,"Tyr",2
+"not applicable","Tyr_OH2",0,0,"Tyr",2
+"not specified","Tyr_OH2",0,0,"Tyr",2
+"oral cavity","Tyr_OH2",0,0,"Tyr",2
+"ovary","Tyr_OH2",0,0,"Tyr",2
+"pancreas","Tyr_OH2",0,0,"Tyr",2
+"skin","Tyr_OH2",0,0,"Tyr",2
+"spleen","Tyr_OH2",0,0,"Tyr",2
+"stomach","Tyr_OH2",0,0,"Tyr",2
+"thymus","Tyr_OH2",0,0,"Tyr",2
+"trachea","Tyr_OH2",0,0,"Tyr",2
+"upper digestive tract","Tyr_OH2",0,0,"Tyr",2
+"urine","Tyr_OH2",0,0,"Tyr",2
+"uterus","Tyr_OH2",0,0,"Tyr",2
+"vagina","Tyr_OH2",0,0,"Tyr",2
+"adrenal gland","Val_OH2",0,0,"Val",2
+"blood","Val_OH2",0,0,"Val",2
+"brain","Val_OH2",0,0,"Val",2
+"caecum","Val_OH2",0,0,"Val",2
+"colon","Val_OH2",0,0,"Val",2
+"digestive tract","Val_OH2",0,0,"Val",2
+"duodenum","Val_OH2",0,0,"Val",2
+"esophagus","Val_OH2",0,0,"Val",2
+"feces","Val_OH2",1,8,"Val",2
+"gall bladder","Val_OH2",0,0,"Val",2
+"heart","Val_OH2",0,0,"Val",2
+"ileum","Val_OH2",0,0,"Val",2
+"jejunum","Val_OH2",0,0,"Val",2
+"kidney","Val_OH2",0,0,"Val",2
+"liver","Val_OH2",0,0,"Val",2
+"lower digestive tract","Val_OH2",0,0,"Val",2
+"lung","Val_OH2",0,0,"Val",2
+"milk","Val_OH2",0,0,"Val",2
+"nasal cavity","Val_OH2",0,0,"Val",2
+"not applicable","Val_OH2",0,0,"Val",2
+"not specified","Val_OH2",0,0,"Val",2
+"oral cavity","Val_OH2",0,0,"Val",2
+"ovary","Val_OH2",0,0,"Val",2
+"pancreas","Val_OH2",0,0,"Val",2
+"skin","Val_OH2",0,0,"Val",2
+"spleen","Val_OH2",0,0,"Val",2
+"stomach","Val_OH2",0,0,"Val",2
+"thymus","Val_OH2",0,0,"Val",2
+"trachea","Val_OH2",0,0,"Val",2
+"upper digestive tract","Val_OH2",0,0,"Val",2
+"urine","Val_OH2",0,0,"Val",2
+"uterus","Val_OH2",0,0,"Val",2
+"vagina","Val_OH2",0,0,"Val",2

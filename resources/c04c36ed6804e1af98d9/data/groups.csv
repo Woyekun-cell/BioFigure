@@ -1,0 +1,3 @@
+group_id,label,header,order,color,fill
+G1,Contrast A,Contrast A,1,#FF0000,#FFFFFF
+G2,Contrast B,Contrast B,2,#000000,#000000

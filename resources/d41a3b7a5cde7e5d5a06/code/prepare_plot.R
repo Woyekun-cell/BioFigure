@@ -1,0 +1,22 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);S<-file.path(P,'biofigure');W<-file.path(P,'work/2026-10-28-anatogram');.libPaths(c(file.path(W,'Rlib'),.libPaths()));source(file.path(S,'scripts/figure_style.R'));library(gganatogram)
+ids<-c('hgMale','hgFemale','mmMale','mmFemale');species<-c('human','human','mouse','mouse');sex<-c('male','female','male','female');types<-c('circulation','digestion','nervous_system','other','reproductive','respiratory');bright<-bf_palette('biofigure-bright-8',kind='categorical',n=8,skill_root=S);pal<-setNames(c(bright[2],bright[5],bright[4],'#D2D9DF',bright[6],bright[1]),types);labels<-c('Circulation','Digestion','Nervous system','Other tissues','Reproductive','Respiratory')
+plots<-list();rawkeys<-list();renderkeys<-list();source_geometry<-list();geometry_audit<-list();pointdata<-list()
+for(i in 1:4){
+ raw<-get(paste0(ids[i],'_key'),asNamespace('gganatogram'));k<-raw;stopifnot(all(k$type%in%types),!anyDuplicated(k$organ));k$colour<-unname(pal[k$type]);a<-get_anatogram(organism=species[i],sex=sex[i]);stopifnot(all(k$organ%in%names(a)));if(ids[i]=='hgFemale'){stopifnot(all(a$urinary_bladder$id=='bladder'));a$urinary_bladder$id<-'urinary_bladder'}
+ p<-gganatogram(data=k,outline=TRUE,fillOutline='#F4F6F8',organism=species[i],sex=sex[i],fill='colour',anatogram=a)+ggplot2::theme_void()+ggplot2::coord_fixed()+ggplot2::theme(plot.margin=ggplot2::margin(0,0,0,0,'mm'))
+ for(j in seq_along(p$layers)){
+  if(j==1)next
+  p$layers[[j]]$aes_params$colour<-if(j==2)'#56636E'else'#65717C';p$layers[[j]]$aes_params$linewidth<-if(j==2).15 else .07
+ }
+ built<-ggplot2::ggplot_build(p)$data;stopifnot(length(built)==nrow(k)+2)
+ for(j in seq_len(nrow(k))){
+  d<-p$layers[[j+2]]$data;actual<-built[[j+2]];stopifnot(nrow(d)==nrow(actual),identical(as.numeric(actual$x),as.numeric(d$x)),identical(as.numeric(actual$y),as.numeric(-d$y)),all(actual$fill==k$colour[j]))
+  source_geometry[[length(source_geometry)+1]]<-data.frame(panel=rep(ids[i],nrow(d)),organ=rep(k$organ[j],nrow(d)),source_order=rep(j,nrow(d)),x=d$x,y=d$y,group=as.character(d$group),stringsAsFactors=FALSE)
+  geometry_audit[[length(geometry_audit)+1]]<-list(panel=ids[i],organ=k$organ[j],source_order=j,vertices=nrow(d),groups=length(unique(d$group)),fill=k$colour[j],type=k$type[j])
+ }
+ plots[[i]]<-p;rawkeys[[i]]<-raw;renderkeys[[i]]<-k
+ pointdata[[i]]<-list(panel=ids[i],organ_layers=nrow(k),total_organ_vertices=sum(vapply(built[-c(1,2)],nrow,integer(1))),native_xrange=range(built[[1]]$x,na.rm=TRUE),native_yrange=range(built[[1]]$y,na.rm=TRUE))
+}
+D<-file.path(P,'results/plot_data');keys<-do.call(rbind,lapply(1:4,function(i)data.frame(panel=ids[i],species=species[i],sex=sex[i],source_order=seq_len(nrow(rawkeys[[i]])),organ=rawkeys[[i]]$organ,type=rawkeys[[i]]$type,source_colour=rawkeys[[i]]$colour,source_unused_value=rawkeys[[i]]$value,plot_colour=renderkeys[[i]]$colour)));write.csv(keys,file.path(D,'anatogram_20261028_organs.csv'),row.names=FALSE);write.csv(do.call(rbind,source_geometry),file.path(D,'anatogram_20261028_coordinates.csv'),row.names=FALSE)
+saveRDS(list(plots=plots,rawkeys=rawkeys,renderkeys=renderkeys,palette=pal,types=types,type_labels=labels,geometry_audit=geometry_audit,panels=pointdata),file.path(W,'plot-inputs.rds'))
+jsonlite::write_json(list(status='PASS',data_origin='Original author anatomical atlas coordinates and native categorical type metadata;no expression/numeric field used for color.',source_commit='eac6df5d3a6ac1a4404f2516e1e71a60274a6a0f',package_version=as.character(packageVersion('gganatogram')),key_rows=nrow(keys),panel_organ_counts=as.list(setNames(vapply(rawkeys,nrow,integer(1)),ids)),types=types,original_row_order_retained=TRUE,all_native_vertices_preserved=TRUE,source_missing_geometry='Human male amygdala has two same-name16-row source fragments,32 records with all x/y missing;native empty layer retained,no coordinates fabricated.',source_alias_fix='Human female source list/key urinary_bladder has internal id bladder;adapted copied metadata id to urinary_bladder,original source bytes unchanged.',panels=pointdata,scope='Official native human/mouse male/female anatomy recipe with source type coloring;no biological expression,diagnostic or disease inference.',remaining_paper_inputs='No quantitative expression study was requested or reconstructed.'),file.path(W,'input-qc.json'),pretty=TRUE,auto_unbox=TRUE);capture.output(sessionInfo(),file=file.path(W,'analysis-sessionInfo.txt'))

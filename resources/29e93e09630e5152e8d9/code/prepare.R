@@ -1,0 +1,17 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);W<-file.path(P,'work/2026-11-03-chromatin-family-trees');D<-file.path(W,'raw');stem<-'chromatin_histone_family_trees_20261103';library(ape);library(phangorn);library(readxl);library(ggplot2);library(grid)
+pro<-read.table(file.path(D,'all.Histone.to_proteomics.csv.gz'),col.names=c('qseqid','sseqid','pident','length','mismatch','gapopen','qstart','qend','sstart','send','evalue','bitscore'),stringsAsFactors=FALSE);pro<-pro[pro$pident==100,];hips<-c('H3','H4','H2A','H2B','macroH2A','H2AZ');matches<-lapply(hips,function(h){m<-as.data.frame(read_excel(file.path(D,'consensus_modifications_perseq.xlsx'),sheet=h,col_types='text'));m<-m[!is.na(m$Positions_in_Reference),];unique(pro$qseqid[pro$sseqid %in% sub('\\|.*','',m$Protein_ID)])});names(matches)<-hips
+families<-c('H2A','H2B','H3','H4');files<-c('CC4_H2A.iqt.treefile','CC0_H2B.iqt.treefile','CC2_H3.iqt.treefile','CC1_H4.iqt.treefile');trees<-list();tips<-list();edges<-list();verts<-list();marks<-list();stats<-list()
+for(i in seq_along(families)){
+ h<-families[i];orig<-read.tree(file.path(D,files[i]));tr<-ladderize(midpoint(orig));stopifnot(!anyDuplicated(tr$tip.label),all(is.finite(tr$edge.length)),all(tr$edge.length>=0));trees[[h]]<-tr
+ n<-Ntip(tr);xx<-node.depth.edgelength(tr);yy<-rep(NA_real_,n+Nnode(tr));tip_order<-tr$edge[tr$edge[,2]<=n,2];yy[tip_order]<-seq_len(n);gety<-function(k){if(!is.na(yy[k]))return(yy[k]);ch<-tr$edge[tr$edge[,1]==k,2];v<-vapply(ch,gety,numeric(1));yy[k]<<-(min(v)+max(v))/2;yy[k]};gety(n+1L);stopifnot(!anyNA(yy))
+ tips[[h]]<-data.frame(family=h,node=seq_len(n),protein_id=tr$tip.label,x=xx[seq_len(n)],y=yy[seq_len(n)])
+ ee<-data.frame(family=h,parent=tr$edge[,1],child=tr$edge[,2],branch_length=tr$edge.length,x=xx[tr$edge[,1]],xend=xx[tr$edge[,2]],y=yy[tr$edge[,2]],yend=yy[tr$edge[,2]]);edges[[h]]<-ee
+ vv<-do.call(rbind,lapply(unique(ee$parent),function(k){j<-ee$parent==k;data.frame(family=h,parent=k,x=xx[k],xend=xx[k],y=min(ee$y[j]),yend=max(ee$y[j]))}));verts[[h]]<-vv
+ mm<-do.call(rbind,lapply(hips,function(hip){ix<-which(tr$tip.label %in% matches[[hip]]);if(!length(ix))return(NULL);data.frame(family=h,evidence_class=hip,marker_class=ifelse(hip=='H2AZ','H2A.Z',ifelse(hip=='macroH2A','macroH2A','Canonical')),protein_id=tr$tip.label[ix],node=ix,x=xx[ix],y=yy[ix])}));marks[[h]]<-mm
+ stats[[h]]<-data.frame(family=h,tips=n,edges=nrow(tr$edge),matched_tips=length(unique(mm$protein_id)),match_marks=nrow(mm),total_branch_length=sum(tr$edge.length),xmax=max(xx),rooted=ape::is.rooted(tr),unique_ids=!anyDuplicated(tr$tip.label));write.tree(tr,file=file.path(W,paste0(h,'-midpoint-ladderized.newick')),digits=17)
+ # Numeric invariant across original and rooted/ladderized tree: full pairwise distances in original tip order.
+ d0<-cophenetic.phylo(orig);d1<-cophenetic.phylo(tr)[rownames(d0),colnames(d0)];stopifnot(max(abs(d0-d1))<1e-10)
+}
+tips<-do.call(rbind,tips);edges<-do.call(rbind,edges);verts<-do.call(rbind,verts);marks<-do.call(rbind,marks);stats<-do.call(rbind,stats);print(stats);stopifnot(!anyDuplicated(paste(marks$family,marks$protein_id,marks$evidence_class)))
+PD<-file.path(P,'results/plot_data');dir.create(PD,recursive=TRUE,showWarnings=FALSE);for(nm in c('tips','edges','verts','marks','stats'))write.csv(get(nm),file.path(PD,paste0(stem,'_',nm,'.csv')),row.names=FALSE)
+saveRDS(list(trees=trees,tips=tips,edges=edges,verts=verts,marks=marks,stats=stats),file.path(W,'tree-data.rds'));capture.output(sessionInfo(),file=file.path(W,'prepare-sessionInfo.txt'))

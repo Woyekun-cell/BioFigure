@@ -1,0 +1,15 @@
+species,category,value,length_bp,unit,source_table
+P. glenii,DNA,12.55,95477436,percent genome,S9
+P. glenii,LINE,9.05,68862550,percent genome,S9
+P. glenii,SINE,1.74,13240798,percent genome,S9
+P. glenii,LTR,5.94,45180623,percent genome,S9
+P. glenii,Satellite,2.12,16135704,percent genome,S9
+P. glenii,SSR,1.37,10431399,percent genome,S9
+P. glenii,Unknown,6.93,52719070,percent genome,S9
+N. hainanensis,DNA,9.76,82790660,percent genome,S9
+N. hainanensis,LINE,7.88,66812219,percent genome,S9
+N. hainanensis,SINE,1.47,12483154,percent genome,S9
+N. hainanensis,LTR,8.68,73655552,percent genome,S9
+N. hainanensis,Satellite,0.48,4107392,percent genome,S9
+N. hainanensis,SSR,10.56,89554670,percent genome,S9
+N. hainanensis,Unknown,7.05,59781152,percent genome,S9

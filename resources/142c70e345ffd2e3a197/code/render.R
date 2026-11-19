@@ -1,0 +1,11 @@
+args<-commandArgs(TRUE);stopifnot(length(args)==3)
+P<-normalizePath(args[1]);W<-file.path(P,'work/2026-10-28-batch-six/spatial');C<-file.path(P,'biofigure/benchmark/library/spatial/squidpy-seqfish-neighborhood-20261028');S<-file.path(P,'biofigure');auth<-args[2];prefix<-args[3]
+.libPaths(c(file.path(W,'Rlib'),.libPaths()))
+suppressPackageStartupMessages({library(ggplot2);library(grid);library(yaml);library(jsonlite);library(digest)})
+source(file.path(S,'scripts/figure_style.R'));font<-bf_font('Arial');spec_path<-file.path(W,'design-spec.yaml');spec<-yaml::read_yaml(spec_path)
+p<-readRDS(file.path(W,'render-object.rds'))
+sources<-normalizePath(c(spec_path,file.path(C,'scripts/render.R'),file.path(C,'scripts/build_plot.R'),file.path(S,'scripts/figure_style.R'),file.path(W,'render-object.rds'),file.path(C,'data/raw/seqfish.h5ad'),file.path(C,'scripts/compute.R'),file.path(W,'computations.rds')))
+boxes<-data.frame(id=c('data','labels','legend'),x=c(0,0,0),y=c(0,0,0),w=c(183,183,183),h=c(150,150,150))
+r<-bf_render_png(p,paste0(prefix,'.png'),font,unlist(spec$text_contract$allowed_text),183,150,183,sources,boxes,allowed_pairs=c('data:labels','data:legend','labels:legend'),dpi=600,min_text_pt=6.5,authorization=auth,skill_root=S,publication_size_class='double-column')
+bf_pdf_open(paste0(prefix,'.pdf'),183,150,font);print(p);dev.off();pdf_info<-bf_pdf_finalize(paste0(prefix,'.pdf'),font,183,150)
+jsonlite::write_json(list(png=r$artifact,pdf=list(path=normalizePath(paste0(prefix,'.pdf')),sha256=digest::digest(file=paste0(prefix,'.pdf'),algo='sha256')),pdf_info=pdf_info,minimum_font_pt=r$target_min_text_pt,rendered_text=r$rendered_text),paste0(prefix,'.metrics.json'),auto_unbox=TRUE,pretty=TRUE)

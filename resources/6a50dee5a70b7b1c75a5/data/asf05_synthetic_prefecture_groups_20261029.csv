@@ -1,0 +1,369 @@
+"GID_2","province","region","synthetic_group","synthetic_value"
+"CHN.1.1_1","Anhui","Anqing","Group A",0.637991790170781
+"CHN.1.2_1","Anhui","Bengbu","Group D",0.846852840669453
+"CHN.1.3_1","Anhui","Bozhou",NA,NA
+"CHN.1.4_1","Anhui","Chaohu","Group C",0.535076856869273
+"CHN.1.5_1","Anhui","Chizhou","Group C",0.833974526519887
+"CHN.1.6_1","Anhui","Chuzhou","Group C",0.150665617361665
+"CHN.1.7_1","Anhui","Fuyang",NA,NA
+"CHN.1.8_1","Anhui","Hefei","Group A",0.128103486797772
+"CHN.1.9_1","Anhui","Huaibei",NA,NA
+"CHN.1.10_1","Anhui","Huainan",NA,NA
+"CHN.1.11_1","Anhui","Huangshan",NA,NA
+"CHN.1.12_1","Anhui","Lu'an","Group D",0.537393358210102
+"CHN.1.13_1","Anhui","Ma'anshan",NA,NA
+"CHN.1.14_1","Anhui","Suzhou","Group B",0.268419952504337
+"CHN.1.15_1","Anhui","Tongling",NA,NA
+"CHN.1.16_1","Anhui","Wuhu","Group A",0.977470496832393
+"CHN.1.17_1","Anhui","Xuancheng",NA,NA
+"CHN.2.1_1","Beijing","Beijing","Group D",0.284683141089045
+"CHN.3.1_1","Chongqing","Chongqing",NA,NA
+"CHN.4.1_1","Fujian","Fuzhou","Group A",0.495705739408731
+"CHN.4.2_1","Fujian","Longyan",NA,NA
+"CHN.4.3_1","Fujian","Nanping",NA,NA
+"CHN.4.4_1","Fujian","Ningde","Group D",0.516227712645195
+"CHN.4.5_1","Fujian","Putian","Group D",0.768245724542067
+"CHN.4.6_1","Fujian","Quanzhou",NA,NA
+"CHN.4.7_1","Fujian","Sanming",NA,NA
+"CHN.4.8_1","Fujian","Xiamen",NA,NA
+"CHN.4.9_1","Fujian","Zhangzhou","Group A",0.793756121443585
+"CHN.5.1_1","Gansu","Baiyin",NA,NA
+"CHN.5.2_1","Gansu","Dingxi","Group C",0.690426348685287
+"CHN.5.3_1","Gansu","GannanTibetan",NA,NA
+"CHN.5.4_1","Gansu","Jiayuguan",NA,NA
+"CHN.5.5_1","Gansu","Jinchang",NA,NA
+"CHN.5.6_1","Gansu","Jiuquan",NA,NA
+"CHN.5.7_1","Gansu","Lanzhou",NA,NA
+"CHN.5.8_1","Gansu","LinxiaHui",NA,NA
+"CHN.5.9_1","Gansu","Longnan",NA,NA
+"CHN.5.10_1","Gansu","Pingliang",NA,NA
+"CHN.5.11_1","Gansu","Qingyang","Group C",0.761706804903224
+"CHN.5.12_1","Gansu","Tianshui",NA,NA
+"CHN.5.13_1","Gansu","Wuwei","Group B",0.551652520080097
+"CHN.5.14_1","Gansu","Zhangye",NA,NA
+"CHN.6.1_1","Guangdong","Chaozhou","Group D",0.493680308456533
+"CHN.6.2_1","Guangdong","Dongguan","Group A",0.826452960958704
+"CHN.6.3_1","Guangdong","Foshan",NA,NA
+"CHN.6.4_1","Guangdong","Guangzhou",NA,NA
+"CHN.6.5_1","Guangdong","Heyuan",NA,NA
+"CHN.6.6_1","Guangdong","Huizhou",NA,NA
+"CHN.6.7_1","Guangdong","Jiangmen",NA,NA
+"CHN.6.8_1","Guangdong","Jieyang","Group B",0.580343139078468
+"CHN.6.9_1","Guangdong","Maoming",NA,NA
+"CHN.6.10_1","Guangdong","Meizhou",NA,NA
+"CHN.6.11_1","Guangdong","Qingyuan","Group D",0.153810896771029
+"CHN.6.12_1","Guangdong","Shantou","Group A",0.876585607044399
+"CHN.6.13_1","Guangdong","Shanwei",NA,NA
+"CHN.6.14_1","Guangdong","Shaoguan","Group D",0.435296405199915
+"CHN.6.15_1","Guangdong","Shenzhen",NA,NA
+"CHN.6.16_1","Guangdong","Yangjiang","Group B",0.421127931121737
+"CHN.6.17_1","Guangdong","Yunfu",NA,NA
+"CHN.6.18_1","Guangdong","Zhanjiang",NA,NA
+"CHN.6.19_1","Guangdong","Zhaoqing","Group B",0.826807591528632
+"CHN.6.20_1","Guangdong","Zhongshan","Group C",0.408658215892501
+"CHN.6.21_1","Guangdong","Zhuhai","Group B",0.239104480016977
+"CHN.7.1_1","Guangxi","Baise",NA,NA
+"CHN.7.2_1","Guangxi","Beihai",NA,NA
+"CHN.7.3_1","Guangxi","Chongzuo","Group C",0.466863297531381
+"CHN.7.4_1","Guangxi","Fangchenggang",NA,NA
+"CHN.7.5_1","Guangxi","Guigang","Group B",0.962063780543394
+"CHN.7.6_1","Guangxi","Guilin","Group B",0.953078738460317
+"CHN.7.7_1","Guangxi","Hechi","Group D",0.538241903739981
+"CHN.7.8_1","Guangxi","Hezhou","Group B",0.146103927702643
+"CHN.7.9_1","Guangxi","Laibin","Group A",0.558012041216716
+"CHN.7.10_1","Guangxi","Liuzhou","Group A",0.58704708518926
+"CHN.7.11_1","Guangxi","Nanning",NA,NA
+"CHN.7.12_1","Guangxi","Qinzhou","Group D",0.720280938898213
+"CHN.7.13_1","Guangxi","Wuzhou","Group B",0.167804984096438
+"CHN.7.14_1","Guangxi","Yulin",NA,NA
+"CHN.8.1_1","Guizhou","Anshun","Group C",0.559521755040623
+"CHN.8.2_1","Guizhou","Bijie",NA,NA
+"CHN.8.3_1","Guizhou","Guiyang",NA,NA
+"CHN.8.4_1","Guizhou","Liupanshui",NA,NA
+"CHN.8.5_1","Guizhou","QiandongnanMiaoandDong","Group B",0.679170075501315
+"CHN.8.6_1","Guizhou","QiannanBuyeiandMiao","Group A",0.825267486600205
+"CHN.8.7_1","Guizhou","QianxinanBuyeiandMiao",NA,NA
+"CHN.8.8_1","Guizhou","Tongren",NA,NA
+"CHN.8.9_1","Guizhou","Zunyi",NA,NA
+"CHN.9.1_1","Hainan","Haikou",NA,NA
+"CHN.9.2_1","Hainan","Hainan",NA,NA
+"CHN.9.3_1","Hainan","Sanya",NA,NA
+"CHN.10.1_1","Hebei","Baoding","Group D",0.852480183076114
+"CHN.10.2_1","Hebei","Cangzhou",NA,NA
+"CHN.10.3_1","Hebei","Chengde",NA,NA
+"CHN.10.4_1","Hebei","Handan","Group D",0.268815830000676
+"CHN.10.5_1","Hebei","Hengshui","Group B",0.11741401697509
+"CHN.10.6_1","Hebei","Langfang",NA,NA
+"CHN.10.7_1","Hebei","Qinhuangdao",NA,NA
+"CHN.10.8_1","Hebei","Shijiazhuang","Group B",0.291888089478016
+"CHN.10.9_1","Hebei","Tangshan",NA,NA
+"CHN.10.10_1","Hebei","Xingtai",NA,NA
+"CHN.10.11_1","Hebei","Zhangjiakou",NA,NA
+"CHN.11.1_1","Heilongjiang","Daqing",NA,NA
+"CHN.11.2_1","Heilongjiang","Daxing'anling",NA,NA
+"CHN.11.3_1","Heilongjiang","Harbin",NA,NA
+"CHN.11.4_1","Heilongjiang","Hegang",NA,NA
+"CHN.11.5_1","Heilongjiang","Heihe",NA,NA
+"CHN.11.6_1","Heilongjiang","Jiamusi",NA,NA
+"CHN.11.7_1","Heilongjiang","Jixi",NA,NA
+"CHN.11.8_1","Heilongjiang","Mudanjiang",NA,NA
+"CHN.11.9_1","Heilongjiang","Qiqihar",NA,NA
+"CHN.11.10_1","Heilongjiang","Qitaihe",NA,NA
+"CHN.11.11_1","Heilongjiang","Shuangyashan",NA,NA
+"CHN.11.12_1","Heilongjiang","Suihua",NA,NA
+"CHN.11.13_1","Heilongjiang","Yichun",NA,NA
+"CHN.12.1_1","Henan","Anyang",NA,NA
+"CHN.12.2_1","Henan","Hebi",NA,NA
+"CHN.12.3_1","Henan","Jiaozuo","Group D",0.56968209145125
+"CHN.12.4_1","Henan","Jiyuanshi",NA,NA
+"CHN.12.5_1","Henan","Kaifeng",NA,NA
+"CHN.12.6_1","Henan","Luohe","Group D",0.27404927262105
+"CHN.12.7_1","Henan","Luoyang",NA,NA
+"CHN.12.8_1","Henan","Nanyang",NA,NA
+"CHN.12.9_1","Henan","Pingdingshan",NA,NA
+"CHN.12.10_1","Henan","Puyang",NA,NA
+"CHN.12.11_1","Henan","Sanmenxia","Group C",0.316454637772404
+"CHN.12.12_1","Henan","Shangqiu",NA,NA
+"CHN.12.13_1","Henan","Xinxiang",NA,NA
+"CHN.12.14_1","Henan","Xinyang","Group A",0.363577652978711
+"CHN.12.15_1","Henan","Xuchang","Group A",0.411607038159855
+"CHN.12.16_1","Henan","Zhengzhou","Group C",0.871679005003534
+"CHN.12.17_1","Henan","Zhoukou",NA,NA
+"CHN.12.18_1","Henan","Zhumadian",NA,NA
+"HKG.1_1","HongKong","CentralandWestern","Group A",0.762790095270611
+"HKG.2_1","HongKong","Eastern",NA,NA
+"HKG.3_1","HongKong","Islands","Group A",0.92445550179109
+"HKG.4_1","HongKong","KowloonCity",NA,NA
+"HKG.5_1","HongKong","KwaiTsing",NA,NA
+"HKG.6_1","HongKong","KwunTong","Group A",0.32208508818876
+"HKG.7_1","HongKong","North","Group A",0.151420331257395
+"HKG.8_1","HongKong","SaiKung","Group D",0.690192624134943
+"HKG.9_1","HongKong","ShaTin",NA,NA
+"HKG.10_1","HongKong","ShamShuiPo","Group A",0.255530095216818
+"HKG.11_1","HongKong","Southern",NA,NA
+"HKG.12_1","HongKong","TaiPo","Group A",0.633437656168826
+"HKG.13_1","HongKong","TsuenWan","Group C",0.613695446564816
+"HKG.14_1","HongKong","TuenMun","Group D",0.959420021623373
+"HKG.15_1","HongKong","WanChai",NA,NA
+"HKG.16_1","HongKong","WongTaiSin","Group D",0.460443447856233
+"HKG.17_1","HongKong","YauTsimMong",NA,NA
+"HKG.18_1","HongKong","YuenLong","Group D",0.792654030257836
+"CHN.13.1_1","Hubei","EnshiTujiaandMiao","Group B",0.623186852829531
+"CHN.13.2_1","Hubei","Ezhou",NA,NA
+"CHN.13.3_1","Hubei","Huanggang","Group C",0.333192319399677
+"CHN.13.4_1","Hubei","Huangshi",NA,NA
+"CHN.13.5_1","Hubei","Jingmen",NA,NA
+"CHN.13.6_1","Hubei","Jingzhou","Group C",0.177313717640936
+"CHN.13.7_1","Hubei","Qianjiang","Group B",0.858028195798397
+"CHN.13.8_1","Hubei","Shennongjia",NA,NA
+"CHN.13.9_1","Hubei","Shiyan",NA,NA
+"CHN.13.10_1","Hubei","SuizhouShi",NA,NA
+"CHN.13.11_1","Hubei","Tianmen",NA,NA
+"CHN.13.12_1","Hubei","Wuhan",NA,NA
+"CHN.13.13_1","Hubei","Xiangfan","Group C",0.976119071268477
+"CHN.13.14_1","Hubei","Xianning",NA,NA
+"CHN.13.15_1","Hubei","Xiantao",NA,NA
+"CHN.13.16_1","Hubei","Xiaogan",NA,NA
+"CHN.13.17_1","Hubei","Yichang",NA,NA
+"CHN.14.1_1","Hunan","Changde","Group D",0.385859838454053
+"CHN.14.2_1","Hunan","Changsha",NA,NA
+"CHN.14.3_1","Hunan","Chenzhou",NA,NA
+"CHN.14.4_1","Hunan","Hengyang",NA,NA
+"CHN.14.5_1","Hunan","Huaihua",NA,NA
+"CHN.14.6_1","Hunan","Loudi","Group B",0.760040759993717
+"CHN.14.7_1","Hunan","Shaoyang",NA,NA
+"CHN.14.8_1","Hunan","Xiangtan","Group B",0.54711541517172
+"CHN.14.9_1","Hunan","XiangxiTujiaandMiao",NA,NA
+"CHN.14.10_1","Hunan","Yiyang",NA,NA
+"CHN.14.11_1","Hunan","Yongzhou",NA,NA
+"CHN.14.12_1","Hunan","Yueyang","Group C",0.920222840388305
+"CHN.14.13_1","Hunan","Zhangjiajie","Group C",0.369893908197992
+"CHN.14.14_1","Hunan","Zhuzhou",NA,NA
+"CHN.15.1_1","Jiangsu","Changzhou","Group C",0.986915146745741
+"CHN.15.2_1","Jiangsu","Huai'an",NA,NA
+"CHN.15.3_1","Jiangsu","Lianyungang",NA,NA
+"CHN.15.4_1","Jiangsu","Nanjing","Group A",0.583718443475664
+"CHN.15.5_1","Jiangsu","Nantong",NA,NA
+"CHN.15.6_1","Jiangsu","Suqian",NA,NA
+"CHN.15.7_1","Jiangsu","Suzhou",NA,NA
+"CHN.15.8_1","Jiangsu","Taizhou","Group A",0.159789726743475
+"CHN.15.9_1","Jiangsu","Wuxi",NA,NA
+"CHN.15.10_1","Jiangsu","Xuzhou",NA,NA
+"CHN.15.11_1","Jiangsu","Yancheng",NA,NA
+"CHN.15.12_1","Jiangsu","Yangzhou",NA,NA
+"CHN.15.13_1","Jiangsu","Zhenjiang",NA,NA
+"CHN.16.1_1","Jiangxi","Fuzhou","Group B",0.808882573083974
+"CHN.16.2_1","Jiangxi","Ganzhou","Group A",0.376542191556655
+"CHN.16.3_1","Jiangxi","Ji'an",NA,NA
+"CHN.16.4_1","Jiangxi","Jingdezhen",NA,NA
+"CHN.16.5_1","Jiangxi","Jiujiang","Group A",0.608622388308868
+"CHN.16.6_1","Jiangxi","Nanchang",NA,NA
+"CHN.16.7_1","Jiangxi","Pingxiang","Group D",0.168852071766742
+"CHN.16.8_1","Jiangxi","Shangrao",NA,NA
+"CHN.16.9_1","Jiangxi","Xinyu","Group C",0.5963973632548
+"CHN.16.10_1","Jiangxi","Yichun","Group C",0.750579266017303
+"CHN.16.11_1","Jiangxi","Yingtan",NA,NA
+"CHN.17.1_1","Jilin","Baicheng",NA,NA
+"CHN.17.2_1","Jilin","Baishan",NA,NA
+"CHN.17.3_1","Jilin","Changchun",NA,NA
+"CHN.17.4_1","Jilin","Jilin",NA,NA
+"CHN.17.5_1","Jilin","Liaoyuan",NA,NA
+"CHN.17.6_1","Jilin","Siping",NA,NA
+"CHN.17.7_1","Jilin","Songyuan",NA,NA
+"CHN.17.8_1","Jilin","Tonghua",NA,NA
+"CHN.17.9_1","Jilin","YanbianKorean",NA,NA
+"CHN.18.1_1","Liaoning","Anshan","Group C",0.123098835349083
+"CHN.18.2_1","Liaoning","Benxi","Group A",0.462853027088568
+"CHN.18.3_1","Liaoning","Chaoyang","Group B",0.759824848244898
+"CHN.18.4_1","Liaoning","Dalian",NA,NA
+"CHN.18.5_1","Liaoning","Dandong","Group D",0.490235310420394
+"CHN.18.6_1","Liaoning","Fushun","Group B",0.54630823538173
+"CHN.18.7_1","Liaoning","Fuxin",NA,NA
+"CHN.18.8_1","Liaoning","Huludao",NA,NA
+"CHN.18.9_1","Liaoning","Jinzhou","Group A",0.804744534357451
+"CHN.18.10_1","Liaoning","Liaoyang","Group B",0.276613170024939
+"CHN.18.11_1","Liaoning","Panjin",NA,NA
+"CHN.18.12_1","Liaoning","Shenyang",NA,NA
+"CHN.18.13_1","Liaoning","Tieling",NA,NA
+"MAC.1_1","Macau","Ilhas","Group D",0.674165393458679
+"MAC.2_1","Macau","Macau",NA,NA
+"CHN.19.1_1","NeiMongol","Alxa",NA,NA
+"CHN.19.2_1","NeiMongol","Baotou",NA,NA
+"CHN.19.3_1","NeiMongol","Baynnur",NA,NA
+"CHN.19.4_1","NeiMongol","Chifeng",NA,NA
+"CHN.19.5_1","NeiMongol","Hohhot",NA,NA
+"CHN.19.6_1","NeiMongol","Hulunbuir",NA,NA
+"CHN.19.7_1","NeiMongol","Ordos",NA,NA
+"CHN.19.8_1","NeiMongol","Tongliao",NA,NA
+"CHN.19.9_1","NeiMongol","UlaanChab",NA,NA
+"CHN.19.10_1","NeiMongol","Wuhai","Group B",0.961222596210428
+"CHN.19.11_1","NeiMongol","XilinGol",NA,NA
+"CHN.19.12_1","NeiMongol","Xing'an",NA,NA
+"CHN.20.1_1","NingxiaHui","Guyuan","Group A",0.525340708671138
+"CHN.20.2_1","NingxiaHui","Shizuishan","Group B",0.952464573993348
+"CHN.20.3_1","NingxiaHui","Wuzhong","Group B",0.176512016681954
+"CHN.20.4_1","NingxiaHui","Yinchuan","Group B",0.23191760070622
+"CHN.20.5_1","NingxiaHui","Zhongwei",NA,NA
+"CHN.21.1_1","Qinghai","GologTibetan",NA,NA
+"CHN.21.2_1","Qinghai","GyêguTibetan",NA,NA
+"CHN.21.3_1","Qinghai","HaibeiTibetan",NA,NA
+"CHN.21.4_1","Qinghai","Haidong",NA,NA
+"CHN.21.5_1","Qinghai","HainanTibetan",NA,NA
+"CHN.21.6_1","Qinghai","HaixiMongolandTibetan",NA,NA
+"CHN.21.7_1","Qinghai","HuangnanTibetan",NA,NA
+"CHN.21.8_1","Qinghai","Xining",NA,NA
+"CHN.22.1_1","Shaanxi","Ankang","Group B",0.714929066901095
+"CHN.22.2_1","Shaanxi","Baoji","Group C",0.697432177630253
+"CHN.22.3_1","Shaanxi","Hanzhong","Group C",0.457402213010937
+"CHN.22.4_1","Shaanxi","Shangluo",NA,NA
+"CHN.22.5_1","Shaanxi","Tongchuan",NA,NA
+"CHN.22.6_1","Shaanxi","Weinan","Group D",0.76004740181379
+"CHN.22.7_1","Shaanxi","Xi'an",NA,NA
+"CHN.22.8_1","Shaanxi","Xianyang","Group D",0.375864692381583
+"CHN.22.9_1","Shaanxi","Yan'an",NA,NA
+"CHN.22.10_1","Shaanxi","Yulin","Group A",0.393699440034106
+"CHN.23.1_1","Shandong","Binzhou","Group C",0.190635561244562
+"CHN.23.2_1","Shandong","Dezhou","Group D",0.696281333104707
+"CHN.23.3_1","Shandong","Dongying","Group B",0.149768115859479
+"CHN.23.4_1","Shandong","Heze",NA,NA
+"CHN.23.5_1","Shandong","Jinan","Group C",0.921966896927916
+"CHN.23.6_1","Shandong","Jining","Group D",0.784401127300225
+"CHN.23.7_1","Shandong","Laiwu","Group A",0.876565462187864
+"CHN.23.8_1","Shandong","Liaocheng","Group D",0.678735990566201
+"CHN.23.9_1","Shandong","Linyi","Group C",0.576257155952044
+"CHN.23.10_1","Shandong","Qingdao",NA,NA
+"CHN.23.11_1","Shandong","Rizhao","Group A",0.228559992602095
+"CHN.23.12_1","Shandong","Tai'an","Group C",0.839838732709177
+"CHN.23.13_1","Shandong","Weifang",NA,NA
+"CHN.23.14_1","Shandong","Weihai",NA,NA
+"CHN.23.15_1","Shandong","Yantai",NA,NA
+"CHN.23.16_1","Shandong","Zaozhuang","Group B",0.445141601120122
+"CHN.23.17_1","Shandong","Zibo","Group C",0.491786905471236
+"CHN.24.1_1","Shanghai","Shanghai","Group D",0.381489907461219
+"CHN.25.1_1","Shanxi","Changzhi","Group D",0.671947367745452
+"CHN.25.2_1","Shanxi","Datong",NA,NA
+"CHN.25.3_1","Shanxi","Jincheng",NA,NA
+"CHN.25.4_1","Shanxi","Jinzhong",NA,NA
+"CHN.25.5_1","Shanxi","Linfen",NA,NA
+"CHN.25.6_1","Shanxi","Luliang","Group A",0.608308450621553
+"CHN.25.7_1","Shanxi","Shuozhou",NA,NA
+"CHN.25.8_1","Shanxi","Taiyuan",NA,NA
+"CHN.25.9_1","Shanxi","Xinzhou",NA,NA
+"CHN.25.10_1","Shanxi","Yangquan",NA,NA
+"CHN.25.11_1","Shanxi","Yuncheng","Group B",0.218676044838503
+"CHN.26.1_1","Sichuan","Bazhong",NA,NA
+"CHN.26.2_1","Sichuan","Chengdu","Group D",0.628552422113717
+"CHN.26.3_1","Sichuan","Dazhou","Group A",0.934283835627139
+"CHN.26.4_1","Sichuan","Deyang","Group C",0.898797250422649
+"CHN.26.5_1","Sichuan","GarzêTibetan",NA,NA
+"CHN.26.6_1","Sichuan","Guang'an",NA,NA
+"CHN.26.7_1","Sichuan","Guangyuan",NA,NA
+"CHN.26.8_1","Sichuan","Leshan",NA,NA
+"CHN.26.9_1","Sichuan","LiangshanYi",NA,NA
+"CHN.26.10_1","Sichuan","Luzhou","Group D",0.574322179565206
+"CHN.26.11_1","Sichuan","Meishan",NA,NA
+"CHN.26.12_1","Sichuan","Mianyang",NA,NA
+"CHN.26.13_1","Sichuan","Nanchong",NA,NA
+"CHN.26.15_1","Sichuan","Neijiang",NA,NA
+"CHN.26.14_1","Sichuan","Neijiang]]",NA,NA
+"CHN.26.16_1","Sichuan","NgawaTibetanandQiang",NA,NA
+"CHN.26.17_1","Sichuan","Panzhihua",NA,NA
+"CHN.26.18_1","Sichuan","Suining",NA,NA
+"CHN.26.19_1","Sichuan","Ya'an",NA,NA
+"CHN.26.20_1","Sichuan","Yibin","Group C",0.961130971112289
+"CHN.26.21_1","Sichuan","Zigong",NA,NA
+"CHN.26.22_1","Sichuan","Ziyang","Group A",0.269947805185802
+"CHN.27.1_1","Tianjin","Tianjin",NA,NA
+"CHN.28.1_1","XinjiangUygur","Aksu",NA,NA
+"CHN.28.2_1","XinjiangUygur","Altay",NA,NA
+"CHN.28.3_1","XinjiangUygur","Bayin'gholinMongol",NA,NA
+"CHN.28.4_1","XinjiangUygur","BörtalaMongol",NA,NA
+"CHN.28.5_1","XinjiangUygur","ChangjiHui",NA,NA
+"CHN.28.6_1","XinjiangUygur","Hami",NA,NA
+"CHN.28.7_1","XinjiangUygur","IliKazakh",NA,NA
+"CHN.28.8_1","XinjiangUygur","Karamay",NA,NA
+"CHN.28.9_1","XinjiangUygur","Kashgar",NA,NA
+"Z02.28.9_1","XinjiangUygur","Kashgar",NA,NA
+"CHN.28.10_1","XinjiangUygur","Khotan",NA,NA
+"Z03.28.10_1","XinjiangUygur","Khotan",NA,NA
+"CHN.28.11_1","XinjiangUygur","KizilsuKirghiz",NA,NA
+"CHN.28.12_1","XinjiangUygur","Shihezi",NA,NA
+"CHN.28.13_1","XinjiangUygur","Tacheng",NA,NA
+"CHN.28.14_1","XinjiangUygur","Turfan",NA,NA
+"CHN.28.15_1","XinjiangUygur","Ürümqi",NA,NA
+"CHN.29.1_1","Xizang","Chamdo",NA,NA
+"CHN.29.2_1","Xizang","Lhasa",NA,NA
+"CHN.29.3_1","Xizang","Nagchu",NA,NA
+"CHN.29.4_1","Xizang","Ngari",NA,NA
+"Z03.29.4_1","Xizang","Ngari",NA,NA
+"Z08.29.4_1","Xizang","Ngari",NA,NA
+"CHN.29.5_1","Xizang","Nyingtri",NA,NA
+"CHN.29.6_1","Xizang","Shannan",NA,NA
+"CHN.29.7_1","Xizang","Shigatse",NA,NA
+"CHN.30.1_1","Yunnan","Baoshan",NA,NA
+"CHN.30.2_1","Yunnan","ChuxiongYi",NA,NA
+"CHN.30.3_1","Yunnan","DaliBai",NA,NA
+"CHN.30.4_1","Yunnan","DehongDaiandJingpo",NA,NA
+"CHN.30.5_1","Yunnan","DêqênTibetan",NA,NA
+"CHN.30.6_1","Yunnan","HongheHaniandYi",NA,NA
+"CHN.30.7_1","Yunnan","Kunming",NA,NA
+"CHN.30.8_1","Yunnan","Lijiang",NA,NA
+"CHN.30.9_1","Yunnan","Lincang",NA,NA
+"CHN.30.10_1","Yunnan","NujiangLisu",NA,NA
+"CHN.30.11_1","Yunnan","Pu'er",NA,NA
+"CHN.30.12_1","Yunnan","Qujing",NA,NA
+"CHN.30.13_1","Yunnan","WenshanZhuangandMiao",NA,NA
+"CHN.30.14_1","Yunnan","XishuangbannaDai",NA,NA
+"CHN.30.15_1","Yunnan","Yuxi",NA,NA
+"CHN.30.16_1","Yunnan","Zhaotong",NA,NA
+"CHN.31.1_1","Zhejiang","Hangzhou","Group B",0.41318860668689
+"CHN.31.2_1","Zhejiang","Huzhou",NA,NA
+"CHN.31.3_1","Zhejiang","Jiaxing","Group C",0.47392483134754
+"CHN.31.4_1","Zhejiang","Jinhua",NA,NA
+"CHN.31.5_1","Zhejiang","Lishui","Group C",0.877512876666151
+"CHN.31.6_1","Zhejiang","Ningbo","Group A",0.329905361309648
+"CHN.31.7_1","Zhejiang","Quzhou",NA,NA
+"CHN.31.8_1","Zhejiang","Shaoxing",NA,NA
+"CHN.31.9_1","Zhejiang","Taizhou",NA,NA
+"CHN.31.10_1","Zhejiang","Wenzhou","Group B",0.986426502116956
+"CHN.31.11_1","Zhejiang","Zhoushan",NA,NA

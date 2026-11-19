@@ -1,0 +1,15 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);W<-file.path(P,'work/2026-10-29-omics-library-next/cellchat');set.seed(20261030)
+names<-c('HSC','MPP','Cycling HSPC','MEP','Erythroblast','Late Erythroid','RBC','Megakaryocyte','GMP','Early Myeloid Progenitor','Late Myeloid','Neutrophil','Monocyte','Macrophages','Ba/Eo/Ma','Cycling DCs','pDC','CLP','Pre-Pro B','Pro-B','Pre-B','Mature B','Plasma Cell','CD4+ T-Cell','CD8+ T-Cell','AEC','SEC','VSMC','THY1+ MSC','Adipo-MSC','OsteoFibro-MSC','Osteo-MSC','Osteoblast','Fibro-MSC')
+colors<-c('#8B7BAA','#A99CBE','#B8AACD','#AF888C','#BE9B8F','#CBAFA3','#D8C5BC','#AC7E7A','#7E9AAA','#A9BBC7','#94B0BF','#7DA7B6','#567E98','#89A3B1','#A9BDC7','#718CA8','#9AA5BE','#91B5AA','#AEC9B6','#7FAD99','#A3BC9B','#799C78','#B3C2A4','#8CA68C','#668B7D','#D7AF87','#C9946F','#A37A68','#CBA083','#D5B38D','#BA8D80','#C28278','#DBB4A4','#AD756C')
+out<-c(6,3,8,5,3,1,0.4,5,9,4,2,6,12,4,5,11,10,8,7,6,5,6,4,6,7,15,20,19,37,32,31,23,29,39)
+inc<-c(13,7,15,10,8,2,0.4,11,18,1,4,12,26,3,10,16,14,17,10,9,8,12,7,13,23,14,20,12,18,14,16,15,17,24);inc<-inc*sum(out)/sum(inc)
+M<-matrix(rgamma(34*34,shape=1.2),34);diag(M)<-0
+for(i in 1:400){M<-M* (out/rowSums(M));M<-t(t(M)*(inc/colSums(M)))}
+stopifnot(max(abs(rowSums(M)-out))<1e-10,max(abs(colSums(M)-inc))<1e-10)
+node<-data.frame(id=seq_along(names),cell_type=names,color=colors,outgoing=rowSums(M),incoming=colSums(M),total_strength=rowSums(M)+colSums(M),cell_count=sample(650:3250,34))
+edge<-expand.grid(source_id=1:34,target_id=1:34);edge$weight<-as.vector(M);edge$source<-names[edge$source_id];edge$target<-names[edge$target_id]
+ring<-c('HSC','MPP','Cycling HSPC','MEP','GMP','CLP','AEC','SEC','VSMC','THY1+ MSC','Adipo-MSC','Osteo-MSC','Osteoblast','Fibro-MSC')
+r<-node[match(ring,names),];theta<-seq(0,2*pi,length.out=15)[-15];r$x<-cos(theta);r$y<-sin(theta)
+src<-c('AEC','SEC','VSMC','THY1+ MSC','Adipo-MSC','Osteo-MSC','Osteoblast','Fibro-MSC');tar<-c('HSC','MPP','Cycling HSPC','MEP','GMP','CLP');e<-subset(edge,source%in%src&target%in%tar);e$source_x<-r$x[match(e$source,ring)];e$source_y<-r$y[match(e$source,ring)];e$target_x<-r$x[match(e$target,ring)];e$target_y<-r$y[match(e$target,ring)];e$color<-node$color[match(e$source,names)]
+stem<-'repro047_cellchat_pair_20261029';PD<-file.path(P,'results/plot_data');for(n in c('nodes','edges','ring_nodes','ring_edges')){x<-switch(n,nodes=node,edges=edge,ring_nodes=r,ring_edges=e);write.csv(x,file.path(PD,paste0(stem,'_',n,'.csv')),row.names=FALSE)}
+jsonlite::write_json(list(seed=20261030,nodes=34,edges=nrow(edge),ring_nodes=14,ring_edges=nrow(e),CellChat_available=requireNamespace('CellChat',quietly=TRUE),renderer='ggplot2 native quadratic Bezier paths and ggrepel; matrix balancing with R base',cell_counts='independently simulated;not inferred from network weights',strength_relationship='outgoing=rowSums(M);incoming=colSums(M);total_strength=outgoing+incoming;left48edge weights exact subset of same34x34matrix'),file.path(W,'input-qc.json'),auto_unbox=TRUE,pretty=TRUE)

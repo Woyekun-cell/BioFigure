@@ -1,0 +1,32 @@
+# Fixed official real processed data; native plotgardener source A-D.
+a<-commandArgs(TRUE);P<-normalizePath(a[1]);run_id<-if(length(a)>1)a[2]else'run1'
+S<-file.path(P,'biofigure');W<-file.path(P,'work/2026-10-28-batch-five/plotgardener');F<-file.path(W,'results/figures/plotgardener_homepage_ABCD')
+source(file.path(W,'scripts/build_native.R'));load_case(P);source(file.path(S,'scripts/figure_style.R'));font<-bf_font('Arial');spec_path<-file.path(W,'design-spec.yaml');spec<-yaml::read_yaml(spec_path);BW<-183;BH<-112
+bound<-function(p)list(path=normalizePath(p,mustWork=TRUE),sha256=digest::digest(file=p,algo='sha256'))
+write_json<-function(x,p)jsonlite::write_json(x,p,pretty=TRUE,auto_unbox=TRUE,digits=NA,null='null')
+sources<-c(file.path(W,'scripts',c('render.R','build_native.R','prepare_data.R')),file.path(S,'scripts/figure_style.R'),spec_path,file.path(W,c('source-lock.json','project-style.json','evidence/input-qc.json')),list.files(file.path(W,'results/plot_data'),pattern='csv$',full.names=TRUE),file.path(W,'sources',c('reference.png','author-homepage.R','DESCRIPTION')),list.files(file.path(W,'data/raw'),pattern='rda$|cytoBand.txt.gz$',full.names=TRUE))
+auth_path<-file.path(W,paste0('authorization-',run_id,'-',format(Sys.time(),'%Y%m%d%H%M%S'),'.json'));source_args<-unlist(lapply(sources[sources!=spec_path],function(x)c('--source',x)))
+cmd<-c(file.path(S,'scripts/authorize_render.py'),'--receipt',file.path(W,'preparation-receipt.json'),'--design-spec',spec_path,'--output',auth_path,source_args)
+stopifnot(system2('python3',shQuote(cmd))==0)
+cmd<-c(file.path(S,'scripts/authorize_render.py'),'--design-spec',spec_path,'--output',auth_path,'--consume',source_args);stopifnot(system2('python3',shQuote(cmd))==0)
+before<-lapply(sources,bound);bf_validate_publication_size(BW,BH,'double-column')
+boxes<-data.frame(id=c('A','B','C','D'),x=c(.2,87,87,132),y=c(11,91,11,11),w=c(82,86,43,43),h=c(96,17,79,79));bf_check_boxes(boxes,BW,BH)
+collect<-function(x){r<-list(text=character(),sizes=numeric(),families=character());if(inherits(x,'text')){r$text<-as.character(x$label);r$sizes<-x$gp$fontsize;r$families<-x$gp$fontfamily};for(y in c(x$grobs,as.list(x$children))){a<-collect(y);r$text<-c(r$text,a$text);r$sizes<-c(r$sizes,a$sizes);r$families<-c(r$families,a$families)};r}
+run_device<-function(path,kind){
+ if(kind=='png')ragg::agg_png(path,width=BW,height=BH,units='mm',res=400,background='white')else bf_pdf_open(path,BW,BH,font)
+ ok<-FALSE;on.exit({dev.off();if(!ok)unlink(path)},add=TRUE)
+ if(kind=='png'){p<-make_native(P);shared_p<<-p}else{p<-shared_p};grid::grid.newpage();grid::grid.draw(p$grob);grid::grid.force(redraw=FALSE)
+ txt<-collect(p$grob);stopifnot(length(txt$text)>20,all(txt$families=='Arial'),min(txt$sizes)>=6.5,max(txt$sizes)/min(txt$sizes)<1.6)
+ bf_assert_scientific_text(txt$text);unexpected<-setdiff(txt$text,unlist(spec$text_contract$allowed_text));if(length(unexpected))stop(paste('Unapproved text:',paste(unexpected,collapse='|')))
+ glyph<-unique(unlist(strsplit(paste(txt$text,collapse=''),'',fixed=TRUE)));stopifnot(all(systemfonts::glyph_info(glyph,path=font$path,index=font$index)$index!=0))
+ cells<-lapply(seq_along(c('hicSquare1','hicSquare2','hicTriangle1_inside','hicTriangle2_inside')),function(i){n<-c('hicSquare1','hicSquare2','hicTriangle1_inside','hicTriangle2_inside')[i];grid::seekViewport(n);v<-grid::current.viewport();ww<-grid::convertWidth(unit(1,'npc'),'mm',valueOnly=TRUE);hh<-grid::convertHeight(unit(1,'npc'),'mm',valueOnly=TRUE);cw<-grid::convertWidth(unit(10000,'native'),'mm',valueOnly=TRUE);ch<-grid::convertHeight(unit(10000,'native'),'mm',valueOnly=TRUE);nr<-as.integer(diff(v$yscale)/10000);nc<-as.integer(diff(v$xscale)/10000);grid::upViewport(0);stopifnot(abs(cw-ch)/cw<.01);list(panel_id=n,matrix_id=c('A_GM12878','A_IMR90','C_GM12878','D_IMR90')[i],rows=nr,columns=nc,matrix_rows=nr,matrix_columns=nc,body_width_mm=ww,body_height_mm=hh,cell_width_mm=cw,cell_height_mm=ch,measurement_method='final_body_viewports_mm',mask=if(i<3)'native upper/lower half; clipped edge bins'else'native45degree rotation and triangular clip',viewport_xscale=v$xscale,viewport_yscale=v$yscale)})
+ ok<-TRUE;list(text=unique(txt$text),sizes=unique(txt$sizes),families=unique(txt$families),cells=cells,boxes=boxes)
+}
+t<-proc.time()[['elapsed']];png<-run_device(paste0(F,'.png'),'png');png_s<-proc.time()[['elapsed']]-t
+stopifnot(identical(before,lapply(sources,bound)));auth<-jsonlite::fromJSON(auth_path,simplifyVector=FALSE);marker<-paste0(auth_path,'.consumed');stopifnot(readLines(marker)[1]==auth$authorization_id)
+receipt<-list(schema_version=1,status='PASS',backend='R',renderer='plotgardener',artifact=bound(paste0(F,'.png')),sources=before,authorization_consumption=list(consumed=TRUE,authorization_id=auth$authorization_id,marker=bound(marker),authorization_file=bound(auth_path),preparation_receipt=auth$bound$receipt),font=c(bound(font$path),list(family=font$family)),checks=list(font=TRUE,text_allowlist=TRUE,scientific_text_only=TRUE,footer_free=TRUE,layout=TRUE,target_size=TRUE,cell_geometry=TRUE),rendered_text=as.list(png$text),text_policy_id='scientific-content-only-v1',footer_policy_id='no-canvas-footer-v1',heatmap_cells=png$cells,heatmap_cell_policy_id='heatmap-cells-v1',target_min_text_pt=min(png$sizes),min_text_pt=6.5,target_width_mm=BW,target_size=list(width_mm=BW,height_mm=BH,size_class='double-column',size_basis='final_physical_output'),device=list(width_mm=BW,height_mm=BH,dpi=400),boxes=boxes,scope='Executed technical checks; actual final PNG/PDF inspection is separately bound.')
+write_json(receipt,paste0(F,'.png.render.json'));write_json(png,file.path(W,'evidence',paste0(run_id,'-png-metrics.json')))
+t<-proc.time()[['elapsed']];pdf<-run_device(paste0(F,'.pdf'),'pdf');pdf_s<-proc.time()[['elapsed']]-t
+pdf_audit<-bf_pdf_finalize(paste0(F,'.pdf'),font,BW,BH);write_json(pdf_audit,paste0(F,'.pdf.pdf-audit.json'));write_json(c(list(artifact=bound(paste0(F,'.pdf')),source_png=bound(paste0(F,'.png')),backend='R'),pdf),paste0(F,'.pdf.export.json'));write_json(pdf,file.path(W,'evidence',paste0(run_id,'-pdf-metrics.json')))
+write_json(list(status='RENDERED_PENDING_VISUAL_REVIEW',run=run_id,png=bound(paste0(F,'.png')),pdf=bound(paste0(F,'.pdf')),authorization=auth_path,png_seconds=png_s,pdf_seconds=pdf_s),file.path(W,'evidence',paste0(run_id,'.json')))
+capture.output(sessionInfo(),file=file.path(W,'evidence/render-sessionInfo.txt'));cat('RENDERED_PENDING_VISUAL_REVIEW\n')

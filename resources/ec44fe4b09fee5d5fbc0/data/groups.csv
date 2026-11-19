@@ -1,0 +1,4 @@
+group_id,label,order,color,shape
+Metric 1,Outer metric series 1,1,#0075B6,15
+Metric 2,Outer metric series 2,2,#810084,15
+Metric 3,Outer metric series 3,3,#9C9C9C,15

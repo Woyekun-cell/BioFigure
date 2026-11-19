@@ -1,0 +1,645 @@
+"habitat","node","degree","module","phylum","x","y"
+"Rhizosphere soil","S001",9,2,"Ascomycota",0.205467510489586,-0.808251767222243
+"Rhizosphere soil","S002",12,4,"Basidiomycota",-0.0461888649528649,-0.778464113186632
+"Rhizosphere soil","S003",14,3,"Rozellomycota",-0.651623252087485,0.313836219043884
+"Rhizosphere soil","S004",10,1,"Basidiomycota",-0.330830690338723,0.62309423049862
+"Rhizosphere soil","S005",7,1,"Ascomycota",0.47345306520796,0.690179628848659
+"Rhizosphere soil","S006",4,3,"Rozellomycota",-0.849971178209315,-0.131961468127815
+"Rhizosphere soil","S007",55,3,"Basidiomycota",-0.305228885072182,-0.335824853395563
+"Rhizosphere soil","S008",32,1,"Chytridiomycota",0.463691689776392,0.32396571035428
+"Rhizosphere soil","S009",11,2,"Ascomycota",0.752544238344572,-0.209087963930702
+"Rhizosphere soil","S010",7,2,"Ascomycota",0.820575880265427,0.243269585129075
+"Rhizosphere soil","S011",33,3,"Chytridiomycota",-0.372823800715471,0.446541031458886
+"Rhizosphere soil","S012",38,1,"Ascomycota",0.34288925823033,0.261612900145103
+"Rhizosphere soil","S013",9,2,"Ascomycota",0.673689537992278,-0.434181630427985
+"Rhizosphere soil","S014",16,1,"Ascomycota",0.0505255558811529,0.733938177461589
+"Rhizosphere soil","S015",36,4,"Ascomycota",0.366913359242402,-0.532840014741438
+"Rhizosphere soil","S016",13,2,"Unclassified fungi",0.713023643747653,-0.116975090363073
+"Rhizosphere soil","S017",22,1,"Ascomycota",0.0353679924881435,0.661585987986052
+"Rhizosphere soil","S018",11,1,"Rozellomycota",-0.512244307870749,0.56639075729101
+"Rhizosphere soil","S019",23,2,"Ascomycota",0.620844233178125,-0.24241865284613
+"Rhizosphere soil","S020",13,1,"Ascomycota",-0.0645520052479168,0.74694378384193
+"Rhizosphere soil","S021",39,1,"Unclassified fungi",0.431752186992453,0.482365922065469
+"Rhizosphere soil","S022",8,1,"Basidiomycota",0.77382663172179,0.291450424472869
+"Rhizosphere soil","S023",23,1,"Basidiomycota",0.312497432257939,0.498778725874335
+"Rhizosphere soil","S024",17,4,"Ascomycota",0.139521346399975,-0.742683137007307
+"Rhizosphere soil","S025",7,3,"Ascomycota",-0.693894072056326,0.427761802328625
+"Rhizosphere soil","S026",10,1,"Ascomycota",0.764389384342115,0.0222736288901644
+"Rhizosphere soil","S027",43,1,"Basidiomycota",0.274691158211099,0.298589747445322
+"Rhizosphere soil","S028",27,1,"Basidiomycota",0.467779146930268,0.462671638850149
+"Rhizosphere soil","S029",18,4,"Ascomycota",-0.23691617068886,-0.700073876295662
+"Rhizosphere soil","S030",11,1,"Rozellomycota",-0.471284255255719,0.6081745300292
+"Rhizosphere soil","S031",16,4,"Ascomycota",-0.259856351223673,-0.668681829022161
+"Rhizosphere soil","S032",46,1,"Basidiomycota",0.202572218154946,0.329774643326132
+"Rhizosphere soil","S033",1,5,"Chytridiomycota",-0.378208207499526,0.925720558149162
+"Rhizosphere soil","S034",1,5,"Unclassified fungi",-0.74258495165144,-0.621207812422413
+"Rhizosphere soil","S035",24,1,"Basidiomycota",0.437014852022816,0.538778640704608
+"Rhizosphere soil","S036",36,1,"Basidiomycota",0.382730834614664,0.35784210686004
+"Rhizosphere soil","S037",51,1,"Ascomycota",0.194788912284468,0.404540628938557
+"Rhizosphere soil","S038",51,1,"Unclassified fungi",0.143656273736626,0.454725700196638
+"Rhizosphere soil","S039",13,4,"Ascomycota",-0.190077783046827,-0.761981231648041
+"Rhizosphere soil","S040",36,4,"Ascomycota",0.210383223113372,-0.630911201875733
+"Rhizosphere soil","S041",15,1,"Basidiomycota",0.124201948866869,0.710241388321916
+"Rhizosphere soil","S042",20,1,"Unclassified fungi",0.488495829538593,0.491299150749366
+"Rhizosphere soil","S043",10,1,"Kickxellomycota",0.405164593026241,0.689934038593311
+"Rhizosphere soil","S044",18,1,"Ascomycota",-0.0278509488035733,0.690485287426838
+"Rhizosphere soil","S045",17,4,"Ascomycota",0.459742819518632,-0.59503739190633
+"Rhizosphere soil","S046",17,1,"Ascomycota",0.73135064654293,0.28973660314517
+"Rhizosphere soil","S047",24,1,"Unclassified fungi",0.25645802318052,0.577559305656709
+"Rhizosphere soil","S048",25,1,"Rozellomycota",0.536184457320101,0.158091620681853
+"Rhizosphere soil","S049",12,1,"Ascomycota",0.679521576795929,-0.156362179295941
+"Rhizosphere soil","S050",32,1,"Ascomycota",0.295782289004377,0.587145669862874
+"Rhizosphere soil","S051",8,3,"Basidiomycota",-0.657805212740738,-0.464070331195538
+"Rhizosphere soil","S052",20,1,"Ascomycota",0.61379602896479,0.269953142522944
+"Rhizosphere soil","S053",15,1,"Ascomycota",-0.196511444249802,0.698467849287812
+"Rhizosphere soil","S054",36,4,"Ascomycota",0.28237328565077,-0.564014977674153
+"Rhizosphere soil","S055",18,4,"Basidiomycota",-0.274363252092476,-0.60991435461849
+"Rhizosphere soil","S056",10,1,"Kickxellomycota",0.705265605751798,0.351285337215474
+"Rhizosphere soil","S057",10,1,"Unclassified fungi",-0.429515416371272,0.551003008272269
+"Rhizosphere soil","S058",3,1,"Ascomycota",0.771111119576919,0.48968677883966
+"Rhizosphere soil","S059",17,3,"Basidiomycota",-0.730017823603772,0.000697429379747881
+"Rhizosphere soil","S060",8,1,"Chytridiomycota",-0.151999208233271,0.806968394848644
+"Rhizosphere soil","S061",18,1,"Chytridiomycota",-0.070700200334511,0.702326404972871
+"Rhizosphere soil","S062",31,4,"Ascomycota",-0.195822633469923,-0.600554905994121
+"Rhizosphere soil","S063",18,4,"Kickxellomycota",-0.102036605729584,-0.688156804979923
+"Rhizosphere soil","S064",16,1,"Ascomycota",0.318181551542135,0.628752146954379
+"Rhizosphere soil","S065",9,1,"Ascomycota",-0.612644120229807,0.5334996080252
+"Rhizosphere soil","S066",9,1,"Ascomycota",0.773023297108993,0.153081504269833
+"Rhizosphere soil","S067",15,1,"Ascomycota",0.577585024085787,0.399814508721145
+"Rhizosphere soil","S068",11,1,"Chytridiomycota",-0.543625819794162,0.50358443185161
+"Rhizosphere soil","S069",16,2,"Unclassified fungi",-0.388224120716331,-0.606199996829702
+"Rhizosphere soil","S070",35,1,"Rozellomycota",0.395406874291167,0.243806771263354
+"Rhizosphere soil","S071",32,4,"Ascomycota",0.430916198196605,-0.453193830725298
+"Rhizosphere soil","S072",9,2,"Ascomycota",-0.582405470117024,0.531795281795659
+"Rhizosphere soil","S073",30,1,"Basidiomycota",0.508665397923285,0.411933896379702
+"Rhizosphere soil","S074",10,1,"Ascomycota",0.59422553467643,0.489678149827307
+"Rhizosphere soil","S075",10,3,"Ascomycota",-0.765502795067555,-0.174522825998969
+"Rhizosphere soil","S076",12,1,"Ascomycota",0.102394172294908,0.80427302897557
+"Rhizosphere soil","S077",16,1,"Ascomycota",0.588546375648423,0.299858022561
+"Rhizosphere soil","S078",4,3,"Ascomycota",-0.843420109126396,0.226792056414494
+"Rhizosphere soil","S079",21,1,"Ascomycota",0.0737907647205787,0.687218238244353
+"Rhizosphere soil","S080",19,3,"Ascomycota",-0.707168756227031,0.0400681661110537
+"Rhizosphere soil","S081",35,1,"Mortierellomycota",0.418434643442561,0.303334971829458
+"Rhizosphere soil","S082",9,1,"Ascomycota",0.198426506248083,0.775457316498328
+"Rhizosphere soil","S083",13,4,"Ascomycota",0.244744407541216,-0.737020834985831
+"Rhizosphere soil","S084",27,4,"Basidiomycota",0.357071775726171,-0.160393816089802
+"Rhizosphere soil","S085",12,1,"Ascomycota",0.338390323751368,0.699658066432585
+"Rhizosphere soil","S086",27,1,"Unclassified fungi",0.518348216319066,0.340773734285493
+"Rhizosphere soil","S087",10,1,"Ascomycota",0.572832444011221,0.540334818652881
+"Rhizosphere soil","S088",36,4,"Ascomycota",-0.00505616859682989,-0.628152182035651
+"Rhizosphere soil","S089",12,1,"Ascomycota",-0.205816578739955,0.747271230934779
+"Rhizosphere soil","S090",13,1,"Rozellomycota",0.671952941386895,0.353777279102524
+"Rhizosphere soil","S091",33,1,"Basidiomycota",0.562270982239456,0.0311150696215277
+"Rhizosphere soil","S092",23,4,"Ascomycota",0.594329373220683,-0.145668362728607
+"Rhizosphere soil","S093",23,4,"Ascomycota",-0.28089426748328,-0.565197069110837
+"Rhizosphere soil","S094",41,1,"Zoopagomycota",0.367732492647938,0.211768716495343
+"Rhizosphere soil","S095",14,1,"Ascomycota",0.68470399325707,0.130743886891657
+"Rhizosphere soil","S096",18,1,"Ascomycota",-0.19429401862442,0.60462132371772
+"Rhizosphere soil","S097",13,1,"Ascomycota",-0.225834140610912,0.644363219124769
+"Rhizosphere soil","S098",19,1,"Basidiomycota",0.233350338600791,0.683248050331034
+"Rhizosphere soil","S099",11,1,"Basidiomycota",-0.0288547105932593,0.78810348540548
+"Rhizosphere soil","S100",15,4,"Basidiomycota",0.555780510407855,-0.482176886415676
+"Rhizosphere soil","S101",10,4,"Ascomycota",0.517494664573042,-0.613661777341096
+"Rhizosphere soil","S102",19,4,"Unclassified fungi",-0.182296050161263,-0.6997834657158
+"Rhizosphere soil","S103",18,1,"Ascomycota",0.41665429213928,0.520390417005836
+"Rhizosphere soil","S104",10,1,"Unclassified fungi",0.742215681109219,0.0438302243546728
+"Rhizosphere soil","S105",30,4,"Basidiomycota",0.317242338571467,-0.595266266192037
+"Rhizosphere soil","S106",9,1,"Ascomycota",0.186361225677589,0.801111060191391
+"Rhizosphere soil","S107",12,1,"Ascomycota",0.698339863591299,0.419211755786401
+"Rhizosphere soil","S108",11,2,"Ascomycota",-0.269821379467943,-0.752285058706565
+"Rhizosphere soil","S109",6,1,"Unclassified fungi",0.690451695725122,0.495046328417803
+"Rhizosphere soil","S110",17,2,"Zoopagomycota",0.664840128585609,-0.00038322150950479
+"Rhizosphere soil","S111",3,1,"Basidiomycota",0.15100901096186,0.881937894680391
+"Rhizosphere soil","S112",17,3,"Kickxellomycota",-0.712486554548018,-0.136513114198747
+"Rhizosphere soil","S113",13,1,"Unclassified fungi",0.615891641167158,0.448674560560307
+"Rhizosphere soil","S114",26,1,"Unclassified fungi",-0.106496128152141,0.576046683126567
+"Rhizosphere soil","S115",45,4,"Unclassified fungi",0.402600487337415,-0.420429531039859
+"Rhizosphere soil","S116",21,1,"Unclassified fungi",0.500641348139508,0.32799851434488
+"Rhizosphere soil","S117",10,1,"Kickxellomycota",0.243265362018442,0.743197690941038
+"Rhizosphere soil","S118",12,2,"Unclassified fungi",-0.605381916150483,0.432842050778879
+"Rhizosphere soil","S119",37,4,"Ascomycota",0.362743244131093,-0.578057141517827
+"Rhizosphere soil","S120",8,1,"Ascomycota",0.738764180780486,0.23131507650005
+"Rhizosphere soil","S121",10,1,"Unclassified fungi",0.769885228750293,-0.112482364495526
+"Rhizosphere soil","S122",6,3,"Zoopagomycota",-0.436444325172216,-0.730816874070206
+"Rhizosphere soil","S123",43,1,"Mortierellomycota",0.325196467492172,0.370147245624446
+"Rhizosphere soil","S124",69,4,"Mortierellomycota",0.21969932180609,-0.358810521125119
+"Rhizosphere soil","S125",46,1,"Chytridiomycota",0.198865588511009,0.439518769130182
+"Rhizosphere soil","S126",18,4,"Ascomycota",0.087997017170089,-0.721108179653666
+"Rhizosphere soil","S127",53,4,"Basidiomycota",-0.0875280639664586,-0.465206536736596
+"Rhizosphere soil","S128",9,1,"Ascomycota",0.101041757656918,0.788239140396106
+"Rhizosphere soil","S129",41,3,"Chytridiomycota",-0.428399412054641,-0.432394933310333
+"Rhizosphere soil","S130",13,3,"Ascomycota",-0.753645418948153,0.126414828912445
+"Rhizosphere soil","S131",24,3,"Chytridiomycota",-0.567270398630723,-0.393129606086257
+"Rhizosphere soil","S132",42,3,"Rozellomycota",-0.626793402977305,-0.0361827383044811
+"Rhizosphere soil","S133",27,3,"Unclassified fungi",-0.47547105611804,0.390465782877591
+"Rhizosphere soil","S134",80,3,"Rozellomycota",-0.331228456233499,-0.0642223133040004
+"Rhizosphere soil","S135",23,3,"Ascomycota",-0.519885334765108,-0.458255218465241
+"Rhizosphere soil","S136",77,4,"Ascomycota",0.0518840174112804,-0.524719252452689
+"Rhizosphere soil","S137",55,3,"Ascomycota",-0.443332480028343,0.252620692440754
+"Rhizosphere soil","S138",14,1,"Ascomycota",0.672692139466423,0.208059580263302
+"Rhizosphere soil","S139",59,4,"Ascomycota",0.313178744512978,-0.297995146080338
+"Rhizosphere soil","S140",7,1,"Ascomycota",0.39695603913507,0.747240547152894
+"Rhizosphere soil","S141",28,1,"Ascomycota",0.581594451257257,0.147320038295521
+"Rhizosphere soil","S142",30,4,"Rozellomycota",0.0951006041433895,-0.67574514458815
+"Rhizosphere soil","S143",44,3,"Ascomycota",-0.230455465860305,0.28564362069334
+"Rhizosphere soil","S144",54,3,"Ascomycota",-0.457137871982073,-0.313826280613148
+"Rhizosphere soil","S145",41,4,"Unclassified fungi",0.417329115951143,-0.215212985307503
+"Rhizosphere soil","S146",15,1,"Ascomycota",0.213930497971659,0.619962605826786
+"Rhizosphere soil","S147",50,4,"Unclassified fungi",0.298258898862434,-0.465502515192561
+"Rhizosphere soil","S148",70,4,"Ascomycota",0.0442775098478708,-0.425202170458259
+"Rhizosphere soil","S149",42,4,"Basidiomycota",0.345177730299011,-0.510044975853478
+"Rhizosphere soil","S150",29,1,"Zoopagomycota",0.316884416165061,0.431940589780366
+"Rhizosphere soil","S151",45,4,"Rozellomycota",0.276666626743395,-0.529019912426203
+"Rhizosphere soil","S152",51,4,"Unclassified fungi",0.0447494705649149,-0.480414840998668
+"Rhizosphere soil","S153",13,1,"Basidiomycota",0.695727765006481,0.024285429209821
+"Rhizosphere soil","S154",64,4,"Ascomycota",0.25298010499301,-0.262109670698492
+"Rhizosphere soil","S155",7,3,"Ascomycota",-0.799422078268843,-0.319064245499965
+"Rhizosphere soil","S156",46,4,"Basidiomycota",0.2289267400524,-0.588244136610719
+"Rhizosphere soil","S157",30,3,"Ascomycota",-0.667229081206677,-0.200597703225188
+"Rhizosphere soil","S158",31,4,"Ascomycota",0.521581408693147,-0.257278352470773
+"Rhizosphere soil","S159",16,1,"Unclassified fungi",0.617610856306517,0.0954988504020163
+"Rhizosphere soil","S160",58,3,"Basidiomycota",-0.54022906711583,-0.283807122778046
+"Rhizosphere soil","S161",19,3,"Ascomycota",-0.738031506474405,-0.127757304161826
+"Rhizosphere soil","S162",26,4,"Ascomycota",0.583270723964038,-0.236710553650056
+"Rhizosphere soil","S163",34,1,"Basidiomycota",0.139257968202313,0.276338900317463
+"Rhizosphere soil","S164",22,3,"Kickxellomycota",-0.399912917091509,0.382948884897894
+"Rhizosphere soil","S165",22,1,"Basidiomycota",0.0854924842499229,0.618690043401709
+"Rhizosphere soil","S166",80,3,"Basidiomycota",-0.387652696907465,0.108065889351903
+"Rhizosphere soil","S167",76,3,"Chytridiomycota",-0.210814130011527,0.104435430790845
+"Rhizosphere soil","S168",27,1,"Unclassified fungi",0.446899231209595,0.242009812561761
+"Rhizosphere soil","S169",33,4,"Basidiomycota",0.508739200737466,-0.403050752358925
+"Rhizosphere soil","S170",58,3,"Basidiomycota",-0.532754419943099,0.181231519385101
+"Rhizosphere soil","S171",12,1,"Ascomycota",-0.296171879857623,0.690559412221163
+"Rhizosphere soil","S172",20,4,"Ascomycota",0.250549910137574,-0.700246204147102
+"Rhizosphere soil","S173",64,4,"Basidiomycota",0.364196609534512,-0.362262932065831
+"Rhizosphere soil","S174",42,4,"Unclassified fungi",0.33797417369925,-0.561224313836058
+"Rhizosphere soil","S175",24,3,"Basidiomycota",-0.716939244659715,-0.0484188584071007
+"Rhizosphere soil","S176",35,4,"Rozellomycota",0.14299575992056,-0.640651076117252
+"Rhizosphere soil","S177",51,4,"Ascomycota",0.200218889293479,-0.517707230225198
+"Rhizosphere soil","S178",27,4,"Mortierellomycota",0.484411226229394,-0.445353672145796
+"Rhizosphere soil","S179",42,3,"Ascomycota",-0.331005585175673,-0.400942977685407
+"Rhizosphere soil","S180",58,4,"Basidiomycota",0.323576541738209,-0.467631612345405
+"Rhizosphere soil","S181",61,4,"Basidiomycota",0.229029533017624,-0.461159840414682
+"Rhizosphere soil","S182",19,4,"Basidiomycota",0.561811448571623,-0.196810749107595
+"Rhizosphere soil","S183",60,3,"Ascomycota",-0.44607126249408,-0.100831903114345
+"Rhizosphere soil","S184",20,4,"Basidiomycota",0.402235342983705,-0.585272929521712
+"Rhizosphere soil","S185",61,3,"Ascomycota",-0.538381623881229,0.0258901197791239
+"Rhizosphere soil","S186",68,3,"Kickxellomycota",-0.452890237216696,0.0647846314993547
+"Rhizosphere soil","S187",38,1,"Ascomycota",0.349647098587064,0.527456848233382
+"Rhizosphere soil","S188",50,3,"Rozellomycota",-0.588082436075136,-0.0751909008046242
+"Rhizosphere soil","S189",57,3,"Ascomycota",-0.502332357746249,0.214362848552973
+"Rhizosphere soil","S190",31,1,"Ascomycota",0.121155035498689,0.400070806098092
+"Rhizosphere soil","S191",12,1,"Ascomycota",-0.309287515513836,0.72595969041709
+"Rhizosphere soil","S192",19,3,"Zoopagomycota",-0.705168747569888,0.133030584722303
+"Rhizosphere soil","S193",11,1,"Rozellomycota",0.668437740727498,0.416999800566145
+"Rhizosphere soil","S194",75,4,"Ascomycota",-0.0700271848285301,-0.339049542342526
+"Rhizosphere soil","S195",33,4,"Chytridiomycota",0.541057773641198,-0.0849798487785271
+"Rhizosphere soil","S196",44,1,"Ascomycota",0.263723038096969,0.401625641428714
+"Rhizosphere soil","S197",78,4,"Kickxellomycota",0.014521816250905,-0.366370552641052
+"Rhizosphere soil","S198",9,1,"Zoopagomycota",0.462517813978144,0.628657667909455
+"Rhizosphere soil","S199",17,1,"Basidiomycota",0.694678295735197,0.244620103034806
+"Rhizosphere soil","S200",30,3,"Ascomycota",-0.544741252908487,0.307023113299324
+"Rhizosphere soil","S201",13,1,"Unclassified fungi",0.699710610948229,0.314813804445531
+"Rhizosphere soil","S202",51,3,"Ascomycota",-0.553901488251593,0.108080457179816
+"Rhizosphere soil","S203",59,4,"Ascomycota",0.169491491037824,-0.40129875541146
+"Rhizosphere soil","S204",18,4,"Ascomycota",0.0369608329706085,-0.725695001499251
+"Rhizosphere soil","S205",29,4,"Unclassified fungi",0.395272845608688,-0.536138305317674
+"Rhizosphere soil","S206",30,3,"Ascomycota",-0.541313625183117,-0.36990106246818
+"Rhizosphere soil","S207",34,3,"Ascomycota",-0.357808166022758,0.341989907191899
+"Rhizosphere soil","S208",66,3,"Ascomycota",-0.422664189472396,-0.270400035443297
+"Rhizosphere soil","S209",63,3,"Ascomycota",-0.517820164925815,0.124187456984729
+"Rhizosphere soil","S210",14,1,"Ascomycota",0.210543434684206,0.725314264723361
+"Rhizosphere soil","S211",52,4,"Basidiomycota",0.389874343067526,-0.368361630647733
+"Rhizosphere soil","S212",78,3,"Ascomycota",-0.309050224253698,-0.159485091812428
+"Rhizosphere soil","S213",33,3,"Ascomycota",-0.660877438942008,-0.183760535896608
+"Rhizosphere soil","S214",54,4,"Basidiomycota",0.122687876201598,-0.540402185307481
+"Rhizosphere soil","S215",20,1,"Basidiomycota",0.521500950862575,0.283749830624634
+"Rhizosphere soil","S216",42,4,"Kickxellomycota",-0.138018757790959,-0.570689353883509
+"Rhizosphere soil","S217",16,1,"Ascomycota",0.462196136387149,0.568628937198469
+"Rhizosphere soil","S218",14,1,"Ascomycota",0.730797354492013,0.143675037431365
+"Rhizosphere soil","S219",41,3,"Unclassified fungi",-0.564284950569211,0.233733592644859
+"Rhizosphere soil","S220",16,4,"Ascomycota",-0.0378693108432647,-0.721497832922259
+"Rhizosphere soil","S221",31,1,"Ascomycota",0.097396220705898,0.55983519086051
+"Rhizosphere soil","S222",53,3,"Ascomycota",-0.514426059945062,-0.311953009169489
+"Rhizosphere soil","S223",27,3,"Mortierellomycota",-0.607063128341478,-0.325655012115092
+"Rhizosphere soil","S224",58,3,"Basidiomycota",-0.547553108823248,-0.165072602137436
+"Rhizosphere soil","S225",32,1,"Basidiomycota",0.0565061593249735,0.465840523041056
+"Rhizosphere soil","S226",6,3,"Basidiomycota",-0.822627383465205,-0.0856896123084488
+"Rhizosphere soil","S227",16,4,"Ascomycota",0.303323932058291,-0.702502094380624
+"Rhizosphere soil","S228",21,1,"Ascomycota",0.0298412100581445,0.631721740772012
+"Rhizosphere soil","S229",17,1,"Unclassified fungi",0.296364960151278,0.678219579304523
+"Rhizosphere soil","S230",65,4,"Ascomycota",-0.000761004001747991,-0.532456692638123
+"Rhizosphere soil","S231",46,4,"Ascomycota",0.482773796663114,-0.219445044060783
+"Rhizosphere soil","S232",39,3,"Rozellomycota",-0.488561522835548,-0.420958322669381
+"Rhizosphere soil","S233",65,4,"Kickxellomycota",0.236340668790362,-0.490158491115036
+"Rhizosphere soil","S234",24,4,"Mortierellomycota",0.579276501181443,-0.395642534701463
+"Rhizosphere soil","S235",22,4,"Ascomycota",-0.0821470704533382,-0.71227259431266
+"Rhizosphere soil","S236",17,4,"Ascomycota",-0.0138095052984226,-0.747849397316744
+"Rhizosphere soil","S237",17,4,"Mortierellomycota",0.0812268195472419,-0.762067676418476
+"Rhizosphere soil","S238",32,3,"Ascomycota",-0.287578616075854,0.359698256938885
+"Rhizosphere soil","S239",53,3,"Basidiomycota",-0.509615342765938,-0.25193358125898
+"Rhizosphere soil","S240",60,3,"Basidiomycota",-0.47870552563608,-0.268943074438916
+"Rhizosphere soil","S241",25,3,"Basidiomycota",-0.614675353766629,-0.393447908419993
+"Rhizosphere soil","S242",17,1,"Ascomycota",-0.123314263050461,0.660061461717519
+"Rhizosphere soil","S243",5,4,"Ascomycota",0.432510807706624,-0.741578739182093
+"Rhizosphere soil","S244",29,4,"Ascomycota",0.047529009438879,-0.689062946481692
+"Rhizosphere soil","S245",16,1,"Rozellomycota",0.555961276567202,0.383586685596094
+"Rhizosphere soil","S246",5,4,"Ascomycota",0.360261631963307,-0.768671227748444
+"Rhizosphere soil","S247",16,1,"Basidiomycota",-0.385702370360692,0.607948568783027
+"Rhizosphere soil","S248",49,3,"Unclassified fungi",-0.594450233212555,-0.153951402856601
+"Rhizosphere soil","S249",34,3,"Ascomycota",-0.666974691534088,0.0265824476782783
+"Rhizosphere soil","S250",56,3,"Ascomycota",-0.363280531995277,0.207771237581324
+"Rhizosphere soil","S251",23,1,"Ascomycota",0.131344878029501,0.621556093874702
+"Rhizosphere soil","S252",69,4,"Basidiomycota",0.140922934643131,-0.503087037289516
+"Rhizosphere soil","S253",24,1,"Unclassified fungi",0.264170269850065,0.619651184797404
+"Rhizosphere soil","S254",39,4,"Chytridiomycota",0.180611649700732,-0.553141867128936
+"Rhizosphere soil","S255",13,1,"Ascomycota",0.00390437608205004,0.769183684205859
+"Rhizosphere soil","S256",44,4,"Ascomycota",0.392940034204567,-0.163016873175966
+"Rhizosphere soil","S257",45,3,"Ascomycota",-0.378857773350123,-0.334218830822927
+"Rhizosphere soil","S258",81,4,"Unclassified fungi",0.117131228774309,-0.386431964212373
+"Rhizosphere soil","S259",30,3,"Olpidiomycota",-0.575048762591855,-0.300772114775383
+"Rhizosphere soil","S260",43,3,"Zoopagomycota",-0.212245422023422,0.206653734238184
+"Rhizosphere soil","S261",60,3,"Ascomycota",-0.481922259429223,-0.312757863275068
+"Rhizosphere soil","S262",22,1,"Rozellomycota",0.221239322108187,0.659186701962193
+"Rhizosphere soil","S263",57,4,"Rozellomycota",0.246872690298719,-0.538512107370361
+"Rhizosphere soil","S264",41,3,"Rozellomycota",-0.125568361898854,0.260962001161575
+"Rhizosphere soil","S265",61,3,"Ascomycota",-0.422229639184409,0.177071454312089
+"Rhizosphere soil","S266",31,3,"Ascomycota",-0.614385869659261,0.130060997847909
+"Rhizosphere soil","S267",56,4,"Ascomycota",0.0946056808365819,-0.503255701401348
+"Rhizosphere soil","S268",51,1,"Unclassified fungi",0.0683720627066708,0.52850536632104
+"Rhizosphere soil","S269",36,4,"Ascomycota",0.492517749523227,-0.322692604765829
+"Rhizosphere soil","S270",19,3,"Unclassified fungi",-0.687769769120885,-0.272524541360408
+"Rhizosphere soil","S271",53,4,"Ascomycota",0.0700058678740619,-0.579930260184056
+"Rhizosphere soil","S272",73,4,"Ascomycota",0.133692251075133,-0.321989883092161
+"Rhizosphere soil","S273",68,4,"Unclassified fungi",0.0306997862995998,-0.215314563193915
+"Rhizosphere soil","S274",27,4,"Ascomycota",0.435275325765399,-0.512840670223809
+"Rhizosphere soil","S275",27,1,"Basidiomycota",0.162086216508647,0.55799448352104
+"Rhizosphere soil","S276",39,4,"Basidiomycota",0.492901343613241,-0.386210882846449
+"Rhizosphere soil","S277",15,4,"Ascomycota",0.682723020812431,-0.310944474546095
+"Rhizosphere soil","S278",32,4,"Ascomycota",0.0670084200838868,-0.614569419520756
+"Rhizosphere soil","S279",50,1,"Ascomycota",0.192767112279393,0.472367675478693
+"Rhizosphere soil","S280",51,3,"Kickxellomycota",-0.563480616103079,0.177896995508777
+"Rhizosphere soil","S281",53,3,"Basidiomycota",-0.564744109072211,-0.203483867509455
+"Rhizosphere soil","S282",29,4,"Ascomycota",0.0647766459891561,-0.649669042331686
+"Rhizosphere soil","S283",30,1,"Ascomycota",-0.0844460858295382,0.458310348608249
+"Rhizosphere soil","S284",81,3,"Ascomycota",-0.496900848472613,-0.152784064615097
+"Rhizosphere soil","S285",19,4,"Ascomycota",0.602277256837298,-0.427349697830652
+"Rhizosphere soil","S286",36,4,"Ascomycota",0.334512513246873,-0.246626416230106
+"Rhizosphere soil","S287",36,1,"Rozellomycota",0.251096631179628,0.489751599911434
+"Rhizosphere soil","S288",68,4,"Basidiomycota",-0.0217942555266372,-0.424190334482658
+"Rhizosphere soil","S289",45,4,"Unclassified fungi",-0.00795774349481285,-0.56222196542978
+"Rhizosphere soil","S290",64,4,"Unclassified fungi",0.280723082647321,-0.207979090102995
+"Rhizosphere soil","S291",69,4,"Unclassified fungi",0.320311259282464,-0.358561210828691
+"Rhizosphere soil","S292",14,1,"Ascomycota",0.539421504842354,0.469272309270339
+"Rhizosphere soil","S293",33,1,"Basidiomycota",0.392428006459598,0.435477598117054
+"Rhizosphere soil","S294",33,4,"Basidiomycota",-0.0204882812950927,-0.650523059863162
+"Rhizosphere soil","S295",33,1,"Mortierellomycota",0.215967960447955,0.547664731717423
+"Rhizosphere soil","S296",18,1,"Mortierellomycota",-0.0366207578777105,0.565198198515463
+"Rhizosphere soil","S297",8,2,"Chytridiomycota",-0.769866458665305,0.29001374435472
+"Rhizosphere soil","S298",38,4,"Mortierellomycota",-0.160201690542693,-0.525775247760053
+"Rhizosphere soil","S299",45,4,"Chytridiomycota",0.175088381246464,-0.443905867171417
+"Rhizosphere soil","S300",12,3,"Ascomycota",-0.49658157888218,-0.578459915026557
+"Rhizosphere soil","S301",32,3,"Ascomycota",-0.65058289563461,0.131605294365958
+"Rhizosphere soil","S302",49,4,"Ascomycota",0.0400619857649718,-0.302366630882937
+"Rhizosphere soil","S303",28,4,"Unclassified fungi",-0.029523211079166,-0.685759819304656
+"Rhizosphere soil","S304",91,4,"Ascomycota",0.0649434066903287,-0.38996862816406
+"Rhizosphere soil","S305",47,4,"Ascomycota",0.130438075760441,-0.593852648049039
+"Rhizosphere soil","S306",41,4,"Mortierellomycota",0.466524866622712,-0.388004389324268
+"Rhizosphere soil","S307",31,3,"Ascomycota",-0.585667942248148,0.259768081424375
+"Rhizosphere soil","S308",63,3,"Ascomycota",-0.254718687069184,0.0406929348445513
+"Rhizosphere soil","S309",28,4,"Unclassified fungi",0.14538903853874,-0.67818910350347
+"Rhizosphere soil","S310",32,4,"Ascomycota",0.413756762523443,-0.492678621373515
+"Rhizosphere soil","S311",32,1,"Ascomycota",0.539592809748469,0.226425935341838
+"Rhizosphere soil","S312",30,3,"Ascomycota",-0.493061277748689,0.288451321537585
+"Rhizosphere soil","S313",16,1,"Unclassified fungi",-0.24776105644306,0.687289586114326
+"Rhizosphere soil","S314",68,3,"Basidiomycota",-0.38800465189506,-0.152441876682562
+"Rhizosphere soil","S315",11,1,"Ascomycota",-0.379962255104425,0.665160275618216
+"Rhizosphere soil","S316",30,3,"Ascomycota",-0.610776275712319,0.199592624836991
+"Rhizosphere soil","S317",99,3,"Unclassified fungi",-0.356999153362031,-0.160553708093548
+"Rhizosphere soil","S318",99,3,"Ascomycota",-0.502773897184716,-0.094950606954549
+"Rhizosphere soil","S319",19,1,"Ascomycota",-0.323089386241899,0.564071493773996
+"Rhizosphere soil","S320",30,3,"Chytridiomycota",-0.682401722510059,-0.0898323365163717
+"Rhizosphere soil","S321",16,1,"Chytridiomycota",0.484221801495853,0.533379389772317
+"Rhizosphere soil","S322",111,3,"Ascomycota",-0.408264875348713,-0.067085759389568
+"Rhizosphere soil","S323",30,3,"Olpidiomycota",-0.683106121732833,-0.134022276738218
+"Rhizosphere soil","S324",30,3,"Ascomycota",-0.632305845049009,-0.13031525739303
+"Rhizosphere soil","S325",58,3,"Basidiomycota",-0.280650183795177,-0.257689915012496
+"Rhizosphere soil","S326",58,3,"Ascomycota",-0.187713522333687,-0.148093807943932
+"Rhizosphere soil","S327",6,1,"Ascomycota",0.275727730078095,0.806645917499929
+"Rhizosphere soil","S328",43,3,"Ascomycota",-0.610854687338787,-0.198858930407691
+"Rhizosphere soil","S329",25,2,"Ascomycota",0.460269528665446,0.119065940343288
+"Rhizosphere soil","S330",29,3,"Ascomycota",-0.66483556058981,-0.23158985882473
+"Rhizosphere soil","S331",12,1,"Mortierellomycota",0.393325836861636,0.714524588984198
+"Rhizosphere soil","S332",75,3,"Chytridiomycota",-0.279263020843736,-0.000184094068421926
+"Rhizosphere soil","S333",44,3,"Ascomycota",-0.618637335928352,0.0235787267090907
+"Rhizosphere soil","S334",13,1,"Ascomycota",0.522140153007721,0.587532769529349
+"Rhizosphere soil","S335",19,1,"Ascomycota",0.592963967544636,0.436755087696256
+"Rhizosphere soil","S336",54,3,"Zoopagomycota",-0.393194969551988,-0.376183716046256
+"Rhizosphere soil","S337",68,3,"Ascomycota",-0.506836545744875,-0.0389703249878392
+"Rhizosphere soil","S338",7,2,"Ascomycota",0.570949985448194,-0.592692954682248
+"Rhizosphere soil","S339",40,4,"Rozellomycota",0.118891338078754,-0.625067676055041
+"Rhizosphere soil","S340",56,4,"Ascomycota",0.317351678272475,-0.413493124077894
+"Rhizosphere soil","S341",9,4,"Basidiomycota",0.723955542701483,-0.370307465201855
+"Rhizosphere soil","S342",70,3,"Ascomycota",-0.477326234883538,0.0892889164271886
+"Rhizosphere soil","S343",15,4,"Ascomycota",0.366838958817002,-0.674342143398561
+"Rhizosphere soil","S344",67,3,"Ascomycota",-0.555323011620833,-0.0542448876961464
+"Rhizosphere soil","S345",99,3,"Unclassified fungi",-0.468481379974858,-0.156518187497947
+"Rhizosphere soil","S346",99,3,"Ascomycota",-0.267028059340214,-0.078053132384259
+"Rhizosphere soil","S347",99,3,"Ascomycota",-0.342564689648865,0.138030902476426
+"Rhizosphere soil","S348",19,4,"Mortierellomycota",0.619431139195491,-0.336448611285319
+"Rhizosphere soil","S349",16,1,"Basidiomycota",0.417317593233589,0.584161094579442
+"Rhizosphere soil","S350",99,3,"Ascomycota",-0.328075050715961,-0.210648965199793
+"Rhizosphere soil","S351",111,3,"Mortierellomycota",-0.374340757340199,-0.0724584278728374
+"Rhizosphere soil","S352",111,3,"Kickxellomycota",-0.410250327667317,-0.0019825875977222
+"Rhizosphere soil","S353",10,1,"Rozellomycota",0.751315696191188,-0.0431959793067625
+"Rhizosphere soil","S354",17,4,"Ascomycota",0.494315434652666,-0.533215089075061
+"Rhizosphere soil","S355",34,3,"Ascomycota",-0.659598071682032,0.0658528539310499
+"Rhizosphere soil","S356",111,3,"Unclassified fungi",-0.388597842686571,-0.19489423497174
+"Rhizosphere soil","S357",19,3,"Rozellomycota",-0.473116064188091,0.446501392035587
+"Rhizosphere soil","S358",108,3,"Basidiomycota",-0.436177809892442,-0.18066638187499
+"Rhizosphere soil","S359",19,3,"Basidiomycota",-0.764679938715466,-0.0211371196853402
+"Rhizosphere soil","S360",61,3,"Ascomycota",-0.428765021499471,0.121087394418017
+"Rhizosphere soil","S361",19,3,"Unclassified fungi",-0.732539615697997,-0.195747366980055
+"Rhizosphere soil","S362",108,3,"Mortierellomycota",-0.31220953611456,0.0443071268292999
+"Rhizosphere soil","S363",35,3,"Rozellomycota",-0.578214648966549,-0.335160276593072
+"Rhizosphere soil","S364",22,3,"Basidiomycota",-0.634730034257869,-0.300304394758026
+"Rhizosphere soil","S365",19,4,"Ascomycota",0.208662827299929,-0.684167466854394
+"Rhizosphere soil","S366",20,1,"Basidiomycota",-0.0291045885147756,0.63654461927077
+"Rhizosphere soil","S367",16,1,"Ascomycota",0.627814448014158,0.378783232287171
+"Rhizosphere soil","S368",70,4,"Ascomycota",0.257288217958512,-0.413003437493034
+"Rhizosphere soil","S369",45,3,"Basidiomycota",-0.612009379687612,0.0533227453046983
+"Rhizosphere soil","S370",48,4,"Ascomycota",0.348234636709231,-0.419895139033142
+"Rhizosphere soil","S371",64,3,"Mortierellomycota",-0.570182780064209,-0.000885907829486905
+"Rhizosphere soil","S372",99,3,"Unclassified fungi",-0.451770079113539,-0.0216819918735401
+"Rhizosphere soil","S373",34,3,"Ascomycota",-0.473040023848885,-0.404809807295572
+"Rhizosphere soil","S374",72,3,"Ascomycota",-0.479586305406773,-0.0545121670450102
+"Rhizosphere soil","S375",99,3,"Ascomycota",-0.317312526033952,-0.254040683145432
+"Rhizosphere soil","S376",8,2,"Mortierellomycota",-0.705033654843942,0.467495111755004
+"Rhizosphere soil","S377",26,1,"Kickxellomycota",0.351272185553492,0.595310198136017
+"Rhizosphere soil","S378",30,3,"Ascomycota",-0.626852856447572,0.213522204833574
+"Rhizosphere soil","S379",35,3,"Unclassified fungi",-0.531594547606775,0.271369371262662
+"Rhizosphere soil","S380",30,3,"Unclassified fungi",-0.601137452729173,-0.271815945455335
+"Rhizosphere soil","S381",30,4,"Unclassified fungi",0.276915337798093,-0.635133554622171
+"Rhizosphere soil","S382",23,3,"Basidiomycota",-0.665928153512309,0.174578262745557
+"Rhizosphere soil","S383",70,3,"Ascomycota",-0.312771876588382,0.105755294874003
+"Rhizosphere soil","S384",26,4,"Chytridiomycota",0.528828718772593,-0.31655995369845
+"Rhizosphere soil","S385",66,4,"Basidiomycota",0.239148768609266,-0.323428536781334
+"Rhizosphere soil","S386",57,3,"Kickxellomycota",-0.470039547853347,0.184460774500617
+"Rhizosphere soil","S387",10,1,"Ascomycota",-0.0991037913676963,0.761302261984116
+"Rhizosphere soil","S388",30,3,"Ascomycota",-0.678382875261223,-0.0368762899428746
+"Rhizosphere soil","S389",50,3,"Ascomycota",-0.363724603103501,0.294149379861157
+"Rhizosphere soil","S390",99,3,"Kickxellomycota",-0.362744434916839,0.0568623192851319
+"Rhizosphere soil","S391",10,3,"Ascomycota",-0.699544554177784,-0.360111218250052
+"Rhizosphere soil","S392",7,2,"Basidiomycota",0.790806648336794,-0.225486500462864
+"Rhizosphere soil","S393",29,1,"Mortierellomycota",0.593390351058245,0.205208074567069
+"Rhizosphere soil","S394",84,3,"Ascomycota",-0.523708408182748,-0.104989585705249
+"Rhizosphere soil","S395",45,3,"Ascomycota",-0.514495863653583,-0.347976151149545
+"Rhizosphere soil","S396",20,3,"Chytridiomycota",-0.730458783417156,0.0711429649262902
+"Rhizosphere soil","S397",53,4,"Ascomycota",0.359346716190719,-0.456937211371929
+"Rhizosphere soil","S398",42,4,"Ascomycota",0.201513130094317,-0.156144211592529
+"Rhizosphere soil","S399",108,3,"Ascomycota",-0.375002512270937,-0.258958351067259
+"Rhizosphere soil","S400",18,3,"Ascomycota",-0.391059798967935,0.504971970165753
+"Rhizosphere soil","S401",40,4,"Olpidiomycota",0.196592177762099,-0.578766381250727
+"Rhizosphere soil","S402",99,3,"Rozellomycota",-0.430533690659794,0.0673198567376736
+"Rhizosphere soil","S403",53,4,"Ascomycota",-0.0852966308470102,-0.513839998408771
+"Rhizosphere soil","S404",66,3,"Ascomycota",-0.0874760404186235,0.0670003030803724
+"Rhizosphere soil","S405",73,4,"Ascomycota",0.0130820896240928,-0.471833650075898
+"Rhizosphere soil","S406",99,3,"Basidiomycota",-0.34512794553679,-0.0969483562359929
+"Rhizosphere soil","S407",46,4,"Basidiomycota",-0.0175287519912986,-0.589699341370156
+"Rhizosphere soil","S408",17,1,"Basidiomycota",0.287304228691183,0.65794740345449
+"Rhizosphere soil","S409",63,4,"Ascomycota",0.095047173518047,-0.559563237776114
+"Rhizosphere soil","S410",34,4,"Unclassified fungi",0.369130011441336,-0.0507002185527479
+"Rhizosphere soil","S411",81,3,"Ascomycota",-0.145438825530258,-0.0867737526617294
+"Rhizosphere soil","S412",35,4,"Unclassified fungi",0.434306980877723,-0.260817956482371
+"Rhizosphere soil","S413",7,1,"Rozellomycota",0.583298693616387,0.572585153537569
+"Rhizosphere soil","S414",23,4,"Ascomycota",-0.197595799919035,-0.654384467005379
+"Rhizosphere soil","S415",16,2,"Ascomycota",-0.727346760844059,0.219057087213374
+"Rhizosphere soil","S416",41,3,"Basidiomycota",-0.609150234474745,-0.102013678936385
+"Rhizosphere soil","S417",60,3,"Ascomycota",-0.35052095889617,0.00196399296802356
+"Rhizosphere soil","S418",71,3,"Unclassified fungi",-0.524649128773873,-0.171114307624548
+"Rhizosphere soil","S419",4,4,"Mortierellomycota",-0.0287237142055008,-0.87050426821808
+"Rhizosphere soil","S420",72,3,"Unclassified fungi",-0.259052977754498,0.138357284045596
+"Rhizosphere soil","S421",58,4,"Ascomycota",0.288608458984946,-0.374084013165096
+"Rhizosphere soil","S422",70,3,"Ascomycota",-0.511687642418641,0.0721099076774846
+"Rhizosphere soil","S423",22,3,"Mortierellomycota",-0.335850407758509,0.495988900843593
+"Rhizosphere soil","S424",40,4,"Ascomycota",0.427944829270087,-0.339683768867235
+"Rhizosphere soil","S425",35,3,"Mortierellomycota",-0.590235014960937,0.172252793399559
+"Rhizosphere soil","S426",18,1,"Basidiomycota",0.373146866722214,0.615523945639714
+"Rhizosphere soil","S427",17,1,"Ascomycota",0.163485016759803,0.69305313462149
+"Rhizosphere soil","S428",79,4,"Basidiomycota",0.128154394608126,-0.220918791608437
+"Rhizosphere soil","S429",57,3,"Ascomycota",-0.411388993953828,0.218773949218662
+"Rhizosphere soil","S430",22,4,"Ascomycota",-0.366266010309085,-0.546484780217047
+"Rhizosphere soil","S431",46,4,"Basidiomycota",-0.0951384340922921,-0.61596579336081
+"Rhizosphere soil","S432",23,4,"Ascomycota",-0.140383186185115,-0.667803231732689
+"Rhizosphere soil","S433",17,4,"Ascomycota",0.149692149992317,-0.72203445248305
+"Rhizosphere soil","S434",19,4,"Ascomycota",0.303213052979907,-0.666083738134808
+"Rhizosphere soil","S435",71,4,"Unclassified fungi",0.189698048675125,-0.291702483925622
+"Rhizosphere soil","S436",69,4,"Ascomycota",0.127912661760511,-0.276127665138229
+"Rhizosphere soil","S437",42,4,"Ascomycota",0.487420901377823,-0.100262317809946
+"Rhizosphere soil","S438",34,4,"Ascomycota",0.20803068470821,-0.654348847170736
+"Rhizosphere soil","S439",8,2,"Basidiomycota",-0.799450567850786,-0.218648678810828
+"Rhizosphere soil","S440",41,3,"Ascomycota",-0.590434439033447,0.0872087565399667
+"Rhizosphere soil","S441",18,1,"Ascomycota",0.127884124337253,0.6758194096184
+"Rhizosphere soil","S442",19,1,"Ascomycota",0.645641129030437,0.186664499301955
+"Rhizosphere soil","S443",16,2,"Basidiomycota",0.656865605268156,-0.0694272855381123
+"Rhizosphere soil","S444",14,3,"Ascomycota",-0.691849942264456,0.317213919138288
+"Rhizosphere soil","S445",14,3,"Ascomycota",-0.569748004434679,-0.491379443782116
+"Rhizosphere soil","S446",29,3,"Ascomycota",-0.660219861119139,-0.257726873787741
+"Rhizosphere soil","S447",34,3,"Ascomycota",-0.601491305742258,0.000797410939005585
+"Rhizosphere soil","S448",46,4,"Ascomycota",-0.0294946070073935,-0.506841617776022
+"Rhizosphere soil","S449",80,3,"Basidiomycota",-0.279664105429979,-0.105305556483087
+"Rhizosphere soil","S450",4,4,"Ascomycota",0.665763329550004,-0.569255488454597
+"Rhizosphere soil","S451",30,3,"Kickxellomycota",-0.439869701450622,0.378108332165538
+"Rhizosphere soil","S452",35,4,"Basidiomycota",0.499906818776116,-0.467354003783461
+"Rhizosphere soil","S453",43,3,"Unclassified fungi",-0.306523363500484,0.290514204810754
+"Rhizosphere soil","S454",10,1,"Ascomycota",0.0586960634099971,0.821859734804285
+"Rhizosphere soil","S455",54,4,"Ascomycota",0.388871588250867,-0.288044355770804
+"Rhizosphere soil","S456",24,4,"Ascomycota",-0.090885654551854,-0.63918235635707
+"Rhizosphere soil","S457",65,3,"Olpidiomycota",-0.392969984732088,-0.30747813252932
+"Rhizosphere soil","S458",47,3,"Rozellomycota",-0.522635528589945,-0.22457990561886
+"Rhizosphere soil","S459",24,1,"Ascomycota",-0.0100391204633688,0.526924713806962
+"Rhizosphere soil","S460",91,4,"Ascomycota",0.119116048403689,-0.437587894766728
+"Root endosphere","R001",9,2,"Ascomycota",0.545750352059759,0.55000394948622
+"Root endosphere","R002",5,1,"Ascomycota",-0.877527032246517,0.123083886134956
+"Root endosphere","R003",11,4,"Ascomycota",0.704982215541196,0.218755534782218
+"Root endosphere","R004",25,3,"Ascomycota",-0.163625978621447,-0.0607152899870845
+"Root endosphere","R005",6,1,"Ascomycota",-0.85538542340769,-0.0874966770178872
+"Root endosphere","R006",9,4,"Ascomycota",0.672844941344312,-0.368206947594505
+"Root endosphere","R007",6,1,"Ascomycota",-0.823434383025981,-0.0340638657880643
+"Root endosphere","R008",1,2,"Unclassified fungi",-0.54312380759242,-0.839652624378863
+"Root endosphere","R009",7,2,"Unclassified fungi",-0.249774506814638,0.75971408760782
+"Root endosphere","R010",14,2,"Ascomycota",0.324725418255665,0.583658659704455
+"Root endosphere","R011",11,2,"Ascomycota",0.477879761183724,0.671611014843962
+"Root endosphere","R012",21,2,"Ascomycota",0.231114583814141,0.579961802878811
+"Root endosphere","R013",21,4,"Ascomycota",0.518935565957268,0.159132340972234
+"Root endosphere","R014",3,1,"Unclassified fungi",-0.888868425391417,0.218446768023473
+"Root endosphere","R015",5,4,"Mortierellomycota",0.773391326621952,-0.387263741450466
+"Root endosphere","R016",25,3,"Unclassified fungi",-0.22309247507133,0.254813005339802
+"Root endosphere","R017",7,1,"Ascomycota",-0.582651293565234,0.616774550110006
+"Root endosphere","R018",25,3,"Basidiomycota",0.171167697225255,0.44883150273108
+"Root endosphere","R019",25,3,"Unclassified fungi",0.289478535368007,-0.0207257593182846
+"Root endosphere","R020",2,5,"Unclassified fungi",-0.230162522070537,-0.850811457757224
+"Root endosphere","R021",29,2,"Ascomycota",0.118949565983562,0.584058598030151
+"Root endosphere","R022",10,2,"Ascomycota",-0.0495670673578298,0.498720831255815
+"Root endosphere","R023",2,4,"Ascomycota",0.760892963820131,-0.545520617705178
+"Root endosphere","R024",6,1,"Ascomycota",-0.828759835586452,0.0998054199984898
+"Root endosphere","R025",2,2,"Unclassified fungi",0.225236979151173,-0.936072325522773
+"Root endosphere","R026",8,2,"Basidiomycota",-0.125026721463188,0.764137486548039
+"Root endosphere","R027",29,2,"Basidiomycota",0.374443739949895,0.389588151242782
+"Root endosphere","R028",7,4,"Ascomycota",0.782962757406787,0.160721383820015
+"Root endosphere","R029",25,3,"Ascomycota",0.357934565232077,0.100123605574249
+"Root endosphere","R030",6,2,"Ascomycota",0.778966409641018,0.28452544693885
+"Root endosphere","R031",8,5,"Ascomycota",0.261351328075516,-0.743691687478935
+"Root endosphere","R032",25,3,"Basidiomycota",-0.181370354217242,0.33543770145676
+"Root endosphere","R033",14,4,"Basidiomycota",0.670072297935458,-0.279776820657427
+"Root endosphere","R034",4,2,"Ascomycota",0.786668177798932,0.394208839080195
+"Root endosphere","R035",1,1,"Ascomycota",-0.988037816150265,0.0415823517364809
+"Root endosphere","R036",28,4,"Ascomycota",0.667499631957434,0.0046071039025902
+"Root endosphere","R037",7,2,"Ascomycota",0.228820491122147,0.825187546405739
+"Root endosphere","R038",25,3,"Ascomycota",-0.0307747999071888,0.100472555165055
+"Root endosphere","R039",7,1,"Basidiomycota",-0.630262697879319,0.520007928056616
+"Root endosphere","R040",19,3,"Unclassified fungi",0.202680860882941,0.308855991497269
+"Root endosphere","R041",25,3,"Ascomycota",0.0381907083836205,0.359628406605806
+"Root endosphere","R042",15,2,"Ascomycota",0.139508128692486,0.70037120765617
+"Root endosphere","R043",25,3,"Ascomycota",0.00915071009184735,0.19031514702674
+"Root endosphere","R044",16,1,"Unclassified fungi",-0.535344834260661,0.310452208741515
+"Root endosphere","R045",16,2,"Basidiomycota",-0.00933705630133607,0.680328010032553
+"Root endosphere","R046",2,1,"Ascomycota",-0.831798068362857,0.528813042876968
+"Root endosphere","R047",7,1,"Ascomycota",-0.79006377534105,-0.140883880861692
+"Root endosphere","R048",25,3,"Ascomycota",0.361827668693705,0.205386858755413
+"Root endosphere","R049",2,1,"Mortierellomycota",0.883451629960653,-0.21770772835019
+"Root endosphere","R050",16,2,"Ascomycota",0.413137500187515,0.706446711506977
+"Root endosphere","R051",14,5,"Basidiomycota",0.386755526211656,-0.641488858297453
+"Root endosphere","R052",14,2,"Ascomycota",0.569454778944196,0.368634478506908
+"Root endosphere","R053",11,2,"Mortierellomycota",0.283390711194887,0.704753468724888
+"Root endosphere","R054",10,1,"Basidiomycota",-0.746268350696746,0.317421913197487
+"Root endosphere","R055",9,4,"Basidiomycota",0.595889395332128,-0.507928543580559
+"Root endosphere","R056",27,5,"Ascomycota",0.335757686667208,-0.575857613834685
+"Root endosphere","R057",18,4,"Basidiomycota",0.469451802729589,0.0521288171899292
+"Root endosphere","R058",37,5,"Basidiomycota",0.0676261555898362,-0.559075532561031
+"Root endosphere","R059",36,5,"Ascomycota",0.00941031628572893,-0.643605944640047
+"Root endosphere","R060",28,5,"Ascomycota",0.171766568929295,-0.613275650749506
+"Root endosphere","R061",42,5,"Ascomycota",-0.157666662096166,-0.493399508983071
+"Root endosphere","R062",13,4,"Ascomycota",0.542190698144086,-0.0877224497037395
+"Root endosphere","R063",24,5,"Unclassified fungi",0.290637667859606,-0.619235894724557
+"Root endosphere","R064",12,5,"Ascomycota",-0.239863352813753,-0.706103607246812
+"Root endosphere","R065",7,2,"Ascomycota",-0.0213789754456987,0.791897444079861
+"Root endosphere","R066",9,2,"Ascomycota",0.146361166431308,0.819944990922817
+"Root endosphere","R067",11,2,"Ascomycota",0.281948122857192,0.504178573678763
+"Root endosphere","R068",10,2,"Unclassified fungi",0.0973361203232074,0.80251511686742
+"Root endosphere","R069",20,1,"Ascomycota",-0.601574011346751,0.0143405292529903
+"Root endosphere","R070",9,2,"Unclassified fungi",-0.0377270448036265,0.751265766697953
+"Root endosphere","R071",11,2,"Basidiomycota",0.327768188966926,0.738217813823894
+"Root endosphere","R072",6,2,"Basidiomycota",0.559298750247967,0.660443364476478
+"Root endosphere","R073",10,2,"Ascomycota",0.259625362121868,0.668289289861442
+"Root endosphere","R074",28,4,"Basidiomycota",0.574527752807034,0.0963533831985406
+"Root endosphere","R075",38,5,"Ascomycota",0.000543792930975601,-0.354128533568532
+"Root endosphere","R076",8,1,"Unclassified fungi",-0.500418817325275,0.507203088478583
+"Root endosphere","R077",40,5,"Ascomycota",0.25863532894923,-0.463508174091518
+"Root endosphere","R078",15,1,"Ascomycota",-0.654134747639472,0.0608529766007254
+"Root endosphere","R079",51,5,"Ascomycota",-0.183742548468321,-0.359396679764855
+"Root endosphere","R080",7,2,"Ascomycota",0.722202044902049,-0.204780830390355
+"Root endosphere","R081",44,5,"Unclassified fungi",-0.15331453552436,-0.418377036144624
+"Root endosphere","R082",37,5,"Ascomycota",0.319597078184085,-0.359752674462339
+"Root endosphere","R083",10,1,"Basidiomycota",-0.575454462970282,-0.253796505238222
+"Root endosphere","R084",11,1,"Ascomycota",-0.582923584165484,0.452060122076616
+"Root endosphere","R085",13,5,"Basidiomycota",0.0686020857018478,-0.709417986636575
+"Root endosphere","R086",30,5,"Basidiomycota",-0.0131646274464251,-0.594247144046997
+"Root endosphere","R087",25,5,"Ascomycota",0.0996787665929834,-0.680408906548136
+"Root endosphere","R088",51,5,"Basidiomycota",0.0456924664571165,-0.435591453140629
+"Root endosphere","R089",12,5,"Ascomycota",-0.314673772482645,-0.633717702110029
+"Root endosphere","R090",19,5,"Ascomycota",-0.133474469641214,-0.671932256926196
+"Root endosphere","R091",26,5,"Ascomycota",0.207283750605084,-0.31568412124384
+"Root endosphere","R092",35,5,"Ascomycota",0.247748066698427,-0.422217660599177
+"Root endosphere","R093",44,5,"Ascomycota",-0.075810397169931,-0.494005674133481
+"Root endosphere","R094",34,5,"Basidiomycota",0.174486492214516,-0.458219300730567
+"Root endosphere","R095",12,2,"Ascomycota",-0.147922108946864,0.675830795927165
+"Root endosphere","R096",10,2,"Ascomycota",0.262731765193681,0.776110626943239
+"Root endosphere","R097",8,2,"Basidiomycota",0.348335346700909,0.788323896066698
+"Root endosphere","R098",13,2,"Unclassified fungi",0.448987973394897,0.550636187151079
+"Root endosphere","R099",38,5,"Ascomycota",-0.126963577430032,-0.545806028174842
+"Root endosphere","R100",5,1,"Chytridiomycota",-0.830342668434798,-0.139308169067278
+"Root endosphere","R101",11,2,"Ascomycota",-0.0961737155863589,0.559280652408802
+"Root endosphere","R102",11,2,"Basidiomycota",0.514730269346487,0.620014525378586
+"Root endosphere","R103",42,5,"Basidiomycota",0.129074844677571,-0.397638825856193
+"Root endosphere","R104",8,5,"Ascomycota",-0.356989795743185,-0.682018650346853
+"Root endosphere","R105",22,5,"Ascomycota",-0.0777735198556629,-0.707992109503954
+"Root endosphere","R106",42,5,"Ascomycota",-0.0491318575122699,-0.46097784118411
+"Root endosphere","R107",17,5,"Ascomycota",0.394657579158672,-0.489924607202973
+"Root endosphere","R108",14,5,"Ascomycota",0.1018814041756,-0.745776990642002
+"Root endosphere","R109",16,5,"Ascomycota",0.146819027373063,-0.722015272545796
+"Root endosphere","R110",34,5,"Ascomycota",-0.0653748278580375,-0.559720933535158
+"Root endosphere","R111",51,5,"Basidiomycota",0.055548799704995,-0.489509256057442
+"Root endosphere","R112",6,2,"Ascomycota",0.482016481339622,0.723499323909362
+"Root endosphere","R113",13,5,"Ascomycota",-0.0514980581755097,-0.753001880226512
+"Root endosphere","R114",22,5,"Ascomycota",-0.137323887470496,-0.606000126185426
+"Root endosphere","R115",31,5,"Ascomycota",-0.242624539874338,-0.56396369997078
+"Root endosphere","R116",42,5,"Ascomycota",0.207060091883032,-0.504546727548811
+"Root endosphere","R117",11,2,"Ascomycota",0.0387881587156925,0.772749172604718
+"Root endosphere","R118",7,5,"Ascomycota",-0.202463477884116,-0.732731808056257
+"Root endosphere","R119",14,1,"Ascomycota",-0.716325866948821,-0.159126480860617
+"Root endosphere","R120",43,5,"Ascomycota",0.115208668489739,-0.304791948706057
+"Root endosphere","R121",25,1,"Ascomycota",-0.666850775459517,0.364913249857052
+"Root endosphere","R122",9,1,"Basidiomycota",-0.781676644314843,0.243378091453021
+"Root endosphere","R123",39,5,"Ascomycota",0.201830617743758,-0.564916702187863
+"Root endosphere","R124",13,5,"Unclassified fungi",0.438795368835304,-0.412507119385407
+"Root endosphere","R125",21,1,"Ascomycota",-0.64079531701779,0.171475948934773
+"Root endosphere","R126",29,5,"Ascomycota",0.145826335730364,-0.54063016592139
+"Root endosphere","R127",15,1,"Ascomycota",-0.707864348002033,0.084936402077155
+"Root endosphere","R128",13,4,"Ascomycota",0.777309434282081,0.0178108906721436
+"Root endosphere","R129",7,4,"Chytridiomycota",0.795342829170369,-0.143927378043724
+"Root endosphere","R130",7,4,"Basidiomycota",0.595405998377283,-0.442070529133283
+"Root endosphere","R131",22,4,"Basidiomycota",0.52382507505373,0.248571750849095
+"Root endosphere","R132",19,4,"Ascomycota",0.626479747478,-0.240910442646616
+"Root endosphere","R133",19,4,"Basidiomycota",0.680401023026099,0.0852716827630075
+"Root endosphere","R134",5,1,"Basidiomycota",-0.745941951703142,-0.312980764216952
+"Root endosphere","R135",18,5,"Basidiomycota",-0.0356758623107321,-0.688719776024887
+"Root endosphere","R136",29,5,"Basidiomycota",-0.242182378279992,-0.291111588373636
+"Root endosphere","R137",10,1,"Unclassified fungi",-0.736451648970725,0.146214509409191
+"Root endosphere","R138",7,4,"Ascomycota",0.796341140341797,-0.234261326228487
+"Root endosphere","R139",8,1,"Unclassified fungi",-0.643081572990627,-0.322878502206352
+"Root endosphere","R140",12,1,"Ascomycota",-0.574790391531366,-0.398018208464357
+"Root endosphere","R141",21,4,"Ascomycota",0.622984680960894,-0.0361521496553607
+"Root endosphere","R142",18,1,"Ascomycota",-0.751226846680185,0.0556331927022974
+"Root endosphere","R143",18,4,"Ascomycota",0.634482307076899,0.10687090768354
+"Root endosphere","R144",18,1,"Ascomycota",-0.537850237499936,-0.12066002828841
+"Root endosphere","R145",51,5,"Ascomycota",0.0111583051543386,-0.276497407045082
+"Root endosphere","R146",3,1,"Basidiomycota",-0.778005512550618,0.518877088297055
+"Root endosphere","R147",8,5,"Ascomycota",-0.030921281277718,-0.791844395293851
+"Root endosphere","R148",6,5,"Ascomycota",0.188692661154941,-0.813592749314516
+"Root endosphere","R149",33,5,"Basidiomycota",-0.337673562727037,-0.331338831410624
+"Root endosphere","R150",16,1,"Ascomycota",-0.645923336860531,-0.100567534008567
+"Root endosphere","R151",10,2,"Ascomycota",0.183868009930684,0.723377736713565
+"Root endosphere","R152",16,4,"Basidiomycota",0.630098871040243,-0.105696564636076
+"Root endosphere","R153",9,4,"Ascomycota",0.770516728578056,-0.0528194514479003
+"Root endosphere","R154",9,2,"Ascomycota",0.416756612023344,0.610428197642247
+"Root endosphere","R155",15,1,"Ascomycota",-0.442026181886587,-0.0559458981760956
+"Root endosphere","R156",25,5,"Ascomycota",0.290824883713822,-0.536059587548203
+"Root endosphere","R157",16,2,"Basidiomycota",0.371929906685351,0.597036541386149
+"Root endosphere","R158",11,1,"Ascomycota",-0.717594396240926,0.246157213665549
+"Root endosphere","R159",15,4,"Ascomycota",0.684433470572531,-0.0352088172178385
+"Root endosphere","R160",11,1,"Ascomycota",-0.652612047149946,0.442864250455575
+"Root endosphere","R161",30,5,"Ascomycota",-0.231106972453934,-0.497110609465514
+"Root endosphere","R162",21,1,"Basidiomycota",-0.443656780773167,0.236705807173863
+"Root endosphere","R163",35,5,"Unclassified fungi",-0.34781306345633,-0.415229660799066
+"Root endosphere","R164",25,1,"Ascomycota",-0.358406231816022,0.388019671719586
+"Root endosphere","R165",36,5,"Ascomycota",0.0860900120961421,-0.631607140966062
+"Root endosphere","R166",8,5,"Basidiomycota",0.293218911673768,-0.703846853917044
+"Root endosphere","R167",23,1,"Ascomycota",-0.594180604656138,0.139511492904172
+"Root endosphere","R168",18,1,"Basidiomycota",-0.552615289875809,0.400123866347778
+"Root endosphere","R169",14,1,"Ascomycota",-0.594622864006801,0.335583512330483
+"Root endosphere","R170",22,1,"Basidiomycota",-0.527020189625571,0.161637938351282
+"Root endosphere","R171",8,2,"Basidiomycota",0.588624893556166,0.439873802088288
+"Root endosphere","R172",8,5,"Ascomycota",-0.211623777227075,-0.794508140382206
+"Root endosphere","R173",22,5,"Basidiomycota",-0.315889004862365,-0.497644304588375
+"Root endosphere","R174",13,4,"Ascomycota",0.716549727328403,0.278474213078143
+"Root endosphere","R175",18,1,"Ascomycota",-0.600620130327434,-0.0788635535763493
+"Root endosphere","R176",7,4,"Ascomycota",0.696553701999235,0.406720577557753
+"Root endosphere","R177",16,4,"Unclassified fungi",0.638794179551304,0.272195506745592
+"Root endosphere","R178",22,4,"Ascomycota",0.447755972036311,0.327208904756454
+"Root endosphere","R179",26,5,"Ascomycota",-0.247802461996731,-0.412283735314306
+"Root endosphere","R180",3,4,"Basidiomycota",0.733712021663128,0.552715357333504
+"Root endosphere","R181",32,5,"Ascomycota",-0.331854564318303,-0.551464515930226
+"Root endosphere","R182",8,1,"Ascomycota",-0.823178259014152,0.252509144792511
+"Root endosphere","R183",8,1,"Ascomycota",-0.731097905471471,-0.0367800293170983
+"Root endosphere","R184",19,1,"Ascomycota",-0.633541745529744,0.271162137949034

@@ -1,0 +1,7 @@
+"source_gene_id","figure_label","minimum","maximum","normalization"
+"CD34","CD34",-1.669921875,1.029296875,"(MAGIC-min)/(max-min),all5780cells per gene"
+"CD79B","CD79B",-2.615234375,3.283203125,"(MAGIC-min)/(max-min),all5780cells per gene"
+"GATA1","GATA1",-0.61572265625,3.0234375,"(MAGIC-min)/(max-min),all5780cells per gene"
+"IRF8","IRF8",-0.79248046875,5.50390625,"(MAGIC-min)/(max-min),all5780cells per gene"
+"MPO","MPO",-2.53125,5.3203125,"(MAGIC-min)/(max-min),all5780cells per gene"
+"ITGA2B","CD41",-0.56005859375,4.6328125,"(MAGIC-min)/(max-min),all5780cells per gene"

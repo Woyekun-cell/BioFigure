@@ -1,0 +1,9 @@
+args<-commandArgs(TRUE);P<-normalizePath(args[1]);w<-file.path(P,'work/2026-10-26-map-reproductions/SCICASE-092');library(ggplot2);library(grid)
+p<-readRDS(file.path(w,'plot.rds'));cc<-read.csv(file.path(P,'results/plot_data/china_map_labels_20261026.csv'))
+main<-p$patches$plots[[1]];repelled<-vapply(main$layers,function(x)inherits(x$geom,'GeomTextRepel'),logical(1));stopifnot(sum(repelled)==1);main$layers<-main$layers[!repelled]
+for(k in seq_len(nrow(cc))){n<-cc$Province[k];if(n=='Ningxia'){cc$X[k]<-cc$X[k]+120000;cc$Y[k]<-cc$Y[k]-150000};if(n=='Gansu'){cc$X[k]<-cc$X[k]-120000;cc$Y[k]<-cc$Y[k]+100000};if(n=='Taiwan')cc$Y[k]<-cc$Y[k]+180000;if(n=='Shaanxi')cc$Y[k]<-cc$Y[k]-70000;if(n=='Hebei')cc$Y[k]<-cc$Y[k]+110000;if(n=='Shandong')cc$X[k]<-cc$X[k]+100000;if(n=='Henan')cc$Y[k]<-cc$Y[k]-90000;if(n=='Jiangsu')cc$X[k]<-cc$X[k]+80000}
+tw<-cc[cc$Province=='Taiwan',];main<-main+geom_segment(data=tw,aes(x=X,y=Y-180000,xend=X,yend=Y-15000),colour='#68737A',linewidth=.18)
+main<-main+geom_label(data=cc,aes(X,Y,label=Province),size=2.3,family='Arial',colour='#303840',fill='#FFFFFFC0',label.padding=unit(.025,'lines'),label.r=unit(.03,'lines'),linewidth=0)
+p$patches$plots[[1]]<-main
+q<-jsonlite::fromJSON(file.path(w,'input-qc.json'));ragg::agg_png(file.path(w,'static-label-measurement.png'),width=q$width_mm,height=q$height_mm,units='mm',res=200,background='white');g<-patchwork::patchworkGrob(p);dev.off()
+fix<-function(x){if(inherits(x,'text')){x$gp$fontfamily<-'Arial';if(!is.null(x$gp$fontsize))x$gp$fontsize<-pmax(6.5,x$gp$fontsize)};if(length(x$grobs))x$grobs<-lapply(x$grobs,fix);if(length(x$children))x$children<-do.call(gList,lapply(x$children,fix));x};g<-fix(g);saveRDS(g,file.path(w,'composed-vector-grob.rds'));p<-ggplotify::as.ggplot(g)+theme(text=element_text(family='Arial',size=7),plot.margin=margin(0,0,0,0));saveRDS(p,file.path(w,'render-object.rds'));write.csv(cc,file.path(w,'final-label-coordinates.csv'),row.names=FALSE)

@@ -1,0 +1,13 @@
+"subclass","category","n"
+"AC","Fatty.Acyl",1
+"PC","Phospholipid",61
+"PE","Phospholipid",1
+"PI","Phospholipid",4
+"Plasmenyl.PC","Phospholipid",5
+"Plasmenyl.PE","Phospholipid",11
+"Cer.NS","Sphingolipid",1
+"HexCer.AP","Sphingolipid",4
+"HexCer.NS","Sphingolipid",4
+"SM","Sphingolipid",13
+"CE","Sterol.Lipid",6
+"UNK","UNK",129

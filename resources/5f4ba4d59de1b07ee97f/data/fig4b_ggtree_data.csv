@@ -1,0 +1,10 @@
+"node","parent","x","y","branch.length","label","isTip"
+1,6,0.0670081,1,0.0670081,"Anthocharis_cardamines",TRUE
+2,7,0.1101384,2,0.0712259,"Aporia_crataegi",TRUE
+3,9,0.11011237,4,0.0207155,"Pieris_brassicae",TRUE
+4,9,0.10907317,5,0.0196763,"Pieris_napi",TRUE
+5,8,0.106541,3,0.0210617,"Pieris_rapae",TRUE
+6,6,0,1.9375,0,NA,FALSE
+7,6,0.0389125,2.875,0.0389125,NA,FALSE
+8,7,0.0854793,3.75,0.0465668,NA,FALSE
+9,8,0.08939687,4.5,0.00391757,NA,FALSE

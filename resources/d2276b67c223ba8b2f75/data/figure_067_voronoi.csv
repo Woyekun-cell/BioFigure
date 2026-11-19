@@ -1,0 +1,95 @@
+"Income.group","ISO3","Achievable.mitigation","label"
+"Low income","COD",0.87,"COD
+0.87"
+"Low income","ETH",0.07,"ETH
+0.07"
+"Low income","UGA",0.1,"UGA
+0.10"
+"Low income","MOZ",0.05,"MOZ
+0.05"
+"Low income","BDI",0.03,"BDI
+0.03"
+"Low income","RWA",0.04,"RWA
+0.04"
+"Low income","MWI",0.03,"MWI
+0.03"
+"Low income","NER",0.03,"NER
+0.03"
+"Lower middle income","IND",1.45,"IND
+1.45"
+"Lower middle income","IDN",0.95,"IDN
+0.95"
+"Lower middle income","KHM",0.39,"KHM
+0.39"
+"Lower middle income","NGA",0.25,"NGA
+0.25"
+"Lower middle income","PAK",0.18,"PAK
+0.18"
+"Lower middle income","VNM",0.14,"VNM
+0.14"
+"Lower middle income","BGD",0.05,"BGD
+0.05"
+"Lower middle income","KEN",0.07,"KEN
+0.07"
+"Lower middle income","TZA",0.13,"TZA
+0.13"
+"Lower middle income","GHA",0.13,"GHA
+0.13"
+"Lower middle income","CIV",0.17,"CIV
+0.17"
+"Lower middle income","BOL",0.15,"BOL
+0.15"
+"Lower middle income","VEN",0.14,"VEN
+0.14"
+"Lower middle income","NIC",0.2,"NIC
+0.20"
+"Upper middle income","HND",0.08,"HND
+0.08"
+"Upper middle income","BRA",2.06,"BRA
+2.06"
+"Upper middle income","CHN",1.35,"CHN
+1.35"
+"Upper middle income","RUS",0.48,"RUS
+0.48"
+"Upper middle income","THA",0.53,"THA
+0.53"
+"Upper middle income","MEX",0.35,"MEX
+0.35"
+"Upper middle income","COL",0.13,"COL
+0.13"
+"Upper middle income","PER",0.08,"PER
+0.08"
+"Upper middle income","ARG",0.05,"ARG
+0.05"
+"Upper middle income","ECU",0.07,"ECU
+0.07"
+"Upper middle income","CUB",0.09,"CUB
+0.09"
+"Upper middle income","GTM",0.15,"GTM
+0.15"
+"Upper middle income","DOM",0.02,"DOM
+0.02"
+"Upper middle income","BLZ",0.01,"BLZ
+0.01"
+"Upper middle income","CAN",0.65,"CAN
+0.65"
+"High income","USA",0.55,"USA
+0.55"
+"High income","GBR",0.08,"GBR
+0.08"
+"High income","FRA",0.1,"FRA
+0.10"
+"High income","DEU",0.12,"DEU
+0.12"
+"High income","JPN",0.09,"JPN
+0.09"
+"High income","KOR",0.08,"KOR
+0.08"
+"High income","AUS",0.07,"AUS
+0.07"
+"High income","NZL",0.04,"NZL
+0.04"
+"High income","POL",0.03,"POL
+0.03"
+"High income","ROU",0.03,"ROU
+0.03"

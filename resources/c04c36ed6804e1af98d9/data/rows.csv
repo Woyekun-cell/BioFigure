@@ -1,0 +1,11 @@
+row_id,label,order,n_cases
+E01,Endpoint 01,1,120
+E02,Endpoint 02,2,139
+E03,Endpoint 03,3,158
+E04,Endpoint 04,4,177
+E05,Endpoint 05,5,196
+E06,Endpoint 06,6,215
+E07,Endpoint 07,7,234
+E08,Endpoint 08,8,253
+E09,Endpoint 09,9,272
+E10,Endpoint 10,10,291

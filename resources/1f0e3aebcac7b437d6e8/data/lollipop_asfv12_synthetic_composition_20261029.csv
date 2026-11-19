@@ -1,0 +1,61 @@
+"land","day","component","value","y","end","start"
+"Port terminal land","Weekday","More women",56.8487695092856,1,56.8487695092856,0
+"Port terminal land","Weekday","Equilibrium",16.4421471340267,1,73.2909166433123,56.8487695092856
+"Port terminal land","Weekday","More men",26.7090833566877,1,100,73.2909166433123
+"Rural residential land","Weekday","More women",40.4806634160869,2,40.4806634160869,0
+"Rural residential land","Weekday","Equilibrium",10.6242136672204,2,51.1048770833073,40.4806634160869
+"Rural residential land","Weekday","More men",48.8951229166927,2,100,51.1048770833073
+"Public utility land","Weekday","More women",19.023346424924,3,19.023346424924,0
+"Public utility land","Weekday","Equilibrium",7.88892924227505,3,26.912275667199,19.023346424924
+"Public utility land","Weekday","More men",73.087724332801,3,100,26.912275667199
+"Higher education land","Weekday","More women",14.8306579889711,4,14.8306579889711,0
+"Higher education land","Weekday","Equilibrium",29.8713023897138,4,44.7019603786849,14.8306579889711
+"Higher education land","Weekday","More men",55.2980396213151,4,100,44.7019603786849
+"Institution land","Weekday","More women",34.7633608666032,5,34.7633608666032,0
+"Institution land","Weekday","Equilibrium",8.60911111433511,5,43.3724719809383,34.7633608666032
+"Institution land","Weekday","More men",56.6275280190617,5,100,43.3724719809383
+"Transportation hubs","Weekday","More women",18.9069567830647,6,18.9069567830647,0
+"Transportation hubs","Weekday","Equilibrium",25.2869885516428,6,44.1939453347075,18.9069567830647
+"Transportation hubs","Weekday","More men",55.8060546652925,6,100,44.1939453347075
+"Cultural and science land","Weekday","More women",31.1993692568653,7,31.1993692568653,0
+"Cultural and science land","Weekday","Equilibrium",16.1017871062296,7,47.3011563630949,31.1993692568653
+"Cultural and science land","Weekday","More men",52.6988436369051,7,100,47.3011563630949
+"Commercial service land","Weekday","More women",23.7810753109557,8,23.7810753109557,0
+"Commercial service land","Weekday","Equilibrium",11.0199660112782,8,34.8010413222338,23.7810753109557
+"Commercial service land","Weekday","More men",65.1989586777662,8,100,34.8010413222338
+"Industrial land","Weekday","More women",20.7889310289569,9,20.7889310289569,0
+"Industrial land","Weekday","Equilibrium",45.8684102757087,9,66.6573413046656,20.7889310289569
+"Industrial land","Weekday","More men",33.3426586953344,9,100,66.6573413046656
+"Urban residential land","Weekday","More women",50.2026358128129,10,50.2026358128129,0
+"Urban residential land","Weekday","Equilibrium",12.8931312919224,10,63.0957671047353,50.2026358128129
+"Urban residential land","Weekday","More men",36.9042328952647,10,100,63.0957671047353
+"Port terminal land","Weekend","More women",58.1432752874848,1,58.1432752874848,0
+"Port terminal land","Weekend","Equilibrium",21.4037270501737,1,79.5470023376585,58.1432752874848
+"Port terminal land","Weekend","More men",20.4529976623415,1,100,79.5470023376585
+"Rural residential land","Weekend","More women",72.97539484937,2,72.97539484937,0
+"Rural residential land","Weekend","Equilibrium",13.7012980603364,2,86.6766929097064,72.97539484937
+"Rural residential land","Weekend","More men",13.3233070902936,2,100,86.6766929097064
+"Public utility land","Weekend","More women",41.4430625205889,3,41.4430625205889,0
+"Public utility land","Weekend","Equilibrium",20.3770398259455,3,61.8201023465345,41.4430625205889
+"Public utility land","Weekend","More men",38.1798976534655,3,100,61.8201023465345
+"Higher education land","Weekend","More women",56.6824385598262,4,56.6824385598262,0
+"Higher education land","Weekend","Equilibrium",14.6305886158523,4,71.3130271756785,56.6824385598262
+"Higher education land","Weekend","More men",28.6869728243215,4,100,71.3130271756785
+"Institution land","Weekend","More women",38.353995673088,5,38.353995673088,0
+"Institution land","Weekend","Equilibrium",5.91820918759138,5,44.2722048606794,38.353995673088
+"Institution land","Weekend","More men",55.7277951393206,5,100,44.2722048606794
+"Transportation hubs","Weekend","More women",1.94930991072197,6,1.94930991072197,0
+"Transportation hubs","Weekend","Equilibrium",38.181406092666,6,40.130716003388,1.94930991072197
+"Transportation hubs","Weekend","More men",59.869283996612,6,100,40.130716003388
+"Cultural and science land","Weekend","More women",28.8715617602864,7,28.8715617602864,0
+"Cultural and science land","Weekend","Equilibrium",24.4245929773443,7,53.2961547376308,28.8715617602864
+"Cultural and science land","Weekend","More men",46.7038452623692,7,100,53.2961547376308
+"Commercial service land","Weekend","More women",18.4037671683377,8,18.4037671683377,0
+"Commercial service land","Weekend","Equilibrium",28.0935616600772,8,46.4973288284149,18.4037671683377
+"Commercial service land","Weekend","More men",53.5026711715851,8,100,46.4973288284149
+"Industrial land","Weekend","More women",47.1239548493873,9,47.1239548493873,0
+"Industrial land","Weekend","Equilibrium",18.9614902281067,9,66.0854450774939,47.1239548493873
+"Industrial land","Weekend","More men",33.9145549225061,9,100,66.0854450774939
+"Urban residential land","Weekend","More women",34.2439714503725,10,34.2439714503725,0
+"Urban residential land","Weekend","Equilibrium",15.9613820176893,10,50.2053534680618,34.2439714503725
+"Urban residential land","Weekend","More men",49.7946465319382,10,100,50.2053534680618

@@ -1,0 +1,34 @@
+"subgroup","lineage","group_index","log2_ratio"
+"MPs (1)","MPs",1,-1.97310252693789
+"MPs (2)","MPs",2,-1.83624952500953
+"MPs (3)","MPs",3,-0.075451250107085
+"MPs (4)","MPs",4,0.833325777259321
+"MPs (5)","MPs",5,2.25071724694404
+"pDCs (1)","pDCs",6,-0.715580240650103
+"ILCs (1)","ILCs",7,-1.95625124359876
+"ILCs (2)","ILCs",8,0.448852202609573
+"ILCs (3)","ILCs",9,2.40171054474016
+"T cells (1)","T cells",10,-2.75675984438876
+"T cells (2)","T cells",11,-1.10719844662086
+"T cells (3)","T cells",12,1.64940174911583
+"T cells (4)","T cells",13,2.01630004349861
+"B cells (1)","B cells",14,-2.27038056619174
+"B cells (2)","B cells",15,1.65417682538508
+"Plasma B (1)","Plasma B",16,-3.40110083658723
+"Plasma B (2)","Plasma B",17,3.08030475605551
+"Mast cells (1)","Mast cells",18,-0.519599379727906
+"Endothelia (1)","Endothelia",19,-2.31778740671939
+"Endothelia (2)","Endothelia",20,-1.49443310300489
+"Endothelia (3)","Endothelia",21,-1.34879501549095
+"Endothelia (4)","Endothelia",22,-0.450927852269399
+"Endothelia (5)","Endothelia",23,1.31179141631338
+"Endothelia (6)","Endothelia",24,2.31215385192095
+"Endothelia (7)","Endothelia",25,2.35818749564995
+"Mesenchyme (1)","Mesenchyme",26,-1.85259847718599
+"Mesenchyme (2)","Mesenchyme",27,-0.381970548999553
+"Mesenchyme (3)","Mesenchyme",28,3.09050484162291
+"Mesothelia (1)","Mesothelia",29,0.186781212875414
+"Hepatocytes (1)","Hepatocytes",30,-0.299295092987425
+"Cholangiocytes (1)","Cholangiocytes",31,-3.1827184823519
+"Cholangiocytes (2)","Cholangiocytes",32,-0.393694682163332
+"Cholangiocytes (3)","Cholangiocytes",33,2.55777167013438

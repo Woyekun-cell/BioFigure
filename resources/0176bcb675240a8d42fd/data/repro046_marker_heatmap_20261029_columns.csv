@@ -1,0 +1,36 @@
+"cell_type","lineage","column_index"
+"HSC","HSPC",1
+"MPP","HSPC",2
+"Cycling HSPC","HSPC",3
+"MEP","Meg/E",4
+"Erythroblast","Meg/E",5
+"Late Erythroid","Meg/E",6
+"RBC","Meg/E",7
+"Megakaryocyte","Meg/E",8
+"GMP","Myeloid",9
+"Early Myeloid Progenitor","Myeloid",10
+"Late Myeloid","Myeloid",11
+"Neutrophil","Myeloid",12
+"Monocyte","Myeloid",13
+"Macrophages","Myeloid",14
+"Ba/Eo/Ma","Myeloid",15
+"Cycling DCs","Myeloid",16
+"pDC","Myeloid",17
+"CLP","Lymphoid",18
+"Pre-Pro B","Lymphoid",19
+"Pro-B","Lymphoid",20
+"Pre-B","Lymphoid",21
+"Mature B","Lymphoid",22
+"Plasma Cell","Lymphoid",23
+"CD4+ T-Cell","Lymphoid",24
+"CD8+ T-Cell","Lymphoid",25
+"AEC","EC",26
+"SEC","EC",27
+"VSMC","M",28
+"THY1+ MSC","Mesenchymal",29
+"Adipo-MSC","Mesenchymal",30
+"OsteoFibro-MSC","Mesenchymal",31
+"Osteo-MSC","Mesenchymal",32
+"Osteoblast","Mesenchymal",33
+"Fibro-MSC","Mesenchymal",34
+"RNAlo MSC","Mesenchymal",35
