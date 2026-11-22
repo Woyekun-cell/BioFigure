@@ -1,0 +1,83 @@
+system,system_label,trait,category,color,category_order
+a,Abdominal traits,Liver PDFF,Liver PDFF,#DE2B75,5
+a,Abdominal traits,Liver volume,Liver volume,#DBD5EC,1
+a,Abdominal traits,Pancreas PDFF,Pancreas PDFF,#95212B,3
+a,Abdominal traits,Pancreas volume,Pancreas volume,#EF946B,2
+a,Abdominal traits,Subcutaneous fat volume,Subcutaneous fat volume,#EE7180,6
+a,Abdominal traits,Visceral fat volume,Visceral fat volume,#574097,4
+b,Cardiac traits,LA stroke volume,Chamber volumes,#C7DCB8,9
+b,Cardiac traits,LV longitudinal strain global,Longitudinal strain,#AEBA37,8
+b,Cardiac traits,LV longitudinal strain Segment 1,Longitudinal strain,#AEBA37,8
+b,Cardiac traits,LV mean myocardial wall thickness AHA 11,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness AHA 12,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness AHA 5,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness AHA 6,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness AHA 7,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness AHA 8,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV mean myocardial wall thickness global,Myocardial wall thickness,#DDE3A7,7
+b,Cardiac traits,LV stroke volume,Chamber volumes,#C7DCB8,9
+b,Cardiac traits,RA maximum volume,Chamber volumes,#C7DCB8,9
+b,Cardiac traits,RV end diastolic volume,Chamber volumes,#C7DCB8,9
+b,Cardiac traits,RV stroke volume,Chamber volumes,#C7DCB8,9
+c,Brain traits,Mean FA in body of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean FA in medial lemniscus on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean FA in medial lemniscus on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean FA in posterior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean FA in posterior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean FA in posterior thalamic radiation on FA skeleton (left),Posterior thalamic radiation tract,#7E94BD,12
+c,Brain traits,Mean FA in posterior thalamic radiation on FA skeleton (right),Posterior thalamic radiation tract,#7E94BD,12
+c,Brain traits,Mean FA in splenium of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean FA in superior fronto-occipital fasciculus on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in anterior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in anterior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in body of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean ICVF in cingulum cingulate gyrus on FA skeleton (left),Cingulum cingulate gyrus tract,#A0C9BF,14
+c,Brain traits,Mean ICVF in cingulum cingulate gyrus on FA skeleton (right),Cingulum cingulate gyrus tract,#A0C9BF,14
+c,Brain traits,Mean ICVF in external capsule on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in genu of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean ICVF in pontine crossing tract on FA skeleton,Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in posterior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in posterior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in posterior thalamic radiation on FA skeleton (left),Posterior thalamic radiation tract,#7E94BD,12
+c,Brain traits,Mean ICVF in posterior thalamic radiation on FA skeleton (right),Posterior thalamic radiation tract,#7E94BD,12
+c,Brain traits,Mean ICVF in retrolenticular part of internal capsule on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in sagittal stratum on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in sagittal stratum on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in splenium of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean ICVF in superior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in superior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean ICVF in superior fronto-occipital fasciculus on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in superior longitudinal fasciculus on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in superior longitudinal fasciculus on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean ICVF in uncinate fasciculus on FA skeleton (left),Uncinate fasciculus tract,#B3E1AA,18
+c,Brain traits,Mean ISOVF in genu of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean MD in anterior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in anterior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in anterior limb of internal capsule on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in body of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean MD in cingulum cingulate gyrus on FA skeleton (left),Cingulum cingulate gyrus tract,#A0C9BF,14
+c,Brain traits,Mean MD in cingulum cingulate gyrus on FA skeleton (right),Cingulum cingulate gyrus tract,#A0C9BF,14
+c,Brain traits,Mean MD in external capsule on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in fornix cres+stria terminalis on FA skeleton (right),Fornix + stria terminalis tract,#5CBEC8,19
+c,Brain traits,Mean MD in genu of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean MD in posterior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in posterior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in posterior thalamic radiation on FA skeleton (right),Posterior thalamic radiation tract,#7E94BD,12
+c,Brain traits,Mean MD in retrolenticular part of internal capsule on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in sagittal stratum on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in splenium of corpus callosum on FA skeleton,Corpus callosum tract,#78AFC1,10
+c,Brain traits,Mean MD in superior corona radiata on FA skeleton (left),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in superior corona radiata on FA skeleton (right),Corona radiata tract,#4B7CA9,11
+c,Brain traits,Mean MD in superior longitudinal fasciculus on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in superior longitudinal fasciculus on FA skeleton (right),Other white matter tract,#3B548D,13
+c,Brain traits,Mean MD in uncinate fasciculus on FA skeleton (left),Uncinate fasciculus tract,#B3E1AA,18
+c,Brain traits,Mean OD in superior cerebellar peduncle on FA skeleton (left),Other white matter tract,#3B548D,13
+c,Brain traits,Total volume of white matter hyperintensities (from T1 and T2_FLAIR images),White matter hyperintensities volume,#408575,15
+c,Brain traits,Volume of 3rd-Ventricle (whole brain),Regional brain volume,#71A14F,16
+c,Brain traits,Volume of Cerebellum-Cortex (left hemisphere),Regional brain volume,#71A14F,16
+c,Brain traits,Volume of Cerebellum-Cortex (right hemisphere),Regional brain volume,#71A14F,16
+c,Brain traits,Volume of Cortex (right hemisphere),Regional brain volume,#71A14F,16
+c,Brain traits,Volume of grey matter (normalised for head size),Global brain volume,#AEDC73,17
+c,Brain traits,Volume of peripheral cortical grey matter (normalised for head size),Global brain volume,#AEDC73,17
+c,Brain traits,Volume of SupraTentorial (whole brain),Global brain volume,#AEDC73,17
+c,Brain traits,Volume of SupraTentorialNotVent (whole brain),Global brain volume,#AEDC73,17
