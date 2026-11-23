@@ -308,3 +308,19 @@ dialog[open] { animation: inspect-in .36s var(--ease) both; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*) { animation-duration: 0s; }
 }
+
+/* Source-only graphical abstracts keep the existing card geometry. */
+.card-media .publisher-note {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  padding: 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.card-media:has(> .publisher-note) { background: #f3f8ff; }
+.detail-figure > a { margin: 12px 0; }
+#detail-source p + p { margin-top: 5px; }
+#download[hidden], #detail-zoom[hidden] { display: none; }

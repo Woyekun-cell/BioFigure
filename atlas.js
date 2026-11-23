@@ -25,6 +25,7 @@ const copy = {
     showcase:"Featured figures", prev:"Previous figure", next:"Next figure", pause:"Pause slideshow", play:"Play slideshow",
     code:"Plotting code", data:"Plot data", noCode:"No verified public plotting script for this figure.",
     noData:"No verified public plot table for this figure.", inlineData:"The plotting script generates the simulated inputs.", sim:"Simulated data", open:"Open figure",
+    publisherImage:"View publisher image", viewPaper:"View paper", source:"Source",
     count:n=>n===1?"1 figure":n+" figures", types:n=>n+" chart types", zoom:"Original size"
   },
   zh:{
@@ -52,6 +53,7 @@ const copy = {
     showcase:"精选图例", prev:"上一张", next:"下一张", pause:"暂停轮播", play:"播放轮播",
     code:"绘图代码", data:"绘图数据", noCode:"这张图暂缺已核验的公开绘图脚本。",
     noData:"这张图暂缺已核验的公开绘图表。", inlineData:"绘图脚本生成图中使用的模拟输入。", sim:"模拟数据", open:"打开图例",
+    publisherImage:"查看出版社原图", viewPaper:"查看论文", source:"来源",
     count:n=>n+" 张图", types:n=>n+" 种图型", zoom:"原始尺寸"
   }
 };
@@ -188,6 +190,7 @@ function categoryNav() {
 }
 function chooseCategory(id) {
   category=id;limit=pageSize;
+  if(id==="graphical-abstracts")$("resource-filter").selectedIndex=0;
   $("category-mobile").value=id;
   for(const button of $("category-nav").querySelectorAll("button"))
     button.setAttribute("aria-pressed",String(button.dataset.category===id));
@@ -252,8 +255,13 @@ function updateComparison() {
 }
 function card(row, source) {
   const button=node("button","card action");button.type="button";
-  const image=node("img");image.src=row.thumbnail;image.alt="";image.loading="lazy";image.decoding="async";
-  const media=node("span","card-media");media.append(image);
+  const media=node("span","card-media");
+  if(row.thumbnail){
+    const image=node("img");image.src=row.thumbnail;image.alt="";image.loading="lazy";image.decoding="async";
+    media.append(image);
+  }else{
+    media.append(node("span","publisher-note",row.intro[lang]));
+  }
   const packages=node("span","package-list");
   packages.append(...packageTags(row.packages));
   button.append(media,node("strong","",row.chart[lang]),packages);
@@ -269,7 +277,8 @@ function card(row, source) {
     else if(selectedFigures.size<2)selectedFigures.set(row.id,row);
     updateComparison();
   });
-  entry.append(button,compare);
+  entry.append(button);
+  if(row.thumbnail)entry.append(compare);
   return entry;
 }
 function render({append=false,motion=false}={}) {
@@ -280,7 +289,9 @@ function render({append=false,motion=false}={}) {
     if((fileFilter==="code"||fileFilter==="both")&&!row.resources.code.length)return false;
     if((fileFilter==="data"||fileFilter==="both")&&!row.resources.data.length)return false;
     if(!words.length)return true;
-    const terms=[row.title.en,row.title.zh,row.chart.en,row.chart.zh,...row.packages,
+    const ref=row.reference;
+    const metadata=ref?[ref.doi,ref.credit,String(ref.year),...ref.tags]:[];
+    const terms=[row.title.en,row.title.zh,row.chart.en,row.chart.zh,...row.packages,...metadata,
       ...row.categories.flatMap(id=>Object.values(categories.get(id)))].join(" ").toLowerCase();
     return words.every(word=>terms.includes(word));
   });
@@ -321,15 +332,32 @@ function resources(kind,items) {
   }
   target.replaceChildren(list);
 }
+function publisherLink(url,label) {
+  const link=node("a","",label);
+  link.href=url;link.target="_blank";link.rel="noopener noreferrer";
+  return link;
+}
 function fillDetail(row) {
+  const ref=row.reference;
   const currentImage=$("detail-image");
-  if(currentImage?.dataset.figure===row.id) {
+  const figure=$("detail-figure");
+  const zoom=$("detail-zoom");
+  zoom.hidden=!row.thumbnail;
+  if(!row.thumbnail){
+    figure.classList.remove("actual-size");
+    figure.removeAttribute("tabindex");
+    zoom.disabled=true;
+    zoom.setAttribute("aria-pressed","false");
+    const original=publisherLink(ref.original,text().publisherImage);
+    original.className="secondary action";
+    original.append(icon("link"));
+    figure.replaceChildren(original);
+  } else if(currentImage?.dataset.figure===row.id) {
     currentImage.alt=row.chart[lang];
   } else {
     const preview=node("img");
     preview.id="detail-image";preview.dataset.figure=row.id;
     preview.alt=row.chart[lang];preview.src=row.thumbnail;
-    const figure=$("detail-figure");
     figure.classList.remove("actual-size");
     figure.removeAttribute("tabindex");
     figure.scrollTo(0,0);
@@ -349,7 +377,32 @@ function fillDetail(row) {
   $("detail-packages").replaceChildren(...packageTags(row.packages));
   const description=row.intro[lang];
   $("detail-intro").textContent=row.simulated&&!/simulat|模拟/i.test(description)?text().sim+". "+description:description;
-  const download=$("download");download.href=row.image;download.download=row.id+".webp";
+  const download=$("download");
+  download.hidden=Boolean(ref&&!row.image);
+  download.href=ref?ref.original:(row.pdf||row.image);
+  download.querySelector("span").textContent=ref?text().publisherImage:text().download;
+  download.querySelector("use").setAttribute("href",ref?"#i-link":"#i-down");
+  if(ref){
+    download.removeAttribute("download");
+    download.target="_blank";download.rel="noopener noreferrer";
+  }else{
+    download.download=row.id+(row.pdf?".pdf":".webp");
+    download.removeAttribute("target");download.removeAttribute("rel");
+  }
+  $("detail-code").closest("section").hidden=Boolean(ref);
+  $("detail-data").closest("section").hidden=Boolean(ref);
+  const source=$("detail-source");
+  source.hidden=!ref;
+  if(ref){
+    const credit=node("p","",ref.credit+" · "+ref.journal+" · "+ref.year);
+    const sources=node("p");
+    sources.append(publisherLink(ref.paper,text().viewPaper));
+    if(ref.license){
+      const license=ref.license.split("/").at(-3).toUpperCase();
+      sources.append(" · ",publisherLink(ref.license,"CC "+license+" 4.0"));
+    }
+    source.replaceChildren(node("h3","",text().source),credit,sources);
+  }
   const data=row.resources.data;
   $("data-title").textContent=data.length&&data.every(item=>item.origin==="synthetic")?
     text().data+" · "+text().sim:text().data;
@@ -364,7 +417,7 @@ function showDetail(index) {
   $("detail-prev").disabled=$("detail-next").disabled=detailRows.length<2;
   fillDetail(currentFigure);
   if(detail.open&&!reduce.matches){
-    $("detail-image").animate([{opacity:.4,transform:"translateY(8px)"},{opacity:1,transform:"none"}],
+    $("detail-image")?.animate([{opacity:.4,transform:"translateY(8px)"},{opacity:1,transform:"none"}],
       {duration:250,easing:"cubic-bezier(.16,1,.3,1)"});
   }
 }
