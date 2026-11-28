@@ -1,0 +1,3 @@
+guide,value,definition
+bonferroni_x,7.4267421730617755,-log10(0.01 / 267142)
+fst_p99,0.1493394400000004,99th percentile of absolute directional FST over all 267142 rows
