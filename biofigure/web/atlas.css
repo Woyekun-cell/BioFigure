@@ -421,3 +421,21 @@ dialog[open] { animation: inspect-in .36s var(--ease) both; }
 @media (max-width: 650px) {
   .manage-list { grid-template-columns: minmax(0,1fr); }
 }
+
+.agent-settings {border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#f8fbff}
+.agent-settings summary {cursor:pointer;font-weight:600;min-height:28px}
+#agent-settings-form {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding-top:12px}
+#agent-settings-form input {width:100%;box-sizing:border-box;padding:10px 12px;min-height:44px;border:1px solid #b5c7df;border-radius:6px;background:white;color:var(--ink);font:inherit}
+#agent-host-hint,#agent-settings-status,#agent-settings-error {grid-column:1/-1;margin:0;font-size:13px;line-height:1.5}
+#agent-settings-error {color:#9b2638;white-space:pre-wrap;overflow-wrap:anywhere}
+#agent-settings-status {color:#18584c}
+#agent-save {justify-self:start;min-height:42px}
+@media(max-width:600px){#agent-settings-form{grid-template-columns:minmax(0,1fr)}}
+
+.api-settings {grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding-top:4px}
+.api-settings .api-clear-key {display:flex;align-items:center;gap:8px;font-weight:400;min-height:42px}
+#agent-settings-form #agent-api-clear {width:18px;min-height:18px;height:18px;padding:0;flex:none}
+#agent-api-key-status {margin:0;font-weight:400}
+@media(max-width:600px){.api-settings{grid-template-columns:minmax(0,1fr)}}
+
+@media(pointer:coarse){#agent-settings-form :is(input:not([type=checkbox]),select,button),.api-clear-key{min-height:48px}}

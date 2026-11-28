@@ -97,7 +97,7 @@ python3 biofigure/scripts/run_public_example.py synteny --output-dir work/biofig
 
 个人图库网站随仓库源码提供，在本机部署后使用。Star、图库编辑、重绘结果和个人偏好保存在当前用户的本机档案，公开官网用于浏览公共示例。
 
-在仓库根目录运行以下命令，再打开终端显示的本机网址。需要 Python 依赖、已登录的 Codex CLI，以及所选图型使用的绘图环境。
+在仓库根目录运行以下命令，再打开终端显示的本机网址。需要 Python 依赖和所选图型使用的绘图环境。网页内可选择已登录的本机 CLI，或填写 API Key、服务地址和模型。
 
 ```bash
 python3 -m pip install -r biofigure/requirements.txt
@@ -105,6 +105,8 @@ python3 biofigure/bin/biofigure gallery-web
 ```
 
 默认地址为 `http://127.0.0.1:18807/BioFigure/`。选择参考图后提问，选定方案并执行，可得到 PNG、PDF、可编辑脚本和检查文件，再基于结果继续修改。多图时指定要修改的主图。缺少原始脚本或数据时会提示补齐。运行 `gallery-web --offline` 可浏览已缓存材料，`--site` 可指定已有的本地示例目录。
+
+连接设置支持 Codex、Claude Code、Gemini CLI、OpenCode、CodeBuddy CLI，以及 OpenAI 兼容、Anthropic、Gemini API。本机 CLI 可沿用其默认模型；API 使用填写的模型。API Key 只保存在本机档案，配置文件权限为 `0600`，网页只显示是否已保存。WorkBuddy 桌面安装与 CodeBuddy CLI 可用性分别检测。API 重绘需要 macOS `sandbox-exec` 或 Linux `bwrap` 运行脚本；缺失时显示原因。
 
 每个档案保留自己的本地示例快照，再次启动继续使用该快照。`--refresh-examples` 才显式更新它。不同部署通过 `BIOFIGURE_PERSONAL_DB` 配置各自的图录、偏好和输出目录。运行时只监听本机回环地址。使用方法见[个人图库](biofigure/references/personal-gallery.md)。
 

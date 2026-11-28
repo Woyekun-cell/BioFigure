@@ -87,7 +87,7 @@ python3 -m pip install -r biofigure/requirements-python.txt
 
 The repository includes a personal gallery website for local deployment. Stars, gallery edits, rendered revisions and preferences stay in the current user's local profile. The public website displays shared examples.
 
-From the repository root, run the commands below and open the printed local URL. You need the Python dependencies, a signed-in Codex CLI, and the drawing environment required by the selected figure.
+From the repository root, run the commands below and open the printed local URL. You need the Python dependencies and the drawing environment required by the selected figure. In the website, choose a signed-in local CLI or configure an API Key, endpoint and model.
 
 ```bash
 python3 -m pip install -r biofigure/requirements.txt
@@ -95,6 +95,8 @@ python3 biofigure/bin/biofigure gallery-web
 ```
 
 The default URL is `http://127.0.0.1:18807/BioFigure/`. Select references, ask a question, then execute an approved plan to receive a PNG, PDF, editable scripts and a checks file. Continue editing from that result. With multiple references, choose the figure to modify. Missing source code or data prompts for the required materials. Use `gallery-web --offline` for cached materials, or `--site` for an existing local example directory.
+
+Connection settings support Codex, Claude Code, Gemini CLI, OpenCode, CodeBuddy CLI, and OpenAI-compatible, Anthropic or Gemini APIs. Local CLIs can use their configured default models; API connections use the model you enter. Keys stay in a local profile file with mode `0600`; the browser only receives a saved-key indicator. WorkBuddy desktop installation is checked separately from a working CodeBuddy CLI. API rendering requires macOS `sandbox-exec` or Linux `bwrap` to run scripts; a missing runtime is reported.
 
 Each profile keeps its own local example snapshot. Later starts use that snapshot. Use `--refresh-examples` to update it explicitly. Set `BIOFIGURE_PERSONAL_DB` to keep separate catalogues, preferences and output folders for different deployments. The server listens on loopback only. See the [personal gallery guide](biofigure/references/personal-gallery.md).
 

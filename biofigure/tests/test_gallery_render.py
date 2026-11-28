@@ -22,6 +22,9 @@ class RenderJobTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.folder = Path(self.temporary.name)
+        executable = patch("agent_host.shutil.which",side_effect=lambda name:"/mock/bin/"+Path(name).name)
+        executable.start()
+        self.addCleanup(executable.stop)
         self.site = self.folder / "site"
         (self.site / "assets").mkdir(parents=True)
         (self.site / "resources").mkdir()

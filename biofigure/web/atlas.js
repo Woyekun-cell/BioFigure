@@ -59,32 +59,36 @@ const copy = {
 };
 
 Object.assign(copy.en, {
+  apiOpenAI:"OpenAI-compatible", apiAnthropic:"Claude (Anthropic)", apiGemini:"Gemini", apiProtocol:"API protocol", apiBaseUrl:"Base URL (required)", apiClearKey:"Clear saved API Key", apiKeySaved:"API Key saved. Leave the password blank to keep it.", apiKeyMissing:"No API Key saved for this connection.", apiKeyChanged:"Changing the protocol or Base URL requires a new API Key.", apiKeyPlaceholder:"Enter an API Key", apiKeyKeep:"Saved · leave blank to keep", apiModelPlaceholder:"Enter the API model name", apiNeedsSetup:"Set a model and API Key", apiModelMissing:"Model not set", apiReadyHint:"Use a model that supports images and tool calls for questions and redraws.",
+  agentSettings:"Connection settings", agentHost:"Agent connection", agentModel:"Model (optional)", apiModelLabel:"API model (required)", modelPlaceholder:"Use the selected CLI configuration", defaultModel:"CLI default model", saveAgent:"Save connection settings", savingAgent:"Saving…", savedAgent:"Connection settings saved for this profile.", hostNotInstalled:"Not installed", installHost:"Install and sign in to the selected CLI to use it.", hostInstalled:"Installed CLI. The selected host runs questions and figure revisions.", hostBusy:"Finish the current question or render before changing the connection.",
   manage:"Manage figures", manageLocal:"Changes apply to your local gallery profile.", managePreview:"View figure", manageSearch:"Search cards", manageShow:"Show", manageVisible:"In gallery", manageRemoved:"Removed", manageSelected:n=>n+" selected", manageRemove:"Remove selected", manageRestore:"Restore selected", manageClose:"Close figure manager", manageEdit:"Edit", manageSave:"Save", manageBack:"Back", manageReset:"Reset details", manageTitleEn:"English title", manageTitleZh:"Chinese title", manageIntroEn:"English description", manageIntroZh:"Chinese description", manageHidden:n=>n+" removed. Restore them from Removed.", manageRestored:n=>n+" restored.", manageSaved:"Changes saved.", manageResetDone:"Original details restored.",
   compareCount:n=>n+" selected", compare:"Select", uncompare:"Selected",
   askTitle:"Ask BioFigure", askSelected:"Ask with selection", askFigure:"Ask with this figure",
   starredOnly:"Starred", referenceSource:"References", selectedRefs:"Selected figures", starredRefs:"Starred figures", textOnly:"Text only",
   localSetup:"Start your local BioFigure CLI, then continue with your selected figures and question.", openLocal:"Connect local CLI",
-  disconnected:"Connect your local CLI to ask and redraw.", connected:"Local Codex CLI connected", noHost:"Local gallery connected · Codex CLI unavailable",
-  checking:"Checking local connection…", questionLabel:"What would you like to draw or change?", hostHint:"Your question and chosen figures go to your signed-in local Codex CLI.",
-  sendQuestion:"Ask Codex", thinking:"Codex is preparing a proposal…", reply:"Design proposal", execute:"Execute this revision", targetLabel:"Figure to modify", noReferences:"No figures included",
+  disconnected:"Connect your local CLI to ask and redraw.", connected:"Connected to", noHost:"CLI is unavailable",
+  checking:"Checking local connection…", questionLabel:"What would you like to draw or change?", hostHint:"Your question and chosen figures go to the selected Agent connection.",
+  sendQuestion:"Ask", thinking:"The Agent is preparing a proposal…", reply:"Design proposal", execute:"Execute this revision", targetLabel:"Figure to modify", noReferences:"No figures included",
   needsInput:"More input is needed before rendering.", rendering:"Rendering your revision…", rendered:"New figure ready", renderFailed:"Rendering failed. You can retry the proposal.", renderQueued:"Revision queued…",
   followupLabel:"Continue editing this result", renderAgain:"Render another revision", reviewHint:"Rendered output · check the figure before using it.",
   actionApplied:"Applied", saveReference:"Add reference", removeReference:"Remove reference", starAction:"Star reference", unstarAction:"Remove star",
   missingTarget:"Choose a figure to modify.", connectionError:"The local CLI connection is unavailable.", starError:"The star could not be saved.", askClose:"Close question", removeRef:"Remove reference"
 });
 Object.assign(copy.zh, {
+  apiOpenAI:"OpenAI兼容", apiAnthropic:"Claude (Anthropic)", apiGemini:"Gemini", apiProtocol:"API 协议", apiBaseUrl:"API 地址（Base URL，必填）", apiClearKey:"清除已保存的 API Key", apiKeySaved:"API Key 已保存，密码框留空可保留。", apiKeyMissing:"该连接尚未保存 API Key。", apiKeyChanged:"切换协议或 API 地址后，需要重新填写 API Key。", apiKeyPlaceholder:"输入 API Key", apiKeyKeep:"已保存，留空保留", apiModelPlaceholder:"填写 API 模型名称", apiNeedsSetup:"请配置模型与 API Key", apiModelMissing:"尚未配置模型", apiReadyHint:"模型需支持图像和工具调用，用于提问和重绘。",
+  agentSettings:"服务设置", agentHost:"服务", agentModel:"模型（选填）", apiModelLabel:"API 模型（必填）", modelPlaceholder:"沿用所选 CLI 配置", defaultModel:"CLI 默认模型", saveAgent:"保存服务设置", savingAgent:"正在保存…", savedAgent:"已保存到当前个人档案。", hostNotInstalled:"未安装", installHost:"安装并登录所选 CLI 后即可使用。", hostInstalled:"已找到该 CLI，提问和重绘由它执行。", hostBusy:"当前提问或重绘完成后可切换服务。",
   manage:"管理图卡", manageLocal:"更改保存在本机个人图库档案中。", managePreview:"查看原图", manageSearch:"搜索图卡", manageShow:"显示", manageVisible:"图库中", manageRemoved:"已移除", manageSelected:n=>"已选 "+n+" 张", manageRemove:"移除所选", manageRestore:"恢复所选", manageClose:"关闭图卡管理", manageEdit:"编辑", manageSave:"保存", manageBack:"返回", manageReset:"恢复原信息", manageTitleEn:"英文图名", manageTitleZh:"中文图名", manageIntroEn:"英文说明", manageIntroZh:"中文说明", manageHidden:n=>"已移除 "+n+" 张，可在「已移除」中恢复。", manageRestored:n=>"已恢复 "+n+" 张。", manageSaved:"已保存。", manageResetDone:"已恢复原始信息。",
   compareCount:n=>"已选 "+n+" 张", compare:"选择", uncompare:"已选择",
   askTitle:"问 BioFigure", askSelected:"带所选图提问", askFigure:"带这张图提问",
   starredOnly:"星标", referenceSource:"参考图", selectedRefs:"所选图", starredRefs:"星标图", textOnly:"仅文字",
   localSetup:"启动本机 BioFigure CLI 后，继续使用所选图和问题。", openLocal:"连接本机 CLI",
-  disconnected:"连接本机 CLI 后即可提问、重绘。", connected:"已连接本机 Codex CLI", noHost:"已连接本机图库，尚未找到 Codex CLI",
-  checking:"正在检查本机连接…", questionLabel:"想画什么，或想怎样修改？", hostHint:"问题和所选图会交给本机已登录的 Codex CLI。",
-  sendQuestion:"提交问题", thinking:"Codex 正在准备方案…", reply:"设计方案", execute:"执行此修改", targetLabel:"要修改的图", noReferences:"本次没有附图",
+  disconnected:"连接本机 CLI 后即可提问、重绘。", connected:"已连接", noHost:"CLI 尚不可用",
+  checking:"正在检查本机连接…", questionLabel:"想画什么，或想怎样修改？", hostHint:"问题和所选图会交给当前选择的服务。",
+  sendQuestion:"提交问题", thinking:"Agent 正在准备方案…", reply:"设计方案", execute:"执行此修改", targetLabel:"要修改的图", noReferences:"本次没有附图",
   needsInput:"需要补充材料后才能重绘。", rendering:"正在重绘…", rendered:"新图已生成", renderFailed:"重绘失败，可以重试方案。", renderQueued:"修改已排队…",
   followupLabel:"继续修改这张新图", renderAgain:"再次重绘", reviewHint:"已生成成图，请核对后使用。",
   actionApplied:"已应用", saveReference:"加入参考", removeReference:"移出参考", starAction:"标记星标", unstarAction:"取消星标",
-  missingTarget:"请选择要修改的图。", connectionError:"本机 CLI 连接暂不可用。", starError:"星标未能保存。", askClose:"关闭提问", removeRef:"移出参考"
+  missingTarget:"请选择要修改的图。", connectionError:"本机服务连接暂不可用。", starError:"星标未能保存。", askClose:"关闭提问", removeRef:"移出参考"
 });
 
 const $=id=>document.getElementById(id);
@@ -106,6 +110,7 @@ const browserStarsKey="biofigure-atlas-stars";
 const renderSessionKey="biofigure-render-session";
 let stars=new Set(), starredOnly=false, libraryConnected=false, hostAvailable=false, checkingHost=localAtlas;
 let askRefs=[], asking=false, rendering=false, lastRenderJob=null, renderRequest=null, renderPoll=0;
+let hostStatus=null, hostSaving=false;
 try { stars=new Set(JSON.parse(localStorage.getItem(browserStarsKey)||"[]")); } catch {}
 
 let lang="en", atlas, categories, featured=[], plates=[], current=0, currentFigure, category="all", limit=pageSize;
@@ -772,16 +777,26 @@ function renderAskRefs() {
   updateLocalLink();
 }
 function updateRenderControls() {
+  updateHostSettings();
   for(const button of document.querySelectorAll(".execute-render"))
-    button.disabled=rendering||!hostAvailable||Boolean(button.dataset.started)||!button.dataset.hasTarget;
-  $("render-again").disabled=rendering||!hostAvailable||!lastRenderJob;
+    button.disabled=rendering||hostSaving||!hostAvailable||Boolean(button.dataset.started)||!button.dataset.hasTarget;
+  $("render-again").disabled=rendering||hostSaving||!hostAvailable||!lastRenderJob;
 }
 function updateAgent() {
   $("ask-close").setAttribute("aria-label",text().askClose);
   $("manage-close").setAttribute("aria-label",text().manageClose);
-  $("agent-status").textContent=text()[checkingHost?"checking":hostAvailable?"connected":libraryConnected?"noHost":"disconnected"];
+  let connection=text()[checkingHost?"checking":"disconnected"];
+  if(libraryConnected&&!checkingHost){
+    const selected=hostStatus?.hosts?.find(host=>host.id===hostStatus.selected_host);
+    const host=hostStatus?.host||selected?.label||hostStatus?.selected_host||"Agent";
+    const viaApi=hostStatus?.selected_host==="api";
+    connection=hostAvailable?text().connected+" "+host:host+" · "+text()[viaApi?"apiNeedsSetup":"noHost"];
+    connection+=" · "+(hostStatus?.model||text()[viaApi?"apiModelMissing":"defaultModel"]);
+  }
+  $("agent-status").textContent=connection;
+  updateHostSettings();
   $("agent-connect").hidden=hostAvailable;
-  $("ask-send").disabled=!hostAvailable||asking;
+  $("ask-send").disabled=!hostAvailable||asking||hostSaving;
   $("ask-send").textContent=text()[asking?"thinking":"sendQuestion"];
   renderAskRefs();
   updateRenderControls();
@@ -800,7 +815,7 @@ $("ask-open").addEventListener("click",()=>openAsk([...selectedFigures.keys()]))
 $("compare-ask").addEventListener("click",()=>openAsk([...selectedFigures.keys()]));
 $("detail-ask").addEventListener("click",()=>openAsk([currentFigure.id]));
 $("ask-close").addEventListener("click",()=>ask.close());
-ask.addEventListener("close",updatePlayback);
+ask.addEventListener("close",()=>{ $("agent-api-key").value="";updatePlayback(); });
 $("ask-source").addEventListener("change",renderAskRefs);
 $("ask-question").addEventListener("input",updateLocalLink);
 function consumeAskTransfer() {
@@ -818,10 +833,11 @@ function consumeAskTransfer() {
 async function connectLibrary() {
   if(!localAtlas){updateAgent();return;}
   for(const id of ["ask-open","compare-ask","detail-ask","filter-stars"])$(id).hidden=false;
+  $("agent-settings").hidden=false;
   try {
     const status=await api("status");
     libraryConnected=true;
-    hostAvailable=status.host==="Codex";
+    applyHostStatus(status);
     if(Array.isArray(status.stars))stars=new Set(status.stars);
     try {
       const state=await api("curation");
@@ -880,7 +896,7 @@ function showProposedActions(result) {
 }
 $("ask-form").addEventListener("submit",async event=>{
   event.preventDefault();
-  if(!hostAvailable||asking)return;
+  if(!hostAvailable||asking||hostSaving)return;
   asking=true;updateAgent();showGalleryError();
   try {
     const result=await api("ask",{question:$("ask-question").value,ids:currentAskIds()});
@@ -913,8 +929,9 @@ function displayRender(job) {
   $("render-instruction").value="";
 }
 async function beginRender(request,button) {
-  if(rendering)return;
+  if(rendering||hostSaving)return;
   rendering=true;renderRequest=request;
+  updateHostSettings();
   $("render-panel").hidden=false;
   $("render-status").textContent=text().renderQueued;
   $("render-error").hidden=true;
@@ -1162,3 +1179,109 @@ function updateSkyCuration() {
     }
   }
 }
+
+
+function applyHostStatus(status) {
+  const hosts=Array.isArray(status.hosts)?status.hosts:[];
+  const fallback=hosts.find(host=>host.label===status.host)?.id||hostStatus?.selected_host||"";
+  hostStatus={host:status.host||null,selected_host:status.selected_host||fallback,
+    model:typeof status.model==="string"?status.model:null,hosts,
+    api:status.api&&typeof status.api==="object"?{
+      protocol:typeof status.api.protocol==="string"?status.api.protocol:"openai",
+      base_url:typeof status.api.base_url==="string"?status.api.base_url:"",
+      model:typeof status.api.model==="string"?status.api.model:"",
+      key_set:status.api.key_set===true
+    }:null};
+  hostAvailable=typeof status.available==="boolean"?status.available:Boolean(status.host);
+  renderHostForm();
+}
+function renderHostForm() {
+  const select=$("agent-host");
+  const selected=hostStatus?.selected_host||"";
+  select.replaceChildren(...(hostStatus?.hosts||[]).map(host=>new Option(
+    host.label+(host.installed?"":" · "+text().hostNotInstalled),host.id,false,host.id===selected)));
+  if(selected)select.value=selected;
+  $("agent-model").value=hostStatus?.model||"";
+  $("agent-api-protocol").value=hostStatus?.api?.protocol||"openai";
+  $("agent-api-url").value=hostStatus?.api?.base_url||"";
+  $("agent-api-key").value="";
+  $("agent-api-clear").checked=false;
+  updateHostSettings();
+}
+function updateHostSettings() {
+  const viaApi=$("agent-host").value==="api";
+  $("agent-model").placeholder=text()[viaApi?"apiModelPlaceholder":"modelPlaceholder"];
+  $("agent-model").required=viaApi;
+  $("agent-model-label").textContent=text()[viaApi?"apiModelLabel":"agentModel"];
+  $("agent-api-settings").hidden=!viaApi;
+  for(const option of $("agent-host").options){
+    const host=hostStatus?.hosts?.find(item=>item.id===option.value);
+    if(host)option.textContent=host.label+(host.installed?"":" · "+text().hostNotInstalled);
+  }
+  const busy=asking||rendering||Boolean(renderPoll)||hostSaving;
+  $("agent-host").disabled=$("agent-model").disabled=busy||!libraryConnected;
+  $("agent-save").disabled=busy||!libraryConnected||!hostStatus?.hosts?.length;
+  $("agent-save").textContent=text()[hostSaving?"savingAgent":"saveAgent"];
+  const selected=hostStatus?.hosts?.find(host=>host.id===$("agent-host").value);
+  $("agent-host-hint").textContent=busy?text().hostBusy:viaApi?text().apiReadyHint:selected?.installed?text().hostInstalled:text().installHost;
+  for(const id of ["agent-api-protocol","agent-api-url","agent-api-clear"])$(id).disabled=busy||!libraryConnected||!viaApi;
+  $("agent-api-key").disabled=busy||!libraryConnected||!viaApi||$("agent-api-clear").checked;
+  $("agent-api-url").required=viaApi;
+  const saved=hostStatus?.api;
+  const sameConnection=saved&&saved.protocol===$("agent-api-protocol").value&&saved.base_url.replace(/\/+$/,"")===$("agent-api-url").value.trim().replace(/\/+$/,"");
+  const kept=Boolean(sameConnection&&saved.key_set);
+  $("agent-api-key").placeholder=text()[kept?"apiKeyKeep":"apiKeyPlaceholder"];
+  $("agent-api-key-status").textContent=text()[!sameConnection&&saved?.key_set?"apiKeyChanged":kept?"apiKeySaved":"apiKeyMissing"];
+}
+function settingsChanged() {
+  $("agent-settings-status").hidden=true;
+  $("agent-settings-error").hidden=true;
+  updateHostSettings();
+}
+$("agent-host").addEventListener("change",()=>{
+  if($("agent-host").value==="api")$("agent-model").value=hostStatus?.api?.model||"";
+  else $("agent-model").value=$("agent-host").value===hostStatus?.selected_host?(hostStatus?.model||""):"";
+  $("agent-api-key").value="";
+  $("agent-api-clear").checked=false;
+  settingsChanged();
+});
+$("agent-api-protocol").addEventListener("change",()=>{
+  const defaults={openai:"https://api.openai.com/v1",anthropic:"https://api.anthropic.com/v1",gemini:"https://generativelanguage.googleapis.com/v1beta"};
+  const address=$("agent-api-url").value.trim().replace(/\/+$/,"");
+  if(!address||Object.values(defaults).includes(address))$("agent-api-url").value=defaults[$("agent-api-protocol").value];
+  $("agent-api-key").value="";settingsChanged();
+});
+$("agent-api-url").addEventListener("input",settingsChanged);
+$("agent-api-key").addEventListener("input",settingsChanged);
+$("agent-api-clear").addEventListener("change",()=>{
+  if($("agent-api-clear").checked)$("agent-api-key").value="";
+  settingsChanged();
+});
+$("agent-model").addEventListener("input",settingsChanged);
+$("agent-settings-form").addEventListener("submit",async event=>{
+  event.preventDefault();
+  if(!localAtlas||!libraryConnected||asking||rendering||renderPoll||hostSaving)return;
+  const host=$("agent-host").value;
+  if(!hostStatus?.hosts?.some(item=>item.id===host))return;
+  const model=$("agent-model").value.trim();
+  const body={host,model:model||null};
+  if(host==="api"){
+    body.protocol=$("agent-api-protocol").value;
+    body.base_url=$("agent-api-url").value.trim();
+    body.clear_key=$("agent-api-clear").checked;
+    const key=$("agent-api-key").value.trim();
+    if(key&&!body.clear_key)body.api_key=key;
+  }
+  hostSaving=true;showError($("agent-settings-error"));showError($("agent-settings-status"));updateAgent();
+  try {
+    const status=await api("host",body);
+    applyHostStatus(status);
+    showError($("agent-settings-status"),text().savedAgent);
+  } catch(error) {
+    renderHostForm();
+    showError($("agent-settings-error"),error.message);
+  } finally {
+    $("agent-api-key").value="";
+    hostSaving=false;updateAgent();
+  }
+});

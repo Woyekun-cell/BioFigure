@@ -29,7 +29,11 @@
 
 网页使用当前用户的个人 SQLite 保存 Star；隐藏图卡和修改标题、简介使用该档案旁的独立数据库。默认档案为 `~/.local/share/biofigure/personal.sqlite`。不同部署可用 `BIOFIGURE_PERSONAL_DB` 设置各自路径。新图默认保存到 `~/.local/share/biofigure/drawings/personal/`，更换档案时使用对应的独立子目录，可用 `--outputs` 指定目录。这些个人操作和产物保存在本机。
 
-提问通过自己已登录的 Codex CLI 发送，每次保留所选图 ID 和来源，最多附 12 张缩略图。选择修改方案并点击执行后，CLI 使用原脚本和绘图输入重绘，返回 PNG、PDF、可编辑脚本和本次检查文件。多图时指定要修改的主图。可基于上次结果继续修改，刷新页面后恢复任务。原始材料缺失或运行失败时显示具体原因。结果是待审预览，科研与视觉验收按当前成图进行。
+网页连接设置可选 Codex、Claude Code、Gemini CLI、OpenCode、CodeBuddy CLI，或 API Key。本机 CLI 沿用各自登录、服务商和默认模型，模型框可留空。API 支持 OpenAI 兼容、Anthropic、Gemini 原生协议，填写服务地址、Key 和模型；兼容服务可自定义地址与模型名称。优先使用 PATH 中的 CodeBuddy CLI；现有 WorkBuddy 应用包包含完整 CLI 入口时，也可检测后在后台调用。桌面安装本身不代表 CLI 已登录。连接配置随个人档案保存；Key 仅写本机 `personal-host.json`（权限 `0600`），不会回传网页、存入浏览器缓存或随代码发布。Key 留空时仅在协议与地址相同的情况下保留原值，清除需显式选择。更换地址需重填 Key。
+
+每次提问保留所选图 ID 和来源，最多附 12 张缩略图。选择修改方案并点击执行后，所选服务使用原脚本和绘图输入重绘，返回 PNG、PDF、可编辑脚本和本次检查文件。多图时指定要修改的主图。可基于上次结果继续修改，刷新页面后恢复任务。原始材料缺失或运行失败时显示具体原因。结果是待审预览，科研与视觉验收按当前成图进行。
+
+API 问答只开放读取所选材料的工具；重绘仅写本次任务目录，脚本通过 macOS `sandbox-exec` 或 Linux `bwrap` 运行，禁网络并限制文件访问。未检测到可用安全运行器时不执行脚本，返回具体原因。API 模型需支持对应协议的图像与工具调用；服务端拒绝或能力缺失会显示错误，不切换模型。
 
 Personal Agent 可按时间调用 `biofigure gallery changes --after <上次游标>` 查看增量，或调用 `biofigure feedback consume-gallery --store <本机反馈队列目录>` 消费一批。两端使用同一 `BIOFIGURE_PERSONAL_DB`。返回 `more: true` 时继续消费下一批。消费按个人库和事件序号去重，重跑只处理增量。星标和撤星是参考信号，设计修改保留 task 范围。绘图继续按当前输入核实科研设计。
 

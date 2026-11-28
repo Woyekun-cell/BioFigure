@@ -2,13 +2,14 @@
 from datetime import datetime, timezone
 import hashlib
 import json
-import os
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import threading
 from urllib.parse import quote, urlsplit
 import uuid
+
+from agent_host import AgentHost, codex_environment
 
 SKILL = Path(__file__).resolve().parents[1] / "SKILL.md"
 SCHEMA = {
@@ -22,21 +23,6 @@ SCHEMA = {
     "additionalProperties": False,
 }
 
-
-
-def codex_environment():
-    # Rust rejects surrogate-escaped shell variables while reading env::vars().
-    environment = {}
-    for key, value in os.environ.items():
-        if key == "_":
-            continue
-        try:
-            key.encode("utf-8")
-            value.encode("utf-8")
-        except UnicodeEncodeError:
-            continue
-        environment[key] = value
-    return environment
 
 
 def _read(path):
@@ -92,11 +78,13 @@ def _image(path):
 
 
 class RenderJobs:
-    def __init__(self, site, root, host_cli, model):
+    def __init__(self, site, root, host_cli, model=None, host_name="codex"):
         self.site = Path(site).resolve()
         self.root = Path(root).resolve()
         self.host_cli = host_cli
         self.model = model
+        self.host_name = host_name
+        self.agent = None
         self.lock = threading.Lock()
         self.state_lock = threading.RLock()
         self.active = None
@@ -150,8 +138,11 @@ class RenderJobs:
         }
 
     def start(self, body, rows):
-        if not self.host_cli:
-            raise RuntimeError("Codex CLI is unavailable. Install it and sign in to render.")
+        if self.host_name == "api" and self.agent is None:
+            raise RuntimeError("Save an API Key and model before rendering.")
+        host = self.agent or AgentHost(self.host_name, model=self.model, command=self.host_cli)
+        if not host.command:
+            raise RuntimeError(f"{host.label} CLI is unavailable. Install it and sign in to render.")
         if not isinstance(body, dict):
             raise ValueError("Supply a rendering request")
         ids = body.get("ids")
@@ -189,11 +180,12 @@ class RenderJobs:
             folder.mkdir(parents=True)
             state = {"id": ident, "status": "running", "ids": ids, "target_id": target,
                      "instruction": instruction.strip(), "previous_job": previous,
+                     "host": host.name, "model": host.model,
                      "created_at": datetime.now(timezone.utc).isoformat(), "message": "Rendering the selected figure", "files": []}
             _write(folder / "job.json", state)
             _write(folder / "context.json", context)
             self.active = ident
-            threading.Thread(target=self._run, args=(folder, state, context), daemon=True,
+            threading.Thread(target=self._run, args=(folder, state, context, host), daemon=True,
                              name="biofigure-render-" + ident).start()
         except Exception:
             self.active = None
@@ -201,11 +193,9 @@ class RenderJobs:
             raise
         return self.get(ident)
 
-    def _run(self, folder, state, context):
+    def _run(self, folder, state, context, host):
         try:
-            schema = folder / "response-schema.json"
             answer = folder / "response.json"
-            _write(schema, SCHEMA)
             instruction = (
                 "You are executing an explicitly approved BioFigure figure revision. Read and follow the BioFigure Skill at "
                 + str(SKILL) + ". Read context.json in the working directory for the selected figure, its verified original "
@@ -227,25 +217,19 @@ class RenderJobs:
                 "The result is a preview awaiting the user's review, never an automatic replacement of the original. "
                 "The user's approved instruction follows:\n" + state["instruction"]
             )
-            command = [self.host_cli, "-a", "never", "exec", "--sandbox", "workspace-write", "--ephemeral",
-                       "--ignore-user-config", "--skip-git-repo-check", "--color", "never", "-m", self.model,
-                       "-C", str(folder), "--output-schema", str(schema), "--output-last-message", str(answer)]
-            for row in context[:12]:
-                if "preview" in row:
-                    command.extend(["--image", row["preview"]])
-            command.append("-")
-            result = subprocess.run(command, text=True, input=instruction, capture_output=True, timeout=600,
-                                    env=codex_environment())
-            (folder / "codex.log").write_text(result.stderr, encoding="utf-8")
-            if result.returncode or not answer.is_file():
-                raise RuntimeError("Codex could not finish the figure. Check the model and Codex sign-in, then retry.")
-            response = _read(answer)
+            previews = [row["preview"] for row in context[:12] if "preview" in row]
+            response = host.run(instruction, SCHEMA, folder, images=previews,
+                                mode="render", answer_path=answer, timeout=600,
+                                read_dirs=[Path(item["path"]) for row in context if "resources" in row
+                                           for items in row["resources"].values() for item in items]
+                                          + [Path(row["image"]) for row in context if "image" in row]
+                                          + [Path(item) for row in context for item in row.get("artifacts",[])])
             if response.get("status") == "needs_input":
                 state.update(status="needs_input", message=str(response.get("message") or "More source data are needed"))
             elif response.get("status") == "completed":
                 self._validate_result(folder, state, response, context)
             else:
-                raise ValueError("Codex returned an invalid rendering result")
+                raise ValueError(f"{host.label} returned an invalid rendering result")
         except subprocess.TimeoutExpired:
             state.update(status="failed", message="The render timed out. Narrow the requested changes and retry.")
         except Exception as error:

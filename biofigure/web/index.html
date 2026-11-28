@@ -232,14 +232,31 @@
       <code>biofigure gallery-web --site /path/to/gallery</code>
       <a class="secondary action" id="open-local" href="http://127.0.0.1:18807/BioFigure/" data-copy="openLocal">Connect local CLI</a>
     </div>
+    <details class="agent-settings" id="agent-settings" hidden>
+      <summary id="agent-settings-title" data-copy="agentSettings">Connection settings</summary>
+      <form id="agent-settings-form" method="post" action="./api/host" aria-labelledby="agent-settings-title">
+        <label for="agent-host"><span data-copy="agentHost">Service</span><select id="agent-host" name="host" required></select></label>
+        <label for="agent-model"><span id="agent-model-label" data-copy="agentModel">Model</span><input id="agent-model" name="model" type="text" autocorrect="off" autocapitalize="none" spellcheck="false" maxlength="200" autocomplete="off" placeholder="Use the selected CLI configuration"></label>
+        <div class="api-settings" id="agent-api-settings" hidden>
+          <label for="agent-api-protocol"><span data-copy="apiProtocol">API protocol</span><select id="agent-api-protocol" name="protocol"><option value="openai" data-copy="apiOpenAI">OpenAI-compatible</option><option value="anthropic" data-copy="apiAnthropic">Claude (Anthropic)</option><option value="gemini" data-copy="apiGemini">Gemini</option></select></label>
+          <label for="agent-api-url"><span data-copy="apiBaseUrl">Base URL</span><input id="agent-api-url" name="base_url" type="url" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="url" maxlength="2048" autocomplete="off" placeholder="https://…"></label>
+          <label for="agent-api-key"><span>API Key</span><span class="ask-hint" id="agent-api-key-status" role="status"></span><input id="agent-api-key" name="api_key" type="password" maxlength="8192" autocomplete="new-password" autocorrect="off" autocapitalize="none" spellcheck="false" aria-describedby="agent-api-key-status"></label>
+          <label class="api-clear-key"><input id="agent-api-clear" name="clear_key" type="checkbox"><span data-copy="apiClearKey">Clear saved API Key</span></label>
+        </div>
+        <p class="ask-hint" id="agent-host-hint" role="status"></p>
+        <button class="secondary action" id="agent-save" type="submit" data-copy="saveAgent">Save connection settings</button>
+        <p id="agent-settings-status" role="status" hidden></p>
+        <p id="agent-settings-error" role="alert" hidden></p>
+      </form>
+    </details>
     <form id="ask-form">
       <label for="ask-source" data-copy="referenceSource">References</label>
       <select id="ask-source"><option value="selected" data-copy="selectedRefs">Selected figures</option><option value="starred" data-copy="starredRefs">Starred figures</option><option value="text" data-copy="textOnly">Text only</option></select>
       <div id="ask-references" class="ask-references"></div>
       <label for="ask-question" data-copy="questionLabel">What would you like to draw or change?</label>
       <textarea id="ask-question" rows="4" maxlength="4000" required></textarea>
-      <p class="ask-hint" data-copy="hostHint">Your question and chosen figures go to your signed-in local Codex CLI.</p>
-      <button class="primary action" id="ask-send" type="submit" data-copy="sendQuestion" disabled>Ask Codex</button>
+      <p class="ask-hint" data-copy="hostHint">Your question and chosen figures go to the selected Agent connection.</p>
+      <button class="primary action" id="ask-send" type="submit" data-copy="sendQuestion" disabled>Ask</button>
     </form>
     <p id="gallery-error" role="alert" hidden></p>
     <section id="ask-result" class="ask-result" aria-live="polite" hidden>
