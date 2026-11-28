@@ -1,0 +1,26 @@
+{
+  "sampling": "repeated",
+  "source": "synthetic",
+  "seed": 728,
+  "groups": [
+    "Control",
+    "Exposure"
+  ],
+  "group_colors": {
+    "Control": "#227D85",
+    "Exposure": "#BD563D"
+  },
+  "time_label": "Time (h)",
+  "value_label": "Response (a.u.)",
+  "planned_times": [
+    0,
+    6,
+    18,
+    36,
+    60
+  ],
+  "experimental_unit": "individual",
+  "synthetic_subjects_per_group": 9,
+  "question": "How does response change over time, and how variable are individuals?",
+  "scope": "Descriptive simulated observations; no inferential comparison."
+}

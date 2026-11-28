@@ -95,7 +95,18 @@ python3 biofigure/scripts/run_public_example.py synteny --output-dir work/biofig
 
 ## 开发版里的个人绘图助手
 
-以下功能已在本地开发版实现，尚未随 GitHub 上的公开 Skill 分发。
+个人图库网站随仓库源码提供，在本机部署后使用。Star、图库编辑、重绘结果和个人偏好保存在当前用户的本机档案，公开官网用于浏览公共示例。
+
+在仓库根目录运行以下命令，再打开终端显示的本机网址。需要 Python 依赖、已登录的 Codex CLI，以及所选图型使用的绘图环境。
+
+```bash
+python3 -m pip install -r biofigure/requirements.txt
+python3 biofigure/bin/biofigure gallery-web
+```
+
+默认地址为 `http://127.0.0.1:18807/BioFigure/`。选择参考图后提问，选定方案并执行，可得到 PNG、PDF、可编辑脚本和检查文件，再基于结果继续修改。多图时指定要修改的主图。缺少原始脚本或数据时会提示补齐。运行 `gallery-web --offline` 可浏览已缓存材料，`--site` 可指定已有的本地示例目录。
+
+不同部署通过 `BIOFIGURE_PERSONAL_DB` 配置各自的档案。运行时只监听本机回环地址。使用方法见[个人图库](biofigure/references/personal-gallery.md)。
 
 ### 用喜欢的图做参考
 
@@ -111,7 +122,7 @@ BioFigure 会分别记住你画每类图时习惯怎样显示原始点和网格�
 
 ### 换一个 Agent，继续用同一份图库
 
-开发版随包提供轻量 CLI，同一台机器上的宿主可以共用 SQLite 里的图库索引与偏好。Codex 已能发现这个 Skill，OpenCode 已通过 shell 调用过 CLI。Claude Code 有接入说明，仍待实机验证。命令行可查询偏好、组合参考或运行时序预览，按需加入 PATH 即可。
+源码随附轻量 CLI，同一台机器上的宿主可以共用 SQLite 里的图库索引与偏好。Codex 已能发现这个 Skill，OpenCode 已通过 shell 调用过 CLI。Claude Code 有接入说明，仍待实机验证。命令行可查询偏好、组合参考或运行时序预览，按需加入 PATH 即可。
 
 浏览器工作台可以调画布和留白，有可编辑元素的 SVG 还可改色、改字。半环多轨热图有专用编辑器，可以换自己的数据、调整轨道，保存项目后接着画。
 
@@ -265,4 +276,5 @@ Skill 提供方法与检查流程，不改变模型参数，也不保证不同�
 绘图思路与方法参考整理在[设计来源](docs/DESIGN-SOURCES.md)和[来源声明](NOTICE.md)中。图廊里的案例附有代码、数据和来源链接，欢迎顺着看，也欢迎带着自己的数据继续改。
 
 绘图需求、参考案例和审美建议欢迎发到 [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions)。可复现的问题请提交 [Issue](https://github.com/Woyekun-cell/BioFigure/issues/new/choose)，附数据结构、代码、包版本和成图；贡献方式见[贡献指南](CONTRIBUTING.md)。
+
 

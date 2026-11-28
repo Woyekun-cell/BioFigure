@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+"""BioFigure tools for hosts with shell access."""
+import argparse
+import os
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+COMMANDS = {
+    "find": ("find_figure_reference.py", "Look up scientific figure references"),
+    "prepare": ("prepare_figure.py", "Prepare a figure request and its evidence receipt"),
+    "check": ("validate_checkpoints.py", "Validate a figure checkpoint ledger"),
+    "gallery": ("personal_style.py", "Manage personal references, briefs and scoped visual preferences"),
+    "gallery-web": ("gallery_web.py", "Serve the local atlas with personal stars and an installed Codex host"),
+    "feedback": ("feedback_learning.py", "Read or process the feedback-learning queue"),
+    "preview-time": ("preview_time_response.py", "Render a two-condition time-response preview"),
+}
+
+
+def main():
+    cli = argparse.ArgumentParser(prog="biofigure", description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter,
+                                 epilog="Commands\n" + "\n".join(f"  {k:14} {v[1]}" for k,v in COMMANDS.items())
+                                        + "\n\nUse biofigure COMMAND --help for arguments.")
+    cli.add_argument("command", nargs="?", choices=COMMANDS)
+    cli.add_argument("--version", action="store_true", help="show the installed Skill version")
+    args = cli.parse_args(sys.argv[1:2])
+    if args.version:
+        version = next(line.split(":",1)[1].strip() for line in
+                       (ROOT/"manifest.yaml").read_text().splitlines() if line.startswith("version:"))
+        print("BioFigure", version)
+    elif args.command:
+        script = ROOT / "scripts" / COMMANDS[args.command][0]
+        os.execv(sys.executable, [sys.executable, str(script), *sys.argv[2:]])
+    else:
+        cli.print_help()
+
+
+if __name__ == "__main__":
+    main()

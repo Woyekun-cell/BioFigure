@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080f22">
+<meta name="description" content="Browse scientific figures by chart type and plotting package. Explore plotting code and data with each figure.">
+<title>BioFigure · Figure Atlas</title>
+<link rel="stylesheet" href="./atlas.css?v=ga-20261123">
+<link rel="stylesheet" href="./sky.css">
+<script src="./vendor/anime.umd.min.js" defer></script>
+<script src="./sky.js" defer></script>
+<script src="./showcase.js" defer></script>
+<script src="./atlas.js?v=ga-20261123" defer></script>
+
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute">
+  <symbol id="i-brand" viewBox="0 0 24 24"><path d="M3 19h18M5 16v-4m4 4V7m5 9v-6m5 6V4"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14m6-14v14"/></symbol>
+  <symbol id="i-open" viewBox="0 0 24 24"><path d="M14 5h5v5m0-5-6 6M10 19H5v-5m0 5 6-6"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M12 5h7v7m0-7-9 9"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="5.5"/><path d="m14 14 5 5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+</svg>
+<a class="skip" href="#catalog" data-copy="skip">Skip to figures</a>
+<header class="site-header sky-header" id="top">
+  <div class="mast wrap">
+    <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-brand"/></svg>BioFigure</a>
+    <nav class="top-controls" aria-label="Main">
+      <a href="#catalog" data-copy="catalog">Atlas</a>
+      <a href="#editorial" data-copy="editorialNav">Collections</a>
+      <a href="#guide" data-copy="guideNav">Workflow</a>
+    </nav>
+    <div class="mast-tools">
+      <a href="https://github.com/Woyekun-cell/BioFigure">GitHub <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+      <button class="lang action" type="button" id="language" lang="zh-CN">中文</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="sky" id="sky" aria-labelledby="sky-title">
+    <div class="sky-nebula" aria-hidden="true"></div>
+    <canvas id="sky-canvas" aria-hidden="true"></canvas>
+    <div class="sky-rings" aria-hidden="true"></div>
+    <div class="sky-models" id="sky-models" hidden></div>
+    <div class="sky-copy">
+      <div class="sky-wordmark-frame">
+        <h1 class="sky-wordmark" id="sky-title">BioFigure</h1>
+      </div>
+      <p class="sky-intro" data-copy="skyIntro">A figure atlas for genomics and multi-omics.</p>
+      <p class="sky-description" data-copy="skyDescription">Open a figure for available code and data.</p>
+      <div class="sky-actions">
+        <a class="sky-primary action" href="#atlas-overview"><span data-copy="skyExplore">Explore the atlas</span><span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <div class="sky-tools" id="sky-tools" hidden>
+      <button class="sky-tool action" id="sky-pulse" type="button"><span aria-hidden="true">✧</span> <span data-copy="skyPulse">Pulse</span></button>
+      <button class="sky-tool action" id="sky-pause" type="button">Pause motion</button>
+    </div>
+    <a class="sky-scroll" href="#atlas-overview"><span data-copy="skyScroll">Scroll to the figures</span><span aria-hidden="true">↓</span></a>
+  </section>
+  <div class="upper" id="atlas-overview">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h2 id="hero-title">
+          <span class="hero-line" data-copy="heroFirst">Selected figures</span>
+          <span class="hero-line hero-accent" data-copy="heroSecond">from the atlas.</span>
+        </h2>
+        <p class="hero-intro" data-copy="intro">Explore figures for genomics and multi-omics, with the code and data that made them.</p>
+        <div class="hero-actions">
+          <a class="primary action" href="#catalog"><span data-copy="browse">Explore the atlas</span><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
+        </div>
+        <div class="inventory" id="inventory" hidden><span id="figure-total"></span><span id="type-total"></span></div>
+      </div>
+      <section class="gallery" id="showcase" aria-label="Featured figures" hidden>
+        <div class="feature-head">
+          <span data-copy="showcase">Featured figures</span><span id="feature-position"></span>
+        </div>
+        <figure class="feature-figure">
+          <button class="stage action" type="button" id="featured">
+            <span class="expand" aria-hidden="true"><svg class="icon"><use href="#i-open"/></svg><span data-copy="inspect">Inspect figure</span></span>
+          </button>
+          <figcaption>
+            <div class="slide-caption"><p class="slide-meta" id="feature-type"></p><span class="slide-name" id="featured-title"></span></div>
+            <div class="gallery-controls">
+              <button class="icon-button action" id="prev" type="button" aria-label="Previous figure"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+              <button class="icon-button action" id="next" type="button" aria-label="Next figure"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+              <button class="icon-button action" id="autoplay" type="button" aria-label="Pause slideshow"><svg class="icon" aria-hidden="true"><use href="#i-pause"/></svg></button>
+            </div>
+          </figcaption>
+        </figure>
+        <div class="feature-meter" aria-hidden="true"><span></span></div>
+        <div class="thumbs" id="thumbs"></div>
+      </section>
+    </section>
+  </div>
+  <section class="catalog wrap" id="catalog" aria-labelledby="catalog-heading">
+    <div class="catalog-head">
+      <div>
+        <h2 id="catalog-heading" data-copy="catalogHeading">Explore the atlas</h2>
+        <p data-copy="catalogIntro">Find a chart type, figure name, or plotting package.</p>
+      </div>
+      <label class="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="search" id="search" autocomplete="off" aria-label="Search figures or packages" placeholder="Search figures or packages">
+      </label>
+    </div>
+    <aside class="rail" aria-labelledby="category-title">
+      <h3 id="category-title" data-copy="categories">Chart types</h3><nav id="category-nav" aria-labelledby="category-title"></nav>
+    </aside>
+    <div class="collection">
+      <div class="collection-toolbar">
+        <div class="results"><h3 id="catalog-title">All figures</h3><span id="result-count" role="status"></span></div>
+      </div>
+      <div class="gallery-tools">
+        <select id="category-mobile" aria-label="Chart types"></select>
+        <select class="resource-filter" id="resource-filter" aria-label="Filter by available files">
+          <option value="all" data-copy="allFiles">Any files</option>
+          <option value="code" data-copy="withCode">With plotting code</option>
+          <option value="data" data-copy="withData">With plot data</option>
+          <option value="both" data-copy="withBoth">With code and data</option>
+        </select>
+        <div class="layout-controls" role="group" aria-label="Gallery layout">
+          <button id="layout-grid" type="button" aria-pressed="true" data-copy="gridMode">Grid</button>
+          <button id="layout-large" type="button" aria-pressed="false" data-copy="largeMode">Large</button>
+        </div>
+        <button class="secondary action" id="filter-stars" hidden type="button" aria-pressed="false"><span data-copy="starredOnly">Starred</span> <span id="star-count">0</span></button>
+        <button class="secondary action" id="manage-open" type="button" data-copy="manage" hidden>Manage figures</button>
+        <button class="primary action" id="ask-open" hidden type="button" data-copy="askTitle">Ask BioFigure</button>
+      </div>
+      <div class="compare-dock" id="compare-dock" hidden>
+        <p id="compare-status" role="status"></p>
+        <button class="secondary action" id="compare-ask" hidden type="button" data-copy="askSelected">Ask with selection</button>
+        <button class="secondary action" id="compare-clear" type="button" data-copy="compareClear">Clear</button>
+        <button class="primary action" id="compare-open" type="button" data-copy="compareOpen" disabled>Compare figures</button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden></p>
+      <button class="more action" type="button" id="more" data-copy="more" hidden>Show more</button>
+      <noscript><p>Enable JavaScript to browse the atlas.</p></noscript>
+    </div>
+  </section>
+  <div class="collections-band">
+    <section class="editorial wrap" aria-labelledby="editorial-title" id="editorial" hidden>
+      <div class="editorial-heading">
+        <h2 id="editorial-title" data-copy="editorial">Multi-panel figures</h2>
+        <p data-copy="editorialIntro">See how different views fit together in a single figure.</p>
+      </div>
+      <div class="plates" id="plates"></div>
+    </section>
+  </div>
+  <section class="guide wrap" id="guide" aria-labelledby="guide-title">
+    <div class="guide-copy">
+      <h2 id="guide-title" data-copy="guideTitle">From an example to your own figure.</h2>
+      <p data-copy="guideIntro">BioFigure is an open-source skill for designing, drawing and reviewing figures in biological research.</p>
+      <a class="text-link" href="https://github.com/Woyekun-cell/BioFigure/blob/main/README.en.md"><span data-copy="readDocs">Read the documentation</span> <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+    </div>
+    <div class="guide-demo">
+      <div class="guide-choices" role="group" aria-label="Workflow steps">
+        <button type="button" data-guide="0" aria-pressed="true"></button>
+        <button type="button" data-guide="1" aria-pressed="false"></button>
+        <button type="button" data-guide="2" aria-pressed="false"></button>
+      </div>
+      <div id="guide-panel" class="guide-panel">
+        <h3 id="guide-step-title"></h3>
+        <p id="guide-step-copy"></p>
+        <div id="guide-links" class="guide-links"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner wrap">
+    <div>
+      <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-brand"/></svg>BioFigure</a>
+      <p data-copy="footerLine">An open atlas for biological research figures.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#catalog" data-copy="catalog">Atlas</a>
+      <a href="#editorial" data-copy="editorialNav">Collections</a>
+      <a href="#guide" data-copy="guideNav">Workflow</a>
+      <a href="https://github.com/Woyekun-cell/BioFigure">GitHub <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></a>
+    </nav>
+  </div>
+</footer>
+<dialog id="detail" closedby="any" aria-labelledby="detail-title">
+  <div class="detail">
+    <button class="close icon-button action" id="close" type="button" aria-label="Close figure" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="detail-plate">
+      <div class="detail-bar">
+        <div class="detail-nav">
+          <button class="icon-button" id="detail-prev" type="button"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+          <span id="detail-position" role="status"></span>
+          <button class="icon-button" id="detail-next" type="button"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+        <button class="zoom action" id="detail-zoom" type="button" aria-pressed="false" disabled><span data-copy="zoom">Original size</span></button>
+      </div>
+      <figure class="detail-figure" id="detail-figure"></figure>
+    </div>
+    <div class="detail-copy">
+      <h2 id="detail-title"></h2>
+      <div id="detail-packages" class="package-list"></div>
+      <p id="detail-intro"></p>
+      <section class="resource-group" id="detail-source" hidden></section>
+      <button class="secondary action" id="detail-ask" hidden type="button" data-copy="askFigure">Ask with this figure</button>
+      <a class="secondary action" id="download" download><span data-copy="download">Download figure</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+      <section class="resource-group" aria-labelledby="code-title"><h3 id="code-title" data-copy="code">Plotting code</h3><div id="detail-code"></div></section>
+      <section class="resource-group" aria-labelledby="data-title"><h3 id="data-title" data-copy="data">Plot data</h3><div id="detail-data"></div></section>
+    </div>
+  </div>
+</dialog>
+<dialog id="comparison" closedby="any" aria-labelledby="comparison-title">
+  <div class="compare-dialog">
+    <header>
+      <h2 id="comparison-title" data-copy="compareOpen">Compare figures</h2>
+      <button class="icon-button action" id="compare-close" type="button" aria-label="Close comparison" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="compare-grid" id="compare-grid"></div>
+  </div>
+</dialog>
+<dialog id="ask" closedby="any" aria-labelledby="ask-title">
+  <div class="ask-panel">
+    <header><div><h2 id="ask-title" data-copy="askTitle">Ask BioFigure</h2><p id="agent-status" role="status"></p></div>
+      <button class="icon-button action" id="ask-close" type="button" aria-label="Close question"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="agent-connect" id="agent-connect">
+      <p data-copy="localSetup">Start your local BioFigure CLI, then continue with your selected figures.</p>
+      <code>biofigure gallery-web --site /path/to/gallery</code>
+      <a class="secondary action" id="open-local" href="http://127.0.0.1:18807/BioFigure/" data-copy="openLocal">Connect local CLI</a>
+    </div>
+    <form id="ask-form">
+      <label for="ask-source" data-copy="referenceSource">References</label>
+      <select id="ask-source"><option value="selected" data-copy="selectedRefs">Selected figures</option><option value="starred" data-copy="starredRefs">Starred figures</option><option value="text" data-copy="textOnly">Text only</option></select>
+      <div id="ask-references" class="ask-references"></div>
+      <label for="ask-question" data-copy="questionLabel">What would you like to draw or change?</label>
+      <textarea id="ask-question" rows="4" maxlength="4000" required></textarea>
+      <p class="ask-hint" data-copy="hostHint">Your question and chosen figures go to your signed-in local Codex CLI.</p>
+      <button class="primary action" id="ask-send" type="submit" data-copy="sendQuestion" disabled>Ask Codex</button>
+    </form>
+    <p id="gallery-error" role="alert" hidden></p>
+    <section id="ask-result" class="ask-result" aria-live="polite" hidden>
+      <h3 data-copy="reply">Design proposal</h3><p id="ask-answer"></p><div id="ask-actions"></div>
+    </section>
+    <section id="render-panel" class="render-panel" hidden>
+      <p id="render-status" role="status"></p>
+      <p id="render-error" role="alert" hidden></p>
+      <div id="render-output" hidden>
+        <figure><img id="render-preview" alt=""><figcaption id="render-review" data-copy="reviewHint">Rendered output · check the figure before using it.</figcaption></figure>
+        <div id="render-files" class="render-files"></div>
+        <form id="render-followup"><label for="render-instruction" data-copy="followupLabel">Continue editing this result</label><textarea id="render-instruction" rows="3" maxlength="4000" required></textarea><button class="primary action" id="render-again" type="submit" data-copy="renderAgain">Render another revision</button></form>
+      </div>
+    </section>
+  </div>
+</dialog>
+<dialog closedby="any" id="manage" aria-labelledby="manage-title">
+  <div class="manager">
+    <header class="manager-head">
+      <div><h2 id="manage-title" data-copy="manage">Manage figures</h2><p data-copy="manageLocal">Open a figure to inspect it. Changes apply to this local gallery.</p></div>
+      <button class="icon-button" type="button" id="manage-close" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <section id="manage-picker">
+      <div class="manage-tools">
+        <label><span data-copy="manageSearch">Search cards</span><input id="manage-search" type="search" autocomplete="off" autofocus></label>
+        <label><span data-copy="manageShow">Show</span><select id="manage-filter">
+          <option value="visible" data-copy="manageVisible">In gallery</option>
+          <option value="removed" data-copy="manageRemoved">Removed</option>
+        </select></label>
+      </div>
+      <p class="manage-empty" id="manage-empty" hidden data-copy="empty">No matching figures.</p>
+      <ul class="manage-list" id="manage-list"></ul>
+      <footer class="manage-bar">
+        <span id="manage-count" role="status"></span>
+        <button class="secondary" type="button" id="manage-apply" disabled></button>
+      </footer>
+    </section>
+    <form id="manage-editor" hidden>
+      <h3 id="manage-edit-title"></h3>
+      <div class="manage-fields">
+        <label><span data-copy="manageTitleEn">English title</span><input id="manage-chart-en" required maxlength="140"></label>
+        <label><span data-copy="manageTitleZh">Chinese title</span><input id="manage-chart-zh" required maxlength="140"></label>
+        <label><span data-copy="manageIntroEn">English description</span><textarea id="manage-intro-en" rows="3" maxlength="1500"></textarea></label>
+        <label><span data-copy="manageIntroZh">Chinese description</span><textarea id="manage-intro-zh" rows="3" maxlength="1500"></textarea></label>
+      </div>
+      <div class="manage-bar">
+        <button class="secondary" type="button" id="manage-back" data-copy="manageBack">Back</button>
+        <button class="secondary" type="button" id="manage-reset" data-copy="manageReset" hidden>Reset details</button>
+        <button class="primary" type="submit" id="manage-save" data-copy="manageSave">Save</button>
+      </div>
+    </form>
+    <p id="manage-status" role="status" hidden></p>
+    <p id="manage-error" role="alert" hidden></p>
+  </div>
+</dialog>
+<!-- Snapshot from the public GitHub Pages gallery. -->
+<script type="application/json" id="atlas-data">
+__BIOFIGURE_CATALOG__
+</script>
+</body>
+</html>

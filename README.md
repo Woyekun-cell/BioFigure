@@ -85,7 +85,18 @@ python3 -m pip install -r biofigure/requirements-python.txt
 
 ## Personal drawing tools in development
 
-These tools run in the local development build. They have yet to ship in the public GitHub Skill.
+The repository includes a personal gallery website for local deployment. Stars, gallery edits, rendered revisions and preferences stay in the current user's local profile. The public website displays shared examples.
+
+From the repository root, run the commands below and open the printed local URL. You need the Python dependencies, a signed-in Codex CLI, and the drawing environment required by the selected figure.
+
+```bash
+python3 -m pip install -r biofigure/requirements.txt
+python3 biofigure/bin/biofigure gallery-web
+```
+
+The default URL is `http://127.0.0.1:18807/BioFigure/`. Select references, ask a question, then execute an approved plan to receive a PNG, PDF, editable scripts and a checks file. Continue editing from that result. With multiple references, choose the figure to modify. Missing source code or data prompts for the required materials. Use `gallery-web --offline` for cached materials, or `--site` for an existing local example directory.
+
+Set `BIOFIGURE_PERSONAL_DB` to keep separate profiles for different deployments. The server listens on loopback only. See the [personal gallery guide](biofigure/references/personal-gallery.md).
 
 ### Draw from your own references
 
@@ -101,7 +112,7 @@ In a simulated time course, the agent borrowed layers from a longitudinal plot a
 
 ### Use the same gallery across agents
 
-The development build includes a small CLI. On one machine, different hosts can share a SQLite index of personal references and preferences. Codex has been tested for Skill discovery, and OpenCode has called the CLI through its shell. Claude Code setup is documented and awaits a live test. You can use the CLI to look up a preference, combine references or preview a time course. Adding it to your PATH is optional.
+The repository includes a small CLI. On one machine, different hosts can share a SQLite index of personal references and preferences. Codex has been tested for Skill discovery, and OpenCode has called the CLI through its shell. Claude Code setup is documented and awaits a live test. You can use the CLI to look up a preference, combine references or preview a time course. Adding it to your PATH is optional.
 
 The browser editor lets you adjust the canvas and margins, and change colors or text in SVGs with editable elements. The semicircular heatmap has a dedicated editor where you can load your own data, adjust tracks, and save a project to revisit later.
 
@@ -255,4 +266,5 @@ The Skill supplies methods and checks. It does not change model parameters or gu
 Find the ideas and methods behind the figures in [design sources](docs/DESIGN-SOURCES.md) and [NOTICE](NOTICE.md). Gallery cases link to code, data and sources—follow the workflow, then adapt it to your own data.
 
 Use [Discussions](https://github.com/Woyekun-cell/BioFigure/discussions) for figure ideas, references, and design feedback. Report reproducible problems through [Issues](https://github.com/Woyekun-cell/BioFigure/issues/new/choose), including data structure, code, package versions, and output. See the [contribution guide](CONTRIBUTING.md).
+
 

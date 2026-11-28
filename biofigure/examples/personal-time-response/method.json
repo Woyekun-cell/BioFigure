@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "trajectory-mean-iqr-by-sampling-v1",
+  "title": "Two-condition response over time and individual variability",
+  "status": "exploratory_candidate",
+  "question": "How does the response change over time under two conditions, and how much variation occurs within each?",
+  "created_by": "A one-time Codex background subagent inspecting the local BioFigure gallery; the user supplied no source case IDs.",
+  "source_path_base": "BioFigure Skill root",
+  "retrieval": {
+    "entrypoint": "scripts/retrieve_learned_methods.py",
+    "queries": [
+      "重复测量 时间 轨迹",
+      "Raincloud R11",
+      "Raincloud R6"
+    ],
+    "index_sha256": "3dd9b9622de2db1c6f9d20d2e83fa3d147e7ebef967b5af8851216e6952d4ec3"
+  },
+  "sources": [
+    {
+      "method_id": "BENCH-complex-longitudinal-sim-20261106",
+      "case_id": "complex-longitudinal-sim-20261106",
+      "image": {
+        "path": "benchmark/library/proteomics/complex-longitudinal-sim-20261106/sources/als_fig2.png",
+        "sha256": "70682e428464408daa285cec5229a1f7d3b3ca84f85ecf3238ce2ca80fef0401",
+        "role": "original-source-figure"
+      },
+      "code": {
+        "path": "benchmark/library/proteomics/complex-longitudinal-sim-20261106/sources/ALS_Fig2_genaral.R",
+        "sha256": "edefca1635d18b0eb319cb38aaa30c8fd22b9b3389179226065928ef05fdc432",
+        "role": "inspected-author-drawing-code"
+      },
+      "inspected_lines": "580–605",
+      "inspected_finding": "A longitudinal panel connects observations with the same UID and overlays a heavier aggregate trend.",
+      "transfer": "Separate the group trend from the trajectories. Only connect verified individual visits. In the independent design remove the individual line layer."
+    },
+    {
+      "method_id": "BENCH-paper-raincloud-2021-r11-20261023",
+      "case_id": "paper-raincloud-2021-r11-20261023",
+      "image": {
+        "path": "benchmark/library/distributions/raincloud-2021/sources/figs/tutorial_R/11repanvplot2.png",
+        "sha256": "a7230681423681a7f045d0ef4dc83ef145d86bf0e7b937d1f8d4c348f3b8f8a0",
+        "role": "author-source-figure"
+      },
+      "code": {
+        "path": "benchmark/library/distributions/raincloud-2021/sources/tutorial_R/raincloud_tutorial_r.Rmd",
+        "sha256": "e71ae19186864fd9645f93ad635955f4df6a83add649d678fb1c81a506d79041",
+        "role": "original-author-code"
+      },
+      "inspected_lines": "276, 306–311",
+      "inspected_finding": "R11 computes group-by-time means separately from its raw observations and draws group-specific mean points and lines.",
+      "transfer": "Compute an arithmetic mean for each condition and observed visit, then overlay both mean trajectories on the same scale. Keep the actual visit times.",
+      "image_url": "https://raw.githubusercontent.com/RainCloudPlots/RainCloudPlots/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/figs/tutorial_R/11repanvplot2.png"
+    },
+    {
+      "method_id": "BENCH-paper-raincloud-2021-r6-20261023",
+      "case_id": "paper-raincloud-2021-r6-20261023",
+      "image": {
+        "path": "benchmark/library/distributions/raincloud-2021/sources/figs/tutorial_R/6boxplots.png",
+        "sha256": "aefa8c344521629fffd180be9ec9025103867babe56ee05b8c74c7debe1ba164",
+        "role": "author-source-figure"
+      },
+      "code": {
+        "path": "benchmark/library/distributions/raincloud-2021/sources/tutorial_R/raincloud_tutorial_r.Rmd",
+        "sha256": "e71ae19186864fd9645f93ad635955f4df6a83add649d678fb1c81a506d79041",
+        "role": "original-author-code"
+      },
+      "inspected_lines": "163–166",
+      "inspected_finding": "R6 juxtaposes individual observations with a compact quartile summary in order to show their distribution.",
+      "transfer": "Keep every observation and annotate each visit with a thick 25th–75th percentile bar. Omit density smoothing and separate conditions in facets.",
+      "image_url": "https://raw.githubusercontent.com/RainCloudPlots/RainCloudPlots/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/figs/tutorial_R/6boxplots.png"
+    }
+  ],
+  "applies_when": [
+    "Two conditions, a continuous finite quantitative response, explicitly numeric times, and at least two observed times.",
+    "One observation per independent individual, or one observation per subject and visit using stable individual IDs. The design must state which strategy applies.",
+    "Goal is descriptive comparison with no modeled trend or significance claim."
+  ],
+  "reject_when": [
+    "Unknown sampling design, missing subject IDs, non-unique observation IDs, duplicate individual/visit rows, or subject IDs shared between conditions.",
+    "Independent design contains repeated subjects, or repeated design has no returning subjects.",
+    "Data are group means only or contain unaggregated technical replicates; inference or adjustment for confounding is the principal goal."
+  ],
+  "actions": [
+    "Use a common quantitative time scale and common response limits. Style condition means with redundant color, shape and line type.",
+    "Keep individual points and within-cell interquartile bars below. Draw same-subject segments only between adjacent scheduled visits when sampling is repeated.",
+    "Compute n, arithmetic means and type-7 quartiles from plotted rows; export exact source and target observation IDs from the same segment table used for drawing."
+  ],
+  "limitations": [
+    "Two-group template. Equal observations can overplot; large cohorts, many visits, irregular continuous collection or long labels need separate usability validation.",
+    "IQR describes observed spread, not uncertainty. This method supplies no mixed model, treatment contrast, or causal inference. A single observation cannot show a spread.",
+    "With no planned_times the method infers visit order from observed times. Missing visits absent from both conditions cannot then be identified.",
+    "Visual interpretation of gallery examples used original PNGs and R code. R6/R11 share one source family, so three gallery records represent two source families.",
+    "Learning input is simulated. No real-user preference, independent user acceptance, production gate or model training is implied. English or Latin axis labels are covered by the preview PDF device."
+  ],
+  "dependencies": [
+    "R: ggplot2, patchwork, jsonlite",
+    "Poppler: pdftoppm"
+  ],
+  "renderer": "render.R",
+  "style_option": {
+    "point_emphasis": "points",
+    "effect": "Larger raw points and lower individual-line opacity. Group summaries, time coordinates and edge connectivity are unchanged.",
+    "grid": [
+      "light",
+      "none"
+    ],
+    "legend_position": [
+      "top",
+      "right",
+      "bottom",
+      "left"
+    ]
+  }
+}
