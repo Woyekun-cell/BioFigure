@@ -184,6 +184,68 @@ class OnlineGalleryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "previews must use relative"):
             self.gallery.prepare()
 
+    def test_second_start_loads_local_catalog_without_downloads_or_overwrites(self):
+        self.gallery.prepare()
+        self.gallery.ensure("resources/a/code/draw.py")
+        before = {path.relative_to(self.gallery.cache): (path.read_bytes(), path.stat().st_mtime_ns)
+                  for path in self.gallery.cache.rglob("*") if path.is_file()}
+        requests_before = len(self.calls)
+        self.catalog["figures"].append({"id": "new-public-card", "image": "assets/new.webp",
+                                        "thumbnail": "assets/new-preview.webp"})
+        self.update_metadata()
+        self.payloads["atlas.js"] = b"new public UI"
+        self.payloads["resources/a/code/draw.py"] = b"changed remote source"
+        restarted = gallery_cache.OnlineGallery(self.gallery.cache)
+        with patch.object(gallery_cache, "urlopen", side_effect=AssertionError("Load must not use the network")):
+            self.assertEqual(restarted.load(), self.gallery.cache)
+            self.assertEqual(set(restarted.rows), {"a"})
+            self.assertEqual(restarted.allowed, self.gallery.allowed)
+            self.assertEqual(restarted._hashes, self.gallery._hashes)
+            self.assertEqual(restarted.ensure("resources/a/code/draw.py").read_bytes(), b"print('public code')\n")
+        self.assertEqual(len(self.calls), requests_before)
+        after = {path.relative_to(self.gallery.cache): (path.read_bytes(), path.stat().st_mtime_ns)
+                 for path in self.gallery.cache.rglob("*") if path.is_file()}
+        self.assertEqual(after, before)
+
+    def test_load_requires_matching_local_metadata_and_cached_referenced_ui(self):
+        self.gallery.prepare()
+        requests_before = len(self.calls)
+        (self.gallery.cache / "atlas.js").unlink()
+        with self.assertRaisesRegex(FileNotFoundError, "required UI file: atlas.js"):
+            gallery_cache.OnlineGallery(self.gallery.cache).load()
+        (self.gallery.cache / "atlas.js").write_bytes(self.payloads["atlas.js"])
+        (self.gallery.cache / "gallery.json").write_text('{"figures": []}')
+        with self.assertRaisesRegex(ValueError, "index and gallery.json differ"):
+            gallery_cache.OnlineGallery(self.gallery.cache).load()
+        self.assertEqual((self.gallery.cache / "gallery.json").read_text(), '{"figures": []}')
+        self.assertEqual(len(self.calls), requests_before)
+
+    def test_load_validates_resource_paths_and_hashes_without_downloading(self):
+        self.gallery.prepare()
+        requests_before = len(self.calls)
+        for value in ("../private.csv", "assets/.hidden"):
+            self.catalog["figures"][0]["resources"]["data"][0]["url"] = value
+            self.update_metadata()
+            for name in ("index.html", "gallery.json"):
+                (self.gallery.cache / name).write_bytes(self.payloads[name])
+            with self.subTest(path=value), self.assertRaises(ValueError):
+                gallery_cache.OnlineGallery(self.gallery.cache).load()
+        self.catalog["figures"][0]["resources"]["data"][0]["url"] = "resources/a/data/table.csv"
+        self.catalog["figures"][0]["resources"]["code"][0]["sha256"] = "not-a-sha256"
+        self.update_metadata()
+        for name in ("index.html", "gallery.json"):
+            (self.gallery.cache / name).write_bytes(self.payloads[name])
+        with self.assertRaisesRegex(ValueError, "Invalid published SHA-256"):
+            gallery_cache.OnlineGallery(self.gallery.cache).load()
+        self.assertEqual(len(self.calls), requests_before)
+
+    def test_load_of_missing_cache_does_not_create_it(self):
+        missing = self.root / "not-created"
+        with self.assertRaises(FileNotFoundError):
+            gallery_cache.OnlineGallery(missing).load()
+        self.assertFalse(missing.exists())
+        self.assertEqual(self.calls, [])
+
 
 if __name__ == "__main__":
     unittest.main()

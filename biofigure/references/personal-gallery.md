@@ -25,7 +25,7 @@
 
 ## 网页图库与反馈调度
 
-在仓库根运行 `python3 biofigure/bin/biofigure gallery-web`，再打开 `http://127.0.0.1:18807/BioFigure/`。提问、Star、图卡编辑和执行修改仅在本机部署版开放。启动时读取共享示例目录，图片和公开材料按浏览与选图需要缓存，不下载整个图库。已有缓存可加 `--offline`，已有示例文件可用 `--site <目录>`。
+在仓库根运行 `python3 biofigure/bin/biofigure gallery-web`，再打开 `http://127.0.0.1:18807/BioFigure/`。提问、Star、图卡编辑和执行修改仅在本机部署版开放。首次启动建立当前档案的示例快照，之后使用本地图录，图片和公开材料按浏览与选图需要缓存。使用 `--refresh-examples` 才更新该快照。已有缓存可加 `--offline`，已有示例文件可用 `--site <目录>`。
 
 网页使用当前用户的个人 SQLite 保存 Star；隐藏图卡和修改标题、简介使用该档案旁的独立数据库。默认档案为 `~/.local/share/biofigure/personal.sqlite`。不同部署可用 `BIOFIGURE_PERSONAL_DB` 设置各自路径。新图默认保存到 `~/.local/share/biofigure/drawings/personal/`，更换档案时使用对应的独立子目录，可用 `--outputs` 指定目录。这些个人操作和产物保存在本机。
 

@@ -96,7 +96,7 @@ python3 biofigure/bin/biofigure gallery-web
 
 The default URL is `http://127.0.0.1:18807/BioFigure/`. Select references, ask a question, then execute an approved plan to receive a PNG, PDF, editable scripts and a checks file. Continue editing from that result. With multiple references, choose the figure to modify. Missing source code or data prompts for the required materials. Use `gallery-web --offline` for cached materials, or `--site` for an existing local example directory.
 
-Set `BIOFIGURE_PERSONAL_DB` to keep separate profiles for different deployments. The server listens on loopback only. See the [personal gallery guide](biofigure/references/personal-gallery.md).
+Each profile keeps its own local example snapshot. Later starts use that snapshot. Use `--refresh-examples` to update it explicitly. Set `BIOFIGURE_PERSONAL_DB` to keep separate catalogues, preferences and output folders for different deployments. The server listens on loopback only. See the [personal gallery guide](biofigure/references/personal-gallery.md).
 
 ### Draw from your own references
 

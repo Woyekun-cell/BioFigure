@@ -106,7 +106,7 @@ python3 biofigure/bin/biofigure gallery-web
 
 默认地址为 `http://127.0.0.1:18807/BioFigure/`。选择参考图后提问，选定方案并执行，可得到 PNG、PDF、可编辑脚本和检查文件，再基于结果继续修改。多图时指定要修改的主图。缺少原始脚本或数据时会提示补齐。运行 `gallery-web --offline` 可浏览已缓存材料，`--site` 可指定已有的本地示例目录。
 
-不同部署通过 `BIOFIGURE_PERSONAL_DB` 配置各自的档案。运行时只监听本机回环地址。使用方法见[个人图库](biofigure/references/personal-gallery.md)。
+每个档案保留自己的本地示例快照，再次启动继续使用该快照。`--refresh-examples` 才显式更新它。不同部署通过 `BIOFIGURE_PERSONAL_DB` 配置各自的图录、偏好和输出目录。运行时只监听本机回环地址。使用方法见[个人图库](biofigure/references/personal-gallery.md)。
 
 ### 用喜欢的图做参考
 

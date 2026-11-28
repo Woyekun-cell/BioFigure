@@ -365,31 +365,32 @@ class GalleryHandler(SimpleHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--site", type=Path, help="Serve an existing gallery directory")
-    parser.add_argument("--online", action="store_true",help="Refresh shared examples before starting the local-only website")
+    parser.add_argument("--refresh-examples","--online",dest="online",action="store_true",help="Explicitly refresh this profile's shared example snapshot")
     parser.add_argument("--offline",action="store_true",help="Use an existing example cache without downloading")
-    parser.add_argument("--cache",type=Path,default=Path.home()/".cache/biofigure/gallery")
+    parser.add_argument("--cache",type=Path,help="Example cache for this personal profile")
     parser.add_argument("--outputs",type=Path,help="Directory for this personal profile's rendered figures")
     parser.add_argument("--port", type=int, default=18807)
     parser.add_argument("--model", default=os.environ.get("BIOFIGURE_CODEX_MODEL", "gpt-6.2-sol"))
     args = parser.parse_args()
     if args.online and (args.site or args.offline):
         parser.error("Use --online separately from --site and --offline")
+    profile = default_path().resolve()
+    cache = (args.cache or profile.parent/"gallery"/profile.stem).expanduser().resolve()
     online = None
     if args.offline:
-        site = (args.site or args.cache).expanduser().resolve()
+        site = (args.site or cache).expanduser().resolve()
         if not (site/"gallery.json").is_file():
             parser.error("The local example cache is empty. Start once without --offline or supply --site.")
     elif args.online or args.site is None:
         from gallery_cache import OnlineGallery
-        online = OnlineGallery(args.cache)
-        site = online.prepare().resolve()
+        online = OnlineGallery(cache)
+        site = (online.prepare() if args.online or not (cache/"gallery.json").is_file() else online.load()).resolve()
     else:
         site = args.site.resolve()
     rows = json.loads((site / "gallery.json").read_text())["figures"]
     with ThreadingHTTPServer(("127.0.0.1", args.port), functools.partial(GalleryHandler, directory=site)) as server:
         server.site = site
         server.online = online
-        profile = default_path()
         server.curation = profile.with_name(profile.stem + "-gallery.sqlite")
         server.rows = {row["id"]: row for row in rows}
         server.host_cli = shutil.which("codex")

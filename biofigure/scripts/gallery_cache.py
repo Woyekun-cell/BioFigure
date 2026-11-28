@@ -132,6 +132,47 @@ class OnlineGallery:
         allowed.add(relative)
         return relative
 
+    def _catalog(self, folder):
+        folder = folder.resolve()
+        for name in ("gallery.json", "index.html"):
+            if not (folder / name).resolve().is_relative_to(folder):
+                raise ValueError("The gallery metadata leaves its cache")
+        catalog = json.loads((folder / "gallery.json").read_text(encoding="utf-8"))
+        index = _Index()
+        index.feed((folder / "index.html").read_text(encoding="utf-8"))
+        if not index.embedded or json.loads("".join(index.embedded)) != catalog:
+            raise ValueError("The published gallery index and gallery.json differ. Retry after deployment completes.")
+        rows = catalog.get("figures")
+        if not isinstance(rows, list) or any(not isinstance(row, dict) or not isinstance(row.get("id"), str) for row in rows):
+            raise ValueError("The published gallery contains invalid figure records")
+        by_id = {row["id"]: row for row in rows}
+        if len(by_id) != len(rows):
+            raise ValueError("The published gallery contains duplicate figure IDs")
+        allowed, hashes = {"gallery.json", "index.html"}, {}
+        for row in rows:
+            for field in ("image", "thumbnail"):
+                relative = self._resource(row.get(field), allowed, hashes, row.get(field + "_sha256"))
+                if relative is None:
+                    raise ValueError("Figure previews must use relative public gallery paths")
+            if value := row.get("pdf"):
+                self._resource(value, allowed, hashes, row.get("pdf_sha256"))
+            for resources in row.get("resources", {}).values():
+                for resource in resources:
+                    self._resource(resource["url"], allowed, hashes, resource.get("sha256"))
+        return by_id, allowed, hashes, index.references
+
+    def load(self) -> Path:
+        """Read the existing local catalogue without refreshing any cached file."""
+        rows, allowed, hashes, references = self._catalog(self.cache)
+        for name in UI_FILES:
+            if self._local(name).is_file():
+                allowed.add(name)
+            elif name in references:
+                raise FileNotFoundError(f"The local gallery is missing a required UI file: {name}")
+        self.rows, self.allowed, self._hashes = rows, allowed, hashes
+        self.warnings = []
+        return self.cache
+
     def prepare(self) -> Path:
         self.cache.mkdir(parents=True, exist_ok=True)
         warnings = []
@@ -139,34 +180,13 @@ class OnlineGallery:
             stage = Path(staging)
             for name in ("gallery.json", "index.html"):
                 self._download(name, stage / name)
-            catalog = json.loads((stage / "gallery.json").read_text(encoding="utf-8"))
-            index = _Index()
-            index.feed((stage / "index.html").read_text(encoding="utf-8"))
-            if not index.embedded or json.loads("".join(index.embedded)) != catalog:
-                raise ValueError("The published gallery index and gallery.json differ. Retry after deployment completes.")
-            rows = catalog.get("figures")
-            if not isinstance(rows, list) or any(not isinstance(row, dict) or not isinstance(row.get("id"), str) for row in rows):
-                raise ValueError("The published gallery contains invalid figure records")
-            by_id = {row["id"]: row for row in rows}
-            if len(by_id) != len(rows):
-                raise ValueError("The published gallery contains duplicate figure IDs")
-            allowed, hashes = {"gallery.json", "index.html"}, {}
-            for row in rows:
-                for field in ("image", "thumbnail"):
-                    relative = self._resource(row.get(field), allowed, hashes, row.get(field + "_sha256"))
-                    if relative is None:
-                        raise ValueError("Figure previews must use relative public gallery paths")
-                if value := row.get("pdf"):
-                    self._resource(value, allowed, hashes, row.get("pdf_sha256"))
-                for resources in row.get("resources", {}).values():
-                    for resource in resources:
-                        self._resource(resource["url"], allowed, hashes, resource.get("sha256"))
+            by_id, allowed, hashes, references = self._catalog(stage)
             for name in UI_FILES:
                 try:
                     self._download(name, stage / name)
                 except HTTPError as error:
                     error.close()
-                    if error.code != 404 or name in index.references:
+                    if error.code != 404 or name in references:
                         raise
                     warnings.append(f"Published gallery file returned HTTP 404 and is not referenced by index.html: {name}")
                     continue
