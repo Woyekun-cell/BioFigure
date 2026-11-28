@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from agent_host import AgentHost, HOSTS, available_hosts
+from agent_host import AgentHost, HOSTS, _antigravity_permissions, available_hosts
 
 SCHEMA = {
     "type": "object", "properties": {
@@ -29,6 +29,9 @@ class AgentHostTests(unittest.TestCase):
         self.which = patch("agent_host.shutil.which", side_effect=lambda name: "/bin/" + Path(name).name)
         self.which.start()
         self.addCleanup(self.which.stop)
+        self.permissions = patch("agent_host._antigravity_permissions", side_effect=lambda: {"ask": [], "deny": []})
+        self.permissions.start()
+        self.addCleanup(self.permissions.stop)
 
     def call(self, name, envelope=None, mode="ask", model=None, success=True):
         host = AgentHost(name, model=model)
@@ -39,6 +42,10 @@ class AgentHostTests(unittest.TestCase):
                 Path(command[command.index("--output-last-message") + 1]).write_text(json.dumps(ANSWER))
             if name == "opencode":
                 stdout = envelope or json.dumps({"type": "text", "part": {"type": "text", "text": json.dumps(ANSWER)}})
+            elif name == "antigravity":
+                stdout = envelope if isinstance(envelope, str) else json.dumps({"event": "result", "result": envelope or {
+                    "conversation_id": "test-id", "status": "SUCCESS", "response": json.dumps(ANSWER),
+                    "structured_output": ANSWER, "duration_seconds": 1.2, "num_turns": 1}})
             else:
                 stdout = json.dumps(envelope if envelope is not None else {"response": json.dumps(ANSWER)})
             return subprocess.CompletedProcess(command, 0 if success else 1, stdout, "" if success else "Sign in to continue")
@@ -49,8 +56,9 @@ class AgentHostTests(unittest.TestCase):
         with patch("agent_host.shutil.which", side_effect=lambda cmd: "/bin/" + cmd if cmd in ("codex", "opencode") else None),patch("agent_host._workbuddy",return_value=None):
             hosts = available_hosts()
         self.assertEqual({item["id"] for item in hosts if item["installed"]}, {"codex", "opencode"})
-        self.assertEqual(len(hosts), 5)
+        self.assertEqual(len(hosts), 6)
         self.assertEqual(HOSTS["codebuddy"]["command"], "codebuddy")
+        self.assertEqual(HOSTS["antigravity"]["command"], "agy")
         with self.assertRaises(ValueError):
             AgentHost("workbuddy")
 
@@ -125,6 +133,113 @@ class AgentHostTests(unittest.TestCase):
         self.assertNotIn("--dangerously-skip-permissions", self.command)
         self.assertEqual(self.call("codebuddy", mode="render", model="selected-model"), ANSWER)
         self.assertEqual(self.command[self.command.index("--model") + 1], "selected-model")
+
+    def test_antigravity_uses_documented_stdin_protocol_and_readonly_ask_permissions(self):
+        self.assertEqual(self.call("antigravity"), ANSWER)
+        self.assertEqual(self.command[0], "/bin/agy")
+        self.assertEqual(self.command[self.command.index("--input-format") + 1], "stream-json")
+        self.assertEqual(self.command[self.command.index("--output-format") + 1], "stream-json")
+        self.assertEqual(self.command[self.command.index("--mode") + 1], "plan")
+        self.assertNotIn("--model", self.command)
+        self.assertNotIn("-p", self.command)
+        self.assertNotIn("Preserve original data", self.command)
+        message = json.loads(self.kwargs["input"])
+        self.assertEqual(message["event"], "user")
+        self.assertIn("Preserve original data", message["message"]["content"])
+        settings = json.loads(self.command[self.command.index("--settings") + 1])
+        self.assertEqual(settings["toolPermission"], "request-review")
+        self.assertTrue(settings["enableTerminalSandbox"])
+        self.assertTrue(settings["allowNonWorkspaceAccess"])
+        self.assertEqual(set(settings["permissions"]["deny"]), {
+            "write_file(*)", "command(*)", "unsandboxed(*)", "mcp(*)",
+            "read_url(*)", "execute_url(*)", "download_url(*)"})
+        self.assertFalse(any("dangerously" in argument for argument in self.command))
+        self.assertEqual(set(self.folder.iterdir()), {self.folder / "host.log", self.folder / "response.json"})
+
+    def test_antigravity_mounts_selected_files_and_skill_readonly_without_extra_workspaces(self):
+        source = self.folder / "中文 数据.csv"
+        image = self.folder / "中文 预览.png"
+        source.write_text("id,value\na,1\n")
+        image.write_bytes(b"test preview")
+        host = AgentHost("antigravity")
+        command = host._command(SCHEMA, self.folder, [image], "ask", self.folder / "answer.json", [source])
+        settings = json.loads(command[command.index("--settings") + 1])
+        allowed = settings["permissions"]["allow"]
+        self.assertIn(f"read_file({source.resolve()})", allowed)
+        self.assertIn(f"read_file({image.resolve()})", allowed)
+        skill = Path(__file__).resolve().parents[1]
+        for path in (skill / "SKILL.md", skill / "scripts", skill / "references", skill / "static/core"):
+            self.assertIn(f"read_file({path})", allowed)
+        self.assertNotIn("read_file(*)", allowed)
+        self.assertNotIn("--add-dir", command)
+        self.assertFalse(any(rule.startswith("write_file(") for rule in allowed))
+
+    def test_antigravity_render_keeps_user_denies_and_native_sandbox_approval(self):
+        original = self.folder / "original.csv"
+        original.write_text("id,value\na,1\n")
+        output = self.folder / "job"
+        output.mkdir()
+        with patch("agent_host._antigravity_permissions", return_value={
+                "ask": ["command(git push)"], "deny": ["command(rm)", "read_file(/private/secret)"]}):
+            command = AgentHost("antigravity", model="native-selected-model")._command(
+                SCHEMA, output, [], "render", output / "answer.json", [original])
+        settings = json.loads(command[command.index("--settings") + 1])
+        self.assertEqual(command[command.index("--mode") + 1], "accept-edits")
+        self.assertEqual(command[command.index("--model") + 1], "native-selected-model")
+        self.assertIn("--sandbox", command)
+        self.assertEqual(settings["toolPermission"], "proceed-in-sandbox")
+        self.assertEqual(settings["permissions"]["ask"], ["command(git push)"])
+        for rule in ("command(rm)", "read_file(/private/secret)", f"write_file({original.resolve()})"):
+            self.assertIn(rule, settings["permissions"]["deny"])
+        self.assertNotIn("command(*)", settings["permissions"]["deny"])
+        self.assertFalse(any(rule.startswith(("command(", "write_file(", "read_url(")) for rule in settings["permissions"]["allow"]))
+        self.assertNotIn("--add-dir", command)
+
+    def test_antigravity_reads_only_existing_permission_settings_without_rewriting(self):
+        settings = self.folder / ".gemini/antigravity-cli/settings.json"
+        settings.parent.mkdir(parents=True)
+        original = json.dumps({"model": "native-model", "unknown": "not-copied", "permissions": {
+            "allow": ["command(*)", "write_file(*)", "read_url(*)"],
+            "ask": ["command(git push)"], "deny": ["command(rm)"]}})
+        settings.write_text(original)
+        with patch("agent_host.Path.home", return_value=self.folder):
+            self.assertEqual(_antigravity_permissions(), {"ask": ["command(git push)"], "deny": ["command(rm)"]})
+            self.assertEqual(settings.read_text(), original)
+            settings.write_text('{"permissions":{"deny":"invalid"}}')
+            with self.assertRaisesRegex(RuntimeError, "permission settings"):
+                _antigravity_permissions()
+            settings.write_text("invalid settings content")
+            with self.assertRaisesRegex(RuntimeError, "permission settings"):
+                _antigravity_permissions()
+
+    def test_antigravity_requires_one_successful_final_result_not_intermediate_text(self):
+        events = [
+            {"event": "init", "conversation_id": "test-id", "init": {"tools": ["read_file"]}},
+            {"event": "step_update", "step_update": {"text_delta": "ignore this text"}},
+            {"event": "result", "result": {"conversation_id": "test-id", "status": "SUCCESS", "response": json.dumps(ANSWER)}},
+        ]
+        self.assertEqual(self.call("antigravity", "\n".join(map(json.dumps, events))), ANSWER)
+        for invalid in (events[:2], events + [events[-1]], [{"event": "result", "result": {"response": json.dumps(ANSWER)}}]):
+            with self.assertRaises((ValueError, RuntimeError)):
+                self.call("antigravity", "\n".join(map(json.dumps, invalid)))
+        with self.assertRaisesRegex(RuntimeError, "Authentication failed"):
+            self.call("antigravity", {"status": "ERROR", "error": "Authentication failed", "response": json.dumps(ANSWER)})
+        with self.assertRaisesRegex(RuntimeError, "Sign in"):
+            self.call("antigravity", success=False)
+
+    def test_antigravity_images_are_paths_in_stdin_with_explicit_read_permissions(self):
+        image = self.folder / "selected figure.png"
+        host = AgentHost("antigravity")
+        def run(command, **kwargs):
+            content = json.loads(kwargs["input"])["message"]["content"]
+            self.assertIn(str(image), content)
+            self.assertNotIn(content, command)
+            settings = json.loads(command[command.index("--settings") + 1])
+            self.assertIn(f"read_file({image.resolve()})", settings["permissions"]["allow"])
+            result = {"status": "SUCCESS", "structured_output": ANSWER}
+            return subprocess.CompletedProcess(command, 0, json.dumps({"event": "result", "result": result}), "")
+        with patch("agent_host.subprocess.run", side_effect=run):
+            self.assertEqual(host.run("Inspect this figure", SCHEMA, self.folder, images=[image]), ANSWER)
 
     def test_text_is_not_accepted_as_json_and_nested_schema_is_checked(self):
         for envelope in ({"response": "I changed it"}, {"response": '{"answer":1,"actions":[]}'},

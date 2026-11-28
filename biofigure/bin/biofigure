@@ -11,7 +11,7 @@ COMMANDS = {
     "prepare": ("prepare_figure.py", "Prepare a figure request and its evidence receipt"),
     "check": ("validate_checkpoints.py", "Validate a figure checkpoint ledger"),
     "gallery": ("personal_style.py", "Manage personal references, briefs and scoped visual preferences"),
-    "gallery-web": ("gallery_web.py", "Serve the local atlas with personal stars and an installed Codex host"),
+    "gallery-web": ("gallery_web.py", "Serve the local gallery with private favorites and model connections"),
     "feedback": ("feedback_learning.py", "Read or process the feedback-learning queue"),
     "preview-time": ("preview_time_response.py", "Render a two-condition time-response preview"),
 }

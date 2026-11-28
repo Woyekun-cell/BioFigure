@@ -11,12 +11,15 @@ import subprocess
 # https://geminicli.com/docs/cli/cli-reference/
 # https://opencode.ai/docs/cli/ and installed OpenCode 2.4.2 `run --help`
 # https://www.codebuddy.ai/docs/cli/cli-reference
+# https://antigravity.google/docs/cli/headless/
+# https://antigravity.google/docs/cli/reference
 HOSTS = {
     "codex": {"label": "Codex", "command": "codex"},
     "claude": {"label": "Claude Code", "command": "claude"},
     "gemini": {"label": "Gemini CLI", "command": "gemini"},
     "opencode": {"label": "OpenCode", "command": "opencode"},
     "codebuddy": {"label": "CodeBuddy / WorkBuddy CLI", "command": "codebuddy"},
+    "antigravity": {"label": "Antigravity", "command": "agy"},
 }
 
 
@@ -125,6 +128,28 @@ def _events(text):
     return _json("\n".join(parts[order[-1]].values()))
 
 
+def _antigravity_permissions():
+    # Session settings may replace these arrays. Keep existing restrictions;
+    # never inherit broad command/network/write grants into a gallery task.
+    settings = Path.home() / ".gemini/antigravity-cli/settings.json"
+    try:
+        value = json.loads(settings.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        value = {}
+    except (OSError, ValueError):
+        raise RuntimeError("Cannot safely read Antigravity permission settings") from None
+    permissions = value.get("permissions", {}) if isinstance(value, dict) else None
+    if not isinstance(permissions, dict):
+        raise RuntimeError("Invalid Antigravity permission settings")
+    result = {}
+    for key in ("ask", "deny"):
+        rules = permissions.get(key, [])
+        if not isinstance(rules, list) or any(not isinstance(rule, str) for rule in rules):
+            raise RuntimeError("Invalid Antigravity permission settings")
+        result[key] = list(rules)
+    return result
+
+
 class AgentHost:
     def __init__(self, name, model=None, command=None):
         if name not in HOSTS:
@@ -143,9 +168,34 @@ class AgentHost:
             raise RuntimeError(f"{self.label} CLI is not installed or is not on PATH")
         if mode not in ("ask", "render"):
             raise ValueError("Unknown agent operation")
-        roots = (Path(value).resolve() for value in read_dirs)
+        roots = [Path(value).resolve() for value in read_dirs]
         directories = {str(path if path.is_dir() else path.parent) for path in roots}
         directories.update(str(Path(image).resolve().parent) for image in images)
+        if self.name == "antigravity":
+            skill = Path(__file__).resolve().parents[1]
+            sources = set(roots) | {Path(image).resolve() for image in images}
+            sources.update(path for path in (skill / "SKILL.md", skill / "scripts",
+                           skill / "references", skill / "static/core") if path.exists())
+            permissions = _antigravity_permissions()
+            permissions["allow"] = [f"read_file({path})" for path in sorted(sources)]
+            deny = ["unsandboxed(*)", "mcp(*)", "read_url(*)", "execute_url(*)", "download_url(*)"]
+            if mode == "ask":
+                deny.extend(["write_file(*)", "command(*)"])
+            else:
+                deny.extend(f"write_file({path})" for path in sorted(sources) if not path.is_relative_to(cwd))
+            permissions["deny"] = list(dict.fromkeys(permissions["deny"] + deny))
+            settings = {"permissions": permissions, "allowNonWorkspaceAccess": True,
+                        "toolPermission": "request-review" if mode == "ask" else "proceed-in-sandbox",
+                        "enableTerminalSandbox": True, "notifications": False}
+            command = [self.command, "--input-format", "stream-json", "--output-format", "stream-json",
+                       "--json-schema", json.dumps(schema), "--disable-slash-commands", "--sandbox",
+                       "--mode", "plan" if mode == "ask" else "accept-edits",
+                       "--settings", json.dumps(settings)]
+            if self.model:
+                command.extend(["--model", self.model])
+            # read_file grants are read-only sandbox mounts. Adding source
+            # directories as workspaces would instead make them writable.
+            return command
         if self.name == "codex":
             schema_path = cwd / "response-schema.json"
             schema_path.write_text(json.dumps(schema), encoding="utf-8")
@@ -210,9 +260,20 @@ class AgentHost:
             return _json(answer.read_text(encoding="utf-8"))
         if self.name == "opencode":
             return _events(result.stdout)
-        envelope = _json(result.stdout)
+        if self.name == "antigravity":
+            events = [json.loads(line) for line in result.stdout.splitlines() if line.strip()]
+            if any(not isinstance(event, dict) for event in events):
+                raise ValueError("Antigravity returned an invalid JSON event")
+            results = [event["result"] for event in events if event.get("event") == "result" and "result" in event]
+            if len(results) != 1:
+                raise ValueError("Antigravity did not return exactly one final result")
+            envelope = results[0]
+        else:
+            envelope = _json(result.stdout)
         if not isinstance(envelope, dict):
             raise ValueError(f"{self.label} returned an invalid JSON envelope")
+        if self.name == "antigravity" and envelope.get("status") != "SUCCESS":
+            raise RuntimeError(f"Antigravity request failed: {_error(envelope)}")
         if envelope.get("is_error") or envelope.get("error"):
             raise RuntimeError(_error(envelope))
         for key in ("structured_output", "response", "result"):
@@ -229,6 +290,8 @@ class AgentHost:
         instructions = prompt + "\nReturn only a JSON object conforming to this schema:\n" + json.dumps(schema)
         if images and self.name not in ("codex", "opencode"):
             instructions += "\nUse your read-only image/file tool for these figure previews:\n" + "\n".join(map(str, images))
+        if self.name == "antigravity":
+            instructions = json.dumps({"event": "user", "message": {"content": instructions}}) + "\n"
         environment = codex_environment()
         if self._bundled_script:
             environment.update(ELECTRON_RUN_AS_NODE="1",CODEBUDDY_FORCE_LITE_WB_BUNDLE="1",CODEBUDDY_DISABLE_COMPILE_CACHE="1")

@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+skill=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+venv="$skill/../.biofigure-gallery-venv"
+if [ ! -x "$venv/bin/python" ]; then
+    if ! command -v python3 >/dev/null 2>&1 || ! python3 -c 'import sys; sys.exit(sys.version_info < (3, 10))'; then
+        echo 'BioFigure Gallery requires Python 3.10 or newer.' >&2
+        exit 1
+    fi
+    python3 -m venv "$venv"
+fi
+if ! cmp -s "$skill/requirements.txt" "$venv/gallery-requirements.txt"; then
+    "$venv/bin/python" -m pip --disable-pip-version-check install -r "$skill/requirements.txt"
+    cp "$skill/requirements.txt" "$venv/gallery-requirements.txt"
+fi
+export PATH="$venv/bin:$PATH"
+exec "$venv/bin/python" "$skill/bin/biofigure" gallery-web "$@"

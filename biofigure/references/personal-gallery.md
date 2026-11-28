@@ -25,11 +25,11 @@
 
 ## 网页图库与反馈调度
 
-在仓库根运行 `python3 biofigure/bin/biofigure gallery-web`，再打开 `http://127.0.0.1:18807/BioFigure/`。提问、Star、图卡编辑和执行修改仅在本机部署版开放。首次启动建立当前档案的示例快照，之后使用本地图录，图片和公开材料按浏览与选图需要缓存。使用 `--refresh-examples` 才更新该快照。已有缓存可加 `--offline`，已有示例文件可用 `--site <目录>`。
+在仓库根运行 `sh biofigure/bin/gallery-local`，再打开 `http://127.0.0.1:18807/BioFigure/`。本机版可提问、收藏、选图、编辑图卡和执行重绘。首次启动建立各自的示例快照，图片和公开材料按浏览与选图需要缓存。用 `--refresh-examples` 更新快照，已有缓存可加 `--offline`，已有示例文件可用 `--site <目录>`。
 
 网页使用当前用户的个人 SQLite 保存 Star；隐藏图卡和修改标题、简介使用该档案旁的独立数据库。默认档案为 `~/.local/share/biofigure/personal.sqlite`。不同部署可用 `BIOFIGURE_PERSONAL_DB` 设置各自路径。新图默认保存到 `~/.local/share/biofigure/drawings/personal/`，更换档案时使用对应的独立子目录，可用 `--outputs` 指定目录。这些个人操作和产物保存在本机。
 
-网页连接设置可选 Codex、Claude Code、Gemini CLI、OpenCode、CodeBuddy CLI，或 API Key。本机 CLI 沿用各自登录、服务商和默认模型，模型框可留空。API 支持 OpenAI 兼容、Anthropic、Gemini 原生协议，填写服务地址、Key 和模型；兼容服务可自定义地址与模型名称。优先使用 PATH 中的 CodeBuddy CLI；现有 WorkBuddy 应用包包含完整 CLI 入口时，也可检测后在后台调用。桌面安装本身不代表 CLI 已登录。连接配置随个人档案保存；Key 仅写本机 `personal-host.json`（权限 `0600`），不会回传网页、存入浏览器缓存或随代码发布。Key 留空时仅在协议与地址相同的情况下保留原值，清除需显式选择。更换地址需重填 Key。
+网页可选已登录的 Codex、Claude Code、Google Antigravity、Gemini CLI、OpenCode、CodeBuddy CLI，或填写 API Key。本机 CLI 可沿用各自登录和默认模型。个人 Google 账号选 Antigravity（`agy`），Gemini API 则使用 Google 发放的 API Key。兼容 API 可自定义服务地址与模型。优先使用 PATH 中的 CodeBuddy CLI，也支持含完整 CLI 的 WorkBuddy 应用包。连接配置随个人档案保存，Key 存在本机 `personal-host.json`，权限为 `0600`。协议和地址未变时，留空可保留 Key。更换地址需重填 Key。
 
 每次提问保留所选图 ID 和来源，最多附 12 张缩略图。选择修改方案并点击执行后，所选服务使用原脚本和绘图输入重绘，返回 PNG、PDF、可编辑脚本和本次检查文件。多图时指定要修改的主图。可基于上次结果继续修改，刷新页面后恢复任务。原始材料缺失或运行失败时显示具体原因。结果是待审预览，科研与视觉验收按当前成图进行。
 

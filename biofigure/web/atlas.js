@@ -295,7 +295,7 @@ function packageTags(packages) {
 }
 function updateComparison() {
   const count=selectedFigures.size;
-  $("compare-dock").hidden=count===0;
+  $("compare-dock").hidden=!localAtlas||count===0;
   $("compare-status").textContent=count?text().compareCount(count):"";
   $("compare-open").disabled=count<2;
   for(const button of document.querySelectorAll("[data-compare-id]")){
@@ -336,7 +336,7 @@ function card(row, source) {
   star.title=row.chart[lang];star.setAttribute("aria-label",text().starAction+" · "+row.chart[lang]);
   star.setAttribute("aria-pressed",String(stars.has(row.id)));
   star.addEventListener("click",()=>setStar(row.id,!stars.has(row.id)).catch(error=>showGalleryError(error.message)));
-  if(row.thumbnail)controls.append(compare);
+  if(localAtlas&&row.thumbnail)controls.append(compare);
   if(localAtlas)controls.append(star);entry.append(controls);
   return entry;
 }

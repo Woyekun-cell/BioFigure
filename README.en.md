@@ -85,18 +85,19 @@ python3 -m pip install -r biofigure/requirements-python.txt
 
 ## Personal drawing tools in development
 
-The repository includes a personal gallery website for local deployment. Stars, gallery edits, rendered revisions and preferences stay in the current user's local profile. The public website displays shared examples.
+The public gallery is for browsing figures and source materials. Select references, save personal favorites, and ask or revise figures in the local gallery. Your favorites and preferences are stored in your own profile.
 
-From the repository root, run the commands below and open the printed local URL. You need the Python dependencies and the drawing environment required by the selected figure. In the website, choose a signed-in local CLI or configure an API Key, endpoint and model.
+Install and start the gallery from a terminal on macOS or Linux with Git and Python 3.10+:
 
 ```bash
-python3 -m pip install -r biofigure/requirements.txt
-python3 biofigure/bin/biofigure gallery-web
+git clone --depth 1 --filter=blob:none --sparse https://github.com/Woyekun-cell/BioFigure.git && git -C BioFigure sparse-checkout set biofigure && sh BioFigure/biofigure/bin/gallery-local
 ```
+
+Open the local address printed in the terminal. The first run creates a Python environment and fetches the example catalog. Images, code and tables are cached as you use them. To start an existing copy, run `sh biofigure/bin/gallery-local` from the repository root. Redrawing a figure also needs its plotting environment.
 
 The default URL is `http://127.0.0.1:18807/BioFigure/`. Select references, ask a question, then execute an approved plan to receive a PNG, PDF, editable scripts and a checks file. Continue editing from that result. With multiple references, choose the figure to modify. Missing source code or data prompts for the required materials. Use `gallery-web --offline` for cached materials, or `--site` for an existing local example directory.
 
-Connection settings support Codex, Claude Code, Gemini CLI, OpenCode, CodeBuddy CLI, and OpenAI-compatible, Anthropic or Gemini APIs. Local CLIs can use their configured default models; API connections use the model you enter. Keys stay in a local profile file with mode `0600`; the browser only receives a saved-key indicator. WorkBuddy desktop installation is checked separately from a working CodeBuddy CLI. API rendering requires macOS `sandbox-exec` or Linux `bwrap` to run scripts; a missing runtime is reported.
+Connection settings support Codex, Claude Code, Google Antigravity, Gemini CLI, OpenCode, CodeBuddy CLI, and OpenAI-compatible, Anthropic or Gemini APIs. Local CLIs can use their configured default models. For a personal Google account, use Antigravity (`agy`). If you have a Gemini API key, choose Gemini API and enter the model name. Keys stay in a local profile file with mode `0600`; the browser only receives a saved-key indicator. WorkBuddy desktop installation is checked separately from a working CodeBuddy CLI. API rendering requires macOS `sandbox-exec` or Linux `bwrap` to run scripts; a missing runtime is reported.
 
 Each profile keeps its own local example snapshot. Later starts use that snapshot. Use `--refresh-examples` to update it explicitly. Set `BIOFIGURE_PERSONAL_DB` to keep separate catalogues, preferences and output folders for different deployments. The server listens on loopback only. See the [personal gallery guide](biofigure/references/personal-gallery.md).
 
